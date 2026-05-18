@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "dependency_family": "pades-pki-tsa-ocsp-hsm",
+      "disposition": "BLOCK_READINESS_ESCALATION",
+      "evidence_id": "R20-EVID-X-SCOPE-MISMATCH",
+      "quarantine_id": "R20-QUARANTINE-01",
+      "reason": "SCOPE_MISMATCH_OR_UNTRUSTED_CHAIN",
+      "record_hash_sha256": "6ddddd85487d9cc37247b15398258859a727a09a37ed09e9783b094ff97bc3a8"
+    }
+  ],
+  "queue_hash_sha256": "4f70e9062364904e13dcc8f500017d337eb20425ec35d700c7de9d83121f0faf",
+  "queue_id": "R20-QUARANTINE-QUEUE",
+  "watermark": "Decision-support / Non-operational"
+}

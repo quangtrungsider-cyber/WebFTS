@@ -10,14 +10,17 @@
 import { BasePanel } from '../BasePanel';
 import { MapDisplay } from '../../map/MapDisplay';
 import { logger } from '../../../utils/Logger';
+import type { App } from '../../../core/App';
 
 export class MapControlsPanel extends BasePanel {
     private mapDisplay: MapDisplay | null = null;
+    private app: App | null = null;
     private aircraftCreationManager: any = null; // Will be typed when manager is created
     private shapeDrawingManager: any = null; // Will be typed when manager is created
     private routeDrawingManager: any = null; // Will be typed when manager is created
-    private readonly DEFAULT_CENTER: [number, number] = [4.9, 52.3]; // Amsterdam
-    private readonly DEFAULT_ZOOM = 8;
+    private readonly DEFAULT_CENTER: [number, number] = [106.6519, 10.8188]; // Tan Son Nhat (VVTS)
+    private readonly DEFAULT_ZOOM = 11;
+    private isFullscreenActive: boolean = false;
 
     constructor() {
         super('.nav-panel', 'map-view-content');
@@ -31,6 +34,17 @@ export class MapControlsPanel extends BasePanel {
 
         // Set up map info update handlers
         this.setupMapInfoHandlers();
+
+        // Set up custom VATM control buttons
+        this.setupVatmMapControls();
+    }
+
+    /**
+     * Set the App instance for accessing shared managers
+     */
+    public setApp(app: App): void {
+        this.app = app;
+        logger.debug('MapControlsPanel', 'App reference set');
     }
 
     /**
@@ -104,6 +118,96 @@ export class MapControlsPanel extends BasePanel {
     /**
      * Handle Draw Route button click
      */
+    /**
+     * Set up custom VATM map control buttons:
+     * - Vietnam ATS Routes toggle
+     * - Fullscreen Map toggle
+     */
+    private setupVatmMapControls(): void {
+        // Vietnam ATS Routes toggle button
+        const atsBtn = document.getElementById('toggle-ats-routes-btn');
+        if (atsBtn) {
+            atsBtn.addEventListener('click', () => this.onToggleAtsRoutes(atsBtn));
+            logger.debug('MapControlsPanel', 'ATS Routes toggle button handler attached');
+        } else {
+            logger.warn('MapControlsPanel', '✗ ATS Routes toggle button not found');
+        }
+
+        // Fullscreen Map toggle button (panel)
+        const fullscreenBtn = document.getElementById('toggle-fullscreen-btn');
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', () => this.toggleFullscreenMap());
+            logger.debug('MapControlsPanel', 'Fullscreen Map button handler attached');
+        } else {
+            logger.warn('MapControlsPanel', '✗ Fullscreen Map button not found');
+        }
+
+        // Fullscreen Map toggle button (floating, in map overlay)
+        const fullscreenFloatingBtn = document.getElementById('map-fullscreen-floating-btn');
+        if (fullscreenFloatingBtn) {
+            fullscreenFloatingBtn.addEventListener('click', () => this.toggleFullscreenMap());
+            logger.debug('MapControlsPanel', 'Floating Fullscreen Map button handler attached');
+        } else {
+            logger.warn('MapControlsPanel', '✗ Floating Fullscreen Map button not found');
+        }
+    }
+
+    /**
+     * Toggle Vietnam ATS Routes layer visibility
+     */
+    private onToggleAtsRoutes(btn: HTMLElement): void {
+        const mapOverlay = this.app?.getMapOverlay();
+        if (!mapOverlay) {
+            logger.warn('MapControlsPanel', 'MapOverlay not ready yet');
+            return;
+        }
+        const newState = !mapOverlay.isAtsRoutesVisible();
+        mapOverlay.toggleAtsRoutes(newState);
+        btn.classList.toggle('active', newState);
+        logger.info('MapControlsPanel', `Vietnam ATS Routes ${newState ? 'enabled' : 'disabled'}`);
+    }
+
+    /**
+     * Toggle fullscreen map mode
+     */
+    public toggleFullscreenMap(): void {
+        this.isFullscreenActive = !this.isFullscreenActive;
+        document.body.classList.toggle('fullscreen-map-active', this.isFullscreenActive);
+
+        // Update floating button icon to show correct state
+        const floatingBtn = document.getElementById('map-fullscreen-floating-btn');
+        if (floatingBtn) {
+            const icon = floatingBtn.querySelector('i');
+            if (icon) {
+                icon.className = this.isFullscreenActive
+                    ? 'fa-solid fa-compress'
+                    : 'fa-solid fa-expand';
+            }
+            floatingBtn.title = this.isFullscreenActive ? 'Exit Fullscreen' : 'Toggle Fullscreen Map';
+        }
+
+        // Update panel button icon too
+        const panelBtn = document.getElementById('toggle-fullscreen-btn');
+        if (panelBtn) {
+            const icon = panelBtn.querySelector('i');
+            if (icon) {
+                icon.className = this.isFullscreenActive
+                    ? 'fa-solid fa-compress'
+                    : 'fa-solid fa-expand';
+            }
+        }
+
+        // Notify MapLibre to resize after CSS transition settles
+        setTimeout(() => {
+            if (this.mapDisplay) {
+                const map = this.mapDisplay.getMap();
+                if (map) map.resize();
+            }
+        }, 80);
+
+        logger.info('MapControlsPanel', `Fullscreen map ${this.isFullscreenActive ? 'enabled' : 'disabled'}`);
+    }
+
     private onDrawRouteClick(): void {
         logger.debug('MapControlsPanel', 'Draw Route button clicked');
         if (this.routeDrawingManager) {

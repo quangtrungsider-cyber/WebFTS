@@ -69,6 +69,17 @@ def create_app():
     bluesky_proxy.socketio = socketio
     set_bluesky_proxy(bluesky_proxy)  # Set it globally for the subscriber callbacks
 
+    # Auto-connect if BlueSky is already running locally
+    from .server.bluesky_server_status import is_port_listening
+    if is_port_listening(11000, 0.2) or is_port_listening(11001, 0.2):
+        logger.info("BlueSky simulator detected running locally. Auto-starting proxy client...")
+        try:
+            bluesky_proxy.server_ip = "localhost"
+            bluesky_proxy.start_client(hostname="localhost")
+            logger.info("Proxy client auto-started successfully")
+        except Exception as e:
+            logger.error(f"Failed to auto-start proxy client: {e}")
+
     # Register subscriber callbacks after client is fully initialized
     register_subscribers()
 

@@ -1,0 +1,90 @@
+{
+  "round": "R22-VS-22",
+  "watermark": "Decision-support / Non-operational",
+  "claim_guard": {
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "readiness_claim_allowed": false,
+    "message": "Do not claim readiness unless evidence, trust-chain and scope are all valid.",
+    "gate_formula": "readiness_claim_allowed = evidence_valid AND trust_chain_valid AND scope_valid AND approval_signed AND quarantine_clear",
+    "quarantine_clear": false,
+    "approval_signed": false,
+    "gate_explainer": {
+      "vi": "Chỉ được hiển thị trạng thái sẵn sàng khi đủ bằng chứng, chuỗi tin cậy, phạm vi phê duyệt, chữ ký phê duyệt và không còn mục cách ly chặn readiness.",
+      "en": "Readiness may be displayed only when evidence, trust chain, approval scope, approval signature and quarantine-clear conditions are all valid."
+    }
+  },
+  "gaps": [
+    {
+      "gap_id": "GAP-TRUST-01",
+      "dimension": "trust_chain",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Chuỗi tin cậy vẫn ở trạng thái chờ rà soát phạm vi giới hạn.",
+      "message_en": "Trust chain remains pending limited-scope review.",
+      "required_evidence": [
+        "issuer validation evidence",
+        "trust anchor review note",
+        "hash-chain verification result"
+      ]
+    },
+    {
+      "gap_id": "GAP-Q-01",
+      "dimension": "quarantine",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Còn mục cách ly chặn công bố readiness.",
+      "message_en": "A quarantine item still blocks readiness.",
+      "required_evidence": [
+        "quarantine disposition note",
+        "board chair acknowledgement"
+      ]
+    },
+    {
+      "gap_id": "GAP-APP-01",
+      "dimension": "approval",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Chưa có chữ ký phê duyệt phạm vi giới hạn.",
+      "message_en": "Limited-scope approval signature is not present.",
+      "required_evidence": [
+        "signed limited-scope handoff",
+        "scope limitation acknowledgement"
+      ]
+    }
+  ],
+  "allowed_actions": [
+    {
+      "action_id": "ACT-ADD-NOTE",
+      "label_vi": "Thêm ghi chú người rà soát",
+      "label_en": "Add reviewer note",
+      "enabled": true,
+      "requires": [
+        "reviewer_role"
+      ]
+    },
+    {
+      "action_id": "ACT-BLOCK-READINESS",
+      "label_vi": "Chặn readiness",
+      "label_en": "Block readiness",
+      "enabled": true,
+      "requires": [
+        "quarantine_reason"
+      ]
+    },
+    {
+      "action_id": "ACT-HANDOFF-LIMITED-SCOPE",
+      "label_vi": "Bàn giao phạm vi giới hạn",
+      "label_en": "Limited-scope handoff",
+      "enabled": false,
+      "disabled_reason": "GAP-TRUST-01,GAP-Q-01,GAP-APP-01"
+    },
+    {
+      "action_id": "ACT-CLAIM-READINESS",
+      "label_vi": "Công bố sẵn sàng",
+      "label_en": "Claim readiness",
+      "enabled": false,
+      "disabled_reason": "claim_guard.readiness_claim_allowed=false"
+    }
+  ]
+}

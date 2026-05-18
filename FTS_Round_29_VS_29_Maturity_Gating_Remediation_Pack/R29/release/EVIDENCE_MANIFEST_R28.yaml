@@ -1,0 +1,9 @@
+round: R28-VS-28
+watermark: Decision-support / Non-operational
+readiness_claim_allowed: false
+artifacts:
+  - repo/fts/artifacts/evidence-review-board-ui-shell/R28-VS-28/ui_shell_state.json
+  - repo/fts/frontend/evidence-review-board-ui-shell/index.html
+  - repo/fts/frontend/evidence-review-board-ui-shell/app.js
+  - repo/fts/schemas/evidence-review-board-workbench-v28.schema.json
+  - repo/fts/tests/test_round28_workbench.py

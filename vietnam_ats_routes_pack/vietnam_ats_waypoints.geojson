@@ -1,0 +1,4045 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PAPRA (2)",
+        "lat_dms": "154600N",
+        "lon_dms": "1071100E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18333333,
+          15.76666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TANNA",
+        "lat_dms": "155412N",
+        "lon_dms": "1073932E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65888889,
+          15.90333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PATNO",
+        "lat_dms": "155754N",
+        "lon_dms": "1075306E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.885,
+          15.965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DA NANG DVOR/DME (DAN)",
+        "lat_dms": "160310N",
+        "lon_dms": "1081154E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.19833333,
+          16.05277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KANGU",
+        "lat_dms": "162115N",
+        "lon_dms": "1083953E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.66472222,
+          16.35416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BINKU",
+        "lat_dms": "163335N",
+        "lon_dms": "1085823E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.97305556,
+          16.55972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BUNTA (3)",
+        "lat_dms": "165000N",
+        "lon_dms": "1092342E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A1",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.395,
+          16.83333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VILAO (2)",
+        "lat_dms": "172200N",
+        "lon_dms": "1060500E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A202",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.08333333,
+          17.36666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DONGI",
+        "lat_dms": "174053N",
+        "lon_dms": "1063543E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A202",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.59527778,
+          17.68138889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NIVEN",
+        "lat_dms": "175304N",
+        "lon_dms": "1065544E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A202",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.92888889,
+          17.88444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XONUS",
+        "lat_dms": "180412N",
+        "lon_dms": "1071359E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A202",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.23305556,
+          18.07
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASSAD (3)",
+        "lat_dms": "182028N",
+        "lon_dms": "1074053E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A202",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68138889,
+          18.34111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NALAO (2)",
+        "lat_dms": "191927N",
+        "lon_dms": "1035535E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A206",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.92638889,
+          19.32416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VINH DVOR/DME (VIN)",
+        "lat_dms": "184403N",
+        "lon_dms": "1054006E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A206",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.66833333,
+          18.73416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KADIM",
+        "lat_dms": "183908N",
+        "lon_dms": "1060552E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A206",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.09777778,
+          18.65222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BUVAN",
+        "lat_dms": "183323N",
+        "lon_dms": "1063521E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A206",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.58916667,
+          18.55638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HATIN",
+        "lat_dms": "182801N",
+        "lon_dms": "1070256E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "A206",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.04888889,
+          18.46694444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PLEIKU DVOR/DME (PLK)",
+        "lat_dms": "140022N",
+        "lon_dms": "1080128E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B202",
+        "first_page": 4,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.02444444,
+          14.00611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BOMPA (2)",
+        "lat_dms": "142000N",
+        "lon_dms": "1072400E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B202",
+        "first_page": 4,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4,
+          14.33333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NA SAN NDB (BQ)",
+        "lat_dms": "211254N",
+        "lon_dms": "1040217E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B214",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.03805556,
+          21.215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LADON (2)",
+        "lat_dms": "210613N",
+        "lon_dms": "1025801E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B214",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.96694444,
+          21.10361111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LAPON (2)",
+        "lat_dms": "204500N",
+        "lon_dms": "1042830E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B465",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.475,
+          20.75
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MOC CHAU NDB (MC)",
+        "lat_dms": "204941N",
+        "lon_dms": "1044201E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B465",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.70027778,
+          20.82805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NOI BAI DVOR/DME (NOB)",
+        "lat_dms": "211247N",
+        "lon_dms": "1055006E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B465",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.835,
+          21.21305556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DIEN BIEN DVOR/DME (DBN)",
+        "lat_dms": "212225N",
+        "lon_dms": "1030028E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "B468",
+        "first_page": 7,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.00777778,
+          21.37361111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHU CAT DVOR/DME (PCA)",
+        "lat_dms": "135726N",
+        "lon_dms": "1090234E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G221",
+        "first_page": 8,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.04277778,
+          13.95722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASUKU",
+        "lat_dms": "153626N",
+        "lon_dms": "1091439E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G221",
+        "first_page": 8,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.24416667,
+          15.60722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BUNTA (2)",
+        "lat_dms": "165000N",
+        "lon_dms": "1092342E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G221",
+        "first_page": 8,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.395,
+          16.83333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ANINA (2)",
+        "lat_dms": "135900N",
+        "lon_dms": "1072500E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G474",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.41666667,
+          13.98333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DADEN",
+        "lat_dms": "135958N",
+        "lon_dms": "1075037E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G474",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.84361111,
+          13.99944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC MUMGA",
+        "lat_dms": "140000N",
+        "lon_dms": "1080913E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "G474",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.15361111,
+          14.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VIMUT",
+        "lat_dms": "135745N",
+        "lon_dms": "1093117E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L628",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.52138889,
+          13.9625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VEPAM",
+        "lat_dms": "135800N",
+        "lon_dms": "1100000E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L628",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.0,
+          13.96666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DAMEL",
+        "lat_dms": "135842N",
+        "lon_dms": "1113036E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L628",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.51,
+          13.97833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MESOX",
+        "lat_dms": "135848N",
+        "lon_dms": "1130242E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L628",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.045,
+          13.98
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ARESI (2)",
+        "lat_dms": "135824N",
+        "lon_dms": "1142700E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L628",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.45,
+          13.97333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BITOD (2)",
+        "lat_dms": "071524N",
+        "lon_dms": "1040706E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L637",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.11833333,
+          7.25666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BIBAN",
+        "lat_dms": "083000N",
+        "lon_dms": "1050000E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L637",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0,
+          8.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ANHOA",
+        "lat_dms": "094714N",
+        "lon_dms": "1055430E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L637",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.90833333,
+          9.78722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BITIS",
+        "lat_dms": "101559N",
+        "lon_dms": "1061454E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L637",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.24833333,
+          10.26638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TAN SON NHAT DVOR/ DME (TSH)",
+        "lat_dms": "104906N",
+        "lon_dms": "1063902E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L637",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.65055556,
+          10.81833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AN LOC NDB (AC)",
+        "lat_dms": "105621N",
+        "lon_dms": "1071118E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18833333,
+          10.93916667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL265) LEDUP",
+        "lat_dms": "104633N",
+        "lon_dms": "1070849E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.14694444,
+          10.77583333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LOSON",
+        "lat_dms": "102936N",
+        "lon_dms": "1070432E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.07555556,
+          10.49333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BODOD",
+        "lat_dms": "093822N",
+        "lon_dms": "1065129E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.85805556,
+          9.63944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CON SON NDB (CN)",
+        "lat_dms": "084358N",
+        "lon_dms": "1063735E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.62638889,
+          8.73277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DUDIS (2)",
+        "lat_dms": "070000N",
+        "lon_dms": "1064836E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "L644",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.81,
+          7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BUON MA THUOT DVOR/ DME (BMT)",
+        "lat_dms": "123959N",
+        "lon_dms": "1080723E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M505",
+        "first_page": 13,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.12305556,
+          12.66638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MULAD",
+        "lat_dms": "123253N",
+        "lon_dms": "1073429E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M505",
+        "first_page": 13,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.57472222,
+          12.54805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CAN THO DVOR/DME (TRN)",
+        "lat_dms": "100500N",
+        "lon_dms": "1054220E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M510",
+        "first_page": 14,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.70555556,
+          10.08333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "POTIX",
+        "lat_dms": "101405N",
+        "lon_dms": "1053700E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M510",
+        "first_page": 14,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.61666667,
+          10.23472222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ATGAS",
+        "lat_dms": "102417N",
+        "lon_dms": "1053102E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M510",
+        "first_page": 14,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.51722222,
+          10.40472222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DADEM (2)",
+        "lat_dms": "105344N",
+        "lon_dms": "1051341E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M510",
+        "first_page": 14,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.22805556,
+          10.89555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IPRIX (2)",
+        "lat_dms": "070000N",
+        "lon_dms": "1040754E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M753",
+        "first_page": 15,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.13166667,
+          7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BITOD",
+        "lat_dms": "071524N",
+        "lon_dms": "1040706E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M753",
+        "first_page": 15,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.11833333,
+          7.25666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ADBOP",
+        "lat_dms": "083000N",
+        "lon_dms": "1040500E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M753",
+        "first_page": 15,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.08333333,
+          8.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHU QUOC DVOR/DME (PQU)",
+        "lat_dms": "100955N",
+        "lon_dms": "1040220E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M753",
+        "first_page": 15,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.03888889,
+          10.16527778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC OSOTA (3)",
+        "lat_dms": "103307N",
+        "lon_dms": "1041549E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M753",
+        "first_page": 15,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.26361111,
+          10.55194444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KISAN",
+        "lat_dms": "103220N",
+        "lon_dms": "1044030E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M755",
+        "first_page": 16,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.675,
+          10.53888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TUNPO",
+        "lat_dms": "100344N",
+        "lon_dms": "1043522E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M755",
+        "first_page": 16,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.58944444,
+          10.06222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PANDI (2)",
+        "lat_dms": "113806N",
+        "lon_dms": "1140000E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.0,
+          11.635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ALDAS",
+        "lat_dms": "105654N",
+        "lon_dms": "1121218E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.205,
+          10.94833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MAPNO",
+        "lat_dms": "101306N",
+        "lon_dms": "1102006E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.335,
+          10.21833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SAMAP",
+        "lat_dms": "094718N",
+        "lon_dms": "1091509E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2525,
+          9.78833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DAGAG",
+        "lat_dms": "092748N",
+        "lon_dms": "1082630E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.44166667,
+          9.46333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VIGEN",
+        "lat_dms": "075944N",
+        "lon_dms": "1052210E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.36944444,
+          7.99555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IGARI (3)",
+        "lat_dms": "065612N",
+        "lon_dms": "1033506E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M765",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.585,
+          6.93666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AKMON (2)",
+        "lat_dms": "081254N",
+        "lon_dms": "1101306E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M768",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.21833333,
+          8.215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MOXON",
+        "lat_dms": "084930N",
+        "lon_dms": "1092118E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M768",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.355,
+          8.825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ELSAS",
+        "lat_dms": "100812N",
+        "lon_dms": "1073254E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M768",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.54833333,
+          10.13666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASEBO",
+        "lat_dms": "101954N",
+        "lon_dms": "1071724E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "M768",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.29,
+          10.33166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BUKMA",
+        "lat_dms": "105050N",
+        "lon_dms": "1070151E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.03083333,
+          10.84722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MATGI",
+        "lat_dms": "105344N",
+        "lon_dms": "1073848E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64666667,
+          10.89555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHAN THIET VOR/DME (PTH)",
+        "lat_dms": "105541N",
+        "lon_dms": "1080419E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.07194444,
+          10.92805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AGSIS",
+        "lat_dms": "110119N",
+        "lon_dms": "1084952E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.83111111,
+          11.02194444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DAMVO",
+        "lat_dms": "110630N",
+        "lon_dms": "1093242E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.545,
+          11.10833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MIMUX",
+        "lat_dms": "111818N",
+        "lon_dms": "1110612E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.10333333,
+          11.305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AGSAM",
+        "lat_dms": "112818N",
+        "lon_dms": "1123518E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N500",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.58833333,
+          11.47166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XONAN (2)",
+        "lat_dms": "091442N",
+        "lon_dms": "1025018E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N891",
+        "first_page": 20,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.83833333,
+          9.245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SAMOG",
+        "lat_dms": "080006N",
+        "lon_dms": "1031424E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "N891",
+        "first_page": 20,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.24,
+          8.00166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ITBAM",
+        "lat_dms": "164000N",
+        "lon_dms": "1093606E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "P901",
+        "first_page": 21,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.60166667,
+          16.66666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CAM RANH DVOR/DME (CRA)",
+        "lat_dms": "115940N",
+        "lon_dms": "1091312E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q15",
+        "first_page": 22,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.22,
+          11.99444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL265) ATVIT",
+        "lat_dms": "120826N",
+        "lon_dms": "1092946E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q15",
+        "first_page": 22,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.49611111,
+          12.14055556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NITOM",
+        "lat_dms": "124431N",
+        "lon_dms": "1103825E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q15",
+        "first_page": 22,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.64027778,
+          12.74194444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MESOX (2)",
+        "lat_dms": "135848N",
+        "lon_dms": "1130242E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q15",
+        "first_page": 22,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.045,
+          13.98
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHU BAI DVOR/DME (HUE)",
+        "lat_dms": "162408N",
+        "lon_dms": "1074206E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R328",
+        "first_page": 23,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.70166667,
+          16.40222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TORED (2)",
+        "lat_dms": "162749N",
+        "lon_dms": "1064032E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R328",
+        "first_page": 23,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.67555556,
+          16.46361111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NUMDI (2)",
+        "lat_dms": "102643N",
+        "lon_dms": "1034635E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R334",
+        "first_page": 24,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.77638889,
+          10.44527778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SAPEN (2) (3)",
+        "lat_dms": "110112N",
+        "lon_dms": "1061100E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R468",
+        "first_page": 26,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.18333333,
+          11.02
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MOXEB",
+        "lat_dms": "105358N",
+        "lon_dms": "1062746E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R468",
+        "first_page": 26,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.46277778,
+          10.89944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NAKHA",
+        "lat_dms": "215800N",
+        "lon_dms": "1062936E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R471",
+        "first_page": 27,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.49333333,
+          21.96666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DENMO",
+        "lat_dms": "220230N",
+        "lon_dms": "1062452E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R471",
+        "first_page": 27,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.41444444,
+          22.04166667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MEOVA",
+        "lat_dms": "230654N",
+        "lon_dms": "1051836E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R471",
+        "first_page": 27,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.31,
+          23.115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KATBO (2)",
+        "lat_dms": "232136N",
+        "lon_dms": "1051730E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R471",
+        "first_page": 27,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.29166667,
+          23.36
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LAVOS (2)",
+        "lat_dms": "202605N",
+        "lon_dms": "1042350E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R474",
+        "first_page": 28,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.39722222,
+          20.43472222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TEBAK (3)",
+        "lat_dms": "221030N",
+        "lon_dms": "1064030E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R474",
+        "first_page": 28,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.675,
+          22.175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PAPRA",
+        "lat_dms": "154600N",
+        "lon_dms": "1071100E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R575",
+        "first_page": 29,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18333333,
+          15.76666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LAVAN (2)",
+        "lat_dms": "141030N",
+        "lon_dms": "1054130E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R575",
+        "first_page": 29,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.69166667,
+          14.175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "GONLY (2)",
+        "lat_dms": "134000N",
+        "lon_dms": "1073000E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "R588",
+        "first_page": 30,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5,
+          13.66666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LOVBI",
+        "lat_dms": "204434N",
+        "lon_dms": "1055948E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.99666667,
+          20.74277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NAM HA DVOR/DME (NAH)",
+        "lat_dms": "202314N",
+        "lon_dms": "1060704E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.11777778,
+          20.38722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MAREL",
+        "lat_dms": "191341N",
+        "lon_dms": "1064137E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.69361111,
+          19.22805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VIDAD",
+        "lat_dms": "185052N",
+        "lon_dms": "1065218E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.87166667,
+          18.84777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HAMIN",
+        "lat_dms": "170747N",
+        "lon_dms": "1074040E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67777778,
+          17.12972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHULU",
+        "lat_dms": "164141N",
+        "lon_dms": "1075319E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.88861111,
+          16.69472222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CAHEO",
+        "lat_dms": "163211N",
+        "lon_dms": "1075755E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.96527778,
+          16.53638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VILOT",
+        "lat_dms": "150219N",
+        "lon_dms": "1080642E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 31,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.11166667,
+          15.03861111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XAQUA",
+        "lat_dms": "145510N",
+        "lon_dms": "1080606E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 32,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.10166667,
+          14.91944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MEVON",
+        "lat_dms": "132011N",
+        "lon_dms": "1080427E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 32,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.07416667,
+          13.33638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ENRIN",
+        "lat_dms": "111127N",
+        "lon_dms": "1071926E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 32,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.32388889,
+          11.19083333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ESDOB",
+        "lat_dms": "105319N",
+        "lon_dms": "1065750E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W1",
+        "first_page": 32,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.96388889,
+          10.88861111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KAMSU",
+        "lat_dms": "181513N",
+        "lon_dms": "1060536E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 33,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.09333333,
+          18.25361111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KONCO",
+        "lat_dms": "170000N",
+        "lon_dms": "1071113E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 33,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18694444,
+          17.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BIGBO",
+        "lat_dms": "162919N",
+        "lon_dms": "1073738E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 33,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62722222,
+          16.48861111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CHU LAI NDB (CQ)",
+        "lat_dms": "152444N",
+        "lon_dms": "1084216E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 33,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.70444444,
+          15.41222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KUMUN",
+        "lat_dms": "145817N",
+        "lon_dms": "1084827E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 33,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8075,
+          14.97138889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KAMGO",
+        "lat_dms": "131715N",
+        "lon_dms": "1090605E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 34,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.10138889,
+          13.2875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KARAN",
+        "lat_dms": "123856N",
+        "lon_dms": "1090924E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 34,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.15666667,
+          12.64888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NHATA",
+        "lat_dms": "121335N",
+        "lon_dms": "1091204E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 34,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.20111111,
+          12.22638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IBUNU",
+        "lat_dms": "114008N",
+        "lon_dms": "1085205E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 34,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.86805556,
+          11.66888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VEPMA",
+        "lat_dms": "105600N",
+        "lon_dms": "1074018E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W2",
+        "first_page": 34,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67166667,
+          10.93333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "132.300 MHz PHUTA",
+        "lat_dms": "205547N",
+        "lon_dms": "1062738E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W3",
+        "first_page": 35,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.46055556,
+          20.92972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CAT BI DVOR/DME (CBI)",
+        "lat_dms": "204856N",
+        "lon_dms": "1064328E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W3",
+        "first_page": 35,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.72444444,
+          20.81555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "GIA LAM NDB (AM)",
+        "lat_dms": "205920N",
+        "lon_dms": "1055141E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W4",
+        "first_page": 36,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.86138889,
+          20.98888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UPVAN",
+        "lat_dms": "205532N",
+        "lon_dms": "1052331E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W4",
+        "first_page": 36,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.39194444,
+          20.92555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LIEN KHUONG DVOR/DME (LKH)",
+        "lat_dms": "114515N",
+        "lon_dms": "1082119E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W7",
+        "first_page": 39,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.35527778,
+          11.75416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL265) ONEBI",
+        "lat_dms": "115617N",
+        "lon_dms": "1081831E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W7",
+        "first_page": 39,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.30861111,
+          11.93805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RACH GIA NDB (RG)",
+        "lat_dms": "095734N",
+        "lon_dms": "1050759E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W8",
+        "first_page": 40,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.13305556,
+          9.95944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XOBAV",
+        "lat_dms": "100825N",
+        "lon_dms": "1063833E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W9",
+        "first_page": 41,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6425,
+          10.14027778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NIXIV",
+        "lat_dms": "092336N",
+        "lon_dms": "1063802E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W9",
+        "first_page": 41,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.63388889,
+          9.39333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ASSAD",
+        "lat_dms": "182028N",
+        "lon_dms": "1074053E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W10",
+        "first_page": 42,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68138889,
+          18.34111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BALOV",
+        "lat_dms": "200747N",
+        "lon_dms": "1074231E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W10",
+        "first_page": 42,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.70861111,
+          20.12972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BANSU",
+        "lat_dms": "141710N",
+        "lon_dms": "1080935E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W11",
+        "first_page": 43,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.15972222,
+          14.28611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NOBID",
+        "lat_dms": "131844N",
+        "lon_dms": "1083455E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W12",
+        "first_page": 44,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.58194444,
+          13.31222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PATMA",
+        "lat_dms": "122011N",
+        "lon_dms": "1074836E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W12",
+        "first_page": 44,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.81,
+          12.33638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DONXO",
+        "lat_dms": "112524N",
+        "lon_dms": "1065706E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W12",
+        "first_page": 44,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.95166667,
+          11.42333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RUNOP",
+        "lat_dms": "110517N",
+        "lon_dms": "1063818E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W12",
+        "first_page": 44,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.63833333,
+          11.08805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NOTHA",
+        "lat_dms": "203401N",
+        "lon_dms": "1053244E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W14",
+        "first_page": 45,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.54555556,
+          20.56694444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL265) VETOM",
+        "lat_dms": "111359N",
+        "lon_dms": "1073627E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W15",
+        "first_page": 46,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6075,
+          11.23305556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SOSPA",
+        "lat_dms": "115002N",
+        "lon_dms": "1083827E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W15",
+        "first_page": 46,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.64083333,
+          11.83388889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ENPAS",
+        "lat_dms": "102359N",
+        "lon_dms": "1060641E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W16",
+        "first_page": 47,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.11138889,
+          10.39972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CA MAU NDB (QL)",
+        "lat_dms": "091034N",
+        "lon_dms": "1051036E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W18",
+        "first_page": 49,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.17666667,
+          9.17611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VUNG TAU DVOR/DME (VTV)",
+        "lat_dms": "102222N",
+        "lon_dms": "1070540E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W19",
+        "first_page": 50,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.09444444,
+          10.37277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TULTU",
+        "lat_dms": "094059N",
+        "lon_dms": "1065352E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W19",
+        "first_page": 50,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.89777778,
+          9.68305556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LITAM",
+        "lat_dms": "085937N",
+        "lon_dms": "1064206E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W19",
+        "first_page": 50,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.70166667,
+          8.99361111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VANUC",
+        "lat_dms": "203259N",
+        "lon_dms": "1064318E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W20",
+        "first_page": 51,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.72166667,
+          20.54972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HUVAN",
+        "lat_dms": "211230N",
+        "lon_dms": "1050641E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W21",
+        "first_page": 52,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.11138889,
+          21.20833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VINH PHUC DVOR/DME (VPH)",
+        "lat_dms": "211634N",
+        "lon_dms": "1053604E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W22",
+        "first_page": 53,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.60111111,
+          21.27611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VEPKI",
+        "lat_dms": "090621N",
+        "lon_dms": "1062225E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W23",
+        "first_page": 54,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.37361111,
+          9.10583333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC CONDA",
+        "lat_dms": "085726N",
+        "lon_dms": "1062829E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W23",
+        "first_page": 54,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.47472222,
+          8.95722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "THO XUAN NDB (CB)",
+        "lat_dms": "195154N",
+        "lon_dms": "1053107E",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "first_route": "W24",
+        "first_page": 55,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.51861111,
+          19.865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UDOSI",
+        "lat_dms": "093249N",
+        "lon_dms": "1111053E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L625",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.18138889,
+          9.54694444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ANOKI",
+        "lat_dms": "122200N",
+        "lon_dms": "1131500E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L625",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.25,
+          12.36666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ARESI (3)",
+        "lat_dms": "135824N",
+        "lon_dms": "1142700E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L625",
+        "first_page": 1,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.45,
+          13.97333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL400. EGEMU (2)",
+        "lat_dms": "170000N",
+        "lon_dms": "1121700E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.28333333,
+          17.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "EXOTO",
+        "lat_dms": "152130N",
+        "lon_dms": "1110300E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.05,
+          15.35833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC. VEPAM",
+        "lat_dms": "135800N",
+        "lon_dms": "1100000E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.0,
+          13.96666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PHAN THIET CVOR/DME (PTH)",
+        "lat_dms": "105541N",
+        "lon_dms": "1080419E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.07194444,
+          10.92805556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RUTIT",
+        "lat_dms": "102715N",
+        "lon_dms": "1074527E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 2,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.7575,
+          10.45416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ESPOB (3)",
+        "lat_dms": "070000N",
+        "lon_dms": "1053318E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L642",
+        "first_page": 3,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.555,
+          7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TAN SON NHAT DVOR/DME (TSH)",
+        "lat_dms": "104906N",
+        "lon_dms": "1063902E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "L643",
+        "first_page": 4,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.65055556,
+          10.81833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FL360, FL390, FL400. DUDIS (2)",
+        "lat_dms": "070000N",
+        "lon_dms": "1064836E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "M771",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.81,
+          7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SUDUN",
+        "lat_dms": "095934N",
+        "lon_dms": "1084744E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "M771",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.79555556,
+          9.99277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DOXAR",
+        "lat_dms": "122200N",
+        "lon_dms": "1102242E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "M771",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.37833333,
+          12.36666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DONDA (3)",
+        "lat_dms": "144212N",
+        "lon_dms": "1120118E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "M771",
+        "first_page": 5,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.02166667,
+          14.70333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BIVIM",
+        "lat_dms": "193034N",
+        "lon_dms": "1060628E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N639",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.10777778,
+          19.50944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BESKI",
+        "lat_dms": "185655N",
+        "lon_dms": "1060605E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N639",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.10138889,
+          18.94861111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC KADIM",
+        "lat_dms": "183908N",
+        "lon_dms": "1060552E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N639",
+        "first_page": 6,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.09777778,
+          18.65222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MIGUG",
+        "lat_dms": "151624N",
+        "lon_dms": "1140000E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N892",
+        "first_page": 7,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.0,
+          15.27333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MUGAN",
+        "lat_dms": "122200N",
+        "lon_dms": "1115218E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N892",
+        "first_page": 7,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.87166667,
+          12.36666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "OSIXA",
+        "lat_dms": "093120N",
+        "lon_dms": "1095038E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N892",
+        "first_page": 7,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.84388889,
+          9.52222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MELAS (2)",
+        "lat_dms": "070518N",
+        "lon_dms": "1080912E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "N892",
+        "first_page": 7,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.15333333,
+          7.08833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC NAM HA DVOR/DME (NAH)",
+        "lat_dms": "202314N",
+        "lon_dms": "1060704E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 8,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.11777778,
+          20.38722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC HATIN",
+        "lat_dms": "182801N",
+        "lon_dms": "1070256E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.04888889,
+          18.46694444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM CAHEO",
+        "lat_dms": "163211N",
+        "lon_dms": "1075755E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.96527778,
+          16.53638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM DA NANG DVOR/DME (DAN)",
+        "lat_dms": "160310N",
+        "lon_dms": "1081154E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.19833333,
+          16.05277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SADIN",
+        "lat_dms": "150448N",
+        "lon_dms": "1081038E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.17722222,
+          15.08
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MUMGA",
+        "lat_dms": "140000N",
+        "lon_dms": "1080913E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 9,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.15361111,
+          14.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ENGIM",
+        "lat_dms": "132026N",
+        "lon_dms": "1080821E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.13916667,
+          13.34055556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM DOVIN",
+        "lat_dms": "115501N",
+        "lon_dms": "1080629E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.10805556,
+          11.91694444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM AN LOC NDB (AC)",
+        "lat_dms": "105621N",
+        "lon_dms": "1071118E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q1",
+        "first_page": 10,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18833333,
+          10.93916667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KADUM",
+        "lat_dms": "112126N",
+        "lon_dms": "1070334E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.05944444,
+          11.35722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "W12) SADAS",
+        "lat_dms": "131912N",
+        "lon_dms": "1074946E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.82944444,
+          13.32
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM DADEN",
+        "lat_dms": "135958N",
+        "lon_dms": "1075037E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.84361111,
+          13.99944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LATOM",
+        "lat_dms": "145246N",
+        "lon_dms": "1075037E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.84361111,
+          14.87944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Noi ACC PATNO",
+        "lat_dms": "155754N",
+        "lon_dms": "1075306E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 11,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.885,
+          15.965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TRABE",
+        "lat_dms": "165345N",
+        "lon_dms": "1072537E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.42694444,
+          16.89583333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM VIDEN",
+        "lat_dms": "170114N",
+        "lon_dms": "1072156E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.36555556,
+          17.02055556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC NIVEN",
+        "lat_dms": "175304N",
+        "lon_dms": "1065544E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.92888889,
+          17.88444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MIBAM",
+        "lat_dms": "185426N",
+        "lon_dms": "1062443E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.41194444,
+          18.90722222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC BIVIM",
+        "lat_dms": "193034N",
+        "lon_dms": "1060628E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.10777778,
+          19.50944444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BISON",
+        "lat_dms": "202600N",
+        "lon_dms": "1053830E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.64166667,
+          20.43333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 5 NM XIVIN",
+        "lat_dms": "203434N",
+        "lon_dms": "1053407E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.56861111,
+          20.57611111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACC UPVAN",
+        "lat_dms": "205532N",
+        "lon_dms": "1052331E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q2",
+        "first_page": 12,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.39194444,
+          20.92555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DADIN",
+        "lat_dms": "205003N",
+        "lon_dms": "1061323E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q3",
+        "first_page": 13,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.22305556,
+          20.83416667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SATNO",
+        "lat_dms": "185242N",
+        "lon_dms": "1063821E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q4",
+        "first_page": 14,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.63916667,
+          18.87833333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TATIM",
+        "lat_dms": "145850N",
+        "lon_dms": "1080111E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q6",
+        "first_page": 16,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.01972222,
+          14.98055556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PATNO (2)",
+        "lat_dms": "155754N",
+        "lon_dms": "1075306E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q6",
+        "first_page": 16,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.885,
+          15.965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SADAS",
+        "lat_dms": "131912N",
+        "lon_dms": "1074946E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q7",
+        "first_page": 17,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.82944444,
+          13.32
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "600 M. VAN DON DVOR/DME (VDO)",
+        "lat_dms": "210424N",
+        "lon_dms": "1072324E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q10",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.39,
+          21.07333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 2 NM LOCHA",
+        "lat_dms": "203924N",
+        "lon_dms": "1065713E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q10",
+        "first_page": 18,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.95361111,
+          20.65666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "+/- 2 NM VAN DON DVOR/DME (VDO)",
+        "lat_dms": "210424N",
+        "lon_dms": "1072324E",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "first_route": "Q11",
+        "first_page": 19,
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.39,
+          21.07333333
+        ]
+      }
+    }
+  ]
+}

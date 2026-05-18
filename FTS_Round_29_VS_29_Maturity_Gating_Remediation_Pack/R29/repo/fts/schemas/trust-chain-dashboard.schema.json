@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "cards": {
+      "type": "array"
+    },
+    "dashboard_id": {
+      "type": "string"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "dashboard_id",
+    "cards",
+    "watermark"
+  ],
+  "type": "object"
+}

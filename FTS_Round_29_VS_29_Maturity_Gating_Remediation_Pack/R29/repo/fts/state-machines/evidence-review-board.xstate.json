@@ -1,0 +1,24 @@
+{
+  "id": "evidence-review-board",
+  "initial": "DENIED",
+  "states": {
+    "APPROVED_FOR_LIMITED_SCOPE": {
+      "type": "final"
+    },
+    "DENIED": {
+      "on": {
+        "SUBMIT_VALID_METADATA": "PENDING_REVIEW"
+      }
+    },
+    "PENDING_REVIEW": {
+      "on": {
+        "APPROVE_LIMITED_SCOPE": "APPROVED_FOR_LIMITED_SCOPE",
+        "REJECT": "REJECTED"
+      }
+    },
+    "REJECTED": {
+      "type": "final"
+    }
+  },
+  "watermark": "Decision-support / Non-operational"
+}

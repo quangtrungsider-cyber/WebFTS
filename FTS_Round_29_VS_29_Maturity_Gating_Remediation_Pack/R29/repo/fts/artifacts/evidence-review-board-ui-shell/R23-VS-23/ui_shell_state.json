@@ -1,0 +1,706 @@
+{
+  "round": "R23-VS-23",
+  "version": "VS-23",
+  "watermark": "Decision-support / Non-operational",
+  "purpose": "Frontend-facing Evidence Review Board Workbench with operator-safe triage, quarantine action ledger, scoped approval packet builder, and traceable non-operational handoff.",
+  "labels": {
+    "vi": {
+      "title": "Bàn làm việc Hội đồng rà soát bằng chứng",
+      "queue": "Hàng chờ rà soát",
+      "trust": "Chuỗi tin cậy",
+      "quarantine": "Cách ly",
+      "handoff": "Bàn giao phê duyệt phạm vi hẹp",
+      "notes": "Ghi chú người rà soát",
+      "audit": "Truy vết kiểm toán",
+      "manifest": "Manifest đối tượng",
+      "watermark": "Decision-support / Non-operational",
+      "not_ready": "Chưa đủ điều kiện sẵn sàng",
+      "packet": "Gói bàn giao",
+      "ledger": "Sổ thao tác",
+      "scope": "Phạm vi",
+      "risk": "Rủi ro"
+    },
+    "en": {
+      "title": "Evidence Review Board Workbench",
+      "queue": "Review queue",
+      "trust": "Trust chain",
+      "quarantine": "Quarantine",
+      "handoff": "Limited-scope approval handoff",
+      "notes": "Reviewer notes",
+      "audit": "Audit drilldown",
+      "manifest": "Object manifest",
+      "watermark": "Decision-support / Non-operational",
+      "not_ready": "Not readiness eligible",
+      "packet": "Handoff packet",
+      "ledger": "Operation ledger",
+      "scope": "Scope",
+      "risk": "Risk"
+    }
+  },
+  "claim_guard": {
+    "evidence_valid": false,
+    "trust_chain_valid": false,
+    "scope_valid": false,
+    "quarantine_clear": false,
+    "approval_signed": false,
+    "readiness_claim_allowed": false,
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "gate_formula": "evidence_valid AND trust_chain_valid AND scope_valid AND quarantine_clear AND approval_signed",
+    "ui_message_vi": "Chỉ hỗ trợ quyết định; không vận hành. Không được hiển thị hoặc xuất nội dung claim sẵn sàng khi thiếu bằng chứng/chuỗi tin cậy/phạm vi hợp lệ.",
+    "ui_message_en": "Decision-support only; non-operational. Readiness claims are blocked unless evidence, trust chain, valid scope, quarantine clearance and approval signatures exist."
+  },
+  "workbench_filters": [
+    {
+      "filter_id": "flt-open-high-risk",
+      "label_vi": "Mở / rủi ro cao",
+      "label_en": "Open / high-risk",
+      "expression": "status!=CLOSED AND risk_level in [HIGH,CRITICAL]"
+    },
+    {
+      "filter_id": "flt-quarantine",
+      "label_vi": "Có mục cách ly",
+      "label_en": "Has quarantine",
+      "expression": "quarantined_count > 0"
+    },
+    {
+      "filter_id": "flt-trust-pending",
+      "label_vi": "Chuỗi tin cậy chờ xác minh",
+      "label_en": "Trust chain pending",
+      "expression": "trust_chain_valid == false"
+    },
+    {
+      "filter_id": "flt-scope-limited",
+      "label_vi": "Chỉ phạm vi giới hạn",
+      "label_en": "Limited scope only",
+      "expression": "scope contains CONTROLLED_LAB"
+    },
+    {
+      "id": "filter-approval-risk",
+      "label_vi": "Rủi ro phê duyệt",
+      "label_en": "Approval risk",
+      "values": [
+        "missing-evidence",
+        "scope-gap",
+        "quarantine-open",
+        "sod-block"
+      ]
+    }
+  ],
+  "review_queue": [
+    {
+      "case_id": "ERB-2026-0001",
+      "priority": "P0",
+      "status": "BLOCKED_BY_QUARANTINE",
+      "assigned_role": "domain_reviewer",
+      "language": "vi/en",
+      "trust_score": 0.72,
+      "scope_status": "LIMITED_SCOPE_ONLY",
+      "readiness_badge": "NOT_READY",
+      "drilldowns": [
+        "audit:evt-0005",
+        "manifest:obj:trust_chain_dashboard.json"
+      ]
+    },
+    {
+      "case_id": "ERB-2026-0002",
+      "priority": "P1",
+      "status": "NEEDS_REVIEWER_NOTE",
+      "assigned_role": "safety_reviewer",
+      "language": "vi/en",
+      "trust_score": 0.64,
+      "scope_status": "SCOPE_AMBIGUOUS",
+      "readiness_badge": "NOT_READY",
+      "drilldowns": [
+        "audit:evt-0003",
+        "manifest:obj:object_manifest.json"
+      ]
+    }
+  ],
+  "review_workflow_lanes": [
+    {
+      "lane_id": "lane-intake",
+      "label_vi": "Tiếp nhận",
+      "label_en": "Intake",
+      "allowed_roles": [
+        "reviewer",
+        "board_secretary"
+      ],
+      "exit_criteria": [
+        "schema_valid",
+        "watermark_present",
+        "object_manifest_linked"
+      ]
+    },
+    {
+      "lane_id": "lane-trust",
+      "label_vi": "Xác minh chuỗi tin cậy",
+      "label_en": "Trust-chain verification",
+      "allowed_roles": [
+        "trust_reviewer",
+        "security_reviewer"
+      ],
+      "exit_criteria": [
+        "issuer_checked",
+        "audit_anchor_checked",
+        "signature_metadata_reviewed"
+      ]
+    },
+    {
+      "lane_id": "lane-quarantine",
+      "label_vi": "Xử lý cách ly",
+      "label_en": "Quarantine handling",
+      "allowed_roles": [
+        "security_reviewer",
+        "board_chair"
+      ],
+      "exit_criteria": [
+        "disposition_selected",
+        "forbidden_readiness_actions_blocked",
+        "reviewer_note_required"
+      ]
+    },
+    {
+      "lane_id": "lane-scope-handoff",
+      "label_vi": "Bàn giao phê duyệt phạm vi",
+      "label_en": "Scoped approval handoff",
+      "allowed_roles": [
+        "board_chair",
+        "approver"
+      ],
+      "exit_criteria": [
+        "scope_boundaries_acknowledged",
+        "limitations_acknowledged",
+        "no_readiness_claim_acknowledged"
+      ]
+    }
+  ],
+  "trust_chain_cards": [
+    {
+      "card_hash_sha256": "12911e4a1dc5d0fb814e3f04943196c1fd7102256b2efc5cb7b669784ce71f6d",
+      "dependency_family": "renderer-runtime",
+      "evidence_id": "R20-EVID-01",
+      "issuer_id": "issuer-renderer-runtime",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-renderer-runtime",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational",
+      "ui_card_id": "R21-CARD-01",
+      "action": "DRILLDOWN_TO_AUDIT",
+      "audit_anchor": "R21-AUDIT-01",
+      "object_manifest_anchor": "obj:R20-EVID-01",
+      "readiness_claim_allowed": false
+    },
+    {
+      "card_hash_sha256": "99141c7ff505de77d923aff6ae5f30abbd0a6c0944d3989ded4d393722fd8e2b",
+      "dependency_family": "pdfa-validator",
+      "evidence_id": "R20-EVID-02",
+      "issuer_id": "issuer-pdfa-validator",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-pdfa-validator",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational",
+      "ui_card_id": "R21-CARD-02",
+      "action": "DRILLDOWN_TO_AUDIT",
+      "audit_anchor": "R21-AUDIT-02",
+      "object_manifest_anchor": "obj:R20-EVID-02",
+      "readiness_claim_allowed": false
+    },
+    {
+      "card_hash_sha256": "633f4e20f74bec22986469df3ef7265565c9868f16ed2229d98785a6d803dc16",
+      "dependency_family": "pades-pki-tsa-ocsp-hsm",
+      "evidence_id": "R20-EVID-03",
+      "issuer_id": "issuer-pades-pki-tsa-ocsp-hsm",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-pades-pki-tsa-ocsp-hsm",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational",
+      "ui_card_id": "R21-CARD-03",
+      "action": "DRILLDOWN_TO_AUDIT",
+      "audit_anchor": "R21-AUDIT-03",
+      "object_manifest_anchor": "obj:R20-EVID-03",
+      "readiness_claim_allowed": false
+    },
+    {
+      "card_hash_sha256": "c3f598fcf1b6de1af415d51a51cb867c1d8c70d4ad83d27c3c4913d61d917ef7",
+      "dependency_family": "minio-object-lock-worm",
+      "evidence_id": "R20-EVID-04",
+      "issuer_id": "issuer-minio-object-lock-worm",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-minio-object-lock-worm",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational",
+      "ui_card_id": "R21-CARD-04",
+      "action": "DRILLDOWN_TO_AUDIT",
+      "audit_anchor": "R21-AUDIT-04",
+      "object_manifest_anchor": "obj:R20-EVID-04",
+      "readiness_claim_allowed": false
+    },
+    {
+      "card_hash_sha256": "e6f40e66cdc57ce2786f7e84b3568e343005419ac9ed3fafa5cf0b461aa88059",
+      "dependency_family": "rabbitmq-worker-runtime",
+      "evidence_id": "R20-EVID-05",
+      "issuer_id": "issuer-rabbitmq-worker-runtime",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-rabbitmq-worker-runtime",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational",
+      "ui_card_id": "R21-CARD-05",
+      "action": "DRILLDOWN_TO_AUDIT",
+      "audit_anchor": "R21-AUDIT-05",
+      "object_manifest_anchor": "obj:R20-EVID-05",
+      "readiness_claim_allowed": false
+    }
+  ],
+  "trust_chain_dashboard_cards": [
+    {
+      "card_id": "trust-integrity",
+      "title_vi": "Tính toàn vẹn hash",
+      "title_en": "Hash integrity",
+      "status": "PASS_WITH_LIMITATIONS",
+      "details": "Terminal hash verified for imported R20 chain; new reviewer UI actions append local ledger entries only."
+    },
+    {
+      "card_id": "trust-custody",
+      "title_vi": "Chuỗi lưu giữ",
+      "title_en": "Chain of custody",
+      "status": "REVIEW_REQUIRED",
+      "details": "Previous-case relationship visible; handoff remains scoped and non-operational."
+    },
+    {
+      "card_id": "trust-scope",
+      "title_vi": "Ràng buộc phạm vi",
+      "title_en": "Scope constraints",
+      "status": "BLOCKS_READINESS",
+      "details": "Limited-scope approval packet cannot be promoted to operational readiness."
+    }
+  ],
+  "quarantine_operations": [
+    {
+      "dependency_family": "pades-pki-tsa-ocsp-hsm",
+      "disposition": "BLOCK_READINESS_ESCALATION",
+      "evidence_id": "R20-EVID-X-SCOPE-MISMATCH",
+      "quarantine_id": "R20-QUARANTINE-01",
+      "reason": "SCOPE_MISMATCH_OR_UNTRUSTED_CHAIN",
+      "record_hash_sha256": "6ddddd85487d9cc37247b15398258859a727a09a37ed09e9783b094ff97bc3a8",
+      "ui_actions": [
+        "view_reason",
+        "assign_reviewer",
+        "request_rework",
+        "keep_quarantined"
+      ],
+      "allowed_dispositions": [
+        "KEEP_QUARANTINED",
+        "REQUEST_REWORK",
+        "REJECT_EVIDENCE"
+      ],
+      "forbidden_dispositions": [
+        "MARK_READY",
+        "PRODUCTION_READY",
+        "OPERATIONAL_READY"
+      ],
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "quarantine_action_ledger": [
+    {
+      "ledger_id": "qled-001",
+      "artifact_id": "artifact:macro-suspect-docx",
+      "operation": "HOLD_AND_REQUEST_CLEAN_SOURCE",
+      "actor_role": "security_reviewer",
+      "requires_note": true,
+      "changes_readiness": false,
+      "forbidden": [
+        "MARK_READY",
+        "DELETE_SOURCE",
+        "OVERWRITE_HASH"
+      ]
+    },
+    {
+      "ledger_id": "qled-002",
+      "artifact_id": "artifact:airac-mismatch",
+      "operation": "ESCALATE_TO_DATA_GOVERNANCE",
+      "actor_role": "data_governance_reviewer",
+      "requires_note": true,
+      "changes_readiness": false,
+      "forbidden": [
+        "SILENT_OVERRIDE",
+        "CLAIM_READY"
+      ]
+    }
+  ],
+  "handoff_packet_builder": {
+    "packet_id": "LSA-R23-DRAFT",
+    "status": "DRAFT_BLOCKED",
+    "required_sections": [
+      "evidence_manifest",
+      "trust_chain_summary",
+      "scope_boundary",
+      "open_quarantine_items",
+      "reviewer_notes",
+      "approval_limitations"
+    ],
+    "disabled_exports": [
+      "production_readiness_certificate",
+      "operational_release_note"
+    ],
+    "allowed_export": "limited_scope_decision_support_packet",
+    "watermark": "Decision-support / Non-operational"
+  },
+  "reviewer_notes": [
+    {
+      "note_id": "R21-NOTE-01",
+      "case_id": "R21-REVIEW-BOARD-CASE-01",
+      "author_role": "security_evidence_reviewer",
+      "visibility": "review_board_only",
+      "content_vi": "Chỉ xem xét metadata trong phạm vi phòng lab kiểm soát; chưa đủ căn cứ readiness.",
+      "content_en": "Metadata-only review in controlled-lab scope; readiness is not claimable.",
+      "linked_object_id": "obj:trust_chain_dashboard.json",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "reviewer_note_templates": [
+    {
+      "template_id": "note-evidence-gap",
+      "title_vi": "Khoảng trống bằng chứng",
+      "title_en": "Evidence gap",
+      "required_fields": [
+        "finding",
+        "missing_evidence",
+        "impact",
+        "next_action"
+      ]
+    },
+    {
+      "template_id": "note-scope-limit",
+      "title_vi": "Giới hạn phạm vi",
+      "title_en": "Scope limitation",
+      "required_fields": [
+        "allowed_scope",
+        "not_allowed",
+        "rationale",
+        "expiry_or_review_trigger"
+      ]
+    },
+    {
+      "template_id": "note-quarantine",
+      "title_vi": "Ghi chú cách ly",
+      "title_en": "Quarantine note",
+      "required_fields": [
+        "artifact",
+        "reason",
+        "disposition",
+        "reviewer"
+      ]
+    }
+  ],
+  "scope_matrix": [
+    {
+      "capability": "Review queue UI",
+      "allowed": true,
+      "scope": "synthetic controlled lab metadata review",
+      "not_allowed": [
+        "production release claim",
+        "operational decision use"
+      ]
+    },
+    {
+      "capability": "Trust-chain dashboard",
+      "allowed": true,
+      "scope": "display verification state and audit anchors",
+      "not_allowed": [
+        "auto-trust promotion",
+        "bypass reviewer note",
+        "operational readiness claim"
+      ]
+    },
+    {
+      "capability": "Quarantine operations",
+      "allowed": true,
+      "scope": "block readiness, record disposition, require notes",
+      "not_allowed": [
+        "delete evidence",
+        "mark ready"
+      ]
+    },
+    {
+      "capability": "Scoped approval handoff",
+      "allowed": true,
+      "scope": "limited-scope handoff only",
+      "not_allowed": [
+        "full acceptance",
+        "safety/operational approval"
+      ]
+    }
+  ],
+  "evidence_gap_matrix": [
+    {
+      "gap_id": "GAP-TRUST-01",
+      "dimension": "trust_chain",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Chuỗi tin cậy vẫn ở trạng thái chờ rà soát phạm vi giới hạn.",
+      "message_en": "Trust chain remains pending limited-scope review.",
+      "required_evidence": [
+        "issuer validation evidence",
+        "trust anchor review note",
+        "hash-chain verification result"
+      ]
+    },
+    {
+      "gap_id": "GAP-Q-01",
+      "dimension": "quarantine",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Còn mục cách ly chặn công bố readiness.",
+      "message_en": "A quarantine item still blocks readiness.",
+      "required_evidence": [
+        "quarantine disposition note",
+        "board chair acknowledgement"
+      ]
+    },
+    {
+      "gap_id": "GAP-APP-01",
+      "dimension": "approval",
+      "status": "OPEN",
+      "blocks_readiness": true,
+      "message_vi": "Chưa có chữ ký phê duyệt phạm vi giới hạn.",
+      "message_en": "Limited-scope approval signature is not present.",
+      "required_evidence": [
+        "signed limited-scope handoff",
+        "scope limitation acknowledgement"
+      ]
+    },
+    {
+      "gap_id": "GAP-R23-SOD",
+      "description": "Reviewer separation-of-duties not fully evidenced for final handoff.",
+      "blocks_readiness": true,
+      "ui_badge": "SOD_BLOCK"
+    }
+  ],
+  "allowed_actions": [
+    {
+      "action_id": "ACT-ADD-NOTE",
+      "label_vi": "Thêm ghi chú người rà soát",
+      "label_en": "Add reviewer note",
+      "enabled": true,
+      "requires": [
+        "reviewer_role"
+      ]
+    },
+    {
+      "action_id": "ACT-BLOCK-READINESS",
+      "label_vi": "Chặn readiness",
+      "label_en": "Block readiness",
+      "enabled": true,
+      "requires": [
+        "quarantine_reason"
+      ]
+    },
+    {
+      "action_id": "ACT-HANDOFF-LIMITED-SCOPE",
+      "label_vi": "Bàn giao phạm vi giới hạn",
+      "label_en": "Limited-scope handoff",
+      "enabled": false,
+      "disabled_reason": "GAP-TRUST-01,GAP-Q-01,GAP-APP-01"
+    },
+    {
+      "action_id": "ACT-CLAIM-READINESS",
+      "label_vi": "Công bố sẵn sàng",
+      "label_en": "Claim readiness",
+      "enabled": false,
+      "disabled_reason": "claim_guard.readiness_claim_allowed=false"
+    }
+  ],
+  "audit_drilldown": [
+    {
+      "audit_anchor": "R21-AUDIT-01",
+      "source_event": "signed_bundle_intake_received",
+      "manifest_object": "obj:signed_bundle_intake_contract.json",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "audit_anchor": "R21-AUDIT-02",
+      "source_event": "trust_chain_dashboard_snapshot_written",
+      "manifest_object": "obj:trust_chain_dashboard.json",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "audit_anchor": "R21-AUDIT-03",
+      "source_event": "invalid_evidence_quarantined",
+      "manifest_object": "obj:quarantine_queue.json",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "object_manifest_drilldown": [
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:signed_bundle_intake_contract.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/signed_bundle_intake_contract.json",
+      "sha256": "15d1662e3ecf2bbfbd13540211143bfc374f3cedd1a3c95993e22919ab9aa93f",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:trust_chain_dashboard.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/trust_chain_dashboard.json",
+      "sha256": "2f722fb480a91be7c3896d96f309355a0e0225dc26ae9d5e4626999ba58f4ccf",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:quarantine_queue.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/quarantine_queue.json",
+      "sha256": "bbe3d5578153d99a67e890bacf08d3d821d1741f53cbadec3e8194b44c27d3da",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:review_board_case.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/review_board_case.json",
+      "sha256": "94e69358c88c2e5ab87e24655d2cb631b7105e26c9a2d975f9884a7ffe748836",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:limited_scope_approval_contract.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/limited_scope_approval_contract.json",
+      "sha256": "30b2e2fce152fccad407ef9741b7f80854667562803e0ca0f6ae92a90133586d",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:audit_hash_chain.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/audit_hash_chain.json",
+      "sha256": "43c4db4d936164ddbbf8fd02b211228a617428fb776dc9eb54b7a7c71115d4f6",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:lineage_edges.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/lineage_edges.json",
+      "sha256": "0e079879e1fe88ea47ba0c910a19723e327c707d4dd22344a316f17a6d3dd699",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "dashboard_to_audit_links": [
+    {
+      "source_card": "trust-integrity",
+      "target_audit_anchor": "audit:evt-0005",
+      "target_manifest_object": "obj:trust_chain_dashboard.json"
+    },
+    {
+      "source_card": "trust-custody",
+      "target_audit_anchor": "audit:evt-0003",
+      "target_manifest_object": "obj:object_manifest.json"
+    }
+  ],
+  "object_manifest_drilldown_panels": [
+    {
+      "object_id": "obj:trust_chain_dashboard.json",
+      "hash_algorithm": "sha256",
+      "render_mode": "read_only_json",
+      "shows_source_path": true,
+      "can_mutate_source": false
+    },
+    {
+      "object_id": "obj:limited_scope_approval_contract.json",
+      "hash_algorithm": "sha256",
+      "render_mode": "scope_summary_plus_raw",
+      "shows_source_path": true,
+      "can_mutate_source": false
+    }
+  ],
+  "keyboard_accessibility": {
+    "tab_order": [
+      "langToggle",
+      "searchBox",
+      "reviewQueue",
+      "trustCards",
+      "quarantineOps",
+      "handoff",
+      "audit",
+      "manifest"
+    ],
+    "shortcuts": [
+      {
+        "key": "/",
+        "action": "focus_search"
+      },
+      {
+        "key": "g",
+        "action": "open_gate_explainer"
+      },
+      {
+        "key": "q",
+        "action": "jump_quarantine"
+      }
+    ],
+    "checks": [
+      {
+        "check": "focus-visible",
+        "status": "PASS"
+      },
+      {
+        "check": "aria-live-claim-guard",
+        "status": "PASS"
+      },
+      {
+        "check": "no-color-only-status",
+        "status": "PASS"
+      },
+      {
+        "check": "reduced-motion-compatible",
+        "status": "PASS"
+      }
+    ]
+  },
+  "accessibility_checks": [
+    {
+      "id": "a11y-landmarks",
+      "status": "PASS",
+      "criterion": "Semantic regions and headings"
+    },
+    {
+      "id": "a11y-focus",
+      "status": "PASS",
+      "criterion": "Visible focus and deterministic tab order"
+    },
+    {
+      "id": "a11y-bilingual",
+      "status": "PASS",
+      "criterion": "VI/EN labels available for shell actions"
+    },
+    {
+      "id": "a11y-motion",
+      "status": "PASS",
+      "criterion": "Reduced motion respected"
+    }
+  ],
+  "export_pack": {
+    "watermark": "Decision-support / Non-operational",
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "contents": [
+      "ui_shell_state",
+      "handoff_packet_draft",
+      "quarantine_action_ledger",
+      "reviewer_note_templates",
+      "audit_manifest_links"
+    ],
+    "blocked_until": "evidence_valid AND trust_chain_valid AND scope_valid AND quarantine_clear AND approval_signed"
+  },
+  "v24_candidate_backlog": [
+    "Evidence diff viewer with before/after hash panes",
+    "Reviewer assignment SoD engine with conflict pre-check",
+    "Case timeline heatmap and evidence aging SLA",
+    "Offline signed reviewer packet with import verification",
+    "Role-based mock API adapter for future backend integration"
+  ],
+  "state_digest_sha256": "85dfdad24a41684fbad6d613ac39fa026a9e1663a2e187bd916ea5941d4c2f95"
+}

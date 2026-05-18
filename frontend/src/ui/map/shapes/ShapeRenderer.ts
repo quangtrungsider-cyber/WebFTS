@@ -1,17 +1,17 @@
-import { Map as MapLibreMap, GeoJSONSource } from 'maplibre-gl';
-import { Shape, PolygonShape, PolylineShape, DisplayOptions } from '../../../data/types';
+import { Map as MapLibreMap } from 'maplibre-gl';
+import { DisplayOptions } from '../../../data/types';
 import type { MapDisplay } from '../MapDisplay';
 import type { StateManager } from '../../../core/StateManager';
 import { Shape3DRenderer } from './Shape3DRenderer';
 import { logger } from '../../../utils/Logger';
 
 /**
- * ShapeRenderer - Handles rendering of geographic shapes (polygons, polylines, etc.)
+ * ShapeRenderer - Handles rendering of geographic shapes
  *
- * Renders shapes from the simulation:
- * - POLY data (filled polygons like areas, zones, regions)
- * - POLYLINE data (lines like routes, boundaries, paths)
- * - Supports altitude-constrained areas (POLYALT)
+ * Specialised to render only the high-fidelity Vietnam FIR boundaries:
+ * - HA NOI FIR (VVHN)
+ * - HO CHI MINH FIR (VVHM)
+ * Displays them dynamically using the static GeoJSON file.
  */
 export class ShapeRenderer {
     private mapDisplay: MapDisplay;
@@ -20,13 +20,10 @@ export class ShapeRenderer {
     private initialized = false;
 
     // Layer and source IDs
-    private readonly POLYGON_SOURCE_ID = 'shapes-polygons';
-    private readonly POLYGON_FILL_LAYER_ID = 'shapes-polygon-fill';
-    private readonly POLYGON_LINE_LAYER_ID = 'shapes-polygon-line';
-    private readonly POLYLINE_SOURCE_ID = 'shapes-polylines';
-    private readonly POLYLINE_LAYER_ID = 'shapes-polylines';
-    private readonly LABELS_SOURCE_ID = 'shapes-labels';
-    private readonly LABELS_LAYER_ID = 'shapes-labels';
+    private readonly FIR_SOURCE_ID = 'vatm-fir-only';
+    private readonly FIR_FILL_LAYER_ID = 'vatm-fir-only-fill';
+    private readonly FIR_LINE_LAYER_ID = 'vatm-fir-only-line';
+    private readonly FIR_LABEL_LAYER_ID = 'vatm-fir-only-label';
 
     constructor(mapDisplay: MapDisplay, stateManager: StateManager) {
         this.mapDisplay = mapDisplay;
@@ -36,7 +33,7 @@ export class ShapeRenderer {
 
     /**
      * Initialize the shape renderer
-     * Creates map sources and layers, subscribes to shape changes
+     * Creates map sources and layers
      */
     public initialize(): void {
         if (this.initialized) return;
@@ -53,14 +50,9 @@ export class ShapeRenderer {
         // Initialize 3D extrusion renderer
         this.shape3DRenderer.initialize();
 
-        // Resize map after it settles from adding fill-extrusion layer
+        // Resize map after it settles
         map.once('idle', () => {
             this.mapDisplay.resize();
-        });
-
-        // Subscribe to shape changes
-        this.stateManager.subscribeToShapes((shapes) => {
-            this.renderShapes(shapes);
         });
 
         // Subscribe to display options changes
@@ -70,18 +62,9 @@ export class ShapeRenderer {
             }
         });
 
-        // Render any existing shapes that were added before initialization
-        const existingShapes = this.stateManager.getAllShapes();
-        logger.debug('ShapeRenderer', `Checking for existing shapes: ${existingShapes.size} shapes found`);
-        if (existingShapes.size > 0) {
-            logger.debug('ShapeRenderer', `Rendering ${existingShapes.size} existing shapes:`, Array.from(existingShapes.keys()));
-            this.renderShapes(existingShapes);
-        } else {
-            logger.debug('ShapeRenderer', 'No existing shapes to render');
-        }
-
         this.initialized = true;
-        logger.info('ShapeRenderer', 'Initialized');
+        console.log("[VATM] Shapes now use FIR-only source:", "/static/data/vatm_kmz/vatm_fir_only.geojson");
+        logger.info('ShapeRenderer', 'Initialized with Vietnam FIR boundaries only');
     }
 
     /**
@@ -91,49 +74,26 @@ export class ShapeRenderer {
         const map = this.mapDisplay.getMap();
         if (!map) return;
 
-        // Add sources
-        if (!map.getSource(this.POLYGON_SOURCE_ID)) {
-            map.addSource(this.POLYGON_SOURCE_ID, {
+        // Add source for Vietnam FIR
+        if (!map.getSource(this.FIR_SOURCE_ID)) {
+            map.addSource(this.FIR_SOURCE_ID, {
                 type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: []
-                }
-            });
-        }
-
-        if (!map.getSource(this.POLYLINE_SOURCE_ID)) {
-            map.addSource(this.POLYLINE_SOURCE_ID, {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: []
-                }
-            });
-        }
-
-        if (!map.getSource(this.LABELS_SOURCE_ID)) {
-            map.addSource(this.LABELS_SOURCE_ID, {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: []
-                }
+                data: '/static/data/vatm_kmz/vatm_fir_only.geojson'
             });
         }
 
         // Get current display options
         const displayOptions = this.stateManager.getDisplayOptions();
 
-        // Add polygon fill layer
-        if (!map.getLayer(this.POLYGON_FILL_LAYER_ID)) {
+        // Add polygon fill layer for Vietnam FIR
+        if (!map.getLayer(this.FIR_FILL_LAYER_ID)) {
             map.addLayer({
-                id: this.POLYGON_FILL_LAYER_ID,
-                source: this.POLYGON_SOURCE_ID,
+                id: this.FIR_FILL_LAYER_ID,
+                source: this.FIR_SOURCE_ID,
                 type: 'fill',
                 paint: {
-                    'fill-color': ['get', 'fillColor'],
-                    'fill-opacity': ['get', 'fillOpacity']
+                    'fill-color': displayOptions.shapeFillColor || '#8b5cf6',
+                    'fill-opacity': 0.03
                 },
                 layout: {
                     visibility: (displayOptions.showShapes && displayOptions.showShapeFill) ? 'visible' : 'none'
@@ -141,15 +101,16 @@ export class ShapeRenderer {
             });
         }
 
-        // Add polygon outline layer
-        if (!map.getLayer(this.POLYGON_LINE_LAYER_ID)) {
+        // Add line outline layer for Vietnam FIR
+        if (!map.getLayer(this.FIR_LINE_LAYER_ID)) {
             map.addLayer({
-                id: this.POLYGON_LINE_LAYER_ID,
-                source: this.POLYGON_SOURCE_ID,
+                id: this.FIR_LINE_LAYER_ID,
+                source: this.FIR_SOURCE_ID,
                 type: 'line',
                 paint: {
-                    'line-color': ['get', 'strokeColor'],
-                    'line-width': ['get', 'strokeWidth']
+                    'line-color': displayOptions.shapeLinesColor || '#c084fc',
+                    'line-width': 2,
+                    'line-opacity': 0.9
                 },
                 layout: {
                     visibility: (displayOptions.showShapes && displayOptions.showShapeLines) ? 'visible' : 'none'
@@ -157,288 +118,28 @@ export class ShapeRenderer {
             });
         }
 
-        // Add polyline layer
-        if (!map.getLayer(this.POLYLINE_LAYER_ID)) {
+        // Add text labels layer for Vietnam FIR
+        if (!map.getLayer(this.FIR_LABEL_LAYER_ID)) {
             map.addLayer({
-                id: this.POLYLINE_LAYER_ID,
-                source: this.POLYLINE_SOURCE_ID,
-                type: 'line',
-                paint: {
-                    'line-color': ['get', 'color'],
-                    'line-width': ['get', 'width']
-                },
-                layout: {
-                    visibility: (displayOptions.showShapes && displayOptions.showShapeLines) ? 'visible' : 'none'
-                }
-            });
-        }
-
-        // Add labels layer
-        if (!map.getLayer(this.LABELS_LAYER_ID)) {
-            map.addLayer({
-                id: this.LABELS_LAYER_ID,
-                source: this.LABELS_SOURCE_ID,
+                id: this.FIR_LABEL_LAYER_ID,
+                source: this.FIR_SOURCE_ID,
                 type: 'symbol',
+                minzoom: 4,
                 layout: {
-                    'text-field': ['get', 'name'],
-                    'text-size': 12,
+                    'text-field': ['get', 'fir'],
+                    'text-size': 13,
                     'text-anchor': 'center',
                     visibility: (displayOptions.showShapes && displayOptions.showShapeLabels) ? 'visible' : 'none'
                 },
                 paint: {
-                    'text-color': displayOptions.shapeLabelsColor || '#ff00ff',
-                    'text-halo-color': '#ffffff',
-                    'text-halo-width': 2
+                    'text-color': displayOptions.shapeLabelsColor || '#f5d0fe',
+                    'text-halo-color': '#020617',
+                    'text-halo-width': 1.5
                 }
             });
         }
 
-        logger.debug('ShapeRenderer', 'Map layers created');
-    }
-
-    /**
-     * Render all shapes on the map
-     */
-    private renderShapes(shapes: Map<string, Shape>): void {
-        const map = this.mapDisplay.getMap();
-        if (!map) return;
-
-        logger.debug('ShapeRenderer', `Rendering ${shapes.size} shapes`);
-
-        // Separate shapes by type
-        const polygons: PolygonShape[] = [];
-        const polylines: PolylineShape[] = [];
-
-        shapes.forEach((shape) => {
-            if (!shape.visible) return;
-
-            if (shape.type === 'polygon') {
-                polygons.push(shape);
-            } else if (shape.type === 'polyline') {
-                polylines.push(shape);
-            }
-        });
-
-        // Render polygons (2D flat + 3D extruded)
-        this.renderPolygons(polygons);
-        this.shape3DRenderer.renderExtrudedPolygons(polygons);
-
-        // Render polylines
-        this.renderPolylines(polylines);
-
-        // Render labels
-        this.renderLabels(shapes);
-    }
-
-    /**
-     * Render polygon shapes
-     */
-    private renderPolygons(polygons: PolygonShape[]): void {
-        const map = this.mapDisplay.getMap();
-        if (!map) return;
-
-        const displayOptions = this.stateManager.getDisplayOptions();
-
-        // Convert polygons to GeoJSON features
-        const features = polygons.map(poly => {
-            // Close the polygon ring
-            const coordinates = poly.coordinates.map(c => [c.lng, c.lat]);
-            coordinates.push(coordinates[0]);
-
-            return {
-                type: 'Feature' as const,
-                geometry: {
-                    type: 'Polygon' as const,
-                    coordinates: [coordinates]
-                },
-                properties: {
-                    name: poly.name,
-                    fillColor: poly.fillColor || displayOptions.shapeFillColor || '#ff00ff',
-                    fillOpacity: poly.fillOpacity !== undefined ? poly.fillOpacity : 0.2,
-                    strokeColor: poly.strokeColor || displayOptions.shapeLinesColor || '#ff00ff',
-                    strokeWidth: poly.strokeWidth || 2,
-                    topAltitude: poly.topAltitude,
-                    bottomAltitude: poly.bottomAltitude
-                }
-            };
-        });
-
-        // Update polygon source
-        const source = map.getSource(this.POLYGON_SOURCE_ID) as GeoJSONSource;
-        if (source) {
-            source.setData({
-                type: 'FeatureCollection',
-                features
-            });
-        } else {
-            // Source not ready yet, which can happen:
-            // 1. During initial map load
-            // 2. After map style change (sources are removed)
-            // In both cases, we need to initialize the renderer
-            logger.debug('ShapeRenderer', 'Polygon source not found, initializing renderer...');
-            this.initialized = false;
-            this.initialize();
-
-            // After initialization, try updating again
-            const sourceAfterInit = map.getSource(this.POLYGON_SOURCE_ID) as GeoJSONSource;
-            if (sourceAfterInit) {
-                sourceAfterInit.setData({
-                    type: 'FeatureCollection',
-                    features
-                });
-            } else {
-                logger.warn('ShapeRenderer', `Failed to initialize polygon source - cannot render ${polygons.length} polygons`);
-            }
-        }
-    }
-
-    /**
-     * Render polyline shapes
-     */
-    private renderPolylines(polylines: PolylineShape[]): void {
-        const map = this.mapDisplay.getMap();
-        if (!map) return;
-
-        const displayOptions = this.stateManager.getDisplayOptions();
-
-        // Convert polylines to GeoJSON features
-        const features = polylines.map(line => {
-            const coordinates = line.coordinates.map(c => [c.lng, c.lat]);
-
-            return {
-                type: 'Feature' as const,
-                geometry: {
-                    type: 'LineString' as const,
-                    coordinates
-                },
-                properties: {
-                    name: line.name,
-                    color: line.color || displayOptions.shapeLinesColor || '#ff00ff',
-                    width: line.width || 2
-                }
-            };
-        });
-
-        // Update polyline source
-        const source = map.getSource(this.POLYLINE_SOURCE_ID) as GeoJSONSource;
-        if (source) {
-            source.setData({
-                type: 'FeatureCollection',
-                features
-            });
-        } else {
-            // Source not ready yet, which can happen:
-            // 1. During initial map load
-            // 2. After map style change (sources are removed)
-            // In both cases, we need to initialize the renderer
-            logger.debug('ShapeRenderer', 'Polyline source not found, initializing renderer...');
-            this.initialized = false;
-            this.initialize();
-
-            // After initialization, try updating again
-            const sourceAfterInit = map.getSource(this.POLYLINE_SOURCE_ID) as GeoJSONSource;
-            if (sourceAfterInit) {
-                sourceAfterInit.setData({
-                    type: 'FeatureCollection',
-                    features
-                });
-            } else {
-                logger.warn('ShapeRenderer', `Failed to initialize polyline source - cannot render ${polylines.length} polylines`);
-            }
-        }
-    }
-
-    /**
-     * Render shape labels
-     */
-    private renderLabels(shapes: Map<string, Shape>): void {
-        const map = this.mapDisplay.getMap();
-        if (!map) return;
-
-        // Create label features at shape centroids
-        const features: any[] = [];
-
-        shapes.forEach((shape) => {
-            if (!shape.visible) return;
-
-            // Calculate centroid
-            let centroid: [number, number];
-
-            if (shape.type === 'polygon') {
-                centroid = this.calculatePolygonCentroid(shape.coordinates);
-            } else if (shape.type === 'polyline') {
-                centroid = this.calculatePolylineMidpoint(shape.coordinates);
-            } else {
-                return;
-            }
-
-            features.push({
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: centroid
-                },
-                properties: {
-                    name: shape.name
-                }
-            });
-        });
-
-        // Update labels source
-        const source = map.getSource(this.LABELS_SOURCE_ID) as GeoJSONSource;
-        if (source) {
-            source.setData({
-                type: 'FeatureCollection',
-                features
-            });
-        } else {
-            // Source not ready yet, which can happen:
-            // 1. During initial map load
-            // 2. After map style change (sources are removed)
-            // In both cases, we need to initialize the renderer
-            logger.debug('ShapeRenderer', 'Labels source not found, initializing renderer...');
-            this.initialized = false;
-            this.initialize();
-
-            // After initialization, try updating again
-            const sourceAfterInit = map.getSource(this.LABELS_SOURCE_ID) as GeoJSONSource;
-            if (sourceAfterInit) {
-                sourceAfterInit.setData({
-                    type: 'FeatureCollection',
-                    features
-                });
-            } else {
-                logger.warn('ShapeRenderer', `Failed to initialize labels source - cannot render labels`);
-            }
-        }
-    }
-
-    /**
-     * Calculate centroid of a polygon
-     */
-    private calculatePolygonCentroid(coordinates: Array<{lat: number, lng: number}>): [number, number] {
-        if (coordinates.length === 0) return [0, 0];
-
-        let sumLng = 0;
-        let sumLat = 0;
-
-        coordinates.forEach(coord => {
-            sumLng += coord.lng;
-            sumLat += coord.lat;
-        });
-
-        return [sumLng / coordinates.length, sumLat / coordinates.length];
-    }
-
-    /**
-     * Calculate midpoint of a polyline
-     */
-    private calculatePolylineMidpoint(coordinates: Array<{lat: number, lng: number}>): [number, number] {
-        if (coordinates.length === 0) return [0, 0];
-
-        const midIndex = Math.floor(coordinates.length / 2);
-        const coord = coordinates[midIndex];
-        return [coord.lng, coord.lat];
+        logger.debug('ShapeRenderer', 'Vietnam FIR map layers created');
     }
 
     /**
@@ -449,54 +150,47 @@ export class ShapeRenderer {
         if (!map) return;
 
         // Update layer visibility - respect master showShapes toggle
-        if (map.getLayer(this.POLYGON_FILL_LAYER_ID)) {
+        if (map.getLayer(this.FIR_FILL_LAYER_ID)) {
             map.setLayoutProperty(
-                this.POLYGON_FILL_LAYER_ID,
+                this.FIR_FILL_LAYER_ID,
                 'visibility',
                 (displayOptions.showShapes && displayOptions.showShapeFill) ? 'visible' : 'none'
             );
-        }
-
-        if (map.getLayer(this.POLYGON_LINE_LAYER_ID)) {
-            map.setLayoutProperty(
-                this.POLYGON_LINE_LAYER_ID,
-                'visibility',
-                (displayOptions.showShapes && displayOptions.showShapeLines) ? 'visible' : 'none'
+            map.setPaintProperty(
+                this.FIR_FILL_LAYER_ID,
+                'fill-color',
+                displayOptions.shapeFillColor || '#8b5cf6'
             );
         }
 
-        if (map.getLayer(this.POLYLINE_LAYER_ID)) {
+        if (map.getLayer(this.FIR_LINE_LAYER_ID)) {
             map.setLayoutProperty(
-                this.POLYLINE_LAYER_ID,
+                this.FIR_LINE_LAYER_ID,
                 'visibility',
                 (displayOptions.showShapes && displayOptions.showShapeLines) ? 'visible' : 'none'
             );
+            map.setPaintProperty(
+                this.FIR_LINE_LAYER_ID,
+                'line-color',
+                displayOptions.shapeLinesColor || '#c084fc'
+            );
         }
 
-        if (map.getLayer(this.LABELS_LAYER_ID)) {
+        if (map.getLayer(this.FIR_LABEL_LAYER_ID)) {
             map.setLayoutProperty(
-                this.LABELS_LAYER_ID,
+                this.FIR_LABEL_LAYER_ID,
                 'visibility',
                 (displayOptions.showShapes && displayOptions.showShapeLabels) ? 'visible' : 'none'
             );
-
-            // Update label color
             map.setPaintProperty(
-                this.LABELS_LAYER_ID,
+                this.FIR_LABEL_LAYER_ID,
                 'text-color',
-                displayOptions.shapeLabelsColor || '#ff00ff'
+                displayOptions.shapeLabelsColor || '#f5d0fe'
             );
         }
 
         // Update 3D extrusion renderer
         this.shape3DRenderer.updateDisplayOptions(displayOptions);
-
-        // Re-render shapes with updated colors
-        // This ensures fill and line colors update when the user changes them in display options
-        const shapes = this.stateManager.getAllShapes();
-        if (shapes.size > 0) {
-            this.renderShapes(shapes);
-        }
 
         logger.debug('ShapeRenderer', 'Display options updated');
     }
@@ -512,17 +206,13 @@ export class ShapeRenderer {
         // Re-create 3D extrusion layers
         this.shape3DRenderer.onStyleChange();
 
-        // Resize map after it settles from re-adding fill-extrusion layer
+        // Resize map after it settles
         const map = this.mapDisplay.getMap();
         if (map) {
             map.once('idle', () => {
                 this.mapDisplay.resize();
             });
         }
-
-        // Re-render current shapes
-        const shapes = this.stateManager.getAllShapes();
-        this.renderShapes(shapes);
     }
 
     /**

@@ -1,0 +1,9 @@
+round: R29-VS-29
+watermark: Decision-support / Non-operational
+readiness_claim_allowed: false
+production_readiness_claim: false
+operational_readiness_claim: false
+primary_state: repo/fts/artifacts/evidence-review-board-ui-shell/R29-VS-29/ui_shell_state.json
+validation:
+  - make evidence-review-board-workbench-v29-validate
+  - python3 -m pytest -q tests/test_round20.py tests/test_round21_ui_shell.py tests/test_round23_workbench.py tests/test_round24_workbench.py tests/test_round27_workbench.py tests/test_round28_workbench.py tests/test_round29_workbench.py

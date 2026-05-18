@@ -1,0 +1,29 @@
+{
+  "api_contract": {
+    "GET /evidence/quarantine": "read-only quarantine queue",
+    "GET /evidence/review-board/cases/{case_id}": "read case",
+    "GET /evidence/trust-chain/dashboard": "read-only dashboard snapshot",
+    "POST /evidence/review-board/cases/{case_id}/approve-limited-scope": "ABAC controlled reviewer action",
+    "POST /evidence/signed-bundles/intake": "202 Accepted + Location"
+  },
+  "contract_hash_sha256": "58db9d882e8ac308cd1124c9de93ff2e162b82feefb22dccef20fc9bc080da2b",
+  "contract_id": "R20-LIMITED-SCOPE-APPROVAL-UI-API-CONTRACT",
+  "operational_readiness_claim": false,
+  "production_readiness_claim": false,
+  "ui_labels": {
+    "en": {
+      "approve_limited_scope": "Approve limited scope",
+      "quarantine": "Quarantine invalid evidence",
+      "title": "Limited-scope evidence review board",
+      "watermark": "Decision-support / Non-operational"
+    },
+    "vi": {
+      "approve_limited_scope": "Phê duyệt phạm vi giới hạn",
+      "quarantine": "Cách ly bằng chứng không hợp lệ",
+      "title": "Hội đồng rà soát bằng chứng phạm vi giới hạn",
+      "watermark": "Decision-support / Non-operational"
+    }
+  },
+  "version": "1.0.0-round20",
+  "watermark": "Decision-support / Non-operational"
+}

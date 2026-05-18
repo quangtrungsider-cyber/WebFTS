@@ -1,0 +1,170 @@
+{
+  "ACC": {
+    "ACC Hà Nội": {
+      "Phân khu 1 (Sector 1)": [
+        "VATM_000587"
+      ],
+      "Phân khu 2 (Sector 2)": [
+        "VATM_000588"
+      ],
+      "Phân khu 3 (Sector 3)": [
+        "VATM_000589"
+      ],
+      "Phân khu 4 (Sector 4)": [
+        "VATM_000590",
+        "VATM_000591"
+      ]
+    },
+    "ACC Hồ Chí Minh": {
+      "Phân khu 1 (Sector 1)": [
+        "VATM_000592",
+        "VATM_000593"
+      ],
+      "Phân khu 2 (Sector 2)": [
+        "VATM_000594",
+        "VATM_000595"
+      ],
+      "Phân khu 3 (Sector 3)": [
+        "VATM_000596",
+        "VATM_000597"
+      ],
+      "Phân khu 4 (Sector 4)": [
+        "VATM_000598",
+        "VATM_000599"
+      ],
+      "Phân khu 5 (Sector 5)": [
+        "VATM_000600",
+        "VATM_000601",
+        "VATM_000602",
+        "VATM_000603",
+        "VATM_000604"
+      ],
+      "Phân khu 6 (Sector 6)": [
+        "VATM_000605",
+        "VATM_000606"
+      ],
+      "Phân khu 7 (Sector 7)": [
+        "VATM_000607",
+        "VATM_000608"
+      ]
+    },
+    "CTL Đà Nẵng": {
+      "Đài Kiểm Soát Đà Nẵng (CTL Da Nang)": [
+        "VATM_000610"
+      ]
+    }
+  },
+  "TMA": {
+    "Vùng kiểm soát tiếp cận CRA (TMA)": [
+      "VATM_000566"
+    ],
+    "Vùng kiểm soát tiếp cận NỘI BÀI (TMA)": [
+      "VATM_000567"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 16500FT (TMA)": [
+      "VATM_000571"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 11500 (TMA)": [
+      "VATM_000572"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 5500FT (TMA)": [
+      "VATM_000573",
+      "VATM_000580"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 9500FT (TMA)": [
+      "VATM_000574"
+    ],
+    "Vùng kiểm soát tiếp cận LT 3500FT (TMA)": [
+      "VATM_000575"
+    ],
+    "Vùng kiểm soát tiếp cận LT 6500FT (TMA)": [
+      "VATM_000576"
+    ],
+    "Vùng kiểm soát tiếp cận TSN (TMA)": [
+      "VATM_000577"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 8500FT (TMA)": [
+      "VATM_000578"
+    ],
+    "Vùng kiểm soát tiếp cận TSN 12500FT (TMA)": [
+      "VATM_000579"
+    ],
+    "Vùng kiểm soát tiếp cận LT 5500FT (TMA)": [
+      "VATM_000581"
+    ],
+    "Vùng kiểm soát tiếp cận VINH (TMA)": [
+      "VATM_000582"
+    ],
+    "Vùng kiểm soát tiếp cận ĐÀ NẴNG (TMA)": [
+      "VATM_000583"
+    ],
+    "Vùng kiểm soát tiếp cận CÁT BI (TMA)": [
+      "VATM_000584"
+    ]
+  },
+  "CTR": {
+    "Khu vực sân bay BUÔN MA THUỘT (CTR)": [
+      "VATM_000547"
+    ],
+    "Khu vực sân bay CAM RANH (CTR)": [
+      "VATM_000548"
+    ],
+    "Khu vực sân bay CHU LAI (CTR)": [
+      "VATM_000549"
+    ],
+    "Khu vực sân bay CÀ MAU (CTR)": [
+      "VATM_000550"
+    ],
+    "Khu vực sân bay CÔN SƠN (CTR)": [
+      "VATM_000551"
+    ],
+    "Khu vực sân bay CẦN THƠ (CTR)": [
+      "VATM_000552"
+    ],
+    "Khu vực sân bay KIÊN GIANG (CTR)": [
+      "VATM_000553"
+    ],
+    "Khu vực sân bay LIÊN KHƯƠNG (CTR)": [
+      "VATM_000554"
+    ],
+    "Khu vực sân bay NỘI BÀI (CTR)": [
+      "VATM_000555"
+    ],
+    "Khu vực sân bay PHÙ CÁT (CTR)": [
+      "VATM_000556"
+    ],
+    "Khu vực sân bay PHÚ BÀI (CTR)": [
+      "VATM_000557"
+    ],
+    "Khu vực sân bay PHÚ QUỐC (CTR)": [
+      "VATM_000558"
+    ],
+    "Khu vực sân bay PLEIKU (CTR)": [
+      "VATM_000559"
+    ],
+    "Khu vực sân bay THỌ XUÂN (CTR)": [
+      "VATM_000560"
+    ],
+    "Khu vực sân bay TUY HÒA (CTR)": [
+      "VATM_000561"
+    ],
+    "Khu vực sân bay ĐÀ NẴNG (CTR)": [
+      "VATM_000564"
+    ],
+    "Khu vực sân bay ĐỒNG HỚI (CTR)": [
+      "VATM_000565"
+    ],
+    "Khu vực sân bay LONG THÀNH 2500FT (CTR)": [
+      "VATM_000568"
+    ],
+    "Khu vực sân bay TÂN SƠN NHẤT 2500FT (CTR)": [
+      "VATM_000569"
+    ],
+    "Khu vực sân bay CÁT BI (CTR)": [
+      "VATM_000585"
+    ],
+    "Khu vực sân bay VÂN ĐỒN (CTR)": [
+      "VATM_000586"
+    ]
+  }
+}

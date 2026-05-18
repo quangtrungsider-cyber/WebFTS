@@ -1,0 +1,20 @@
+{
+  "accepted_evidence_metadata_records": 5,
+  "audit_events": 7,
+  "guardrail_findings": 0,
+  "limited_scope_approvals": 1,
+  "lineage_edges": 5,
+  "object_manifest_records": 8,
+  "operational_readiness_claim": false,
+  "production_readiness_claim": false,
+  "quarantined_records": 1,
+  "round": "R20-VS-20",
+  "title": "Limited-Scope Evidence Review Board, Trust-Chain Dashboard & Signed Bundle Intake Contract",
+  "watermark": "Decision-support / Non-operational",
+  "workflow_states": [
+    "DENIED",
+    "PENDING_REVIEW",
+    "APPROVED_FOR_LIMITED_SCOPE",
+    "REJECTED"
+  ]
+}

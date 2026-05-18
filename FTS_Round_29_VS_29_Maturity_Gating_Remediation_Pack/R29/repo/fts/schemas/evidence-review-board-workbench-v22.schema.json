@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vatm.example/fts/schemas/evidence-review-board-workbench-v22.schema.json",
+  "title": "FTS R22 Evidence Review Board Workbench State",
+  "type": "object",
+  "required": [
+    "round",
+    "watermark",
+    "claim_guard",
+    "workbench_filters",
+    "review_workflow_lanes",
+    "evidence_gap_matrix",
+    "scope_matrix",
+    "allowed_actions",
+    "keyboard_accessibility"
+  ],
+  "properties": {
+    "round": {
+      "const": "R22-VS-22"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    },
+    "claim_guard": {
+      "type": "object",
+      "required": [
+        "readiness_claim_allowed",
+        "production_readiness_claim",
+        "operational_readiness_claim"
+      ]
+    },
+    "workbench_filters": {
+      "type": "array",
+      "minItems": 4
+    },
+    "review_workflow_lanes": {
+      "type": "array",
+      "minItems": 4
+    },
+    "evidence_gap_matrix": {
+      "type": "array",
+      "minItems": 3
+    },
+    "scope_matrix": {
+      "type": "array",
+      "minItems": 4
+    },
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 4
+    },
+    "keyboard_accessibility": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FTS R29 Maturity Gating Workbench</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="watermark" aria-label="Decision-support / Non-operational">Decision-support / Non-operational</div>
+  <header>
+    <p class="eyebrow">FTS R29 / VS-29</p>
+    <h1 data-i18n="title">Bàn rà soát trưởng thành & khắc phục gate VS-29</h1>
+    <p id="claimGuard" role="status" aria-live="polite">Chưa đủ điều kiện readiness</p>
+    <div class="toolbar">
+      <button id="langToggle" type="button" aria-label="Switch language">EN</button>
+      <button id="exportBtn" type="button" data-i18n="export">Xuất gói kiểm chứng</button>
+      <button id="importBtn" type="button" data-i18n="import">Nhập log kiểm chứng</button>
+    </div>
+  </header>
+  <main>
+    <section class="panel"><h2 data-i18n="inventory">Kiểm kê & toàn vẹn gói</h2><div id="inventory" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="mandatory">5 điều kiện bắt buộc trước ký</h2><div id="mandatory" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="maturity">TRL/CMMI/E-OCVM maturity gate</h2><div id="maturity" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="dseep">Ma trận DSEEP 7 bước</h2><div id="dseep" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="safety">SSA & DO-278A AL</h2><div id="safety" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="procurement">Sẵn sàng đấu thầu & TCO</h2><div id="procurement" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="round_history">Round History/RCA</h2><div id="roundHistory" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="benchmarks">Benchmark</h2><div id="benchmarks" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="risks">Risk register</h2><div id="risks" class="grid"></div></section>
+    <section class="panel"><h2 data-i18n="exports">Compliance evidence export pack</h2><div id="exports" class="grid"></div></section>
+    <section class="panel"><h2>Claim guard / Chặn claim readiness</h2><div id="guard" class="panel"></div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

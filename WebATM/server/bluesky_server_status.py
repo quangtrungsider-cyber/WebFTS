@@ -99,8 +99,8 @@ def register_server_status_routes(app):
                 hostname = "localhost"
 
             # Check both BlueSky ports
-            port_11000_listening = is_port_listening(11000, 0.5, hostname)
-            port_11001_listening = is_port_listening(11001, 0.5, hostname)
+            port_11000_listening = is_port_listening(11000, 2.0, hostname)
+            port_11001_listening = is_port_listening(11001, 2.0, hostname)
             running = port_11000_listening or port_11001_listening
 
             if running:

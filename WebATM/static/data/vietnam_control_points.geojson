@@ -1,0 +1,785 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "1",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.61027777777777,
+          20.255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "2",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.54555555555555,
+          20.566944444444445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "3",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.46388888888889,
+          20.928333333333335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "4",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.20861111111111,
+          21.209722222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "5",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.10916666666667,
+          19.529999999999998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "6",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.73861111111111,
+          18.994722222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "7",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.87166666666666,
+          18.847777777777775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "8",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.18972222222223,
+          19.267777777777777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A01",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4,
+          17.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A02",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3,
+          17.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A03",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.74361111111111,
+          17.419444444444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D01",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60777777777777,
+          13.305555555555557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D02",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.55666666666666,
+          14.686111111111112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D04",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.34527777777777,
+          16.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D05",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.69805555555556,
+          15.679444444444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D08",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.36888888888888,
+          9.564722222222223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D15",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.91027777777778,
+          11.2625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D18",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.44722222222222,
+          10.590833333333334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D19",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.24694444444445,
+          10.237222222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D20",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1575,
+          11.458055555555555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D21",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.49277777777777,
+          11.904444444444445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D23",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.50611111111111,
+          13.363888888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D24",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.6575,
+          13.260555555555555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D25",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.77277777777778,
+          8.241388888888888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D26",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.88972222222223,
+          8.571666666666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D27",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.55916666666667,
+          8.843333333333334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D28",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.09472222222222,
+          10.71861111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DN2",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.84305555555555,
+          7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DN4",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.64861111111112,
+          12.509722222222223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DN6",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.09083333333332,
+          11.570277777777777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DN7",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.89666666666668,
+          11.275555555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E01",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.99083333333333,
+          13.330833333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E02",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.97277777777778,
+          12.298333333333334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E03",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.97916666666667,
+          10.879166666666666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E04",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.36194444444443,
+          12.028055555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NDB CQ",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.70444444444445,
+          15.412222222222223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CQ",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.70444444444445,
+          15.412222222222223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NDB RG",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.13305555555554,
+          9.959444444444443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RG",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.13305555555554,
+          9.959444444444443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "OSIXA",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.84388888888888,
+          9.522222222222224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RUNOP",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.63833333333334,
+          11.088055555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SOSPA",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.64083333333333,
+          11.83388888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VIGEN",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.36944444444444,
+          7.995555555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VIMUT",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.5213888888889,
+          13.962499999999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DONDA",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.02166666666666,
+          14.703333333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "EXOTO",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.05,
+          15.358333333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ARESI",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.45,
+          13.973333333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MIGUG",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.0,
+          15.273333333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSH",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.65055555555556,
+          10.818333333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NOB",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.835,
+          21.213055555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DAN",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.19833333333334,
+          16.052777777777777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CRA",
+        "source": "AIP ENR 2.1 / route source",
+        "type": "control_point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.21833333333333,
+          11.995555555555555
+        ]
+      }
+    }
+  ]
+}

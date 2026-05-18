@@ -1,0 +1,15 @@
+{
+  "round": "R22-VS-22",
+  "notes": [
+    {
+      "note_id": "R21-NOTE-01",
+      "case_id": "R21-REVIEW-BOARD-CASE-01",
+      "author_role": "security_evidence_reviewer",
+      "visibility": "review_board_only",
+      "content_vi": "Chỉ xem xét metadata trong phạm vi phòng lab kiểm soát; chưa đủ căn cứ readiness.",
+      "content_en": "Metadata-only review in controlled-lab scope; readiness is not claimable.",
+      "linked_object_id": "obj:trust_chain_dashboard.json",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ]
+}

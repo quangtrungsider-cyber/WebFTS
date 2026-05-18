@@ -8,6 +8,9 @@ import type { AircraftRoute3DRenderer } from './aircraft/AircraftRoute3DRenderer
 import { AIRCRAFT_SHAPES } from './aircraft/AircraftShapes';
 import { StateManager } from '../../core/StateManager';
 import { logger } from '../../utils/Logger';
+import { storage } from '../../utils/StorageManager';
+import { VietnameseAirports } from './VietnameseAirports';
+
 
 /**
  * MapOverlay - Handles the map overlay information display
@@ -30,6 +33,8 @@ export class MapOverlay {
     private aircraftRoute3DRenderer: AircraftRoute3DRenderer | null = null;
     // Track if 3D overlay is currently active
     private is3DOverlayActive: boolean = false;
+    private showAtsRoutes: boolean = false;
+
     private aircraftCountElement: HTMLElement | null;
     private conflictCountElement: HTMLElement | null;
     private conflictTotalElement: HTMLElement | null;
@@ -69,6 +74,16 @@ export class MapOverlay {
         this.updateConflictCounts(0, 0);
         this.updateIntrusionCounts(0, 0);
         this.updateCursorPosition(null, null);
+
+        // Load saved preference for ATS routes
+        this.showAtsRoutes = storage.get<boolean>('show-ats-routes') ?? false;
+
+        // Render Vietnamese airports
+        const map = this.mapDisplay.getMap();
+        if (map) {
+            VietnameseAirports.setupAirportsLayer(map);
+        }
+
 
         // Initialize aircraft routes FIRST so they appear below aircraft
         this.initializeAircraftRoutes(displayOptions);
@@ -615,10 +630,32 @@ export class MapOverlay {
     }
 
     /**
+     * Toggle visibility of Vietnam ATS routes
+     */
+    public toggleAtsRoutes(visible: boolean): void {
+        this.showAtsRoutes = visible;
+        storage.set('show-ats-routes', visible);
+    }
+
+    /**
+     * Check if Vietnam ATS routes are currently shown
+     */
+    public isAtsRoutesVisible(): boolean {
+        return this.showAtsRoutes;
+    }
+
+    /**
      * Handle map style change
+
      * Notifies aircraft renderers and routes to recreate layers
      */
     public onStyleChange(): void {
+        const map = this.mapDisplay.getMap();
+        if (map) {
+            VietnameseAirports.setupAirportsLayer(map);
+        }
+
+
         // Re-create route layers FIRST so they appear below aircraft
         if (this.aircraftRoutes) {
             this.aircraftRoutes.setupLayers();

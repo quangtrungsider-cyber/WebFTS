@@ -1,0 +1,889 @@
+{
+  "round": "R28-VS-28",
+  "title": "VS-28 Assurance Case, Controlled Pilot Telemetry & FAT/SAT Rehearsal Pack",
+  "watermark": "Decision-support / Non-operational",
+  "claim_guard": {
+    "readiness_claim_allowed": false,
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "required_before_claim": [
+      "valid evidence chain",
+      "trusted provenance graph",
+      "limited scope signed by qualified reviewers",
+      "quarantine clear",
+      "policy bundle promoted from approved stage"
+    ],
+    "blocking_reasons": [
+      "simulator-only assessment",
+      "federated evidence has unresolved domain trust gaps",
+      "export notarization is archive evidence, not operational approval",
+      "assurance case is builder/simulator evidence only",
+      "pilot telemetry ingestion is controlled and non-operational",
+      "FAT/SAT rehearsal does not constitute production acceptance"
+    ]
+  },
+  "labels": {
+    "vi": {
+      "title": "Bộ bảo đảm VS-28 và diễn tập FAT/SAT",
+      "federation": "Liên kết bằng chứng",
+      "forecast": "Dự báo tải đánh giá viên",
+      "replay": "Dòng thời gian tái diễn kiểm toán",
+      "promotion": "Luồng thăng cấp gói chính sách",
+      "provenance": "Phân tích nguồn gốc bằng chứng",
+      "gating": "Mô phỏng cổng sẵn sàng",
+      "archive": "Công chứng xuất gói và lưu trữ dài hạn",
+      "not_ready": "Chưa đủ điều kiện sẵn sàng",
+      "assurance": "Hồ sơ lập luận bảo đảm",
+      "telemetry": "Tiếp nhận telemetry pilot có kiểm soát",
+      "human_factors": "Phòng rà soát yếu tố con người",
+      "conflict": "Bàn xử lý xung đột liên miền",
+      "retention": "Soạn thảo chính sách lưu giữ",
+      "siem": "Mô phỏng kết nối SIEM",
+      "fatsat": "Gói diễn tập FAT/SAT"
+    },
+    "en": {
+      "title": "VS-28 assurance and FAT/SAT rehearsal pack",
+      "federation": "Evidence federation",
+      "forecast": "Reviewer workload forecast",
+      "replay": "Advanced audit replay timeline",
+      "promotion": "Signed policy bundle promotion",
+      "provenance": "Evidence provenance graph analytics",
+      "gating": "Operational-readiness gating simulator",
+      "archive": "Immutable notarization and long-term archive",
+      "not_ready": "Not ready for operational claim",
+      "assurance": "Assurance case builder",
+      "telemetry": "Controlled pilot telemetry ingestion",
+      "human_factors": "Human factors review room",
+      "conflict": "Domain conflict resolution workbench",
+      "retention": "Retention policy authoring",
+      "siem": "SIEM evidence connector simulator",
+      "fatsat": "FAT/SAT rehearsal pack"
+    }
+  },
+  "evidence_diff_viewer": {
+    "mode": "semantic_side_by_side",
+    "can_mutate_source": false,
+    "default_redactions": [
+      "L3 sensitive aviation data masked",
+      "L4 restricted payload omitted"
+    ],
+    "diff_pairs": [
+      {
+        "pair_id": "DIFF-001",
+        "case_id": "CASE-FTS-R24-001",
+        "left_bundle": "EVB-2026-05-15-A",
+        "right_bundle": "EVB-2026-05-15-B",
+        "classification": "safety_significant",
+        "status": "OPEN_REVIEW",
+        "changed_objects": 7,
+        "audit_anchor": "AUD-R24-001",
+        "manifest_anchor": "OBJ-R24-RTE-001",
+        "readiness_effect": "BLOCKS_READINESS",
+        "summary_vi": "Thay đổi phân loại an toàn cần reviewer xác nhận độc lập.",
+        "summary_en": "Safety-significant change requires independent reviewer confirmation."
+      },
+      {
+        "pair_id": "DIFF-002",
+        "case_id": "CASE-FTS-R24-002",
+        "left_bundle": "EVB-2026-05-14-A",
+        "right_bundle": "EVB-2026-05-15-C",
+        "classification": "cosmetic",
+        "status": "QUARANTINE_DEPENDENCY",
+        "changed_objects": 2,
+        "audit_anchor": "AUD-R24-002",
+        "manifest_anchor": "OBJ-R24-CHT-002",
+        "readiness_effect": "NO_CLAIM_ALLOWED",
+        "summary_vi": "Thay đổi trình bày nhưng nguồn chart đang cách ly.",
+        "summary_en": "Presentation-only change, but the chart source is quarantined."
+      }
+    ],
+    "viewer_controls": [
+      "toggle semantic/vector/raw-metadata",
+      "filter by safety significance",
+      "jump to audit event",
+      "jump to object manifest",
+      "copy reviewer-safe citation"
+    ]
+  },
+  "sod_reviewer_assignment_engine": {
+    "policy": "Checker, QA and Approver must be distinct people; approver cannot be source author; competency and authorization scope must cover case domain.",
+    "enforcement": "BLOCK_BEFORE_REVIEW",
+    "assignments": [
+      {
+        "case_id": "CASE-FTS-R24-001",
+        "checker": "reviewer.alpha",
+        "qa": "reviewer.beta",
+        "approver": "reviewer.gamma",
+        "sod_status": "PASS",
+        "competency_scope": "FTS-EVIDENCE-DIFF",
+        "scope_valid": true
+      },
+      {
+        "case_id": "CASE-FTS-R24-002",
+        "checker": "reviewer.delta",
+        "qa": "reviewer.delta",
+        "approver": "reviewer.zeta",
+        "sod_status": "FAIL",
+        "competency_scope": "FTS-QUARANTINE",
+        "scope_valid": false,
+        "block_reason": "Checker and QA are identical; QA scope expired."
+      }
+    ],
+    "blocked_exports": [
+      "limited_scope_approval_handoff",
+      "production_readiness_certificate",
+      "operational_readiness_certificate"
+    ]
+  },
+  "case_timeline_sla_heatmap": {
+    "sla_policy": "Use deterministic case clocks from audit ledger; heatmap is advisory only.",
+    "buckets": [
+      {
+        "bucket": "intake",
+        "p95_hours": 2,
+        "breach_count": 0,
+        "heat": "LOW"
+      },
+      {
+        "bucket": "diff_review",
+        "p95_hours": 18,
+        "breach_count": 1,
+        "heat": "MEDIUM"
+      },
+      {
+        "bucket": "quarantine_resolution",
+        "p95_hours": 72,
+        "breach_count": 3,
+        "heat": "HIGH"
+      },
+      {
+        "bucket": "offline_packet_verification",
+        "p95_hours": 10,
+        "breach_count": 1,
+        "heat": "MEDIUM"
+      }
+    ],
+    "timeline_events": [
+      {
+        "event_id": "TL-R24-001",
+        "case_id": "CASE-FTS-R24-001",
+        "event_time": "2026-05-15T07:30:00Z",
+        "state": "DIFF_OPENED",
+        "sla_state": "ON_TRACK",
+        "audit_anchor": "AUD-R24-001"
+      },
+      {
+        "event_id": "TL-R24-002",
+        "case_id": "CASE-FTS-R24-002",
+        "event_time": "2026-05-15T07:35:00Z",
+        "state": "SOD_BLOCKED",
+        "sla_state": "AT_RISK",
+        "audit_anchor": "AUD-R24-002"
+      },
+      {
+        "event_id": "TL-R24-003",
+        "case_id": "CASE-FTS-R24-002",
+        "event_time": "2026-05-15T07:40:00Z",
+        "state": "QUARANTINE_HELD",
+        "sla_state": "BREACHED",
+        "audit_anchor": "AUD-R24-003"
+      }
+    ]
+  },
+  "offline_signed_reviewer_packet": {
+    "packet_id": "OFFPKT-R24-001",
+    "status": "EXPORTABLE_UNSIGNED_DRAFT",
+    "watermark": "Decision-support / Non-operational",
+    "can_import_signed_packet": true,
+    "can_export_unsigned_packet": true,
+    "can_claim_readiness": false,
+    "required_signature_slots": [
+      "checker_detached_jws",
+      "qa_detached_jws",
+      "approver_detached_jws"
+    ],
+    "import_validation": [
+      "schema_version_match",
+      "packet_digest_match",
+      "signer_scope_valid",
+      "timestamp_within_sla",
+      "no_source_mutation"
+    ],
+    "export_contents": [
+      "case_summary.json",
+      "evidence_diff.json",
+      "sod_assignment.json",
+      "sla_timeline.json",
+      "audit_anchors.json",
+      "object_manifest_refs.json",
+      "reviewer_notes_template.md",
+      "WATERMARK.txt"
+    ],
+    "disabled_exports": [
+      "production_readiness_certificate",
+      "operational_readiness_certificate",
+      "live_writeback_payload"
+    ]
+  },
+  "mock_api_adapter": {
+    "profile": "backend-pilot-readonly",
+    "operational_writeback": false,
+    "allowed_methods": [
+      "GET /cases",
+      "GET /cases/{id}/diff",
+      "GET /audit/{anchor}",
+      "POST /offline-packets/validate-dry-run"
+    ],
+    "blocked_methods": [
+      "POST /operational/writeback",
+      "PATCH /source-artifacts/{id}",
+      "POST /readiness/claim"
+    ],
+    "adapter_contract": "All mutating calls return 403 MOCK_READONLY_NON_OPERATIONAL."
+  },
+  "audit_drilldown_links": [
+    {
+      "audit_anchor": "AUD-R24-001",
+      "event": "DIFF_OPENED",
+      "hash": "b6d4a7dbb2a7e0f23b5d5b7eec0c57a79f7a14a1c9ef38ce4b6b3f5a5c6d2401",
+      "manifest_anchor": "OBJ-R24-RTE-001"
+    },
+    {
+      "audit_anchor": "AUD-R24-002",
+      "event": "SOD_BLOCKED",
+      "hash": "52f36ca7e099f9f7b176f8597bc0b96d8bcb2dd1e25adc4236b798f8d8b3a901",
+      "manifest_anchor": "OBJ-R24-CHT-002"
+    },
+    {
+      "audit_anchor": "AUD-R24-003",
+      "event": "QUARANTINE_HELD",
+      "hash": "ec3942291cc29bb02c8c15b7a77ad91f84303d2a1d0bf423af3aa76b8d725def",
+      "manifest_anchor": "OBJ-R24-QTN-003"
+    }
+  ],
+  "object_manifest_drilldown": [
+    {
+      "object_id": "OBJ-R24-RTE-001",
+      "object_type": "route_constraint",
+      "path": "/cases/CASE-FTS-R24-001/routes/RTE-A",
+      "sha256": "31aa6941fdfd1290cde345f9a4e96b2851d6f3a5d733d13402ef5ac4bf82b10d",
+      "can_mutate_source": false
+    },
+    {
+      "object_id": "OBJ-R24-CHT-002",
+      "object_type": "chart_overlay",
+      "path": "/cases/CASE-FTS-R24-002/charts/overlay-02",
+      "sha256": "5f4dcc3b5aa765d61d8327deb882cf99a81f793e4c9fb1a1e3d01a",
+      "can_mutate_source": false
+    },
+    {
+      "object_id": "OBJ-R24-QTN-003",
+      "object_type": "quarantine_record",
+      "path": "/quarantine/QTN-R24-003",
+      "sha256": "c118ad17339611ef0f2d54bd2eeec7ba65ea318d04c7a3d9af91e3e1f8e1f920",
+      "can_mutate_source": false
+    }
+  ],
+  "accessibility_checks": [
+    {
+      "check": "keyboard_path_all_controls",
+      "status": "PASS"
+    },
+    {
+      "check": "aria_labels_graph_and_timeline",
+      "status": "PASS"
+    },
+    {
+      "check": "contrast_non_operational_watermark",
+      "status": "PASS"
+    },
+    {
+      "check": "bilingual_vi_en_toggle",
+      "status": "PASS"
+    },
+    {
+      "check": "reduced_motion_timeline",
+      "status": "PASS"
+    }
+  ],
+  "v25_candidate_backlog": [
+    "Evidence rule-pack authoring UI with signed simulation-only dry run",
+    "Trust-chain graph visualization with dependency collapse/expand",
+    "Reviewer competency and authorization expiry dashboard",
+    "Air-gapped packet transfer station with malware-scan handoff log",
+    "Read-only backend pilot contract tests against OpenAPI mocks",
+    "Formal UAT script pack for Evidence Review Board operators"
+  ],
+  "cross_domain_evidence_federation": {
+    "mode": "read_only_federation_index",
+    "operational_writeback": false,
+    "domains": [
+      {
+        "domain": "AIS/AIM",
+        "trust_anchor": "AIXM bundle signature",
+        "status": "PARTIAL",
+        "gap": "source authority not independently countersigned"
+      },
+      {
+        "domain": "ATFM",
+        "trust_anchor": "measure replay digest",
+        "status": "PARTIAL",
+        "gap": "near-real-time stream pending immutability commit"
+      },
+      {
+        "domain": "Training/Competency",
+        "trust_anchor": "reviewer competency registry digest",
+        "status": "PASS",
+        "gap": "none"
+      },
+      {
+        "domain": "Security/Audit",
+        "trust_anchor": "WORM audit chain terminal hash",
+        "status": "PASS",
+        "gap": "none"
+      }
+    ],
+    "federated_case_keys": [
+      "case_id",
+      "scope_id",
+      "airac_cycle",
+      "domain",
+      "anchor_hash_sha256"
+    ],
+    "forbidden_actions": [
+      "merge_authoritative_source",
+      "overwrite_domain_record",
+      "claim_cross_domain_readiness"
+    ]
+  },
+  "reviewer_workload_forecasting": {
+    "forecast_method": "deterministic capacity envelope with fatigue/risk modifiers; no HR decision automation",
+    "decision_support_only": true,
+    "horizon_days": 14,
+    "reviewers": [
+      {
+        "reviewer": "RV-A",
+        "open_cases": 5,
+        "forecast_hours": 18,
+        "fatigue_risk": "MEDIUM",
+        "assignment_recommendation": "LIMIT_NON_URGENT"
+      },
+      {
+        "reviewer": "RV-B",
+        "open_cases": 2,
+        "forecast_hours": 9,
+        "fatigue_risk": "LOW",
+        "assignment_recommendation": "OK_WITHIN_SCOPE"
+      },
+      {
+        "reviewer": "RV-C",
+        "open_cases": 7,
+        "forecast_hours": 27,
+        "fatigue_risk": "HIGH",
+        "assignment_recommendation": "BLOCK_NEW_CRITICAL_CASES"
+      }
+    ],
+    "guardrails": [
+      "does_not_change_roster",
+      "does_not_certify_competency",
+      "requires supervisor review"
+    ]
+  },
+  "advanced_audit_replay_timeline": {
+    "replay_classes": [
+      {
+        "class": "post_event_replay",
+        "source": "immutable_evidence_index",
+        "minimum_age_minutes": 60,
+        "warning": null
+      },
+      {
+        "class": "near_real_time_review",
+        "source": "streaming_archive",
+        "minimum_age_minutes": 0,
+        "warning": "pending immutability commit"
+      }
+    ],
+    "timeline_events": [
+      {
+        "t": "2026-05-15T01:00:00Z",
+        "event": "bundle_intake",
+        "hash": "sha256:intake-demo"
+      },
+      {
+        "t": "2026-05-15T01:12:00Z",
+        "event": "trust_anchor_checked",
+        "hash": "sha256:anchor-demo"
+      },
+      {
+        "t": "2026-05-15T01:30:00Z",
+        "event": "quarantine_flag_created",
+        "hash": "sha256:quarantine-demo"
+      },
+      {
+        "t": "2026-05-15T02:05:00Z",
+        "event": "reviewer_note_signed",
+        "hash": "sha256:note-demo"
+      }
+    ],
+    "can_mutate_events": false
+  },
+  "signed_policy_bundle_promotion_pipeline": {
+    "stages": [
+      "DRAFT",
+      "SHADOW_REPLAY",
+      "LIMITED_SCOPE_PILOT",
+      "APPROVED_FOR_NON_OPERATIONAL_DECISION_SUPPORT",
+      "ARCHIVED"
+    ],
+    "current_stage": "SHADOW_REPLAY",
+    "next_stage_allowed": false,
+    "stage_gate_failures": [
+      "two-role concurrence missing",
+      "replay corpus coverage below threshold",
+      "quarantine item unresolved"
+    ],
+    "required_signatures": [
+      "technical_owner",
+      "domain_owner",
+      "audit_reviewer"
+    ],
+    "forbidden_promotions": [
+      "direct_to_operational",
+      "skip_shadow_replay",
+      "unsigned_policy_bundle"
+    ]
+  },
+  "evidence_provenance_graph_analytics": {
+    "nodes": [
+      {
+        "id": "SRC-AIXM-001",
+        "type": "source",
+        "classification": "L2"
+      },
+      {
+        "id": "NORM-001",
+        "type": "normalized_record",
+        "classification": "L2"
+      },
+      {
+        "id": "RULE-PT-001",
+        "type": "rule_pack",
+        "classification": "L1"
+      },
+      {
+        "id": "FIND-001",
+        "type": "finding",
+        "classification": "L2"
+      },
+      {
+        "id": "NOTE-001",
+        "type": "reviewer_note",
+        "classification": "L2"
+      }
+    ],
+    "edges": [
+      {
+        "from": "SRC-AIXM-001",
+        "to": "NORM-001",
+        "relation": "normalized_by",
+        "hash_checked": true
+      },
+      {
+        "from": "NORM-001",
+        "to": "FIND-001",
+        "relation": "evaluated_by",
+        "hash_checked": true
+      },
+      {
+        "from": "RULE-PT-001",
+        "to": "FIND-001",
+        "relation": "rule_fired",
+        "hash_checked": true
+      },
+      {
+        "from": "FIND-001",
+        "to": "NOTE-001",
+        "relation": "reviewed_in",
+        "hash_checked": true
+      }
+    ],
+    "analytics": [
+      {
+        "metric": "untrusted_leaf_count",
+        "value": 1,
+        "readiness_effect": "BLOCKS_READINESS"
+      },
+      {
+        "metric": "orphan_evidence_nodes",
+        "value": 0,
+        "readiness_effect": "PASS"
+      },
+      {
+        "metric": "cross_domain_conflict_count",
+        "value": 2,
+        "readiness_effect": "BLOCKS_READINESS"
+      }
+    ],
+    "can_mutate_source": false
+  },
+  "operational_readiness_gating_simulator": {
+    "simulation_only": true,
+    "claim_output": "NOT_READY",
+    "operational_gate_open": false,
+    "gates": [
+      {
+        "gate": "evidence_chain_complete",
+        "status": "FAIL",
+        "reason": "AIS domain lacks countersignature"
+      },
+      {
+        "gate": "scope_signed",
+        "status": "PASS",
+        "reason": "limited scope only"
+      },
+      {
+        "gate": "quarantine_clear",
+        "status": "FAIL",
+        "reason": "one unresolved quarantine item"
+      },
+      {
+        "gate": "policy_promoted",
+        "status": "FAIL",
+        "reason": "shadow replay not complete"
+      },
+      {
+        "gate": "archive_notarized",
+        "status": "PASS",
+        "reason": "export can be archived, not used as operational approval"
+      }
+    ],
+    "blocked_outputs": [
+      "operational_readiness_certificate",
+      "production_live_claim",
+      "operational_writeback_payload"
+    ]
+  },
+  "immutable_export_notarization_archive_retention": {
+    "export_mode": "notarized_non_operational_evidence_pack",
+    "can_replace_authoritative_record": false,
+    "notarization_steps": [
+      "manifest hash",
+      "audit terminal hash",
+      "timestamp token placeholder",
+      "signature envelope placeholder",
+      "retention class assignment"
+    ],
+    "retention_classes": [
+      {
+        "class": "HOT",
+        "duration": "0-90d",
+        "purpose": "review"
+      },
+      {
+        "class": "WARM",
+        "duration": "90d-12m",
+        "purpose": "audit retrieval"
+      },
+      {
+        "class": "COLD_WORM",
+        "duration": ">12m per policy",
+        "purpose": "long-term archive/legal hold"
+      }
+    ],
+    "legal_hold_supported": true
+  },
+  "v28_candidate_backlog": [
+    "assurance case builder with Goal Structuring Notation style evidence mapping",
+    "controlled pilot telemetry ingestion with synthetic/anonymized feeds only",
+    "human factors review room with workload annotations",
+    "domain conflict resolution workbench",
+    "data retention policy authoring UI",
+    "SIEM evidence connector simulator",
+    "FAT/SAT rehearsal pack and executive evidence briefing mode"
+  ],
+  "assurance_case_builder": {
+    "mode": "builder-only",
+    "readiness_claim_allowed": false,
+    "claims": [
+      {
+        "claim_id": "AC-CLAIM-001",
+        "claim": "Evidence can support limited-scope review only",
+        "status": "supported-with-gaps",
+        "evidence_refs": [
+          "FED-ANS-001",
+          "PROV-GRAPH-002"
+        ],
+        "open_gaps": [
+          "independent validation signature missing",
+          "operational scope not approved"
+        ]
+      },
+      {
+        "claim_id": "AC-CLAIM-002",
+        "claim": "Telemetry can inform decision-support assessment",
+        "status": "conditional",
+        "evidence_refs": [
+          "TEL-PILOT-001"
+        ],
+        "open_gaps": [
+          "pilot data is synthetic/masked",
+          "no operational write-back"
+        ]
+      },
+      {
+        "claim_id": "AC-CLAIM-003",
+        "claim": "FAT/SAT rehearsal package is traceable",
+        "status": "supported",
+        "evidence_refs": [
+          "FAT-SAT-001",
+          "AUDIT-REPLAY-004"
+        ],
+        "open_gaps": [
+          "formal acceptance authority not attached"
+        ]
+      }
+    ],
+    "argument_nodes": [
+      {
+        "node_id": "ARG-001",
+        "type": "claim",
+        "text_vi": "Mọi kết luận chỉ dùng hỗ trợ quyết định",
+        "text_en": "All conclusions are decision-support only",
+        "children": [
+          "ARG-002",
+          "ARG-003"
+        ]
+      },
+      {
+        "node_id": "ARG-002",
+        "type": "evidence",
+        "text_vi": "Bằng chứng có chuỗi tin cậy và manifest",
+        "text_en": "Evidence has trust chain and manifest",
+        "children": []
+      },
+      {
+        "node_id": "ARG-003",
+        "type": "rebuttal",
+        "text_vi": "Không có phê chuẩn phạm vi thì không được claim readiness",
+        "text_en": "No scope approval means no readiness claim",
+        "children": []
+      }
+    ]
+  },
+  "controlled_pilot_telemetry_ingestion": {
+    "profile": "controlled-pilot-dry-run",
+    "operational_writeback": false,
+    "ingestion_lanes": [
+      {
+        "lane_id": "TEL-LANE-01",
+        "source": "simulated-siemonitor",
+        "classification": "masked",
+        "status": "accepted_to_quarantine",
+        "validation": [
+          "schema",
+          "timestamp_window",
+          "source_signature_stub"
+        ]
+      },
+      {
+        "lane_id": "TEL-LANE-02",
+        "source": "pilot-ui-events",
+        "classification": "pseudonymized",
+        "status": "accepted_to_staging",
+        "validation": [
+          "schema",
+          "user_session_hash",
+          "watermark_present"
+        ]
+      },
+      {
+        "lane_id": "TEL-LANE-03",
+        "source": "external-ops-feed",
+        "classification": "blocked",
+        "status": "rejected",
+        "validation": [
+          "no operational connector in this round"
+        ]
+      }
+    ],
+    "privacy_controls": [
+      "no raw personal data",
+      "hash-only reviewer/session linkage",
+      "no operational system write-back"
+    ]
+  },
+  "human_factors_review_room": {
+    "purpose": "review reviewer workload, fatigue-risk cues and UI comprehension without performance pressure",
+    "rooms": [
+      {
+        "room_id": "HF-01",
+        "focus": "cognitive load",
+        "status": "open",
+        "findings": [
+          "too many red badges in dense view",
+          "requires progressive disclosure"
+        ]
+      },
+      {
+        "room_id": "HF-02",
+        "focus": "fatigue/risk balancing",
+        "status": "open",
+        "findings": [
+          "assignment engine flags after-hours risk",
+          "requires supervisor override note"
+        ]
+      },
+      {
+        "room_id": "HF-03",
+        "focus": "bilingual comprehension",
+        "status": "open",
+        "findings": [
+          "key terms mapped through terminology governance"
+        ]
+      }
+    ],
+    "guardrail": "human factors view is advisory and cannot approve evidence"
+  },
+  "domain_conflict_resolution_workbench": {
+    "conflicts": [
+      {
+        "conflict_id": "DCF-001",
+        "domains": [
+          "ANS",
+          "Security"
+        ],
+        "issue": "SIEM alert conflicts with trusted evidence timestamp",
+        "resolution_state": "needs_joint_review",
+        "allowed_actions": [
+          "add_note",
+          "request_recheck",
+          "quarantine"
+        ]
+      },
+      {
+        "conflict_id": "DCF-002",
+        "domains": [
+          "Safety",
+          "Training"
+        ],
+        "issue": "reviewer competency expired during case SLA window",
+        "resolution_state": "blocked_from_approval",
+        "allowed_actions": [
+          "reassign",
+          "escalate"
+        ]
+      },
+      {
+        "conflict_id": "DCF-003",
+        "domains": [
+          "Data",
+          "Operations"
+        ],
+        "issue": "retention tag shorter than audit requirement",
+        "resolution_state": "policy_exception_required",
+        "allowed_actions": [
+          "draft_exception",
+          "quarantine_export"
+        ]
+      }
+    ],
+    "blocked_actions": [
+      "force approve",
+      "mutate source evidence",
+      "claim operational readiness"
+    ]
+  },
+  "retention_policy_authoring_ui": {
+    "draft_policy_id": "RET-DRAFT-VS28-001",
+    "status": "draft-not-effective",
+    "rules": [
+      {
+        "rule_id": "RET-001",
+        "object_type": "signed reviewer packet",
+        "retention": "10y",
+        "legal_hold_supported": true,
+        "disposition": "archive-only"
+      },
+      {
+        "rule_id": "RET-002",
+        "object_type": "pilot telemetry masked event",
+        "retention": "18m",
+        "legal_hold_supported": true,
+        "disposition": "purge after export summary"
+      },
+      {
+        "rule_id": "RET-003",
+        "object_type": "notarized evidence export",
+        "retention": "permanent-until-revoked",
+        "legal_hold_supported": true,
+        "disposition": "WORM archive"
+      }
+    ],
+    "must_not": "draft retention policy cannot shorten existing controlled evidence retention"
+  },
+  "siem_evidence_connector_simulator": {
+    "mode": "simulator-only",
+    "connectors": [
+      {
+        "connector_id": "SIEM-SIM-01",
+        "event_type": "auth anomaly",
+        "status": "mocked",
+        "evidence_mapping": "audit_anchor"
+      },
+      {
+        "connector_id": "SIEM-SIM-02",
+        "event_type": "bundle integrity event",
+        "status": "mocked",
+        "evidence_mapping": "trust_chain_dashboard"
+      },
+      {
+        "connector_id": "SIEM-SIM-03",
+        "event_type": "quarantine policy event",
+        "status": "mocked",
+        "evidence_mapping": "quarantine_queue"
+      }
+    ],
+    "blocked": [
+      "live SIEM credentials",
+      "automatic enforcement",
+      "operational alert write-back"
+    ]
+  },
+  "fat_sat_rehearsal_pack": {
+    "pack_id": "FAT-SAT-VS28-001",
+    "status": "rehearsal-only",
+    "scripts": [
+      {
+        "script_id": "FAT-001",
+        "name": "Assurance case traceability",
+        "expected_result": "all claims map to evidence or open gaps"
+      },
+      {
+        "script_id": "FAT-002",
+        "name": "Telemetry dry-run import",
+        "expected_result": "blocked lanes are rejected and logged"
+      },
+      {
+        "script_id": "SAT-001",
+        "name": "Reviewer room accessibility walkthrough",
+        "expected_result": "keyboard, language toggle and watermark visible"
+      },
+      {
+        "script_id": "SAT-002",
+        "name": "Retention exception rehearsal",
+        "expected_result": "draft exception cannot reduce retention without approval"
+      }
+    ],
+    "acceptance_note": "No script outcome is a production go-live decision."
+  },
+  "v29_candidate_backlog": [
+    "assurance case evidence scoring and gap burndown",
+    "controlled pilot feedback loop with anonymized usability metrics",
+    "policy-as-code retention simulator with legal-hold workflows",
+    "full mock SIEM timeline correlation and incident drill",
+    "FAT/SAT result binder export with sign-off placeholders",
+    "independent verification checklist for readiness claim gates"
+  ],
+  "state_hash_sha256": "aae3735a77106c59979563627d028129f1d24009cf6fb14ac3023bf3a2d9d0ed"
+}

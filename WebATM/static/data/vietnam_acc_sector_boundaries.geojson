@@ -1,0 +1,863 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HN ACC Sector 1 southern boundary",
+        "unit": "Ha Noi ACC",
+        "frequency": "132.300 MHz primary / 128.150 MHz secondary",
+        "service": "ACC sector boundary",
+        "source": "AIP ENR 2.1",
+        "points": "1 - 2 - 3 - 4"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.61027777777777,
+            20.255
+          ],
+          [
+            105.54555555555555,
+            20.566944444444445
+          ],
+          [
+            106.46388888888889,
+            20.928333333333335
+          ],
+          [
+            108.20861111111111,
+            21.209722222222222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HN ACC Sector 2 southern boundary",
+        "unit": "Ha Noi ACC",
+        "frequency": "133.650 MHz primary / 132.925 MHz secondary",
+        "service": "ACC sector boundary",
+        "source": "AIP ENR 2.1",
+        "points": "5 - 6 - 7 - 8"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.10916666666667,
+            19.529999999999998
+          ],
+          [
+            105.73861111111111,
+            18.994722222222222
+          ],
+          [
+            106.87166666666666,
+            18.847777777777775
+          ],
+          [
+            107.18972222222223,
+            19.267777777777777
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HN ACC Sector 4 northern boundary",
+        "unit": "Ha Noi ACC",
+        "frequency": "123.300 MHz primary / 124.550 MHz secondary",
+        "service": "ACC sector boundary",
+        "source": "AIP ENR 2.1",
+        "points": "A01 - A02 - A03"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.4,
+            17.0
+          ],
+          [
+            107.3,
+            17.0
+          ],
+          [
+            108.74361111111111,
+            17.419444444444444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HN ACC Sector 4 southern boundary",
+        "unit": "Ha Noi ACC",
+        "frequency": "123.300 MHz primary / 124.550 MHz secondary",
+        "service": "ACC sector boundary",
+        "source": "AIP ENR 2.1",
+        "points": "D02 - NDB CQ - D04"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.55666666666666,
+            14.686111111111112
+          ],
+          [
+            108.70444444444445,
+            15.412222222222223
+          ],
+          [
+            110.34527777777777,
+            16.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 1 <=FL265",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "134.050 MHz primary / 125.375 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "DN4 - SOSPA - D20 - D21 - VIMUT - D05 - D04 - NDB CQ - D02 - D01 - D23 - D24"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              108.64083333333333,
+              11.83388888888889
+            ],
+            [
+              109.1575,
+              11.458055555555555
+            ],
+            [
+              109.49277777777777,
+              11.904444444444445
+            ],
+            [
+              109.5213888888889,
+              13.962499999999999
+            ],
+            [
+              110.69805555555556,
+              15.679444444444444
+            ],
+            [
+              110.34527777777777,
+              16.0
+            ],
+            [
+              108.70444444444445,
+              15.412222222222223
+            ],
+            [
+              107.55666666666666,
+              14.686111111111112
+            ],
+            [
+              107.60777777777777,
+              13.305555555555557
+            ],
+            [
+              108.50611111111111,
+              13.363888888888889
+            ],
+            [
+              108.6575,
+              13.260555555555555
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 1 FL265-FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "134.050 MHz primary / 125.375 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D02 - NDB CQ - D04 - D05 - VIMUT - DN4 - D24 - D23 - D01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.55666666666666,
+              14.686111111111112
+            ],
+            [
+              108.70444444444445,
+              15.412222222222223
+            ],
+            [
+              110.34527777777777,
+              16.0
+            ],
+            [
+              110.69805555555556,
+              15.679444444444444
+            ],
+            [
+              109.5213888888889,
+              13.962499999999999
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              108.6575,
+              13.260555555555555
+            ],
+            [
+              108.50611111111111,
+              13.363888888888889
+            ],
+            [
+              107.60777777777777,
+              13.305555555555557
+            ],
+            [
+              107.55666666666666,
+              14.686111111111112
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 2 <=FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.100 MHz primary / 128.775 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D01 - E01 - D23 - D24 - DN4 - E04 - E02 - E03 - RUNOP - D15"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.60777777777777,
+              13.305555555555557
+            ],
+            [
+              107.99083333333333,
+              13.330833333333333
+            ],
+            [
+              108.50611111111111,
+              13.363888888888889
+            ],
+            [
+              108.6575,
+              13.260555555555555
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              108.36194444444443,
+              12.028055555555556
+            ],
+            [
+              107.97277777777778,
+              12.298333333333334
+            ],
+            [
+              106.97916666666667,
+              10.879166666666666
+            ],
+            [
+              106.63833333333334,
+              11.088055555555556
+            ],
+            [
+              105.91027777777778,
+              11.2625
+            ],
+            [
+              107.60777777777777,
+              13.305555555555557
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 2 <=FL305",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.100 MHz primary / 128.775 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "DN4 - SOSPA - E04"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              108.64083333333333,
+              11.83388888888889
+            ],
+            [
+              108.36194444444443,
+              12.028055555555556
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 3.1 <=FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.900 MHz primary / 133.850 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D28 - NDB RG - D27 - D26 - VIGEN - DN2"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              105.09472222222222,
+              10.71861111111111
+            ],
+            [
+              105.13305555555554,
+              9.959444444444443
+            ],
+            [
+              104.55916666666667,
+              8.843333333333334
+            ],
+            [
+              105.88972222222223,
+              8.571666666666667
+            ],
+            [
+              105.36944444444444,
+              7.995555555555556
+            ],
+            [
+              104.84305555555555,
+              7.0
+            ],
+            [
+              105.09472222222222,
+              10.71861111111111
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 3.2 FL255-FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.900 MHz primary / 133.850 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D15 - RUNOP - D18 - TULTU - D26 - D27 - NDB RG - D28"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              105.91027777777778,
+              11.2625
+            ],
+            [
+              106.63833333333334,
+              11.088055555555556
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              106.89777777777779,
+              9.683055555555555
+            ],
+            [
+              105.88972222222223,
+              8.571666666666667
+            ],
+            [
+              104.55916666666667,
+              8.843333333333334
+            ],
+            [
+              105.13305555555554,
+              9.959444444444443
+            ],
+            [
+              105.09472222222222,
+              10.71861111111111
+            ],
+            [
+              105.91027777777778,
+              11.2625
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 4.1 <=FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "133.050 MHz primary / 119.350 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "DN2 - VIGEN - D26 - D25 - D19 - OSIXA - D08"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.84305555555555,
+              7.0
+            ],
+            [
+              105.36944444444444,
+              7.995555555555556
+            ],
+            [
+              105.88972222222223,
+              8.571666666666667
+            ],
+            [
+              106.77277777777778,
+              8.241388888888888
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              109.84388888888888,
+              9.522222222222224
+            ],
+            [
+              112.36888888888888,
+              9.564722222222223
+            ],
+            [
+              104.84305555555555,
+              7.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 4.2 FL255-FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "133.050 MHz primary / 119.350 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D26 - TULTU - D18 - D19 - D25"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              105.88972222222223,
+              8.571666666666667
+            ],
+            [
+              106.89777777777779,
+              9.683055555555555
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              106.77277777777778,
+              8.241388888888888
+            ],
+            [
+              105.88972222222223,
+              8.571666666666667
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 5 <=FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.700 MHz primary / 133.150 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D05 - VIMUT - D21 - D20 - D19 - OSIXA - D08 - DONDA - EXOTO"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              110.69805555555556,
+              15.679444444444444
+            ],
+            [
+              109.5213888888889,
+              13.962499999999999
+            ],
+            [
+              109.49277777777777,
+              11.904444444444445
+            ],
+            [
+              109.1575,
+              11.458055555555555
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              109.84388888888888,
+              9.522222222222224
+            ],
+            [
+              112.36888888888888,
+              9.564722222222223
+            ],
+            [
+              112.02166666666666,
+              14.703333333333333
+            ],
+            [
+              111.05,
+              15.358333333333333
+            ],
+            [
+              110.69805555555556,
+              15.679444444444444
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 5 FL305-FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.700 MHz primary / 133.150 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "DN4 - SOSPA - D20 - D19 - D18 - DN7 - DN6 - E04"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              108.64083333333333,
+              11.83388888888889
+            ],
+            [
+              109.1575,
+              11.458055555555555
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              107.89666666666668,
+              11.275555555555556
+            ],
+            [
+              108.09083333333332,
+              11.570277777777777
+            ],
+            [
+              108.36194444444443,
+              12.028055555555556
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 5 FL265-FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "120.700 MHz primary / 133.150 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "VIMUT - D21 - D20 - SOSPA - DN4"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              109.5213888888889,
+              13.962499999999999
+            ],
+            [
+              109.49277777777777,
+              11.904444444444445
+            ],
+            [
+              109.1575,
+              11.458055555555555
+            ],
+            [
+              108.64083333333333,
+              11.83388888888889
+            ],
+            [
+              108.64861111111112,
+              12.509722222222223
+            ],
+            [
+              109.5213888888889,
+              13.962499999999999
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 6 <=FL460",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "132.350 MHz primary / 128.775 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "E02 - E04 - DN6 - DN7 - D18 - E03"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.97277777777778,
+              12.298333333333334
+            ],
+            [
+              108.36194444444443,
+              12.028055555555556
+            ],
+            [
+              108.09083333333332,
+              11.570277777777777
+            ],
+            [
+              107.89666666666668,
+              11.275555555555556
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              106.97916666666667,
+              10.879166666666666
+            ],
+            [
+              107.97277777777778,
+              12.298333333333334
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 6 <=FL305",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "132.350 MHz primary / 128.775 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "E04 - SOSPA - D20 - D19 - D18 - DN7 - DN6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              108.36194444444443,
+              12.028055555555556
+            ],
+            [
+              108.64083333333333,
+              11.83388888888889
+            ],
+            [
+              109.1575,
+              11.458055555555555
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              107.89666666666668,
+              11.275555555555556
+            ],
+            [
+              108.09083333333332,
+              11.570277777777777
+            ],
+            [
+              108.36194444444443,
+              12.028055555555556
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HCM ACC Sector 7 <=FL255",
+        "unit": "Ho Chi Minh ACC",
+        "frequency": "128.175 MHz primary / 133.850 MHz secondary",
+        "service": "ACC sector",
+        "source": "AIP ENR 2.1",
+        "note": "Simplified polygon created from ENR 2.1 named points; FIR boundary/border segments are approximated.",
+        "points": "D15 - RUNOP - D18 - D19 - D25 - D26 - D27 - NDB RG - D28"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              105.91027777777778,
+              11.2625
+            ],
+            [
+              106.63833333333334,
+              11.088055555555556
+            ],
+            [
+              107.44722222222222,
+              10.590833333333334
+            ],
+            [
+              108.24694444444445,
+              10.237222222222222
+            ],
+            [
+              106.77277777777778,
+              8.241388888888888
+            ],
+            [
+              105.88972222222223,
+              8.571666666666667
+            ],
+            [
+              104.55916666666667,
+              8.843333333333334
+            ],
+            [
+              105.13305555555554,
+              9.959444444444443
+            ],
+            [
+              105.09472222222222,
+              10.71861111111111
+            ],
+            [
+              105.91027777777778,
+              11.2625
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

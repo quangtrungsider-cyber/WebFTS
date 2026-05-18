@@ -65,7 +65,7 @@ export class ConnectionStatusService {
 
     private listeners: Set<ConnectionStatusListener> = new Set();
     private dataTimeoutId: number | null = null;
-    private readonly DATA_TIMEOUT_MS = 5000; // Consider disconnected if no data for 5 seconds
+    private readonly DATA_TIMEOUT_MS = 60000; // Consider disconnected if no data for 60 seconds
 
     // Initial connection tracking
     private isInitialLoadComplete: boolean = false;
@@ -197,9 +197,9 @@ export class ConnectionStatusService {
 
             // Log to echo messages
             if (connected) {
-                echoManager.success('Connected to BlueSky server');
+                echoManager.success('Connected to VATM server');
             } else {
-                echoManager.warning('✗ Disconnected from BlueSky server');
+                echoManager.warning('✗ Disconnected from VATM server');
             }
 
             this.notifyListeners();
@@ -216,7 +216,7 @@ export class ConnectionStatusService {
      */
     public setBlueSkyConnecting(): void {
         this.status.blueSkyState = 'connecting';
-        echoManager.info('⟳ Connecting to BlueSky server...');
+        echoManager.info('⟳ Connecting to VATM server...');
         this.notifyListeners();
     }
 
@@ -339,7 +339,7 @@ export class ConnectionStatusService {
         this.dataTimeoutId = window.setTimeout(() => {
             // No data received for DATA_TIMEOUT_MS
             logger.warn('ConnectionStatus', 'No data received (nodeinfo, siminfo, or acdata) - BlueSky may be disconnected');
-            echoManager.warning('⚠ No data received from BlueSky server - connection may be lost');
+            echoManager.warning('⚠ No data received from VATM server - connection may be lost');
             if (this.status.blueSkyConnected) {
                 this.setBlueSkyConnected(false);
                 this.setReceivingData(false);
@@ -453,15 +453,15 @@ export class ConnectionStatusService {
         }
 
         if (!this.status.blueSkyConnected) {
-            return 'Disconnected from BlueSky server. Please visit settings and make sure that (1) BlueSky server has been started and (2) You are connected to server.';
+            return 'Disconnected from VATM server';
         }
 
         if (this.status.blueSkyConnected && this.status.receivingData) {
-            return `Connected to BlueSky server at ${this.status.serverIP}.`;
+            return `Connected to VATM server at ${this.status.serverIP}.`;
         }
 
         if (this.status.blueSkyConnected && !this.status.receivingData) {
-            return `Connected to BlueSky server at ${this.status.serverIP} (No Data).`;
+            return `Connected to VATM server at ${this.status.serverIP} (No Data).`;
         }
 
         return 'Unknown connection status';

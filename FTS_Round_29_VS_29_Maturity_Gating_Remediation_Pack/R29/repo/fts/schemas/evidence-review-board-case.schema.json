@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "current_state": {
+      "enum": [
+        "DENIED",
+        "PENDING_REVIEW",
+        "APPROVED_FOR_LIMITED_SCOPE",
+        "REJECTED"
+      ]
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "case_id",
+    "current_state",
+    "watermark"
+  ],
+  "type": "object"
+}

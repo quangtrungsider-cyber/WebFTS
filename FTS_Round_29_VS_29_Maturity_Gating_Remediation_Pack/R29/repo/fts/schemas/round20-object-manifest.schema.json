@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "manifest_id",
+    "records",
+    "watermark"
+  ],
+  "type": "object"
+}

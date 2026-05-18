@@ -1,0 +1,306 @@
+{
+  "round": "R24-VS-24",
+  "title": "Evidence Diff, SoD Assignment, SLA Timeline & Offline Reviewer Packet Workbench",
+  "watermark": "Decision-support / Non-operational",
+  "claim_guard": {
+    "readiness_claim_allowed": false,
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "evidence_diff_resolved": false,
+    "sod_assignment_valid": false,
+    "sla_breach_reviewed": false,
+    "offline_packet_verified": false,
+    "backend_writeback_enabled": false,
+    "gate_formula": "readiness = evidence_diff_resolved AND sod_assignment_valid AND sla_breach_reviewed AND offline_packet_verified AND backend_writeback_enabled=false AND scope_valid AND trust_chain_valid",
+    "gate_explainer": {
+      "vi": "VS-24 chỉ hiển thị, so sánh, phân công và đóng gói rà soát ngoại tuyến; không ghi ngược vận hành và không phát hành chứng nhận sẵn sàng.",
+      "en": "VS-24 is display, comparison, assignment and offline review packaging only; it does not write back operationally or issue readiness certificates."
+    }
+  },
+  "labels": {
+    "vi": {
+      "title": "Bàn làm việc VS-24",
+      "diff": "So sánh bằng chứng",
+      "sod": "Phân công SoD",
+      "timeline": "Dòng thời gian / SLA",
+      "packet": "Gói rà soát ngoại tuyến",
+      "adapter": "Mock API adapter",
+      "heatmap": "Bản đồ nhiệt SLA",
+      "not_ready": "Chưa đủ điều kiện sẵn sàng",
+      "watermark": "Hỗ trợ quyết định / Không vận hành",
+      "audit": "Kiểm toán",
+      "manifest": "Manifest",
+      "import": "Nhập gói ký",
+      "export": "Xuất gói ký"
+    },
+    "en": {
+      "title": "VS-24 Workbench",
+      "diff": "Evidence diff",
+      "sod": "SoD assignment",
+      "timeline": "Timeline / SLA",
+      "packet": "Offline review packet",
+      "adapter": "Mock API adapter",
+      "heatmap": "SLA heatmap",
+      "not_ready": "Not ready for readiness claim",
+      "watermark": "Decision-support / Non-operational",
+      "audit": "Audit",
+      "manifest": "Manifest",
+      "import": "Import signed packet",
+      "export": "Export signed packet"
+    }
+  },
+  "evidence_diff_viewer": {
+    "mode": "semantic_side_by_side",
+    "can_mutate_source": false,
+    "default_redactions": [
+      "L3 sensitive aviation data masked",
+      "L4 restricted payload omitted"
+    ],
+    "diff_pairs": [
+      {
+        "pair_id": "DIFF-001",
+        "case_id": "CASE-FTS-R24-001",
+        "left_bundle": "EVB-2026-05-15-A",
+        "right_bundle": "EVB-2026-05-15-B",
+        "classification": "safety_significant",
+        "status": "OPEN_REVIEW",
+        "changed_objects": 7,
+        "audit_anchor": "AUD-R24-001",
+        "manifest_anchor": "OBJ-R24-RTE-001",
+        "readiness_effect": "BLOCKS_READINESS",
+        "summary_vi": "Thay đổi phân loại an toàn cần reviewer xác nhận độc lập.",
+        "summary_en": "Safety-significant change requires independent reviewer confirmation."
+      },
+      {
+        "pair_id": "DIFF-002",
+        "case_id": "CASE-FTS-R24-002",
+        "left_bundle": "EVB-2026-05-14-A",
+        "right_bundle": "EVB-2026-05-15-C",
+        "classification": "cosmetic",
+        "status": "QUARANTINE_DEPENDENCY",
+        "changed_objects": 2,
+        "audit_anchor": "AUD-R24-002",
+        "manifest_anchor": "OBJ-R24-CHT-002",
+        "readiness_effect": "NO_CLAIM_ALLOWED",
+        "summary_vi": "Thay đổi trình bày nhưng nguồn chart đang cách ly.",
+        "summary_en": "Presentation-only change, but the chart source is quarantined."
+      }
+    ],
+    "viewer_controls": [
+      "toggle semantic/vector/raw-metadata",
+      "filter by safety significance",
+      "jump to audit event",
+      "jump to object manifest",
+      "copy reviewer-safe citation"
+    ]
+  },
+  "sod_reviewer_assignment_engine": {
+    "policy": "Checker, QA and Approver must be distinct people; approver cannot be source author; competency and authorization scope must cover case domain.",
+    "enforcement": "BLOCK_BEFORE_REVIEW",
+    "assignments": [
+      {
+        "case_id": "CASE-FTS-R24-001",
+        "checker": "reviewer.alpha",
+        "qa": "reviewer.beta",
+        "approver": "reviewer.gamma",
+        "sod_status": "PASS",
+        "competency_scope": "FTS-EVIDENCE-DIFF",
+        "scope_valid": true
+      },
+      {
+        "case_id": "CASE-FTS-R24-002",
+        "checker": "reviewer.delta",
+        "qa": "reviewer.delta",
+        "approver": "reviewer.zeta",
+        "sod_status": "FAIL",
+        "competency_scope": "FTS-QUARANTINE",
+        "scope_valid": false,
+        "block_reason": "Checker and QA are identical; QA scope expired."
+      }
+    ],
+    "blocked_exports": [
+      "limited_scope_approval_handoff",
+      "production_readiness_certificate",
+      "operational_readiness_certificate"
+    ]
+  },
+  "case_timeline_sla_heatmap": {
+    "sla_policy": "Use deterministic case clocks from audit ledger; heatmap is advisory only.",
+    "buckets": [
+      {
+        "bucket": "intake",
+        "p95_hours": 2,
+        "breach_count": 0,
+        "heat": "LOW"
+      },
+      {
+        "bucket": "diff_review",
+        "p95_hours": 18,
+        "breach_count": 1,
+        "heat": "MEDIUM"
+      },
+      {
+        "bucket": "quarantine_resolution",
+        "p95_hours": 72,
+        "breach_count": 3,
+        "heat": "HIGH"
+      },
+      {
+        "bucket": "offline_packet_verification",
+        "p95_hours": 10,
+        "breach_count": 1,
+        "heat": "MEDIUM"
+      }
+    ],
+    "timeline_events": [
+      {
+        "event_id": "TL-R24-001",
+        "case_id": "CASE-FTS-R24-001",
+        "event_time": "2026-05-15T07:30:00Z",
+        "state": "DIFF_OPENED",
+        "sla_state": "ON_TRACK",
+        "audit_anchor": "AUD-R24-001"
+      },
+      {
+        "event_id": "TL-R24-002",
+        "case_id": "CASE-FTS-R24-002",
+        "event_time": "2026-05-15T07:35:00Z",
+        "state": "SOD_BLOCKED",
+        "sla_state": "AT_RISK",
+        "audit_anchor": "AUD-R24-002"
+      },
+      {
+        "event_id": "TL-R24-003",
+        "case_id": "CASE-FTS-R24-002",
+        "event_time": "2026-05-15T07:40:00Z",
+        "state": "QUARANTINE_HELD",
+        "sla_state": "BREACHED",
+        "audit_anchor": "AUD-R24-003"
+      }
+    ]
+  },
+  "offline_signed_reviewer_packet": {
+    "packet_id": "OFFPKT-R24-001",
+    "status": "EXPORTABLE_UNSIGNED_DRAFT",
+    "watermark": "Decision-support / Non-operational",
+    "can_import_signed_packet": true,
+    "can_export_unsigned_packet": true,
+    "can_claim_readiness": false,
+    "required_signature_slots": [
+      "checker_detached_jws",
+      "qa_detached_jws",
+      "approver_detached_jws"
+    ],
+    "import_validation": [
+      "schema_version_match",
+      "packet_digest_match",
+      "signer_scope_valid",
+      "timestamp_within_sla",
+      "no_source_mutation"
+    ],
+    "export_contents": [
+      "case_summary.json",
+      "evidence_diff.json",
+      "sod_assignment.json",
+      "sla_timeline.json",
+      "audit_anchors.json",
+      "object_manifest_refs.json",
+      "reviewer_notes_template.md",
+      "WATERMARK.txt"
+    ],
+    "disabled_exports": [
+      "production_readiness_certificate",
+      "operational_readiness_certificate",
+      "live_writeback_payload"
+    ]
+  },
+  "mock_api_adapter": {
+    "profile": "backend-pilot-readonly",
+    "operational_writeback": false,
+    "allowed_methods": [
+      "GET /cases",
+      "GET /cases/{id}/diff",
+      "GET /audit/{anchor}",
+      "POST /offline-packets/validate-dry-run"
+    ],
+    "blocked_methods": [
+      "POST /operational/writeback",
+      "PATCH /source-artifacts/{id}",
+      "POST /readiness/claim"
+    ],
+    "adapter_contract": "All mutating calls return 403 MOCK_READONLY_NON_OPERATIONAL."
+  },
+  "audit_drilldown_links": [
+    {
+      "audit_anchor": "AUD-R24-001",
+      "event": "DIFF_OPENED",
+      "hash": "b6d4a7dbb2a7e0f23b5d5b7eec0c57a79f7a14a1c9ef38ce4b6b3f5a5c6d2401",
+      "manifest_anchor": "OBJ-R24-RTE-001"
+    },
+    {
+      "audit_anchor": "AUD-R24-002",
+      "event": "SOD_BLOCKED",
+      "hash": "52f36ca7e099f9f7b176f8597bc0b96d8bcb2dd1e25adc4236b798f8d8b3a901",
+      "manifest_anchor": "OBJ-R24-CHT-002"
+    },
+    {
+      "audit_anchor": "AUD-R24-003",
+      "event": "QUARANTINE_HELD",
+      "hash": "ec3942291cc29bb02c8c15b7a77ad91f84303d2a1d0bf423af3aa76b8d725def",
+      "manifest_anchor": "OBJ-R24-QTN-003"
+    }
+  ],
+  "object_manifest_drilldown": [
+    {
+      "object_id": "OBJ-R24-RTE-001",
+      "object_type": "route_constraint",
+      "path": "/cases/CASE-FTS-R24-001/routes/RTE-A",
+      "sha256": "31aa6941fdfd1290cde345f9a4e96b2851d6f3a5d733d13402ef5ac4bf82b10d",
+      "can_mutate_source": false
+    },
+    {
+      "object_id": "OBJ-R24-CHT-002",
+      "object_type": "chart_overlay",
+      "path": "/cases/CASE-FTS-R24-002/charts/overlay-02",
+      "sha256": "5f4dcc3b5aa765d61d8327deb882cf99a81f793e4c9fb1a1e3d01a",
+      "can_mutate_source": false
+    },
+    {
+      "object_id": "OBJ-R24-QTN-003",
+      "object_type": "quarantine_record",
+      "path": "/quarantine/QTN-R24-003",
+      "sha256": "c118ad17339611ef0f2d54bd2eeec7ba65ea318d04c7a3d9af91e3e1f8e1f920",
+      "can_mutate_source": false
+    }
+  ],
+  "accessibility_checks": [
+    {
+      "check": "keyboard_tab_order",
+      "status": "PASS"
+    },
+    {
+      "check": "aria_live_gate_updates",
+      "status": "PASS"
+    },
+    {
+      "check": "bilingual_label_coverage",
+      "status": "PASS"
+    },
+    {
+      "check": "color_not_sole_indicator",
+      "status": "PASS"
+    },
+    {
+      "check": "reduced_motion",
+      "status": "PASS"
+    }
+  ],
+  "v25_candidate_backlog": [
+    "Evidence rule-pack authoring UI with signed simulation-only dry run",
+    "Trust-chain graph visualization with dependency collapse/expand",
+    "Reviewer competency and authorization expiry dashboard",
+    "Air-gapped packet transfer station with malware-scan handoff log",
+    "Read-only backend pilot contract tests against OpenAPI mocks",
+    "Formal UAT script pack for Evidence Review Board operators"
+  ]
+}

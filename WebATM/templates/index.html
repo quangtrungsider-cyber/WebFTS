@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebATM for BlueSky by amvlab</title>
+    <title>VATM Fast-Time Simulation Platform</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
@@ -25,9 +25,8 @@
         <!-- Header -->
         <header class="header">
             <div class="header-left">
-                <h1>WebATM for <a href="https://github.com/TUDelft-CNS-ATM/bluesky" target="_blank"
-                        class="bluesky-link">BlueSky</a> by <a href="https://amvlab.eu/" target="_blank"
-                        class="amvlab-link">amvlab</a></h1>
+                <img src="{{ url_for('static', filename='vatm_logo.png') }}" alt="VATM Logo" style="height: 38px; margin-right: 10px; border-radius: 4px; border: 1px solid #404040; background-color: #ffffff; padding: 2px;">
+                <h1>VATM Fast-Time Simulation Platform</h1>
                 <div class="header-separator">|</div>
                 <div class="connection-statuses">
                     <span id="bluesky-connection-status" class="status-waiting">Not Configured</span>
@@ -116,6 +115,11 @@
                             <button class="nav-btn" onclick="zoomOut()">Zoom Out</button>
                             <button class="nav-btn" onclick="resetView()">Reset View</button>
                         </div>
+                        <div class="custom-map-controls" style="margin-top: 10px; display: flex; gap: 8px;">
+                            <button id="toggle-ats-routes-btn" class="nav-btn" style="flex: 1; display: none;"><i class="fa-solid fa-route"></i> Vietnam ATS Routes</button>
+                            <button id="toggle-fullscreen-btn" class="nav-btn" style="flex: 1;"><i class="fa-solid fa-expand"></i> Fullscreen Map</button>
+                        </div>
+
                         <div class="map-info-toggle-control" style="margin-top: 8px;">
                             <button id="map-info-toggle" class="nav-btn">Map Info ▼</button>
                         </div>
@@ -137,6 +141,30 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Airspace Data Panel -->
+                <div class="panel airspace-panel">
+                    <div class="panel-header">
+                        <h3>🛰️ Airspace Data</h3>
+                        <button class="collapse-btn" data-target="airspace-content">▼</button>
+                    </div>
+                    <div class="panel-content" id="airspace-content">
+                        <div class="tree-search-wrapper" style="margin-bottom: 8px; display: flex; gap: 6px;">
+                            <input type="text" id="airspace-search" placeholder="Search procedures..." style="flex: 1; padding: 5px 8px; border-radius: 6px; border: 1px solid rgba(148,163,184,.2); background: rgba(15,23,42,.6); color: #fff; font-size: 11px;">
+                            <button id="airspace-clear-search" class="nav-btn" style="padding: 5px 8px; font-size: 11px;">✕</button>
+                        </div>
+                        <div class="tree-bulk-actions" style="margin-bottom: 8px; display: flex; gap: 8px;">
+                            <button id="airspace-select-all" class="nav-btn" style="flex: 1; font-size: 10px; padding: 4px;">Select All Visible</button>
+                            <button id="airspace-clear-all" class="nav-btn" style="flex: 1; font-size: 10px; padding: 4px;">Clear All</button>
+                        </div>
+                        <div id="airspace-tree-container" class="airspace-tree" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
+                            <div style="text-align: center; color: #64748b; font-size: 11px; padding: 12px;">Loading airspace data...</div>
+                        </div>
+                        <div class="disclaimer" style="font-size: 8px; color: #64748b; text-align: center; margin-top: 8px; border-top: 1px solid rgba(148,163,184,.12); padding-top: 6px; line-height: 1.3;">
+                            Dữ liệu VATM FTS<br/>Non-operational. Not for operational ATC use.
                         </div>
                     </div>
                 </div>
@@ -448,9 +476,14 @@
                                 id="intrusion-total">0</span> total</div>
                         <div>Cursor: <span id="cursor-position">--</span></div>
                     </div>
-                    <button id="projection-toggle" class="projection-toggle-btn"
-                        title="Toggle 2D/Globe View">🌐</button>
+                    <div style="display: flex; gap: 8px;">
+                        <button id="projection-toggle" class="projection-toggle-btn"
+                            title="Toggle 2D/Globe View">🌐</button>
+                        <button id="map-fullscreen-floating-btn" class="projection-toggle-btn"
+                            title="Toggle Fullscreen Map"><i class="fa-solid fa-expand"></i></button>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Horizontal resize handle between map and right panel -->
@@ -514,7 +547,7 @@
                 <div class="console-output" id="console-output">
                 </div>
                 <div class="console-input-container">
-                    <span class="console-prompt">BS></span>
+                    <span class="console-prompt">VATM></span>
                     <input type="text" id="console-input" placeholder="Enter command… (Ctrl+K to browse)" autocomplete="off">
                     <button id="send-command" class="console-btn">Send</button>
                 </div>
@@ -555,24 +588,24 @@
                 <button class="modal-close" id="settings-modal-close">&times;</button>
             </div>
             <div class="modal-body">
-                <!-- BlueSky Server Connectivity Section -->
+                <!-- VATM Server Connectivity Section -->
                 <div class="settings-section">
                     <div class="section-header">
-                        <h4>🌐 BlueSky Server Connectivity</h4>
-                        <div class="section-description">Configure connection to the BlueSky simulation server</div>
+                        <h4>🌐 VATM Server Connectivity</h4>
+                        <div class="section-description">Configure connection to the VATM simulation server</div>
                     </div>
 
                     <div class="setting-group">
-                        <label for="server-ip-input">BlueSky Server hostname/IP address:</label>
+                        <label for="server-ip-input">VATM Server hostname/IP address:</label>
                         <input type="text" id="server-ip-input" placeholder="localhost" value="localhost">
                         <small class="setting-help">
-                            Enter the hostname or IP address of your BlueSky simulation server.
+                            Enter the hostname or IP address of your VATM simulation server.
                         </small>
                     </div>
 
                     <!-- Server Status Section -->
                     <div class="setting-group">
-                        <label>BlueSky Server Status:</label>
+                        <label>VATM Server Status:</label>
                         <div class="server-status-modal" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
                             <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
                                 <span id="server-status-indicator-modal" class="status-indicator status-unknown"></span>
@@ -580,34 +613,34 @@
                             </div>
                             <button id="check-server-status" class="btn-secondary" style="flex-shrink: 0;">Check Status</button>
                         </div>
-                        <small class="setting-help">Current status of the BlueSky server. Click "Check Status" to verify server availability.</small>
+                        <small class="setting-help">Current status of the VATM server. Click "Check Status" to verify server availability.</small>
                     </div>
 
                 </div>
 
-                <!-- BlueSky File Management Section -->
+                <!-- VATM File Management Section -->
                 <div class="settings-section">
                     <div class="section-header">
-                        <h4>🗂️ BlueSky File Management</h4>
-                        <div class="section-description">Configure BlueSky base directory for file uploads and management</div>
+                        <h4>🗂️ VATM File Management</h4>
+                        <div class="section-description">Configure VATM base directory for file uploads and management</div>
                     </div>
                     
                     <div class="setting-group">
-                        <label for="bluesky-base-path-input-settings">BlueSky Base Directory:</label>
+                        <label for="bluesky-base-path-input-settings">VATM Base Directory:</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="text" id="bluesky-base-path-input-settings" placeholder="e.g., /path/to/bluesky or C:\bluesky" style="flex: 1;">
+                            <input type="text" id="bluesky-base-path-input-settings" placeholder="e.g., /path/to/vatm or C:\vatm" style="flex: 1;">
                             <button id="configure-base-path-btn-settings" class="btn-secondary">Configure</button>
                         </div>
                         <small class="setting-help">
-                            Enter the base directory where BlueSky is installed. Files will be uploaded to subdirectories (scenario/, plugins/, settings.cfg).
+                            Enter the base directory where VATM is installed. Files will be uploaded to subdirectories (scenario/, plugins/, settings.cfg).
                         </small>
                         
                         <div style="margin-top: 8px; padding: 8px; border-radius: 4px; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3);">
                             <div style="color: #ffc107; font-size: 11px; font-weight: bold;">⚠️ File Upload Requirements:</div>
                             <ul style="margin: 4px 0 0 16px; padding: 0; font-size: 11px; color: #cccccc;">
-                                <li>WebATM backend must have file system access to this BlueSky directory</li>
-                                <li>If WebATM and BlueSky run on different machines/containers, file uploads won't work</li>
-                                <li>BlueSky simulation works normally without file upload capability</li>
+                                <li>WebATM backend must have file system access to this VATM directory</li>
+                                <li>If WebATM and VATM run on different machines/containers, file uploads won't work</li>
+                                <li>VATM simulation works normally without file upload capability</li>
                             </ul>
                         </div>
                     </div>
@@ -668,22 +701,7 @@
                     </div>
                 </div>
 
-                <!-- License & Attribution Section -->
-                <div class="setting-group license-section">
-                    <label>License & Attribution:</label>
-                    <div class="license-info">
-                        <div class="license-text">
-                            <strong>Copyright © 2025 amvlab</strong><br>
-                            Licensed under the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html"
-                                target="_blank" style="color: #4CAF50;">GNU Affero General Public License v3.0 (AGPL-3.0)</a><br><br>
-                            <strong>Attribution:</strong><br>
-                            This software incorporates <a href="https://github.com/TUDelft-CNS-ATM/bluesky"
-                                target="_blank" style="color: #4CAF50;">BlueSky - The Open Air Traffic Simulator</a>
-                            technology developed by TU Delft (Delft University of Technology). We acknowledge and thank
-                            TU Delft for their contribution to the aviation simulation community.
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="modal-footer">
                 <button id="connect-server" class="btn-primary">Connect</button>
@@ -830,7 +848,7 @@
                         Route for aircraft <strong id="route-constraints-target"></strong>.
                         Leave altitude and speed blank for unconstrained waypoints. Values are in
                         your current display units and will be converted to feet/knots before
-                        being sent to BlueSky.
+                        being sent to VATM.
                     </div>
                 </div>
                 <div class="setting-group" id="route-constraints-bulk-section">
@@ -886,7 +904,7 @@
             <div class="modal-body">
                 <div class="confirmation-message">
                     <p><strong>This feature is available in the full version</strong></p>
-                    <p>In the full version of WebATM for BlueSky, you can:</p>
+                    <p>In the full version of WebATM for VATM, you can:</p>
                     <ul style="margin: 10px 0; padding-left: 20px; color: #cccccc;">
                         <li>Use any compatible MapLibre GL style JSON</li>
                         <li>Access MapTiler styles with your own API key</li>
@@ -921,8 +939,8 @@
                     <div id="base-path-not-configured" class="setting-group">
                         <div style="padding: 8px; border-radius: 4px; background-color: #333; border: 1px solid #666;">
                             <p style="margin: 0; color: #ffa500;">
-                                ⚠️ <strong>BlueSky base directory not configured</strong><br>
-                                Please configure the BlueSky base directory in <strong>Settings</strong> before uploading files.
+                                ⚠️ <strong>VATM base directory not configured</strong><br>
+                                Please configure the VATM base directory in <strong>Settings</strong> before uploading files.
                             </p>
                         </div>
                     </div>
@@ -1239,7 +1257,7 @@ stack_background_color = 102, 102, 102</pre>
                     <div class="demo-message">
                         <span class="demo-badge">DEMO MODE</span>
                         <p><strong>This feature is not available in Demo mode</strong></p>
-                        <p>In the full version of WebATM for BlueSky, you can:</p>
+                        <p>In the full version of WebATM for VATM, you can:</p>
                         <ul style="margin: 10px 0; padding-left: 20px; color: #cccccc;">
                             <li>Add multiple simulation nodes for distributed computing</li>
                             <li>Manage node configurations and resources</li>

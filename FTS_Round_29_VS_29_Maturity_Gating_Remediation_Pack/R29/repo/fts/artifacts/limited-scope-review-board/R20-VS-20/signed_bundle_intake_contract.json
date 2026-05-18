@@ -1,0 +1,79 @@
+{
+  "accepted_evidence_metadata_records": [
+    {
+      "artifact_hash_sha256": "0bb13eefd74dbf876501c0602c43e5066bcb1540932a70112caa9e453b197633",
+      "dependency_family": "renderer-runtime",
+      "detached_signature_metadata_hash_sha256": "41d4e5d11905b08db9135a602318c720020a59460e468000e9d8245d54cc1317",
+      "evidence_id": "R20-EVID-01",
+      "issuer_id": "issuer-renderer-runtime",
+      "profile": "controlled-lab",
+      "readiness_claim": false,
+      "record_hash_sha256": "541d33e4f634bcd1addbc6ccd11b3f2c3fcda12328d491e0e1b6e69fe89afc00",
+      "trust_anchor_id": "ta-renderer-runtime",
+      "validation_state": "ACCEPTED_FOR_REVIEW_METADATA_ONLY",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "artifact_hash_sha256": "9f6e494079619d4c27c3ca7d6d9e31a8df5c356dad043b1e55009bfaaa2f5e54",
+      "dependency_family": "pdfa-validator",
+      "detached_signature_metadata_hash_sha256": "7463021c69838fb090af3cbe408d724a7dc6ccdd12d8e4156ed20c1dcd964200",
+      "evidence_id": "R20-EVID-02",
+      "issuer_id": "issuer-pdfa-validator",
+      "profile": "controlled-lab",
+      "readiness_claim": false,
+      "record_hash_sha256": "382c7d7fa5d1a4eb8d25cac792c79ec1f63c9a0bb7513106a82e1b92582e5905",
+      "trust_anchor_id": "ta-pdfa-validator",
+      "validation_state": "ACCEPTED_FOR_REVIEW_METADATA_ONLY",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "artifact_hash_sha256": "6a2e2db8b830def1e0bbcd62a652b852a76cd7c746bc9fd8e8bb92b6e26f02b9",
+      "dependency_family": "pades-pki-tsa-ocsp-hsm",
+      "detached_signature_metadata_hash_sha256": "5bcc2fdbbad05ade52844659c190d0273c4e6d7c5502000fee97c43b8589c44b",
+      "evidence_id": "R20-EVID-03",
+      "issuer_id": "issuer-pades-pki-tsa-ocsp-hsm",
+      "profile": "controlled-lab",
+      "readiness_claim": false,
+      "record_hash_sha256": "d237aebc21550805e2b2b9bb3c5d8bbac460576663dcfad3aa75d783e05c9d91",
+      "trust_anchor_id": "ta-pades-pki-tsa-ocsp-hsm",
+      "validation_state": "ACCEPTED_FOR_REVIEW_METADATA_ONLY",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "artifact_hash_sha256": "f39615f701a315387e4688472527b64a1f9fc1425989adde724ef0245e16f71f",
+      "dependency_family": "minio-object-lock-worm",
+      "detached_signature_metadata_hash_sha256": "b21f3c6e520c83ad095a18d1b8b098a1a7022f4553a257601decfb2316c78e88",
+      "evidence_id": "R20-EVID-04",
+      "issuer_id": "issuer-minio-object-lock-worm",
+      "profile": "controlled-lab",
+      "readiness_claim": false,
+      "record_hash_sha256": "8d17e9e730739a919052cc6fb61e5ad87a13eea637e39e6b1fb4a54ac40eb865",
+      "trust_anchor_id": "ta-minio-object-lock-worm",
+      "validation_state": "ACCEPTED_FOR_REVIEW_METADATA_ONLY",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "artifact_hash_sha256": "4f222296b030060b8eff5e8a4396c487a7afbffb36cb176be6f20209f74d47e8",
+      "dependency_family": "rabbitmq-worker-runtime",
+      "detached_signature_metadata_hash_sha256": "a092ceccec50ec4a364ee1fe30fc4b679a4daf3243a9340d09ceba1be50d8632",
+      "evidence_id": "R20-EVID-05",
+      "issuer_id": "issuer-rabbitmq-worker-runtime",
+      "profile": "controlled-lab",
+      "readiness_claim": false,
+      "record_hash_sha256": "e8f2a9a32994b008b10a25cf4f2334e7168465f0d098ad64777abd77da997f35",
+      "trust_anchor_id": "ta-rabbitmq-worker-runtime",
+      "validation_state": "ACCEPTED_FOR_REVIEW_METADATA_ONLY",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "contract_hash_sha256": "9a14735e271d5f1513b125c0c2201635122060924794fd7cc334d67acadf820e",
+  "contract_id": "R20-SIGNED-BUNDLE-INTAKE-CONTRACT",
+  "input_policy": "HASH_AND_SIGNATURE_METADATA_ONLY",
+  "operational_readiness_claim": false,
+  "production_readiness_claim": false,
+  "profile": "controlled-lab",
+  "raw_sensitive_export_policy": "DENY_BY_DEFAULT",
+  "readiness_claim_allowed": false,
+  "version": "1.0.0-round20",
+  "watermark": "Decision-support / Non-operational"
+}

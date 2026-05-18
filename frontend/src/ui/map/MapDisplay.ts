@@ -4,6 +4,7 @@ import { storage } from '../../utils/StorageManager';
 import { settingsModal } from '../SettingsModal';
 import { logger } from '../../utils/Logger';
 import { TerrainToggleControl } from './TerrainToggleControl';
+import { installVietnamKmlAirspaceControls } from './VietnamKmlAirspaceControls';
 
 // Register the `pmtiles://` protocol once for the lifetime of the page so
 // offline styles can read directly from a static .pmtiles archive. Guarded so
@@ -114,6 +115,9 @@ export class MapDisplay {
 
         // Set up event handlers
         this.setupEventHandlers();
+
+        // Install VATM Vietnam Airspace/ATS Overlay Controls (KMZ)
+        installVietnamKmlAirspaceControls(this.map);
 
         // Hide the map style message since we have a default style
         this.hideMapStyleMessage();

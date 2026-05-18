@@ -1,0 +1,54 @@
+{
+  "round": "R22-VS-22",
+  "objects": [
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:signed_bundle_intake_contract.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/signed_bundle_intake_contract.json",
+      "sha256": "15d1662e3ecf2bbfbd13540211143bfc374f3cedd1a3c95993e22919ab9aa93f",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:trust_chain_dashboard.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/trust_chain_dashboard.json",
+      "sha256": "2f722fb480a91be7c3896d96f309355a0e0225dc26ae9d5e4626999ba58f4ccf",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:quarantine_queue.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/quarantine_queue.json",
+      "sha256": "bbe3d5578153d99a67e890bacf08d3d821d1741f53cbadec3e8194b44c27d3da",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:review_board_case.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/review_board_case.json",
+      "sha256": "94e69358c88c2e5ab87e24655d2cb631b7105e26c9a2d975f9884a7ffe748836",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:limited_scope_approval_contract.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/limited_scope_approval_contract.json",
+      "sha256": "30b2e2fce152fccad407ef9741b7f80854667562803e0ca0f6ae92a90133586d",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:audit_hash_chain.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/audit_hash_chain.json",
+      "sha256": "43c4db4d936164ddbbf8fd02b211228a617428fb776dc9eb54b7a7c71115d4f6",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "classification": "L2_SYNTHETIC_METADATA_ONLY",
+      "object_id": "obj:lineage_edges.json",
+      "path": "artifacts/limited-scope-review-board/R20-VS-20/lineage_edges.json",
+      "sha256": "0e079879e1fe88ea47ba0c910a19723e327c707d4dd22344a316f17a6d3dd699",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "round": "R29-VS-29",
+  "title": "FTS VS-29 Maturity Gating Remediation Workbench",
+  "watermark": "Decision-support / Non-operational",
+  "labels": {
+    "vi": {
+      "title": "Bàn rà soát trưởng thành & khắc phục gate VS-29",
+      "inventory": "Kiểm kê & toàn vẹn gói",
+      "mandatory": "5 điều kiện bắt buộc trước ký",
+      "maturity": "TRL/CMMI/E-OCVM maturity gate",
+      "dseep": "Ma trận DSEEP 7 bước",
+      "safety": "Safety Support Assessment & DO-278A AL",
+      "procurement": "Sẵn sàng đấu thầu & TCO",
+      "round_history": "Phân tích Round History/RCA",
+      "benchmarks": "Benchmark sản phẩm/ANSP",
+      "risks": "Risk register",
+      "exports": "Gói xuất compliance evidence",
+      "not_ready": "Chưa đủ điều kiện readiness",
+      "export": "Xuất gói kiểm chứng",
+      "import": "Nhập log kiểm chứng"
+    },
+    "en": {
+      "title": "VS-29 Maturity Gate & Remediation Workbench",
+      "inventory": "Package inventory & integrity",
+      "mandatory": "5 mandatory pre-signature conditions",
+      "maturity": "TRL/CMMI/E-OCVM maturity gate",
+      "dseep": "DSEEP 7-step trace matrix",
+      "safety": "Safety Support Assessment & DO-278A AL",
+      "procurement": "Procurement readiness & TCO",
+      "round_history": "Round History/RCA analysis",
+      "benchmarks": "Product/ANSP benchmarks",
+      "risks": "Risk register",
+      "exports": "Compliance evidence export pack",
+      "not_ready": "Readiness not claimable",
+      "export": "Export verification pack",
+      "import": "Import verification log"
+    }
+  },
+  "claim_guard": {
+    "readiness_claim_allowed": false,
+    "production_readiness_claim": false,
+    "operational_readiness_claim": false,
+    "verdict_default": "DEFER",
+    "verdict_if_mandatory_pass": "GO-WITH-CONDITIONS",
+    "no_go_triggers": [
+      "missing signed manifest",
+      "missing DSEEP 7-step traceability",
+      "missing Safety Support Assessment for operational-feed scope"
+    ],
+    "blocking_reasons": [
+      "cryptographic integrity not independently verified",
+      "DSEEP 7-step trace matrix not accepted",
+      "SSA per ATM/ANS.OR.A.045 not signed for operational-feed use-case",
+      "DO-278A/ED-109A assurance level not derived from FHA",
+      "Round history pattern not RCA-classified"
+    ],
+    "required_before_claim": [
+      "MANIFEST.xml.sig verify-pass",
+      "ROUND_HISTORY.csv + RCA",
+      "DSEEP trace matrix",
+      "DO-278A AL determination with FHA reference",
+      "SSA when operational feed is in scope"
+    ]
+  },
+  "package_inventory_gate": {
+    "mode": "local-verification-protocol-only",
+    "can_replace_independent_audit": false,
+    "integrity_status": "pending-external-verify",
+    "inventory_protocol": [
+      {
+        "step": "unzip package to isolated workspace",
+        "expected_output": "fts_inventory.txt"
+      },
+      {
+        "step": "sha256sum -c SHA256SUMS",
+        "expected_output": "fts_integrity.log"
+      },
+      {
+        "step": "verify detached signatures",
+        "expected_output": "fts_signatures.log"
+      },
+      {
+        "step": "validate MANIFEST.xml",
+        "expected_output": "MANIFEST OK"
+      },
+      {
+        "step": "validate FOM XML against OMT XSD",
+        "expected_output": "FOM validation log"
+      }
+    ],
+    "required_files": [
+      "MANIFEST.xml",
+      "SHA256SUMS",
+      "signatures/*.sig",
+      "README.md",
+      "Trace_Matrix.xlsx",
+      "ROUND_HISTORY.csv",
+      "Hazard_Log.xlsx",
+      "Compliance_Matrix.xlsx"
+    ],
+    "blocked_claims": [
+      "package evidence accepted",
+      "release integrity accepted",
+      "operational readiness"
+    ]
+  },
+  "mandatory_pre_signature_conditions": [
+    {
+      "id": "C1",
+      "name": "Cryptographic integrity",
+      "owner": "PM FTS",
+      "status": "BLOCKING",
+      "defeasor": "MANIFEST.xml.sig present and independently verifies PASS"
+    },
+    {
+      "id": "C2",
+      "name": "Round 27/28 signal ambiguity",
+      "owner": "Quality Lead",
+      "status": "BLOCKING",
+      "defeasor": "ROUND_HISTORY.csv + RCA classifies each round as scope change / defect fix / DoD refinement"
+    },
+    {
+      "id": "C3",
+      "name": "Safety Support Assessment",
+      "owner": "Safety Manager",
+      "status": "BLOCKING",
+      "defeasor": "SSA signed when use-case can feed operational decision support"
+    },
+    {
+      "id": "C4",
+      "name": "DSEEP traceability",
+      "owner": "Federation Lead",
+      "status": "BLOCKING",
+      "defeasor": "7-step DSEEP matrix maps objectives to FOM/SOM/test/results"
+    },
+    {
+      "id": "C5",
+      "name": "DO-278A/ED-109A AL determination",
+      "owner": "Assurance Lead",
+      "status": "BLOCKING",
+      "defeasor": "Assurance Level derived from formal FHA reference"
+    }
+  ],
+  "maturity_gating_dashboard": {
+    "composite_verdict": "GO-WITH-CONDITIONS only after mandatory evidence is verified",
+    "current_ceiling": "TRL 5-6 / CMMI ML2 / E-OCVM V2 exit to V3 entry",
+    "cannot_exceed_without": [
+      "shadow-mode trial at operational unit",
+      "real VVHN/VVTS/VVLT data in sandbox",
+      "controller HITL signoff",
+      "cross-vendor federation test log"
+    ],
+    "gates": [
+      {
+        "framework": "ISO 16290 TRL",
+        "estimated_level": "5-6",
+        "next_gate": "TRL 7 shadow-mode prototype in operational environment",
+        "status": "CONDITIONAL"
+      },
+      {
+        "framework": "CMMI v3.0 / ISO 33020",
+        "estimated_level": "ML2 with ML3 islands",
+        "next_gate": "MPM/PQA institutionalization",
+        "status": "CONDITIONAL"
+      },
+      {
+        "framework": "SESAR E-OCVM v3.0",
+        "estimated_level": "V2 exit / V3 entry",
+        "next_gate": "V3 integrated prototype and RTS/HITL",
+        "status": "CONDITIONAL"
+      }
+    ]
+  },
+  "dseep_trace_matrix_workbench": {
+    "hard_gate": true,
+    "federation_readiness": "CONDITIONAL-PASS-ONLY",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Define simulation environment objectives",
+        "artifact": "01_objectives.pdf",
+        "status": "required"
+      },
+      {
+        "step": 2,
+        "name": "Perform conceptual analysis",
+        "artifact": "02_conceptual_model.pdf",
+        "status": "required"
+      },
+      {
+        "step": 3,
+        "name": "Design simulation environment",
+        "artifact": "Architecture_Diagram.pdf",
+        "status": "required"
+      },
+      {
+        "step": 4,
+        "name": "Develop simulation environment",
+        "artifact": "03_FOM.xml + 04_SOM/*.xml + 05_FEAT.docx",
+        "status": "hard-blocker-until-validated"
+      },
+      {
+        "step": 5,
+        "name": "Integrate and test simulation environment",
+        "artifact": "Integration_Test_Log.pdf",
+        "status": "required"
+      },
+      {
+        "step": 6,
+        "name": "Execute simulation",
+        "artifact": "Run_Logs + datasets",
+        "status": "required"
+      },
+      {
+        "step": 7,
+        "name": "Analyze data and evaluate results",
+        "artifact": "07_results.pdf",
+        "status": "required"
+      }
+    ],
+    "cross_vendor_rti_test": {
+      "required": true,
+      "examples": [
+        "Pitch pRTI",
+        "MÄK",
+        "CERTI"
+      ],
+      "status": "pending"
+    },
+    "data_exchange_mapping": [
+      "AIXM 5.1.1",
+      "FIXM 4.3",
+      "IWXXM 3.0",
+      "ARINC 424"
+    ]
+  },
+  "safety_and_assurance_gate": {
+    "ssa_required_when": "FTS output can feed an operational decision-support workflow",
+    "offline_only_downgrade_rule": "If confirmed offline-only, C3 may be downgraded from Critical to Major but readiness remains not claimable.",
+    "required_safety_artifacts": [
+      "FHA.pdf",
+      "PSSA.pdf",
+      "SSA.pdf",
+      "Hazard_Log.xlsx"
+    ],
+    "do278a_al_policy": {
+      "must_derive_from_fha": true,
+      "no_default_assumption": true,
+      "offline_procedure_design_typical": "AL5-AL6",
+      "operational_decision_support_typical": "AL2-AL3"
+    },
+    "vietnam_context_scenarios": [
+      "VVHN FIR",
+      "VVTS FIR",
+      "Long Thanh VVLT phase-1 scenario",
+      "Civil-Military Coordination / FUA",
+      "BOBCAT and Multi-Nodal ATFM APAC messages"
+    ]
+  },
+  "procurement_readiness_pack": {
+    "status": "CONDITIONAL-PASS-ONLY",
+    "method_recommendation": "technical-and-price combined evaluation, technical weight 70-80%, not lowest-price only",
+    "vietnam_law_mapping": [
+      "Luật Đấu thầu 22/2023/QH15",
+      "Nghị định 24/2024/NĐ-CP",
+      "Thông tư 06/2024/TT-BKHĐT",
+      "Luật An ninh mạng 24/2018/QH14",
+      "Luật ATTT mạng 86/2015/QH13",
+      "Nghị định 85/2016/NĐ-CP"
+    ],
+    "must_have_artifacts": [
+      "Technical_Spec.docx",
+      "SoW.docx",
+      "Compliance_Matrix.xlsx",
+      "Acceptance_Criteria.xlsx",
+      "TCO_10y.xlsx",
+      "Risk_Register.xlsx",
+      "Evaluation_Plan.pdf"
+    ],
+    "data_sovereignty_controls": [
+      "Vietnamese AIP data local residency",
+      "track/voice data export prohibited unless anonymized",
+      "perpetual license and 10-year maintenance",
+      "source-code escrow or right-to-fork after end-of-support"
+    ]
+  },
+  "round_history_rca_analyzer": {
+    "input": "ROUND_HISTORY.csv",
+    "classification_columns": [
+      "round",
+      "date",
+      "change_type",
+      "gate_criteria_changed",
+      "defect_leakage",
+      "scope_change",
+      "rca_summary",
+      "approval_ref"
+    ],
+    "decision_rule": "scope_change ratio above 30% downgrades to NO-GO until gate criteria are stabilized",
+    "patterns": [
+      {
+        "pattern": "disciplined DevSecOps",
+        "signal": "positive",
+        "indicator": "SemVer changelog with ticket IDs and low defect leakage"
+      },
+      {
+        "pattern": "gate criteria drift",
+        "signal": "negative",
+        "indicator": "success metrics or criteria moved across rounds"
+      },
+      {
+        "pattern": "rework loop",
+        "signal": "neutral-to-negative",
+        "indicator": "repeat RCA entries from peer-review failures"
+      }
+    ]
+  },
+  "benchmark_and_market_fit": {
+    "products": [
+      {
+        "name": "NARSIM",
+        "fit": "High",
+        "note": "SESAR heritage; RTS/FTS hybrid"
+      },
+      {
+        "name": "RAMS Plus",
+        "fit": "High",
+        "note": "FTS and workload analysis"
+      },
+      {
+        "name": "AirTOp",
+        "fit": "High",
+        "note": "multi-agent 4D modelling"
+      },
+      {
+        "name": "SIMMOD PRO!",
+        "fit": "Medium",
+        "note": "airport and airspace simulation"
+      },
+      {
+        "name": "TAAM",
+        "fit": "Low",
+        "note": "exclude unless vendor provides current supported evidence"
+      }
+    ],
+    "ansp_practices": [
+      "NATS E-OCVM aligned V&V",
+      "DFS R&D arm model",
+      "NAV CANADA investment analysis discipline",
+      "ENAV SESAR maturity gates",
+      "FAA WJHTC TEMP/TRR discipline"
+    ]
+  },
+  "risk_register_top12": [
+    {
+      "id": "R1",
+      "risk": "FOM does not validate against IEEE 1516.2 OMT",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "pre-tender FOM gate"
+    },
+    {
+      "id": "R2",
+      "risk": "RTI cross-vendor interoperability fails",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "mandatory interoperability test"
+    },
+    {
+      "id": "R3",
+      "risk": "Round count indicates gate drift",
+      "likelihood": "Unknown",
+      "impact": "H",
+      "mitigation": "RCA disclosure"
+    },
+    {
+      "id": "R4",
+      "risk": "Long Thanh model gap",
+      "likelihood": "H",
+      "impact": "H",
+      "mitigation": "mandate VVLT scenario"
+    },
+    {
+      "id": "R5",
+      "risk": "CMC/FUA scenarios absent",
+      "likelihood": "H",
+      "impact": "M",
+      "mitigation": "add test cases"
+    },
+    {
+      "id": "R6",
+      "risk": "controller training acceptance gap",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "TNA before procurement"
+    },
+    {
+      "id": "R7",
+      "risk": "data sovereignty breach",
+      "likelihood": "L",
+      "impact": "Critical",
+      "mitigation": "contractual export ban"
+    },
+    {
+      "id": "R8",
+      "risk": "procurement compliance matrix incomplete",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "legal opinion pre-HSMT"
+    },
+    {
+      "id": "R9",
+      "risk": "vendor lock-in",
+      "likelihood": "M",
+      "impact": "M",
+      "mitigation": "open standards mandate"
+    },
+    {
+      "id": "R10",
+      "risk": "TCO blowout",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "fixed price with escalation cap"
+    },
+    {
+      "id": "R11",
+      "risk": "supply chain vulnerability",
+      "likelihood": "M",
+      "impact": "H",
+      "mitigation": "SBOM + SSDF remediation SLA"
+    },
+    {
+      "id": "R12",
+      "risk": "SSA missing for operational feed",
+      "likelihood": "M",
+      "impact": "Critical",
+      "mitigation": "safety assessment before gate review"
+    }
+  ],
+  "compliance_evidence_export_pack": {
+    "mode": "draft-export-only",
+    "can_issue_certificate": false,
+    "folders": [
+      "A_manifest_integrity",
+      "B_DSEEP",
+      "C_VVA",
+      "D_safety_case",
+      "E_security",
+      "F_procurement",
+      "G_operational",
+      "H_traceability",
+      "I_standards_conformance",
+      "J_round_history"
+    ],
+    "exports_blocked": [
+      "operational readiness certificate",
+      "production acceptance certificate",
+      "authority submission without independent verification"
+    ],
+    "watermark": "Decision-support / Non-operational"
+  },
+  "accessibility_checks": [
+    {
+      "id": "A11Y-1",
+      "status": "PASS",
+      "check": "keyboard focus visible"
+    },
+    {
+      "id": "A11Y-2",
+      "status": "PASS",
+      "check": "ARIA live status for claim guard"
+    },
+    {
+      "id": "A11Y-3",
+      "status": "PASS",
+      "check": "VI/EN bilingual labels"
+    },
+    {
+      "id": "A11Y-4",
+      "status": "PASS",
+      "check": "no readiness color-only cue"
+    }
+  ],
+  "v30_candidate_backlog": [
+    "gate evidence import wizard with real verification log parsing",
+    "FHA-to-DO278A AL guided worksheet",
+    "DSEEP XML/FOM automated validation harness",
+    "legal procurement compliance matrix editor",
+    "shadow-mode pilot protocol tracker",
+    "independent assessor portal with read-only notarized evidence links",
+    "Long Thanh/CMC/FUA scenario acceptance library"
+  ],
+  "state_hash_sha256": "98b92c1e750ded1233c5f6fde9e27be99bac45a6aab9edad09f328b21d2f7912"
+}

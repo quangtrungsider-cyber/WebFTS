@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "edge_id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "edge_id",
+    "from",
+    "to",
+    "type",
+    "watermark"
+  ],
+  "type": "object"
+}

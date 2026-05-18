@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info:
+  title: FTS Round 20 Evidence Review Board API
+  version: 2.0.0-round20
+  description: 'Decision-support / Non-operational'
+paths:
+  /evidence/signed-bundles/intake:
+    post:
+      summary: Intake signed evidence bundle metadata
+      responses:
+        '202': { description: Accepted }
+  /evidence/trust-chain/dashboard:
+    get:
+      summary: Read trust-chain dashboard
+      responses:
+        '200': { description: OK }
+  /evidence/quarantine:
+    get:
+      summary: Read quarantine queue
+      responses:
+        '200': { description: OK }
+  /evidence/review-board/cases/{case_id}/approve-limited-scope:
+    post:
+      summary: ABAC-controlled limited-scope approval
+      responses:
+        '200': { description: Approved for limited scope }
+        '403': { description: Forbidden }

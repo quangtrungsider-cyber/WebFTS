@@ -1,0 +1,12 @@
+release: R24-VS-24
+watermark: Decision-support / Non-operational
+readiness_claim_allowed: false
+artifacts:
+  - repo/fts/artifacts/evidence-review-board-ui-shell/R24-VS-24/ui_shell_state.json
+  - repo/fts/schemas/evidence-review-board-workbench-v24.schema.json
+  - repo/fts/tests/test_round24_workbench.py
+  - repo/fts/frontend/evidence-review-board-ui-shell/index.html
+  - repo/fts/frontend/evidence-review-board-ui-shell/app.js
+validations:
+  pytest: 22 passed
+  guardrails: 0 findings

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "accepted_evidence_metadata_records": {
+      "type": "array"
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "contract_id",
+    "watermark",
+    "accepted_evidence_metadata_records"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vatm.local/fts/evidence-review-board-workbench-v24.schema.json",
+  "title": "R24 Evidence Review Board Workbench",
+  "type": "object",
+  "required": [
+    "round",
+    "watermark",
+    "claim_guard",
+    "evidence_diff_viewer",
+    "sod_reviewer_assignment_engine",
+    "case_timeline_sla_heatmap",
+    "offline_signed_reviewer_packet",
+    "mock_api_adapter"
+  ],
+  "properties": {
+    "round": {
+      "const": "R24-VS-24"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    },
+    "claim_guard": {
+      "type": "object"
+    },
+    "evidence_diff_viewer": {
+      "type": "object"
+    },
+    "sod_reviewer_assignment_engine": {
+      "type": "object"
+    },
+    "case_timeline_sla_heatmap": {
+      "type": "object"
+    },
+    "offline_signed_reviewer_packet": {
+      "type": "object"
+    },
+    "mock_api_adapter": {
+      "type": "object"
+    }
+  }
+}

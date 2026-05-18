@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "ui_labels": {
+      "type": "object"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    }
+  },
+  "required": [
+    "contract_id",
+    "ui_labels",
+    "watermark"
+  ],
+  "type": "object"
+}

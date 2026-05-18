@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceReviewBoardUIShell",
+  "type": "object",
+  "required": [
+    "round",
+    "watermark",
+    "labels",
+    "review_queue",
+    "trust_chain_cards",
+    "quarantine_operations",
+    "limited_scope_handoff",
+    "reviewer_notes",
+    "accessibility",
+    "claim_guard"
+  ],
+  "properties": {
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    },
+    "claim_guard": {
+      "type": "object",
+      "required": [
+        "production_readiness_claim",
+        "operational_readiness_claim",
+        "readiness_claim_allowed"
+      ]
+    }
+  }
+}

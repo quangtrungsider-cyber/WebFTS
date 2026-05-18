@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vatm.local/fts/schemas/evidence-review-board-workbench-v27.schema.json",
+  "title": "VS-27 Evidence Federation and Readiness Gating Simulator",
+  "type": "object",
+  "required": [
+    "round",
+    "watermark",
+    "claim_guard",
+    "cross_domain_evidence_federation",
+    "operational_readiness_gating_simulator"
+  ],
+  "properties": {
+    "round": {
+      "const": "R27-VS-27"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    },
+    "claim_guard": {
+      "type": "object"
+    },
+    "cross_domain_evidence_federation": {
+      "type": "object"
+    },
+    "operational_readiness_gating_simulator": {
+      "type": "object"
+    }
+  }
+}

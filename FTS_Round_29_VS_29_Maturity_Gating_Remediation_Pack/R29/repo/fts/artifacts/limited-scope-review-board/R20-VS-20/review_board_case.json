@@ -1,0 +1,26 @@
+{
+  "case_hash_sha256": "075ce729adc2701c656b4f6adbcabbbb1a0ec858491e956b0bdde48767c0e69d",
+  "case_id": "R20-REVIEW-BOARD-CASE-01",
+  "current_state": "APPROVED_FOR_LIMITED_SCOPE",
+  "reviewer_action": {
+    "abac_decision": "ALLOW_LIMITED_SCOPE_APPROVAL",
+    "action_hash_sha256": "ad931b6afbef434e1ff6da70bceb726fcc64f69d7177690de107c2c8cb199248",
+    "role_required": "security_evidence_reviewer",
+    "viewer_probe_decision": "DENY"
+  },
+  "scope": {
+    "approval_scope": "METADATA_REVIEW_ONLY_SYNTHETIC_CONTROLLED_LAB",
+    "excludes": [
+      "production_readiness",
+      "operational_readiness",
+      "live_atc_atfm_integration"
+    ]
+  },
+  "watermark": "Decision-support / Non-operational",
+  "workflow_states": [
+    "DENIED",
+    "PENDING_REVIEW",
+    "APPROVED_FOR_LIMITED_SCOPE",
+    "REJECTED"
+  ]
+}

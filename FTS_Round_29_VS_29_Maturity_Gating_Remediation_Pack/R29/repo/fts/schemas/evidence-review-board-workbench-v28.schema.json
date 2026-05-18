@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vatm.example/fts/evidence-review-board-workbench-v28.schema.json",
+  "title": "FTS VS-28 Evidence Assurance Workbench State",
+  "type": "object",
+  "required": ["round", "watermark", "claim_guard", "assurance_case_builder", "controlled_pilot_telemetry_ingestion", "human_factors_review_room", "domain_conflict_resolution_workbench", "retention_policy_authoring_ui", "siem_evidence_connector_simulator", "fat_sat_rehearsal_pack"],
+  "properties": {
+    "round": {"const": "R28-VS-28"},
+    "watermark": {"const": "Decision-support / Non-operational"},
+    "claim_guard": {"type": "object", "required": ["readiness_claim_allowed", "production_readiness_claim", "operational_readiness_claim"]},
+    "assurance_case_builder": {"type": "object"},
+    "controlled_pilot_telemetry_ingestion": {"type": "object"},
+    "human_factors_review_room": {"type": "object"},
+    "domain_conflict_resolution_workbench": {"type": "object"},
+    "retention_policy_authoring_ui": {"type": "object"},
+    "siem_evidence_connector_simulator": {"type": "object"},
+    "fat_sat_rehearsal_pack": {"type": "object"}
+  }
+}

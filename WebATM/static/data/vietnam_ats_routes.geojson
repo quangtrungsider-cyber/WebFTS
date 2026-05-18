@@ -1,0 +1,2664 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "A1",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 1,
+        "page_end": 1,
+        "point_count": 7,
+        "point_sequence": "PAPRA (2) TANNA PATNO DA NANG DVOR/DME (DAN) KANGU BINKU BUNTA (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.18333333,
+            15.76666667
+          ],
+          [
+            107.65888889,
+            15.90333333
+          ],
+          [
+            107.885,
+            15.965
+          ],
+          [
+            108.19833333,
+            16.05277778
+          ],
+          [
+            108.66472222,
+            16.35416667
+          ],
+          [
+            108.97305556,
+            16.55972222
+          ],
+          [
+            109.395,
+            16.83333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "A202",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 2,
+        "page_end": 2,
+        "point_count": 5,
+        "point_sequence": "VILAO (2) DONGI NIVEN XONUS ASSAD (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.08333333,
+            17.36666667
+          ],
+          [
+            106.59527778,
+            17.68138889
+          ],
+          [
+            106.92888889,
+            17.88444444
+          ],
+          [
+            107.23305556,
+            18.07
+          ],
+          [
+            107.68138889,
+            18.34111111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "A206",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 3,
+        "page_end": 3,
+        "point_count": 6,
+        "point_sequence": "NALAO (2) VINH DVOR/DME (VIN) KADIM BUVAN HATIN ASSAD (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.92638889,
+            19.32416667
+          ],
+          [
+            105.66833333,
+            18.73416667
+          ],
+          [
+            106.09777778,
+            18.65222222
+          ],
+          [
+            106.58916667,
+            18.55638889
+          ],
+          [
+            107.04888889,
+            18.46694444
+          ],
+          [
+            107.68138889,
+            18.34111111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "B202",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 4,
+        "page_end": 4,
+        "point_count": 2,
+        "point_sequence": "PLEIKU DVOR/DME (PLK) BOMPA (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.02444444,
+            14.00611111
+          ],
+          [
+            107.4,
+            14.33333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "B214",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 5,
+        "page_end": 5,
+        "point_count": 2,
+        "point_sequence": "NA SAN NDB (BQ) LADON (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.03805556,
+            21.215
+          ],
+          [
+            102.96694444,
+            21.10361111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "B465",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 6,
+        "page_end": 6,
+        "point_count": 3,
+        "point_sequence": "LAPON (2) MOC CHAU NDB (MC) NOI BAI DVOR/DME (NOB)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.475,
+            20.75
+          ],
+          [
+            104.70027778,
+            20.82805556
+          ],
+          [
+            105.835,
+            21.21305556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "B468",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 7,
+        "page_end": 7,
+        "point_count": 2,
+        "point_sequence": "DIEN BIEN DVOR/DME (DBN) LADON (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.00777778,
+            21.37361111
+          ],
+          [
+            102.96694444,
+            21.10361111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "G221",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 8,
+        "page_end": 8,
+        "point_count": 3,
+        "point_sequence": "PHU CAT DVOR/DME (PCA) ASUKU BUNTA (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.04277778,
+            13.95722222
+          ],
+          [
+            109.24416667,
+            15.60722222
+          ],
+          [
+            109.395,
+            16.83333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "G474",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 9,
+        "page_end": 9,
+        "point_count": 5,
+        "point_sequence": "ANINA (2) DADEN PLEIKU DVOR/DME (PLK) ACC MUMGA PHU CAT DVOR/DME (PCA)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.41666667,
+            13.98333333
+          ],
+          [
+            107.84361111,
+            13.99944444
+          ],
+          [
+            108.02444444,
+            14.00611111
+          ],
+          [
+            108.15361111,
+            14.0
+          ],
+          [
+            109.04277778,
+            13.95722222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L628",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 10,
+        "page_end": 10,
+        "point_count": 6,
+        "point_sequence": "PHU CAT DVOR/DME (PCA) VIMUT VEPAM DAMEL MESOX ARESI (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.04277778,
+            13.95722222
+          ],
+          [
+            109.52138889,
+            13.9625
+          ],
+          [
+            110.0,
+            13.96666667
+          ],
+          [
+            111.51,
+            13.97833333
+          ],
+          [
+            113.045,
+            13.98
+          ],
+          [
+            114.45,
+            13.97333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L637",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 11,
+        "page_end": 11,
+        "point_count": 5,
+        "point_sequence": "BITOD (2) BIBAN ANHOA BITIS TAN SON NHAT DVOR/ DME (TSH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.11833333,
+            7.25666667
+          ],
+          [
+            105.0,
+            8.5
+          ],
+          [
+            105.90833333,
+            9.78722222
+          ],
+          [
+            106.24833333,
+            10.26638889
+          ],
+          [
+            106.65055556,
+            10.81833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L644",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 12,
+        "page_end": 12,
+        "point_count": 6,
+        "point_sequence": "AN LOC NDB (AC) FL265) LEDUP LOSON BODOD CON SON NDB (CN) DUDIS (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.18833333,
+            10.93916667
+          ],
+          [
+            107.14694444,
+            10.77583333
+          ],
+          [
+            107.07555556,
+            10.49333333
+          ],
+          [
+            106.85805556,
+            9.63944444
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ],
+          [
+            106.81,
+            7.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M505",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 13,
+        "page_end": 13,
+        "point_count": 2,
+        "point_sequence": "BUON MA THUOT DVOR/ DME (BMT) MULAD",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.12305556,
+            12.66638889
+          ],
+          [
+            107.57472222,
+            12.54805556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M510",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 14,
+        "page_end": 14,
+        "point_count": 4,
+        "point_sequence": "CAN THO DVOR/DME (TRN) POTIX ATGAS DADEM (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.70555556,
+            10.08333333
+          ],
+          [
+            105.61666667,
+            10.23472222
+          ],
+          [
+            105.51722222,
+            10.40472222
+          ],
+          [
+            105.22805556,
+            10.89555556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M753",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 15,
+        "page_end": 15,
+        "point_count": 5,
+        "point_sequence": "IPRIX (2) BITOD ADBOP PHU QUOC DVOR/DME (PQU) ACC OSOTA (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.13166667,
+            7.0
+          ],
+          [
+            104.11833333,
+            7.25666667
+          ],
+          [
+            104.08333333,
+            8.5
+          ],
+          [
+            104.03888889,
+            10.16527778
+          ],
+          [
+            104.26361111,
+            10.55194444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M755",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 16,
+        "page_end": 16,
+        "point_count": 3,
+        "point_sequence": "KISAN TUNPO BITOD (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.675,
+            10.53888889
+          ],
+          [
+            104.58944444,
+            10.06222222
+          ],
+          [
+            104.11833333,
+            7.25666667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M765",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 17,
+        "page_end": 17,
+        "point_count": 9,
+        "point_sequence": "PANDI (2) ALDAS MAPNO SAMAP DAGAG CON SON NDB (CN) VIGEN BITOD IGARI (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.0,
+            11.635
+          ],
+          [
+            112.205,
+            10.94833333
+          ],
+          [
+            110.335,
+            10.21833333
+          ],
+          [
+            109.2525,
+            9.78833333
+          ],
+          [
+            108.44166667,
+            9.46333333
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ],
+          [
+            105.36944444,
+            7.99555556
+          ],
+          [
+            104.11833333,
+            7.25666667
+          ],
+          [
+            103.585,
+            6.93666667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M768",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 18,
+        "page_end": 18,
+        "point_count": 7,
+        "point_sequence": "AKMON (2) MOXON DAGAG ELSAS ASEBO LOSON TAN SON NHAT DVOR/ DME (TSH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            110.21833333,
+            8.215
+          ],
+          [
+            109.355,
+            8.825
+          ],
+          [
+            108.44166667,
+            9.46333333
+          ],
+          [
+            107.54833333,
+            10.13666667
+          ],
+          [
+            107.29,
+            10.33166667
+          ],
+          [
+            107.07555556,
+            10.49333333
+          ],
+          [
+            106.65055556,
+            10.81833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "N500",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 19,
+        "page_end": 19,
+        "point_count": 9,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) BUKMA MATGI PHAN THIET VOR/DME (PTH) AGSIS DAMVO MIMUX AGSAM PANDI (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            107.03083333,
+            10.84722222
+          ],
+          [
+            107.64666667,
+            10.89555556
+          ],
+          [
+            108.07194444,
+            10.92805556
+          ],
+          [
+            108.83111111,
+            11.02194444
+          ],
+          [
+            109.545,
+            11.10833333
+          ],
+          [
+            111.10333333,
+            11.305
+          ],
+          [
+            112.58833333,
+            11.47166667
+          ],
+          [
+            114.0,
+            11.635
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "N891",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 20,
+        "page_end": 20,
+        "point_count": 3,
+        "point_sequence": "XONAN (2) SAMOG IGARI (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            102.83833333,
+            9.245
+          ],
+          [
+            103.24,
+            8.00166667
+          ],
+          [
+            103.585,
+            6.93666667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "P901",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 21,
+        "page_end": 21,
+        "point_count": 2,
+        "point_sequence": "DA NANG DVOR/DME (DAN) ITBAM",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.19833333,
+            16.05277778
+          ],
+          [
+            109.60166667,
+            16.66666667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q15",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 22,
+        "page_end": 22,
+        "point_count": 4,
+        "point_sequence": "CAM RANH DVOR/DME (CRA) FL265) ATVIT NITOM MESOX (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.22,
+            11.99444444
+          ],
+          [
+            109.49611111,
+            12.14055556
+          ],
+          [
+            110.64027778,
+            12.74194444
+          ],
+          [
+            113.045,
+            13.98
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R328",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 23,
+        "page_end": 23,
+        "point_count": 2,
+        "point_sequence": "PHU BAI DVOR/DME (HUE) TORED (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.70166667,
+            16.40222222
+          ],
+          [
+            106.67555556,
+            16.46361111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R334",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 24,
+        "page_end": 24,
+        "point_count": 2,
+        "point_sequence": "PHU QUOC DVOR/DME (PQU) NUMDI (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.03888889,
+            10.16527778
+          ],
+          [
+            103.77638889,
+            10.44527778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R468",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 26,
+        "page_end": 26,
+        "point_count": 3,
+        "point_sequence": "SAPEN (2) (3) MOXEB TAN SON NHAT DVOR/ DME (TSH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.18333333,
+            11.02
+          ],
+          [
+            106.46277778,
+            10.89944444
+          ],
+          [
+            106.65055556,
+            10.81833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R471",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 27,
+        "page_end": 27,
+        "point_count": 4,
+        "point_sequence": "NAKHA DENMO MEOVA KATBO (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.49333333,
+            21.96666667
+          ],
+          [
+            106.41444444,
+            22.04166667
+          ],
+          [
+            105.31,
+            23.115
+          ],
+          [
+            105.29166667,
+            23.36
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R474",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 28,
+        "page_end": 28,
+        "point_count": 5,
+        "point_sequence": "LAVOS (2) MOC CHAU NDB (MC) NOI BAI DVOR/DME (NOB) NAKHA TEBAK (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.39722222,
+            20.43472222
+          ],
+          [
+            104.70027778,
+            20.82805556
+          ],
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            106.49333333,
+            21.96666667
+          ],
+          [
+            106.675,
+            22.175
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R575",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 29,
+        "page_end": 29,
+        "point_count": 2,
+        "point_sequence": "PAPRA LAVAN (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.18333333,
+            15.76666667
+          ],
+          [
+            105.69166667,
+            14.175
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "R588",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 30,
+        "page_end": 30,
+        "point_count": 2,
+        "point_sequence": "GONLY (2) PLEIKU DVOR/DME (PLK)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.5,
+            13.66666667
+          ],
+          [
+            108.02444444,
+            14.00611111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W1",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 31,
+        "page_end": 32,
+        "point_count": 20,
+        "point_sequence": "NOI BAI DVOR/DME (NOB) LOVBI NAM HA DVOR/DME (NAH) MAREL VIDAD HATIN XONUS HAMIN PHULU CAHEO DA NANG DVOR/DME (DAN) VILOT XAQUA PLEIKU DVOR/DME (PLK) MEVON BUON MA THUOT DVOR/ DME (BMT) ENRIN AN LOC NDB (AC) ESDOB TAN SON NHAT DVOR/ DME (TSH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            105.99666667,
+            20.74277778
+          ],
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            106.69361111,
+            19.22805556
+          ],
+          [
+            106.87166667,
+            18.84777778
+          ],
+          [
+            107.04888889,
+            18.46694444
+          ],
+          [
+            107.23305556,
+            18.07
+          ],
+          [
+            107.67777778,
+            17.12972222
+          ],
+          [
+            107.88861111,
+            16.69472222
+          ],
+          [
+            107.96527778,
+            16.53638889
+          ],
+          [
+            108.19833333,
+            16.05277778
+          ],
+          [
+            108.11166667,
+            15.03861111
+          ],
+          [
+            108.10166667,
+            14.91944444
+          ],
+          [
+            108.02444444,
+            14.00611111
+          ],
+          [
+            108.07416667,
+            13.33638889
+          ],
+          [
+            108.12305556,
+            12.66638889
+          ],
+          [
+            107.32388889,
+            11.19083333
+          ],
+          [
+            107.18833333,
+            10.93916667
+          ],
+          [
+            106.96388889,
+            10.88861111
+          ],
+          [
+            106.65055556,
+            10.81833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W2",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 33,
+        "page_end": 34,
+        "point_count": 20,
+        "point_sequence": "NAM HA DVOR/DME (NAH) VINH DVOR/DME (VIN) KAMSU DONGI KONCO BIGBO PHU BAI DVOR/DME (HUE) DA NANG DVOR/DME (DAN) CHU LAI NDB (CQ) KUMUN PHU CAT DVOR/DME (PCA) KAMGO KARAN NHATA CAM RANH DVOR/DME (CRA) IBUNU PHAN THIET VOR/DME (PTH) VEPMA AN LOC NDB (AC) TAN SON NHAT DVOR/ DME (TSH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            105.66833333,
+            18.73416667
+          ],
+          [
+            106.09333333,
+            18.25361111
+          ],
+          [
+            106.59527778,
+            17.68138889
+          ],
+          [
+            107.18694444,
+            17.0
+          ],
+          [
+            107.62722222,
+            16.48861111
+          ],
+          [
+            107.70166667,
+            16.40222222
+          ],
+          [
+            108.19833333,
+            16.05277778
+          ],
+          [
+            108.70444444,
+            15.41222222
+          ],
+          [
+            108.8075,
+            14.97138889
+          ],
+          [
+            109.04277778,
+            13.95722222
+          ],
+          [
+            109.10138889,
+            13.2875
+          ],
+          [
+            109.15666667,
+            12.64888889
+          ],
+          [
+            109.20111111,
+            12.22638889
+          ],
+          [
+            109.22,
+            11.99444444
+          ],
+          [
+            108.86805556,
+            11.66888889
+          ],
+          [
+            108.07194444,
+            10.92805556
+          ],
+          [
+            107.67166667,
+            10.93333333
+          ],
+          [
+            107.18833333,
+            10.93916667
+          ],
+          [
+            106.65055556,
+            10.81833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W3",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 35,
+        "page_end": 35,
+        "point_count": 3,
+        "point_sequence": "NOI BAI DVOR/DME (NOB) 132.300 MHz PHUTA CAT BI DVOR/DME (CBI)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            106.46055556,
+            20.92972222
+          ],
+          [
+            106.72444444,
+            20.81555556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W4",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 36,
+        "page_end": 36,
+        "point_count": 5,
+        "point_sequence": "GIA LAM NDB (AM) UPVAN MOC CHAU NDB (MC) NA SAN NDB (BQ) DIEN BIEN DVOR/DME (DBN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.86138889,
+            20.98888889
+          ],
+          [
+            105.39194444,
+            20.92555556
+          ],
+          [
+            104.70027778,
+            20.82805556
+          ],
+          [
+            104.03805556,
+            21.215
+          ],
+          [
+            103.00777778,
+            21.37361111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W5",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 37,
+        "page_end": 37,
+        "point_count": 2,
+        "point_sequence": "NAM HA DVOR/DME (NAH) CAT BI DVOR/DME (CBI)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            106.72444444,
+            20.81555556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W7",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 39,
+        "page_end": 39,
+        "point_count": 3,
+        "point_sequence": "LIEN KHUONG DVOR/DME (LKH) FL265) ONEBI BUON MA THUOT DVOR/ DME (BMT)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.35527778,
+            11.75416667
+          ],
+          [
+            108.30861111,
+            11.93805556
+          ],
+          [
+            108.12305556,
+            12.66638889
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W8",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 40,
+        "page_end": 40,
+        "point_count": 5,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) POTIX RACH GIA NDB (RG) TUNPO PHU QUOC DVOR/DME (PQU)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            105.61666667,
+            10.23472222
+          ],
+          [
+            105.13305556,
+            9.95944444
+          ],
+          [
+            104.58944444,
+            10.06222222
+          ],
+          [
+            104.03888889,
+            10.16527778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W9",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 41,
+        "page_end": 41,
+        "point_count": 4,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) XOBAV NIXIV CON SON NDB (CN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            106.6425,
+            10.14027778
+          ],
+          [
+            106.63388889,
+            9.39333333
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W10",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 42,
+        "page_end": 42,
+        "point_count": 5,
+        "point_sequence": "PHU BAI DVOR/DME (HUE) HAMIN ASSAD BALOV CAT BI DVOR/DME (CBI)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.70166667,
+            16.40222222
+          ],
+          [
+            107.67777778,
+            17.12972222
+          ],
+          [
+            107.68138889,
+            18.34111111
+          ],
+          [
+            107.70861111,
+            20.12972222
+          ],
+          [
+            106.72444444,
+            20.81555556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W11",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 43,
+        "page_end": 43,
+        "point_count": 3,
+        "point_sequence": "PLEIKU DVOR/DME (PLK) BANSU CHU LAI NDB (CQ)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.02444444,
+            14.00611111
+          ],
+          [
+            108.15972222,
+            14.28611111
+          ],
+          [
+            108.70444444,
+            15.41222222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W12",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 44,
+        "page_end": 44,
+        "point_count": 8,
+        "point_sequence": "PHU CAT DVOR/DME (PCA) NOBID BUON MA THUOT DVOR/ DME (BMT) PATMA DONXO RUNOP MOXEB CAN THO DVOR/DME (TRN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.04277778,
+            13.95722222
+          ],
+          [
+            108.58194444,
+            13.31222222
+          ],
+          [
+            108.12305556,
+            12.66638889
+          ],
+          [
+            107.81,
+            12.33638889
+          ],
+          [
+            106.95166667,
+            11.42333333
+          ],
+          [
+            106.63833333,
+            11.08805556
+          ],
+          [
+            106.46277778,
+            10.89944444
+          ],
+          [
+            105.70555556,
+            10.08333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W14",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 45,
+        "page_end": 45,
+        "point_count": 3,
+        "point_sequence": "NAM HA DVOR/DME (NAH) NOTHA MOC CHAU NDB (MC)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            105.54555556,
+            20.56694444
+          ],
+          [
+            104.70027778,
+            20.82805556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W15",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 46,
+        "page_end": 46,
+        "point_count": 5,
+        "point_sequence": "AN LOC NDB (AC) FL265) VETOM LIEN KHUONG DVOR/DME (LKH) SOSPA CAM RANH DVOR/DME (CRA)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.18833333,
+            10.93916667
+          ],
+          [
+            107.6075,
+            11.23305556
+          ],
+          [
+            108.35527778,
+            11.75416667
+          ],
+          [
+            108.64083333,
+            11.83388889
+          ],
+          [
+            109.22,
+            11.99444444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W16",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 47,
+        "page_end": 47,
+        "point_count": 4,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) ENPAS CAN THO DVOR/DME (TRN) RACH GIA NDB (RG)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            106.11138889,
+            10.39972222
+          ],
+          [
+            105.70555556,
+            10.08333333
+          ],
+          [
+            105.13305556,
+            9.95944444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W17",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 48,
+        "page_end": 48,
+        "point_count": 3,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) ATGAS TUNPO",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            105.51722222,
+            10.40472222
+          ],
+          [
+            104.58944444,
+            10.06222222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W18",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 49,
+        "page_end": 49,
+        "point_count": 2,
+        "point_sequence": "CAN THO DVOR/DME (TRN) CA MAU NDB (QL)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.70555556,
+            10.08333333
+          ],
+          [
+            105.17666667,
+            9.17611111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W19",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 50,
+        "page_end": 50,
+        "point_count": 5,
+        "point_sequence": "TAN SON NHAT DVOR/ DME (TSH) VUNG TAU DVOR/DME (VTV) TULTU LITAM CON SON NDB (CN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            107.09444444,
+            10.37277778
+          ],
+          [
+            106.89777778,
+            9.68305556
+          ],
+          [
+            106.70166667,
+            8.99361111
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W20",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 51,
+        "page_end": 51,
+        "point_count": 3,
+        "point_sequence": "MAREL VANUC CAT BI DVOR/DME (CBI)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.69361111,
+            19.22805556
+          ],
+          [
+            106.72166667,
+            20.54972222
+          ],
+          [
+            106.72444444,
+            20.81555556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W21",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 52,
+        "page_end": 52,
+        "point_count": 3,
+        "point_sequence": "NOI BAI DVOR/DME (NOB) HUVAN NA SAN NDB (BQ)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            105.11138889,
+            21.20833333
+          ],
+          [
+            104.03805556,
+            21.215
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W22",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 53,
+        "page_end": 53,
+        "point_count": 2,
+        "point_sequence": "MEOVA VINH PHUC DVOR/DME (VPH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.31,
+            23.115
+          ],
+          [
+            105.60111111,
+            21.27611111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W23",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 54,
+        "page_end": 54,
+        "point_count": 5,
+        "point_sequence": "CAN THO DVOR/DME (TRN) ANHOA VEPKI ACC CONDA CON SON NDB (CN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.70555556,
+            10.08333333
+          ],
+          [
+            105.90833333,
+            9.78722222
+          ],
+          [
+            106.37361111,
+            9.10583333
+          ],
+          [
+            106.47472222,
+            8.95722222
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W24",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 55,
+        "page_end": 55,
+        "point_count": 2,
+        "point_sequence": "VINH DVOR/DME (VIN) THO XUAN NDB (CB)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.66833333,
+            18.73416667
+          ],
+          [
+            105.51861111,
+            19.865
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "W25",
+        "section": "ENR 3.1 Lower ATS Routes",
+        "source": "AIP Viet Nam ENR 3.1",
+        "airac_effective": "2026-05-14",
+        "page_start": 56,
+        "page_end": 56,
+        "point_count": 2,
+        "point_sequence": "THO XUAN NDB (CB) NAM HA DVOR/DME (NAH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.51861111,
+            19.865
+          ],
+          [
+            106.11777778,
+            20.38722222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L625",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 1,
+        "page_end": 1,
+        "point_count": 6,
+        "point_sequence": "AKMON (2) UDOSI ALDAS AGSAM ANOKI ARESI (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            110.21833333,
+            8.215
+          ],
+          [
+            111.18138889,
+            9.54694444
+          ],
+          [
+            112.205,
+            10.94833333
+          ],
+          [
+            112.58833333,
+            11.47166667
+          ],
+          [
+            113.25,
+            12.36666667
+          ],
+          [
+            114.45,
+            13.97333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L642",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 2,
+        "page_end": 3,
+        "point_count": 10,
+        "point_sequence": "FL400. EGEMU (2) EXOTO ACC. VEPAM KARAN SOSPA PHAN THIET CVOR/DME (PTH) RUTIT ELSAS CON SON NDB (CN) ESPOB (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.28333333,
+            17.0
+          ],
+          [
+            111.05,
+            15.35833333
+          ],
+          [
+            110.0,
+            13.96666667
+          ],
+          [
+            109.15666667,
+            12.64888889
+          ],
+          [
+            108.64083333,
+            11.83388889
+          ],
+          [
+            108.07194444,
+            10.92805556
+          ],
+          [
+            107.7575,
+            10.45416667
+          ],
+          [
+            107.54833333,
+            10.13666667
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ],
+          [
+            105.555,
+            7.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "L643",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 4,
+        "page_end": 4,
+        "point_count": 4,
+        "point_sequence": "TAN SON NHAT DVOR/DME (TSH) XOBAV NIXIV CON SON NDB (CN)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            106.6425,
+            10.14027778
+          ],
+          [
+            106.63388889,
+            9.39333333
+          ],
+          [
+            106.62638889,
+            8.73277778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "M771",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 5,
+        "page_end": 5,
+        "point_count": 8,
+        "point_sequence": "FL360, FL390, FL400. DUDIS (2) DAGAG SUDUN DAMVO DOXAR NITOM DAMEL DONDA (3)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.81,
+            7.0
+          ],
+          [
+            108.44166667,
+            9.46333333
+          ],
+          [
+            108.79555556,
+            9.99277778
+          ],
+          [
+            109.545,
+            11.10833333
+          ],
+          [
+            110.37833333,
+            12.36666667
+          ],
+          [
+            110.64027778,
+            12.74194444
+          ],
+          [
+            111.51,
+            13.97833333
+          ],
+          [
+            112.02166667,
+            14.70333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "N639",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 6,
+        "page_end": 6,
+        "point_count": 6,
+        "point_sequence": "NAM HA DVOR/DME (NAH) BIVIM BESKI ACC KADIM KAMSU VILAO (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            106.10777778,
+            19.50944444
+          ],
+          [
+            106.10138889,
+            18.94861111
+          ],
+          [
+            106.09777778,
+            18.65222222
+          ],
+          [
+            106.09333333,
+            18.25361111
+          ],
+          [
+            106.08333333,
+            17.36666667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "N892",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 7,
+        "page_end": 7,
+        "point_count": 8,
+        "point_sequence": "MIGUG MESOX MUGAN MIMUX MAPNO OSIXA MOXON MELAS (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.0,
+            15.27333333
+          ],
+          [
+            113.045,
+            13.98
+          ],
+          [
+            111.87166667,
+            12.36666667
+          ],
+          [
+            111.10333333,
+            11.305
+          ],
+          [
+            110.335,
+            10.21833333
+          ],
+          [
+            109.84388889,
+            9.52222222
+          ],
+          [
+            109.355,
+            8.825
+          ],
+          [
+            108.15333333,
+            7.08833333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q1",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 8,
+        "page_end": 10,
+        "point_count": 18,
+        "point_sequence": "NOI BAI DVOR/DME (NOB) LOVBI ACC NAM HA DVOR/DME (NAH) MAREL VIDAD ACC HATIN XONUS HAMIN PHULU +/- 5 NM CAHEO +/- 5 NM DA NANG DVOR/DME (DAN) SADIN BANSU MUMGA ENGIM BUON MA THUOT DVOR/ DME (BMT) +/- 5 NM DOVIN +/- 5 NM AN LOC NDB (AC)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            105.99666667,
+            20.74277778
+          ],
+          [
+            106.11777778,
+            20.38722222
+          ],
+          [
+            106.69361111,
+            19.22805556
+          ],
+          [
+            106.87166667,
+            18.84777778
+          ],
+          [
+            107.04888889,
+            18.46694444
+          ],
+          [
+            107.23305556,
+            18.07
+          ],
+          [
+            107.67777778,
+            17.12972222
+          ],
+          [
+            107.88861111,
+            16.69472222
+          ],
+          [
+            107.96527778,
+            16.53638889
+          ],
+          [
+            108.19833333,
+            16.05277778
+          ],
+          [
+            108.17722222,
+            15.08
+          ],
+          [
+            108.15972222,
+            14.28611111
+          ],
+          [
+            108.15361111,
+            14.0
+          ],
+          [
+            108.13916667,
+            13.34055556
+          ],
+          [
+            108.12305556,
+            12.66638889
+          ],
+          [
+            108.10805556,
+            11.91694444
+          ],
+          [
+            107.18833333,
+            10.93916667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q2",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 11,
+        "page_end": 12,
+        "point_count": 18,
+        "point_sequence": "TAN SON NHAT DVOR/DME (TSH) KADUM PATMA W12) SADAS +/- 5 NM DADEN LATOM Noi ACC PATNO BIGBO TRABE +/- 5 NM VIDEN ACC NIVEN BUVAN MIBAM ACC BIVIM BISON +/- 5 NM XIVIN ACC UPVAN VINH PHUC DVOR/DME (VPH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.65055556,
+            10.81833333
+          ],
+          [
+            107.05944444,
+            11.35722222
+          ],
+          [
+            107.81,
+            12.33638889
+          ],
+          [
+            107.82944444,
+            13.32
+          ],
+          [
+            107.84361111,
+            13.99944444
+          ],
+          [
+            107.84361111,
+            14.87944444
+          ],
+          [
+            107.885,
+            15.965
+          ],
+          [
+            107.62722222,
+            16.48861111
+          ],
+          [
+            107.42694444,
+            16.89583333
+          ],
+          [
+            107.36555556,
+            17.02055556
+          ],
+          [
+            106.92888889,
+            17.88444444
+          ],
+          [
+            106.58916667,
+            18.55638889
+          ],
+          [
+            106.41194444,
+            18.90722222
+          ],
+          [
+            106.10777778,
+            19.50944444
+          ],
+          [
+            105.64166667,
+            20.43333333
+          ],
+          [
+            105.56861111,
+            20.57611111
+          ],
+          [
+            105.39194444,
+            20.92555556
+          ],
+          [
+            105.60111111,
+            21.27611111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q3",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 13,
+        "page_end": 13,
+        "point_count": 3,
+        "point_sequence": "NAKHA DADIN NAM HA DVOR/DME (NAH)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.49333333,
+            21.96666667
+          ],
+          [
+            106.22305556,
+            20.83416667
+          ],
+          [
+            106.11777778,
+            20.38722222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q4",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 14,
+        "page_end": 14,
+        "point_count": 3,
+        "point_sequence": "BUVAN SATNO MAREL",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.58916667,
+            18.55638889
+          ],
+          [
+            106.63916667,
+            18.87833333
+          ],
+          [
+            106.69361111,
+            19.22805556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q5",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 15,
+        "page_end": 15,
+        "point_count": 2,
+        "point_sequence": "HAMIN NIVEN",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.67777778,
+            17.12972222
+          ],
+          [
+            106.92888889,
+            17.88444444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q6",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 16,
+        "page_end": 16,
+        "point_count": 3,
+        "point_sequence": "MUMGA TATIM PATNO (2)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.15361111,
+            14.0
+          ],
+          [
+            108.01972222,
+            14.98055556
+          ],
+          [
+            107.885,
+            15.965
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q7",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 17,
+        "page_end": 17,
+        "point_count": 2,
+        "point_sequence": "SADAS MUMGA",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.82944444,
+            13.32
+          ],
+          [
+            108.15361111,
+            14.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q10",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 18,
+        "page_end": 18,
+        "point_count": 3,
+        "point_sequence": "600 M. VAN DON DVOR/DME (VDO) +/- 2 NM LOCHA VIDAD",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.39,
+            21.07333333
+          ],
+          [
+            106.95361111,
+            20.65666667
+          ],
+          [
+            106.87166667,
+            18.84777778
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q11",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 19,
+        "page_end": 19,
+        "point_count": 2,
+        "point_sequence": "CAT BI DVOR/DME (CBI) +/- 2 NM VAN DON DVOR/DME (VDO)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.72444444,
+            20.81555556
+          ],
+          [
+            107.39,
+            21.07333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q12",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 20,
+        "page_end": 20,
+        "point_count": 2,
+        "point_sequence": "NOI BAI DVOR/DME (NOB) +/- 2 NM VAN DON DVOR/DME (VDO)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.835,
+            21.21305556
+          ],
+          [
+            107.39,
+            21.07333333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "route_id": "Q14",
+        "section": "ENR 3.3 RNAV Routes",
+        "source": "AIP Viet Nam ENR 3.3",
+        "airac_effective": "2026-05-14",
+        "page_start": 21,
+        "page_end": 21,
+        "point_count": 2,
+        "point_sequence": "NAKHA +/- 2 NM VAN DON DVOR/DME (VDO)",
+        "extraction_note": "Auto-extracted from PDF. Review before operational or official use."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.49333333,
+            21.96666667
+          ],
+          [
+            107.39,
+            21.07333333
+          ]
+        ]
+      }
+    }
+  ]
+}

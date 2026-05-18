@@ -1,0 +1,70 @@
+{
+  "cards": [
+    {
+      "card_hash_sha256": "12911e4a1dc5d0fb814e3f04943196c1fd7102256b2efc5cb7b669784ce71f6d",
+      "dependency_family": "renderer-runtime",
+      "evidence_id": "R20-EVID-01",
+      "issuer_id": "issuer-renderer-runtime",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-renderer-runtime",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "card_hash_sha256": "99141c7ff505de77d923aff6ae5f30abbd0a6c0944d3989ded4d393722fd8e2b",
+      "dependency_family": "pdfa-validator",
+      "evidence_id": "R20-EVID-02",
+      "issuer_id": "issuer-pdfa-validator",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-pdfa-validator",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "card_hash_sha256": "633f4e20f74bec22986469df3ef7265565c9868f16ed2229d98785a6d803dc16",
+      "dependency_family": "pades-pki-tsa-ocsp-hsm",
+      "evidence_id": "R20-EVID-03",
+      "issuer_id": "issuer-pades-pki-tsa-ocsp-hsm",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-pades-pki-tsa-ocsp-hsm",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "card_hash_sha256": "c3f598fcf1b6de1af415d51a51cb867c1d8c70d4ad83d27c3c4913d61d917ef7",
+      "dependency_family": "minio-object-lock-worm",
+      "evidence_id": "R20-EVID-04",
+      "issuer_id": "issuer-minio-object-lock-worm",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-minio-object-lock-worm",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "card_hash_sha256": "e6f40e66cdc57ce2786f7e84b3568e343005419ac9ed3fafa5cf0b461aa88059",
+      "dependency_family": "rabbitmq-worker-runtime",
+      "evidence_id": "R20-EVID-05",
+      "issuer_id": "issuer-rabbitmq-worker-runtime",
+      "readiness_claim_state": "NOT_CLAIMED",
+      "signature_metadata_state": "PRESENT_METADATA_ONLY",
+      "trust_anchor_id": "ta-rabbitmq-worker-runtime",
+      "trust_chain_state": "PENDING_LIMITED_SCOPE_REVIEW",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ],
+  "dashboard_hash_sha256": "b661d262561d0b512ac89cf62487f970df90ded2611739d915dcc37aeab367d0",
+  "dashboard_id": "R20-TRUST-CHAIN-DASHBOARD",
+  "summary": {
+    "accepted_evidence_metadata_records": 5,
+    "dependency_families": 5,
+    "operational_readiness_claim": false,
+    "production_readiness_claim": false,
+    "quarantined_records": 1
+  },
+  "version": "1.0.0-round20",
+  "watermark": "Decision-support / Non-operational"
+}

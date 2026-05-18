@@ -1,0 +1,20 @@
+release: R20-VS-20
+watermark: Decision-support / Non-operational
+commands:
+  - make doctor PROFILE=core: PASS
+  - make docs-validate: PASS
+  - make guardrails-scan: PASS — 0 findings
+  - make ddl-validate: PASS
+  - make data-dictionary-validate: PASS — 33 tables / 402 columns
+  - make schema-validate: PASS
+  - make limited-scope-review-board-validate PROFILE=data-dev: PASS
+  - python -m pytest -q: PASS
+  - make evidence-pack RELEASE=R20-VS-20 PROFILE=data-dev: PASS
+readiness_claims:
+  production: false
+  operational: false
+runtime_limitations:
+  - no RabbitMQ runtime broker evidence
+  - no MinIO Object Lock/WORM runtime evidence
+  - no PDF-A/PAdES/HSM/TSA/OCSP evidence
+  - no independent controlled-lab attestation

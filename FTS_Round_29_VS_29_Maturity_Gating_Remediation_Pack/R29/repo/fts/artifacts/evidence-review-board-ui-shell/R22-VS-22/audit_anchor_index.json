@@ -1,0 +1,23 @@
+{
+  "round": "R22-VS-22",
+  "anchors": [
+    {
+      "audit_anchor": "R21-AUDIT-01",
+      "source_event": "signed_bundle_intake_received",
+      "manifest_object": "obj:signed_bundle_intake_contract.json",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "audit_anchor": "R21-AUDIT-02",
+      "source_event": "trust_chain_dashboard_snapshot_written",
+      "manifest_object": "obj:trust_chain_dashboard.json",
+      "watermark": "Decision-support / Non-operational"
+    },
+    {
+      "audit_anchor": "R21-AUDIT-03",
+      "source_event": "invalid_evidence_quarantined",
+      "manifest_object": "obj:quarantine_queue.json",
+      "watermark": "Decision-support / Non-operational"
+    }
+  ]
+}

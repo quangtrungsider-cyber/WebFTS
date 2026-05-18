@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vatm.local/fts/evidence-review-board-workbench-v29.schema.json",
+  "title": "FTS VS-29 Maturity Gating Remediation Workbench",
+  "type": "object",
+  "required": [
+    "round",
+    "watermark",
+    "claim_guard",
+    "package_inventory_gate",
+    "mandatory_pre_signature_conditions",
+    "maturity_gating_dashboard",
+    "dseep_trace_matrix_workbench",
+    "safety_and_assurance_gate",
+    "procurement_readiness_pack",
+    "round_history_rca_analyzer",
+    "state_hash_sha256"
+  ],
+  "properties": {
+    "round": {
+      "const": "R29-VS-29"
+    },
+    "watermark": {
+      "const": "Decision-support / Non-operational"
+    },
+    "claim_guard": {
+      "type": "object",
+      "required": [
+        "readiness_claim_allowed",
+        "production_readiness_claim",
+        "operational_readiness_claim"
+      ]
+    },
+    "state_hash_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

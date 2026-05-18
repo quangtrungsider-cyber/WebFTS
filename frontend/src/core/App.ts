@@ -11,6 +11,7 @@ import { modals } from '../ui/Modals';
 import { panelResizer } from '../ui/panels/PanelResizer';
 import { SimulationNodesPanel } from '../ui/panels/left/SimulationNodesPanel';
 import { MapControlsPanel } from '../ui/panels/left/MapControlsPanel';
+import { AirspaceDataPanel } from '../ui/panels/left/AirspaceDataPanel';
 import { DisplayOptionsPanel } from '../ui/panels/left/DisplayOptionsPanel';
 import { TrafficListPanel } from '../ui/panels/right/TrafficListPanel';
 import { AircraftInfoPanel } from '../ui/panels/right/AircraftInfoPanel';
@@ -43,6 +44,7 @@ export class App {
     private header: Header;
     private simulationNodesPanel: SimulationNodesPanel;
     private mapControlsPanel: MapControlsPanel;
+    private airspaceDataPanel: AirspaceDataPanel;
     private displayOptionsPanel: DisplayOptionsPanel;
     private trafficListPanel: TrafficListPanel;
     private aircraftInfoPanel: AircraftInfoPanel;
@@ -66,6 +68,7 @@ export class App {
         this.header = new Header();
         this.simulationNodesPanel = new SimulationNodesPanel();
         this.mapControlsPanel = new MapControlsPanel();
+        this.airspaceDataPanel = new AirspaceDataPanel();
         this.displayOptionsPanel = new DisplayOptionsPanel();
         this.trafficListPanel = new TrafficListPanel();
         this.aircraftInfoPanel = new AircraftInfoPanel();
@@ -305,7 +308,13 @@ export class App {
         // Initialize Map Controls Panel
         this.mapControlsPanel.init();
         this.mapControlsPanel.setMapDisplay(this.mapDisplay);
+        this.mapControlsPanel.setApp(this);
         logger.debug('App', 'MapControlsPanel initialized');
+
+        // Initialize Airspace Data Panel
+        this.airspaceDataPanel.init();
+        this.airspaceDataPanel.setStateManager(this.stateManager);
+        logger.debug('App', 'AirspaceDataPanel initialized');
 
         // Initialize Display Options Panel
         this.displayOptionsPanel.init();
@@ -891,6 +900,10 @@ export class App {
 
         if (this.displayOptionsPanel) {
             this.displayOptionsPanel.destroy();
+        }
+
+        if (this.airspaceDataPanel) {
+            this.airspaceDataPanel.destroy();
         }
 
         if (this.trafficListPanel) {

@@ -1,0 +1,42 @@
+[
+  {
+    "edge_hash_sha256": "fb41007cf221e5d03ef1e98099bfbada9a6c4d6e4dda657600e23fa1c28c0d46",
+    "edge_id": "R20-LIN-01",
+    "from": "round19_claim_escalation",
+    "to": "signed_bundle_intake_contract",
+    "type": "feeds",
+    "watermark": "Decision-support / Non-operational"
+  },
+  {
+    "edge_hash_sha256": "3626e3ea8b2b47e632a763c14f47c3d73aa81c169664f131879b25ebf4b8408b",
+    "edge_id": "R20-LIN-02",
+    "from": "signed_bundle_intake_contract",
+    "to": "trust_chain_dashboard",
+    "type": "summarizes",
+    "watermark": "Decision-support / Non-operational"
+  },
+  {
+    "edge_hash_sha256": "238822872d2dfddc210ee39a5dee9b5710c48038728f3277eb69a7858d547e4b",
+    "edge_id": "R20-LIN-03",
+    "from": "signed_bundle_intake_contract",
+    "to": "quarantine_queue",
+    "type": "quarantines_invalid",
+    "watermark": "Decision-support / Non-operational"
+  },
+  {
+    "edge_hash_sha256": "939ed7c38d83995819c2b421ce4610168fecaa39d72f6c6339d6a4706728fce8",
+    "edge_id": "R20-LIN-04",
+    "from": "trust_chain_dashboard",
+    "to": "review_board_case",
+    "type": "supports_review",
+    "watermark": "Decision-support / Non-operational"
+  },
+  {
+    "edge_hash_sha256": "a5680caecb17baabd98291b65a2438768b4cb2d6eac96fd0ec7c0b93bc83c376",
+    "edge_id": "R20-LIN-05",
+    "from": "review_board_case",
+    "to": "limited_scope_approval_contract",
+    "type": "approves_limited_scope",
+    "watermark": "Decision-support / Non-operational"
+  }
+]

@@ -158,7 +158,7 @@ class CommandProcessor:
 
         if cmd == "HELP" or cmd == "?":
             if not argstring:
-                return True, "BlueSky Web Client: Enter commands to control simulation"
+                return True, "VATM Web Client: Enter commands to control simulation"
             else:
                 return True, f"Help for {argstring}: Command forwarded to server"
         else:

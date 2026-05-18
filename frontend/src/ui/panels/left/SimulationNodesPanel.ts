@@ -300,7 +300,7 @@ export class SimulationNodesPanel extends BasePanel {
         const socket = this.socketManager.getSocket();
         if (!socket || !socket.connected) {
             logger.warn('SimulationNodesPanel', 'Cannot refresh nodes: not connected');
-            this.logToConsole('ERROR: Not connected to BlueSky server', true);
+            this.logToConsole('ERROR: Not connected to VATM server', true);
             return;
         }
 
@@ -321,7 +321,7 @@ export class SimulationNodesPanel extends BasePanel {
         const socket = this.socketManager.getSocket();
         if (!socket || !socket.connected) {
             logger.warn('SimulationNodesPanel', 'Cannot add node: not connected');
-            this.logToConsole('ERROR: Not connected to BlueSky server', true);
+            this.logToConsole('ERROR: Not connected to VATM server', true);
             return;
         }
 

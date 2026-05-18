@@ -1,0 +1,2181 @@
+{
+  "tables": [
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_intake_contract_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "signed_bundle_intake_contract"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_review_board_case_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "evidence_review_board_case"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_chain_dashboard_snapshot_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "trust_chain_dashboard_snapshot"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_queue_item_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "quarantine_queue_item"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "limited_scope_approval_contract_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "limited_scope_approval_contract"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_12",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_action_col_13",
+          "type": "text"
+        }
+      ],
+      "name": "reviewer_action"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "audit_event_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "audit_event"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "lineage_edge_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "lineage_edge"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "object_manifest_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "object_manifest"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signed_bundle_metadata_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "signed_bundle_metadata"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "trust_anchor_reference_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "trust_anchor_reference"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "issuer_metadata_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "issuer_metadata"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "signature_metadata_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "signature_metadata"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_profile_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "evidence_profile"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "abac_decision_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "abac_decision"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dashboard_card_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "dashboard_card"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "reviewer_note_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "reviewer_note"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "workflow_transition_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "workflow_transition"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "quarantine_reason_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "quarantine_reason"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "scope_limitation_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "scope_limitation"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "ui_api_contract_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "ui_api_contract"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "download_policy_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "download_policy"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "raw_export_policy_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "raw_export_policy"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "dependency_family_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "dependency_family"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_import_record_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "evidence_import_record"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "chain_of_custody_record_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "chain_of_custody_record"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "readiness_claim_gate_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "readiness_claim_gate"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "claim_escalation_record_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "claim_escalation_record"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "review_board_session_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "review_board_session"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "approval_handoff_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "approval_handoff"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "artifact_hash_record_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "artifact_hash_record"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "source_reference_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "source_reference"
+    },
+    {
+      "columns": [
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_01",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_02",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_03",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_04",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_05",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_06",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_07",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_08",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_09",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_10",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_11",
+          "type": "text"
+        },
+        {
+          "classification": "L2_SYNTHETIC_METADATA_ONLY",
+          "name": "evidence_package_manifest_col_12",
+          "type": "text"
+        }
+      ],
+      "name": "evidence_package_manifest"
+    }
+  ],
+  "version": "1.0.0-round20",
+  "watermark": "Decision-support / Non-operational"
+}
