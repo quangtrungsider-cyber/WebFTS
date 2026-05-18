@@ -334,9 +334,28 @@ function createVatmOverlayToolbar(map: maplibregl.Map): void {
   toolbar.style.cssText = "position:absolute;left:12px;top:84px;z-index:10;display:flex;flex-direction:column;gap:6px;background:rgba(2,6,23,.78);border:1px solid rgba(148,163,184,.26);border-radius:12px;padding:9px;backdrop-filter:blur(12px);box-shadow:0 12px 36px rgba(0,0,0,0.6);";
 
   const title = document.createElement("div");
-  title.textContent = "🛰️ DỮ LIỆU KHÔNG PHẬN";
-  title.style.cssText = "font:800 10px system-ui,sans-serif;color:#94a3b8;margin-bottom:4px;padding:2px 4px;letter-spacing:1px;text-align:center;border-bottom:1px solid rgba(148,163,184,.15);padding-bottom:6px;";
+  title.style.cssText = "font:800 10px system-ui,sans-serif;color:#94a3b8;margin-bottom:4px;padding:2px 4px;letter-spacing:1px;text-align:center;border-bottom:1px solid rgba(148,163,184,.15);padding-bottom:6px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:4px;";
+  
+  const titleText = document.createElement("span");
+  titleText.textContent = "🛰️ DỮ LIỆU KHÔNG PHẬN";
+  title.appendChild(titleText);
+
+  const collapseIndicator = document.createElement("span");
+  collapseIndicator.textContent = "▼";
+  collapseIndicator.style.fontSize = "8px";
+  title.appendChild(collapseIndicator);
+
   toolbar.appendChild(title);
+
+  const content = document.createElement("div");
+  content.style.cssText = "display:flex;flex-direction:column;gap:6px;";
+  toolbar.appendChild(content);
+
+  title.onclick = () => {
+    const isCollapsed = content.style.display === "none";
+    content.style.display = isCollapsed ? "flex" : "none";
+    collapseIndicator.textContent = isCollapsed ? "▼" : "▶";
+  };
 
   GROUPS.forEach(group => {
     const btn = document.createElement("button");
@@ -362,13 +381,13 @@ function createVatmOverlayToolbar(map: maplibregl.Map): void {
         btn.style.boxShadow = "none";
       }
     };
-    toolbar.appendChild(btn);
+    content.appendChild(btn);
   });
 
   const disclaimer = document.createElement("div");
   disclaimer.innerHTML = "Dữ liệu VATM FTS<br/>Non-operational / FTS only";
   disclaimer.style.cssText = "font:500 8px system-ui,sans-serif;color:#64748b;margin-top:4px;text-align:center;padding:4px 4px 2px 4px;border-top:1px solid rgba(148,163,184,.12);line-height:1.3;";
-  toolbar.appendChild(disclaimer);
+  content.appendChild(disclaimer);
 
   const container = map.getContainer();
   container.appendChild(toolbar);

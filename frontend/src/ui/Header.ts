@@ -40,6 +40,7 @@ export class Header {
     // State
     private socketManager: SocketManager | null = null;
     private stateManager: StateManager | null = null;
+    private lastIsRunning: boolean | null = null;
     private eventListeners: Array<{
         element: HTMLElement | Document;
         event: string;
@@ -339,7 +340,7 @@ export class Header {
      * Update simulation time display
      */
     public updateSimTime(timeString: string): void {
-        if (this.simTimeElement) {
+        if (this.simTimeElement && this.simTimeElement.textContent !== timeString) {
             this.simTimeElement.textContent = timeString;
         }
     }
@@ -352,7 +353,9 @@ export class Header {
             // Ensure it starts with 'Rate: ' prefix
             const displayText = rateString.startsWith('Rate:') ?
                 rateString : `Rate: ${rateString}`;
-            this.simRateElement.textContent = displayText;
+            if (this.simRateElement.textContent !== displayText) {
+                this.simRateElement.textContent = displayText;
+            }
         }
     }
 
@@ -389,6 +392,9 @@ export class Header {
      */
     private updateControlsForSimState(simInfo: SimInfo): void {
         const isRunning = simInfo?.state === 2;
+
+        if (this.lastIsRunning === isRunning) return;
+        this.lastIsRunning = isRunning;
 
         this.setControlEnabled(this.playButton, !isRunning);
         this.setControlEnabled(this.playPauseButton, isRunning);
