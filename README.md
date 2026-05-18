@@ -1,236 +1,260 @@
-# WebATM ![License](https://img.shields.io/badge/license-AGPL--3.0-blue) ![Python](https://img.shields.io/badge/python-3.13%2B-blue) ![TypeScript](https://img.shields.io/badge/typescript-5.9%2B-blue)
+# VATM Fast-Time Simulation Platform / WebFTS
 
-A modern web client for the [BlueSky Air Traffic Management (ATM) simulator](https://github.com/TUDelft-CNS-ATM/bluesky). WebATM provides a standalone web interface with interactive aircraft visualization to control air traffic management simulations from the Web.
+VATM Fast-Time Simulation Platform, tên repository là **WebFTS**, là nền tảng mô phỏng không lưu thời gian nhanh trên nền web, phục vụ nghiên cứu, trực quan hóa và thử nghiệm các kịch bản quản lý bay trong vùng trời Việt Nam.
 
-<img width="1909" height="1048" alt="image" src="https://github.com/user-attachments/assets/15401992-a349-4a40-8088-229966c94717" />
+Dự án được phát triển dựa trên nền tảng WebATM/BlueSky và đã được tùy biến để phù hợp với dữ liệu khai thác bay, vùng trời và phương thức bay tại Việt Nam.
 
-**[Try WebATM Demo](https://webatm.amvlab.eu/)** 
+---
 
-## Features
+## Tổng quan hệ thống
 
-- **Intuitive Aircraft Interaction**: Single-click to fly to any aircraft, double-click to activate follow mode
-- **Customizable Aircraft Display**: Toggle visibility of labels, icons, trails, routes, and shapes
-- **Aircraft Type in Labels & Info Panel**: View aircraft type directly on map labels and in the aircraft information panel
-- **Flexible Aircraft Styling**: Choose from chevron, drone, triangle, or aircraft icon styles and customise colors
-- **3D Aircraft Visualization**: Render aircraft as 3D models (A320, A350, A380, drones, and more).
-- **Smart Command Input**: Tab completion for BlueSky commands with autosuggestion
-- **Command Palette**: Quickly browse and search available BlueSky stack commands from the console
-- **Console Map Picker**: Select coordinates directly from the map when entering commands
-- **Scenario File Management**: Upload, organize, and run BlueSky scenario (`.scn`) files and folders straight from the web interface
-- **Flexible Map Projection**: Switch between Web Mercator and 3D globe view powered by [MapLibre GL](https://maplibre.org/maplibre-gl-js/docs/)
-- **Custom Map Sources**: Configure custom tile sources to personalize your base map layer
-- **Configurable Scenario Path**: Set your BlueSky scenario directory from the settings modal
-- **BlueSky Integration**: Seamless connection to BlueSky ATM simulator servers
-- **Modern TypeScript Architecture**: Fully type-safe, maintainable client-side codebase
+WebFTS cung cấp giao diện bản đồ tương tác để hiển thị và điều khiển mô phỏng không lưu, bao gồm:
 
-<img width="1200" height="658" alt="webatm_demo" src="https://github.com/user-attachments/assets/fa43352c-c463-4f8f-bc9d-03e01f82b4ac" />
+- Hiển thị tàu bay theo thời gian mô phỏng.
+- Theo dõi thông tin chuyến bay, hướng bay, tốc độ, độ cao và trạng thái.
+- Kết nối với VATM/BlueSky simulation server.
+- Hiển thị các vùng trời phục vụ điều hành bay.
+- Hiển thị dữ liệu FIR, ACC, TMA.
+- Hiển thị các phương thức bay SID, STAR, IAP.
+- Hiển thị Holding, đường bay, điểm trọng yếu.
+- Theo dõi cảnh báo xung đột giữa các tàu bay.
+- Cho phép bật/tắt từng lớp dữ liệu bản đồ theo nhu cầu khai thác.
 
-## 🚀 WebATM Pro Version Available
+---
 
-**Looking for more advanced features?** WebATM Pro includes everything in the open source version, plus additional capabilities:
+## Các chức năng chính
 
-- **Custom Simulation Engine**: Built on amvlab's custom simulator, controllable end-to-end from the WebATM interface
-- **Multi-Node Simulation**: Spawn and manage multiple parallel simulation nodes from one interface
-- **Server Development Environment**: Modify and develop simulation server code directly from the web interface
-- **Enhanced Server Management**: Full control over server lifecycle (start/stop/restart)
-- **Pro-Only Roadmap**: In-browser scenario editor, simulation rewind, and client-side command validation
-- **Flexible Deployment**: amvlab can provide managed hosting or deploy on your local network for full data sovereignty
+### 1. Mô phỏng không lưu thời gian nhanh
 
-**[Visit amvlab.eu for Pro Version](https://amvlab.eu)**
+Hệ thống cho phép chạy mô phỏng với tốc độ nhanh hơn thời gian thực nhằm phục vụ:
 
-## Prerequisites
+- Phân tích năng lực vùng trời.
+- Kiểm thử phương án điều hành bay.
+- Đánh giá xung đột tiềm ẩn.
+- Mô phỏng lưu lượng bay theo kịch bản.
+- Hỗ trợ nghiên cứu, huấn luyện và đánh giá khai thác.
 
-### For Local Development
-- Python 3.13 or higher
-- Node.js 22+ and npm (for TypeScript development)
-- [BlueSky ATM simulator](https://github.com/amvlab/bluesky) (amvlab fork recommended) or [TUDelft-CNS-ATM/bluesky](https://github.com/TUDelft-CNS-ATM/bluesky) version 1.1.1
+---
 
-## Compatibility
+### 2. Hiển thị bản đồ hàng không Việt Nam
 
-WebATM works best with the [amvlab fork of BlueSky](https://github.com/amvlab/bluesky), but is also compatible with the latest [BlueSky from TU Delft](https://github.com/TUDelft-CNS-ATM/bluesky).
+Các lớp dữ liệu hàng không có thể được bật/tắt trên giao diện:
 
-## Quick Start
+- Đường bay.
+- Điểm trọng yếu.
+- Hành lang bay.
+- FIR / ACC / TMA.
+- Khu vực hạn chế, khu vực nguy hiểm, khu vực cấm.
+- Holding.
+- SID / STAR / IAP theo sân bay.
 
-### Option 1: Prebuilt Release (no Node.js required)
+---
 
-Use this if you just want to run WebATM without installing Node.js or building the frontend yourself. You still clone the repo for the Python source, then drop in a single tarball that contains all the runtime assets that aren't checked into git.
+### 3. Quản lý dữ liệu theo sân bay
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/amvlab/WebATM
-   cd WebATM
-   ```
+Hệ thống định hướng tổ chức dữ liệu theo từng sân bay, ví dụ:
 
-2. **Download and extract the prebuilt assets**
+- TSN / Tân Sơn Nhất.
+- NBA / Nội Bài.
+- DAD / Đà Nẵng.
 
-   Grab the latest `webatm-prebuilt-<version>.tar.gz` from the [Releases page](https://github.com/amvlab/WebATM/releases) and extract it from the repo root:
-   ```bash
-   tar -xzf ~/Downloads/webatm-prebuilt-<version>.tar.gz
-   ```
-   The tarball uses repo-relative paths, so extracting from the WebATM root lands the files in the right places:
-   - `WebATM/static/dist/` — prebuilt webpack bundles
-   - `WebATM/static/vendor/` — third-party CSS/fonts (FontAwesome, MapLibre)
-   - `WebATM/static/tiles/world.pmtiles` — offline basemap (optional but bundled)
+Mỗi sân bay có thể quản lý riêng:
 
-3. **Install Python dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Holding.
+- SID.
+- STAR.
+- IAP.
+- Các điểm liên quan.
+- Đường bay liên quan.
+- Khu vực vùng trời liên quan.
 
-4. **Start the application**
-   ```bash
-   script/run_webatm.sh
-   ```
+---
 
-5. **Access the web interface**
+### 4. Theo dõi tàu bay và xung đột
 
-   Open your browser to: http://localhost:8082
+Giao diện mô phỏng hỗ trợ:
 
-6. **(Optional) Enable the offline basemap**
+- Hiển thị danh sách tàu bay đang hoạt động.
+- Hiển thị thông tin chi tiết tàu bay.
+- Theo dõi số lượng tàu bay.
+- Theo dõi số lượng xung đột.
+- Hiển thị cảnh báo conflict theo callsign.
+- Ghi nhận thông tin mô phỏng trong khu vực Echo Messages.
 
-   The tarball already includes `WebATM/static/tiles/world.pmtiles`. To use it, open **Settings → Map Display Configuration → Offline (Local PMTiles)** in the web UI.
+---
 
-### Option 2: Local Deployment (build from source)
+### 5. Điều khiển mô phỏng
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/amvlab/WebATM
-   cd WebATM
-   ```
+Người dùng có thể:
 
-2. **Install Python dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Tạo tàu bay.
+- Vẽ shape trên bản đồ.
+- Vẽ route.
+- Phóng to / thu nhỏ bản đồ.
+- Reset góc nhìn.
+- Chuyển chế độ fullscreen map.
+- Bật/tắt các lớp hiển thị dữ liệu hàng không.
 
-3. **Build frontend assets**
-   ```bash
-   script/build_frontend.sh
-   ```
+---
 
-4. **Start the application**
-   ```bash
-   script/run_webatm.sh
-   ```
+## Công nghệ sử dụng
 
-5. **Access the web interface**
+Dự án sử dụng các công nghệ chính:
 
-   Open your browser to: http://localhost:8082
+- Python cho phần server và kết nối mô phỏng.
+- TypeScript / JavaScript cho phần giao diện web.
+- MapLibre GL cho bản đồ tương tác.
+- BlueSky/VATM simulation server cho lõi mô phỏng.
+- HTML, CSS, frontend assets cho giao diện người dùng.
 
-### Option 3: Docker Deployment
+---
 
-1. **Build the Docker image**
-   ```bash
-   docker build -t webatm:latest .
-   ```
+## Yêu cầu môi trường
 
-2. **Start with Docker Compose**
-   ```bash
-   docker compose up -d
-   ```
+Khuyến nghị cài đặt:
 
-3. **Access the web interface**
+- Python 3.13 hoặc mới hơn.
+- Node.js 22 hoặc mới hơn.
+- npm.
+- Git.
+- BlueSky hoặc VATM simulation server.
+- Trình duyệt web hiện đại như Chrome, Edge hoặc Firefox.
 
-   Open your browser to: http://localhost:8082
+---
 
-4. **View logs**
-   ```bash
-   docker compose logs -f webatm
-   ```
+## Cài đặt và chạy dự án
 
-## Configuration
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `WEB_HOST` | Web server bind address | localhost |
-| `WEB_PORT` | Web server port | 8082 |
-| `BLUESKY_SERVER_HOST` | BlueSky server hostname/IP | localhost |
-
-### BlueSky Server Ports
-
-WebATM connects to BlueSky servers using the standard BlueSky network ports (11000 and 11001).
-
-**Important**: These ports are currently not configurable. Ensure your BlueSky server runs with default port configuration.
-
-### Offline Basemap
-
-WebATM can render the map from a local [PMTiles](https://docs.protomaps.com/pmtiles/) archive instead of an online tile provider — useful for air-gapped deployments or unreliable networks. The offline MapLibre styles live in `WebATM/static/map/` (`offline-style.json` and `offline-style-light.json`) and expect a tile archive at `WebATM/static/tiles/world.pmtiles`.
-
-The prebuilt release tarball (Option 1) already ships `world.pmtiles`. If you built from source, generate your own archive as follows.
-
-#### 1. Install the `pmtiles` CLI
+### 1. Clone repository
 
 ```bash
-# macOS / Linux with Go installed:
-go install github.com/protomaps/go-pmtiles@latest
-export PATH="$HOME/go/bin:$PATH"
-ln -sf "$HOME/go/bin/go-pmtiles" "$HOME/go/bin/pmtiles"   # optional alias
+git clone https://github.com/quangtrungsider-cyber/WebFTS.git
+cd WebFTS
 ```
 
-Or download a prebuilt binary from the [go-pmtiles releases page](https://github.com/protomaps/go-pmtiles/releases).
+---
 
-#### 2. Extract a worldwide tile archive
-
-Pick a daily planet build date from [maps.protomaps.com/builds](https://maps.protomaps.com/builds/) (e.g. `20260415`) and extract only the zoom levels you need. Zoom 0–8 worldwide is roughly 400 MB – 1.2 GB and covers coastlines, major roads, and country/state boundaries — enough context for ATM visualization:
+### 2. Cài đặt thư viện Python
 
 ```bash
-mkdir -p WebATM/static/tiles
-pmtiles extract \
-  https://build.protomaps.com/<YYYYMMDD>.pmtiles \
-  WebATM/static/tiles/world.pmtiles \
-  --maxzoom=8
+pip install -r requirements.txt
 ```
 
-To add street-level detail for a specific region, run a second extract with a bounding box and a higher max zoom, then add it as an extra source in `WebATM/static/map/offline-style.json`:
+---
+
+### 3. Build frontend
 
 ```bash
-pmtiles extract \
-  https://build.protomaps.com/<YYYYMMDD>.pmtiles \
-  WebATM/static/tiles/region.pmtiles \
-  --bbox=<minLon,minLat,maxLon,maxLat> \
-  --maxzoom=12
+script/build_frontend.sh
 ```
 
-#### 3. Verify and enable
+Trên Windows, nếu dùng Git Bash:
 
 ```bash
-pmtiles show WebATM/static/tiles/world.pmtiles
+bash script/build_frontend.sh
 ```
 
-Then enable it in the UI via **Settings → Map Display Configuration → Offline (Local PMTiles)**.
+---
 
-> The `*.pmtiles` archives can grow to hundreds of MB or more, so distribute them via GitHub releases rather than committing them to the repository.
+### 4. Chạy hệ thống
 
-
-### Code Quality
-
-**Python:**
 ```bash
-# Linting with Ruff
-ruff check .
-
-# Format code
-ruff format .
+script/run_webatm.sh
 ```
 
-**TypeScript:**
+Trên Windows, nếu dùng Git Bash:
+
 ```bash
-cd frontend/
-npm run type-check
+bash script/run_webatm.sh
 ```
 
-## License
+---
 
-Copyright (c) 2025 amvlab
+### 5. Mở giao diện web
 
-This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See [LICENSE](LICENSE) file for details.
+Sau khi chạy thành công, mở trình duyệt và truy cập:
 
-## Acknowledgments
+```text
+http://localhost:8082
+```
 
-This software incorporates **BlueSky - The Open Air Traffic Simulator** technology developed by TU Delft (Delft University of Technology). We acknowledge and thank TU Delft for their contribution to the open aviation simulation community.
+---
 
-## Support
+## Cấu hình kết nối mô phỏng
 
-For inquiries and support, please contact amvlab.
+Một số biến môi trường thường dùng:
+
+| Biến môi trường | Ý nghĩa | Giá trị mặc định |
+|---|---|---|
+| WEB_HOST | Địa chỉ chạy web server | localhost |
+| WEB_PORT | Cổng chạy web server | 8082 |
+| BLUESKY_SERVER_HOST | Địa chỉ simulation server | localhost |
+
+Hệ thống kết nối với simulation server thông qua các cổng mặc định của BlueSky/VATM.
+
+---
+
+## Cấu trúc dữ liệu hàng không
+
+Dữ liệu hàng không nên được tổ chức theo logic:
+
+```text
+data/
+├── airspace/
+│   ├── FIR/
+│   ├── ACC/
+│   └── TMA/
+├── airports/
+│   ├── TSN/
+│   │   ├── holding/
+│   │   ├── SID/
+│   │   ├── STAR/
+│   │   └── IAP/
+│   ├── NBA/
+│   │   ├── holding/
+│   │   ├── SID/
+│   │   ├── STAR/
+│   │   └── IAP/
+│   └── DAD/
+│       ├── holding/
+│       ├── SID/
+│       ├── STAR/
+│       └── IAP/
+├── routes/
+├── waypoints/
+└── restricted_areas/
+```
+
+Mục tiêu là cho phép người dùng lựa chọn từng vùng trời, từng sân bay và từng phương thức bay riêng biệt thay vì hiển thị toàn bộ dữ liệu cùng lúc.
+
+---
+
+## Định hướng phát triển
+
+Các hạng mục tiếp tục phát triển:
+
+- Bố cục lại menu dữ liệu hàng không.
+- Cho phép chọn riêng từng FIR, ACC, TMA.
+- Cho phép chọn riêng từng Holding.
+- Cho phép chọn riêng từng SID, STAR, IAP theo từng sân bay.
+- Chuẩn hóa dữ liệu vùng trời Việt Nam.
+- Chuẩn hóa dữ liệu phương thức bay theo sân bay.
+- Tối ưu hiển thị bản đồ và lớp dữ liệu.
+- Bổ sung công cụ nhập dữ liệu từ Google Earth/KML/KMZ.
+- Bổ sung chức năng phân tích conflict.
+- Bổ sung chức năng xuất báo cáo kết quả mô phỏng.
+
+---
+
+## Ghi chú bản quyền
+
+Dự án WebFTS được phát triển, tùy biến và mở rộng phục vụ mục đích nghiên cứu, mô phỏng và phân tích không lưu.
+
+Nền tảng có tham khảo và kế thừa một số thành phần từ WebATM/BlueSky. Cần tuân thủ giấy phép của các thành phần mã nguồn mở được sử dụng trong dự án.
+
+---
+
+## Repository
+
+```text
+https://github.com/quangtrungsider-cyber/WebFTS
+```
