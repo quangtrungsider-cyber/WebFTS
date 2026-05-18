@@ -1,3 +1,26 @@
+WebFTS - VATM Fast-Time Simulation Platform
+
+Copyright (C) 2026 quangtrungsider-cyber and contributors.
+
+This project is a customized and extended web-based fast-time air traffic
+simulation platform for Vietnam airspace research, built on and derived from
+open-source WebATM / BlueSky-related components.
+
+Because this repository contains and/or derives from AGPL-3.0 licensed
+components, the project is distributed under the GNU Affero General Public
+License version 3, unless a specific file states otherwise.
+
+Original third-party copyright notices remain the property of their respective
+authors. This notice does not remove, replace, or limit any upstream license
+requirements.
+
+Repository:
+https://github.com/quangtrungsider-cyber/WebFTS
+
+The full GNU Affero General Public License v3.0 text follows.
+
+================================================================================
+
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
