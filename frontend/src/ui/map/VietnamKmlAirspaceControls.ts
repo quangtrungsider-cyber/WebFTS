@@ -83,6 +83,7 @@ function setupDynamicProcedureAndHoldingLayers(map: maplibregl.Map): void {
     }
 
     const emptyFilter = ["in", ["get", "id"], ["literal", []]] as any;
+    const isProc = src.type === "proc";
 
     // Define colors and styles dynamically based on source type
     let fillColorExpr: any;
@@ -131,7 +132,7 @@ function setupDynamicProcedureAndHoldingLayers(map: maplibregl.Map): void {
         id: fillId,
         type: "fill",
         source: src.id,
-        filter: emptyFilter,
+        filter: isProc ? ["literal", false] : emptyFilter,
         paint: {
           "fill-color": fillColorExpr,
           "fill-opacity": fillOpacityExpr
@@ -146,7 +147,9 @@ function setupDynamicProcedureAndHoldingLayers(map: maplibregl.Map): void {
         id: lineId,
         type: "line",
         source: src.id,
-        filter: emptyFilter,
+        filter: isProc 
+          ? ["all", emptyFilter, ["==", ["geometry-type"], "LineString"]] 
+          : emptyFilter,
         paint: {
           "line-color": lineColorExpr,
           "line-width": lineWidthExpr,
@@ -163,7 +166,9 @@ function setupDynamicProcedureAndHoldingLayers(map: maplibregl.Map): void {
         id: labelId,
         type: "symbol",
         source: src.id,
-        filter: emptyFilter,
+        filter: isProc 
+          ? ["all", emptyFilter, ["==", ["geometry-type"], "LineString"]] 
+          : emptyFilter,
         layout: {
           "symbol-placement": isPointPlacement ? "point" : "line",
           "text-field": ["coalesce", ["get", "name"], ["get", "id"], ""] as any,
@@ -203,10 +208,26 @@ export function updateActiveAirspaceFilters(map: maplibregl.Map, activeIds: stri
   const filterExpr = ["in", ["get", "id"], ["literal", activeIds]] as any;
 
   dynamicSourceIds.forEach(srcId => {
+    const isProc = srcId.startsWith("vatm-kmz-proc-");
     ["fill", "line", "label"].forEach(suffix => {
       const layerId = `${srcId}-${suffix}`;
       if (map.getLayer(layerId)) {
-        map.setFilter(layerId, filterExpr);
+        if (isProc) {
+          if (suffix === "fill") {
+            // Completely hide protection zone polygons
+            map.setFilter(layerId, ["literal", false]);
+          } else {
+            // Keep only the nominal tracks (LineString) of procedures
+            const combinedFilter = [
+              "all",
+              filterExpr,
+              ["==", ["geometry-type"], "LineString"]
+            ] as any;
+            map.setFilter(layerId, combinedFilter);
+          }
+        } else {
+          map.setFilter(layerId, filterExpr);
+        }
       }
     });
   });
@@ -331,36 +352,35 @@ function createVatmOverlayToolbar(map: maplibregl.Map): void {
 
   toolbar = document.createElement("div");
   toolbar.id = "vatm-kmz-overlay-toolbar";
-  toolbar.style.cssText = "position:absolute;left:12px;top:84px;z-index:10;display:flex;flex-direction:column;gap:6px;background:rgba(2,6,23,.78);border:1px solid rgba(148,163,184,.26);border-radius:12px;padding:9px;backdrop-filter:blur(12px);box-shadow:0 12px 36px rgba(0,0,0,0.6);";
+  // Moved top down from 84px to 140px, and added clean styles
+  toolbar.style.cssText = "position:absolute;left:12px;top:140px;z-index:10;display:flex;flex-direction:column;background:rgba(2,6,23,.78);border:1px solid rgba(148,163,184,.26);border-radius:12px;padding:9px;backdrop-filter:blur(12px);box-shadow:0 12px 36px rgba(0,0,0,0.6);transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);width:190px;overflow:hidden;";
+
+  // Header row for collapsing
+  const headerRow = document.createElement("div");
+  headerRow.style.cssText = "display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding-bottom:6px;border-bottom:1px solid rgba(148,163,184,.15);margin-bottom:8px;user-select:none;";
 
   const title = document.createElement("div");
-  title.style.cssText = "font:800 10px system-ui,sans-serif;color:#94a3b8;margin-bottom:4px;padding:2px 4px;letter-spacing:1px;text-align:center;border-bottom:1px solid rgba(148,163,184,.15);padding-bottom:6px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:4px;";
+  title.textContent = "🛰️ DỮ LIỆU KHÔNG PHẬN";
+  title.style.cssText = "font:800 10px system-ui,sans-serif;color:#94a3b8;letter-spacing:0.5px;";
+  headerRow.appendChild(title);
+
+  // Chevron indicator
+  const chevron = document.createElement("span");
+  chevron.textContent = "▲";
+  chevron.style.cssText = "font-size:9px;color:#94a3b8;transition:transform 0.3s ease;margin-left:6px;";
+  headerRow.appendChild(chevron);
   
-  const titleText = document.createElement("span");
-  titleText.textContent = "🛰️ DỮ LIỆU KHÔNG PHẬN";
-  title.appendChild(titleText);
+  toolbar.appendChild(headerRow);
 
-  const collapseIndicator = document.createElement("span");
-  collapseIndicator.textContent = "▼";
-  collapseIndicator.style.fontSize = "8px";
-  title.appendChild(collapseIndicator);
-
-  toolbar.appendChild(title);
-
-  const content = document.createElement("div");
-  content.style.cssText = "display:flex;flex-direction:column;gap:6px;";
-  toolbar.appendChild(content);
-
-  title.onclick = () => {
-    const isCollapsed = content.style.display === "none";
-    content.style.display = isCollapsed ? "flex" : "none";
-    collapseIndicator.textContent = isCollapsed ? "▼" : "▶";
-  };
+  // Content container that holds the buttons and disclaimer
+  const contentContainer = document.createElement("div");
+  contentContainer.id = "vatm-kmz-overlay-content";
+  contentContainer.style.cssText = "display:flex;flex-direction:column;gap:6px;transition:max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin 0.3s ease;max-height:300px;opacity:1;overflow:hidden;";
 
   GROUPS.forEach(group => {
     const btn = document.createElement("button");
     btn.textContent = group.label;
-    btn.style.cssText = "font:600 11.5px system-ui,sans-serif;color:#dbeafe;background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.25);border-radius:8px;padding:6px 10px;cursor:pointer;text-align:left;transition:all 0.15s ease-in-out;width:170px;";
+    btn.style.cssText = "font:600 11.5px system-ui,sans-serif;color:#dbeafe;background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.25);border-radius:8px;padding:6px 10px;cursor:pointer;text-align:left;transition:all 0.15s ease-in-out;width:100%;";
     
     if (group.active) {
       btn.style.background = "rgba(20,184,166,.35)";
@@ -381,13 +401,38 @@ function createVatmOverlayToolbar(map: maplibregl.Map): void {
         btn.style.boxShadow = "none";
       }
     };
-    content.appendChild(btn);
+    contentContainer.appendChild(btn);
   });
 
   const disclaimer = document.createElement("div");
   disclaimer.innerHTML = "Dữ liệu VATM FTS<br/>Non-operational / FTS only";
   disclaimer.style.cssText = "font:500 8px system-ui,sans-serif;color:#64748b;margin-top:4px;text-align:center;padding:4px 4px 2px 4px;border-top:1px solid rgba(148,163,184,.12);line-height:1.3;";
-  content.appendChild(disclaimer);
+  contentContainer.appendChild(disclaimer);
+
+  toolbar.appendChild(contentContainer);
+
+  // Toggle Collapse Logic
+  let isCollapsed = false;
+  headerRow.onclick = () => {
+    isCollapsed = !isCollapsed;
+    if (isCollapsed) {
+      contentContainer.style.maxHeight = "0px";
+      contentContainer.style.opacity = "0";
+      contentContainer.style.margin = "0px";
+      chevron.style.transform = "rotate(180deg)";
+      headerRow.style.borderBottomColor = "transparent";
+      headerRow.style.marginBottom = "0px";
+      headerRow.style.paddingBottom = "0px";
+    } else {
+      contentContainer.style.maxHeight = "300px";
+      contentContainer.style.opacity = "1";
+      contentContainer.style.margin = "0px";
+      chevron.style.transform = "rotate(0deg)";
+      headerRow.style.borderBottomColor = "rgba(148,163,184,.15)";
+      headerRow.style.marginBottom = "8px";
+      headerRow.style.paddingBottom = "6px";
+    }
+  };
 
   const container = map.getContainer();
   container.appendChild(toolbar);

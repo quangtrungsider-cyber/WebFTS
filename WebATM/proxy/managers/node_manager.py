@@ -126,7 +126,7 @@ class NodeManager:
             # Convert binary node_id to hex string for consistency with SIMINFO
             node_id_str = node_id.hex() if isinstance(node_id, bytes) else str(node_id)
 
-            if node_id_str not in self.proxy.tracked_nodes:
+            if node_id_str not in self.proxy.tracked_nodes and node_id_str not in self.proxy.ignored_nodes:
                 server_id = node_id[:-1] + seqidx2id(0)
                 if (
                     server_id not in self.proxy.bluesky_client.servers

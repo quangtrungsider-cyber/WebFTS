@@ -148,6 +148,14 @@ export class StateManager {
     }
 
     updateSimInfo(simInfo: SimInfo): void {
+        const state = this.getState();
+        const activeNode = state.activeNode;
+
+        // If there is an active node and the sender_id doesn't match, ignore it
+        // to prevent flickering when multiple nodes have different times.
+        if (activeNode && simInfo.sender_id && simInfo.sender_id !== activeNode) {
+            return;
+        }
         this.updateState('simInfo', simInfo);
     }
 

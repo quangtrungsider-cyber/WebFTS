@@ -194,8 +194,9 @@ export class SocketManager {
             },
             onNodeInfo: (data: NodeInfo) => {
                 // CRITICAL: Receiving nodeinfo means we're connected to BlueSky!
-                connectionStatus.onNodeInfoReceived();
-                this.stateManager.setBlueSkyConnectionStatus(true);
+                const totalNodes = data.total_nodes || 0;
+                connectionStatus.onNodeInfoReceived(totalNodes);
+                this.stateManager.setBlueSkyConnectionStatus(totalNodes > 0);
 
                 // Update active node in state if available
                 if (data.active_node) {

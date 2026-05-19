@@ -66,6 +66,8 @@ class BlueSkyProxy:
 
         # Track nodes and servers like web client does
         self.tracked_nodes = {}
+        self.ignored_nodes = set()  # Nodes to ignore after deletion
+        self.load_ignored_nodes()
         self.tracked_servers = {}  # Keep minimal server tracking for compatibility
 
         # Store current map bounds
@@ -94,6 +96,33 @@ class BlueSkyProxy:
         self.data_mgr = DataManager(self)
 
         # Connection callbacks will be set up when BlueSky client is initialized
+
+    def load_ignored_nodes(self):
+        """Load ignored nodes from file."""
+        import json
+        import os
+        path = os.path.join(os.path.dirname(__file__), 'ignored_nodes.json')
+        if os.path.exists(path):
+            try:
+                with open(path, 'r') as f:
+                    self.ignored_nodes = set(json.load(f))
+                logger.info(f"Loaded ignored nodes: {self.ignored_nodes}")
+            except Exception as e:
+                logger.error(f"Error loading ignored nodes: {e}")
+        else:
+            self.ignored_nodes = set()
+
+    def save_ignored_nodes(self):
+        """Save ignored nodes to file."""
+        import json
+        import os
+        path = os.path.join(os.path.dirname(__file__), 'ignored_nodes.json')
+        try:
+            with open(path, 'w') as f:
+                json.dump(list(self.ignored_nodes), f)
+            logger.info(f"Saved ignored nodes: {self.ignored_nodes}")
+        except Exception as e:
+            logger.error(f"Error saving ignored nodes: {e}")
 
     def _safe_decode(self, data):
         """Helper to safely decode bytes to string."""

@@ -224,7 +224,7 @@ export class ConnectionStatusService {
      * Called when nodeinfo is received
      * This is an indicator that we're connected to BlueSky server
      */
-    public onNodeInfoReceived(): void {
+    public onNodeInfoReceived(totalNodes: number = 0): void {
         const now = Date.now();
 
         // Calculate interval between nodeinfo messages
@@ -235,16 +235,23 @@ export class ConnectionStatusService {
         this.status.lastNodeInfoReceived = now;
 
         // Log nodeinfo reception
-        logger.debug('ConnectionStatus', 'Node info received');
+        logger.debug('ConnectionStatus', `Node info received (Total Nodes: ${totalNodes})`);
 
-        // If we're receiving nodeinfo, we're definitely connected
-        if (!this.status.blueSkyConnected) {
-            logger.info('ConnectionStatus', 'Setting BlueSky connected (via nodeinfo)');
-            this.setBlueSkyConnected(true);
+        if (totalNodes > 0) {
+            // If we're receiving nodeinfo with active nodes, we're connected
+            if (!this.status.blueSkyConnected) {
+                logger.info('ConnectionStatus', 'Setting BlueSky connected (via nodeinfo)');
+                this.setBlueSkyConnected(true);
+            }
+            // Reset the timeout for detecting disconnection (any data type resets this)
+            this.resetDataTimeout();
+        } else {
+            // No nodes are available - we are disconnected
+            if (this.status.blueSkyConnected) {
+                logger.info('ConnectionStatus', 'Setting BlueSky disconnected (0 nodes in nodeinfo)');
+                this.setBlueSkyConnected(false);
+            }
         }
-
-        // Reset the timeout for detecting disconnection (any data type resets this)
-        this.resetDataTimeout();
     }
 
     /**

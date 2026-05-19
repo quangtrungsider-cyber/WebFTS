@@ -226,7 +226,12 @@ export class SimulationNodesPanel extends BasePanel {
         nodeItem.innerHTML = `
             <div class="node-header">
                 <strong>${alias}</strong>
-                ${nodeId === this.nodeData?.active_node ? '<span class="active-badge">Active</span>' : ''}
+                <div class="node-actions" style="display: flex; align-items: center; gap: 5px;">
+                    ${nodeId === this.nodeData?.active_node ? '<span class="active-badge">Active</span>' : ''}
+                    <button class="delete-node-btn" title="Xóa node" style="background: none; border: none; color: #ff4d4d; cursor: pointer; padding: 2px 5px;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
             </div>
             <div class="node-details">
                 <div>Status: ${scenario}</div>
@@ -239,6 +244,15 @@ export class SimulationNodesPanel extends BasePanel {
         nodeItem.addEventListener('click', () => {
             this.switchNode(nodeId);
         });
+
+        // Add event listener for delete button
+        const deleteBtn = nodeItem.querySelector('.delete-node-btn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent switching node
+                this.deleteNode(nodeId);
+            });
+        }
 
         return nodeItem;
     }
@@ -286,6 +300,32 @@ export class SimulationNodesPanel extends BasePanel {
 
         // Log to console (if available)
         this.logToConsole(`Switching to node: ${friendlyName}`);
+    }
+
+    /**
+     * Delete a node
+     */
+    private deleteNode(nodeId: string): void {
+        if (!this.socketManager) {
+            logger.warn('SimulationNodesPanel', 'Cannot delete node: SocketManager not set');
+            return;
+        }
+
+        const socket = this.socketManager.getSocket();
+        if (!socket || !socket.connected) {
+            logger.warn('SimulationNodesPanel', 'Cannot delete node: not connected');
+            this.logToConsole('ERROR: Not connected to VATM server', true);
+            return;
+        }
+
+        const nodeData = this.nodeData?.nodes[nodeId];
+        const friendlyName = nodeData ? `Node ${nodeData.node_num || 1}` : nodeId;
+
+        if (confirm(`Bạn có chắc chắn muốn xóa ${friendlyName}?`)) {
+            logger.info('SimulationNodesPanel', 'Deleting node:', friendlyName);
+            socket.emit('delete_node', { node_id: nodeId });
+            this.logToConsole(`Deleting node: ${friendlyName}`);
+        }
     }
 
     /**

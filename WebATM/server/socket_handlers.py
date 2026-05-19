@@ -152,6 +152,29 @@ def register_socket_handlers(socketio, session_manager):
         except Exception as e:
             logger.info(f"Error adding nodes: {e}")
 
+    @socketio.on("delete_node")
+    def on_delete_node(data):
+        """Delete a simulation node from tracking."""
+        try:
+            node_id = data.get("node_id")
+            if node_id:
+                logger.info(f"Requested to delete node: {node_id}")
+                if node_id in current_app.bluesky_proxy.tracked_nodes:
+                    del current_app.bluesky_proxy.tracked_nodes[node_id]
+                    # Add to ignored nodes to prevent it from re-appearing
+                    current_app.bluesky_proxy.ignored_nodes.add(node_id)
+                    current_app.bluesky_proxy.save_ignored_nodes()
+                    # Also remove from poly data if exists
+                    if node_id in current_app.bluesky_proxy.poly_data_by_node:
+                        del current_app.bluesky_proxy.poly_data_by_node[node_id]
+                    if node_id in current_app.bluesky_proxy.polyline_data_by_node:
+                        del current_app.bluesky_proxy.polyline_data_by_node[node_id]
+                    
+                    current_app.bluesky_proxy._emit_node_info()
+                    logger.info(f"Deleted node {node_id} from tracking")
+        except Exception as e:
+            logger.info(f"Error deleting node: {e}")
+
     @socketio.on("heartbeat")
     def on_heartbeat():
         """Handle heartbeat from client to keep session active."""

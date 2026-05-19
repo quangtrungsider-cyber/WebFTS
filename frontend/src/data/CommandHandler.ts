@@ -38,7 +38,8 @@ export class CommandHandler {
         'SHOWPZ',
         'SHOWTRAF',
         'LABEL',
-        'FILTERALT'
+        'FILTERALT',
+        'DELNODE'
     ];
 
     /**
@@ -132,6 +133,8 @@ export class CommandHandler {
             case 'LABEL':
             case 'FILTERALT':
                 return this.handleNotImplemented(cmd);
+            case 'DELNODE':
+                return this.handleDelNodeCommand(args);
             default:
                 return { handled: false, sendToServer: false };
         }
@@ -364,6 +367,36 @@ export class CommandHandler {
         socketManager.disconnect();
 
         this.sendEcho('Disconnected from server', 'info');
+
+        return {
+            handled: true,
+            sendToServer: false
+        };
+    }
+
+    /**
+     * Handle DELNODE command - delete a simulation node
+     * Usage: DELNODE <node_id>
+     */
+    private handleDelNodeCommand(args: string): CommandResult {
+        if (!args || args.trim().length === 0) {
+            this.sendEcho('DELNODE command requires a node ID (e.g., DELNODE 7f000001)', 'warning');
+            return {
+                handled: true,
+                sendToServer: false
+            };
+        }
+
+        const nodeId = args.trim();
+        const socketManager = this.app.getSocketManager();
+        const socket = socketManager.getSocket();
+
+        if (socket && socketManager.isConnected()) {
+            socket.emit('delete_node', { node_id: nodeId });
+            this.sendEcho(`Requested deletion of node ${nodeId}`, 'success');
+        } else {
+            this.sendEcho('Not connected to server', 'error');
+        }
 
         return {
             handled: true,
