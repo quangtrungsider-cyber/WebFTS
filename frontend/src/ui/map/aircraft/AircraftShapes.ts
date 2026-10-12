@@ -205,13 +205,162 @@ export const drawDroneShape: AircraftShapeDrawer = (ctx, size) => {
 };
 
 /**
+ * Adjust a hex color's lightness by a percentage (-100..100).
+ * Used to derive highlight/shadow shades from the aircraft's current
+ * semantic color (normal/selected/conflict) for the pseudo-3D shape below.
+ */
+function shadeHexColor(hex: string, percent: number): string {
+    const match = /^#?([0-9a-fA-F]{6})$/.exec(hex);
+    if (!match) return hex; // not a plain hex color (e.g. already a gradient) -- leave as-is
+    const num = parseInt(match[1], 16);
+    const clamp = (v: number) => Math.max(0, Math.min(255, v));
+    const r = clamp(((num >> 16) & 0xff) + Math.round(255 * (percent / 100)));
+    const g = clamp(((num >> 8) & 0xff) + Math.round(255 * (percent / 100)));
+    const b = clamp((num & 0xff) + Math.round(255 * (percent / 100)));
+    return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
+}
+
+/**
+ * Trace the aircraft silhouette used by drawAircraft3DShape into ctx's
+ * current path (nose at top, tail at bottom, same proportions the other
+ * "aircraft" shape uses). Shared by the drop-shadow pass and the main body
+ * fill so both stay pixel-identical.
+ */
+function traceAircraft3DOutline(ctx: CanvasRenderingContext2D, size: number): void {
+    const c = size / 2;
+    const noseY = size * 0.08;
+    const wingY = size * 0.44;
+    const tailY = size * 0.88;
+    const wingSpan = size * 0.42;
+    const fuselageWidth = size * 0.09;
+    const tailSpan = size * 0.2;
+
+    ctx.beginPath();
+    ctx.moveTo(c, noseY);
+    ctx.lineTo(c + fuselageWidth, wingY - size * 0.03);
+    ctx.lineTo(c + wingSpan, wingY + size * 0.1);
+    ctx.lineTo(c + wingSpan * 0.8, wingY + size * 0.16);
+    ctx.lineTo(c + fuselageWidth * 0.9, wingY + size * 0.08);
+    ctx.lineTo(c + fuselageWidth * 0.6, tailY - size * 0.05);
+    ctx.lineTo(c + tailSpan, tailY);
+    ctx.lineTo(c + tailSpan * 0.75, tailY + size * 0.05);
+    ctx.lineTo(c, tailY - size * 0.03);
+    ctx.lineTo(c - tailSpan * 0.75, tailY + size * 0.05);
+    ctx.lineTo(c - tailSpan, tailY);
+    ctx.lineTo(c - fuselageWidth * 0.6, tailY - size * 0.05);
+    ctx.lineTo(c - fuselageWidth * 0.9, wingY + size * 0.08);
+    ctx.lineTo(c - wingSpan * 0.8, wingY + size * 0.16);
+    ctx.lineTo(c - wingSpan, wingY + size * 0.1);
+    ctx.lineTo(c - fuselageWidth, wingY - size * 0.03);
+    ctx.closePath();
+}
+
+/**
+ * "3D look" aircraft silhouette -- a cheap, purely 2D canvas shape (baked
+ * once into a bitmap sprite, same as the other shapes here), instead of the
+ * much heavier Three.js/.glb "Show 3D aircraft" overlay (which re-renders a
+ * real 3D model every frame per aircraft and can heat up the CPU/GPU on
+ * larger scenarios). No WebGL, no per-frame cost beyond the normal 2D icon.
+ *
+ * What actually sells "3D" in a small flat top-down icon is contrast, not a
+ * subtle tint: (1) a clearly offset, dark drop shadow so the icon reads as
+ * floating above the map rather than painted on it, (2) a glossy radial
+ * "sheen" spot near the nose/cockpit -- the single strongest cheap cue for
+ * "rounded solid object" -- fading to a darker shade at the wingtips/tail,
+ * (3) wings rendered as a distinctly darker flat panel so they don't blend
+ * into the fuselage tone, and (4) a thin dark centerline crease down the
+ * fuselage, actually stroked (an earlier version left this un-stroked, so
+ * it never rendered).
+ */
+export const drawAircraft3DShape: AircraftShapeDrawer = (ctx, size) => {
+    const c = size / 2;
+    const noseY = size * 0.08;
+    const wingY = size * 0.44;
+    const tailY = size * 0.88;
+    const wingSpan = size * 0.42;
+    const fuselageWidth = size * 0.09;
+
+    const baseColor = ctx.fillStyle as string;
+
+    // 1) Drop shadow: a clearly-offset, blurred dark silhouette so the icon
+    // reads as sitting above the map instead of flat-printed on it.
+    ctx.save();
+    ctx.filter = `blur(${Math.max(1, size * 0.05)}px)`;
+    ctx.translate(size * 0.1, size * 0.13);
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    traceAircraft3DOutline(ctx, size);
+    ctx.fill();
+    ctx.restore();
+
+    // 2) Main body base tone, slightly darkened -- the radial sheen (below)
+    // does the highlighting, so the base itself leans toward the shadow end.
+    ctx.fillStyle = shadeHexColor(baseColor, -15);
+    traceAircraft3DOutline(ctx, size);
+    ctx.fill();
+
+    // 3) Wings as a distinctly darker flat panel on top of the body fill --
+    // separates "rounded fuselage" from "flat wing" instead of one uniform
+    // tone across both.
+    ctx.fillStyle = shadeHexColor(baseColor, -30);
+    ctx.beginPath();
+    ctx.moveTo(c + fuselageWidth * 0.6, wingY - size * 0.02);
+    ctx.lineTo(c + wingSpan, wingY + size * 0.1);
+    ctx.lineTo(c + wingSpan * 0.8, wingY + size * 0.16);
+    ctx.lineTo(c + fuselageWidth * 0.5, wingY + size * 0.09);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(c - fuselageWidth * 0.6, wingY - size * 0.02);
+    ctx.lineTo(c - wingSpan, wingY + size * 0.1);
+    ctx.lineTo(c - wingSpan * 0.8, wingY + size * 0.16);
+    ctx.lineTo(c - fuselageWidth * 0.5, wingY + size * 0.09);
+    ctx.closePath();
+    ctx.fill();
+
+    // 4) Glossy radial highlight centered just behind the nose, clipped to
+    // the fuselage/cockpit area -- the main "this is a lit, rounded object"
+    // cue. Clipping to the outline keeps it from washing out over the wings.
+    ctx.save();
+    traceAircraft3DOutline(ctx, size);
+    ctx.clip();
+    const sheenY = noseY + size * 0.16;
+    const sheen = ctx.createRadialGradient(c, sheenY, 0, c, sheenY, size * 0.34);
+    sheen.addColorStop(0, shadeHexColor(baseColor, 70));
+    sheen.addColorStop(0.35, shadeHexColor(baseColor, 25));
+    sheen.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = sheen;
+    ctx.fillRect(0, 0, size, size);
+    ctx.restore();
+
+    // 5) Thin dark centerline crease down the fuselage -- reinforces the
+    // "rounded cylinder" read. Actually stroked (unlike an earlier version
+    // of this shape, which built the line into the fill path and never
+    // called stroke(), so it silently never appeared).
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(c, noseY + size * 0.1);
+    ctx.lineTo(c, tailY - size * 0.12);
+    ctx.strokeStyle = shadeHexColor(baseColor, -45);
+    ctx.lineWidth = Math.max(0.6, size * 0.012);
+    ctx.globalAlpha = 0.6;
+    ctx.stroke();
+    ctx.restore();
+
+    // Leave the full outline as the current path so the caller's shared
+    // fill()/stroke() (white border) still lands in the right place.
+    ctx.fillStyle = shadeHexColor(baseColor, -15);
+    traceAircraft3DOutline(ctx, size);
+};
+
+/**
  * Available aircraft shapes with display names
  */
 export const AIRCRAFT_SHAPES = {
     chevron: { name: 'Chevron', drawer: drawChevronShape },
     triangle: { name: 'Triangle', drawer: drawTriangleShape },
     aircraft: { name: 'Aircraft', drawer: drawAircraftShape },
-    drone: { name: 'Drone', drawer: drawDroneShape }
+    drone: { name: 'Drone', drawer: drawDroneShape },
+    aircraft3d: { name: 'Aircraft (3D look)', drawer: drawAircraft3DShape }
 } as const;
 
 export type AircraftShapeType = keyof typeof AIRCRAFT_SHAPES;

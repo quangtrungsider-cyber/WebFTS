@@ -1,4 +1,4 @@
-import { AppState, SimInfo, AircraftData, ShapeDisplayOptions, ServerStatus, DisplayOptions, CommandDict, Shape, PolygonShape, PolylineShape, PolyData, PolylineData } from '../data/types';
+import { AppState, SimInfo, AircraftData, ShapeDisplayOptions, ServerStatus, DisplayOptions, CommandDict, Shape, PolygonShape, PolylineShape, PolyData, PolylineData, AircraftTrailPoint } from '../data/types';
 import { AUTO_MODEL_SENTINEL } from '../data/aircraftCategories';
 import { logger } from '../utils/Logger';
 
@@ -15,6 +15,14 @@ export class StateManager {
     private shapes: Map<string, Shape> = new Map();
     private shapeListeners: Set<ShapeChangeListener> = new Set();
 
+    // Per-aircraft flown-position history, for the 4D trajectory "past" segment.
+    // Always recorded (independent of any panel being open), throttled to ~1
+    // sample/sec/aircraft, capped per-aircraft so memory stays bounded.
+    private aircraftTrails: Map<string, AircraftTrailPoint[]> = new Map();
+    private aircraftTrailLastSampleT: Map<string, number> = new Map();
+    private static readonly TRAIL_MAX_SAMPLES = 1800; // ~30 min at 1 sample/sec
+    private static readonly TRAIL_SAMPLE_INTERVAL_SEC = 1;
+
     constructor() {
         this.state = {
             connected: false,
@@ -23,6 +31,7 @@ export class StateManager {
             simInfo: null,
             aircraftData: null,
             selectedAircraft: null,
+            trajectoryAircraftIds: [],
             activeNode: null,
             shapeOptions: {
                 showShapes: true,
@@ -82,15 +91,18 @@ export class StateManager {
                 showShapeLabels: true,
                 aircraftIconSize: 0.8,
                 mapLabelsTextSize: 12,
-                aircraftShape: 'chevron',
+                aircraftShape: 'aircraft',
                 // Rendering mode - deprecated, kept for backwards compatibility
                 renderMode: '2d',
                 // 3D overlay toggle - 2D is always active
                 show3DOverlay: false,
                 aircraft3DModelQuality: 'medium',
                 aircraft3DScale: 2.0,
+                aircraft3DAutoSize: true, // constant on-screen size by default, like the 2D icon
                 selectedAircraftModel: AUTO_MODEL_SENTINEL, // per-type category-based model selection by default
-                threeDVisible: false // 3D section collapsed by default
+                threeDVisible: false, // 3D section collapsed by default
+                showAllAircraftTrajectories: false,
+                show4DCorridor: false
             }
         };
     }
@@ -215,11 +227,80 @@ export class StateManager {
     }
 
     updateAircraftData(aircraftData: AircraftData): void {
+        this.recordTrailSamples(aircraftData);
         this.updateState('aircraftData', aircraftData);
+    }
+
+    /**
+     * Appends a throttled position sample per aircraft to the trail history
+     * buffer (for the 4D trajectory "past" segment), and drops trails for
+     * aircraft that no longer exist in this update.
+     */
+    private recordTrailSamples(aircraftData: AircraftData): void {
+        const ids = aircraftData.id;
+        if (!ids) return;
+
+        const simt = this.state.simInfo?.simt ?? 0;
+        const presentIds = new Set(ids);
+
+        for (const trackedId of this.aircraftTrails.keys()) {
+            if (!presentIds.has(trackedId)) {
+                this.aircraftTrails.delete(trackedId);
+                this.aircraftTrailLastSampleT.delete(trackedId);
+            }
+        }
+
+        for (let i = 0; i < ids.length; i++) {
+            const id = ids[i];
+            const lastSampleT = this.aircraftTrailLastSampleT.get(id);
+            if (lastSampleT !== undefined && simt - lastSampleT < StateManager.TRAIL_SAMPLE_INTERVAL_SEC) {
+                continue;
+            }
+            this.aircraftTrailLastSampleT.set(id, simt);
+
+            const trail = this.aircraftTrails.get(id) ?? [];
+            trail.push({ t: simt, lat: aircraftData.lat[i], lon: aircraftData.lon[i], alt: aircraftData.alt[i] });
+            if (trail.length > StateManager.TRAIL_MAX_SAMPLES) {
+                trail.shift();
+            }
+            this.aircraftTrails.set(id, trail);
+        }
+    }
+
+    /** Returns the recorded flown-position history for an aircraft (oldest first), or an empty array if none. */
+    getAircraftTrail(aircraftId: string): AircraftTrailPoint[] {
+        return this.aircraftTrails.get(aircraftId) ?? [];
     }
 
     setSelectedAircraft(aircraftId: string | null): void {
         this.updateState('selectedAircraft', aircraftId);
+    }
+
+    /** Adds/removes an aircraft from the 4D-trajectory comparison set (Ctrl+click). Independent of `selectedAircraft`. */
+    toggleTrajectoryAircraft(aircraftId: string): void {
+        const current = this.state.trajectoryAircraftIds;
+        const next = current.includes(aircraftId)
+            ? current.filter(id => id !== aircraftId)
+            : [...current, aircraftId];
+        this.updateState('trajectoryAircraftIds', next);
+    }
+
+    clearTrajectoryAircraftIds(): void {
+        if (this.state.trajectoryAircraftIds.length === 0) return;
+        this.updateState('trajectoryAircraftIds', []);
+    }
+
+    /** Drops any tracked comparison aircraft that no longer exist (e.g. deleted/landed). */
+    pruneMissingTrajectoryAircraft(existingIds: ReadonlySet<string>): void {
+        const current = this.state.trajectoryAircraftIds;
+        const next = current.filter(id => existingIds.has(id));
+        if (next.length !== current.length) {
+            this.updateState('trajectoryAircraftIds', next);
+        }
+    }
+
+    getTrajectoryAircraftIds(): readonly string[] {
+        return this.state.trajectoryAircraftIds;
     }
 
     setActiveNode(nodeId: string | null): void {
@@ -445,6 +526,7 @@ export class StateManager {
             simInfo: null,
             aircraftData: null,
             selectedAircraft: null,
+            trajectoryAircraftIds: [],
             activeNode: null,
 
             // Preserve options (don't reset user preferences!)
@@ -459,6 +541,10 @@ export class StateManager {
         };
         this.aircraftDrawingMode = false;
         this.aircraftDrawingPoints = [];
+
+        // Old aircraft IDs are no longer meaningful after a reset.
+        this.aircraftTrails.clear();
+        this.aircraftTrailLastSampleT.clear();
 
         // Clear all shapes on reset (shapes belong to simulation, not preserved)
         this.clearAllShapes();

@@ -30,7 +30,7 @@ export class MapDisplay {
     private mapLoadCallback: (() => void) | null = null;
 
     // Map style constants
-    private readonly DEFAULT_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
+    private readonly DEFAULT_STYLE = 'https://api.maptiler.com/maps/satellite/style.json?key=r7j9fOc6Pmz3zl0yllGI';
     private readonly OFFLINE_STYLE = '/static/map/offline-style.json';
     private readonly STORAGE_KEY_STYLE = 'webatm-map-style';
     private readonly STORAGE_KEY_PROJECTION = 'webatm-map-projection';
@@ -47,9 +47,9 @@ export class MapDisplay {
     // every style.load.
     private terrainControl: TerrainToggleControl | null = null;
 
-    // Default center and zoom for Amsterdam
-    private readonly DEFAULT_CENTER: [number, number] = [4.9, 52.3];
-    private readonly DEFAULT_ZOOM = 8;
+    // Default center and zoom for Vietnam FIR
+    private readonly DEFAULT_CENTER: [number, number] = [108.0, 16.5];
+    private readonly DEFAULT_ZOOM = 5;
 
     /**
      * Constructor
@@ -243,7 +243,25 @@ export class MapDisplay {
         // fall back to the bundled offline style. Guarded so we only try once.
         if (this.shouldFallBackToOffline(e)) {
             this.hasFallenBackToOffline = true;
-            logger.warn('MapDisplay', 'Remote style/tiles unreachable; switching to offline basemap.');
+            const failedStyle = this.currentStyle;
+            const err = e?.error;
+            const detail = err ? (err.message || String(err)) : 'unknown error';
+            logger.warn('MapDisplay', `Remote style/tiles unreachable (${detail}); switching to offline basemap.`);
+            // This used to fail silently -- the map would just stay on the
+            // old style with no indication of why "Apply Map Style" appeared
+            // to do nothing. Common causes: the browser/OS doesn't trust the
+            // TLS certificate chain for the remote host (corporate proxy,
+            // outdated CA bundle), the network genuinely can't reach it, or
+            // the API key is invalid/not yet activated on the provider's
+            // dashboard. Surface this so the user isn't left guessing -- a
+            // blocking alert() was tried first but is too disruptive (freezes
+            // the whole page, including automated checks, until dismissed),
+            // so this uses a small auto-dismissing toast instead.
+            this.showMapStyleErrorToast(
+                `Could not load map style (${failedStyle.replace(/\?key=.*/, '')}). ` +
+                `Reason: ${detail}. Usually a network/TLS issue reaching the host, or an invalid/inactive API key. ` +
+                'Falling back to the offline basemap.'
+            );
             this.changeMapStyle(this.OFFLINE_STYLE);
             return;
         }
@@ -344,6 +362,12 @@ export class MapDisplay {
 
         try {
             logger.debug('MapDisplay', 'Changing map style to:', styleUrl);
+
+            // Each explicit style change is a fresh attempt -- reset the
+            // once-only fallback guard so a retry of the same (or another)
+            // remote style reports its own failure instead of silently
+            // no-op'ing because an earlier attempt already tripped it.
+            this.hasFallenBackToOffline = false;
 
             // Save the style to storage for persistence
             storage.set(this.STORAGE_KEY_STYLE, styleUrl);
@@ -498,6 +522,45 @@ export class MapDisplay {
             messageElement.style.display = 'none';
             logger.verbose('MapDisplay', 'Map style message hidden');
         }
+    }
+
+    /**
+     * Show a small, non-blocking, auto-dismissing banner over the map for
+     * style-load failures. Deliberately NOT a blocking alert()/confirm() --
+     * those freeze the entire page (including any in-progress automated
+     * checks) until manually dismissed, which is disproportionate for a
+     * "we fell back to the offline basemap" heads-up.
+     */
+    private showMapStyleErrorToast(message: string): void {
+        const container = this.map?.getContainer();
+        if (!container) return;
+
+        const existing = document.getElementById('map-style-error-toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'map-style-error-toast';
+        toast.textContent = message;
+        toast.style.cssText = [
+            'position:absolute', 'top:12px', 'left:50%', 'transform:translateX(-50%)',
+            'max-width:min(560px, 90%)', 'z-index:1100', 'background:rgba(51,26,26,0.95)',
+            'color:#ffffff', 'border:1px solid #ffa000', 'border-radius:8px',
+            'padding:10px 36px 10px 14px', 'font-size:0.85em', 'line-height:1.4',
+            'box-shadow:0 4px 12px rgba(0,0,0,0.4)'
+        ].join(';');
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+        closeBtn.setAttribute('aria-label', 'Dismiss');
+        closeBtn.style.cssText = [
+            'position:absolute', 'top:4px', 'right:8px', 'background:none', 'border:none',
+            'color:#ffffff', 'font-size:1.2em', 'line-height:1', 'cursor:pointer', 'padding:2px 6px'
+        ].join(';');
+        closeBtn.addEventListener('click', () => toast.remove());
+        toast.appendChild(closeBtn);
+
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 12000);
     }
 
 

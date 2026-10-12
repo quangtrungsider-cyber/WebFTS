@@ -25,29 +25,21 @@ def on_routedata_received(data):
     if not proxy.allow_reconnection:
         return
 
-    # Only emit route data for aircraft from the active node
-    # This prevents flickering when switching between nodes
-    active_node_id = proxy._get_safe_active_node()
-    if not active_node_id:
-        logger.debug("Route data ignored - no active node available")
-        return
-
-    # Check if this aircraft's route data should be displayed
-    # We filter based on the aircraft ID in the route data
+    # Extract aircraft ID from the route data
     route_aircraft_id = (
         getattr(data, "acid", None) or data.get("acid")
         if hasattr(data, "get")
-        else None
+        else getattr(data, "acid", None)
     )
     if not route_aircraft_id:
         logger.debug("Route data ignored - no aircraft ID found")
         return
 
-    # Check if we have current aircraft data and if this aircraft is in the active node's data
-    if hasattr(proxy, "traffic_data") and proxy.traffic_data:
-        aircraft_ids = proxy.traffic_data.get("id", [])
-        if route_aircraft_id not in aircraft_ids:
-            return
+    logger.info(f"ROUTEDATA received for {route_aircraft_id}, connected_clients={proxy.connected_clients}")
+
+    # Removed the traffic_data filter that discarded ROUTEDATA if the aircraft ID
+    # wasn't yet in proxy.traffic_data. This ensures routes created before the
+    # aircraft is fully active (or before ACDATA arrives) are properly cached.
 
     # Mark successful data reception
     proxy.last_successful_update = time.time()
@@ -55,10 +47,17 @@ def on_routedata_received(data):
     # Convert to JSON-serializable format
     route_data = make_json_serializable(data)
 
+    # Cache per-aircraft so new browser clients get it on connect
+    if not hasattr(proxy, "route_data_cache"):
+        proxy.route_data_cache = {}
+    proxy.route_data_cache[route_aircraft_id] = route_data
+
     # Emit to connected clients
     if proxy.socketio and proxy.connected_clients > 0:
         try:
             proxy.socketio.emit("routedata", route_data)
-        except Exception:
-            # Handle emission errors gracefully (e.g., disconnected clients)
-            pass
+            logger.info(f"ROUTEDATA emitted for {route_aircraft_id} to {proxy.connected_clients} clients")
+        except Exception as e:
+            logger.error(f"Error emitting ROUTEDATA for {route_aircraft_id}: {e}")
+    else:
+        logger.info(f"ROUTEDATA for {route_aircraft_id} NOT emitted (no clients): cached for later delivery")

@@ -202,7 +202,7 @@ export class ConsoleManager {
 Available commands:
 - clear: Clear console messages
 - help: Show this help information
-- Any BlueSky simulation command
+- Any Vatm-Engine simulation command
         `.trim();
         
         this.info(helpText);

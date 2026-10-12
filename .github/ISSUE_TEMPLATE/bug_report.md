@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Environment information (please complete the following information):**
  - Browser [e.g. chrome, safari]
  - Python version
- - BlueSky server version
+ - Vatm-Engine server version
  - TypeScript version
 
 **Additional context**

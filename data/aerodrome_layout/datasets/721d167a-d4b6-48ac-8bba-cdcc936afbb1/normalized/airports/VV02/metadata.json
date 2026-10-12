@@ -1,0 +1,30 @@
+{
+  "icao": "VV02",
+  "name": "BIEN HOA",
+  "metadata": {
+    "city": "Bien Hoa",
+    "country": "Vietnam",
+    "gui_label": "2D",
+    "state": "Dong Nai Province"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 2,
+    "runway_centerlines": 2,
+    "runway_labels": 4,
+    "pavements": 2,
+    "ground_markings": 6
+  },
+  "sourceLineCounts": {
+    "1302": 4,
+    "100": 2,
+    "110": 2,
+    "111": 28,
+    "112": 8,
+    "113": 2,
+    "120": 6,
+    "115": 6,
+    "19": 4
+  },
+  "warnings": []
+}

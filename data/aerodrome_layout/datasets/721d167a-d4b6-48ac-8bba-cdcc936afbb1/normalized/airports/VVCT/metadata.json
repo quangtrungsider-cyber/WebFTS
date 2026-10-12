@@ -1,0 +1,49 @@
+{
+  "icao": "VVCT",
+  "name": "Can Tho Intl",
+  "metadata": {
+    "city": "Can Tho",
+    "country": "Vietnam",
+    "datum_lat": "10.084025",
+    "datum_lon": "105.710025",
+    "gui_label": "3D",
+    "iata_code": "VCA",
+    "icao_code": "VVCT",
+    "region_code": "VV",
+    "state": "Can Tho Province",
+    "transition_alt": "9000",
+    "transition_level": "FL100"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "helipads": 2,
+    "pavements": 6,
+    "boundaries": 1,
+    "gates": 11,
+    "ground_markings": 25,
+    "taxiway_signs": 2
+  },
+  "sourceLineCounts": {
+    "1302": 11,
+    "100": 1,
+    "102": 2,
+    "110": 6,
+    "111": 136,
+    "112": 109,
+    "113": 7,
+    "130": 1,
+    "120": 25,
+    "115": 19,
+    "116": 6,
+    "21": 2,
+    "20": 2,
+    "1300": 11,
+    "1301": 11,
+    "18": 1,
+    "1054": 1
+  },
+  "warnings": []
+}

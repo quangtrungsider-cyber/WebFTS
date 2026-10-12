@@ -1,0 +1,48 @@
+{
+  "icao": "VVDB",
+  "name": "Dien Bien Phu",
+  "metadata": {
+    "city": "Dien Bien Phu",
+    "country": "Vietnam",
+    "datum_lat": "21.397777778",
+    "datum_lon": "103.008888889",
+    "gui_label": "3D",
+    "iata_code": "DIN",
+    "icao_code": "VVDB",
+    "region_code": "VV",
+    "state": "Lai Chau Province",
+    "transition_alt": "9030",
+    "transition_level": "10000"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 4,
+    "boundaries": 1,
+    "gates": 3,
+    "ground_markings": 9,
+    "taxiway_signs": 7
+  },
+  "sourceLineCounts": {
+    "1302": 11,
+    "100": 1,
+    "110": 4,
+    "111": 64,
+    "113": 5,
+    "112": 29,
+    "130": 1,
+    "120": 9,
+    "116": 4,
+    "115": 5,
+    "20": 7,
+    "14": 1,
+    "1300": 3,
+    "1301": 3,
+    "18": 1,
+    "19": 1,
+    "1054": 1
+  },
+  "warnings": []
+}

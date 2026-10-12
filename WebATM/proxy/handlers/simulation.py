@@ -67,9 +67,7 @@ def on_siminfo_received(
         "scenname": str(scenname) if scenname is not None else "",
         "sender_id": sender_id_str,  # Include sender ID for node identification
     }
-    proxy.sim_data = sim_data
-
-    # Update node information like web client does
+    # Update node information like web client does (updates the sidebar clock for all nodes)
     if sender_id_str and sender_id_str in proxy.tracked_nodes:
         simt_str = tim2txt(simt)[:-3] if simt is not None else "00:00:00"
         proxy.tracked_nodes[sender_id_str].update(
@@ -78,6 +76,13 @@ def on_siminfo_received(
         # Emit updated node info occasionally (not every frame to avoid spam)
         if int(simt or 0) % 5 == 0:  # Every 5 seconds
             proxy._emit_node_info()
+
+    # Filter: Only update sim_data and emit to client if sender matches active node
+    active_node = proxy._get_safe_active_node()
+    if active_node and sender_id_str != active_node:
+        return
+
+    proxy.sim_data = sim_data
 
     # Throttle sim info emissions
     current_time = time.time()

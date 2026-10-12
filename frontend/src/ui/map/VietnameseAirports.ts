@@ -119,6 +119,29 @@ export class VietnameseAirports {
         ]
     };
 
+    // IATA -> ICAO mapping (AIRPORTS_DATA only carries ICAO codes)
+    private static readonly IATA_TO_ICAO: Record<string, string> = {
+        SGN: 'VVTS', HAN: 'VVNB', DAD: 'VVDN', CXR: 'VVCR', PQC: 'VVPQ',
+        VDO: 'VVVD', HPH: 'VVCI', HUI: 'VVPB', VII: 'VVVH', THD: 'VVTX',
+        UIH: 'VVPC', DLI: 'VVDL', PXU: 'VVPK', BMV: 'VVBM', TBB: 'VVTH',
+        VCL: 'VVCA', VDH: 'VVDH', DIN: 'VVDB', VCS: 'VVCS', VKG: 'VVRG',
+        CAH: 'VVCM'
+    };
+
+    /**
+     * Look up an airport by its ICAO or IATA code (case-insensitive).
+     * Returns the coordinates ([lon, lat]) and name, or null if not found.
+     */
+    public static findByCode(code: string): { icao: string; name: string; lon: number; lat: number } | null {
+        const normalized = code.trim().toUpperCase();
+        const icao = this.IATA_TO_ICAO[normalized] ?? normalized;
+        const feature = this.AIRPORTS_DATA.features.find((f) => f.properties.icao === icao);
+        if (!feature) return null;
+
+        const [lon, lat] = feature.geometry.coordinates;
+        return { icao: feature.properties.icao, name: feature.properties.name, lon, lat };
+    }
+
     /**
      * Set up the Vietnamese airports source and layers on the map.
      * Safe to call multiple times (cleans up existing layers/sources first).

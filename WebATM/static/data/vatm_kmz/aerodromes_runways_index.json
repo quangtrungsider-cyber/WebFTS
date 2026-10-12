@@ -1,0 +1,168 @@
+{
+  "VVPQ": {
+    "id": "aerodrome-urn:uuid:71e92d12-9de1-40ec-bd38-544a1e594f25",
+    "name": "VVPQ",
+    "runways": {
+      "10/28": "runway-2842de85-a765-4a9d-a562-b02f46bd07f9"
+    }
+  },
+  "VVPB": {
+    "id": "aerodrome-urn:uuid:1594405a-aafd-46ed-8aa3-f432a19e73b2",
+    "name": "VVPB",
+    "runways": {
+      "09/27": "runway-ded997ea-49f0-4dae-be0b-cd4b6a21854b"
+    }
+  },
+  "VVBM": {
+    "id": "aerodrome-urn:uuid:962684ae-df3b-4802-af66-bf28e8baebb1",
+    "name": "VVBM",
+    "runways": {
+      "09/27": "runway-150a41a4-3baf-4afa-9c31-ec057529d5dd"
+    }
+  },
+  "VVCS": {
+    "id": "aerodrome-urn:uuid:229e6368-411a-43e0-8955-b525600ba8af",
+    "name": "VVCS",
+    "runways": {
+      "11/29": "runway-e4bdffb4-4be3-4c55-adaf-158725c75275"
+    }
+  },
+  "VVVD": {
+    "id": "aerodrome-urn:uuid:ed3cdfd4-81e3-491d-8a44-09893296f1e6",
+    "name": "VVVD",
+    "runways": {
+      "03/21": "runway-19ea6e47-c5f8-4410-9434-cf3d45783a2b"
+    }
+  },
+  "VVCR": {
+    "id": "aerodrome-urn:uuid:fd46f2c6-cede-433f-b61a-42903d348b3f",
+    "name": "VVCR",
+    "runways": {
+      "02R/20L": "runway-307fe231-9269-4c78-9f1d-51f900be7209",
+      "02L/20R": "runway-ebab20ad-a846-41e8-b757-40b3992254f8"
+    }
+  },
+  "VVDL": {
+    "id": "aerodrome-urn:uuid:9878488e-807a-40f0-8019-7086f95a2169",
+    "name": "VVDL",
+    "runways": {
+      "09/27": "runway-104be0a5-77fc-4c6f-a9ff-c733bb6c6b9b"
+    }
+  },
+  "VVNB": {
+    "id": "aerodrome-urn:uuid:809ba874-a0da-4939-b63e-a9e69b9c935e",
+    "name": "VVNB",
+    "runways": {
+      "11R/29L": "runway-aeda7722-cf2a-4999-92e6-df961f56fb26",
+      "11L/29R": "runway-ce29e99f-d9a6-49cf-b21e-a835780431ee"
+    }
+  },
+  "VVCI": {
+    "id": "aerodrome-urn:uuid:30dfac80-206d-4d56-81d9-03e6ab3330d7",
+    "name": "VVCI",
+    "runways": {
+      "07/25": "runway-223f8f16-0bec-479c-aa4f-1df4e7d96f98"
+    }
+  },
+  "VVTH": {
+    "id": "aerodrome-urn:uuid:940f442f-5bef-4f35-8fbd-1bdfdc749fd4",
+    "name": "VVTH",
+    "runways": {
+      "03/21": "runway-93bd83ee-a398-4d5f-be4c-5fda166a6638"
+    }
+  },
+  "VVPK": {
+    "id": "aerodrome-urn:uuid:6fbfd35d-27c7-458f-b449-ee2a203ef2c3",
+    "name": "VVPK",
+    "runways": {
+      "09/27": "runway-14fcf5f0-4d9d-4cb9-a915-b8cd19e1e043"
+    }
+  },
+  "VVRG": {
+    "id": "aerodrome-urn:uuid:d5498da8-fb58-41c8-9496-1842089a1df7",
+    "name": "VVRG",
+    "runways": {
+      "08/26": "runway-bd075aa4-bbd0-4d40-9eda-5375c8f0bd1a"
+    }
+  },
+  "VVDB": {
+    "id": "aerodrome-urn:uuid:44f8cead-e534-4670-8abe-aa09c422def6",
+    "name": "VVDB",
+    "runways": {
+      "17/35": "runway-b4af56b7-6c0a-409d-b760-7653d1f8df08"
+    }
+  },
+  "VVCA": {
+    "id": "aerodrome-urn:uuid:6b052754-51a9-456c-935b-f9f0a8f4a48f",
+    "name": "VVCA",
+    "runways": {
+      "14/32": "runway-d50eb8f7-1c08-47e9-a5e8-cec1072f5ebf"
+    }
+  },
+  "VVDH": {
+    "id": "aerodrome-urn:uuid:f04c2a17-a0a3-4790-b311-1b31dc85c163",
+    "name": "VVDH",
+    "runways": {
+      "11/29": "runway-c0d4f959-2c7c-409d-842a-ca24266bd43c"
+    }
+  },
+  "VVTX": {
+    "id": "aerodrome-urn:uuid:a4f0e763-6a01-4f4b-a97a-456a670e230a",
+    "name": "VVTX",
+    "runways": {
+      "13/31": "runway-2189d76f-806e-44b5-8894-700d55ed19ea"
+    }
+  },
+  "VVPC": {
+    "id": "aerodrome-urn:uuid:ed12797b-527f-4323-a3c7-923c17a58b67",
+    "name": "VVPC",
+    "runways": {
+      "15/33": "runway-226ebdda-080a-4d09-b93f-9d5349b35474"
+    }
+  },
+  "VVDN": {
+    "id": "aerodrome-urn:uuid:6c73c865-2e1c-4862-bf81-20b15c9dee8e",
+    "name": "VVDN",
+    "runways": {
+      "17L/35R": "runway-ffa1a536-761b-4183-8275-9426d1764056",
+      "17R/35L": "runway-408fdb37-c212-45a1-a9f1-c9ef8499b752"
+    }
+  },
+  "VVCT": {
+    "id": "aerodrome-urn:uuid:bf3c6ec7-130e-4cc9-a999-a6187bd837c7",
+    "name": "VVCT",
+    "runways": {
+      "06/24": "runway-27842845-49ed-46ed-807d-f45517589bef"
+    }
+  },
+  "VVCM": {
+    "id": "aerodrome-urn:uuid:9a3379ce-01f0-407e-9193-cd530963d257",
+    "name": "VVCM",
+    "runways": {
+      "09/27": "runway-352df9f1-45ff-4f31-b351-aa552f2bf485"
+    }
+  },
+  "VVTS": {
+    "id": "aerodrome-urn:uuid:fabe74ef-0c50-4725-ab2d-2c23c206f81e",
+    "name": "VVTS",
+    "runways": {
+      "07L/25R": "runway-19ca6113-2cd3-468a-b539-6862ee9176f4",
+      "07R/25L": "runway-d63b4198-e69f-4de3-907c-923dd01354dd"
+    }
+  },
+  "VVVH": {
+    "id": "aerodrome-urn:uuid:65146624-72c0-4612-bead-20f25031b8b3",
+    "name": "VVVH",
+    "runways": {
+      "17/35": "runway-897d21fb-e560-408a-987a-7f1fc11a86ca"
+    }
+  },
+  "VVLT": {
+    "id": "aerodrome-vvlt",
+    "name": "VVLT",
+    "runways": {
+      "05L/23R": "runway-vvlt-05l",
+      "05R/23L": "runway-vvlt-05r"
+    }
+  }
+}

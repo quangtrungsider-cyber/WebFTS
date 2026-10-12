@@ -1,0 +1,719 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 25",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.660094,
+          10.81205706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 24",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6600955,
+          10.8120591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 23",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6600924,
+          10.81204936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 26",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6600939,
+          10.81205414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 27",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6600946,
+          10.81206639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 28",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6600949,
+          10.81206434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 29",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6603487,
+          10.81480744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 31",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6602298,
+          10.81350731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 32",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6601703,
+          10.81286458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 30",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6602901,
+          10.81416143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 50",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6594758,
+          10.80949947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 51",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6590855,
+          10.80953388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 52",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6590245,
+          10.80954031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 47",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.659022,
+          10.80953944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 48",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6594733,
+          10.80949866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 53",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6594714,
+          10.8095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 49",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6589824,
+          10.80954419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 54",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.658984,
+          10.80954372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 33",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6579812,
+          10.81612359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 34",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6579101,
+          10.8153688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 35",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6578453,
+          10.81465372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 36",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6577827,
+          10.81398116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 38",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6588733,
+          10.81274551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 39",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6583923,
+          10.81278977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 40",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6585172,
+          10.81277778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 37",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6592872,
+          10.81270763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 91",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6563541,
+          10.8145057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 95",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6548176,
+          10.81392634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 100",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6526938,
+          10.81312637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 98",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6536625,
+          10.81349115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 93",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6555843,
+          10.81421535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 103",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6499759,
+          10.81343072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 96",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6544323,
+          10.81378117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 101",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6523089,
+          10.8129812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 99",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6530769,
+          10.81327088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 94",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6552008,
+          10.81407118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 97",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6540447,
+          10.81363532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 92",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6559688,
+          10.81436019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 102",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6519526,
+          10.8128429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 104",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6499751,
+          10.81343053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 41",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599681,
+          10.81070828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 46",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.659967,
+          10.81068931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 45",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599683,
+          10.81069408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 44",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599678,
+          10.81069592
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 42",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599667,
+          10.81069652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 43",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599671,
+          10.81069518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 103A",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6515077,
+          10.81267678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 104A",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6506729,
+          10.81235992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 77A",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6530506,
+          10.81458922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 79A",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6521784,
+          10.8142611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PARKING 81A",
+        "type": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.651299,
+          10.81392866
+        ]
+      }
+    }
+  ]
+}

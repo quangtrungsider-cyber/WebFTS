@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "04/22", "icao": "VVPR", "end1": "04", "lat1": 11.6240776, "lon1": 108.941569, "end2": "22", "lat2": 11.6428867, "lon2": 108.961964, "width_m": 42.0, "surface": "2"}, "geometry": {"type": "LineString", "coordinates": [[108.941569, 11.6240776], [108.961964, 11.6428867]]}}]}

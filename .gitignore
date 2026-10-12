@@ -270,3 +270,42 @@ WebATM/static/vendor/
 #   4. In WebATM:   Settings -> Map Display Configuration -> Offline (Local PMTiles)
 WebATM/static/tiles/*.pmtiles
 
+# Raw source data packs (multi-GB, raw PDFs/KML/game assets used as one-time
+# input for data prep scripts) -- not app code, far too large for git.
+/vietnam_ats_routes_pack/
+/AIXM.zip
+/AIXM 5.1/
+
+# GitHub wiki clone -- a separate git repo, not nested inside this one.
+/WebFTS.wiki/
+
+# Internal-only reports/docs, not meant for the shared repo.
+*.docx
+*.pptx
+Bao_cao_*.pdf
+TAAM_vs_WebFTS_Report.pdf
+
+# One-off scratch/debug scripts and their throwaway outputs.
+/scratch_*.py
+/temp_api_response*.json
+/sids_extracted.txt
+/_vvnb_fpl_clean.csv
+/atwi_vvts_vvlt_52_eval_result.json
+/generate_60min_*.py
+/generate_hanoi_soir.py
+/atwi_evaluator.py
+/create_report_docx.py
+/zip_source.py
+/parse_apt_dat.py
+/extract_data.py
+/extract_sids_to_json.py
+/extract_vvts_parking.py
+/vvdn_60min_claude.scn
+/vvdn_60min_real.scn
+
+# Backup snapshots written by one-off rebuild/import scripts.
+*.bak_*
+**/_backup_*/
+**/_removed_*/
+WebATM/static/data/vatm_kmz/procedures_by_airport/Backup/
+

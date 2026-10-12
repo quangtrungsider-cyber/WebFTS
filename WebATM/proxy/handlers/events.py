@@ -43,6 +43,11 @@ def on_reset_received(data=None, *args, **kwargs):
         )  # Use sender_id if available, otherwise active node
 
         if reset_node_id:
+            # Clear ROUTEDATA cache so stale routes from the old scenario are not
+            # re-served to newly-connecting browsers after a simulation reset
+            if hasattr(proxy, "route_data_cache"):
+                proxy.route_data_cache.clear()
+
             # Clear stored shapes for the node that sent the reset
             if reset_node_id in proxy.poly_data_by_node:
                 del proxy.poly_data_by_node[reset_node_id]

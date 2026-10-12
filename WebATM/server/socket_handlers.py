@@ -59,6 +59,12 @@ def register_socket_handlers(socketio, session_manager):
             # Emit shapes for the active node (if any exist)
             # This ensures shapes created before the client connected are visible
             current_app.bluesky_proxy._emit_active_node_poly_data()
+
+            # NOTE: We do NOT resend cached ROUTEDATA here because the frontend's
+            # onRouteData handler is registered only after the map style loads
+            # (inside the mapLoadCallback), which is always later than the socket
+            # connect event.  The frontend will emit 'request_route_cache' once its
+            # handler is ready; see the on_request_route_cache handler below.
         except Exception as e:
             # Handle emission errors gracefully
             logger.info(f"Error sending initial data to {session_id}: {e}")
@@ -139,10 +145,32 @@ def register_socket_handlers(socketio, session_manager):
         except Exception as e:
             logger.info(f"Error getting nodes: {e}")
 
+    @socketio.on("request_route_cache")
+    def on_request_route_cache():
+        """Resend all cached ROUTEDATA to the requesting client.
+
+        Called by the frontend after its route-data handler is fully initialised
+        (i.e. after the map style has loaded), so data emitted on 'connect' is
+        not silently dropped because the handler wasn't ready yet.
+        """
+        route_cache = getattr(current_app.bluesky_proxy, "route_data_cache", {})
+        if route_cache:
+            logger.info(f"request_route_cache: resending {len(route_cache)} routes")
+            for route_data in route_cache.values():
+                try:
+                    emit("routedata", route_data)
+                except Exception:
+                    pass
+        else:
+            logger.info("request_route_cache: cache is empty")
+
     @socketio.on("add_nodes")
     def on_add_nodes(data):
         """Add new simulation nodes."""
         try:
+            if len(current_app.bluesky_proxy.tracked_nodes) >= 1:
+                logger.info("Ignoring add_nodes event: max 1 node is allowed.")
+                return
             count = data.get("count", 1)
             server_id = data.get("server_id")
             if server_id and isinstance(server_id, str):
@@ -160,6 +188,14 @@ def register_socket_handlers(socketio, session_manager):
             if node_id:
                 logger.info(f"Requested to delete node: {node_id}")
                 if node_id in current_app.bluesky_proxy.tracked_nodes:
+                    # Stop/reset the simulation/scenario on this node before deleting it
+                    node_data = current_app.bluesky_proxy.tracked_nodes[node_id]
+                    binary_node_id = node_data.get("node_id")
+                    if binary_node_id:
+                        current_app.bluesky_proxy.actnode(binary_node_id)
+                        current_app.bluesky_proxy.send_command("RESET")
+                        logger.info(f"Sent RESET to stop scenarios on node {node_id}")
+
                     del current_app.bluesky_proxy.tracked_nodes[node_id]
                     # Add to ignored nodes to prevent it from re-appearing
                     current_app.bluesky_proxy.ignored_nodes.add(node_id)

@@ -1,0 +1,577 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-2842de85-a765-4a9d-a562-b02f46bd07f9",
+        "name": "RWY 10/28 (VVPQ)",
+        "airport": "VVPQ",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.97957807112844,
+            10.172059586499472
+          ],
+          [
+            104.00654173134414,
+            10.167379862183617
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-ded997ea-49f0-4dae-be0b-cd4b6a21854b",
+        "name": "RWY 09/27 (VVPB)",
+        "airport": "VVPB",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.68985303009977,
+            16.4006837612491
+          ],
+          [
+            107.71513630390021,
+            16.4006837612491
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-150a41a4-3baf-4afa-9c31-ec057529d5dd",
+        "name": "RWY 09/27 (VVBM)",
+        "airport": "VVBM",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.10277399681746,
+            12.66838728283994
+          ],
+          [
+            108.13039589118254,
+            12.66838728283994
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-e4bdffb4-4be3-4c55-adaf-158725c75275",
+        "name": "RWY 11/29 (VVCS)",
+        "airport": "VVCS",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.62200137139857,
+            8.735779814484735
+          ],
+          [
+            106.63762178893434,
+            8.730160359745422
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-19ea6e47-c5f8-4410-9434-cf3d45783a2b",
+        "name": "RWY 03/21 (VVVD)",
+        "airport": "VVVD",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.40538960823076,
+            21.104000930337165
+          ],
+          [
+            107.42272341601337,
+            21.13200762904222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-307fe231-9269-4c78-9f1d-51f900be7209",
+        "name": "RWY 02R/20L (VVCR)",
+        "airport": "VVCR",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.21534611659713,
+            11.981990300924036
+          ],
+          [
+            109.22491988159761,
+            12.007719695517247
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-ebab20ad-a846-41e8-b757-40b3992254f8",
+        "name": "RWY 02L/20R (VVCR)",
+        "airport": "VVCR",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.21188944638699,
+            11.983206606424776
+          ],
+          [
+            109.22147267806004,
+            12.008961325225199
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-104be0a5-77fc-4c6f-a9ff-c733bb6c6b9b",
+        "name": "RWY 09/27 (VVDL)",
+        "airport": "VVDL",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.35309212264951,
+            11.75335794609593
+          ],
+          [
+            108.38291259935046,
+            11.75335794609593
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-aeda7722-cf2a-4999-92e6-df961f56fb26",
+        "name": "RWY 11R/29L (VVNB)",
+        "airport": "VVNB",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.78759874453655,
+            21.22568527603726
+          ],
+          [
+            105.82200915209735,
+            21.214010083214095
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-ce29e99f-d9a6-49cf-b21e-a835780431ee",
+        "name": "RWY 11L/29R (VVNB)",
+        "airport": "VVNB",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.79163359117683,
+            21.2281403646963
+          ],
+          [
+            105.82061143959614,
+            21.218308623317313
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-223f8f16-0bec-479c-aa4f-1df4e7d96f98",
+        "name": "RWY 07/25 (VVCI)",
+        "airport": "VVCI",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.70933358651003,
+            20.81222220490961
+          ],
+          [
+            106.73687793588613,
+            20.821593083424478
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-93bd83ee-a398-4d5f-be4c-5fda166a6638",
+        "name": "RWY 03/21 (VVTH)",
+        "airport": "VVTH",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.32362165369258,
+            13.030828409485194
+          ],
+          [
+            109.33699673450319,
+            13.0533971409103
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-14fcf5f0-4d9d-4cb9-a915-b8cd19e1e043",
+        "name": "RWY 09/27 (VVPK)",
+        "airport": "VVPK",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.00860930154876,
+            14.004399747081525
+          ],
+          [
+            108.03082931045124,
+            14.004399747081525
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-bd075aa4-bbd0-4d40-9eda-5375c8f0bd1a",
+        "name": "RWY 08/26 (VVRG)",
+        "airport": "VVRG",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.12752218367248,
+            9.957399695458202
+          ],
+          [
+            105.14099519863132,
+            9.959739557633354
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-b4af56b7-6c0a-409d-b760-7653d1f8df08",
+        "name": "RWY 17/35 (VVDB)",
+        "airport": "VVDB",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            102.99850226581252,
+            21.41279536328995
+          ],
+          [
+            103.0025233301766,
+            21.391563334740663
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-d50eb8f7-1c08-47e9-a5e8-cec1072f5ebf",
+        "name": "RWY 14/32 (VVCA)",
+        "airport": "VVCA",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.69674747794646,
+            15.416484675317442
+          ],
+          [
+            108.71501537805077,
+            15.395496117756046
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-c0d4f959-2c7c-409d-842a-ca24266bd43c",
+        "name": "RWY 11/29 (VVDH)",
+        "airport": "VVDH",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.5801680410016,
+            17.518952120446624
+          ],
+          [
+            106.60141236157118,
+            17.51157831436309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-2189d76f-806e-44b5-8894-700d55ed19ea",
+        "name": "RWY 13/31 (VVTX)",
+        "airport": "VVTX",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.45755984018133,
+            19.911799403853163
+          ],
+          [
+            105.48097940460748,
+            19.893321774116437
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-226ebdda-080a-4d09-b93f-9d5349b35474",
+        "name": "RWY 15/33 (VVPC)",
+        "airport": "VVPC",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.03918075604443,
+            13.960990456577788
+          ],
+          [
+            109.05328707491675,
+            13.937278118293785
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-ffa1a536-761b-4183-8275-9426d1764056",
+        "name": "RWY 17L/35R (VVDN)",
+        "airport": "VVDN",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.19938937454786,
+            16.059685420546618
+          ],
+          [
+            108.2050703335595,
+            16.028722045585482
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-408fdb37-c212-45a1-a9f1-c9ef8499b752",
+        "name": "RWY 17R/35L (VVDN)",
+        "airport": "VVDN",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.19607336382784,
+            16.057066535794444
+          ],
+          [
+            108.2010222751576,
+            16.03009301286094
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-27842845-49ed-46ed-807d-f45517589bef",
+        "name": "RWY 06/24 (VVCT)",
+        "airport": "VVCT",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.69815899817961,
+            10.07728559108247
+          ],
+          [
+            105.72186410954163,
+            10.090760320242264
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-352df9f1-45ff-4f31-b351-aa552f2bf485",
+        "name": "RWY 09/27 (VVCM)",
+        "airport": "VVCM",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.16916277151007,
+            9.177517519001958
+          ],
+          [
+            105.18281222848994,
+            9.177517519001958
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-19ca6113-2cd3-468a-b539-6862ee9176f4",
+        "name": "RWY 07L/25R (VVTS)",
+        "airport": "VVTS",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.64714810835089,
+            10.817452120138352
+          ],
+          [
+            106.67336058048194,
+            10.826822998678766
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-d63b4198-e69f-4de3-907c-923dd01354dd",
+        "name": "RWY 07R/25L (VVTS)",
+        "airport": "VVTS",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.6450564607677,
+            10.812880229246455
+          ],
+          [
+            106.67795489133047,
+            10.824641449856326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "runway-897d21fb-e560-408a-987a-7f1fc11a86ca",
+        "name": "RWY 17/35 (VVVH)",
+        "airport": "VVVH",
+        "type": "runway"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.66978189334519,
+            18.740732947906892
+          ],
+          [
+            105.67373502430378,
+            18.719500919357166
+          ]
+        ]
+      }
+    }
+  ]
+}

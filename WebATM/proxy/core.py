@@ -30,11 +30,11 @@ class BlueSkyProxy:
 
         # Connection monitoring
         self.last_successful_update = time.time()
-        self.connection_timeout = 10.0  # 10 seconds without updates = disconnected
+        self.connection_timeout = 60.0  # 60 seconds without updates = disconnected
         self.health_check_interval = 2.0  # Check connection every 2 seconds
         self.was_connected = False
         self.connection_failures = 0
-        self.max_connection_failures = 3  # Max failures before marking disconnected
+        self.max_connection_failures = 15  # Max failures before marking disconnected
 
         # Data caches for web client
         self.traffic_data = {}

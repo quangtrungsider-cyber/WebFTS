@@ -109,6 +109,73 @@ body {
     text-decoration: none;
 }
 
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0 12px;
+}
+
+.airport-search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 5px 14px;
+    width: 200px;
+    min-width: 90px;
+    flex-shrink: 1;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.airport-search-container:focus-within {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+.airport-search-icon {
+    color: var(--text-secondary);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.airport-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.airport-search-input::placeholder {
+    color: var(--text-muted);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.airport-search-feedback {
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.airport-search-feedback.error {
+    color: #f87171;
+}
+
+.airport-search-feedback.success {
+    color: var(--accent-green);
+}
+
 .sim-info {
     font-size: calc(var(--header-font-size) * 0.7);
     color: var(--text-secondary);
@@ -1094,6 +1161,15 @@ body {
     margin-bottom: 2px;
 }
 
+#cursor-position {
+    transition: color 0.15s, text-shadow 0.15s;
+}
+
+#cursor-position.cursor-position-copied {
+    color: #4ade80;
+    text-shadow: 0 0 6px rgba(74, 222, 128, 0.8);
+}
+
 /* Aircraft info panel */
 .aircraft-panel {
     display: flex;
@@ -1255,6 +1331,58 @@ body {
     color: #cccccc;
     font-size: calc(var(--panel-font-size) * 0.9);
     margin-top: 2px;
+}
+
+.conflict-reso {
+    color: #4fc3f7;
+    font-size: calc(var(--panel-font-size) * 0.9);
+    margin-top: 2px;
+}
+
+.conflict-reso:empty {
+    display: none;
+}
+
+.conflict-reso-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.conflict-reso-actions:empty {
+    display: none;
+}
+
+.reso-btn {
+    font-size: calc(var(--panel-font-size) * 0.85);
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid #4fc3f7;
+    background-color: rgba(79, 195, 247, 0.12);
+    color: #4fc3f7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.reso-btn:hover {
+    background-color: rgba(79, 195, 247, 0.25);
+}
+
+.reso-btn.reso-cancel {
+    border-color: #ff6b35;
+    color: #ff6b35;
+    background-color: rgba(255, 107, 53, 0.12);
+}
+
+.reso-btn.reso-cancel:hover {
+    background-color: rgba(255, 107, 53, 0.25);
+}
+
+.reso-status {
+    font-size: calc(var(--panel-font-size) * 0.85);
+    color: #4CAF50;
+    font-weight: bold;
 }
 
 /* Status panel */
@@ -2900,8 +3028,9 @@ button.disabled:hover {
 .command-list-view .cmd-row {
     display: grid;
     grid-template-columns: 22px max-content 1fr;
+    grid-template-rows: auto auto;
     align-items: center;
-    gap: 8px;
+    gap: 2px 8px;
     padding: 4px 12px;
     cursor: pointer;
     border-left: 2px solid transparent;
@@ -2913,6 +3042,8 @@ button.disabled:hover {
 }
 
 .command-list-view .cmd-fav {
+    grid-row: 1;
+    grid-column: 1;
     background: none;
     border: none;
     color: #707070;
@@ -2931,6 +3062,8 @@ button.disabled:hover {
 }
 
 .command-list-view .cmd-name {
+    grid-row: 1;
+    grid-column: 2;
     color: #ffffff;
     font-family: 'Courier New', monospace;
     font-size: var(--panel-font-size);
@@ -2938,12 +3071,24 @@ button.disabled:hover {
 }
 
 .command-list-view .cmd-sig {
+    grid-row: 1;
+    grid-column: 3;
     color: #909090;
     font-family: 'Courier New', monospace;
     font-size: var(--panel-font-size);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.command-list-view .cmd-desc-vi {
+    grid-row: 2;
+    grid-column: 2 / -1;
+    color: #7fa9c9;
+    font-size: calc(var(--panel-font-size) - 1px);
+    font-style: italic;
+    white-space: normal;
+    line-height: 1.3;
 }
 
 .command-list-view .cmd-empty {
@@ -3049,6 +3194,111 @@ body.fullscreen-map-active #map-fullscreen-floating-btn {
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.35) !important;
 }
 
+/* Fullscreen floating sim control bar */
+#fullscreen-sim-bar {
+    display: none;
+}
+
+body.fullscreen-map-active #fullscreen-sim-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 14, 20, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 6px 14px;
+    z-index: 200;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 13px;
+    color: #e2e8f0;
+    backdrop-filter: blur(6px);
+    pointer-events: all;
+    white-space: nowrap;
+    user-select: none;
+}
+
+#fs-sim-time {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #cbd5e1;
+    min-width: 70px;
+}
+
+#fs-sim-rate {
+    font-size: 12px;
+    color: #94a3b8;
+    min-width: 64px;
+}
+
+.fs-sep {
+    width: 1px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 4px;
+}
+
+.fs-ctrl-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    padding: 0;
+}
+
+.fs-ctrl-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.fs-ctrl-btn:disabled,
+.fs-ctrl-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.fs-speed-select {
+    height: 30px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-family: inherit;
+    padding: 0 6px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.fs-speed-select:hover:not(:disabled),
+.fs-speed-select:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.fs-speed-select:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.fs-speed-select option {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
 
 /* =============================================
    Airspace Accordion Tree Panel Styling
@@ -3136,6 +3386,135 @@ body.fullscreen-map-active #map-fullscreen-floating-btn {
 
 .tree-leaf-label input[type="checkbox"]:hover {
     transform: scale(1.1);
+}
+
+/* Aircraft right-click quick-action menu */
+.aircraft-context-menu {
+    position: fixed;
+    z-index: 10001;
+    min-width: 220px;
+    max-width: 280px;
+    background-color: #1e1e1e;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    padding: 4px 0;
+    font-size: var(--panel-font-size, 12px);
+    user-select: none;
+}
+
+.aircraft-context-menu .acm-header {
+    color: #4CAF50;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    padding: 4px 12px 6px 12px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 2px;
+}
+
+.aircraft-context-menu .acm-item {
+    color: #e0e0e0;
+    padding: 6px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aircraft-context-menu .acm-item:hover {
+    background-color: #2a5a2a;
+}
+
+.aircraft-context-menu .acm-item.acm-danger {
+    color: #e57373;
+}
+
+.aircraft-context-menu .acm-item.acm-danger:hover {
+    background-color: #5a2a2a;
+}
+
+.aircraft-context-menu .acm-item.acm-loading {
+    color: #888888;
+    font-style: italic;
+    cursor: default;
+}
+
+.aircraft-context-menu .acm-item.acm-loading:hover {
+    background-color: transparent;
+}
+
+.aircraft-context-menu .acm-separator {
+    height: 1px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+.aircraft-context-menu .acm-input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+}
+
+.aircraft-context-menu .acm-input {
+    flex: 1;
+    min-width: 0;
+    background-color: #111;
+    border: 1px solid #4CAF50;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: inherit;
+}
+
+.aircraft-context-menu .acm-confirm {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.aircraft-context-menu .acm-confirm:hover {
+    background-color: #5cbf60;
+}
+
+.aircraft-context-menu .acm-confirm-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    color: #e57373;
+}
+
+.aircraft-context-menu .acm-confirm-row span {
+    flex: 1;
+}
+
+.aircraft-context-menu .acm-confirm-yes,
+.aircraft-context-menu .acm-confirm-no {
+    border: none;
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.aircraft-context-menu .acm-confirm-yes {
+    background-color: #d32f2f;
+}
+
+.aircraft-context-menu .acm-confirm-yes:hover {
+    background-color: #e53935;
+}
+
+.aircraft-context-menu .acm-confirm-no {
+    background-color: #555;
+}
+
+.aircraft-context-menu .acm-confirm-no:hover {
+    background-color: #666;
 }
 
 

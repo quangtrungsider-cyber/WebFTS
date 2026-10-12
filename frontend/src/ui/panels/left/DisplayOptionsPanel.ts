@@ -47,6 +47,7 @@ export class DisplayOptionsPanel extends BasePanel {
         this.setupRenderModeControl();
         this.setup3DScaleControl();
         this.setupAircraftModelControl();
+        this.setup4DTrajectoryControls();
         this.setupCollapsibleSections();
         this.setupColorControls();
         this.setupFutureMapOptions();
@@ -95,6 +96,13 @@ export class DisplayOptionsPanel extends BasePanel {
 
         // Load aircraft 3D scale from storage
         const aircraft3DScale = storage.get<number>('aircraft-3d-scale', displayOptions.aircraft3DScale) || displayOptions.aircraft3DScale;
+        const aircraft3DAutoSize = storage.get<boolean>('aircraft-3d-auto-size') ?? displayOptions.aircraft3DAutoSize;
+
+        // Load 4D trajectory options from storage. showAllAircraftTrajectories
+        // intentionally does NOT persist across reloads (always starts off) --
+        // "show all" is a heavy, explicit one-off analysis action, not a lasting
+        // preference someone would want to silently re-enable next session.
+        const show4DCorridor = storage.get<boolean>('show-4d-corridor') ?? displayOptions.show4DCorridor;
 
         // Load aircraft icon size from storage
         const aircraftIconSize = storage.get<number>('aircraft-icon-size', displayOptions.aircraftIconSize) || displayOptions.aircraftIconSize;
@@ -159,6 +167,9 @@ export class DisplayOptionsPanel extends BasePanel {
             aircraftShape,
             show3DOverlay,
             aircraft3DScale,
+            aircraft3DAutoSize,
+            show4DCorridor,
+            showAllAircraftTrajectories: false,
             aircraftIconSize,
             mapLabelsTextSize,
             aircraftIconColor,
@@ -232,6 +243,16 @@ export class DisplayOptionsPanel extends BasePanel {
         const aircraft3DScaleInput = document.getElementById('aircraft-3d-scale') as HTMLInputElement;
         if (aircraft3DScaleInput) {
             aircraft3DScaleInput.value = aircraft3DScale.toString();
+        }
+
+        const aircraft3DAutoSizeCheckbox = document.getElementById('aircraft-3d-auto-size') as HTMLInputElement;
+        if (aircraft3DAutoSizeCheckbox) {
+            aircraft3DAutoSizeCheckbox.checked = aircraft3DAutoSize;
+        }
+
+        const show4DCorridorCheckbox = document.getElementById('show-4d-corridor') as HTMLInputElement;
+        if (show4DCorridorCheckbox) {
+            show4DCorridorCheckbox.checked = show4DCorridor;
         }
 
         // Update aircraft icon size UI
@@ -458,6 +479,24 @@ export class DisplayOptionsPanel extends BasePanel {
         });
     }
 
+    /** Tilts the map into a perspective view when 3D aircraft are enabled
+     * (a flat top-down camera makes GLB aircraft models look like flat
+     * slivers), and levels it back out when 3D is turned off. Only touches
+     * the pitch -- center/zoom/bearing are left exactly as the user had
+     * them -- and only acts when the current pitch is at the opposite
+     * extreme, so it doesn't fight a pitch the user already set by hand. */
+    private syncMapPitchTo3DOverlay(show3D: boolean): void {
+        const map = this.app?.getMapDisplay()?.getMap();
+        if (!map) return;
+
+        const currentPitch = map.getPitch();
+        const targetPitch = show3D ? 55 : 0;
+        const shouldAdjust = show3D ? currentPitch < 15 : currentPitch > 5;
+        if (!shouldAdjust) return;
+
+        map.easeTo({ pitch: targetPitch, duration: 800 });
+    }
+
     private setupRenderModeControl(): void {
         const show3DOverlayCheckbox = document.getElementById('show-3d-overlay') as HTMLInputElement;
         if (!show3DOverlayCheckbox) return;
@@ -478,6 +517,7 @@ export class DisplayOptionsPanel extends BasePanel {
                         logger.info('DisplayOptionsPanel', `${checked ? 'Enabling' : 'Disabling'} 3D overlay...`);
                         await mapOverlay.updateDisplayOptions({ show3DOverlay: checked });
                         logger.info('DisplayOptionsPanel', `3D overlay ${checked ? 'enabled' : 'disabled'} successfully`);
+                        this.syncMapPitchTo3DOverlay(checked);
                     } catch (error) {
                         logger.error('DisplayOptionsPanel', `Failed to toggle 3D overlay: ${error}`);
                         show3DOverlayCheckbox.checked = !checked;
@@ -497,7 +537,48 @@ export class DisplayOptionsPanel extends BasePanel {
         });
     }
 
+    /**
+     * "Show 4D Corridor" checkbox and the "Show All 4D Trajectories" toggle
+     * button. Both only affect anything when `show3DOverlay` is also on,
+     * matching how the 3D aircraft scale/model controls in this same section
+     * behave.
+     */
+    private setup4DTrajectoryControls(): void {
+        const show4DCorridorCheckbox = document.getElementById('show-4d-corridor') as HTMLInputElement;
+        if (show4DCorridorCheckbox) {
+            show4DCorridorCheckbox.addEventListener('change', (e) => {
+                const checked = (e.target as HTMLInputElement).checked;
+                storage.set('show-4d-corridor', checked);
+                if (this.stateManager) {
+                    this.stateManager.updateDisplayOptions({ show4DCorridor: checked });
+                }
+            });
+        }
+
+        const showAllButton = document.getElementById('show-all-4d-trajectories-btn');
+        if (showAllButton) {
+            showAllButton.addEventListener('click', () => {
+                if (!this.stateManager) return;
+                const current = this.stateManager.getDisplayOptions().showAllAircraftTrajectories;
+                const next = !current;
+                this.stateManager.updateDisplayOptions({ showAllAircraftTrajectories: next });
+                showAllButton.classList.toggle('active', next);
+            });
+        }
+    }
+
     private setup3DScaleControl(): void {
+        const autoSizeCheckbox = document.getElementById('aircraft-3d-auto-size') as HTMLInputElement;
+        if (autoSizeCheckbox) {
+            autoSizeCheckbox.addEventListener('change', (e) => {
+                const checked = (e.target as HTMLInputElement).checked;
+                storage.set('aircraft-3d-auto-size', checked);
+                if (this.stateManager) {
+                    this.stateManager.updateDisplayOptions({ aircraft3DAutoSize: checked });
+                }
+            });
+        }
+
         const aircraft3DScaleInput = document.getElementById('aircraft-3d-scale') as HTMLInputElement;
         if (!aircraft3DScaleInput) return;
 

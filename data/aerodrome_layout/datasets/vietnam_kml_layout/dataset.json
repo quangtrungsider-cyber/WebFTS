@@ -1,0 +1,228 @@
+{
+  "id": "vietnam_kml_layout",
+  "name": "Vietnam KML Aerodrome Layouts",
+  "source": "VN Aerodrome Layout 1.kml",
+  "importedAt": "2026-06-03T16:42:12.375Z",
+  "airports": {
+    "VVCA": {
+      "icao": "VVCA",
+      "name": "Chu Lai",
+      "stats": {
+        "runways": 2,
+        "aprons": 6,
+        "stands": 8,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVCI": {
+      "icao": "VVCI",
+      "name": "Haiphong Catbi",
+      "stats": {
+        "runways": 2,
+        "aprons": 10,
+        "stands": 15,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVCM": {
+      "icao": "VVCM",
+      "name": "Ca Mau",
+      "stats": {
+        "runways": 2,
+        "aprons": 3,
+        "stands": 2,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVCR": {
+      "icao": "VVCR",
+      "name": "Cam Ranh",
+      "stats": {
+        "runways": 4,
+        "aprons": 3,
+        "stands": 5,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVCS": {
+      "icao": "VVCS",
+      "name": "Con Dao",
+      "stats": {
+        "runways": 2,
+        "aprons": 4,
+        "stands": 4,
+        "lines": 27,
+        "labels": 26
+      }
+    },
+    "VVCT": {
+      "icao": "VVCT",
+      "name": "Can Tho Intl",
+      "stats": {
+        "runways": 2,
+        "aprons": 6,
+        "stands": 11,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVDH": {
+      "icao": "VVDH",
+      "name": "Dong Hoi",
+      "stats": {
+        "runways": 2,
+        "aprons": 9,
+        "stands": 5,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVDL": {
+      "icao": "VVDL",
+      "name": "Lien Khuong",
+      "stats": {
+        "runways": 2,
+        "aprons": 3,
+        "stands": 8,
+        "lines": 46,
+        "labels": 13
+      }
+    },
+    "VVDN": {
+      "icao": "VVDN",
+      "name": "Danang Intl",
+      "stats": {
+        "runways": 4,
+        "aprons": 10,
+        "stands": 38,
+        "lines": 82,
+        "labels": 60
+      }
+    },
+    "VVKP": {
+      "icao": "VVKP",
+      "name": "KEP",
+      "stats": {
+        "runways": 2,
+        "aprons": 1,
+        "stands": 0,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVNB": {
+      "icao": "VVNB",
+      "name": "Noi Bai Intl",
+      "stats": {
+        "runways": 4,
+        "aprons": 12,
+        "stands": 45,
+        "lines": 701,
+        "labels": 701
+      }
+    },
+    "VVPB": {
+      "icao": "VVPB",
+      "name": "Phu Bai",
+      "stats": {
+        "runways": 2,
+        "aprons": 6,
+        "stands": 8,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVPC": {
+      "icao": "VVPC",
+      "name": "Phu Cat",
+      "stats": {
+        "runways": 2,
+        "aprons": 1,
+        "stands": 8,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVPK": {
+      "icao": "VVPK",
+      "name": "Pleiku",
+      "stats": {
+        "runways": 2,
+        "aprons": 4,
+        "stands": 5,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVPQ": {
+      "icao": "VVPQ",
+      "name": "Phu Quoc Intl",
+      "stats": {
+        "runways": 2,
+        "aprons": 6,
+        "stands": 14,
+        "lines": 102,
+        "labels": 78
+      }
+    },
+    "VVPR": {
+      "icao": "VVPR",
+      "name": "Phan Rang",
+      "stats": {
+        "runways": 2,
+        "aprons": 52,
+        "stands": 78,
+        "lines": 15,
+        "labels": 0
+      }
+    },
+    "VVTH": {
+      "icao": "VVTH",
+      "name": "DONG TAC",
+      "stats": {
+        "runways": 6,
+        "aprons": 2,
+        "stands": 0,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVTS": {
+      "icao": "VVTS",
+      "name": "Tan Son Nhat Intl",
+      "stats": {
+        "runways": 4,
+        "aprons": 20,
+        "stands": 67,
+        "lines": 311,
+        "labels": 184
+      }
+    },
+    "VVVD": {
+      "icao": "VVVD",
+      "name": "Van Don Intl",
+      "stats": {
+        "runways": 2,
+        "aprons": 9,
+        "stands": 9,
+        "lines": 0,
+        "labels": 0
+      }
+    },
+    "VVVH": {
+      "icao": "VVVH",
+      "name": "Vinh",
+      "stats": {
+        "runways": 2,
+        "aprons": 3,
+        "stands": 5,
+        "lines": 0,
+        "labels": 0
+      }
+    }
+  }
+}

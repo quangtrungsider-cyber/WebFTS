@@ -10,26 +10,26 @@ echo.
 powershell -Command ^
 "$stopped = $false; ^
 Write-Host 'Searching for background python.exe instances...' -ForegroundColor Cyan; ^
-$procs = Get-CimInstance Win32_Process -Filter \"Name = 'python.exe' or Name = 'pythonw.exe'\"; ^
+$procs = Get-CimInstance Win32_Process -Filter ""Name = 'python.exe' or Name = 'pythonw.exe'""; ^
 foreach ($p in $procs) { ^
     if ($p.CommandLine -like '*WebATM.py*' -or $p.CommandLine -like '*BlueSky.py*') { ^
-        Write-Host \"Terminating process ID $($p.ProcessId): $($p.Name)\" -ForegroundColor Yellow; ^
+        Write-Host ""Terminating process ID $($p.ProcessId): $($p.Name)"" -ForegroundColor Yellow; ^
         Stop-Process -Id $p.ProcessId -Force -ErrorAction SilentlyContinue; ^
         $stopped = $true; ^
     } ^
 } ^
-Write-Host 'Checking ports 8082, 11000, 11001...' -ForegroundColor Cyan; ^
-$ports = @(8082, 11000, 11001); ^
+Write-Host 'Checking ports 8082, 11000, 11001, 4000...' -ForegroundColor Cyan; ^
+$ports = @(8082, 11000, 11001, 4000); ^
 foreach ($port in $ports) { ^
     $connections = Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue; ^
     if ($connections) { ^
         foreach ($conn in $connections) { ^
-            $pid = $conn.OwningProcess; ^
-            if ($pid) { ^
-                $proc = Get-Process -Id $pid -ErrorAction SilentlyContinue; ^
+            $procId = $conn.OwningProcess; ^
+            if ($procId) { ^
+                $proc = Get-Process -Id $procId -ErrorAction SilentlyContinue; ^
                 if ($proc) { ^
-                    Write-Host \"Terminating process $($proc.Name) (PID: $pid) holding port $port...\" -ForegroundColor Yellow; ^
-                    Stop-Process -Id $pid -Force -ErrorAction SilentlyContinue; ^
+                    Write-Host ""Terminating process $($proc.Name) (PID: $procId) holding port $port..."" -ForegroundColor Yellow; ^
+                    Stop-Process -Id $procId -Force -ErrorAction SilentlyContinue; ^
                     $stopped = $true; ^
                 } ^
             } ^
@@ -44,6 +44,6 @@ if (-not $stopped) { ^
 
 echo.
 echo ===================================================
-echo   Done!
+echo   Done
 echo ===================================================
 powershell -Command "Start-Sleep -Seconds 3"

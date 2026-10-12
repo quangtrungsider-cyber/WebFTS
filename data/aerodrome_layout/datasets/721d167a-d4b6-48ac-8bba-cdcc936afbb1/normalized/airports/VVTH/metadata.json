@@ -1,0 +1,35 @@
+{
+  "icao": "VVTH",
+  "name": "DONG TAC",
+  "metadata": {
+    "city": "Tuy Hoa",
+    "country": "Vietnam",
+    "datum_lat": "13.04",
+    "datum_lon": "109.335",
+    "gui_label": "2D",
+    "iata_code": "TBB",
+    "icao_code": "VVTH",
+    "region_code": "VV",
+    "state": "Vinh Long Province"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 3,
+    "runway_centerlines": 3,
+    "runway_labels": 6,
+    "pavements": 2,
+    "ground_markings": 6
+  },
+  "sourceLineCounts": {
+    "1302": 9,
+    "100": 3,
+    "110": 2,
+    "111": 28,
+    "112": 8,
+    "113": 2,
+    "120": 6,
+    "115": 6,
+    "19": 6
+  },
+  "warnings": []
+}

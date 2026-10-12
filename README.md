@@ -2,7 +2,7 @@
 
 VATM Fast-Time Simulation Platform, tên repository là **WebFTS**, là nền tảng mô phỏng không lưu thời gian nhanh trên nền web, phục vụ nghiên cứu, trực quan hóa và thử nghiệm các kịch bản quản lý bay trong vùng trời Việt Nam.
 
-Dự án được phát triển dựa trên nền tảng WebATM/BlueSky và đã được tùy biến để phù hợp với dữ liệu khai thác bay, vùng trời và phương thức bay tại Việt Nam.
+Dự án được phát triển dựa trên nền tảng WebATM/Vatm-Engine và đã được tùy biến để phù hợp với dữ liệu khai thác bay, vùng trời và phương thức bay tại Việt Nam.
 
 ---
 
@@ -12,7 +12,7 @@ WebFTS cung cấp giao diện bản đồ tương tác để hiển thị và đ
 
 - Hiển thị tàu bay theo thời gian mô phỏng.
 - Theo dõi thông tin chuyến bay, hướng bay, tốc độ, độ cao và trạng thái.
-- Kết nối với VATM/BlueSky simulation server.
+- Kết nối với VATM/Vatm-Engine simulation server.
 - Hiển thị các vùng trời phục vụ điều hành bay.
 - Hiển thị dữ liệu FIR, ACC, TMA.
 - Hiển thị các phương thức bay SID, STAR, IAP.
@@ -104,7 +104,7 @@ Dự án sử dụng các công nghệ chính:
 - Python cho phần server và kết nối mô phỏng.
 - TypeScript / JavaScript cho phần giao diện web.
 - MapLibre GL cho bản đồ tương tác.
-- BlueSky/VATM simulation server cho lõi mô phỏng.
+- Vatm-Engine/VATM simulation server cho lõi mô phỏng.
 - HTML, CSS, frontend assets cho giao diện người dùng.
 
 ---
@@ -117,7 +117,7 @@ Khuyến nghị cài đặt:
 - Node.js 22 hoặc mới hơn.
 - npm.
 - Git.
-- BlueSky hoặc VATM simulation server.
+- Vatm-Engine hoặc VATM simulation server.
 - Trình duyệt web hiện đại như Chrome, Edge hoặc Firefox.
 
 ---
@@ -189,7 +189,7 @@ Một số biến môi trường thường dùng:
 | WEB_PORT | Cổng chạy web server | 8082 |
 | BLUESKY_SERVER_HOST | Địa chỉ simulation server | localhost |
 
-Hệ thống kết nối với simulation server thông qua các cổng mặc định của BlueSky/VATM.
+Hệ thống kết nối với simulation server thông qua các cổng mặc định của Vatm-Engine/VATM.
 
 ---
 
@@ -249,7 +249,7 @@ Các hạng mục tiếp tục phát triển:
 
 Dự án WebFTS được phát triển, tùy biến và mở rộng phục vụ mục đích nghiên cứu, mô phỏng và phân tích không lưu.
 
-Nền tảng có tham khảo và kế thừa một số thành phần từ WebATM/BlueSky. Cần tuân thủ giấy phép của các thành phần mã nguồn mở được sử dụng trong dự án.
+Nền tảng có tham khảo và kế thừa một số thành phần từ WebATM/Vatm-Engine. Cần tuân thủ giấy phép của các thành phần mã nguồn mở được sử dụng trong dự án.
 
 ---
 

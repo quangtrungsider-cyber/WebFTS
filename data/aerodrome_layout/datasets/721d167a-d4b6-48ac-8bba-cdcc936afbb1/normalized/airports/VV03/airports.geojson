@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "VV03", "icao": "VV03", "airportName": "HAIPHONG KIEN AN", "city": "Hai Phong", "country": "Vietnam", "gui_label": "2D", "state": "Hai Duong Province"}, "geometry": {"type": "Point", "coordinates": [106.6049335, 20.803372]}}]}

@@ -1,0 +1,3426 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "document": "Thông số đường HK RNAV2 và điều kiện sử dụng.docx",
+    "documentTitle": "DỰ THẢO THÔNG SỐ ĐƯỜNG HÀNG KHÔNG RNAV2 VÀ ĐIỀU KIỆN SỬ DỤNG",
+    "meetingDate": "2026-09-16",
+    "status": "draft",
+    "note": "Dự thảo sau họp ngày 16.9.2026 - chưa công bố chính thức trong AIP. Chỉ dùng cho mô phỏng/phân tích, không dùng cho khai thác thực tế."
+  },
+  "airwayCount": 6,
+  "airways": [
+    {
+      "code": "Q16",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 23,
+      "segmentCount": 22,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "TRN",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E"
+        },
+        {
+          "seq": 2,
+          "name": "ENPAS",
+          "lat": 10.399722,
+          "lon": 106.111389,
+          "latDms": "102359N",
+          "lonDms": "1060641E"
+        },
+        {
+          "seq": 3,
+          "name": "TSH",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E"
+        },
+        {
+          "seq": 4,
+          "name": "PILAB",
+          "lat": 10.998333,
+          "lon": 106.784722,
+          "latDms": "105954N",
+          "lonDms": "1064705E"
+        },
+        {
+          "seq": 5,
+          "name": "OKINU",
+          "lat": 12.225556,
+          "lon": 107.705556,
+          "latDms": "121332N",
+          "lonDms": "1074220E"
+        },
+        {
+          "seq": 6,
+          "name": "DZUKU",
+          "lat": 12.580278,
+          "lon": 107.722778,
+          "latDms": "123449N",
+          "lonDms": "1074322E"
+        },
+        {
+          "seq": 7,
+          "name": "MUDOB",
+          "lat": 13.315556,
+          "lon": 107.759167,
+          "latDms": "131856N",
+          "lonDms": "1074533E"
+        },
+        {
+          "seq": 8,
+          "name": "ANRAV",
+          "lat": 13.996667,
+          "lon": 107.765,
+          "latDms": "135948N",
+          "lonDms": "1074554E"
+        },
+        {
+          "seq": 9,
+          "name": "MEVOK",
+          "lat": 14.821944,
+          "lon": 107.771389,
+          "latDms": "144919N",
+          "lonDms": "1074617E"
+        },
+        {
+          "seq": 10,
+          "name": "ADGAG",
+          "lat": 15.761111,
+          "lon": 107.779722,
+          "latDms": "154540N",
+          "lonDms": "1074647E"
+        },
+        {
+          "seq": 11,
+          "name": "LEDAT",
+          "lat": 15.936667,
+          "lon": 107.781111,
+          "latDms": "155612N",
+          "lonDms": "1074652E"
+        },
+        {
+          "seq": 12,
+          "name": "KABIN",
+          "lat": 16.412222,
+          "lon": 107.541944,
+          "latDms": "162444N",
+          "lonDms": "1073231E"
+        },
+        {
+          "seq": 13,
+          "name": "ATKAT",
+          "lat": 16.775833,
+          "lon": 107.380556,
+          "latDms": "164633N",
+          "lonDms": "1072250E"
+        },
+        {
+          "seq": 14,
+          "name": "ANLOK",
+          "lat": 17.0,
+          "lon": 107.280556,
+          "latDms": "170000N",
+          "lonDms": "1071650E"
+        },
+        {
+          "seq": 15,
+          "name": "IGUGU",
+          "lat": 17.848056,
+          "lon": 106.868889,
+          "latDms": "175053N",
+          "lonDms": "1065208E"
+        },
+        {
+          "seq": 16,
+          "name": "AMVOD",
+          "lat": 18.565556,
+          "lon": 106.541944,
+          "latDms": "183356N",
+          "lonDms": "1063231E"
+        },
+        {
+          "seq": 17,
+          "name": "AKIGA",
+          "lat": 18.911944,
+          "lon": 106.375833,
+          "latDms": "185443N",
+          "lonDms": "1062233E"
+        },
+        {
+          "seq": 18,
+          "name": "GUTRA",
+          "lat": 19.457222,
+          "lon": 106.107222,
+          "latDms": "192726N",
+          "lonDms": "1060626E"
+        },
+        {
+          "seq": 19,
+          "name": "EKITU",
+          "lat": 19.773889,
+          "lon": 105.95,
+          "latDms": "194626N",
+          "lonDms": "1055660E",
+          "coordinateNote": "Toạ độ gốc ghi 60 giây; đã chuẩn hoá cộng lên 1 phút (đối chiếu khớp hình học KMZ trong phạm vi 20 m)."
+        },
+        {
+          "seq": 20,
+          "name": "NOTHA",
+          "lat": 20.566944,
+          "lon": 105.545556,
+          "latDms": "203401N",
+          "lonDms": "1053244E"
+        },
+        {
+          "seq": 21,
+          "name": "UPVAN",
+          "lat": 20.925556,
+          "lon": 105.391944,
+          "latDms": "205532N",
+          "lonDms": "1052331E"
+        },
+        {
+          "seq": 22,
+          "name": "DOVTA",
+          "lat": 21.045833,
+          "lon": 105.338611,
+          "latDms": "210245N",
+          "lonDms": "1052019E"
+        },
+        {
+          "seq": 23,
+          "name": "ADPAD",
+          "lat": 21.209722,
+          "lon": 105.266111,
+          "latDms": "211235N",
+          "lonDms": "1051558E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TRN",
+          "toWaypoint": "ENPAS",
+          "magneticTrackDeg": 52,
+          "distanceKm": 57,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ENPAS",
+          "toWaypoint": "TSH",
+          "magneticTrackDeg": 52,
+          "distanceKm": 75,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 36 (VVR36), các tàu bay HKDD phải giữ độ cao từ 6300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "TSH",
+          "toWaypoint": "PILAB",
+          "magneticTrackDeg": 36,
+          "distanceKm": 25,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "PILAB",
+          "toWaypoint": "OKINU",
+          "magneticTrackDeg": 36,
+          "distanceKm": 169,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1900,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 82, 83 (Biên Hòa), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "OKINU",
+          "toWaypoint": "DZUKU",
+          "magneticTrackDeg": 3,
+          "distanceKm": 39,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2250,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "DZUKU",
+          "toWaypoint": "MUDOB",
+          "magneticTrackDeg": 3,
+          "distanceKm": 81,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "MUDOB",
+          "toWaypoint": "ANRAV",
+          "magneticTrackDeg": 360,
+          "distanceKm": 75,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 90,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1500,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "ANRAV",
+          "toWaypoint": "MEVOK",
+          "magneticTrackDeg": 360,
+          "distanceKm": 91,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 90,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2450,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "MEVOK",
+          "toWaypoint": "ADGAG",
+          "magneticTrackDeg": 360,
+          "distanceKm": 104,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "ADGAG",
+          "toWaypoint": "LEDAT",
+          "magneticTrackDeg": 360,
+          "distanceKm": 19,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "LEDAT",
+          "toWaypoint": "KABIN",
+          "magneticTrackDeg": 334,
+          "distanceKm": 59,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "KABIN",
+          "toWaypoint": "ATKAT",
+          "magneticTrackDeg": 337,
+          "distanceKm": 44,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1000,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "ATKAT",
+          "toWaypoint": "ANLOK",
+          "magneticTrackDeg": 337,
+          "distanceKm": 27,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "ANLOK",
+          "toWaypoint": "IGUGU",
+          "magneticTrackDeg": 335,
+          "distanceKm": 104,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "IGUGU",
+          "toWaypoint": "AMVOD",
+          "magneticTrackDeg": 337,
+          "distanceKm": 87,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "AMVOD",
+          "toWaypoint": "AKIGA",
+          "magneticTrackDeg": 336,
+          "distanceKm": 42,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 4 (trên biển) Thọ Xuân, các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "AKIGA",
+          "toWaypoint": "GUTRA",
+          "magneticTrackDeg": 335,
+          "distanceKm": 67,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 7B (trên biển) Thọ Xuân, các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "GUTRA",
+          "toWaypoint": "EKITU",
+          "magneticTrackDeg": 335,
+          "distanceKm": 39,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 19,
+          "fromWaypoint": "EKITU",
+          "toWaypoint": "NOTHA",
+          "magneticTrackDeg": 334,
+          "distanceKm": 97,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1250,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 1A (Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 20,
+          "fromWaypoint": "NOTHA",
+          "toWaypoint": "UPVAN",
+          "magneticTrackDeg": 338,
+          "distanceKm": 43,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1650,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 21,
+          "fromWaypoint": "UPVAN",
+          "toWaypoint": "DOVTA",
+          "magneticTrackDeg": 337,
+          "distanceKm": 14,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1850,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 22,
+          "fromWaypoint": "DOVTA",
+          "toWaypoint": "ADPAD",
+          "magneticTrackDeg": 337,
+          "distanceKm": 20,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 70,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1900,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        }
+      ]
+    },
+    {
+      "code": "Q17",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 23,
+      "segmentCount": 22,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "VPH",
+          "lat": 21.276111,
+          "lon": 105.601111,
+          "latDms": "211634N",
+          "lonDms": "1053604E"
+        },
+        {
+          "seq": 2,
+          "name": "WIKEN",
+          "lat": 21.136944,
+          "lon": 105.608611,
+          "latDms": "210813N",
+          "lonDms": "1053631E"
+        },
+        {
+          "seq": 3,
+          "name": "ONATU",
+          "lat": 20.677778,
+          "lon": 105.827222,
+          "latDms": "204040N",
+          "lonDms": "1054938E"
+        },
+        {
+          "seq": 4,
+          "name": "MUDVO",
+          "lat": 20.184167,
+          "lon": 106.061944,
+          "latDms": "201103N",
+          "lonDms": "1060343E"
+        },
+        {
+          "seq": 5,
+          "name": "LULRA",
+          "lat": 20.078611,
+          "lon": 106.114167,
+          "latDms": "200443N",
+          "lonDms": "1060651E"
+        },
+        {
+          "seq": 6,
+          "name": "IGINA",
+          "lat": 18.869167,
+          "lon": 106.707778,
+          "latDms": "185209N",
+          "lonDms": "1064228E"
+        },
+        {
+          "seq": 7,
+          "name": "PEDVU",
+          "lat": 18.5,
+          "lon": 106.88,
+          "latDms": "182960N",
+          "lonDms": "1065248E",
+          "coordinateNote": "Toạ độ gốc ghi 60 giây; đã chuẩn hoá cộng lên 1 phút (đối chiếu khớp hình học KMZ trong phạm vi 20 m)."
+        },
+        {
+          "seq": 8,
+          "name": "MILAG",
+          "lat": 17.9975,
+          "lon": 107.113889,
+          "latDms": "175951N",
+          "lonDms": "1070650E"
+        },
+        {
+          "seq": 9,
+          "name": "WAHAN",
+          "lat": 17.076944,
+          "lon": 107.55,
+          "latDms": "170437N",
+          "lonDms": "1073260E",
+          "coordinateNote": "Toạ độ gốc ghi 60 giây; đã chuẩn hoá cộng lên 1 phút (đối chiếu khớp hình học KMZ trong phạm vi 20 m)."
+        },
+        {
+          "seq": 10,
+          "name": "UNPIK",
+          "lat": 16.905556,
+          "lon": 107.632222,
+          "latDms": "165420N",
+          "lonDms": "1073756E"
+        },
+        {
+          "seq": 11,
+          "name": "LEBUV",
+          "lat": 16.478333,
+          "lon": 107.837222,
+          "latDms": "162842N",
+          "lonDms": "1075014E"
+        },
+        {
+          "seq": 12,
+          "name": "ANDUN",
+          "lat": 16.220833,
+          "lon": 107.96,
+          "latDms": "161315N",
+          "lonDms": "1075736E"
+        },
+        {
+          "seq": 13,
+          "name": "SAGEX",
+          "lat": 16.013611,
+          "lon": 108.058611,
+          "latDms": "160049N",
+          "lonDms": "1080331E"
+        },
+        {
+          "seq": 14,
+          "name": "IDPOK",
+          "lat": 15.839167,
+          "lon": 108.056944,
+          "latDms": "155021N",
+          "lonDms": "1080325E"
+        },
+        {
+          "seq": 15,
+          "name": "TAVAX",
+          "lat": 15.311389,
+          "lon": 108.052222,
+          "latDms": "151841N",
+          "lonDms": "1080308E"
+        },
+        {
+          "seq": 16,
+          "name": "UPTIK",
+          "lat": 14.997778,
+          "lon": 108.049167,
+          "latDms": "145952N",
+          "lonDms": "1080257E"
+        },
+        {
+          "seq": 17,
+          "name": "AGIMA",
+          "lat": 14.005278,
+          "lon": 108.04,
+          "latDms": "140019N",
+          "lonDms": "1080224E"
+        },
+        {
+          "seq": 18,
+          "name": "BAFEM",
+          "lat": 13.771667,
+          "lon": 108.038056,
+          "latDms": "134618N",
+          "lonDms": "1080217E"
+        },
+        {
+          "seq": 19,
+          "name": "DABIN",
+          "lat": 13.333611,
+          "lon": 108.033889,
+          "latDms": "132001N",
+          "lonDms": "1080202E"
+        },
+        {
+          "seq": 20,
+          "name": "FORMI",
+          "lat": 13.088333,
+          "lon": 108.021667,
+          "latDms": "130518N",
+          "lonDms": "1080118E"
+        },
+        {
+          "seq": 21,
+          "name": "LANOX",
+          "lat": 12.418056,
+          "lon": 107.987778,
+          "latDms": "122505N",
+          "lonDms": "1075916E"
+        },
+        {
+          "seq": 22,
+          "name": "GIVAM",
+          "lat": 12.097222,
+          "lon": 107.971667,
+          "latDms": "120550N",
+          "lonDms": "1075818E"
+        },
+        {
+          "seq": 23,
+          "name": "AC",
+          "lat": 10.939167,
+          "lon": 107.188333,
+          "latDms": "105621N",
+          "lonDms": "1071118E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "VPH",
+          "toWaypoint": "WIKEN",
+          "magneticTrackDeg": 177,
+          "distanceKm": 15,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "WIKEN",
+          "toWaypoint": "ONATU",
+          "magneticTrackDeg": 156,
+          "distanceKm": 56,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "ONATU",
+          "toWaypoint": "MUDVO",
+          "magneticTrackDeg": 156,
+          "distanceKm": 60,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "MUDVO",
+          "toWaypoint": "LULRA",
+          "magneticTrackDeg": 155,
+          "distanceKm": 13,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "LULRA",
+          "toWaypoint": "IGINA",
+          "magneticTrackDeg": 155,
+          "distanceKm": 148,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 6B (trên biển), Không vực 9B (trên biển) Thọ Xuân, các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "IGINA",
+          "toWaypoint": "PEDVU",
+          "magneticTrackDeg": 156,
+          "distanceKm": 45,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "PEDVU",
+          "toWaypoint": "MILAG",
+          "magneticTrackDeg": 156,
+          "distanceKm": 61,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "MILAG",
+          "toWaypoint": "WAHAN",
+          "magneticTrackDeg": 156,
+          "distanceKm": 112,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "WAHAN",
+          "toWaypoint": "UNPIK",
+          "magneticTrackDeg": 155,
+          "distanceKm": 21,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "UNPIK",
+          "toWaypoint": "LEBUV",
+          "magneticTrackDeg": 155,
+          "distanceKm": 52,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1600,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "LEBUV",
+          "toWaypoint": "ANDUN",
+          "magneticTrackDeg": 155,
+          "distanceKm": 31,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "ANDUN",
+          "toWaypoint": "SAGEX",
+          "magneticTrackDeg": 155,
+          "distanceKm": 25,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "SAGEX",
+          "toWaypoint": "IDPOK",
+          "magneticTrackDeg": 181,
+          "distanceKm": 19,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "IDPOK",
+          "toWaypoint": "TAVAX",
+          "magneticTrackDeg": 181,
+          "distanceKm": 58,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "TAVAX",
+          "toWaypoint": "UPTIK",
+          "magneticTrackDeg": 181,
+          "distanceKm": 35,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "UPTIK",
+          "toWaypoint": "AGIMA",
+          "magneticTrackDeg": 181,
+          "distanceKm": 110,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2900,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "AGIMA",
+          "toWaypoint": "BAFEM",
+          "magneticTrackDeg": 181,
+          "distanceKm": 26,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1500,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "BAFEM",
+          "toWaypoint": "DABIN",
+          "magneticTrackDeg": 181,
+          "distanceKm": 49,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1200,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 19,
+          "fromWaypoint": "DABIN",
+          "toWaypoint": "FORMI",
+          "magneticTrackDeg": 183,
+          "distanceKm": 27,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1300,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 20,
+          "fromWaypoint": "FORMI",
+          "toWaypoint": "LANOX",
+          "magneticTrackDeg": 183,
+          "distanceKm": 74,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 900,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 21,
+          "fromWaypoint": "LANOX",
+          "toWaypoint": "GIVAM",
+          "magneticTrackDeg": 183,
+          "distanceKm": 36,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1550,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 22,
+          "fromWaypoint": "GIVAM",
+          "toWaypoint": "AC",
+          "magneticTrackDeg": 214,
+          "distanceKm": 154,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        }
+      ]
+    },
+    {
+      "code": "Q18",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 16,
+      "segmentCount": 15,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "PAGMO",
+          "lat": 10.956389,
+          "lon": 108.300278,
+          "latDms": "105723N",
+          "lonDms": "1081801E"
+        },
+        {
+          "seq": 2,
+          "name": "VIRIR",
+          "lat": 11.587778,
+          "lon": 108.979444,
+          "latDms": "113516N",
+          "lonDms": "1085846E"
+        },
+        {
+          "seq": 3,
+          "name": "IDGUM",
+          "lat": 11.945278,
+          "lon": 109.366111,
+          "latDms": "115643N",
+          "lonDms": "1092158E"
+        },
+        {
+          "seq": 4,
+          "name": "AVGAB",
+          "lat": 12.065556,
+          "lon": 109.354167,
+          "latDms": "120356N",
+          "lonDms": "1092115E"
+        },
+        {
+          "seq": 5,
+          "name": "UBRUK",
+          "lat": 12.838889,
+          "lon": 109.2775,
+          "latDms": "125020N",
+          "lonDms": "1091639E"
+        },
+        {
+          "seq": 6,
+          "name": "VANCU",
+          "lat": 13.468611,
+          "lon": 109.224722,
+          "latDms": "132807N",
+          "lonDms": "1091329E"
+        },
+        {
+          "seq": 7,
+          "name": "OSVUK",
+          "lat": 13.958889,
+          "lon": 109.183056,
+          "latDms": "135732N",
+          "lonDms": "1091059E"
+        },
+        {
+          "seq": 8,
+          "name": "ESKIK",
+          "lat": 14.3575,
+          "lon": 109.091389,
+          "latDms": "142127N",
+          "lonDms": "1090529E"
+        },
+        {
+          "seq": 9,
+          "name": "PEDVO",
+          "lat": 15.470278,
+          "lon": 108.832778,
+          "latDms": "152813N",
+          "lonDms": "1084958E"
+        },
+        {
+          "seq": 10,
+          "name": "BEVLI",
+          "lat": 15.983889,
+          "lon": 108.435833,
+          "latDms": "155902N",
+          "lonDms": "1082609E"
+        },
+        {
+          "seq": 11,
+          "name": "IGUKO",
+          "lat": 16.132222,
+          "lon": 108.320833,
+          "latDms": "160756N",
+          "lonDms": "1081915E"
+        },
+        {
+          "seq": 12,
+          "name": "ALVES",
+          "lat": 16.308056,
+          "lon": 108.075278,
+          "latDms": "161829N",
+          "lonDms": "1080431E"
+        },
+        {
+          "seq": 13,
+          "name": "LEBUV",
+          "lat": 16.478333,
+          "lon": 107.837222,
+          "latDms": "162842N",
+          "lonDms": "1075014E"
+        },
+        {
+          "seq": 14,
+          "name": "UNVUK",
+          "lat": 16.578889,
+          "lon": 107.695833,
+          "latDms": "163444N",
+          "lonDms": "1074145E"
+        },
+        {
+          "seq": 15,
+          "name": "NOKON",
+          "lat": 16.655556,
+          "lon": 107.587778,
+          "latDms": "163920N",
+          "lonDms": "1073516E"
+        },
+        {
+          "seq": 16,
+          "name": "ATKAT",
+          "lat": 16.775833,
+          "lon": 107.380556,
+          "latDms": "164633N",
+          "lonDms": "1072250E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PAGMO",
+          "toWaypoint": "VIRIR",
+          "magneticTrackDeg": 47,
+          "distanceKm": 102,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1500,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại: - Không vực 468, 469 (Phan Thiết), các tàu bay HKDD phải giữ độ cao từ 4300m trở lên; và - Không vực 469C (Phan Thiết), Không vực 70G (Phan Rang) các tàu bay HKDD phải giữ độ cao từ 6300m trở lên; và - Cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VIRIR",
+          "toWaypoint": "IDGUM",
+          "magneticTrackDeg": 47,
+          "distanceKm": 58,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại: - KV471 (khu vực Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 5300m trở lên; và - Không vực 468, Không vực 469 (Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 2300m trở lên; và - Cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "IDGUM",
+          "toWaypoint": "AVGAB",
+          "magneticTrackDeg": 354,
+          "distanceKm": 13,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1450,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại: - KV471 (khu vực Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 5300 m trở lên; và - Không vực 469b (Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 2300m trở lên; và - Cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "AVGAB",
+          "toWaypoint": "UBRUK",
+          "magneticTrackDeg": 354,
+          "distanceKm": 86,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1750,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại: - KV471 (khu vực Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 5300m trở lên; và - Không vực 469b (Cam Ranh), các tàu bay HKDD phải giữ độ cao từ 2300m trở lên; và - Cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "UBRUK",
+          "toWaypoint": "VANCU",
+          "magneticTrackDeg": 355,
+          "distanceKm": 70,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV52 (khu vực Phù Cát), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III."
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "VANCU",
+          "toWaypoint": "OSVUK",
+          "magneticTrackDeg": 355,
+          "distanceKm": 54,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1300,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV52 (khu vực Phù Cát), Không vực đỉnh sân Phù Cát, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "OSVUK",
+          "toWaypoint": "ESKIK",
+          "magneticTrackDeg": 347,
+          "distanceKm": 45,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1250,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV53A (khu vực Phù Cát), Không vực đỉnh sân Phù Cát, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "ESKIK",
+          "toWaypoint": "PEDVO",
+          "magneticTrackDeg": 347,
+          "distanceKm": 126,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1250,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV53 (dùng chung Phù Cát và Chu Lai), Không vực đỉnh sân Chu Lai, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "PEDVO",
+          "toWaypoint": "BEVLI",
+          "magneticTrackDeg": 323,
+          "distanceKm": 71,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 800,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực đỉnh sân Chu Lai, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "BEVLI",
+          "toWaypoint": "IGUKO",
+          "magneticTrackDeg": 323,
+          "distanceKm": 21,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "IGUKO",
+          "toWaypoint": "ALVES",
+          "magneticTrackDeg": 307,
+          "distanceKm": 33,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "ALVES",
+          "toWaypoint": "LEBUV",
+          "magneticTrackDeg": 306,
+          "distanceKm": 32,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "LEBUV",
+          "toWaypoint": "UNVUK",
+          "magneticTrackDeg": 306,
+          "distanceKm": 19,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "UNVUK",
+          "toWaypoint": "NOKON",
+          "magneticTrackDeg": 306,
+          "distanceKm": 14,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "NOKON",
+          "toWaypoint": "ATKAT",
+          "magneticTrackDeg": 301,
+          "distanceKm": 26,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        }
+      ]
+    },
+    {
+      "code": "Q19",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 11,
+      "segmentCount": 10,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "DAN",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E"
+        },
+        {
+          "seq": 2,
+          "name": "AGTIV",
+          "lat": 15.910278,
+          "lon": 108.311389,
+          "latDms": "155437N",
+          "lonDms": "1081841E"
+        },
+        {
+          "seq": 3,
+          "name": "CQ",
+          "lat": 15.412222,
+          "lon": 108.704444,
+          "latDms": "152444N",
+          "lonDms": "1084216E"
+        },
+        {
+          "seq": 4,
+          "name": "KUMUN",
+          "lat": 14.971389,
+          "lon": 108.8075,
+          "latDms": "145817N",
+          "lonDms": "1084827E"
+        },
+        {
+          "seq": 5,
+          "name": "PCA",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E"
+        },
+        {
+          "seq": 6,
+          "name": "KAMGO",
+          "lat": 13.2875,
+          "lon": 109.101389,
+          "latDms": "131715N",
+          "lonDms": "1090605E"
+        },
+        {
+          "seq": 7,
+          "name": "KARAN",
+          "lat": 12.648889,
+          "lon": 109.156667,
+          "latDms": "123856N",
+          "lonDms": "1090924E"
+        },
+        {
+          "seq": 8,
+          "name": "NHATA",
+          "lat": 12.226389,
+          "lon": 109.201111,
+          "latDms": "121335N",
+          "lonDms": "1091204E"
+        },
+        {
+          "seq": 9,
+          "name": "CRA",
+          "lat": 11.994444,
+          "lon": 109.22,
+          "latDms": "115940N",
+          "lonDms": "1091312E"
+        },
+        {
+          "seq": 10,
+          "name": "IBUNU",
+          "lat": 11.668889,
+          "lon": 108.868056,
+          "latDms": "114008N",
+          "lonDms": "1085205E"
+        },
+        {
+          "seq": 11,
+          "name": "PTH",
+          "lat": 10.928056,
+          "lon": 108.071944,
+          "latDms": "105541N",
+          "lonDms": "1080419E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "DAN",
+          "toWaypoint": "AGTIV",
+          "magneticTrackDeg": 142,
+          "distanceKm": 20,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "AGTIV",
+          "toWaypoint": "CQ",
+          "magneticTrackDeg": 143,
+          "distanceKm": 69,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 750,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 42, Không vực đỉnh sân Chu Lai, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "CQ",
+          "toWaypoint": "KUMUN",
+          "magneticTrackDeg": 167,
+          "distanceKm": 50,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực đỉnh sân Chu Lai, Không vực 53 (dùng chung sân bay Chu Lại và Phù Cát), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "KUMUN",
+          "toWaypoint": "PCA",
+          "magneticTrackDeg": 167,
+          "distanceKm": 115,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1450,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 53 (dùng chung sân bay Chu Lại và Phù Cát), Không vực đỉnh sân Phù Cát, các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "PCA",
+          "toWaypoint": "KAMGO",
+          "magneticTrackDeg": 175,
+          "distanceKm": 74,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1550,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực đỉnh sân Phù Cát, Không vực 52 (Phù Cát), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực II."
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "KAMGO",
+          "toWaypoint": "KARAN",
+          "magneticTrackDeg": 175,
+          "distanceKm": 71,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2200,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "KARAN",
+          "toWaypoint": "NHATA",
+          "magneticTrackDeg": 174,
+          "distanceKm": 47,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1500,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "NHATA",
+          "toWaypoint": "CRA",
+          "magneticTrackDeg": 175,
+          "distanceKm": 26,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "CRA",
+          "toWaypoint": "IBUNU",
+          "magneticTrackDeg": 227,
+          "distanceKm": 53,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "IBUNU",
+          "toWaypoint": "PTH",
+          "magneticTrackDeg": 227,
+          "distanceKm": 120,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1900,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại: - Không vực 70 (Phan Rang), các tàu bay HKDD phải giữ độ cao từ 6300m trở lên; và - Không vực 465, 466, 467 (Phan Thiết), các tàu bay HKDD phải giữ độ cao từ 4300m trở lên; và - Cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        }
+      ]
+    },
+    {
+      "code": "Q20",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 19,
+      "segmentCount": 18,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "TEMEN",
+          "lat": 10.937222,
+          "lon": 107.35,
+          "latDms": "105614N",
+          "lonDms": "1072060E",
+          "coordinateNote": "Toạ độ gốc ghi 60 giây; đã chuẩn hoá cộng lên 1 phút (đối chiếu khớp hình học KMZ trong phạm vi 20 m)."
+        },
+        {
+          "seq": 2,
+          "name": "LESTO",
+          "lat": 11.155833,
+          "lon": 107.4975,
+          "latDms": "110921N",
+          "lonDms": "1072951E"
+        },
+        {
+          "seq": 3,
+          "name": "KADVO",
+          "lat": 12.053333,
+          "lon": 108.105556,
+          "latDms": "120312N",
+          "lonDms": "1080620E"
+        },
+        {
+          "seq": 4,
+          "name": "CUBON",
+          "lat": 13.3425,
+          "lon": 108.171389,
+          "latDms": "132033N",
+          "lonDms": "1081017E"
+        },
+        {
+          "seq": 5,
+          "name": "TELEK",
+          "lat": 13.998889,
+          "lon": 108.1775,
+          "latDms": "135956N",
+          "lonDms": "1081039E"
+        },
+        {
+          "seq": 6,
+          "name": "VINAL",
+          "lat": 14.330556,
+          "lon": 108.181111,
+          "latDms": "141950N",
+          "lonDms": "1081052E"
+        },
+        {
+          "seq": 7,
+          "name": "UGORI",
+          "lat": 15.085833,
+          "lon": 108.188333,
+          "latDms": "150509N",
+          "lonDms": "1081118E"
+        },
+        {
+          "seq": 8,
+          "name": "LANIV",
+          "lat": 15.878056,
+          "lon": 108.196389,
+          "latDms": "155241N",
+          "lonDms": "1081147E"
+        },
+        {
+          "seq": 9,
+          "name": "DAN",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E"
+        },
+        {
+          "seq": 10,
+          "name": "ALVES",
+          "lat": 16.308056,
+          "lon": 108.075278,
+          "latDms": "161829N",
+          "lonDms": "1080431E"
+        },
+        {
+          "seq": 11,
+          "name": "CAHEO",
+          "lat": 16.536389,
+          "lon": 107.965278,
+          "latDms": "163211N",
+          "lonDms": "1075755E"
+        },
+        {
+          "seq": 12,
+          "name": "HAMIN",
+          "lat": 17.129722,
+          "lon": 107.677778,
+          "latDms": "170747N",
+          "lonDms": "1074040E"
+        },
+        {
+          "seq": 13,
+          "name": "XONUS",
+          "lat": 18.07,
+          "lon": 107.233056,
+          "latDms": "180412N",
+          "lonDms": "1071359E"
+        },
+        {
+          "seq": 14,
+          "name": "HATIN",
+          "lat": 18.466944,
+          "lon": 107.048889,
+          "latDms": "182801N",
+          "lonDms": "1070256E"
+        },
+        {
+          "seq": 15,
+          "name": "VIDAD",
+          "lat": 18.847778,
+          "lon": 106.871667,
+          "latDms": "185052N",
+          "lonDms": "1065218E"
+        },
+        {
+          "seq": 16,
+          "name": "MAREL",
+          "lat": 19.228056,
+          "lon": 106.693611,
+          "latDms": "191341N",
+          "lonDms": "1064137E"
+        },
+        {
+          "seq": 17,
+          "name": "NAH",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E"
+        },
+        {
+          "seq": 18,
+          "name": "LOVBI",
+          "lat": 20.742778,
+          "lon": 105.996667,
+          "latDms": "204434N",
+          "lonDms": "1055948E"
+        },
+        {
+          "seq": 19,
+          "name": "NOB",
+          "lat": 21.213056,
+          "lon": 105.835278,
+          "latDms": "211247N",
+          "lonDms": "1055007E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TEMEN",
+          "toWaypoint": "LESTO",
+          "magneticTrackDeg": 34,
+          "distanceKm": 29,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 90,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "LESTO",
+          "toWaypoint": "KADVO",
+          "magneticTrackDeg": 34,
+          "distanceKm": 119,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 90,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2500,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 71 (Phan Rang), các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III."
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "KADVO",
+          "toWaypoint": "CUBON",
+          "magneticTrackDeg": 3,
+          "distanceKm": 143,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 90,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2200,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "CUBON",
+          "toWaypoint": "TELEK",
+          "magneticTrackDeg": 1,
+          "distanceKm": 73,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1450,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "TELEK",
+          "toWaypoint": "VINAL",
+          "magneticTrackDeg": 1,
+          "distanceKm": 37,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1850,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "VINAL",
+          "toWaypoint": "UGORI",
+          "magneticTrackDeg": 1,
+          "distanceKm": 84,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 100,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2550,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "UGORI",
+          "toWaypoint": "LANIV",
+          "magneticTrackDeg": 1,
+          "distanceKm": 88,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "LANIV",
+          "toWaypoint": "DAN",
+          "magneticTrackDeg": 1,
+          "distanceKm": 19,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "DAN",
+          "toWaypoint": "ALVES",
+          "magneticTrackDeg": 335,
+          "distanceKm": 31,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1800,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "ALVES",
+          "toWaypoint": "CAHEO",
+          "magneticTrackDeg": 335,
+          "distanceKm": 28,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 850,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "CAHEO",
+          "toWaypoint": "HAMIN",
+          "magneticTrackDeg": 335,
+          "distanceKm": 73,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "HAMIN",
+          "toWaypoint": "XONUS",
+          "magneticTrackDeg": 336,
+          "distanceKm": 114,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "XONUS",
+          "toWaypoint": "HATIN",
+          "magneticTrackDeg": 336,
+          "distanceKm": 48,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "HATIN",
+          "toWaypoint": "VIDAD",
+          "magneticTrackDeg": 336,
+          "distanceKm": 46,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "VIDAD",
+          "toWaypoint": "MAREL",
+          "magneticTrackDeg": 336,
+          "distanceKm": 46,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV9B (trên biển khu vực Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "MAREL",
+          "toWaypoint": "NAH",
+          "magneticTrackDeg": 335,
+          "distanceKm": 142,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": "Khi có hoạt động quân sự tại KV9B, KV6B (trên biển khu vực Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7000m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I"
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "NAH",
+          "toWaypoint": "LOVBI",
+          "magneticTrackDeg": 342,
+          "distanceKm": 41,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "LOVBI",
+          "toWaypoint": "NOB",
+          "magneticTrackDeg": 342,
+          "distanceKm": 55,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 700,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "odd",
+          "usageConditions": null
+        }
+      ]
+    },
+    {
+      "code": "Q21",
+      "navigationSpec": "RNAV 2",
+      "waypointCount": 24,
+      "segmentCount": 23,
+      "waypoints": [
+        {
+          "seq": 1,
+          "name": "VIRAK",
+          "lat": 21.210833,
+          "lon": 105.420833,
+          "latDms": "211239N",
+          "lonDms": "1052515E"
+        },
+        {
+          "seq": 2,
+          "name": "URDUM",
+          "lat": 21.091389,
+          "lon": 105.473611,
+          "latDms": "210529N",
+          "lonDms": "1052825E"
+        },
+        {
+          "seq": 3,
+          "name": "TEMIM",
+          "lat": 20.626389,
+          "lon": 105.696389,
+          "latDms": "203735N",
+          "lonDms": "1054147E"
+        },
+        {
+          "seq": 4,
+          "name": "POPAS",
+          "lat": 19.976667,
+          "lon": 106.005278,
+          "latDms": "195836N",
+          "lonDms": "1060019E"
+        },
+        {
+          "seq": 5,
+          "name": "OLSIR",
+          "lat": 19.768056,
+          "lon": 106.110833,
+          "latDms": "194605N",
+          "lonDms": "1060639E"
+        },
+        {
+          "seq": 6,
+          "name": "NILEX",
+          "lat": 18.890556,
+          "lon": 106.5425,
+          "latDms": "185326N",
+          "lonDms": "1063233E"
+        },
+        {
+          "seq": 7,
+          "name": "MERIR",
+          "lat": 18.532778,
+          "lon": 106.711111,
+          "latDms": "183158N",
+          "lonDms": "1064240E"
+        },
+        {
+          "seq": 8,
+          "name": "LEKIN",
+          "lat": 17.924722,
+          "lon": 106.994722,
+          "latDms": "175529N",
+          "lonDms": "1065941E"
+        },
+        {
+          "seq": 9,
+          "name": "KAKBU",
+          "lat": 17.6,
+          "lon": 107.149444,
+          "latDms": "173560N",
+          "lonDms": "1070858E",
+          "coordinateNote": "Toạ độ gốc ghi 60 giây; đã chuẩn hoá cộng lên 1 phút (đối chiếu khớp hình học KMZ trong phạm vi 20 m)."
+        },
+        {
+          "seq": 10,
+          "name": "ISNOR",
+          "lat": 17.036389,
+          "lon": 107.416111,
+          "latDms": "170211N",
+          "lonDms": "1072458E"
+        },
+        {
+          "seq": 11,
+          "name": "NOKON",
+          "lat": 16.655556,
+          "lon": 107.587778,
+          "latDms": "163920N",
+          "lonDms": "1073516E"
+        },
+        {
+          "seq": 12,
+          "name": "HUE",
+          "lat": 16.402222,
+          "lon": 107.701667,
+          "latDms": "162408N",
+          "lonDms": "1074206E"
+        },
+        {
+          "seq": 13,
+          "name": "INVEN",
+          "lat": 15.974722,
+          "lon": 107.92,
+          "latDms": "155829N",
+          "lonDms": "1075512E"
+        },
+        {
+          "seq": 14,
+          "name": "BAXAP",
+          "lat": 15.800278,
+          "lon": 107.918333,
+          "latDms": "154801N",
+          "lonDms": "1075506E"
+        },
+        {
+          "seq": 15,
+          "name": "GUSPI",
+          "lat": 14.91,
+          "lon": 107.910556,
+          "latDms": "145436N",
+          "lonDms": "1075438E"
+        },
+        {
+          "seq": 16,
+          "name": "ENSUT",
+          "lat": 14.001667,
+          "lon": 107.9025,
+          "latDms": "140006N",
+          "lonDms": "1075409E"
+        },
+        {
+          "seq": 17,
+          "name": "WABAN",
+          "lat": 13.324722,
+          "lon": 107.896667,
+          "latDms": "131929N",
+          "lonDms": "1075348E"
+        },
+        {
+          "seq": 18,
+          "name": "COSIK",
+          "lat": 12.834444,
+          "lon": 107.872222,
+          "latDms": "125004N",
+          "lonDms": "1075220E"
+        },
+        {
+          "seq": 19,
+          "name": "URGOT",
+          "lat": 12.141389,
+          "lon": 107.8375,
+          "latDms": "120829N",
+          "lonDms": "1075015E"
+        },
+        {
+          "seq": 20,
+          "name": "TOPIV",
+          "lat": 10.924167,
+          "lon": 106.905833,
+          "latDms": "105527N",
+          "lonDms": "1065421E"
+        },
+        {
+          "seq": 21,
+          "name": "OREBU",
+          "lat": 10.733889,
+          "lon": 106.761111,
+          "latDms": "104402N",
+          "lonDms": "1064540E"
+        },
+        {
+          "seq": 22,
+          "name": "REGER",
+          "lat": 10.646667,
+          "lon": 106.648611,
+          "latDms": "103848N",
+          "lonDms": "1063855E"
+        },
+        {
+          "seq": 23,
+          "name": "SADOM",
+          "lat": 10.426944,
+          "lon": 106.365,
+          "latDms": "102537N",
+          "lonDms": "1062154E"
+        },
+        {
+          "seq": 24,
+          "name": "TASIK",
+          "lat": 9.9725,
+          "lon": 105.781389,
+          "latDms": "095821N",
+          "lonDms": "1054653E"
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "VIRAK",
+          "toWaypoint": "URDUM",
+          "magneticTrackDeg": 158,
+          "distanceKm": 14,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 750,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "URDUM",
+          "toWaypoint": "TEMIM",
+          "magneticTrackDeg": 156,
+          "distanceKm": 57,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1350,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "TEMIM",
+          "toWaypoint": "POPAS",
+          "magneticTrackDeg": 156,
+          "distanceKm": 79,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1000,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động bay quân sự tại KV1A (khu vực Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I."
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "POPAS",
+          "toWaypoint": "OLSIR",
+          "magneticTrackDeg": 154,
+          "distanceKm": 26,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động bay quân sự tại KV6B (trên biển khu vực Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I."
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "OLSIR",
+          "toWaypoint": "NILEX",
+          "magneticTrackDeg": 155,
+          "distanceKm": 107,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 60,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động bay quân sự tại KV6B (trên biển khu vực Thọ Xuân), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực I."
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "NILEX",
+          "toWaypoint": "MERIR",
+          "magneticTrackDeg": 156,
+          "distanceKm": 43,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "MERIR",
+          "toWaypoint": "LEKIN",
+          "magneticTrackDeg": 156,
+          "distanceKm": 74,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "LEKIN",
+          "toWaypoint": "KAKBU",
+          "magneticTrackDeg": 155,
+          "distanceKm": 40,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "KAKBU",
+          "toWaypoint": "ISNOR",
+          "magneticTrackDeg": 155,
+          "distanceKm": 69,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 50,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "ISNOR",
+          "toWaypoint": "NOKON",
+          "magneticTrackDeg": 156,
+          "distanceKm": 46,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "NOKON",
+          "toWaypoint": "HUE",
+          "magneticTrackDeg": 157,
+          "distanceKm": 31,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 800,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "HUE",
+          "toWaypoint": "INVEN",
+          "magneticTrackDeg": 154,
+          "distanceKm": 53,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2150,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "INVEN",
+          "toWaypoint": "BAXAP",
+          "magneticTrackDeg": 180,
+          "distanceKm": 19,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2250,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "BAXAP",
+          "toWaypoint": "GUSPI",
+          "magneticTrackDeg": 180,
+          "distanceKm": 29,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 3100,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "GUSPI",
+          "toWaypoint": "ENSUT",
+          "magneticTrackDeg": 180,
+          "distanceKm": 101,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2750,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "ENSUT",
+          "toWaypoint": "WABAN",
+          "magneticTrackDeg": 180,
+          "distanceKm": 51,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 110,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1450,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "WABAN",
+          "toWaypoint": "COSIK",
+          "magneticTrackDeg": 183,
+          "distanceKm": 54,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 800,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "COSIK",
+          "toWaypoint": "URGOT",
+          "magneticTrackDeg": 183,
+          "distanceKm": 77,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 1950,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 19,
+          "fromWaypoint": "URGOT",
+          "toWaypoint": "TOPIV",
+          "magneticTrackDeg": 217,
+          "distanceKm": 169,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 80,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 2200,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động bay quân sự tại: - KV82 (khu vực Biên Hòa), các tàu bay HKDD phải giữ độ cao từ 7300m trở lên; và - Dải quạt BV (Biên Hòa - Vũng Tàu), các tàu bay HKDD phải giữ độ cao từ 5700m trở lên; và - Cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III."
+        },
+        {
+          "seq": 20,
+          "fromWaypoint": "TOPIV",
+          "toWaypoint": "OREBU",
+          "magneticTrackDeg": 217,
+          "distanceKm": 26,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động bay quân sự tại Dải quạt BV (Biên Hòa - Vũng Tàu), các tàu bay HKDD phải giữ độ cao từ 5700m trở lên và cơ sở điều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III."
+        },
+        {
+          "seq": 21,
+          "fromWaypoint": "OREBU",
+          "toWaypoint": "REGER",
+          "magneticTrackDeg": 232,
+          "distanceKm": 16,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": null
+        },
+        {
+          "seq": 22,
+          "fromWaypoint": "REGER",
+          "toWaypoint": "SADOM",
+          "magneticTrackDeg": 232,
+          "distanceKm": 39,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 36 (VVR36), các tàu bay HKDD phải giữ độ cao từ 6300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        },
+        {
+          "seq": 23,
+          "fromWaypoint": "SADOM",
+          "toWaypoint": "TASIK",
+          "magneticTrackDeg": 232,
+          "distanceKm": 81,
+          "upperLimit": {
+            "value": 460,
+            "unit": "FL"
+          },
+          "lowerLimit": {
+            "value": 40,
+            "unit": "FL"
+          },
+          "minSafeAltitudeM": 400,
+          "lateralLimit": {
+            "valueNm": 4.0,
+            "valueKm": 7.4
+          },
+          "cruisingLevels": "even",
+          "usageConditions": "Khi có hoạt động quân sự tại Không vực 36 (VVR36), các tàu bay HKDD phải giữ độ cao từ 6300m trở lên và cơ sở diều hành bay phải hiệp đồng chặt chẽ với Trung tâm QLĐHB khu vực III"
+        }
+      ]
+    }
+  ]
+}

@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-WebATM is a modern **standalone** web client for the BlueSky Air Traffic Management (ATM) simulator. It provides a web interface using MapLibre GL for aircraft visualization and radar display, connecting to BlueSky simulation servers via network protocols. The project features Docker containerization, TypeScript-based frontend, and connection to a BlueSky server.
+WebATM is a modern **standalone** web client for the Vatm-Engine Air Traffic Management (ATM) simulator. It provides a web interface using MapLibre GL for aircraft visualization and radar display, connecting to Vatm-Engine simulation servers via network protocols. The project features Docker containerization, TypeScript-based frontend, and connection to a Vatm-Engine server.
 
 ## Requirements
 
 - **Python**: 3.13 or higher
 - **Node.js**: 22+ with npm (for TypeScript development)
 - **Docker**: 20.10+ with Docker Compose 2.0+ (for containerized deployment)
-- **BlueSky**: Version 1.1.0 or higher (automatically managed by WebATM)
+- **Vatm-Engine**: Version 1.1.0 or higher (automatically managed by WebATM)
 
 ## Running and Testing Commands
 
@@ -75,14 +75,14 @@ docker run -p 8082:8082 webatm:latest
 
 #### Docker Environment Variables
 - `FLASK_ENV` - Set to 'production' for production deployment
-- `BLUESKY_SERVER_HOST` - BlueSky server hostname/IP address (default: localhost)
+- `BLUESKY_SERVER_HOST` - Vatm-Engine server hostname/IP address (default: localhost)
 - `WEB_PORT` - Web server port (default: 8082)
 - `WEB_HOST` - Web server bind address (default: localhost for security, use 0.0.0.0 for Docker)
 - `HEARTBEAT_INTERVAL` - Heartbeat interval in seconds (default: 30)
 
-#### BlueSky Server Configuration
-This web client connects to BlueSky servers using the default BlueSky network ports:
-- **Port 11000** - For sending commands and events to the BlueSky server
+#### Vatm-Engine Server Configuration
+This web client connects to Vatm-Engine servers using the default Vatm-Engine network ports:
+- **Port 11000** - For sending commands and events to the Vatm-Engine server
 - **Port 11001** - For receiving simulation data and information from the server
 
 ## Architecture Overview
@@ -96,9 +96,9 @@ WebATM/
 ├── CLAUDE.md                    # AI assistant guidance (this file)
 ├── WebATM/                      # Core web application package
 │   ├── __init__.py             # Module initialization
-│   ├── main.py                 # Server startup and BlueSky auto-start
+│   ├── main.py                 # Server startup and Vatm-Engine auto-start
 │   ├── app.py                  # Flask web application and routes
-│   ├── bluesky_client.py       # BlueSky standalone network client
+│   ├── bluesky_client.py       # Vatm-Engine standalone network client
 │   ├── logger.py               # Logging configuration
 │   ├── utils.py                # Utility functions
 │   ├── proxy/                  # Modular proxy package for client-server communication
@@ -124,7 +124,7 @@ WebATM/
 │   ├── server/                 # Server management modules
 │   │   ├── __init__.py
 │   │   ├── routes.py          # Flask route handlers
-│   │   ├── bluesky_server_status.py  # BlueSky server status management
+│   │   ├── bluesky_server_status.py  # Vatm-Engine server status management
 │   │   ├── session_manager.py  # Session management
 │   │   └── socket_handlers.py  # Socket.IO event handlers
 │   ├── static/                 # Static web assets (served by Flask)
@@ -237,7 +237,7 @@ WebATM/
 
 **Backend Architecture:**
 - **Flask Application** (`WebATM/app.py`) - Web server with factory pattern, session management, and Socket.IO integration
-- **BlueSky Client** (`WebATM/bluesky_client.py`) - Direct network communication with BlueSky servers
+- **Vatm-Engine Client** (`WebATM/bluesky_client.py`) - Direct network communication with Vatm-Engine servers
 - **Proxy Package** (`WebATM/proxy/`) - Modular proxy system using composition pattern:
   - `core.py` - Main BlueSkyProxy delegation layer
   - `managers/` - Specialized modules (connection, node, command, data management)
@@ -247,15 +247,15 @@ WebATM/
 
 **Frontend Architecture (top-level `frontend/` package):**
 - **TypeScript Core** (`frontend/src/core/`) - Application controller, socket management, state management
-- **User Interface** (`frontend/src/ui/`) - Modular components for map, panels, controls, modals, command palette, and BlueSky file management
+- **User Interface** (`frontend/src/ui/`) - Modular components for map, panels, controls, modals, command palette, and Vatm-Engine file management
 - **Data Layer** (`frontend/src/data/`) - Command handling/signatures, data processing, type definitions, and aircraft category/type/dimension catalogs
 - **MapLibre GL + Three.js Integration** - Interactive 2D map plus 3D aircraft, route, and shape rendering via custom MapLibre layers
 - **Build Output** - Webpack emits hashed bundles to `WebATM/static/dist/` (with `manifest.json`); `frontend/scripts/vendor-assets.js` mirrors third-party assets into `WebATM/static/vendor/`
 
 ### Network Integration
 
-**BlueSky Communication:**
-- Auto-starts BlueSky headless server with logging to `/tmp/bluesky_combined.log`
+**Vatm-Engine Communication:**
+- Auto-starts the Vatm-Engine headless server with logging to `/tmp/bluesky_combined.log`
 - Real-time data subscription via Socket.IO
 - Multi-node simulation environment support
 
@@ -265,10 +265,10 @@ WebATM/
 - **8082** - Web server port (user interface)
 
 **Data Flow:**
-1. WebATM starts → Auto-launches BlueSky headless server
+1. WebATM starts → Auto-launches the Vatm-Engine headless server
 2. BlueSkyProxy connects → Manages network client connection
 3. Real-time data → Socket.IO → TypeScript client → MapLibre GL (2D) / Three.js custom layers (3D)
-4. User commands → WebSocket → BlueSky server
+4. User commands → WebSocket → Vatm-Engine server
 
 ## Development Guide
 
@@ -276,7 +276,7 @@ WebATM/
 
 **Python (3.13+):**
 - Flask/Flask-SocketIO (web server)
-- msgpack/pyzmq (BlueSky protocol)
+- msgpack/pyzmq (Vatm-Engine protocol)
 - NumPy (data processing)
 - gunicorn (production serving)
 
@@ -358,7 +358,7 @@ docker run -p 8082:8082 webatm:latest
 - `FLASK_ENV=production` - Production mode
 - `WEB_HOST=0.0.0.0` - Container networking (use `localhost` for local dev)
 - `WEB_PORT=8082` - Web server port
-- `BLUESKY_SERVER_HOST=localhost` - BlueSky server location
+- `BLUESKY_SERVER_HOST=localhost` - Vatm-Engine server location
 - `HEARTBEAT_INTERVAL=30` - Connection heartbeat interval
 
 **Deployment Checklist:**
@@ -376,10 +376,10 @@ docker run -p 8082:8082 webatm:latest
 ## Important Notes
 
 **Project Characteristics:**
-- **Standalone web client** (not integrated BlueSky plugin)
-- **Python 3.13+** and **BlueSky 1.1.0+** required
+- **Standalone web client** (not an integrated Vatm-Engine plugin)
+- **Python 3.13+** and **Vatm-Engine 1.1.0+** required
 - **TypeScript-first** frontend architecture
-- **Auto-start** BlueSky server in headless mode
+- **Auto-start** the Vatm-Engine server in headless mode
 - **Docker-ready** for production deployment
 
 **Development Reminders:**
@@ -387,4 +387,6 @@ docker run -p 8082:8082 webatm:latest
 - Follow modular composition pattern in proxy package
 - Run linting tools before committing
 - Production deployments require `WEB_HOST=0.0.0.0`
-- BlueSky ports (11000/11001) are not configurable
+- Vatm-Engine ports (11000/11001) are not configurable
+
+**Naming note:** the underlying simulation engine is referred to as **Vatm-Engine** throughout user-facing text and documentation. Internal code (the vendored `FTS Server/bluesky/` package, its imports, the `bluesky_client.py`/`BlueSkyProxy` identifiers, the `BLUESKY_SERVER_HOST` env var, and `/api/bluesky/*` routes) intentionally keeps its original "bluesky" naming — only prose/UI was rebranded, not the internal implementation.

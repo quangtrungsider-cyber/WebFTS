@@ -3,36 +3,36 @@
  *
  * Provides centralized unit conversion for display across the application.
  * BlueSky server sends data in specific units:
- * - Speed: knots (kt)
+ * - Speed: meters per second (m/s)
  * - Altitude: meters (m)
- * - Vertical Speed: feet per second (ft/s)
+ * - Vertical Speed: meters per second (m/s)
  */
 
-import { AircraftData, SpeedType, SpeedUnit, AltitudeUnit, VerticalSpeedUnit } from './types';
+import { AircraftData, DisplayOptions, SpeedType, SpeedUnit, AltitudeUnit, VerticalSpeedUnit } from './types';
 
 export class DataProcessor {
     /**
-     * Convert speed from knots to target unit
+     * Convert speed from m/s to target unit
      */
-    static convertSpeed(speedKnots: number, targetUnit: SpeedUnit): number {
+    static convertSpeed(speedMs: number, targetUnit: SpeedUnit): number {
         switch (targetUnit) {
-            case 'm/s':
-                return speedKnots * 0.514444;
-            case 'km/h':
-                return speedKnots * 1.852;
-            case 'mph':
-                return speedKnots * 1.15078;
             case 'knots':
+                return speedMs / 0.514444;
+            case 'km/h':
+                return speedMs * 3.6;
+            case 'mph':
+                return speedMs * 2.23694;
+            case 'm/s':
             default:
-                return speedKnots;
+                return speedMs;
         }
     }
 
     /**
      * Format speed value with unit label
      */
-    static formatSpeed(speedKnots: number, unit: SpeedUnit): string {
-        const converted = this.convertSpeed(speedKnots, unit);
+    static formatSpeed(speedMs: number, unit: SpeedUnit): string {
+        const converted = this.convertSpeed(speedMs, unit);
         const rounded = Math.round(converted);
 
         switch (unit) {
@@ -87,26 +87,26 @@ export class DataProcessor {
     }
 
     /**
-     * Convert vertical speed from feet per second to target unit
+     * Convert vertical speed from meters per second to target unit
      */
-    static convertVerticalSpeed(vsFtPerSec: number, targetUnit: VerticalSpeedUnit): number {
+    static convertVerticalSpeed(vsMs: number, targetUnit: VerticalSpeedUnit): number {
         switch (targetUnit) {
             case 'm/s':
-                return vsFtPerSec * 0.3048;
+                return vsMs;
             case 'm/min':
-                return vsFtPerSec * 18.288;
+                return vsMs * 60;
             case 'ft/min':
-                return vsFtPerSec * 60;
+                return (vsMs / 0.3048) * 60;
             default:
-                return vsFtPerSec;
+                return vsMs;
         }
     }
 
     /**
      * Format vertical speed value with unit label
      */
-    static formatVerticalSpeed(vsFtPerSec: number, unit: VerticalSpeedUnit): string {
-        const converted = this.convertVerticalSpeed(vsFtPerSec, unit);
+    static formatVerticalSpeed(vsMs: number, unit: VerticalSpeedUnit): string {
+        const converted = this.convertVerticalSpeed(vsMs, unit);
         const rounded = Math.round(converted);
 
         switch (unit) {
@@ -173,6 +173,82 @@ export class DataProcessor {
             default:
                 return value;
         }
+    }
+
+    private static speedUnitSuffix(unit: SpeedUnit): string {
+        switch (unit) {
+            case 'knots':
+                return 'kt';
+            case 'km/h':
+                return 'km/h';
+            case 'mph':
+                return 'mph';
+            case 'm/s':
+                return 'm/s';
+            default:
+                return 'kt';
+        }
+    }
+
+    /**
+     * Builds the same multi-line aircraft label text (ID / type / speed / altitude)
+     * used by both the 2D map label and the 3D-model-anchored label overlay, so the
+     * two stay in sync and respect the same display option toggles.
+     */
+    static formatAircraftLabel(aircraftData: AircraftData, index: number, displayOptions: DisplayOptions): string {
+        const id = aircraftData.id[index];
+        const actype = aircraftData.actype && aircraftData.actype[index] ? aircraftData.actype[index] : '';
+        const altitude = aircraftData.alt ? aircraftData.alt[index] : 0;
+        const verticalSpeed = aircraftData.vs ? aircraftData.vs[index] : 0;
+        const speed = this.getSpeedValue(aircraftData, index, displayOptions.speedType);
+
+        const labelParts: string[] = [];
+
+        if (displayOptions.showAircraftId) {
+            labelParts.push(id);
+        }
+
+        if (displayOptions.showAircraftType && actype) {
+            labelParts.push(actype);
+        }
+
+        if (displayOptions.showAircraftSpeed && speed > 0) {
+            // Speed values from BlueSky are in knots, format using DataProcessor
+            const speedValue = Math.round(this.convertSpeed(speed, displayOptions.speedUnit));
+            labelParts.push(`${speedValue}${this.speedUnitSuffix(displayOptions.speedUnit)}`);
+        }
+
+        if (displayOptions.showAircraftAltitude && altitude > 0) {
+            // Altitude values from BlueSky are in meters, format using DataProcessor
+            const converted = this.convertAltitude(altitude, displayOptions.altitudeUnit);
+            let altitudeLabel: string;
+
+            switch (displayOptions.altitudeUnit) {
+                case 'fl':
+                    altitudeLabel = 'FL' + Math.round(converted).toString().padStart(3, '0');
+                    break;
+                case 'km':
+                    altitudeLabel = converted.toFixed(1) + 'km';
+                    break;
+                case 'ft':
+                    altitudeLabel = Math.round(converted).toString() + 'ft';
+                    break;
+                case 'm':
+                    altitudeLabel = Math.round(converted).toString() + 'm';
+                    break;
+                default:
+                    altitudeLabel = Math.round(converted).toString();
+                    break;
+            }
+
+            if (Math.abs(verticalSpeed) > 0.5) {
+                altitudeLabel += verticalSpeed > 0 ? '↑' : '↓';
+            }
+
+            labelParts.push(altitudeLabel);
+        }
+
+        return labelParts.join('\n');
     }
 }
 

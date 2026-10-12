@@ -9,6 +9,7 @@ import type { StateManager } from '../core/StateManager';
 import type { Console } from './Console';
 import type { CommandDict } from '../data/types';
 import { scoreCommand, getDisplaySignature } from '../data/CommandSignature';
+import { getCommandDescriptionVi } from '../data/commandDescriptionsVi';
 import { storage } from '../utils/StorageManager';
 import { logger } from '../utils/Logger';
 
@@ -235,6 +236,14 @@ export class CommandListView {
         row.appendChild(star);
         row.appendChild(nameSpan);
         row.appendChild(sigSpan);
+
+        const descVi = getCommandDescriptionVi(name);
+        if (descVi) {
+            const descSpan = document.createElement('span');
+            descSpan.className = 'cmd-desc-vi';
+            descSpan.textContent = descVi;
+            row.appendChild(descSpan);
+        }
 
         row.addEventListener('click', () => this.selectCommand(name));
 

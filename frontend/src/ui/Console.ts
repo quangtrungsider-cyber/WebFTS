@@ -272,6 +272,19 @@ export class Console {
                 this.clear();
             });
         }
+
+        // Handle send command button click
+        const sendButton = document.getElementById('send-command');
+        if (sendButton) {
+            sendButton.addEventListener('click', () => {
+                const value = input.value;
+                if (value.trim()) {
+                    this.handleCommand(value);
+                    this.addToHistory(value);
+                    this.resetInput();
+                }
+            });
+        }
     }
 
     /**

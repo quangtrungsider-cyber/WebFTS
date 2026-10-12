@@ -7,13 +7,17 @@ module.exports = (env, argv) => {
   console.log(`Building in ${isProduction ? 'production' : 'development'} mode`);
 
   const baseConfig = {
-    entry: './src/main.ts',
+    entry: './src/index.tsx',
     module: {
       rules: [
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
           exclude: /node_modules/,
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
         },
       ],
     },

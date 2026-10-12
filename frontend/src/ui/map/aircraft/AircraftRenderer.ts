@@ -58,97 +58,7 @@ export class AircraftRenderer extends EntityRenderer<AircraftData> {
      * Includes aircraft ID, speed, altitude, and vertical speed indicators
      */
     protected buildEntityLabel(aircraftData: AircraftData, index: number): string {
-        const id = aircraftData.id[index];
-        const actype = aircraftData.actype && aircraftData.actype[index] ? aircraftData.actype[index] : '';
-        const altitude = aircraftData.alt ? aircraftData.alt[index] : 0;
-        const verticalSpeed = aircraftData.vs ? aircraftData.vs[index] : 0;
-
-        // Get speed based on display options
-        let speed = 0;
-        switch (this.displayOptions.speedType) {
-            case 'cas':
-                speed = aircraftData.cas ? aircraftData.cas[index] : 0;
-                break;
-            case 'tas':
-                speed = aircraftData.tas ? aircraftData.tas[index] : 0;
-                break;
-            case 'gs':
-                speed = aircraftData.gs ? aircraftData.gs[index] :
-                    (aircraftData.tas ? aircraftData.tas[index] :
-                        (aircraftData.cas ? aircraftData.cas[index] : 0));
-                break;
-            default:
-                speed = aircraftData.cas ? aircraftData.cas[index] : 0;
-        }
-
-        const labelParts: string[] = [];
-
-        if (this.displayOptions.showAircraftId) {
-            labelParts.push(id);
-        }
-
-        if (this.displayOptions.showAircraftType && actype) {
-            labelParts.push(actype);
-        }
-
-        if (this.displayOptions.showAircraftSpeed && speed > 0) {
-            // Speed values from BlueSky are in knots, format using DataProcessor
-            const speedValue = Math.round(DataProcessor.convertSpeed(speed, this.displayOptions.speedUnit));
-            const speedUnit = this.getSpeedUnitLabel(this.displayOptions.speedUnit);
-            labelParts.push(`${speedValue}${speedUnit}`);
-        }
-
-        if (this.displayOptions.showAircraftAltitude && altitude > 0) {
-            // Altitude values from BlueSky are in meters, format using DataProcessor
-            const converted = DataProcessor.convertAltitude(altitude, this.displayOptions.altitudeUnit);
-            let altitudeLabel: string;
-
-            // Format based on unit type
-            switch (this.displayOptions.altitudeUnit) {
-                case 'fl':
-                    altitudeLabel = 'FL' + Math.round(converted).toString().padStart(3, '0');
-                    break;
-                case 'km':
-                    altitudeLabel = converted.toFixed(1) + 'km';
-                    break;
-                case 'ft':
-                    altitudeLabel = Math.round(converted).toString() + 'ft';
-                    break;
-                case 'm':
-                    altitudeLabel = Math.round(converted).toString() + 'm';
-                    break;
-                default:
-                    altitudeLabel = Math.round(converted).toString();
-                    break;
-            }
-
-            // Add vertical speed arrow
-            if (Math.abs(verticalSpeed) > 0.5) {
-                altitudeLabel += verticalSpeed > 0 ? '↑' : '↓';
-            }
-
-            labelParts.push(altitudeLabel);
-        }
-
-        return labelParts.join('\n');
-    }
-
-    /**
-     * Get unit label suffix for speed display
-     */
-    private getSpeedUnitLabel(unit: string): string {
-        switch (unit) {
-            case 'knots':
-                return 'kt';
-            case 'km/h':
-                return 'km/h';
-            case 'mph':
-                return 'mph';
-            case 'm/s':
-                return 'm/s';
-            default:
-                return 'kt';
-        }
+        return DataProcessor.formatAircraftLabel(aircraftData, index, this.displayOptions);
     }
 
     /**
@@ -186,6 +96,15 @@ export class AircraftRenderer extends EntityRenderer<AircraftData> {
      */
     private static readonly AIRCRAFT_3D_LAYER_ID = 'aircraft-3d-layer';
 
+    // Tracks the show3DOverlay value the icon/label layers were last adjusted
+    // for, so updateLayerVisibility() (called on every ~5Hz data tick) only
+    // touches MapLibre paint/layout properties when that value actually
+    // flips, instead of redundantly re-applying the same opacity/visibility
+    // every single tick regardless of mode (a real perf regression: it made
+    // plain 2D-only usage noticeably heavier since these calls ran
+    // continuously even with show3DOverlay permanently false).
+    private lastAppliedShow3DOverlay: boolean | null = null;
+
     /**
      * Restore the 3D aircraft layer to the top of the MapLibre layer stack.
      * Safe to call any time — does nothing if the 3D overlay isn't enabled.
@@ -206,6 +125,62 @@ export class AircraftRenderer extends EntityRenderer<AircraftData> {
     protected setupLayers(): void {
         super.setupLayers();
         this.raise3DLayerIfPresent();
+    }
+
+    /**
+     * When the 3D overlay is on, the flat 2D icon and its ground-anchored
+     * label are both redundant/visually wrong (the icon duplicates the real
+     * 3D model, and both stay pinned to the flat ground point while the 3D
+     * model appears elevated once airborne) -- hide both. Aircraft3DRenderer
+     * takes over rendering the same label text anchored to the 3D model's
+     * actual screen position instead.
+     *
+     * IMPORTANT: both layers are hidden via PAINT properties (opacity), never
+     * `visibility: 'none'` -- for two independent reasons:
+     *  1. AircraftInteractionManager's click handling is bound to the points
+     *     layer (`map.on('click', 'aircraft-points', ...)`), and MapLibre
+     *     excludes non-'visible' layers from layer-scoped hit-testing
+     *     entirely -- setting visibility:none there would silently make
+     *     aircraft unclickable whenever 3D is on (confirmed regression).
+     *  2. The base class's OWN `updateLayerVisibility()` (called via super()
+     *     above, every ~5Hz data tick, unconditionally) already drives BOTH
+     *     layers' `visibility` layout property from `shouldShowEntities()`/
+     *     `shouldShowLabels()` -- which know nothing about 3D mode and will
+     *     always resolve to 'visible'. If this override also wrote to that
+     *     same `visibility` property, the two would fight every tick; the
+     *     perf fix below (skip re-applying when show3DOverlay hasn't
+     *     changed) would then only "win" for one tick before the base
+     *     class's next call silently reverts it back to visible (confirmed
+     *     regression: label duplicated both at the 2D ground point and at
+     *     the 3D-anchored position). Paint opacity is a property the base
+     *     class never touches, so there's nothing to fight over and the
+     *     change-detection guard is safe.
+     */
+    protected updateLayerVisibility(): void {
+        super.updateLayerVisibility();
+
+        const show3D = this.displayOptions.show3DOverlay;
+        if (this.lastAppliedShow3DOverlay === show3D) return;
+        this.lastAppliedShow3DOverlay = show3D;
+
+        const opacity = show3D ? 0 : 1;
+
+        const pointsLayerId = `${this.config.layerPrefix}-points`;
+        if (this.map.getLayer(pointsLayerId)) {
+            const layerType = this.map.getLayer(pointsLayerId)?.type;
+            if (layerType === 'circle') {
+                this.map.setPaintProperty(pointsLayerId, 'circle-opacity', opacity);
+                this.map.setPaintProperty(pointsLayerId, 'circle-stroke-opacity', opacity);
+            } else {
+                this.map.setPaintProperty(pointsLayerId, 'icon-opacity', opacity);
+            }
+        }
+
+        const labelsLayerId = `${this.config.layerPrefix}-labels`;
+        if (this.map.getLayer(labelsLayerId)) {
+            this.map.setPaintProperty(labelsLayerId, 'text-opacity', opacity);
+            this.map.setPaintProperty(labelsLayerId, 'text-halo-width', show3D ? 0 : 2);
+        }
     }
 
     /**

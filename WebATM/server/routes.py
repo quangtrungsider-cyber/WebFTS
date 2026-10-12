@@ -11,7 +11,7 @@ import socket
 import time
 from pathlib import Path
 
-from flask import current_app, jsonify, render_template, request
+from flask import abort, current_app, jsonify, render_template, request
 from werkzeug.utils import secure_filename
 
 from ..logger import get_logger
@@ -32,9 +32,11 @@ def get_webpack_assets():
             Path(__file__).parent.parent / "static" / "dist" / "manifest.json"
         )
 
+        t = int(time.time())
+
         if not manifest_path.exists():
             # Fallback to single bundle.js if manifest doesn't exist
-            return ['<script src="/static/dist/bundle.js"></script>']
+            return [f'<script src="/static/dist/bundle.js?t={t}"></script>']
 
         with open(manifest_path) as f:
             manifest = json.load(f)
@@ -48,7 +50,7 @@ def get_webpack_assets():
         ):
             # Development mode: single bundle
             bundle_file = manifest["main.js"]
-            script_tags.append(f'<script src="/static/dist/{bundle_file}"></script>')
+            script_tags.append(f'<script src="/static/dist/{bundle_file}?t={t}"></script>')
         else:
             # Production mode: split bundles - load in correct order
             chunk_order = ["runtime.js", "vendor.js", "app.js", "main.js"]
@@ -56,19 +58,19 @@ def get_webpack_assets():
             for chunk_name in chunk_order:
                 if chunk_name in manifest:
                     script_tags.append(
-                        f'<script src="/static/dist/{manifest[chunk_name]}"></script>'
+                        f'<script src="/static/dist/{manifest[chunk_name]}?t={t}"></script>'
                     )
 
         return (
             script_tags
             if script_tags
-            else ['<script src="/static/dist/bundle.js"></script>']
+            else [f'<script src="/static/dist/bundle.js?t={t}"></script>']
         )
 
     except Exception as e:
         logger.info(f"Error reading webpack manifest: {e}")
         # Fallback to single bundle.js
-        return ['<script src="/static/dist/bundle.js"></script>']
+        return [f'<script src="/static/dist/bundle.js?t={int(time.time())}"></script>']
 
 
 def register_basic_routes(app, session_manager):
@@ -89,13 +91,41 @@ def register_basic_routes(app, session_manager):
         except Exception as e:
             return f"Error loading page: {str(e)}", 500
 
+    _BACKEND_PREFIXES = ("api/", "static/", "socket.io/", "health", "status")
+
+    @app.route("/<path:path>")
+    def spa_fallback(path):
+        """
+        Serve the SPA shell for client-side routes (e.g. /login, /dashboard) so a
+        hard refresh or direct link doesn't 404/500 -- React Router takes over
+        from there. Registered API/static/socket.io routes match before this
+        catch-all runs; this guard only protects against *unmatched* backend-ish
+        paths (e.g. a typo'd /api/... URL) so those still 404 instead of silently
+        getting the HTML shell back.
+        """
+        if path.startswith(_BACKEND_PREFIXES):
+            abort(404)
+        return index()
+
     @app.route("/api/simulation/command", methods=["POST"])
     def send_command():
         """Send command to simulation."""
         try:
             command = request.json.get("command", "") if request.json else ""
+            
+            # Reset echo data so we only capture new ones
+            if hasattr(current_app.bluesky_proxy, 'echo_data'):
+                current_app.bluesky_proxy.echo_data = {}
+                
             success = current_app.bluesky_proxy.send_command(command)
-            return jsonify({"success": success, "command": command})
+            
+            # Fetch any immediate local message
+            message = current_app.bluesky_proxy.echo_data.get("text", "") if hasattr(current_app.bluesky_proxy, 'echo_data') else ""
+            
+            if success:
+                return jsonify({"success": True, "command": command, "message": message})
+            else:
+                return jsonify({"success": False, "command": command, "error": message or "Command failed"})
         except Exception:
             return jsonify({"error": "Failed to send command"}), 500
 
@@ -658,6 +688,46 @@ def register_basic_routes(app, session_manager):
                 {"success": False, "error": f"Failed to list files: {str(e)}"}
             ), 500
 
+    @app.route("/api/bluesky/analyze-report", methods=["POST"])
+    def analyze_report():
+        """Upload and analyze a Word document using AI."""
+        try:
+            if "file" not in request.files:
+                return jsonify({"success": False, "error": "No file provided"}), 400
+                
+            file = request.files["file"]
+            if file.filename == "":
+                return jsonify({"success": False, "error": "No file selected"}), 400
+                
+            if not file.filename.lower().endswith(".docx"):
+                return jsonify({"success": False, "error": "Only .docx files are supported"}), 400
+                
+            import tempfile
+            from .ai_service import analyze_docx
+            import os
+            
+            # Save temporarily
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as temp_file:
+                file.save(temp_file.name)
+                temp_path = temp_file.name
+                
+            # Analyze
+            result = analyze_docx(temp_path)
+            
+            # Clean up
+            try:
+                os.unlink(temp_path)
+            except:
+                pass
+                
+            return jsonify({
+                "success": True,
+                "data": result
+            })
+        except Exception as e:
+            logger.error(f"Error analyzing report: {e}")
+            return jsonify({"success": False, "error": str(e)}), 500
+
     @app.route("/api/bluesky/browse/<file_type>", methods=["GET"])
     @app.route("/api/bluesky/browse/<file_type>/<path:subpath>", methods=["GET"])
     def browse_bluesky_directory(file_type, subpath=""):
@@ -928,3 +998,368 @@ def register_basic_routes(app, session_manager):
             return jsonify(
                 {"success": False, "error": f"Failed to get status: {str(e)}"}
             ), 500
+
+    @app.route("/api/simulation/export-word-report", methods=["GET"])
+    def export_word_report():
+        """Export simulation logs and analysis into a Microsoft Word (.docx) report."""
+        try:
+            import glob
+            from docx import Document
+            from docx.shared import Inches, Pt, RGBColor
+            from docx.enum.text import WD_ALIGN_PARAGRAPH
+            from flask import send_file
+
+            # 1. Determine FTS Server output directory
+            if hasattr(current_app, "bluesky_base_path"):
+                base_path = Path(current_app.bluesky_base_path)
+            else:
+                base_path = Path(__file__).parent.parent.parent / "FTS Server"
+            
+            output_dir = base_path / "output"
+            
+            if not output_dir.exists():
+                return jsonify({
+                    "success": False, 
+                    "error": f"Thư mục logs không tồn tại tại: {output_dir}"
+                }), 404
+
+            # 2. Find the latest conflict log and flight status log files
+            conf_logs = glob.glob(str(output_dir / "CONFLOG_*.log"))
+            flst_logs = glob.glob(str(output_dir / "FLSTLOG_*.log"))
+            
+            if not conf_logs or not flst_logs:
+                return jsonify({
+                    "success": False, 
+                    "error": "Không tìm thấy dữ liệu nhật ký mô phỏng trong thư mục output. Vui lòng nhập hai lệnh 'FLSTLOG ON' và 'CONFLOG ON' vào Console ở bên dưới rồi nhấn Enter để kích hoạt tính năng ghi log của BlueSky trước khi chạy kịch bản."
+                }), 404
+                
+            latest_conf_log = Path(max(conf_logs, key=os.path.getmtime))
+            latest_flst_log = Path(max(flst_logs, key=os.path.getmtime))
+            
+            # Extract scenario name and simulation datetime from latest conflict log filename
+            # Format: CONFLOG_<scenario>_<date>_<time>.log
+            # Example: CONFLOG_vvts52v2_20260524_08-05-33.log
+            log_stem = latest_conf_log.stem
+            log_parts = log_stem.split("_")
+            scenario_name = "VVTS_Scenario"
+            sim_datetime_display = time.strftime('%d/%m/%Y %H:%M:%S')
+            sim_datetime_filename = time.strftime('%Y%m%d_%H%M%S')
+            
+            if len(log_parts) >= 4:
+                scenario_name = log_parts[1]
+                # Format filename datetime string: e.g., 20260524_080533
+                time_str_clean = log_parts[3].replace("-", "")
+                sim_datetime_filename = f"{log_parts[2]}_{time_str_clean}"
+                
+                # Format human readable datetime string: e.g., 24/05/2026 08:05:33
+                try:
+                    date_val = log_parts[2] # 20260524
+                    time_val = log_parts[3] # 08-05-33
+                    formatted_date = f"{date_val[6:8]}/{date_val[4:6]}/{date_val[0:4]}"
+                    formatted_time = time_val.replace("-", ":")
+                    sim_datetime_display = f"{formatted_date} {formatted_time}"
+                except Exception:
+                    sim_datetime_display = f"{log_parts[2]} {log_parts[3]}"
+            elif len(log_parts) == 3:
+                scenario_name = log_parts[1]
+                sim_datetime_filename = log_parts[2]
+                sim_datetime_display = log_parts[2]
+            
+            # 3. Parse Conflict Log
+            conflicts = []
+            if latest_conf_log.exists():
+                with open(latest_conf_log, "r", encoding="utf-8") as f:
+                    for line in f.readlines():
+                        if line.startswith("#") or not line.strip():
+                            continue
+                        parts = line.split()
+                        if len(parts) >= 6:
+                            conflicts.append({
+                                "time": parts[0],
+                                "ac1": parts[1],
+                                "ac2": parts[2],
+                                "lat": parts[3],
+                                "lon": parts[4],
+                                "alt": parts[5]
+                            })
+                            
+            # 4. Parse Flight Status Log
+            flights = []
+            if latest_flst_log.exists():
+                with open(latest_flst_log, "r", encoding="utf-8") as f:
+                    for line in f.readlines():
+                        if line.startswith("#") or not line.strip():
+                            continue
+                        parts = line.split()
+                        if len(parts) >= 4:
+                            flights.append({
+                                "acid": parts[0],
+                                "type": parts[1],
+                                "origin": parts[2],
+                                "destination": parts[3],
+                                "status": "Hoàn thành"
+                            })
+
+            # 5. Build the Word document
+            doc = Document()
+            
+            # Header title styling
+            title = doc.add_paragraph()
+            title_run = title.add_run("BÁO CÁO KẾT QUẢ MÔ PHỎNG AN TOÀN BAY & PHÂN CÁCH (FTS)")
+            title_run.font.name = 'Arial'
+            title_run.font.bold = True
+            title_run.font.size = Pt(16)
+            title_run.font.color.rgb = RGBColor(0, 51, 102) # Dark Navy Blue
+            title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            
+            # Subtitle styling
+            subtitle = doc.add_paragraph()
+            sub_run = subtitle.add_run(f"Kịch bản: {scenario_name}  |  Thời điểm mô phỏng: {sim_datetime_display}")
+            sub_run.font.name = 'Arial'
+            sub_run.font.italic = True
+            sub_run.font.size = Pt(11)
+            sub_run.font.color.rgb = RGBColor(102, 102, 102) # Gray
+            subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            
+            doc.add_paragraph(f"Thời gian tạo báo cáo: {time.strftime('%d/%m/%Y %H:%M:%S')}")
+            
+            # Section 1: Overview metrics
+            doc.add_heading("1. Tổng quan kịch bản mô phỏng", level=1)
+            p = doc.add_paragraph()
+            p.add_run("• Tên kịch bản mô phỏng: ").bold = True
+            p.add_run(f"{scenario_name}\n")
+            p.add_run("• Thời điểm chạy mô phỏng: ").bold = True
+            p.add_run(f"{sim_datetime_display}\n")
+            p.add_run("• Tên tệp nhật ký xung đột: ").bold = True
+            p.add_run(f"{latest_conf_log.name}\n")
+            p.add_run("• Tên tệp nhật ký chuyến bay: ").bold = True
+            p.add_run(f"{latest_flst_log.name}\n")
+            p.add_run("• Tổng số chuyến bay tham gia: ").bold = True
+            p.add_run(f"{len(flights)} chuyến bay\n")
+            p.add_run("• Tổng số xung đột phân cách phát hiện: ").bold = True
+            p.add_run(f"{len(conflicts)} sự cố vi phạm\n")
+            
+            # Section 2: Detailed Conflicts Table
+            doc.add_heading("2. Thống kê chi tiết các vi phạm phân cách", level=1)
+            if len(conflicts) == 0:
+                doc.add_paragraph("Không phát hiện bất kỳ xung đột hay vi phạm phân cách nào trong suốt quá trình chạy mô phỏng kịch bản. Các phương thức bay đáp ứng hoàn toàn tiêu chuẩn an toàn không lưu.")
+            else:
+                table = doc.add_table(rows=1, cols=5)
+                table.style = 'Light Shading Accent 1'
+                hdr_cells = table.rows[0].cells
+                hdr_cells[0].text = 'Thời điểm (s)'
+                hdr_cells[1].text = 'Tàu bay 1'
+                hdr_cells[2].text = 'Tàu bay 2'
+                hdr_cells[3].text = 'Độ cao (ft)'
+                hdr_cells[4].text = 'Vị trí (Lat, Lon)'
+                
+                # Apply headers styling
+                for cell in hdr_cells:
+                    for paragraph in cell.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.bold = True
+                            run.font.name = 'Arial'
+                            run.font.size = Pt(10)
+                
+                for conf in conflicts:
+                    row_cells = table.add_row().cells
+                    row_cells[0].text = conf["time"]
+                    row_cells[1].text = conf["ac1"]
+                    row_cells[2].text = conf["ac2"]
+                    row_cells[3].text = conf["alt"]
+                    row_cells[4].text = f"{conf['lat']}, {conf['lon']}"
+                    for cell in row_cells:
+                        for paragraph in cell.paragraphs:
+                            for run in paragraph.runs:
+                                run.font.name = 'Arial'
+                                run.font.size = Pt(9.5)
+                                
+            # Section 3: Flight details
+            doc.add_heading("3. Danh sách chi tiết chuyến bay ghi nhận", level=1)
+            if len(flights) == 0:
+                doc.add_paragraph("Không ghi nhận chuyến bay nào.")
+            else:
+                table_fl = doc.add_table(rows=1, cols=4)
+                table_fl.style = 'Table Grid'
+                hdr_fl_cells = table_fl.rows[0].cells
+                hdr_fl_cells[0].text = 'Callsign (ID)'
+                hdr_fl_cells[1].text = 'Loại tàu bay'
+                hdr_fl_cells[2].text = 'Hành trình'
+                hdr_fl_cells[3].text = 'Trạng thái'
+                
+                for cell in hdr_fl_cells:
+                    for paragraph in cell.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.bold = True
+                            run.font.name = 'Arial'
+                            run.font.size = Pt(10)
+                            
+                for fl in flights:
+                    row_cells = table_fl.add_row().cells
+                    row_cells[0].text = fl["acid"]
+                    row_cells[1].text = fl["type"]
+                    row_cells[2].text = f"{fl['origin']} → {fl['destination']}"
+                    row_cells[3].text = fl["status"]
+                    for cell in row_cells:
+                        for paragraph in cell.paragraphs:
+                            for run in paragraph.runs:
+                                run.font.name = 'Arial'
+                                run.font.size = Pt(9.5)
+
+            # Section 4: Tổng hợp, Phân tích & Đánh giá an toàn chuyên sâu
+            doc.add_heading("4. Tổng hợp, Phân tích & Đánh giá an toàn chuyên sâu", level=1)
+
+            # Dynamic safety calculations
+            conflict_count = len(conflicts)
+            flight_count = len(flights)
+
+            # Determine Risk and Assessment levels
+            if conflict_count == 0:
+                safety_level = "MỨC ĐỘ AN TOÀN TUYỆT ĐỐI (KHÔNG CÓ XUNG ĐỘT)"
+                safety_desc = "Không phát hiện vi phạm phân cách nào. Phương thức bay thiết lập đạt độ an toàn tối đa."
+                risk_assessment = (
+                    "Dựa trên dữ liệu mô phỏng, toàn bộ các chuyến bay trong kịch bản đã vận hành đúng "
+                    "theo kế hoạch bay quy định mà không xảy ra bất kỳ sự cố vi phạm phân cách tiêu chuẩn nào "
+                    "(cả về phân cách ngang và dọc). Điều này chứng minh rằng cấu trúc đường hàng không, "
+                    "phương thức tiếp cận (SID/STAR) và mật độ phân bổ thời gian cất/hạ cánh hiện tại "
+                    "đạt mức độ an toàn cao nhất, không cần can thiệp kỹ thuật."
+                )
+                recommendations = [
+                    "Tiếp tục duy trì và áp dụng phương thức bay này cho thực tế vận hành hàng ngày.",
+                    "Đánh giá thêm với các kịch bản có yếu tố thời tiết bất lợi hoặc gió ngược để kiểm nghiệm tính ổn định."
+                ]
+            elif conflict_count <= 3:
+                safety_level = "RỦI RO THẤP (XUNG ĐỘT CỤC BỘ ĐƠN LẺ)"
+                safety_desc = f"Phát hiện {conflict_count} sự cố vi phạm phân cách. Mức độ ảnh hưởng ở phạm vi hẹp."
+                risk_assessment = (
+                    f"Kết quả phân tích ghi nhận {conflict_count} trường hợp vi phạm tiêu chuẩn phân cách tối thiểu. "
+                    "Đây là những xung đột mang tính cục bộ và thời gian vi phạm ngắn. Trong thực tế, các xung đột này "
+                    "hoàn toàn có thể được kiểm soát và giải quyết kịp thời bởi Kiểm soát viên không lưu (ATCO) "
+                    "bằng các phương thức điều hành cơ bản như điều chỉnh tốc độ (speed control) hoặc rẽ hướng tạm thời."
+                )
+                recommendations = [
+                    "Rà soát lại giãn cách cất cánh và trình tự tiếp cận tại các điểm thắt nút giao thông để loại bỏ hoàn toàn vi phạm.",
+                    "Khuyến nghị tối ưu hóa nhẹ các sơ đồ bay SID/STAR liên quan tại các điểm giao cắt cục bộ."
+                ]
+            elif conflict_count <= 10:
+                safety_level = "RỦI RO TRUNG BÌNH (CẦN ĐIỀU CHỈNH LUỒNG BAY)"
+                safety_desc = f"Phát hiện {conflict_count} sự cố vi phạm phân cách. Có dấu hiệu quá tải hoặc xung đột luồng giao thông."
+                risk_assessment = (
+                    f"Hệ thống ghi nhận tổng cộng {conflict_count} vi phạm phân cách giữa các cặp tàu bay. "
+                    "Mật độ xung đột ở mức trung bình và có tính chất lặp lại tại các điểm báo cáo giao cắt. "
+                    "Điều này cho thấy có sự hội tụ hoặc đối đầu của các luồng bay tại cùng một cao độ "
+                    "và khoảng thời gian cao điểm, vượt quá khả năng tự điều hòa của sơ đồ bay hiện tại."
+                )
+                recommendations = [
+                    "Áp dụng phương pháp phân cách cao độ triệt để (phân chia lại độ cao bay an toàn cho các luồng bay đối đầu).",
+                    "Áp dụng quản lý luồng hoạt động bay (ATFM) để kéo giãn khoảng cách thời gian khởi hành giữa các chuyến bay trùng đường bay.",
+                    "Điều chỉnh cấu trúc sơ đồ PBN SID/STAR tại các điểm nút giao cắt lớn."
+                ]
+            else:
+                safety_level = "RỦI RO CAO (NGUY CƠ MẤT AN TOÀN TIỀM ẨN - CẦN THIẾT KẾ LẠI)"
+                safety_desc = f"Hệ thống cảnh báo đặc biệt với {conflict_count} vi phạm phân cách nghiêm trọng."
+                risk_assessment = (
+                    f"Mô phỏng phát hiện mật độ vi phạm phân cách đặc biệt lớn ({conflict_count} sự cố). "
+                    "Mức độ rủi ro mất an toàn không lưu là rất cao. Nguyên nhân chủ yếu xuất phát từ việc thiết kế đường bay "
+                    "trùng lặp hoàn toàn, luồng bay hội tụ quá đông trong thời gian ngắn mà không có sự giãn cách, hoặc "
+                    "thiếu phương án phân cách cao độ tại các điểm chuyển tiếp đường hàng không."
+                )
+                recommendations = [
+                    "Cần thiết kế lại cấu trúc đường hàng không trong khu vực thử nghiệm mô phỏng.",
+                    "Thiết lập các sơ đồ bay SID/STAR độc lập, hạn chế tối đa các điểm giao cắt cùng cao độ.",
+                    "Tiến hành phân chia lại các phân khu kiểm soát (Sectorization) để giảm tải khối lượng công việc cho Kiểm soát viên không lưu.",
+                    "Yêu cầu giãn cách thời gian cất hạ cánh tối thiểu giữa các tàu bay liên quan."
+                ]
+
+            # Write Safety Level Callout Box
+            callout = doc.add_table(rows=1, cols=1)
+            callout.style = 'Light Shading Accent 1'
+            cell = callout.rows[0].cells[0]
+
+            p_level = cell.paragraphs[0]
+            p_level_run = p_level.add_run(f"ĐÁNH GIÁ CHỈ SỐ AN TOÀN: {safety_level}\n")
+            p_level_run.font.bold = True
+            p_level_run.font.size = Pt(11)
+            p_level_run.font.color.rgb = RGBColor(180, 50, 50) if conflict_count > 0 else RGBColor(0, 120, 60)
+
+            p_desc = cell.add_paragraph()
+            p_desc_run = p_desc.add_run(safety_desc)
+            p_desc_run.font.italic = True
+            p_desc_run.font.size = Pt(10)
+
+            # Write detailed analysis
+            doc.add_paragraph().paragraph_format.space_before = Pt(6)
+            doc.add_heading("4.1 Phân tích rủi ro và các nút thắt phân cách", level=2)
+
+            p_risk = doc.add_paragraph()
+            p_risk.add_run(risk_assessment)
+
+            # Analyze most frequent conflict pairs
+            if conflict_count > 0:
+                doc.add_heading("4.2 Phân tích các cặp tàu bay phát sinh xung đột cao nhất", level=2)
+                pair_counts = {}
+                for conf in conflicts:
+                    ac1, ac2 = sorted([conf["ac1"], conf["ac2"]])
+                    pair_counts[(ac1, ac2)] = pair_counts.get((ac1, ac2), 0) + 1
+
+                top_conflict_pairs = sorted(pair_counts.items(), key=lambda x: x[1], reverse=True)[:3]
+
+                p_pairs = doc.add_paragraph()
+                p_pairs.add_run("Dưới đây là danh sách các cặp tàu bay có tần suất xảy ra xung đột cao nhất, cần được chú ý đặc biệt:\n").font.italic = True
+                for i, ((ac1, ac2), count) in enumerate(top_conflict_pairs, 1):
+                    p_pairs.add_run(f"• Top {i}: ").bold = True
+                    p_pairs.add_run(f"Cặp tàu bay ")
+                    p_pairs.add_run(f"{ac1} và {ac2}").bold = True
+                    p_pairs.add_run(f" vi phạm phân cách ")
+                    p_pairs.add_run(f"{count} lần").bold = True
+                    p_pairs.add_run(" trong suốt quá trình chạy kịch bản.\n")
+
+            # Analyze traffic flows from flights
+            if flight_count > 0:
+                doc.add_heading("4.3 Phân tích mật độ luồng hoạt động bay", level=2)
+                flows = {}
+                for fl in flights:
+                    route_key = f"{fl['origin']} -> {fl['destination']}"
+                    flows[route_key] = flows.get(route_key, 0) + 1
+
+                top_flows = sorted(flows.items(), key=lambda x: x[1], reverse=True)[:3]
+
+                p_flows = doc.add_paragraph()
+                p_flows.add_run("Thống kê luồng bay có lưu lượng hoạt động lớn nhất trong kịch bản:\n").font.italic = True
+                for i, (flow, count) in enumerate(top_flows, 1):
+                    p_flows.add_run(f"• Luồng bay {i}: ").bold = True
+                    p_flows.add_run(f"{flow} với ")
+                    p_flows.add_run(f"{count} chuyến bay").bold = True
+                    p_flows.add_run(" khai thác.\n")
+
+            # Section 5: Recommendations
+            doc.add_heading("5. Khuyến nghị và giải pháp khắc phục an toàn", level=1)
+            p_rec_intro = doc.add_paragraph()
+            p_rec_intro.add_run("Dưới đây là các giải pháp kỹ thuật cụ thể được đề xuất nhằm nâng cao tính an toàn và giảm thiểu rủi ro:")
+
+            for rec in recommendations:
+                p_rec = doc.add_paragraph()
+                p_rec.add_run("• ").bold = True
+                p_rec.add_run(rec)
+
+            # Section 6: Conclusion
+            doc.add_heading("6. Kết luận chung", level=1)
+            p_end = doc.add_paragraph()
+            p_end.add_run(
+                "Báo cáo phân tích an toàn bay này được khởi tạo tự động bởi hệ thống WebFTS dựa trên nhật ký mô phỏng thực tế. "
+                "Các thông số tổng hợp, phân tích và đánh giá khoa học ở trên là cơ sở tin cậy giúp các chuyên gia, kiểm soát viên "
+                "không lưu tối ưu hóa phương thức bay PBN, sơ đồ bay SID/STAR và nâng cao năng lực thông qua vùng trời an toàn."
+            )
+
+            # 6. Save document to a temp file and send
+            report_filename = f"Bao_Cao_Mo_Phong_{scenario_name}_{sim_datetime_filename}.docx"
+            report_path = output_dir / "Simulation_Report_VATM.docx"
+            doc.save(str(report_path))
+
+            return send_file(str(report_path), as_attachment=True, download_name=report_filename)
+            
+        except Exception as e:
+            logger.error(f"Error exporting Word report: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({"success": False, "error": f"Lỗi khởi tạo báo cáo Word: {str(e)}"}), 500

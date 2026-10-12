@@ -1,0 +1,48 @@
+{
+  "icao": "VVVH",
+  "name": "Vinh",
+  "metadata": {
+    "city": "Vinh",
+    "country": "Vietnam",
+    "datum_lat": "18.730822",
+    "datum_lon": "105.669398",
+    "gui_label": "3D",
+    "iata_code": "VII",
+    "icao_code": "VVVH",
+    "region_code": "VV",
+    "state": "Thua Thien-Hue Province",
+    "transition_alt": "9042",
+    "transition_level": "10000"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 3,
+    "boundaries": 1,
+    "gates": 5,
+    "ground_markings": 45,
+    "taxiway_signs": 6
+  },
+  "sourceLineCounts": {
+    "1302": 11,
+    "100": 1,
+    "110": 3,
+    "111": 94,
+    "112": 63,
+    "113": 4,
+    "130": 1,
+    "120": 45,
+    "115": 31,
+    "116": 13,
+    "114": 1,
+    "21": 2,
+    "20": 6,
+    "1300": 5,
+    "1301": 5,
+    "18": 1,
+    "19": 2
+  },
+  "warnings": []
+}

@@ -647,11 +647,8 @@ export class AircraftRouteRenderer {
      * Server sends speed in M/S (Calibrated Airspeed)
      */
     private formatSpeedValue(speedMs: number): string {
-        // Convert m/s to knots (DataProcessor expects knots)
-        const speedKnots = speedMs / 0.514444;
-
-        // Use DataProcessor for consistent formatting
-        return DataProcessor.formatSpeed(speedKnots, this.displayOptions.speedUnit);
+        // DataProcessor.formatSpeed already converts from m/s internally
+        return DataProcessor.formatSpeed(speedMs, this.displayOptions.speedUnit);
     }
 
     /**

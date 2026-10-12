@@ -1,0 +1,20 @@
+﻿metric,value,note
+input_rows,25446,Rows in uploaded Excel excluding header
+parsed_fpl_messages,7615,"All parsed (FPL-) messages, including duplicates"
+unique_fpl_all_dof,2991,Deduplicated by callsign/dep/eobt/arr/route/dof
+unique_fpl_dof_260222,2213,Flights with DOF/260222
+vietnam_related_flights,2162,DEP/ARR Vietnam or FIR/route related
+scenario_created_flights,2077,Flights with enough coordinate data to create CRE command
+missing_initial_coordinate,85,Flights retained in normalized CSV but not emitted to SCN
+flight_type_domestic,712,
+flight_type_overflight,817,
+flight_type_international_departure,309,
+flight_type_international_arrival,324,
+related_fir_VVHM,1670,
+related_fir_VVHN,371,
+related_fir_VVHM+VVHN,121,
+VVTS_dep_arr,DEP=425; ARR=445,Top airport quick check
+VVNB_dep_arr,DEP=140; ARR=176,Top airport quick check
+VVDN_dep_arr,DEP=146; ARR=118,Top airport quick check
+VVCR_dep_arr,DEP=59; ARR=60,Top airport quick check
+VVPQ_dep_arr,DEP=63; ARR=61,Top airport quick check

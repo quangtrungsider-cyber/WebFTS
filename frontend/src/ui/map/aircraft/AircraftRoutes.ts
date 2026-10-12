@@ -19,6 +19,10 @@ export class AircraftRoutes {
     private renderer: AircraftRouteRenderer;
     private routeData: RouteData | null = null;
     private selectedAircraft: string | null = null;
+    // Cache stores the latest ROUTEDATA for every aircraft ever received.
+    // When the user selects an aircraft, we immediately show its cached route
+    // rather than waiting for BlueSky to re-broadcast (POS command only returns echo text).
+    private routeDataCache: globalThis.Map<string, RouteData> = new globalThis.Map();
 
     // Display state
     private showRoutes: boolean = true;
@@ -72,6 +76,21 @@ export class AircraftRoutes {
     public updateRouteData(data: RouteData): void {
         logger.debug('AircraftRoutes', 'Route data received for aircraft:', data.acid, data);
 
+        // Always cache the latest route data for every aircraft so that a
+        // subsequent selection can show the route immediately (POS command only
+        // returns echo text and does NOT trigger a fresh ROUTEDATA broadcast).
+        if (data.acid) {
+            this.routeDataCache.set(data.acid, data);
+        }
+
+        // Only update the active display when data is for the selected aircraft.
+        // Without this guard, a late-arriving broadcast for another aircraft would
+        // overwrite routeData and clear the currently-displayed route.
+        if (this.selectedAircraft && data.acid && data.acid !== this.selectedAircraft) {
+            logger.debug('AircraftRoutes', 'Cached ROUTEDATA for non-selected aircraft:', data.acid, '(selected:', this.selectedAircraft, ')');
+            return;
+        }
+
         this.routeData = data;
         this.updateRouteDisplay();
     }
@@ -82,6 +101,21 @@ export class AircraftRoutes {
      */
     public setSelectedAircraft(aircraftId: string | null): void {
         this.selectedAircraft = aircraftId;
+
+        if (aircraftId) {
+            // Immediately restore from cache so the route shows before any new
+            // ROUTEDATA arrives (POS command does not trigger a ROUTEDATA broadcast).
+            const cached = this.routeDataCache.get(aircraftId);
+            if (cached) {
+                logger.debug('AircraftRoutes', 'Restoring cached route for:', aircraftId);
+                this.routeData = cached;
+            } else {
+                this.routeData = null;
+            }
+        } else {
+            this.routeData = null;
+        }
+
         this.updateRouteDisplay();
 
         if (!aircraftId) {
@@ -230,6 +264,17 @@ export class AircraftRoutes {
      * Clear route data when aircraft is removed
      */
     public clearRouteData(): void {
+        this.routeData = null;
+        this.clearRouteDisplay();
+    }
+
+    /**
+     * Clear the route data cache (call on simulation reset so stale routes
+     * from the previous scenario are not shown for new aircraft with the
+     * same callsign).
+     */
+    public clearRouteCache(): void {
+        this.routeDataCache.clear();
         this.routeData = null;
         this.clearRouteDisplay();
     }

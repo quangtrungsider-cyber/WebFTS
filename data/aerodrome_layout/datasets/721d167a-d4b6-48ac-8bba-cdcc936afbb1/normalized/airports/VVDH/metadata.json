@@ -1,0 +1,47 @@
+{
+  "icao": "VVDH",
+  "name": "Dong Hoi",
+  "metadata": {
+    "city": "Dong Hoi",
+    "country": "Viet Nam",
+    "datum_lat": "17.50250000",
+    "datum_lon": "106.58444444",
+    "gui_label": "3D",
+    "iata_code": "VDH",
+    "icao_code": "VVDH",
+    "region_code": "VV",
+    "state": "Quang Binh",
+    "transition_alt": "9000",
+    "transition_level": "FL100",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 9,
+    "boundaries": 1,
+    "gates": 5,
+    "ground_markings": 14
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 1,
+    "110": 9,
+    "111": 134,
+    "112": 69,
+    "113": 8,
+    "114": 2,
+    "130": 1,
+    "120": 14,
+    "115": 8,
+    "116": 6,
+    "1300": 5,
+    "1301": 5,
+    "1054": 1,
+    "1056": 1,
+    "1400": 2
+  },
+  "warnings": []
+}

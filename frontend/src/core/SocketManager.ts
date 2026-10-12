@@ -43,6 +43,20 @@ export class SocketManager {
     private reconnectAttempts: number = 0;
     private maxReconnectAttempts: number = 10;
     private stateManager: StateManager;
+    // When true, incoming 'acdata' frames are dropped instead of applied to
+    // StateManager -- used by PlaybackTimeline while "reviewing" a buffered
+    // past snapshot, so a live frame arriving mid-review doesn't stomp the
+    // historical positions being displayed. The socket itself stays
+    // connected; only this one handler's effect is suppressed.
+    private pauseLiveAircraftUpdates: boolean = false;
+
+    public setPauseLiveAircraftUpdates(paused: boolean): void {
+        this.pauseLiveAircraftUpdates = paused;
+    }
+
+    public isPausedForReview(): boolean {
+        return this.pauseLiveAircraftUpdates;
+    }
 
     constructor(stateManager: StateManager) {
         this.stateManager = stateManager;
@@ -188,6 +202,7 @@ export class SocketManager {
                 this.stateManager.setReceivingDataStatus(true);
             },
             onAircraftData: (data: AircraftData) => {
+                if (this.pauseLiveAircraftUpdates) return;
                 this.stateManager.updateAircraftData(data);
                 connectionStatus.onAircraftDataReceived();
                 this.stateManager.setReceivingDataStatus(true);
@@ -196,7 +211,7 @@ export class SocketManager {
                 // CRITICAL: Receiving nodeinfo means we're connected to BlueSky!
                 const totalNodes = data.total_nodes || 0;
                 connectionStatus.onNodeInfoReceived(totalNodes);
-                this.stateManager.setBlueSkyConnectionStatus(totalNodes > 0);
+                this.stateManager.setBlueSkyConnectionStatus(true);
 
                 // Update active node in state if available
                 if (data.active_node) {
@@ -234,14 +249,13 @@ export class SocketManager {
             },
             onConnectionStatus: (data: ConnectionStatus) => {
                 // connection_status event from server indicates BlueSky connection
-                // However, we should only trust this for disconnection events
-                // For connection, we rely on nodeinfo as the source of truth
                 if (!data.connected) {
-                    // Only set disconnected state from connection_status
                     connectionStatus.setBlueSkyConnected(false);
                     this.stateManager.setBlueSkyConnectionStatus(false);
+                } else {
+                    connectionStatus.setBlueSkyConnected(true);
+                    this.stateManager.setBlueSkyConnectionStatus(true);
                 }
-                // If connected is true, wait for nodeinfo to confirm actual connection
             },
             onServerDisconnected: () => {
                 connectionStatus.setBlueSkyConnected(false);
@@ -341,6 +355,7 @@ export class SocketManager {
         });
 
         this.socket.on('routedata', (data: RouteData) => {
+            console.log('[ROUTEDATA] Received:', data?.acid, 'wplat:', data?.wplat?.length, 'pts');
             if (this.handlers.onRouteData) {
                 this.handlers.onRouteData(data);
             }
@@ -580,6 +595,14 @@ export class SocketManager {
             this.socket.emit('get_nodes');
         } else {
             logger.warn('SocketManager', 'Cannot request nodes: not connected to WebATM');
+        }
+    }
+
+    requestRouteCache(): void {
+        console.log('[requestRouteCache] connected:', this.isConnected(), 'socket:', !!this.socket);
+        if (this.isConnected() && this.socket) {
+            console.log('[requestRouteCache] Emitting request_route_cache to server');
+            this.socket.emit('request_route_cache');
         }
     }
 

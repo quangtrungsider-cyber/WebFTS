@@ -10,13 +10,32 @@ logger = get_logger()
 
 
 def make_json_serializable(obj):
-    """Convert object to JSON-serializable format."""
+    """Convert object to JSON-serializable format.
+
+    NaN/Infinity are converted to None: Python's json module happily emits
+    the literal (non-standard) tokens NaN/Infinity by default, but a
+    browser's strict JSON.parse() throws a SyntaxError on them -- which
+    Socket.IO's client treats as a fatal protocol error and reacts to by
+    tearing down and reconnecting the whole connection. Degenerate ASAS/MVP
+    conflict-resolution geometry (e.g. two aircraft at ~zero separation)
+    can produce a real NaN in asastrk/asastas/asasvs, and since that
+    condition often persists across the reconnect, this previously showed
+    up as an infinite connect/disconnect loop that never recovered on its
+    own (confirmed live: "Total connected clients: 0" immediately after
+    every "Web client connected", forever, whenever such a NaN was present
+    in the aircraft data being emitted).
+    """
     if isinstance(obj, np.ndarray):
-        return obj.tolist()
+        return [None if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))) else v for v in obj.tolist()]
     elif isinstance(obj, np.integer):
         return int(obj)
     elif isinstance(obj, np.floating):
-        return float(obj)
+        value = float(obj)
+        return None if (value != value or value in (float("inf"), float("-inf"))) else value
+    elif isinstance(obj, float):
+        return None if (obj != obj or obj in (float("inf"), float("-inf"))) else obj
+    elif isinstance(obj, bytes):
+        return obj.decode('utf-8', errors='ignore')
     elif isinstance(obj, dict):
         # Handle BlueSky's serialized numpy arrays
         if b"numpy" in obj and b"data" in obj and b"type" in obj and b"shape" in obj:
@@ -52,8 +71,14 @@ def make_json_serializable(obj):
                         struct.unpack(f"<{num_elements}{format_char}", data_bytes)
                     )
 
-                    # Return as list for JSON serialization
-                    return values
+                    # Return as list for JSON serialization (sanitize NaN/Infinity
+                    # here too -- this struct.unpack path returns raw floats
+                    # straight from BlueSky's own wire format, bypassing the
+                    # np.floating/float branches above entirely)
+                    return [
+                        None if isinstance(v, float) and (v != v or v in (float("inf"), float("-inf"))) else v
+                        for v in values
+                    ]
                 else:
                     logger.warning(
                         f"Utils: Unknown numpy dtype {dtype}, returning raw data"

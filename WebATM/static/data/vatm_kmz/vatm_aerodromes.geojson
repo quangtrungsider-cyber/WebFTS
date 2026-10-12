@@ -1,0 +1,374 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:71e92d12-9de1-40ec-bd38-544a1e594f25",
+        "name": "VVPQ",
+        "icao": "VVPQ",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.99306,
+          10.16972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:1594405a-aafd-46ed-8aa3-f432a19e73b2",
+        "name": "VVPB",
+        "icao": "VVPB",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.702494667,
+          16.400684139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:962684ae-df3b-4802-af66-bf28e8baebb1",
+        "name": "VVBM",
+        "icao": "VVBM",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.116584944,
+          12.668387639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:229e6368-411a-43e0-8955-b525600ba8af",
+        "name": "VVCS",
+        "icao": "VVCS",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.629811639,
+          8.732970167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:ed3cdfd4-81e3-491d-8a44-09893296f1e6",
+        "name": "VVVD",
+        "icao": "VVVD",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.414055694,
+          21.1180045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:fd46f2c6-cede-433f-b61a-42903d348b3f",
+        "name": "VVCR",
+        "icao": "VVCR",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.218406806,
+          11.995469528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:9878488e-807a-40f0-8019-7086f95a2169",
+        "name": "VVDL",
+        "icao": "VVDL",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.368002361,
+          11.753358333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:809ba874-a0da-4939-b63e-a9e69b9c935e",
+        "name": "VVNB",
+        "icao": "VVNB",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.805463806,
+          21.221536833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:30dfac80-206d-4d56-81d9-03e6ab3330d7",
+        "name": "VVCI",
+        "icao": "VVCI",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.723105333,
+          20.816908194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:940f442f-5bef-4f35-8fbd-1bdfdc749fd4",
+        "name": "VVTH",
+        "icao": "VVTH",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.330308889,
+          13.042112861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:6fbfd35d-27c7-458f-b449-ee2a203ef2c3",
+        "name": "VVPK",
+        "icao": "VVPK",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.019719306,
+          14.0044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:d5498da8-fb58-41c8-9496-1842089a1df7",
+        "name": "VVRG",
+        "icao": "VVRG",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.134258667,
+          9.958569694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:44f8cead-e534-4670-8abe-aa09c422def6",
+        "name": "VVDB",
+        "icao": "VVDB",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.000512944,
+          21.402179361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:6b052754-51a9-456c-935b-f9f0a8f4a48f",
+        "name": "VVCA",
+        "icao": "VVCA",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.705881889,
+          15.405990583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:f04c2a17-a0a3-4790-b311-1b31dc85c163",
+        "name": "VVDH",
+        "icao": "VVDH",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.590790417,
+          17.5152655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:a4f0e763-6a01-4f4b-a97a-456a670e230a",
+        "name": "VVTX",
+        "icao": "VVTX",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.469270306,
+          19.902560972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:ed12797b-527f-4323-a3c7-923c17a58b67",
+        "name": "VVPC",
+        "icao": "VVPC",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.046234278,
+          13.949134389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:6c73c865-2e1c-4862-bf81-20b15c9dee8e",
+        "name": "VVDN",
+        "icao": "VVDN",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.200389028,
+          16.043891778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:bf3c6ec7-130e-4cc9-a999-a6187bd837c7",
+        "name": "VVCT",
+        "icao": "VVCT",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.710011306,
+          10.084023167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:9a3379ce-01f0-407e-9193-cd530963d257",
+        "name": "VVCM",
+        "icao": "VVCM",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1759875,
+          9.177517583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:fabe74ef-0c50-4725-ab2d-2c23c206f81e",
+        "name": "VVTS",
+        "icao": "VVTS",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.66087975,
+          10.820449556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aerodrome-urn:uuid:65146624-72c0-4612-bead-20f25031b8b3",
+        "name": "VVVH",
+        "icao": "VVVH",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.671758583,
+          18.730116944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aerodrome-vvlt",
+      "properties": {
+        "id": "aerodrome-vvlt",
+        "name": "VVLT",
+        "icao": "VVLT",
+        "type": "aerodrome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.967,
+          10.741
+        ]
+      }
+    }
+  ]
+}

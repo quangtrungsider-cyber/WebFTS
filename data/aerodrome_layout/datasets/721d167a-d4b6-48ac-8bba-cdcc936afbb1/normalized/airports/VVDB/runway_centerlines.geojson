@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "16/34", "icao": "VVDB", "end1": "16", "lat1": 21.4052337, "lon1": 103.0021688, "end2": "34", "lat2": 21.3901289, "lon2": 103.009324, "width_m": 30.0, "surface": "2"}, "geometry": {"type": "LineString", "coordinates": [[103.0021688, 21.4052337], [103.009324, 21.3901289]]}}]}

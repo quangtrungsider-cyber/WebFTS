@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "03/21", "icao": "VVVD", "end1": "03", "lat1": 21.1058136, "lon1": 107.4077557, "end2": "21", "lat2": 21.1350681, "lon2": 107.4228894, "width_m": 45.0, "surface": "2"}, "geometry": {"type": "LineString", "coordinates": [[107.4077557, 21.1058136], [107.4228894, 21.1350681]]}}]}

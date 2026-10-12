@@ -1,0 +1,50 @@
+{
+  "icao": "VVPC",
+  "name": "Phu Cat",
+  "metadata": {
+    "city": "Quy Nohn",
+    "country": "Vietnam",
+    "datum_lat": "13.949166667",
+    "datum_lon": "109.046111111",
+    "gui_label": "3D",
+    "iata_code": "UIH",
+    "icao_code": "VVPC",
+    "region_code": "VV",
+    "state": "Binh Dinh Province",
+    "transition_alt": "9030",
+    "transition_level": "10000",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 1,
+    "boundaries": 1,
+    "gates": 8,
+    "ground_markings": 37,
+    "taxiway_signs": 38
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 1,
+    "110": 1,
+    "111": 141,
+    "112": 93,
+    "113": 3,
+    "114": 2,
+    "130": 1,
+    "120": 37,
+    "116": 12,
+    "115": 25,
+    "21": 2,
+    "20": 38,
+    "14": 1,
+    "1300": 8,
+    "1301": 8,
+    "18": 1,
+    "19": 2
+  },
+  "warnings": []
+}

@@ -118,6 +118,12 @@ export abstract class CustomLayer3D implements CustomLayerInterface {
             this.camera.projectionMatrix = projectionMatrix;
         }
 
+        // Save MapLibre's current WebGL state before Three.js modifies it to prevent rendering corruption
+        const savedViewport = gl.getParameter(gl.VIEWPORT);
+        const savedScissorBox = gl.getParameter(gl.SCISSOR_BOX);
+        const savedScissorTest = gl.getParameter(gl.SCISSOR_TEST);
+        const savedFramebuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
+
         // Render Three.js scene
         this.renderer.resetState();
 
@@ -127,6 +133,21 @@ export abstract class CustomLayer3D implements CustomLayerInterface {
         gl.clear(gl.DEPTH_BUFFER_BIT);
 
         this.renderer.render(this.scene, this.camera);
+
+        // Reset Three.js internal WebGL state cache so it doesn't assume states are intact next frame
+        this.renderer.resetState();
+
+        // Restore MapLibre's WebGL state precisely
+        gl.viewport(savedViewport[0], savedViewport[1], savedViewport[2], savedViewport[3]);
+        
+        if (savedScissorTest) {
+            gl.enable(gl.SCISSOR_TEST);
+            gl.scissor(savedScissorBox[0], savedScissorBox[1], savedScissorBox[2], savedScissorBox[3]);
+        } else {
+            gl.disable(gl.SCISSOR_TEST);
+        }
+
+        gl.bindFramebuffer(gl.FRAMEBUFFER, savedFramebuffer);
 
         // Trigger continuous rendering
         this.map.triggerRepaint();

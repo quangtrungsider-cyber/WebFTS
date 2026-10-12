@@ -44,6 +44,9 @@ export class Modals {
         // Setup event handlers for standard modals
         this.setupStandardModalHandlers();
 
+        // Setup report downloader event listeners
+        this.setupWordReportDownloader();
+
         this.initialized = true;
     }
 
@@ -222,6 +225,60 @@ export class Modals {
      */
     public isInitialized(): boolean {
         return this.initialized;
+    }
+
+    /**
+     * Setup the download button handler for generating the Microsoft Word simulation report
+     */
+    private setupWordReportDownloader(): void {
+        const downloadBtn = document.getElementById('download-word-report-btn');
+        const statusDiv = document.getElementById('download-report-status');
+
+        if (downloadBtn) {
+            logger.debug('Modals', 'Attaching event listener for simulation Word report downloader');
+            downloadBtn.addEventListener('click', async () => {
+                try {
+                    if (statusDiv) {
+                        statusDiv.innerHTML = '<span style="color: #ffc107; font-weight: bold;"><i class="fa-solid fa-spinner fa-spin"></i> Đang tổng hợp dữ liệu...</span>';
+                    }
+                    downloadBtn.setAttribute('disabled', 'true');
+                    downloadBtn.style.opacity = '0.6';
+                    
+                    // Pre-flight check to see if logs are available and export is ready
+                    const response = await fetch("/api/simulation/export-word-report");
+                    if (response.ok) {
+                        // Trigger actual file download safely without unloading page
+                        const link = document.createElement('a');
+                        link.href = "/api/simulation/export-word-report";
+                        link.setAttribute('download', '');
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        if (statusDiv) {
+                            statusDiv.innerHTML = '<span style="color: #00ffcc; font-weight: bold;"><i class="fa-solid fa-circle-check"></i> Đã tải báo cáo thành công!</span>';
+                        }
+                    } else {
+                        const errData = await response.json().catch(() => ({}));
+                        const errMsg = errData.error || "Không tìm thấy dữ liệu nhật ký mô phỏng.";
+                        if (statusDiv) {
+                            statusDiv.innerHTML = `<span style="color: #ff3333; font-weight: bold; display: block; margin-top: 8px; line-height: 1.4;"><i class="fa-solid fa-circle-xmark"></i> ${errMsg}</span>`;
+                        }
+                    }
+                    
+                    downloadBtn.removeAttribute('disabled');
+                    downloadBtn.style.opacity = '1.0';
+                    
+                } catch (error) {
+                    logger.error('Modals', 'Error downloading Word report:', error);
+                    if (statusDiv) {
+                        statusDiv.innerHTML = '<span style="color: #ff3333; font-weight: bold;"><i class="fa-solid fa-circle-xmark"></i> Lỗi kết nối đến máy chủ!</span>';
+                    }
+                    downloadBtn.removeAttribute('disabled');
+                    downloadBtn.style.opacity = '1.0';
+                }
+            });
+        }
     }
 
     /**

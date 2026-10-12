@@ -25,26 +25,33 @@ class NodeManager:
             not self.proxy.running
             or not self.proxy.was_connected
             or len(self.proxy.tracked_nodes) == 0
-            or not hasattr(self.proxy.bluesky_client, "act_id")
-            or not self.proxy.bluesky_client.act_id
         ):
             return None
 
         try:
-            # The act_id is stored as raw bytes in the network client
-            raw_active_id = self.proxy.bluesky_client.act_id
+            # 1. Try to get active ID from bluesky_client
+            raw_active_id = getattr(self.proxy.bluesky_client, "act_id", None)
+            if raw_active_id:
+                active_id_str = (
+                    raw_active_id.hex()
+                    if isinstance(raw_active_id, bytes)
+                    else str(raw_active_id)
+                )
+                if active_id_str in self.proxy.tracked_nodes:
+                    return active_id_str
 
-            # Convert to hex string to match our tracked_nodes keys
-            active_id_str = (
-                raw_active_id.hex()
-                if isinstance(raw_active_id, bytes)
-                else str(raw_active_id)
-            )
-
-            # Check if this hex string exists in our tracked nodes
-            if active_id_str in self.proxy.tracked_nodes:
-                return active_id_str
-        except Exception:
+            # 2. Fallback to the first node in tracked_nodes
+            first_node_id_str = list(self.proxy.tracked_nodes.keys())[0]
+            first_node_data = self.proxy.tracked_nodes[first_node_id_str]
+            binary_node_id = first_node_data.get("node_id")
+            
+            # Automatically set actnode to the fallback in bluesky_client to keep them in sync
+            if binary_node_id and hasattr(self.proxy.bluesky_client, "actnode"):
+                self.proxy.bluesky_client.actnode(binary_node_id)
+                
+            return first_node_id_str
+        except Exception as e:
+            logger.error(f"Error in _get_safe_active_node: {e}")
             pass
         return None
 
@@ -125,6 +132,13 @@ class NodeManager:
 
             # Convert binary node_id to hex string for consistency with SIMINFO
             node_id_str = node_id.hex() if isinstance(node_id, bytes) else str(node_id)
+
+            if len(self.proxy.tracked_nodes) >= 1:
+                if node_id_str not in self.proxy.tracked_nodes and node_id_str not in self.proxy.ignored_nodes:
+                    logger.info(f"Ignoring discovered node {node_id_str} (max 1 node is allowed)")
+                    self.proxy.ignored_nodes.add(node_id_str)
+                    self.proxy.save_ignored_nodes()
+                return
 
             if node_id_str not in self.proxy.tracked_nodes and node_id_str not in self.proxy.ignored_nodes:
                 server_id = node_id[:-1] + seqidx2id(0)
@@ -278,4 +292,7 @@ class NodeManager:
         """Delegate addnodes call to network proxy."""
         if self.proxy.bluesky_client is None:
             raise RuntimeError("Network client not initialized")
+        if len(self.proxy.tracked_nodes) >= 1:
+            logger.info("Ignoring addnodes request: max 1 node is allowed.")
+            return False
         return self.proxy.bluesky_client.addnodes(count, server_id=server_id)

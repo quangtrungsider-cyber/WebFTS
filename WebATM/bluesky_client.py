@@ -681,13 +681,7 @@ class BlueSkyClient:
         subscribed shared states."""
         logger.info("A new node has been added! request topics")
 
-        # TODO: fix request
-        # Request all BlueSky topics we want to receive add #STACK
-        # topics = ['RESET', 'REQUEST', 'PLOT', 'SHOWDIALOG', 'SIMINFO',
-        #          'SIMSETTINGS', 'TRAILS', 'ROUTEDATA', 'ACDATA', 'DEFWPT',
-        #          'POLY', 'STACKCMDS']
-
-        topics = ["POLY", "STACKCMDS"]
+        topics = ["POLY", "STACKCMDS", "ROUTEDATA"]
 
         logger.debug(
             f"Requesting topics {topics} from all nodes (triggered by new node {safe_decode(node_id)})"

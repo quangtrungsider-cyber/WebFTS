@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0a3c1875-86ef-4941-aa09-ca4ecc6bce57",
+    "name": "New Study",
+    "type": "capacity",
+    "status": "archived",
+    "area": "",
+    "objective": "",
+    "owner": "System",
+    "aixmDatasetId": "",
+    "airacCycle": "",
+    "createdAt": "2026-05-27T15:22:21Z",
+    "updatedAt": "2026-05-27T15:22:29Z",
+    "archivedAt": "2026-05-27T15:22:29Z"
+  }
+]

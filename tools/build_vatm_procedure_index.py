@@ -1,20 +1,45 @@
 #!/usr/bin/env python3
 """
 VATM Airspace Procedures and Holdings Index Generator.
-Generates procedures_index.json from vatm_holding_areas.geojson and individual airport geojsons.
+Generates procedures_index.json from vatm_holding_areas.geojson and individual airport geojsons dynamically.
 
 VATM FTS / Decision-support / Non-operational. Not for operational air traffic control use.
 """
 import json
 import os
 import math
+import re
 
-# Center coordinates of airports for proximity mapping
-AIRPORTS = {
-    "VVTS": {"name": "Tân Sơn Nhất", "lat": 10.818, "lon": 106.662},
-    "VVNB": {"name": "Nội Bài", "lat": 21.221, "lon": 105.806},
-    "VVDN": {"name": "Đà Nẵng", "lat": 16.044, "lon": 108.200}
-}
+def load_airports_coordinates(base_dir):
+    """Loads all airports and coordinates dynamically from vatm_aerodromes.geojson."""
+    airports = {
+        "VVTS": {"name": "Tân Sơn Nhất", "lat": 10.818, "lon": 106.662},
+        "VVNB": {"name": "Nội Bài", "lat": 21.221, "lon": 105.806},
+        "VVDN": {"name": "Đà Nẵng", "lat": 16.044, "lon": 108.200},
+        "VVLT": {"name": "Long Thành", "lat": 10.741, "lon": 106.967}
+    }
+    aerodromes_file = os.path.join(base_dir, "vatm_aerodromes.geojson")
+    if os.path.exists(aerodromes_file):
+        try:
+            with open(aerodromes_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            features = data.get("features", [])
+            for feat in features:
+                props = feat.get("properties", {})
+                geom = feat.get("geometry", {})
+                icao = props.get("icao")
+                name = props.get("name", icao)
+                if icao and geom and geom.get("type") == "Point":
+                    coords = geom.get("coordinates")
+                    if len(coords) >= 2:
+                        airports[icao] = {
+                            "name": name,
+                            "lon": coords[0],
+                            "lat": coords[1]
+                        }
+        except Exception as e:
+            print(f"[WARN] Failed to load airports from {aerodromes_file}: {e}")
+    return airports
 
 def get_distance(lon1, lat1, lon2, lat2):
     R = 6371.0 # Radius of Earth in km
@@ -103,6 +128,10 @@ def parse_procedure(folder_path):
     kmz_idx = -1
     for i, p in enumerate(parts):
         if p.lower().endswith(".kmz"):
+            clean_p = p[:-4]
+            # Skip if it is just the airport ICAO code itself (e.g. VVTS.kmz)
+            if re.match(r"^[A-Z]{4}$", clean_p):
+                continue
             kmz_idx = i
             break
             
@@ -119,7 +148,7 @@ def parse_procedure(folder_path):
         # No KMZ. Relative search from Airport code folder
         apt_idx = -1
         for i, p in enumerate(parts):
-            if p in ["VVTS", "VVNB", "VVDN"]:
+            if re.search(r"^[A-Z]{4}(\.kmz)?$", p, re.IGNORECASE):
                 apt_idx = i
                 break
                 
@@ -158,17 +187,29 @@ def parse_procedure(folder_path):
     return {"name": proc_name, "type": proc_type}
 
 def main():
-    base_dir = r"d:\Coding\Dự án FTS\WebFTS v1\WebATM\static\data\vatm_kmz"
+    base_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "WebATM", "static", "data", "vatm_kmz")
     procedures_dir = os.path.join(base_dir, "procedures_by_airport")
     output_path = os.path.join(base_dir, "procedures_index.json")
     
     print("VATM Index Builder Started...")
     
-    index = {
-        "VVTS": {"SID": {}, "STAR": {}, "IAP": {}, "HOLDING": {}},
-        "VVNB": {"SID": {}, "STAR": {}, "IAP": {}, "HOLDING": {}},
-        "VVDN": {"SID": {}, "STAR": {}, "IAP": {}, "HOLDING": {}}
-    }
+    # Load all airports coordinates dynamically
+    airports_coords = load_airports_coordinates(base_dir)
+    
+    # Dynamically scan procedures_by_airport directory to find all airports
+    geojson_files = [f for f in os.listdir(procedures_dir) if f.startswith("vatm_procedures_") and f.endswith(".geojson")]
+    airports_list = []
+    for filename in sorted(geojson_files):
+        match = re.match(r"^vatm_procedures_([A-Z]{4})\.geojson$", filename)
+        if match:
+            airports_list.append(match.group(1))
+            
+    print(f"Found {len(airports_list)} airports with procedures data: {airports_list}")
+    
+    # Initialize index dynamically
+    index = {}
+    for apt in airports_list:
+        index[apt] = {"SID": {}, "STAR": {}, "IAP": {}, "HOLDING": {}}
     
     # 1. Parse Holding Areas
     holding_file = os.path.join(base_dir, "vatm_holding_areas.geojson")
@@ -192,7 +233,7 @@ def main():
             # Geographic distance classification
             min_dist = float("inf")
             nearest_apt = "VVTS"
-            for apt, coord in AIRPORTS.items():
+            for apt, coord in airports_coords.items():
                 dist = get_distance(center["lon"], center["lat"], coord["lon"], coord["lat"])
                 if dist < min_dist:
                     min_dist = dist
@@ -201,6 +242,10 @@ def main():
             base_name = extract_holding_base_name(props.get("name"), props.get("folder_path"))
             holding_name = f"Holding {base_name}"
             
+            # Ensure nearest_apt is initialized in index
+            if nearest_apt not in index:
+                index[nearest_apt] = {"SID": {}, "STAR": {}, "IAP": {}, "HOLDING": {}}
+                
             if holding_name not in index[nearest_apt]["HOLDING"]:
                 index[nearest_apt]["HOLDING"][holding_name] = []
             if feat_id not in index[nearest_apt]["HOLDING"][holding_name]:
@@ -210,8 +255,8 @@ def main():
     else:
         print(f"Holding areas file not found: {holding_file}")
         
-    # 2. Parse Procedures
-    for apt in ["VVTS", "VVNB", "VVDN"]:
+    # 2. Parse Procedures for all found airports
+    for apt in airports_list:
         proc_file = os.path.join(procedures_dir, f"vatm_procedures_{apt}.geojson")
         if os.path.exists(proc_file):
             print(f"Parsing Procedures for {apt}...")
@@ -224,21 +269,51 @@ def main():
                 feat_id = props.get("id")
                 if not feat_id:
                     continue
-                    
-                folder_path = props.get("folder_path")
-                proc = parse_procedure(folder_path)
-                if not proc or not proc["name"]:
+
+                # Holding patterns are frequently embedded INSIDE a SID/STAR/IAP
+                # group's own features (e.g. an IAP's missed-approach hold, folder
+                # path ".../11L ILS/Holding/Holding LATUS") rather than living in
+                # the separate vatm_holding_areas.geojson file handled above. Route
+                # these into the dedicated HOLDING bucket instead of lumping them
+                # into their parent procedure's checkbox -- they are a distinct,
+                # independently-relevant procedure (a holding pattern), not part of
+                # the route itself.
+                own_name = props.get("name") or ""
+                folder_path = props.get("folder_path") or ""
+
+                # "Controlling obstacle" sub-features (a Point + an "Area" ring
+                # marking the tallest/most limiting obstacle on a leg) are chart
+                # annotations, not part of the flyable route -- drop them
+                # entirely so checking a procedure never renders them as a
+                # circle on the map.
+                if "controlling obstacle" in folder_path.lower():
                     continue
-                    
-                ptype = proc["type"]
-                pname = proc["name"]
-                
+
+                if own_name.lower().startswith("holding") or "/holding/" in folder_path.lower():
+                    base_name = extract_holding_base_name(own_name, folder_path)
+                    holding_name = f"Holding {base_name}"
+                    if holding_name not in index[apt]["HOLDING"]:
+                        index[apt]["HOLDING"][holding_name] = []
+                    if feat_id not in index[apt]["HOLDING"][holding_name]:
+                        index[apt]["HOLDING"][holding_name].append(feat_id)
+                    continue
+
+                ptype = props.get("procedure_type")
+                pname = props.get("procedure_name")
+
+                if not ptype or not pname:
+                    proc = parse_procedure(folder_path)
+                    if not proc or not proc["name"]:
+                        continue
+                    ptype = proc["type"]
+                    pname = proc["name"]
+
                 if pname not in index[apt][ptype]:
                     index[apt][ptype][pname] = []
                 if feat_id not in index[apt][ptype][pname]:
                     index[apt][ptype][pname].append(feat_id)
         else:
-            print(f"Procedure file not found for {apt}: {proc_file}")
+            print(f"[WARN] Procedure file not found for {apt}: {proc_file}")
             
     # Write Index JSON
     with open(output_path, "w", encoding="utf-8") as f:

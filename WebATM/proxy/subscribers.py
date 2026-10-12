@@ -64,7 +64,7 @@ def register_subscribers():
         )
 
         logger.debug("Registering ROUTEDATA subscriber...")
-        proxy.bluesky_client.subscribe("ROUTEDATA", on_routedata_received, actonly=True)
+        proxy.bluesky_client.subscribe("ROUTEDATA", on_routedata_received)
         logger.debug(
             f"ROUTEDATA subscribers: {len(proxy.bluesky_client.subscriber.subscribers['ROUTEDATA'])}"
         )

@@ -21,16 +21,27 @@
 </head>
 
 <body>
-    <div class="main-container">
+    <div id="react-root"></div>
+    <div class="main-container" id="legacy-simulation-container" style="display: none;">
         <!-- Header -->
         <header class="header">
             <div class="header-left">
+                <button id="exit-sim-btn" class="control-btn" style="background-color: #d32f2f; color: white; margin-right: 15px; border-radius: 4px; font-weight: bold; padding: 0 12px; display: flex; align-items: center; gap: 6px; border: 1px solid #b71c1c;" title="Thoát Simulation và quay về Menu">
+                    <i class="fa-solid fa-arrow-left"></i> Thoát
+                </button>
                 <img src="{{ url_for('static', filename='vatm_logo.png') }}" alt="VATM Logo" style="height: 38px; margin-right: 10px; border-radius: 4px; border: 1px solid #404040; background-color: #ffffff; padding: 2px;">
                 <h1>VATM Fast-Time Simulation Platform</h1>
                 <div class="header-separator">|</div>
                 <div class="connection-statuses">
                     <span id="bluesky-connection-status" class="status-waiting">Not Configured</span>
                 </div>
+            </div>
+            <div class="header-center">
+                <div class="airport-search-container">
+                    <i class="fa-solid fa-magnifying-glass airport-search-icon"></i>
+                    <input type="text" id="airport-search-input" class="airport-search-input" placeholder="Tìm sân bay (ICAO/IATA)..." autocomplete="off" maxlength="8">
+                </div>
+                <span id="airport-search-feedback" class="airport-search-feedback"></span>
             </div>
             <div class="header-right">
                 <div class="sim-info">
@@ -47,6 +58,8 @@
                     <option value="4">4x</option>
                     <option value="8">8x</option>
                     <option value="16">16x</option>
+                    <option value="32">32x</option>
+                    <option value="64">64x</option>
                 </select>
                 <div class="header-separator">|</div>
                 <div class="dropdown-container">
@@ -86,7 +99,6 @@
                             </div>
                             <div class="node-actions">
                                 <button id="refresh-nodes" class="nav-btn">Refresh</button>
-                                <button id="add-node" class="nav-btn">Add Node</button>
                             </div>
                             <div class="node-list" id="node-list">
                                 <!-- Node details will be populated here -->
@@ -109,6 +121,7 @@
                                 <button id="draw-route-btn" class="nav-btn disabled" disabled>Draw Route</button>
                                 <span class="draw-route-disabled-tooltip" role="tooltip">Please select an aircraft before adding a route</span>
                             </span>
+                            <button id="range-bearing-btn" class="nav-btn" title="Measure Distance and Bearing (Shortcut: R)">Range & Bearing</button>
                         </div>
                         <div class="nav-controls" style="margin-top: 20px;">
                             <button class="nav-btn" onclick="zoomIn()">Zoom In</button>
@@ -145,29 +158,7 @@
                     </div>
                 </div>
 
-                <!-- Airspace Data Panel -->
-                <div class="panel airspace-panel">
-                    <div class="panel-header">
-                        <h3>🛰️ Airspace Data</h3>
-                        <button class="collapse-btn" data-target="airspace-content">▼</button>
-                    </div>
-                    <div class="panel-content" id="airspace-content">
-                        <div class="tree-search-wrapper" style="margin-bottom: 8px; display: flex; gap: 6px;">
-                            <input type="text" id="airspace-search" placeholder="Search procedures..." style="flex: 1; padding: 5px 8px; border-radius: 6px; border: 1px solid rgba(148,163,184,.2); background: rgba(15,23,42,.6); color: #fff; font-size: 11px;">
-                            <button id="airspace-clear-search" class="nav-btn" style="padding: 5px 8px; font-size: 11px;">✕</button>
-                        </div>
-                        <div class="tree-bulk-actions" style="margin-bottom: 8px; display: flex; gap: 8px;">
-                            <button id="airspace-select-all" class="nav-btn" style="flex: 1; font-size: 10px; padding: 4px;">Select All Visible</button>
-                            <button id="airspace-clear-all" class="nav-btn" style="flex: 1; font-size: 10px; padding: 4px;">Clear All</button>
-                        </div>
-                        <div id="airspace-tree-container" class="airspace-tree" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
-                            <div style="text-align: center; color: #64748b; font-size: 11px; padding: 12px;">Loading airspace data...</div>
-                        </div>
-                        <div class="disclaimer" style="font-size: 8px; color: #64748b; text-align: center; margin-top: 8px; border-top: 1px solid rgba(148,163,184,.12); padding-top: 6px; line-height: 1.3;">
-                            Dữ liệu VATM FTS<br/>Non-operational. Not for operational ATC use.
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Display options -->
                 <div class="panel display-panel">
@@ -225,22 +216,6 @@
                                 <input type="checkbox" id="show-route-points" checked>
                                 Route Points
                             </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="show-shapes" checked>
-                                Shapes
-                            </label>
-                            <label class="checkbox-label route-sub-option" id="show-shape-fill-container">
-                                <input type="checkbox" id="show-shape-fill" checked>
-                                Shape Fill
-                            </label>
-                            <label class="checkbox-label route-sub-option" id="show-shape-lines-container">
-                                <input type="checkbox" id="show-shape-lines" checked>
-                                Shape Lines
-                            </label>
-                            <label class="checkbox-label route-sub-option" id="show-shape-labels-container">
-                                <input type="checkbox" id="show-shape-labels" checked>
-                                Shape Labels
-                            </label>
 
                             <!-- Aircraft Display Options -->
                             <div class="aircraft-appearance-controls">
@@ -251,12 +226,13 @@
                                         <option value="drone">Drone</option>
                                         <option value="triangle">Triangle</option>
                                         <option value="aircraft">Aircraft</option>
+                                        <option value="aircraft3d">Aircraft (3D look)</option>
                                     </select>
                                 </div>
                                 <div class="unit-controls" style="margin-bottom: 8px;">
                                     <label for="aircraft-speed-type-select">Speed Type:</label>
                                     <select id="aircraft-speed-type-select">
-                                        <option value="cas" selected>CAS (Calibrated Airspeed)</option>
+                                        <option value="cas" selected>IAS (Indicated Airspeed)</option>
                                         <option value="tas">TAS (True Airspeed)</option>
                                         <option value="gs">GS (Ground Speed)</option>
                                     </select>
@@ -285,10 +261,14 @@
                                         <input type="checkbox" id="show-3d-overlay">
                                         <label for="show-3d-overlay">Show 3D aircraft</label>
                                     </div>
+                                    <div id="aircraft-3d-auto-size-container" class="checkbox-control" style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="aircraft-3d-auto-size">
+                                        <label for="aircraft-3d-auto-size" title="Keep the 3D model's on-screen size constant at every zoom level, the same way the 2D icon behaves. Turn off to have it scale with true map distance/zoom instead.">Auto Size (constant, like 2D)</label>
+                                    </div>
                                     <div id="aircraft-3d-scale-container" class="color-controls" style="display: none;">
                                         <label for="aircraft-3d-scale">3D Aircraft Scale:</label>
                                         <div>
-                                            <input type="text" id="aircraft-3d-scale" value="2.0" style="width: 60px;" 
+                                            <input type="text" id="aircraft-3d-scale" value="2.0" style="width: 60px;"
                                                    placeholder="2.0" pattern="[0-9]*\.?[0-9]*" title="Enter positive number (e.g., 2.0)">
                                             <span>x</span>
                                         </div>
@@ -297,6 +277,13 @@
                                         <label for="aircraft-model-select">Aircraft Model:</label>
                                         <select id="aircraft-model-select"></select>
                                     </div>
+                                    <div id="show-4d-corridor-container" class="checkbox-control" style="margin-top: 8px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="show-4d-corridor">
+                                        <label for="show-4d-corridor">Show 4D Corridor</label>
+                                    </div>
+                                    <button id="show-all-4d-trajectories-btn" class="nav-btn" style="width: 100%;" title="Show 4D trajectories (past + predicted) for every aircraft, not just the selected one(s)">
+                                        Show All 4D Trajectories
+                                    </button>
                                 </div>
                             </div>
                             <div class="sizes-toggle-control">
@@ -362,18 +349,6 @@
                                 <div class="color-controls">
                                     <label for="route-lines-color">Route Lines:</label>
                                     <input type="color" id="route-lines-color" value="#ff00ff">
-                                </div>
-                                <div class="color-controls">
-                                    <label for="shape-fill-color">Shape Fill:</label>
-                                    <input type="color" id="shape-fill-color" value="#ff00ff">
-                                </div>
-                                <div class="color-controls">
-                                    <label for="shape-lines-color">Shape Lines:</label>
-                                    <input type="color" id="shape-lines-color" value="#ff00ff">
-                                </div>
-                                <div class="color-controls">
-                                    <label for="shape-labels-color">Shape Labels:</label>
-                                    <input type="color" id="shape-labels-color" value="#ff00ff">
                                 </div>
                                 <div class="color-controls" style="margin-top: 10px;">
                                     <button id="reset-colors-btn" class="nav-btn" style="width: 100%;">Reset to
@@ -474,7 +449,7 @@
                             total</div>
                         <div>Intrusions: <span id="intrusion-count">0</span> current, <span
                                 id="intrusion-total">0</span> total</div>
-                        <div>Cursor: <span id="cursor-position">--</span></div>
+                        <div>Cursor: <span id="cursor-position" title="Nhấn phím C để copy tọa độ này">--</span></div>
                     </div>
                     <div style="display: flex; gap: 8px;">
                         <button id="projection-toggle" class="projection-toggle-btn"
@@ -482,6 +457,25 @@
                         <button id="map-fullscreen-floating-btn" class="projection-toggle-btn"
                             title="Toggle Fullscreen Map"><i class="fa-solid fa-expand"></i></button>
                     </div>
+                </div>
+
+                <!-- Floating sim controls bar — visible only in fullscreen mode -->
+                <div id="fullscreen-sim-bar">
+                    <span id="fs-sim-time">--:--:--</span>
+                    <span id="fs-sim-rate">Rate: 1x</span>
+                    <div class="fs-sep"></div>
+                    <button id="fs-play-btn" class="fs-ctrl-btn" title="Start"><i class="fa-solid fa-play"></i></button>
+                    <button id="fs-play-pause-btn" class="fs-ctrl-btn" title="Pause/Resume"><i class="fa-solid fa-pause"></i></button>
+                    <button id="fs-reset-btn" class="fs-ctrl-btn" title="Reset"><i class="fa-solid fa-rotate-right"></i></button>
+                    <select id="fs-speed-select" class="fs-speed-select">
+                        <option value="1" selected>1x</option>
+                        <option value="2">2x</option>
+                        <option value="4">4x</option>
+                        <option value="8">8x</option>
+                        <option value="16">16x</option>
+                        <option value="32">32x</option>
+                        <option value="64">64x</option>
+                    </select>
                 </div>
 
             </div>
@@ -616,6 +610,20 @@
                         <small class="setting-help">Current status of the VATM server. Click "Check Status" to verify server availability.</small>
                     </div>
 
+                    <!-- Connection self-repair -->
+                    <div class="setting-group">
+                        <label>Connection trouble?</label>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <button id="reconnect-engine-btn" class="btn-secondary">Reconnect</button>
+                            <button id="restart-engine-btn" class="btn-secondary" style="border-color: #ffc107; color: #ffc107;">Restart Vatm-Engine</button>
+                        </div>
+                        <small class="setting-help">
+                            <strong>Reconnect</strong>: rebuilds just the web app's connection, safe at any time (does not affect a running scenario).
+                            <strong>Restart Vatm-Engine</strong>: kills and relaunches the whole simulation engine — use only if Reconnect doesn't help. This <strong>discards any scenario currently running</strong>, and only works when the engine runs on this same machine.
+                        </small>
+                        <div id="engine-repair-status" style="margin-top: 6px; font-size: 12px; display: none;"></div>
+                    </div>
+
                 </div>
 
                 <!-- VATM File Management Section -->
@@ -667,7 +675,7 @@
                     <div class="setting-group">
                         <label for="maptiler-api-key-input">MapTiler API Key (optional):</label>
                         <input type="text" id="maptiler-api-key-input"
-                            placeholder="Enter your MapTiler API key">
+                            placeholder="Enter your MapTiler API key" value="r7j9fOc6Pmz3zl0yllGI">
                         <small class="setting-help">Required for MapTiler styles.</small>
                     </div>
 
@@ -675,15 +683,15 @@
                         <label for="map-style-select-modal">Map Style:</label>
                         <select id="map-style-select-modal">
                             <option value="">Select a map style...</option>
-                            <option value="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json"
-                                selected>Dark Matter (No Labels)</option>
+                            <option value="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json">Dark Matter (No Labels)</option>
                             <option value="/static/map/offline-style.json">Offline Dark (Local PMTiles)</option>
                             <option value="/static/map/offline-style-light.json">Offline Light (Local PMTiles)</option>
                             <option value="https://demotiles.maplibre.org/style.json">MapLibre Demo</option>
-                            <option value="https://api.maptiler.com/maps/streets/style.json?key=">MapTiler Streets</option>
-                            <option value="https://api.maptiler.com/maps/satellite/style.json?key=">MapTiler Satellite</option>
-                            <option value="https://api.maptiler.com/maps/hybrid/style.json?key=">MapTiler Hybrid</option>
-                            <option value="https://api.maptiler.com/maps/basic/style.json?key=">MapTiler Basic</option>
+                            <option value="https://api.maptiler.com/maps/streets/style.json?key=">MapTiler Streets (Key Required)</option>
+                            <option value="/static/map/esri-satellite.json">Esri Satellite (Free / No Key)</option>
+                            <option value="https://api.maptiler.com/maps/satellite/style.json?key=" selected>MapTiler Satellite (Key Required)</option>
+                            <option value="https://api.maptiler.com/maps/hybrid/style.json?key=">MapTiler Hybrid (Key Required)</option>
+                            <option value="https://api.maptiler.com/maps/basic/style.json?key=">MapTiler Basic (Key Required)</option>
                             <option value="custom">Custom Style JSON...</option>
                         </select>
                         <button id="apply-map-style-btn" class="btn-secondary"
@@ -1066,7 +1074,7 @@
                         <p>Example settings configuration:</p>
                     </div>
                     <div class="settings-content">
-                        <pre id="settings-text" readonly># Network ports used by BlueSky
+                        <pre id="settings-text" readonly># Network ports used by Vatm-Engine
 event_port=11000
 stream_port=11001
 
@@ -1115,7 +1123,7 @@ performance_dt = 1.0
 # FMS timestep [seconds]
 fms_dt = 1.0
 
-# Prefer compiled BlueSky modules (cgeo, casas)
+# Prefer compiled Vatm-Engine modules (cgeo, casas)
 prefer_compiled = True
 
 # Limit the max number of cpu nodes for parallel simulation
@@ -1181,29 +1189,26 @@ stack_background_color = 102, 102, 102</pre>
 
     <!-- Download Logs Modal -->
     <div id="download-logs-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Download Simulation Logs</h3>
-                <button class="modal-close" id="download-logs-close">&times;</button>
+        <div class="modal-content" style="max-width: 460px; border-radius: 12px; border: 1px solid rgba(0, 102, 204, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
+            <div class="modal-header" style="background-color: #0d1b2a; border-bottom: 1px solid rgba(0, 102, 204, 0.2); padding: 14px 16px;">
+                <h3 style="color: #00ccff; display: flex; align-items: center; gap: 8px; margin: 0; font-size: 16px;">
+                    <i class="fa-solid fa-file-word"></i> Xuất Báo Cáo Kết Quả Mô Phỏng
+                </h3>
+                <button class="modal-close" id="download-logs-close" style="color: #00ccff;">&times;</button>
             </div>
-            <div class="modal-body">
-                <div class="setting-group">
-                    <div class="demo-message">
-                        <span class="demo-badge">UNDER DEVELOPMENT</span>
-                        <p><strong>Downloading simulation logs is currently under development.</strong></p>
-                        <p>When fully developed, you will be able to:</p>
-                        <ul style="margin: 10px 0; padding-left: 20px; color: #cccccc;">
-                            <li>Download complete simulation logs</li>
-                            <li>Export aircraft trajectory data</li>
-                            <li>Save conflict detection results</li>
-                            <li>Export performance metrics</li>
-                        </ul>
-                        <p><em>This feature will allow comprehensive analysis of your simulation results.</em></p>
-                    </div>
+            <div class="modal-body" style="padding: 20px; color: #e0e0e0; font-size: 13px; line-height: 1.5; background-color: #161616;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="font-size: 48px; color: #00ccff; margin-bottom: 10px;"><i class="fa-regular fa-file-word"></i></div>
+                    <p style="color: #aaaaaa; margin: 5px 0 15px 0;">Hệ thống FTS sẽ tự động thu thập nhật ký bay (FLSTLOG) và nhật ký xung đột phân cách (CONFLOG) mới nhất để xuất thành báo cáo Microsoft Word chuyên nghiệp.</p>
                 </div>
+                
+                <button id="download-word-report-btn" class="btn-primary" style="width: 100%; padding: 12px; font-weight: bold; background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc); border: none; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; color: white;">
+                    <i class="fa-solid fa-download"></i> Tải Báo Cáo Kết Quả Word (.docx)
+                </button>
+                <div id="download-report-status" style="margin-top: 12px; font-size: 12px; text-align: center; color: #00ffcc;"></div>
             </div>
-            <div class="modal-footer">
-                <button id="download-logs-ok" class="btn-primary">OK</button>
+            <div class="modal-footer" style="background-color: #1a1a1a; border-top: 1px solid #333; padding: 12px 16px; display: flex; justify-content: flex-end;">
+                <button id="download-logs-ok" class="btn-secondary" style="padding: 6px 16px; font-size: 12px;">Đóng</button>
             </div>
         </div>
     </div>
@@ -1269,6 +1274,28 @@ stack_background_color = 102, 102, 102</pre>
             </div>
             <div class="modal-footer">
                 <button id="add-node-demo-ok" class="btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beautiful Confirmation Modal -->
+    <div id="confirm-modal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 400px; border-radius: 12px; border: 1px solid rgba(255, 77, 77, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
+            <div class="modal-header" style="background-color: #1a0f0f; border-bottom: 1px solid rgba(255, 77, 77, 0.2); padding: 14px 16px;">
+                <h3 style="color: #ff4d4d; display: flex; align-items: center; gap: 8px; margin: 0; font-size: 16px;">
+                    <i class="fas fa-exclamation-triangle"></i> Xác nhận xóa Node
+                </h3>
+                <button class="modal-close" id="confirm-modal-close" style="color: #ff4d4d;">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 20px; color: #e0e0e0; font-size: 13px; line-height: 1.5; background-color: #161616;">
+                <p id="confirm-modal-message" style="margin: 0;"></p>
+                <div style="margin-top: 10px; padding: 8px; background-color: rgba(255, 77, 77, 0.05); border-left: 3px solid #ff4d4d; border-radius: 4px; font-size: 11px; color: #ff9999;">
+                    Lưu ý: Hành động này sẽ loại bỏ Node khỏi danh sách theo dõi.
+                </div>
+            </div>
+            <div class="modal-footer" style="background-color: #1a1a1a; border-top: 1px solid #333; padding: 12px 16px;">
+                <button id="confirm-modal-cancel" class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Hủy bỏ</button>
+                <button id="confirm-modal-submit" class="btn-primary" style="background-color: #ff4d4d; border-color: #ff4d4d; padding: 6px 12px; font-size: 12px;">Đồng ý xóa</button>
             </div>
         </div>
     </div>

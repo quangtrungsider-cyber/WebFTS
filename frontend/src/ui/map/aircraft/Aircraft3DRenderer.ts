@@ -6,6 +6,7 @@ import { CustomLayer3D } from '../rendering/CustomLayer3D';
 import type { IEntityRenderer } from '../rendering/IEntityRenderer';
 import type { AircraftData, DisplayOptions } from '../../../data/types';
 import type { StateManager } from '../../../core/StateManager';
+import { DataProcessor } from '../../../data/DataProcessor';
 import { AUTO_MODEL_SENTINEL, getModelForAircraftType } from '../../../data/aircraftCategories';
 import {
     getDimensionsForAircraftType,
@@ -222,6 +223,23 @@ export class Aircraft3DRenderer implements IEntityRenderer<AircraftData> {
     getType(): '3d' {
         return '3d';
     }
+
+    /**
+     * Register a callback fired when the user clicks a 3D-anchored aircraft
+     * label (the HTML overlay, not the model itself -- clicks on the model
+     * are already handled by the always-present 2D aircraft-points layer at
+     * the same screen position). Passed through unchanged to MapOverlay so
+     * it can be wired to the same selection/trajectory-toggle logic used by
+     * AircraftInteractionManager's map click handler.
+     */
+    setLabelClickHandler(handler: (aircraftId: string, ctrlOrMeta: boolean) => void): void {
+        this.customLayer.setLabelClickHandler(handler);
+    }
+
+    /** See Aircraft3DCustomLayer.labelContextMenuHandler. */
+    setLabelContextMenuHandler(handler: (aircraftId: string, clientX: number, clientY: number) => void): void {
+        this.customLayer.setLabelContextMenuHandler(handler);
+    }
 }
 
 /**
@@ -258,6 +276,39 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
     // created without a StateManager (e.g. in tests).
     private stateManager: StateManager | null;
 
+    // HTML overlay used to render each aircraft's Callsign/type/speed/altitude
+    // label anchored to its actual 3D screen position (unlike the flat 2D
+    // symbol-layer label, which stays pinned to the ground point and visually
+    // separates from the 3D model once airborne). Plain absolutely-positioned
+    // divs, repositioned every render frame from the mesh's projected screen
+    // coordinates -- simpler and cheaper than a Three.js CSS2DRenderer setup
+    // for a handful of short text labels.
+    private labelOverlayContainer: HTMLDivElement | null = null;
+    private labelDivById: Map<string, HTMLDivElement> = new Map();
+    private labelTextById: Map<string, string> = new Map();
+    private readonly projectionScratch = new THREE.Vector3();
+    // Fired when a label div is clicked -- wired by MapOverlay to the same
+    // selection/trajectory-toggle logic AircraftInteractionManager uses for
+    // clicks on the (always-present, invisible-when-3D) 2D aircraft-points
+    // layer, so clicking the label behaves identically to clicking the model.
+    private labelClickHandler: ((aircraftId: string, ctrlOrMeta: boolean) => void) | null = null;
+    // Right-click on the label div -- the label sits on top of the map
+    // canvas as its own DOM element, so a contextmenu on the (invisible)
+    // 2D aircraft-points layer underneath does NOT fire when the user
+    // right-clicks the label text itself. Wired by MapOverlay to
+    // AircraftContextMenu.open() with the label's own client coordinates.
+    private labelContextMenuHandler: ((aircraftId: string, clientX: number, clientY: number) => void) | null = null;
+
+    /** See labelClickHandler. */
+    setLabelClickHandler(handler: (aircraftId: string, ctrlOrMeta: boolean) => void): void {
+        this.labelClickHandler = handler;
+    }
+
+    /** See labelContextMenuHandler. */
+    setLabelContextMenuHandler(handler: (aircraftId: string, clientX: number, clientY: number) => void): void {
+        this.labelContextMenuHandler = handler;
+    }
+
     constructor(displayOptions: DisplayOptions, stateManager: StateManager | null) {
         super('aircraft-3d-layer');
         this.displayOptions = displayOptions;
@@ -291,12 +342,167 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
         // lazily as aircraft arrive with recognized ICAO codes.
         this.loadModel(this.modelPath);
 
+        this.ensureLabelOverlayContainer();
+
         // Process any pending aircraft data that arrived before scene was ready
         if (this.pendingAircraftData) {
             logger.debug('Aircraft3DCustomLayer', 'Processing aircraft data that arrived before scene was ready');
             this.updateAircraft(this.pendingAircraftData);
             this.pendingAircraftData = null;
         }
+    }
+
+    /**
+     * Creates (once) the full-cover, pointer-events-none div that hosts one
+     * absolutely-positioned label per tracked aircraft, appended as the last
+     * child of the map container so it renders above the WebGL canvas.
+     */
+    private ensureLabelOverlayContainer(): void {
+        if (this.labelOverlayContainer || !this.map) return;
+
+        const container = document.createElement('div');
+        container.style.position = 'absolute';
+        container.style.top = '0';
+        container.style.left = '0';
+        container.style.width = '100%';
+        container.style.height = '100%';
+        container.style.overflow = 'hidden';
+        container.style.pointerEvents = 'none';
+        this.map.getContainer().appendChild(container);
+        this.labelOverlayContainer = container;
+    }
+
+    private removeLabelOverlayContainer(): void {
+        if (this.labelOverlayContainer?.parentElement) {
+            this.labelOverlayContainer.parentElement.removeChild(this.labelOverlayContainer);
+        }
+        this.labelOverlayContainer = null;
+        this.labelDivById.clear();
+        this.labelTextById.clear();
+    }
+
+    private getOrCreateLabelDiv(id: string): HTMLDivElement | null {
+        if (!this.labelOverlayContainer) return null;
+        let div = this.labelDivById.get(id);
+        if (!div) {
+            div = document.createElement('div');
+            div.style.position = 'absolute';
+            div.style.transform = 'translate(-50%, 14px)'; // sits below the model's anchor point, matching the 2D label's offset from its icon
+            div.style.whiteSpace = 'pre-line';
+            div.style.textAlign = 'center';
+            div.style.lineHeight = '1.25';
+            // Matches the 2D label layer's 'text-font' (Open Sans Regular),
+            // falling back gracefully if that family isn't loaded as a web font.
+            div.style.fontFamily = '"Open Sans", "Helvetica Neue", Arial, sans-serif';
+            div.style.fontWeight = '400';
+            // Clickable like the aircraft-points layer it stands in for, even
+            // though the container it's inside is pointer-events:none so map
+            // panning/dragging elsewhere on the canvas is unaffected.
+            div.style.pointerEvents = 'auto';
+            div.style.cursor = 'pointer';
+            div.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.labelClickHandler?.(id, e.ctrlKey || e.metaKey);
+            });
+            div.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.labelContextMenuHandler?.(id, e.clientX, e.clientY);
+            });
+            this.labelOverlayContainer.appendChild(div);
+            this.labelDivById.set(id, div);
+        }
+        return div;
+    }
+
+    private removeLabelDiv(id: string): void {
+        const div = this.labelDivById.get(id);
+        if (div?.parentElement) {
+            div.parentElement.removeChild(div);
+        }
+        this.labelDivById.delete(id);
+        this.labelTextById.delete(id);
+    }
+
+    /**
+     * Repositions every tracked aircraft's label div to the mesh's current
+     * projected screen position. Called once per render frame (from
+     * `updateScene`) so labels track smoothly during pan/zoom/rotate, not
+     * just on the ~5Hz aircraft data tick.
+     */
+    private updateLabelPositions(): void {
+        if (!this.labelOverlayContainer || !this.map) return;
+
+        const showLabels = this.displayOptions.showAircraftLabels;
+        if (!showLabels) {
+            this.labelDivById.forEach((div) => { div.style.display = 'none'; });
+            return;
+        }
+
+        const canvas = this.map.getCanvas();
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+        if (width === 0 || height === 0) return;
+
+        this.scene.updateMatrixWorld(true);
+
+        this.aircraft.forEach((aircraftMesh, id) => {
+            const div = this.getOrCreateLabelDiv(id);
+            if (!div) return;
+
+            const text = this.labelTextById.get(id);
+            if (!text) {
+                div.style.display = 'none';
+                return;
+            }
+
+            aircraftMesh.mesh.getWorldPosition(this.projectionScratch);
+            this.projectionScratch.project(this.camera);
+
+            if (this.projectionScratch.z < -1 || this.projectionScratch.z > 1) {
+                div.style.display = 'none'; // behind the camera / outside clip space
+                return;
+            }
+
+            const screenX = (this.projectionScratch.x * 0.5 + 0.5) * width;
+            const screenY = (1 - (this.projectionScratch.y * 0.5 + 0.5)) * height;
+
+            // Same precedence as the 2D label layer's text-color expression:
+            // selected > in-conflict > default label color.
+            const data = aircraftMesh.data;
+            const color = data.selected
+                ? (this.displayOptions.aircraftSelectedColor || '#ff6600')
+                : data.inconf
+                    ? (this.displayOptions.aircraftConflictColor || '#ffa000')
+                    : (this.displayOptions.aircraftLabelColor || '#0066cc');
+
+            div.textContent = text;
+            const fontSize = this.displayOptions.mapLabelsTextSize || 12;
+            div.style.color = color;
+            div.style.fontSize = `${fontSize}px`;
+            // White halo behind the glyphs (matches the 2D layer's
+            // text-halo-color/width) using only text-shadow, not
+            // -webkit-text-stroke. text-stroke paints its outline on top of
+            // the fill and, at these small font sizes, a stroke wide enough
+            // to read as a halo is wider than the glyphs' own strokes --
+            // it swallows the fill color entirely and the label reads as
+            // near-white/illegible regardless of the configured color.
+            // text-shadow only ever paints behind the glyph, so the colored
+            // fill stays fully visible on top. Stacking several small
+            // offsets (instead of one blurred shadow) gives a solid-looking
+            // outline rather than a soft glow.
+            div.style.removeProperty('-webkit-text-stroke');
+            const haloWidth = Math.max(1, fontSize / 12);
+            div.style.textShadow = [
+                `${haloWidth}px 0 0 #fff`, `-${haloWidth}px 0 0 #fff`,
+                `0 ${haloWidth}px 0 #fff`, `0 -${haloWidth}px 0 #fff`,
+                `${haloWidth}px ${haloWidth}px 0 #fff`, `-${haloWidth}px -${haloWidth}px 0 #fff`,
+                `${haloWidth}px -${haloWidth}px 0 #fff`, `-${haloWidth}px ${haloWidth}px 0 #fff`
+            ].join(', ');
+            div.style.left = `${screenX}px`;
+            div.style.top = `${screenY}px`;
+            div.style.display = 'block';
+        });
     }
 
     /**
@@ -448,6 +654,63 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
         return this.displayOptions.aircraft3DScale || 2.0;
     }
 
+    // Below this altitude the aircraft is considered "on the ground" (taxiing,
+    // lined up, rolling) rather than airborne. 100ft AGL, matching the user's
+    // own reference point (revised down from an initial 300ft, which still
+    // triggered true-to-life scale while visibly airborne on short final).
+    // BlueSky reports alt as MSL, but this project already treats it as if
+    // field elevation were 0 for ground-phase checks elsewhere (see e.g.
+    // compliance_trajectory_derivation.py's TOUCHDOWN_MAX_AGL_FT), so the
+    // same simplification is used here. Only consulted when aircraft3DAutoSize
+    // is off (see effectiveScaleMultiplier) -- auto-size ignores ground/air
+    // phase entirely, matching the 2D icon's constant size at all times.
+    private static readonly GROUND_SCALE_ALTITUDE_THRESHOLD_M = 30.48; // 100 ft
+
+    // Zoom level at which the exaggerated size (userMultiplier * baseScaleFactor,
+    // with no zoom compensation applied) looks the same as it always has --
+    // chosen to match the app's typical default view. Below/above this zoom,
+    // zoomCompensationFactor() scales inversely with the map's natural
+    // Mercator magnification so the aircraft's ON-SCREEN pixel size stays
+    // constant across zoom levels, matching how the 2D icon layer behaves
+    // (icon-size there is a flat constant, never a zoom expression).
+    private static readonly REFERENCE_ZOOM = 12;
+
+    /**
+     * Inverse of the map's natural Mercator magnification relative to
+     * REFERENCE_ZOOM. Multiplying a mesh's meter-space scale by this value
+     * cancels out the zoom-dependent growth that MapLibre's camera matrix
+     * would otherwise apply, so the projected screen size stays constant as
+     * the user zooms in/out -- the standard technique for "billboard-style"
+     * constant-screen-size 3D objects anchored to real-world coordinates.
+     */
+    private zoomCompensationFactor(): number {
+        const zoom = this.map?.getZoom?.() ?? Aircraft3DCustomLayer.REFERENCE_ZOOM;
+        return Math.pow(2, Aircraft3DCustomLayer.REFERENCE_ZOOM - zoom);
+    }
+
+    /**
+     * Full multiplier applied on top of a mesh's real-world-calibrated size
+     * (i.e. everything callers used to apply as `userMultiplier * baseScaleFactor`).
+     *
+     * Two modes, toggled by the "Auto Size" checkbox (displayOptions.aircraft3DAutoSize):
+     *  - Auto ON (default): constant on-screen pixel size at any zoom level,
+     *    ground and airborne alike -- matches the 2D icon layer's fixed
+     *    icon-size, via zoomCompensationFactor().
+     *  - Auto OFF: original behavior -- true-to-life (1.0) on the ground so a
+     *    taxiing aircraft is correctly proportioned to the runway/taxiway
+     *    width, and the user's visibility-exaggeration setting airborne, both
+     *    following the map's true Mercator scale (bigger when zoomed in).
+     */
+    private effectiveScaleMultiplier(mesh: THREE.Object3D, data: AircraftMeshData): number {
+        if (this.displayOptions.aircraft3DAutoSize) {
+            return this.getUserScaleMultiplier(mesh) * this.baseScaleFactor * this.zoomCompensationFactor();
+        }
+        if (data.alt <= Aircraft3DCustomLayer.GROUND_SCALE_ALTITUDE_THRESHOLD_M) {
+            return 1.0;
+        }
+        return this.getUserScaleMultiplier(mesh) * this.baseScaleFactor;
+    }
+
     /**
      * Create meshes for aircraft that were queued waiting for `path` to load.
      */
@@ -542,12 +805,18 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
             if (pending) {
                 pending.data = data;
             }
+
+            // Cache this tick's label text (Callsign/type/speed/altitude) for
+            // the 3D-anchored label overlay, reusing the exact same formatting
+            // as the 2D map label so the two stay in sync.
+            this.labelTextById.set(id, DataProcessor.formatAircraftLabel(aircraftData, i, this.displayOptions));
         }
 
         // Remove aircraft that no longer exist
         this.aircraft.forEach((_, id) => {
             if (!activeIds.has(id)) {
                 this.removeAircraftMesh(id);
+                this.removeLabelDiv(id);
                 // Clear any stale per-aircraft overrides so they don't
                 // accumulate across long sessions or re-apply if the
                 // same acid is recreated with a different type.
@@ -854,9 +1123,10 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
         // Convert aircraft heading to radians (0° = North, clockwise)
         const headingRad = THREE.MathUtils.degToRad(data.hdg);
 
-        // Scale = real-world-calibrated base × user visibility multiplier
+        // Scale = real-world-calibrated base × effective visibility multiplier
+        // (true-to-life on the ground, user's exaggeration setting airborne)
         const realScale = this.getMeshRealScale(mesh);
-        const finalScale = realScale * this.getUserScaleMultiplier(mesh) * this.baseScaleFactor;
+        const finalScale = realScale * this.effectiveScaleMultiplier(mesh, data);
 
         // Set position in meter coordinates relative to scene origin
         // Scene coordinate system: (x=east, y=up, z=north)
@@ -900,9 +1170,10 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
             const headingRad = THREE.MathUtils.degToRad(data.hdg);
 
             // Apply 3D aircraft scale factor - for globe mode, getMatrixForModel handles positioning
-            // Scale = real-world-calibrated base × user visibility multiplier
+            // Scale = real-world-calibrated base × effective visibility multiplier
+            // (true-to-life on the ground, user's exaggeration setting airborne)
             const realScale = this.getMeshRealScale(mesh);
-            const finalScale = realScale * (this.displayOptions.aircraft3DScale || 2.0) * this.baseScaleFactor;
+            const finalScale = realScale * this.effectiveScaleMultiplier(mesh, data);
 
             // Check if getMatrixForModel is available (for globe projection)
             if (this.map?.transform?.getMatrixForModel) {
@@ -951,9 +1222,10 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
         // Convert aircraft heading to radians (0° = North, clockwise)
         const headingRad = THREE.MathUtils.degToRad(data.hdg);
 
-        // Scale = real-world-calibrated base × user visibility multiplier
+        // Scale = real-world-calibrated base × effective visibility multiplier
+        // (true-to-life on the ground, user's exaggeration setting airborne)
         const realScale = this.getMeshRealScale(mesh);
-        const finalScale = realScale * this.getUserScaleMultiplier(mesh) * this.baseScaleFactor;
+        const finalScale = realScale * this.effectiveScaleMultiplier(mesh, data);
 
         // Use traditional transform matrix for mercator
         // Aviation convention: 0°=N, 90°=E, 180°=S, 270°=W
@@ -1079,6 +1351,38 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
                 });
             }
         }
+
+        this.updateLabelPositions();
+        this.updateMeshScalesForZoom();
+    }
+
+    // Last zoom level the per-frame scale pass actually ran for. Lets
+    // updateMeshScalesForZoom() skip the work entirely on frames where zoom
+    // hasn't changed (e.g. repaints triggered by an aircraft data tick, a
+    // label repositioning, or panning) instead of recomputing every
+    // aircraft's scale unconditionally on every single render() call.
+    private lastScaledZoom: number | null = null;
+
+    /**
+     * Re-applies each mesh's scale when zoom changes and auto-size is on, so
+     * the on-screen size responds to zoom immediately -- not just on the
+     * next aircraft data tick (~5Hz when the sim is running, but NEVER while
+     * paused, which would otherwise leave the model's size frozen no matter
+     * how far the user zooms in/out). Skipped entirely when auto-size is off,
+     * since scale is then zoom-independent, and also skipped when zoom is
+     * unchanged since the last pass (matches the project's existing "no
+     * unconditional per-tick API calls" performance discipline).
+     */
+    private updateMeshScalesForZoom(): void {
+        if (!this.displayOptions.aircraft3DAutoSize) return;
+        const zoom = this.map?.getZoom?.();
+        if (zoom !== undefined && zoom === this.lastScaledZoom) return;
+        this.lastScaledZoom = zoom ?? null;
+        this.aircraft.forEach((aircraftMesh) => {
+            const realScale = this.getMeshRealScale(aircraftMesh.mesh);
+            const finalScale = realScale * this.effectiveScaleMultiplier(aircraftMesh.mesh, aircraftMesh.data);
+            aircraftMesh.mesh.scale.set(finalScale, finalScale, finalScale);
+        });
     }
 
     /**
@@ -1150,6 +1454,14 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
                 this.updateMeshTransform(aircraftMesh.mesh, aircraftMesh.data);
             }
         });
+
+        // Label color/size (applied in updateLabelPositions(), called from
+        // render()) otherwise wouldn't visibly update until MapLibre's next
+        // repaint for some UNRELATED reason (camera move, sim tick moving an
+        // aircraft) -- with the sim paused and the camera still, a color
+        // picker change would silently apply internally but never actually
+        // redraw, looking like it did nothing.
+        this.map?.triggerRepaint();
     }
 
     /**
@@ -1212,6 +1524,7 @@ class Aircraft3DCustomLayer extends CustomLayer3D {
         this.loadedModels.clear();
         this.loadingModels.clear();
         this.pendingAircraftData = null;
+        this.removeLabelOverlayContainer();
         logger.debug('Aircraft3DCustomLayer', '3D resources cleaned up');
     }
 }

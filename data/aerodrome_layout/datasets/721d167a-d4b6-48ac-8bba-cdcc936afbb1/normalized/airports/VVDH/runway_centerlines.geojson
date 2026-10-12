@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "11/29", "icao": "VVDH", "end1": "11", "lat1": 17.5178792, "lon1": 106.584737, "end2": "29", "lat2": 17.5089962, "lon2": 106.6053804, "width_m": 45.0, "surface": "2"}, "geometry": {"type": "LineString", "coordinates": [[106.584737, 17.5178792], [106.6053804, 17.5089962]]}}]}

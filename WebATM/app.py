@@ -25,6 +25,22 @@ from .server import (
     register_server_status_routes,
     register_socket_handlers,
 )
+from .server.studies_api import register_studies_routes
+from .server.scenarios_api import register_scenarios_routes
+from .server.recordings_api import register_recordings_routes
+from .server.atwi_api import register_atwi_routes
+from .server.kpi_api import register_kpi_routes
+from .server.monte_carlo_api import register_monte_carlo_routes
+from .server.compliance_api import register_compliance_routes
+from .server.aixm_api import register_aixm_routes
+from .server.auth_api import register_auth_routes
+from .server.users_api import register_users_routes
+from .server.platform_settings_api import register_platform_settings_routes
+from .server.weather_presets_api import register_weather_presets_routes
+from .server.constraint_presets_api import register_constraint_presets_routes
+from .server.rules_api import register_rules_routes
+from .server.bada_api import register_bada_routes
+
 
 
 def create_app():
@@ -53,13 +69,19 @@ def create_app():
     # Initialize session manager
     session_manager = SessionManager()
 
-    # Create SocketIO instance
+    # Determine async_mode based on available libraries
+    try:
+        import eventlet
+        async_mode = "eventlet"
+    except ImportError:
+        async_mode = "threading"
+
     socketio = SocketIO(
         app,
         cors_allowed_origins="*",
         ping_timeout=60,
         ping_interval=25,
-        async_mode="threading",
+        async_mode=async_mode,
         logger=False,
         engineio_logger=False,
     )
@@ -111,10 +133,20 @@ def create_app():
     @app.errorhandler(Exception)
     def handle_exception(e):
         """Handle uncaught exceptions."""
+        from werkzeug.exceptions import HTTPException
+
+        # Let real HTTP errors (404, 403, etc. -- e.g. from abort() or unmatched
+        # routes) pass through with their own status code instead of being
+        # relabeled as a 500.
+        if isinstance(e, HTTPException):
+            return e
+
+        import traceback
+        traceback.print_exc()
         try:
-            return jsonify({"error": "Internal server error"}), 500
+            return jsonify({"error": f"Internal server error: {str(e)}"}), 500
         except Exception:
-            return "Internal server error", 500
+            return f"Internal server error: {str(e)}", 500
 
     # === Register Routes and Handlers ===
 
@@ -126,5 +158,58 @@ def create_app():
 
     # Register all Socket.IO event handlers
     register_socket_handlers(socketio, session_manager)
+
+    # Register Studies API routes
+    register_studies_routes(app)
+
+    # Register Scenarios API routes
+    register_scenarios_routes(app)
+
+    # Register Recordings API routes
+    register_recordings_routes(app)
+
+    # Register ATWI Workload API routes
+    register_atwi_routes(app)
+
+    # Register KPI API routes
+    register_kpi_routes(app)
+
+    # Register Monte Carlo analysis job routes
+    register_monte_carlo_routes(app)
+
+    # Register Compliance ruleset engine / report export routes
+    register_compliance_routes(app)
+
+    # Register AIXM API routes
+    register_aixm_routes(app)
+
+    # Register Dashboard API routes
+    from .server.dashboard_api import register_dashboard_routes
+    register_dashboard_routes(app)
+
+    # Register Auth API routes
+    register_auth_routes(app)
+
+    # Register Users API routes
+    register_users_routes(app)
+
+    # Register Platform Settings API routes (AI generation config)
+    register_platform_settings_routes(app)
+
+    # Register Aerodrome Layout API routes
+    from .server.aerodrome_layout_api import register_aerodrome_layout_routes
+    register_aerodrome_layout_routes(app)
+
+    # Register Weather Presets API routes
+    register_weather_presets_routes(app)
+
+    # Register Constraint Presets API routes
+    register_constraint_presets_routes(app)
+
+    # Register Rules API routes (read-only)
+    register_rules_routes(app)
+
+    # Register BADA API routes (read-only)
+    register_bada_routes(app)
 
     return app, socketio

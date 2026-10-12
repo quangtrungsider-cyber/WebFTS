@@ -1,0 +1,42 @@
+{
+  "icao": "VVPK",
+  "name": "Pleiku",
+  "metadata": {
+    "city": "Pleiku",
+    "country": "Vietnam",
+    "datum_lat": "14.00083333",
+    "datum_lon": "108.01722222",
+    "gui_label": "3D",
+    "iata_code": "PXU",
+    "icao_code": "VVPK",
+    "region_code": "VV",
+    "state": "Gia Lai Province",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 4,
+    "boundaries": 1,
+    "gates": 5,
+    "ground_markings": 17
+  },
+  "sourceLineCounts": {
+    "1302": 10,
+    "100": 1,
+    "110": 4,
+    "111": 130,
+    "112": 70,
+    "113": 5,
+    "130": 1,
+    "120": 17,
+    "115": 17,
+    "1300": 5,
+    "1301": 5,
+    "19": 2,
+    "1054": 1
+  },
+  "warnings": []
+}

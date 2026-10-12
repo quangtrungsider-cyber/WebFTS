@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "VVKP", "icao": "VVKP", "airportName": "KEP", "city": "Kep", "country": "Vietnam", "gui_label": "2D", "icao_code": "VVKP", "state": "Bac Giang Province"}, "geometry": {"type": "Point", "coordinates": [106.261076, 21.3945695]}}]}

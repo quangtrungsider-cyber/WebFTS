@@ -1,0 +1,52 @@
+{
+  "icao": "VVCR",
+  "name": "Cam Ranh",
+  "metadata": {
+    "city": "Nha Trang",
+    "country": "Vietnam",
+    "datum_lat": "11.995461111",
+    "datum_lon": "109.218413889",
+    "gui_label": "3D",
+    "iata_code": "CXR",
+    "icao_code": "VVCR",
+    "region_code": "VV",
+    "state": "Khanh Hoa Province",
+    "transition_alt": "9030",
+    "transition_level": "10000",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 2,
+    "runway_centerlines": 2,
+    "runway_labels": 4,
+    "helipads": 1,
+    "pavements": 3,
+    "boundaries": 1,
+    "gates": 5,
+    "ground_markings": 62,
+    "taxiway_signs": 33
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 2,
+    "102": 1,
+    "110": 3,
+    "111": 265,
+    "112": 225,
+    "113": 4,
+    "114": 2,
+    "130": 1,
+    "120": 62,
+    "115": 11,
+    "116": 51,
+    "21": 2,
+    "20": 33,
+    "14": 1,
+    "1300": 5,
+    "1301": 5,
+    "18": 1,
+    "1400": 6
+  },
+  "warnings": []
+}

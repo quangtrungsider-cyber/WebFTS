@@ -30,6 +30,9 @@ export class SettingsModal {
         disconnectButton: HTMLButtonElement | null;
         cancelButton: HTMLButtonElement | null;
         checkStatusButton: HTMLButtonElement | null;
+        reconnectButton: HTMLButtonElement | null;
+        restartEngineButton: HTMLButtonElement | null;
+        engineRepairStatus: HTMLElement | null;
         mapStyleSelect: HTMLSelectElement | null;
         mapTilerApiKeyInput: HTMLInputElement | null;
         logLevelSelect: HTMLSelectElement | null;
@@ -44,6 +47,9 @@ export class SettingsModal {
             disconnectButton: null,
             cancelButton: null,
             checkStatusButton: null,
+            reconnectButton: null,
+            restartEngineButton: null,
+            engineRepairStatus: null,
             mapStyleSelect: null,
             mapTilerApiKeyInput: null,
             logLevelSelect: null,
@@ -75,6 +81,9 @@ export class SettingsModal {
         this.elements.disconnectButton = document.getElementById('disconnect-server') as HTMLButtonElement;
         this.elements.cancelButton = document.getElementById('cancel-server-settings') as HTMLButtonElement;
         this.elements.checkStatusButton = document.getElementById('check-server-status') as HTMLButtonElement;
+        this.elements.reconnectButton = document.getElementById('reconnect-engine-btn') as HTMLButtonElement;
+        this.elements.restartEngineButton = document.getElementById('restart-engine-btn') as HTMLButtonElement;
+        this.elements.engineRepairStatus = document.getElementById('engine-repair-status');
         this.elements.mapStyleSelect = document.getElementById('map-style-select-modal') as HTMLSelectElement;
         this.elements.mapTilerApiKeyInput = document.getElementById('maptiler-api-key-input') as HTMLInputElement;
 
@@ -194,6 +203,16 @@ export class SettingsModal {
         // Check server status
         if (this.elements.checkStatusButton) {
             this.elements.checkStatusButton.addEventListener('click', () => this.manualCheckServerStatus());
+        }
+
+        // Reconnect (lightweight, safe -- doesn't touch the engine process)
+        if (this.elements.reconnectButton) {
+            this.elements.reconnectButton.addEventListener('click', () => this.reconnectEngine());
+        }
+
+        // Restart Vatm-Engine (destructive -- discards any running scenario)
+        if (this.elements.restartEngineButton) {
+            this.elements.restartEngineButton.addEventListener('click', () => this.restartEngine());
         }
 
         // Cancel/close modal
@@ -644,6 +663,89 @@ export class SettingsModal {
                 this.elements.checkStatusButton.disabled = false;
                 this.elements.checkStatusButton.textContent = 'Check Status';
             }
+        }
+    }
+
+    /**
+     * Show a result message under the repair buttons.
+     */
+    private showEngineRepairStatus(message: string, isError: boolean): void {
+        const el = this.elements.engineRepairStatus;
+        if (!el) return;
+        el.style.display = 'block';
+        el.style.color = isError ? '#ff6b6b' : '#4CAF50';
+        el.textContent = message;
+    }
+
+    /**
+     * "Reconnect" button: lightweight self-service repair. Rebuilds just the
+     * web app's connection to the engine, without touching the engine
+     * process itself -- safe to click at any time.
+     */
+    private async reconnectEngine(): Promise<void> {
+        const btn = this.elements.reconnectButton;
+        const serverIp = this.elements.serverIpInput?.value.trim() || 'localhost';
+        try {
+            if (btn) { btn.disabled = true; btn.textContent = 'Reconnecting...'; }
+            this.showEngineRepairStatus('Reconnecting...', false);
+
+            const response = await fetch('/api/server/reconnect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ server_ip: serverIp })
+            });
+            const result: ServerControlResponse = await response.json();
+
+            if (result.success) {
+                this.showEngineRepairStatus('Reconnected.', false);
+                this.updateBlueSkyConnectionStatus();
+                setTimeout(() => this.handleAutoNodeSwitching(), 500);
+            } else {
+                this.showEngineRepairStatus(`Reconnect failed: ${result.error || 'unknown error'}`, true);
+            }
+        } catch (error) {
+            this.showEngineRepairStatus(`Reconnect error: ${(error as Error).message}`, true);
+        } finally {
+            if (btn) { btn.disabled = false; btn.textContent = 'Reconnect'; }
+        }
+    }
+
+    /**
+     * "Restart Vatm-Engine" button: kills and relaunches the whole
+     * simulation engine process, then reconnects. Destroys any scenario
+     * currently running -- confirm before proceeding.
+     */
+    private async restartEngine(): Promise<void> {
+        const serverIp = this.elements.serverIpInput?.value.trim() || 'localhost';
+        const confirmed = window.confirm(
+            'This restarts the whole Vatm-Engine simulation process.\n\n' +
+            'Any scenario currently running will be lost. Continue?'
+        );
+        if (!confirmed) return;
+
+        const btn = this.elements.restartEngineButton;
+        try {
+            if (btn) { btn.disabled = true; btn.textContent = 'Restarting...'; }
+            this.showEngineRepairStatus('Restarting Vatm-Engine (this can take up to 15s)...', false);
+
+            const response = await fetch('/api/server/restart-engine', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ server_ip: serverIp })
+            });
+            const result: ServerControlResponse = await response.json();
+
+            if (result.success) {
+                this.showEngineRepairStatus('Vatm-Engine restarted and reconnected.', false);
+                this.updateBlueSkyConnectionStatus();
+                setTimeout(() => this.handleAutoNodeSwitching(), 500);
+            } else {
+                this.showEngineRepairStatus(`Restart failed: ${result.error || 'unknown error'}`, true);
+            }
+        } catch (error) {
+            this.showEngineRepairStatus(`Restart error: ${(error as Error).message}`, true);
+        } finally {
+            if (btn) { btn.disabled = false; btn.textContent = 'Restart Vatm-Engine'; }
         }
     }
 

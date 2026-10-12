@@ -1,0 +1,48 @@
+{
+  "icao": "VVCA",
+  "name": "Chu Lai",
+  "metadata": {
+    "city": "Dung Quat Bay",
+    "country": "Vietnam",
+    "datum_lat": "15.406666667",
+    "datum_lon": "108.706666667",
+    "gui_label": "3D",
+    "iata_code": "VCL",
+    "icao_code": "VVCA",
+    "region_code": "VV",
+    "state": "Quang Ngai Province",
+    "transition_alt": "9030",
+    "transition_level": "10000",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 6,
+    "boundaries": 1,
+    "gates": 8,
+    "ground_markings": 31,
+    "taxiway_signs": 13
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 1,
+    "110": 6,
+    "111": 207,
+    "112": 183,
+    "113": 7,
+    "130": 1,
+    "120": 31,
+    "115": 21,
+    "116": 8,
+    "114": 2,
+    "21": 2,
+    "20": 13,
+    "1300": 8,
+    "1301": 8,
+    "1054": 1
+  },
+  "warnings": []
+}

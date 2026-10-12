@@ -83,6 +83,32 @@ export class MapControlsPanel extends BasePanel {
         } else {
             logger.warn('MapControlsPanel', '✗ Draw Route button not found');
         }
+
+        // Range & Bearing button
+        const rnbBtn = document.getElementById('range-bearing-btn');
+        if (rnbBtn) {
+            rnbBtn.addEventListener('click', () => {
+                this.onRangeAndBearingClick();
+            });
+            logger.debug('MapControlsPanel', 'Range & Bearing button handler attached');
+        } else {
+            logger.warn('MapControlsPanel', '✗ Range & Bearing button not found');
+        }
+
+        // Listen for R key shortcut
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+            // Check if user is typing in an input field to avoid accidental triggers
+            const activeElement = document.activeElement;
+            const isTyping = activeElement && (
+                activeElement.tagName === 'INPUT' || 
+                activeElement.tagName === 'TEXTAREA' || 
+                (activeElement as HTMLElement).isContentEditable
+            );
+
+            if (!isTyping && e.key.toLowerCase() === 'r') {
+                this.onRangeAndBearingClick();
+            }
+        });
     }
 
     /**
@@ -118,6 +144,39 @@ export class MapControlsPanel extends BasePanel {
     /**
      * Handle Draw Route button click
      */
+    private onDrawRouteClick(): void {
+        logger.debug('MapControlsPanel', 'Draw Route button clicked');
+        if (this.routeDrawingManager) {
+            this.routeDrawingManager.toggleDrawing();
+        } else {
+            logger.warn('MapControlsPanel', 'RouteDrawingManager not set - map may still be loading');
+            alert('Map is still loading. Please wait a moment and try again.');
+        }
+    }
+
+    /**
+     * Handle Range & Bearing button click
+     */
+    private onRangeAndBearingClick(): void {
+        logger.debug('MapControlsPanel', 'Range & Bearing button clicked');
+        const rnbTool = this.app?.getRangeAndBearingTool();
+        if (rnbTool) {
+            rnbTool.toggle();
+            
+            // Update button visual state
+            const btn = document.getElementById('range-bearing-btn');
+            if (btn) {
+                if (rnbTool.isActive()) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            }
+        } else {
+            logger.warn('MapControlsPanel', 'RangeAndBearingTool not set - map may still be loading');
+        }
+    }
+
     /**
      * Set up custom VATM map control buttons:
      * - Vietnam ATS Routes toggle
@@ -134,22 +193,23 @@ export class MapControlsPanel extends BasePanel {
         }
 
         // Fullscreen Map toggle button (panel)
-        const fullscreenBtn = document.getElementById('toggle-fullscreen-btn');
+        const fullscreenBtn = document.getElementById('toggle-fullscreen-btn') as HTMLButtonElement | null;
         if (fullscreenBtn) {
-            fullscreenBtn.addEventListener('click', () => this.toggleFullscreenMap());
+            fullscreenBtn.onclick = () => this.toggleFullscreenMap();
             logger.debug('MapControlsPanel', 'Fullscreen Map button handler attached');
         } else {
             logger.warn('MapControlsPanel', '✗ Fullscreen Map button not found');
         }
 
         // Fullscreen Map toggle button (floating, in map overlay)
-        const fullscreenFloatingBtn = document.getElementById('map-fullscreen-floating-btn');
+        const fullscreenFloatingBtn = document.getElementById('map-fullscreen-floating-btn') as HTMLButtonElement | null;
         if (fullscreenFloatingBtn) {
-            fullscreenFloatingBtn.addEventListener('click', () => this.toggleFullscreenMap());
+            fullscreenFloatingBtn.onclick = () => this.toggleFullscreenMap();
             logger.debug('MapControlsPanel', 'Floating Fullscreen Map button handler attached');
         } else {
             logger.warn('MapControlsPanel', '✗ Floating Fullscreen Map button not found');
         }
+
     }
 
     /**
@@ -173,29 +233,7 @@ export class MapControlsPanel extends BasePanel {
     public toggleFullscreenMap(): void {
         this.isFullscreenActive = !this.isFullscreenActive;
         document.body.classList.toggle('fullscreen-map-active', this.isFullscreenActive);
-
-        // Update floating button icon to show correct state
-        const floatingBtn = document.getElementById('map-fullscreen-floating-btn');
-        if (floatingBtn) {
-            const icon = floatingBtn.querySelector('i');
-            if (icon) {
-                icon.className = this.isFullscreenActive
-                    ? 'fa-solid fa-compress'
-                    : 'fa-solid fa-expand';
-            }
-            floatingBtn.title = this.isFullscreenActive ? 'Exit Fullscreen' : 'Toggle Fullscreen Map';
-        }
-
-        // Update panel button icon too
-        const panelBtn = document.getElementById('toggle-fullscreen-btn');
-        if (panelBtn) {
-            const icon = panelBtn.querySelector('i');
-            if (icon) {
-                icon.className = this.isFullscreenActive
-                    ? 'fa-solid fa-compress'
-                    : 'fa-solid fa-expand';
-            }
-        }
+        this.updateFullscreenButtonIcons();
 
         // Notify MapLibre to resize after CSS transition settles
         setTimeout(() => {
@@ -208,15 +246,26 @@ export class MapControlsPanel extends BasePanel {
         logger.info('MapControlsPanel', `Fullscreen map ${this.isFullscreenActive ? 'enabled' : 'disabled'}`);
     }
 
-    private onDrawRouteClick(): void {
-        logger.debug('MapControlsPanel', 'Draw Route button clicked');
-        if (this.routeDrawingManager) {
-            this.routeDrawingManager.toggleDrawing();
-        } else {
-            logger.warn('MapControlsPanel', 'RouteDrawingManager not set - map may still be loading');
-            alert('Map is still loading. Please wait a moment and try again.');
+    private updateFullscreenButtonIcons(): void {
+        const floatingBtn = document.getElementById('map-fullscreen-floating-btn');
+        if (floatingBtn) {
+            const icon = floatingBtn.querySelector('i');
+            if (icon) {
+                icon.className = this.isFullscreenActive ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+            }
+            floatingBtn.title = this.isFullscreenActive ? 'Exit Fullscreen' : 'Toggle Fullscreen Map';
+        }
+
+        const panelBtn = document.getElementById('toggle-fullscreen-btn');
+        if (panelBtn) {
+            const icon = panelBtn.querySelector('i');
+            if (icon) {
+                icon.className = this.isFullscreenActive ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+            }
         }
     }
+
+    // Methods already implemented above
 
     /**
      * Set the MapDisplay instance for this panel

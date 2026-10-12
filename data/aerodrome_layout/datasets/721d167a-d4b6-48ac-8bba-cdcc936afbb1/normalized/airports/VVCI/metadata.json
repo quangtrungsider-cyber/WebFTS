@@ -1,0 +1,51 @@
+{
+  "icao": "VVCI",
+  "name": "Haiphong Catbi",
+  "metadata": {
+    "city": "Haiphong",
+    "country": "Vietnam",
+    "datum_lat": "20.820697222",
+    "datum_lon": "106.724461111",
+    "gui_label": "3D",
+    "iata_code": "HPH",
+    "icao_code": "VVCI",
+    "region_code": "VV",
+    "state": "Hai Duong Province",
+    "transition_alt": "9030",
+    "transition_level": "10000",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 10,
+    "boundaries": 1,
+    "gates": 15,
+    "ground_markings": 50,
+    "taxiway_signs": 22
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 1,
+    "110": 10,
+    "111": 274,
+    "112": 150,
+    "113": 17,
+    "114": 1,
+    "130": 1,
+    "120": 50,
+    "115": 35,
+    "116": 10,
+    "21": 3,
+    "20": 22,
+    "14": 1,
+    "1300": 15,
+    "1301": 15,
+    "18": 1,
+    "19": 2,
+    "1400": 6
+  },
+  "warnings": []
+}

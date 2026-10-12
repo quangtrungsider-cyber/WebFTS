@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "VVPB Airport Boundary 1", "icao": "VVPB", "index": 1}, "geometry": {"type": "Polygon", "coordinates": [[[107.7030946, 16.3951227], [107.7175765, 16.3972179], [107.7178424, 16.4008658], [107.690535, 16.402202], [107.6898094, 16.3979393], [107.6943596, 16.3950694], [107.7030946, 16.3951227]]]}}]}

@@ -1,0 +1,36 @@
+{
+  "icao": "VVGL",
+  "name": "HANOI GIA LAM",
+  "metadata": {
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "datum_lat": "21.040277778",
+    "datum_lon": "105.886388889",
+    "gui_label": "2D",
+    "icao_code": "VVGL",
+    "region_code": "VV",
+    "state": "Ha Tay Province",
+    "transition_alt": "9048",
+    "transition_level": "10000"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 1,
+    "ground_markings": 3
+  },
+  "sourceLineCounts": {
+    "1302": 10,
+    "100": 1,
+    "110": 1,
+    "111": 14,
+    "112": 4,
+    "113": 1,
+    "120": 3,
+    "115": 3,
+    "19": 2
+  },
+  "warnings": []
+}

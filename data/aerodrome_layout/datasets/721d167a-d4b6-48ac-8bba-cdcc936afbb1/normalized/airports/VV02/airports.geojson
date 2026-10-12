@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "VV02", "icao": "VV02", "airportName": "BIEN HOA", "city": "Bien Hoa", "country": "Vietnam", "gui_label": "2D", "state": "Dong Nai Province"}, "geometry": {"type": "Point", "coordinates": [106.81850675, 10.97660925]}}]}

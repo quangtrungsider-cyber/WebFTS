@@ -1,0 +1,30 @@
+{
+  "icao": "VV03",
+  "name": "HAIPHONG KIEN AN",
+  "metadata": {
+    "city": "Hai Phong",
+    "country": "Vietnam",
+    "gui_label": "2D",
+    "state": "Hai Duong Province"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 1,
+    "ground_markings": 3
+  },
+  "sourceLineCounts": {
+    "1302": 4,
+    "100": 1,
+    "110": 1,
+    "111": 14,
+    "112": 4,
+    "113": 1,
+    "120": 3,
+    "115": 3,
+    "19": 2
+  },
+  "warnings": []
+}

@@ -65,7 +65,7 @@ export class ConnectionStatusService {
 
     private listeners: Set<ConnectionStatusListener> = new Set();
     private dataTimeoutId: number | null = null;
-    private readonly DATA_TIMEOUT_MS = 60000; // Consider disconnected if no data for 60 seconds
+    private readonly DATA_TIMEOUT_MS = 120000; // Consider disconnected if no data for 120 seconds
 
     // Initial connection tracking
     private isInitialLoadComplete: boolean = false;
@@ -237,21 +237,14 @@ export class ConnectionStatusService {
         // Log nodeinfo reception
         logger.debug('ConnectionStatus', `Node info received (Total Nodes: ${totalNodes})`);
 
-        if (totalNodes > 0) {
-            // If we're receiving nodeinfo with active nodes, we're connected
-            if (!this.status.blueSkyConnected) {
-                logger.info('ConnectionStatus', 'Setting BlueSky connected (via nodeinfo)');
-                this.setBlueSkyConnected(true);
-            }
-            // Reset the timeout for detecting disconnection (any data type resets this)
-            this.resetDataTimeout();
-        } else {
-            // No nodes are available - we are disconnected
-            if (this.status.blueSkyConnected) {
-                logger.info('ConnectionStatus', 'Setting BlueSky disconnected (0 nodes in nodeinfo)');
-                this.setBlueSkyConnected(false);
-            }
+        // If we're receiving nodeinfo, we're connected
+        if (!this.status.blueSkyConnected) {
+            logger.info('ConnectionStatus', 'Setting BlueSky connected (via nodeinfo)');
+            this.setBlueSkyConnected(true);
         }
+        
+        // Reset the timeout for detecting disconnection (any data type resets this)
+        this.resetDataTimeout();
     }
 
     /**

@@ -1,0 +1,47 @@
+{
+  "icao": "VVCM",
+  "name": "Ca Mau",
+  "metadata": {
+    "city": "Ca Mau City",
+    "country": "Vietnam",
+    "datum_lat": "9.178333333",
+    "datum_lon": "105.176666667",
+    "gui_label": "3D",
+    "iata_code": "CAH",
+    "icao_code": "VVCM",
+    "region_code": "VV",
+    "state": "Ca Mau Province",
+    "transition_alt": "9030",
+    "transition_level": "10000"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 3,
+    "boundaries": 1,
+    "gates": 2,
+    "ground_markings": 6,
+    "taxiway_signs": 2
+  },
+  "sourceLineCounts": {
+    "1302": 11,
+    "100": 1,
+    "110": 3,
+    "111": 57,
+    "113": 4,
+    "112": 16,
+    "130": 1,
+    "120": 6,
+    "115": 6,
+    "20": 2,
+    "14": 1,
+    "1300": 2,
+    "1301": 2,
+    "18": 1,
+    "19": 3,
+    "1400": 2
+  },
+  "warnings": []
+}

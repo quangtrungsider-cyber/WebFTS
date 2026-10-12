@@ -571,6 +571,29 @@ export abstract class EntityRenderer<T extends EntityData> {
 
         // Update layer visibility based on display options
         this.updateLayerVisibility();
+
+        // Re-assert draw order on every update: other map overlays (runway/
+        // taxiway/airway/waypoint labels) can be toggled on at any time
+        // after these layers were created, and MapLibre always draws
+        // newly-added layers on top. Moving these back to the top on each
+        // data tick keeps entity icons/labels visible above them.
+        this.bringToFront();
+    }
+
+    /**
+     * Move this entity's points/labels layers to the very top of the
+     * layer stack, above any other layer added since they were created.
+     */
+    private bringToFront(): void {
+        const pointsLayerId = `${this.config.layerPrefix}-points`;
+        const labelsLayerId = `${this.config.layerPrefix}-labels`;
+
+        if (this.map.getLayer(pointsLayerId)) {
+            this.map.moveLayer(pointsLayerId);
+        }
+        if (this.map.getLayer(labelsLayerId)) {
+            this.map.moveLayer(labelsLayerId);
+        }
     }
 
     /**

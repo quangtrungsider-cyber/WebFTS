@@ -1,0 +1,5498 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "document": "enr31.pdf",
+    "documentTitle": "AIP Viet Nam ENR 3.1 - Lower ATS Routes",
+    "amendment": "AMDT 01/23",
+    "effectiveDate": "2023-07-15",
+    "status": "official",
+    "note": "AIP chính thức (ENR 3.1 - đường bay ATS tầng thấp). Chỉ bao gồm các đường bay quy ước (conventional), KHÔNG bao gồm các đường bay khu vực dẫn đường (RNAV, ví dụ Q-series) -- những đường đó thuộc chương AIP khác chưa được cung cấp."
+  },
+  "routeCount": 54,
+  "routes": [
+    {
+      "code": "A1",
+      "waypointCount": 7,
+      "segmentCount": 6,
+      "waypoints": [
+        {
+          "name": "PAPRA",
+          "lat": 15.766667,
+          "lon": 107.183333,
+          "latDms": "154600N",
+          "lonDms": "1071100E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "TANNA",
+          "lat": 15.903333,
+          "lon": 107.658889,
+          "latDms": "155412N",
+          "lonDms": "1073932E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "PATNO",
+          "lat": 15.965,
+          "lon": 107.885,
+          "latDms": "155754N",
+          "lonDms": "1075306E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "DA NANG DVOR/DME (DAN)",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "KANGU",
+          "lat": 16.354167,
+          "lon": 108.664722,
+          "latDms": "162115N",
+          "lonDms": "1083953E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "BINKU",
+          "lat": 16.559722,
+          "lon": 108.973056,
+          "latDms": "163335N",
+          "lonDms": "1085823E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "BUNTA",
+          "lat": 16.833333,
+          "lon": 109.395,
+          "latDms": "165000N",
+          "lonDms": "1092342E",
+          "footnoteRef": "3",
+          "seq": 7
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PAPRA",
+          "toWaypoint": "TANNA",
+          "magneticTrackDeg": 74,
+          "reverseMagneticTrackDeg": 254,
+          "distanceKm": 53,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "TANNA",
+          "toWaypoint": "PATNO",
+          "magneticTrackDeg": 74,
+          "reverseMagneticTrackDeg": 254,
+          "distanceKm": 25,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "PATNO",
+          "toWaypoint": "DA NANG DVOR/DME (DAN)",
+          "magneticTrackDeg": 74,
+          "reverseMagneticTrackDeg": 254,
+          "distanceKm": 35,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "DA NANG DVOR/DME (DAN)",
+          "toWaypoint": "KANGU",
+          "magneticTrackDeg": 56,
+          "reverseMagneticTrackDeg": 236,
+          "distanceKm": 60,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 4250,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "KANGU",
+          "toWaypoint": "BINKU",
+          "magneticTrackDeg": 56,
+          "reverseMagneticTrackDeg": 236,
+          "distanceKm": 40,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "BINKU",
+          "toWaypoint": "BUNTA",
+          "magneticTrackDeg": 56,
+          "reverseMagneticTrackDeg": 236,
+          "distanceKm": 54,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "A202",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "VILAO",
+          "lat": 17.366667,
+          "lon": 106.083333,
+          "latDms": "172200N",
+          "lonDms": "1060500E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "DONGI",
+          "lat": 17.681389,
+          "lon": 106.595278,
+          "latDms": "174053N",
+          "lonDms": "1063543E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NIVEN",
+          "lat": 17.884444,
+          "lon": 106.928889,
+          "latDms": "175304N",
+          "lonDms": "1065544E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "XONUS",
+          "lat": 18.07,
+          "lon": 107.233056,
+          "latDms": "180412N",
+          "lonDms": "1071359E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "ASSAD",
+          "lat": 18.341111,
+          "lon": 107.681389,
+          "latDms": "182028N",
+          "lonDms": "1074053E",
+          "footnoteRef": "3",
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "VILAO",
+          "toWaypoint": "DONGI",
+          "magneticTrackDeg": 57,
+          "reverseMagneticTrackDeg": 237,
+          "distanceKm": 65,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ha Noi ACC FREQ: 125.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "DONGI",
+          "toWaypoint": "NIVEN",
+          "magneticTrackDeg": 57,
+          "reverseMagneticTrackDeg": 237,
+          "distanceKm": 42,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "NIVEN",
+          "toWaypoint": "XONUS",
+          "magneticTrackDeg": 57,
+          "reverseMagneticTrackDeg": 237,
+          "distanceKm": 38,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "XONUS",
+          "toWaypoint": "ASSAD",
+          "magneticTrackDeg": 57,
+          "reverseMagneticTrackDeg": 237,
+          "distanceKm": 56,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "ASSAD is the transfer of control point between Ha Noi ACC and Sanya ACC"
+        }
+      ]
+    },
+    {
+      "code": "A206",
+      "waypointCount": 6,
+      "segmentCount": 5,
+      "waypoints": [
+        {
+          "name": "NALAO",
+          "lat": 19.324167,
+          "lon": 103.926389,
+          "latDms": "191927N",
+          "lonDms": "1035535E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "VINH DVOR/DME (VIN)",
+          "lat": 18.734167,
+          "lon": 105.668333,
+          "latDms": "184403N",
+          "lonDms": "1054006E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "KADIM",
+          "lat": 18.652222,
+          "lon": 106.097778,
+          "latDms": "183908N",
+          "lonDms": "1060552E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "BUVAN",
+          "lat": 18.556389,
+          "lon": 106.589167,
+          "latDms": "183323N",
+          "lonDms": "1063521E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "HATIN",
+          "lat": 18.466944,
+          "lon": 107.048889,
+          "latDms": "182801N",
+          "lonDms": "1070256E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "ASSAD",
+          "lat": 18.341111,
+          "lon": 107.681389,
+          "latDms": "182028N",
+          "lonDms": "1074053E",
+          "footnoteRef": "3",
+          "seq": 6
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NALAO",
+          "toWaypoint": "VINH DVOR/DME (VIN)",
+          "magneticTrackDeg": 110,
+          "reverseMagneticTrackDeg": 290,
+          "distanceKm": 195,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 3700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "NALAO is the transfer of control point between Ha Noi ACC and Vientiane ACC"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VINH DVOR/DME (VIN)",
+          "toWaypoint": "KADIM",
+          "magneticTrackDeg": 101,
+          "reverseMagneticTrackDeg": 281,
+          "distanceKm": 46,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ha Noi ACC FREQ: 125.900 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "KADIM",
+          "toWaypoint": "BUVAN",
+          "magneticTrackDeg": 101,
+          "reverseMagneticTrackDeg": 281,
+          "distanceKm": 53,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "BUVAN",
+          "toWaypoint": "HATIN",
+          "magneticTrackDeg": 101,
+          "reverseMagneticTrackDeg": 281,
+          "distanceKm": 50,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "HATIN",
+          "toWaypoint": "ASSAD",
+          "magneticTrackDeg": 101,
+          "reverseMagneticTrackDeg": 281,
+          "distanceKm": 68,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "ASSAD is the transfer of control point between Ha Noi ACC and Sanya ACC"
+        }
+      ]
+    },
+    {
+      "code": "B202",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "PLEIKU DVOR/DME (PLK)",
+          "lat": 14.006111,
+          "lon": 108.024444,
+          "latDms": "140022N",
+          "lonDms": "1080128E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "BOMPA",
+          "lat": 14.333333,
+          "lon": 107.4,
+          "latDms": "142000N",
+          "lonDms": "1072400E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "toWaypoint": "BOMPA",
+          "magneticTrackDeg": 298,
+          "reverseMagneticTrackDeg": 118,
+          "distanceKm": 77,
+          "upperFL": 460,
+          "lowerFL": 125,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "B214",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "NA SAN NDB (BQ)",
+          "lat": 21.215,
+          "lon": 104.038056,
+          "latDms": "211254N",
+          "lonDms": "1040217E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LADON",
+          "lat": 21.103611,
+          "lon": 102.966944,
+          "latDms": "210613N",
+          "lonDms": "1025801E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NA SAN NDB (BQ)",
+          "toWaypoint": "LADON",
+          "magneticTrackDeg": 263,
+          "reverseMagneticTrackDeg": 83,
+          "distanceKm": 112,
+          "upperFL": 460,
+          "lowerFL": 270,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "B465",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "LAPON",
+          "lat": 20.75,
+          "lon": 104.475,
+          "latDms": "204500N",
+          "lonDms": "1042830E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "MOC CHAU NDB (MC)",
+          "lat": 20.828056,
+          "lon": 104.700278,
+          "latDms": "204941N",
+          "lonDms": "1044201E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "LAPON",
+          "toWaypoint": "MOC CHAU NDB (MC)",
+          "magneticTrackDeg": 70,
+          "reverseMagneticTrackDeg": 250,
+          "distanceKm": 25,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "MOC CHAU NDB (MC)",
+          "toWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "magneticTrackDeg": 70,
+          "reverseMagneticTrackDeg": 250,
+          "distanceKm": 125,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "B468",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "DIEN BIEN DVOR/DME (DBN)",
+          "lat": 21.373611,
+          "lon": 103.007778,
+          "latDms": "212225N",
+          "lonDms": "1030028E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LADON",
+          "lat": 21.103611,
+          "lon": 102.966944,
+          "latDms": "210613N",
+          "lonDms": "1025801E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "DIEN BIEN DVOR/DME (DBN)",
+          "toWaypoint": "LADON",
+          "magneticTrackDeg": 188,
+          "reverseMagneticTrackDeg": 8,
+          "distanceKm": null,
+          "upperFL": 460,
+          "lowerFL": 200,
+          "minSafeAltitudeM": 4250,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "G221",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "PHU CAT DVOR/DME (PCA)",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ASUKU",
+          "lat": 15.607222,
+          "lon": 109.244167,
+          "latDms": "153626N",
+          "lonDms": "1091439E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "BUNTA",
+          "lat": 16.833333,
+          "lon": 109.395,
+          "latDms": "165000N",
+          "lonDms": "1092342E",
+          "footnoteRef": "2",
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "toWaypoint": "ASUKU",
+          "magneticTrackDeg": 7,
+          "reverseMagneticTrackDeg": 187,
+          "distanceKm": 184,
+          "upperFL": 460,
+          "lowerFL": 290,
+          "minSafeAltitudeM": 4250,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ASUKU",
+          "toWaypoint": "BUNTA",
+          "magneticTrackDeg": 7,
+          "reverseMagneticTrackDeg": 187,
+          "distanceKm": 137,
+          "upperFL": 460,
+          "lowerFL": 290,
+          "minSafeAltitudeM": 4250,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- ASUKU is the transfer of control point between Sector 1 Ho Chi Minh ACC and Sector 4 Ha Noi ACC - Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "G474",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "ANINA",
+          "lat": 13.983333,
+          "lon": 107.416667,
+          "latDms": "135900N",
+          "lonDms": "1072500E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "DADEN",
+          "lat": 13.999444,
+          "lon": 107.843611,
+          "latDms": "135958N",
+          "lonDms": "1075037E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "PLEIKU DVOR/DME (PLK)",
+          "lat": 14.006111,
+          "lon": 108.024444,
+          "latDms": "140022N",
+          "lonDms": "1080128E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "MUMGA",
+          "lat": 14.0,
+          "lon": 108.153611,
+          "latDms": "140000N",
+          "lonDms": "1080913E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "PHU CAT DVOR/DME (PCA)",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "ANINA",
+          "toWaypoint": "DADEN",
+          "magneticTrackDeg": 88,
+          "reverseMagneticTrackDeg": 268,
+          "distanceKm": 46,
+          "upperFL": 460,
+          "lowerFL": 180,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- ANINA is transfer of control point between Ho Chi Minh ACC and Phnom Penh ACC. - Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "DADEN",
+          "toWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "magneticTrackDeg": 88,
+          "reverseMagneticTrackDeg": 268,
+          "distanceKm": 20,
+          "upperFL": 460,
+          "lowerFL": 180,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "toWaypoint": "MUMGA",
+          "magneticTrackDeg": 93,
+          "reverseMagneticTrackDeg": 273,
+          "distanceKm": 14,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC PLK is the tranfer of control point between Da Nang CTL and Ho Chi Minh ACC"
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "MUMGA",
+          "toWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "magneticTrackDeg": 93,
+          "reverseMagneticTrackDeg": 273,
+          "distanceKm": 96,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- Cross Q1 - MUMGA is the tranfer of control point between Da Nang CTL and Ho Chi Minh ACC"
+        }
+      ]
+    },
+    {
+      "code": "L628",
+      "waypointCount": 6,
+      "segmentCount": 5,
+      "waypoints": [
+        {
+          "name": "PHU CAT DVOR/DME (PCA)",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "VIMUT",
+          "lat": 13.9625,
+          "lon": 109.521389,
+          "latDms": "135745N",
+          "lonDms": "1093117E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "VEPAM",
+          "lat": 13.966667,
+          "lon": 110.0,
+          "latDms": "135800N",
+          "lonDms": "1100000E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "DAMEL",
+          "lat": 13.978333,
+          "lon": 111.51,
+          "latDms": "135842N",
+          "lonDms": "1113036E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "MESOX",
+          "lat": 13.98,
+          "lon": 113.045,
+          "latDms": "135848N",
+          "lonDms": "1130242E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "ARESI",
+          "lat": 13.973333,
+          "lon": 114.45,
+          "latDms": "135824N",
+          "lonDms": "1142700E",
+          "footnoteRef": "2",
+          "seq": 6
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "toWaypoint": "VIMUT",
+          "magneticTrackDeg": 90,
+          "reverseMagneticTrackDeg": 270,
+          "distanceKm": 52,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VIMUT",
+          "toWaypoint": "VEPAM",
+          "magneticTrackDeg": 90,
+          "reverseMagneticTrackDeg": 270,
+          "distanceKm": 52,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- VIMUT is the transfer of control point between Sector 1 and Sector 5 Ho Chi Minh ACC - Sector 5 Ho Chi Minh ACC FREQ: 120.700 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "VEPAM",
+          "toWaypoint": "DAMEL",
+          "magneticTrackDeg": 90,
+          "reverseMagneticTrackDeg": 270,
+          "distanceKm": 163,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "DAMEL",
+          "toWaypoint": "MESOX",
+          "magneticTrackDeg": 90,
+          "reverseMagneticTrackDeg": 270,
+          "distanceKm": 165,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "MESOX",
+          "toWaypoint": "ARESI",
+          "magneticTrackDeg": 90,
+          "reverseMagneticTrackDeg": 270,
+          "distanceKm": 152,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "L637",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "BITOD",
+          "lat": 7.256667,
+          "lon": 104.118333,
+          "latDms": "071524N",
+          "lonDms": "1040706E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "BIBAN",
+          "lat": 8.5,
+          "lon": 105.0,
+          "latDms": "083000N",
+          "lonDms": "1050000E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "ANHOA",
+          "lat": 9.787222,
+          "lon": 105.908333,
+          "latDms": "094714N",
+          "lonDms": "1055430E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "BITIS",
+          "lat": 10.266389,
+          "lon": 106.248333,
+          "latDms": "101559N",
+          "lonDms": "1061454E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "BITOD",
+          "toWaypoint": "BIBAN",
+          "magneticTrackDeg": 35,
+          "reverseMagneticTrackDeg": 215,
+          "distanceKm": 169,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "BIBAN",
+          "toWaypoint": "ANHOA",
+          "magneticTrackDeg": 35,
+          "reverseMagneticTrackDeg": 215,
+          "distanceKm": 174,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "ANHOA",
+          "toWaypoint": "BITIS",
+          "magneticTrackDeg": 35,
+          "reverseMagneticTrackDeg": 215,
+          "distanceKm": 65,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "BITIS",
+          "toWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "magneticTrackDeg": 36,
+          "reverseMagneticTrackDeg": 216,
+          "distanceKm": 75,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "L644",
+      "waypointCount": 6,
+      "segmentCount": 5,
+      "waypoints": [
+        {
+          "name": "AN LOC NDB (AC)",
+          "lat": 10.939167,
+          "lon": 107.188333,
+          "latDms": "105621N",
+          "lonDms": "1071118E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LEDUP",
+          "lat": 10.775833,
+          "lon": 107.146944,
+          "latDms": "104633N",
+          "lonDms": "1070849E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "LOSON",
+          "lat": 10.493333,
+          "lon": 107.075556,
+          "latDms": "102936N",
+          "lonDms": "1070432E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "BODOD",
+          "lat": 9.639444,
+          "lon": 106.858056,
+          "latDms": "093822N",
+          "lonDms": "1065129E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "CON SON NDB (CN)",
+          "lat": 8.732778,
+          "lon": 106.626389,
+          "latDms": "084358N",
+          "lonDms": "1063735E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "DUDIS",
+          "lat": 7.0,
+          "lon": 106.81,
+          "latDms": "070000N",
+          "lonDms": "1064836E",
+          "footnoteRef": "2",
+          "seq": 6
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "AN LOC NDB (AC)",
+          "toWaypoint": "LEDUP",
+          "magneticTrackDeg": 194,
+          "reverseMagneticTrackDeg": 14,
+          "distanceKm": 19,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC - Sector 2 (up to FL265 inclusive) - Sector 3 (above FL265)"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "LEDUP",
+          "toWaypoint": "LOSON",
+          "magneticTrackDeg": 194,
+          "reverseMagneticTrackDeg": 14,
+          "distanceKm": 32,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- LEDUP is the transfer of control point between Sector 2 and Sector 3 Ho Chi Minh ACC up to FL265 inclusive - Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "LOSON",
+          "toWaypoint": "BODOD",
+          "magneticTrackDeg": 194,
+          "reverseMagneticTrackDeg": 14,
+          "distanceKm": 97,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "BODOD",
+          "toWaypoint": "CON SON NDB (CN)",
+          "magneticTrackDeg": 194,
+          "reverseMagneticTrackDeg": 14,
+          "distanceKm": 103,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- BODOD is the transfer of control point between Sector 3 and Sector 4 Ho Chi Minh ACC - Sector 4 Ho Chi Minh ACC FREQ: 133.050 MHZ"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "CON SON NDB (CN)",
+          "toWaypoint": "DUDIS",
+          "magneticTrackDeg": 174,
+          "reverseMagneticTrackDeg": 354,
+          "distanceKm": 193,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "M505",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "BUON MA THUOT DVOR/ DME (BMT)",
+          "lat": 12.666389,
+          "lon": 108.123056,
+          "latDms": "123959N",
+          "lonDms": "1080723E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "MULAD",
+          "lat": 12.548056,
+          "lon": 107.574722,
+          "latDms": "123253N",
+          "lonDms": "1073429E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "toWaypoint": "MULAD",
+          "magneticTrackDeg": 258,
+          "reverseMagneticTrackDeg": 78,
+          "distanceKm": 61,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2300,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "MULAD is the transfer of control point between Ho Chi Minh ACC and Phnom Penh ACC Sector 2 Ho Chi Minh ACC FREQ: 120.100 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "M510",
+      "waypointCount": 4,
+      "segmentCount": 3,
+      "waypoints": [
+        {
+          "name": "CAN THO DVOR/DME (TRN)",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "POTIX",
+          "lat": 10.234722,
+          "lon": 105.616667,
+          "latDms": "101405N",
+          "lonDms": "1053700E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "ATGAS",
+          "lat": 10.404722,
+          "lon": 105.517222,
+          "latDms": "102417N",
+          "lonDms": "1053102E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "DADEM",
+          "lat": 10.895556,
+          "lon": 105.228056,
+          "latDms": "105344N",
+          "lonDms": "1051341E",
+          "footnoteRef": "2",
+          "seq": 4
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "CAN THO DVOR/DME (TRN)",
+          "toWaypoint": "POTIX",
+          "magneticTrackDeg": 330,
+          "reverseMagneticTrackDeg": 150,
+          "distanceKm": 19,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "POTIX",
+          "toWaypoint": "ATGAS",
+          "magneticTrackDeg": 330,
+          "reverseMagneticTrackDeg": 150,
+          "distanceKm": 22,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "ATGAS",
+          "toWaypoint": "DADEM",
+          "magneticTrackDeg": 330,
+          "reverseMagneticTrackDeg": 150,
+          "distanceKm": 63,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "M753",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "IPRIX",
+          "lat": 7.0,
+          "lon": 104.131667,
+          "latDms": "070000N",
+          "lonDms": "1040754E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "BITOD",
+          "lat": 7.256667,
+          "lon": 104.118333,
+          "latDms": "071524N",
+          "lonDms": "1040706E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "ADBOP",
+          "lat": 8.5,
+          "lon": 104.083333,
+          "latDms": "083000N",
+          "lonDms": "1040500E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "PHU QUOC DVOR/DME (PQU)",
+          "lat": 10.165278,
+          "lon": 104.038889,
+          "latDms": "100955N",
+          "lonDms": "1040220E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "OSOTA",
+          "lat": 10.551944,
+          "lon": 104.263611,
+          "latDms": "103307N",
+          "lonDms": "1041549E",
+          "footnoteRef": "3",
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "IPRIX",
+          "toWaypoint": "BITOD",
+          "magneticTrackDeg": 357,
+          "reverseMagneticTrackDeg": 177,
+          "distanceKm": 29,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "BITOD",
+          "toWaypoint": "ADBOP",
+          "magneticTrackDeg": 357,
+          "reverseMagneticTrackDeg": 177,
+          "distanceKm": 138,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "ADBOP",
+          "toWaypoint": "PHU QUOC DVOR/DME (PQU)",
+          "magneticTrackDeg": 357,
+          "reverseMagneticTrackDeg": 177,
+          "distanceKm": 184,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "PHU QUOC DVOR/DME (PQU)",
+          "toWaypoint": "OSOTA",
+          "magneticTrackDeg": 30,
+          "reverseMagneticTrackDeg": 210,
+          "distanceKm": 50,
+          "upperFL": 460,
+          "lowerFL": 60,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "OSOTA is the transfer of control point between Ho Chi Minh ACC and Phnom Penh ACC"
+        }
+      ]
+    },
+    {
+      "code": "M755",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "KISAN",
+          "lat": 10.538889,
+          "lon": 104.675,
+          "latDms": "103220N",
+          "lonDms": "1044030E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "TUNPO",
+          "lat": 10.062222,
+          "lon": 104.589444,
+          "latDms": "100344N",
+          "lonDms": "1043522E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "BITOD",
+          "lat": 7.256667,
+          "lon": 104.118333,
+          "latDms": "071524N",
+          "lonDms": "1040706E",
+          "footnoteRef": "2",
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "KISAN",
+          "toWaypoint": "TUNPO",
+          "magneticTrackDeg": 190,
+          "reverseMagneticTrackDeg": 10,
+          "distanceKm": 54,
+          "upperFL": 460,
+          "lowerFL": 250,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "KISAN is the transfer of control point between Ho Chi Minh ACC and Phnom Penh ACC."
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "TUNPO",
+          "toWaypoint": "BITOD",
+          "magneticTrackDeg": 190,
+          "reverseMagneticTrackDeg": 10,
+          "distanceKm": 315,
+          "upperFL": 460,
+          "lowerFL": 250,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "M765",
+      "waypointCount": 9,
+      "segmentCount": 8,
+      "waypoints": [
+        {
+          "name": "PANDI",
+          "lat": 11.635,
+          "lon": 114.0,
+          "latDms": "113806N",
+          "lonDms": "1140000E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "ALDAS",
+          "lat": 10.948333,
+          "lon": 112.205,
+          "latDms": "105654N",
+          "lonDms": "1121218E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "MAPNO",
+          "lat": 10.218333,
+          "lon": 110.335,
+          "latDms": "101306N",
+          "lonDms": "1102006E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "SAMAP",
+          "lat": 9.788333,
+          "lon": 109.2525,
+          "latDms": "094718N",
+          "lonDms": "1091509E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "DAGAG",
+          "lat": 9.463333,
+          "lon": 108.441667,
+          "latDms": "092748N",
+          "lonDms": "1082630E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "CON SON NDB (CN)",
+          "lat": 8.732778,
+          "lon": 106.626389,
+          "latDms": "084358N",
+          "lonDms": "1063735E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "VIGEN",
+          "lat": 7.995556,
+          "lon": 105.369444,
+          "latDms": "075944N",
+          "lonDms": "1052210E",
+          "footnoteRef": null,
+          "seq": 7
+        },
+        {
+          "name": "BITOD",
+          "lat": 7.256667,
+          "lon": 104.118333,
+          "latDms": "071524N",
+          "lonDms": "1040706E",
+          "footnoteRef": null,
+          "seq": 8
+        },
+        {
+          "name": "IGARI",
+          "lat": 6.936667,
+          "lon": 103.585,
+          "latDms": "065612N",
+          "lonDms": "1033506E",
+          "footnoteRef": "3",
+          "seq": 9
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PANDI",
+          "toWaypoint": "ALDAS",
+          "magneticTrackDeg": 249,
+          "reverseMagneticTrackDeg": 69,
+          "distanceKm": 210,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 5 Ho Chi Minh ACC FREQ: 120.700 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ALDAS",
+          "toWaypoint": "MAPNO",
+          "magneticTrackDeg": 248,
+          "reverseMagneticTrackDeg": 68,
+          "distanceKm": 220,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "MAPNO",
+          "toWaypoint": "SAMAP",
+          "magneticTrackDeg": 248,
+          "reverseMagneticTrackDeg": 68,
+          "distanceKm": 128,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "SAMAP",
+          "toWaypoint": "DAGAG",
+          "magneticTrackDeg": 248,
+          "reverseMagneticTrackDeg": 68,
+          "distanceKm": 96,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": "- SAMAP is the transfer of control point between Sector 4 and Sector 5 Ho Chi Minh ACC - Sector 4 Ho Chi Minh ACC FREQ: 133.050 MHZ"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "DAGAG",
+          "toWaypoint": "CON SON NDB (CN)",
+          "magneticTrackDeg": 248,
+          "reverseMagneticTrackDeg": 68,
+          "distanceKm": 215,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "CON SON NDB (CN)",
+          "toWaypoint": "VIGEN",
+          "magneticTrackDeg": 239,
+          "reverseMagneticTrackDeg": 59,
+          "distanceKm": 161,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "VIGEN",
+          "toWaypoint": "BITOD",
+          "magneticTrackDeg": 239,
+          "reverseMagneticTrackDeg": 59,
+          "distanceKm": 161,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": "- VIGEN is the transfer of control point between Sector 4 and Sector 3 Ho Chi Minh ACC - Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "BITOD",
+          "toWaypoint": "IGARI",
+          "magneticTrackDeg": 239,
+          "reverseMagneticTrackDeg": 59,
+          "distanceKm": 68,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "M768",
+      "waypointCount": 7,
+      "segmentCount": 6,
+      "waypoints": [
+        {
+          "name": "AKMON",
+          "lat": 8.215,
+          "lon": 110.218333,
+          "latDms": "081254N",
+          "lonDms": "1101306E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "MOXON",
+          "lat": 8.825,
+          "lon": 109.355,
+          "latDms": "084930N",
+          "lonDms": "1092118E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "DAGAG",
+          "lat": 9.463333,
+          "lon": 108.441667,
+          "latDms": "092748N",
+          "lonDms": "1082630E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "ELSAS",
+          "lat": 10.136667,
+          "lon": 107.548333,
+          "latDms": "100812N",
+          "lonDms": "1073254E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "ASEBO",
+          "lat": 10.331667,
+          "lon": 107.29,
+          "latDms": "101954N",
+          "lonDms": "1071724E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "LOSON",
+          "lat": 10.493333,
+          "lon": 107.075556,
+          "latDms": "102936N",
+          "lonDms": "1070432E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 7
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "AKMON",
+          "toWaypoint": "MOXON",
+          "magneticTrackDeg": 306,
+          "reverseMagneticTrackDeg": 126,
+          "distanceKm": 117,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 4 Ho Chi Minh ACC FREQ: 133.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "MOXON",
+          "toWaypoint": "DAGAG",
+          "magneticTrackDeg": 305,
+          "reverseMagneticTrackDeg": 125,
+          "distanceKm": 122,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "DAGAG",
+          "toWaypoint": "ELSAS",
+          "magneticTrackDeg": 308,
+          "reverseMagneticTrackDeg": 128,
+          "distanceKm": 123,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "ELSAS",
+          "toWaypoint": "ASEBO",
+          "magneticTrackDeg": 308,
+          "reverseMagneticTrackDeg": 128,
+          "distanceKm": 36,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "ASEBO",
+          "toWaypoint": "LOSON",
+          "magneticTrackDeg": 308,
+          "reverseMagneticTrackDeg": 128,
+          "distanceKm": 29,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "LOSON",
+          "toWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "magneticTrackDeg": 308,
+          "reverseMagneticTrackDeg": 128,
+          "distanceKm": 59,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "N500",
+      "waypointCount": 9,
+      "segmentCount": 8,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "BUKMA",
+          "lat": 10.847222,
+          "lon": 107.030833,
+          "latDms": "105050N",
+          "lonDms": "1070151E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "MATGI",
+          "lat": 10.895556,
+          "lon": 107.646667,
+          "latDms": "105344N",
+          "lonDms": "1073848E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "PHAN THIET VOR/DME (PTH)",
+          "lat": 10.928056,
+          "lon": 108.071944,
+          "latDms": "105541N",
+          "lonDms": "1080419E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "AGSIS",
+          "lat": 11.021944,
+          "lon": 108.831111,
+          "latDms": "110119N",
+          "lonDms": "1084952E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "DAMVO",
+          "lat": 11.108333,
+          "lon": 109.545,
+          "latDms": "110630N",
+          "lonDms": "1093242E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "MIMUX",
+          "lat": 11.305,
+          "lon": 111.103333,
+          "latDms": "111818N",
+          "lonDms": "1110612E",
+          "footnoteRef": null,
+          "seq": 7
+        },
+        {
+          "name": "AGSAM",
+          "lat": 11.471667,
+          "lon": 112.588333,
+          "latDms": "112818N",
+          "lonDms": "1123518E",
+          "footnoteRef": null,
+          "seq": 8
+        },
+        {
+          "name": "PANDI",
+          "lat": 11.635,
+          "lon": 114.0,
+          "latDms": "113806N",
+          "lonDms": "1140000E",
+          "footnoteRef": "2",
+          "seq": 9
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "BUKMA",
+          "magneticTrackDeg": 86,
+          "reverseMagneticTrackDeg": 266,
+          "distanceKm": 42,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "BUKMA",
+          "toWaypoint": "MATGI",
+          "magneticTrackDeg": 85,
+          "reverseMagneticTrackDeg": 265,
+          "distanceKm": 68,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "MATGI",
+          "toWaypoint": "PHAN THIET VOR/DME (PTH)",
+          "magneticTrackDeg": 85,
+          "reverseMagneticTrackDeg": 265,
+          "distanceKm": 46,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "PHAN THIET VOR/DME (PTH)",
+          "toWaypoint": "AGSIS",
+          "magneticTrackDeg": 83,
+          "reverseMagneticTrackDeg": 263,
+          "distanceKm": 84,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "AGSIS",
+          "toWaypoint": "DAMVO",
+          "magneticTrackDeg": 83,
+          "reverseMagneticTrackDeg": 263,
+          "distanceKm": 79,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "DAMVO",
+          "toWaypoint": "MIMUX",
+          "magneticTrackDeg": 83,
+          "reverseMagneticTrackDeg": 263,
+          "distanceKm": 171,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "MIMUX",
+          "toWaypoint": "AGSAM",
+          "magneticTrackDeg": 83,
+          "reverseMagneticTrackDeg": 263,
+          "distanceKm": 163,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "AGSAM",
+          "toWaypoint": "PANDI",
+          "magneticTrackDeg": 83,
+          "reverseMagneticTrackDeg": 263,
+          "distanceKm": 155,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "N891",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "XONAN",
+          "lat": 9.245,
+          "lon": 102.838333,
+          "latDms": "091442N",
+          "lonDms": "1025018E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "SAMOG",
+          "lat": 8.001667,
+          "lon": 103.24,
+          "latDms": "080006N",
+          "lonDms": "1031424E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "IGARI",
+          "lat": 6.936667,
+          "lon": 103.585,
+          "latDms": "065612N",
+          "lonDms": "1033506E",
+          "footnoteRef": "3",
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "XONAN",
+          "toWaypoint": "SAMOG",
+          "magneticTrackDeg": 162,
+          "reverseMagneticTrackDeg": 342,
+          "distanceKm": 145,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "SAMOG",
+          "toWaypoint": "IGARI",
+          "magneticTrackDeg": 162,
+          "reverseMagneticTrackDeg": 342,
+          "distanceKm": 124,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 92,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "P901",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "DA NANG DVOR/DME (DAN)",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ITBAM",
+          "lat": 16.666667,
+          "lon": 109.601667,
+          "latDms": "164000N",
+          "lonDms": "1093606E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "DA NANG DVOR/DME (DAN)",
+          "toWaypoint": "ITBAM",
+          "magneticTrackDeg": 65,
+          "reverseMagneticTrackDeg": 245,
+          "distanceKm": 165,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "Q15",
+      "waypointCount": 4,
+      "segmentCount": 3,
+      "waypoints": [
+        {
+          "name": "CAM RANH DVOR/DME (CRA)",
+          "lat": 11.994444,
+          "lon": 109.22,
+          "latDms": "115940N",
+          "lonDms": "1091312E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ATVIT",
+          "lat": 12.140556,
+          "lon": 109.496111,
+          "latDms": "120826N",
+          "lonDms": "1092946E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NITOM",
+          "lat": 12.741944,
+          "lon": 110.640278,
+          "latDms": "124431N",
+          "lonDms": "1103825E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "MESOX",
+          "lat": 13.98,
+          "lon": 113.045,
+          "latDms": "135848N",
+          "lonDms": "1130242E",
+          "footnoteRef": "2",
+          "seq": 4
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "CAM RANH DVOR/DME (CRA)",
+          "toWaypoint": "ATVIT",
+          "magneticTrackDeg": 62,
+          "reverseMagneticTrackDeg": 242,
+          "distanceKm": 34,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC - Sector 1 (up to FL265 inclusive) - Sector 5 (above FL265)"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ATVIT",
+          "toWaypoint": "NITOM",
+          "magneticTrackDeg": 62,
+          "reverseMagneticTrackDeg": 242,
+          "distanceKm": 141,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- ATVIT is the transfer of control point between Sector 1 and Sector 5 Ho Chi Minh ACC up to FL265 inclusive - Sector 5 Ho Chi Minh ACC FREQ: 120.700 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "NITOM",
+          "toWaypoint": "MESOX",
+          "magneticTrackDeg": 62,
+          "reverseMagneticTrackDeg": 242,
+          "distanceKm": 294,
+          "upperFL": 460,
+          "lowerFL": 135,
+          "minSafeAltitudeM": 4100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "R328",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "PHU BAI DVOR/DME (HUE)",
+          "lat": 16.402222,
+          "lon": 107.701667,
+          "latDms": "162408N",
+          "lonDms": "1074206E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "TORED",
+          "lat": 16.463611,
+          "lon": 106.675556,
+          "latDms": "162749N",
+          "lonDms": "1064032E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU BAI DVOR/DME (HUE)",
+          "toWaypoint": "TORED",
+          "magneticTrackDeg": 273,
+          "reverseMagneticTrackDeg": 93,
+          "distanceKm": 109,
+          "upperFL": 460,
+          "lowerFL": 120,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "- TORED is the transfer of control point between Sector 4 Ho Chi Minh ACC and Vientiane ACC - Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "R334",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "PHU QUOC DVOR/DME (PQU)",
+          "lat": 10.165278,
+          "lon": 104.038889,
+          "latDms": "100955N",
+          "lonDms": "1040220E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "NUMDI",
+          "lat": 10.445278,
+          "lon": 103.776389,
+          "latDms": "102643N",
+          "lonDms": "1034635E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU QUOC DVOR/DME (PQU)",
+          "toWaypoint": "NUMDI",
+          "magneticTrackDeg": 317,
+          "reverseMagneticTrackDeg": 137,
+          "distanceKm": 43,
+          "upperFL": 460,
+          "lowerFL": 60,
+          "minSafeAltitudeM": 1500,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "R335",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "VINH DVOR/DME (VIN)",
+          "lat": 18.734167,
+          "lon": 105.668333,
+          "latDms": "184403N",
+          "lonDms": "1054006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "IDOTA",
+          "lat": 18.693333,
+          "lon": 105.139444,
+          "latDms": "184136.0N",
+          "lonDms": "1050822.0E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "VINH DVOR/DME (VIN)",
+          "toWaypoint": "IDOTA",
+          "magneticTrackDeg": 265,
+          "reverseMagneticTrackDeg": 85,
+          "distanceKm": 55,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ha Noi ACC FREQ: 125.900 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "R468",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "SAPEN (2)",
+          "lat": 11.02,
+          "lon": 106.183333,
+          "latDms": "110112N",
+          "lonDms": "1061100E",
+          "footnoteRef": "3",
+          "seq": 1
+        },
+        {
+          "name": "MOXEB",
+          "lat": 10.899444,
+          "lon": 106.462778,
+          "latDms": "105358N",
+          "lonDms": "1062746E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "SAPEN (2)",
+          "toWaypoint": "MOXEB",
+          "magneticTrackDeg": 114,
+          "reverseMagneticTrackDeg": 294,
+          "distanceKm": 33,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "MOXEB",
+          "toWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "magneticTrackDeg": 114,
+          "reverseMagneticTrackDeg": 294,
+          "distanceKm": 22,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "R471",
+      "waypointCount": 4,
+      "segmentCount": 3,
+      "waypoints": [
+        {
+          "name": "NAKHA",
+          "lat": 21.966667,
+          "lon": 106.493333,
+          "latDms": "215800N",
+          "lonDms": "1062936E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "DENMO",
+          "lat": 22.041667,
+          "lon": 106.414444,
+          "latDms": "220230N",
+          "lonDms": "1062452E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "MEOVA",
+          "lat": 23.115,
+          "lon": 105.31,
+          "latDms": "230654N",
+          "lonDms": "1051836E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "KATBO",
+          "lat": 23.36,
+          "lon": 105.291667,
+          "latDms": "232136N",
+          "lonDms": "1051730E",
+          "footnoteRef": "2",
+          "seq": 4
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NAKHA",
+          "toWaypoint": "DENMO",
+          "magneticTrackDeg": 315,
+          "reverseMagneticTrackDeg": 135,
+          "distanceKm": 11,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "DENMO",
+          "toWaypoint": "MEOVA",
+          "magneticTrackDeg": 315,
+          "reverseMagneticTrackDeg": 135,
+          "distanceKm": 164,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "MEOVA",
+          "toWaypoint": "KATBO",
+          "magneticTrackDeg": 356,
+          "reverseMagneticTrackDeg": 176,
+          "distanceKm": 28,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "KATBO is the transfer of control point between Ha Noi ACC and Kunming ACC"
+        }
+      ]
+    },
+    {
+      "code": "R474",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "LAVOS",
+          "lat": 20.434722,
+          "lon": 104.397222,
+          "latDms": "202605N",
+          "lonDms": "1042350E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "MOC CHAU NDB (MC)",
+          "lat": 20.828056,
+          "lon": 104.700278,
+          "latDms": "204941N",
+          "lonDms": "1044201E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "NAKHA",
+          "lat": 21.966667,
+          "lon": 106.493333,
+          "latDms": "215800N",
+          "lonDms": "1062936E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "TEBAK",
+          "lat": 22.175,
+          "lon": 106.675,
+          "latDms": "221030N",
+          "lonDms": "1064030E",
+          "footnoteRef": "3",
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "LAVOS",
+          "toWaypoint": "MOC CHAU NDB (MC)",
+          "magneticTrackDeg": 36,
+          "reverseMagneticTrackDeg": 216,
+          "distanceKm": 55,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "LAVOS is the transfer of control point between Ha Noi ACC and Vientiane ACC"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "MOC CHAU NDB (MC)",
+          "toWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "magneticTrackDeg": 70,
+          "reverseMagneticTrackDeg": 250,
+          "distanceKm": 125,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "toWaypoint": "NAKHA",
+          "magneticTrackDeg": 39,
+          "reverseMagneticTrackDeg": 219,
+          "distanceKm": 108,
+          "upperFL": 460,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "NAKHA",
+          "toWaypoint": "TEBAK",
+          "magneticTrackDeg": 39,
+          "reverseMagneticTrackDeg": 219,
+          "distanceKm": 30,
+          "upperFL": 460,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "TEBAK is the transfer of control point between Ha Noi ACC and Nanning ACC"
+        }
+      ]
+    },
+    {
+      "code": "R575",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "PAPRA",
+          "lat": 15.766667,
+          "lon": 107.183333,
+          "latDms": "154600N",
+          "lonDms": "1071100E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LAVAN",
+          "lat": 14.175,
+          "lon": 105.691667,
+          "latDms": "141030N",
+          "lonDms": "1054130E",
+          "footnoteRef": "2",
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PAPRA",
+          "toWaypoint": "LAVAN",
+          "magneticTrackDeg": 224,
+          "reverseMagneticTrackDeg": 44,
+          "distanceKm": 245,
+          "upperFL": 460,
+          "lowerFL": 260,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "R588",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "GONLY",
+          "lat": 13.666667,
+          "lon": 107.5,
+          "latDms": "134000N",
+          "lonDms": "1073000E",
+          "footnoteRef": "2",
+          "seq": 1
+        },
+        {
+          "name": "PLEIKU DVOR/DME (PLK)",
+          "lat": 14.006111,
+          "lon": 108.024444,
+          "latDms": "140022N",
+          "lonDms": "1080128E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "GONLY",
+          "toWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "magneticTrackDeg": 57,
+          "reverseMagneticTrackDeg": 237,
+          "distanceKm": 68,
+          "upperFL": 460,
+          "lowerFL": 265,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 30,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W1",
+      "waypointCount": 20,
+      "segmentCount": 19,
+      "waypoints": [
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LOVBI",
+          "lat": 20.742778,
+          "lon": 105.996667,
+          "latDms": "204434N",
+          "lonDms": "1055948E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NAM HA DVOR/DME (NAH)",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "MAREL",
+          "lat": 19.228056,
+          "lon": 106.693611,
+          "latDms": "191341N",
+          "lonDms": "1064137E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "VIDAD",
+          "lat": 18.847778,
+          "lon": 106.871667,
+          "latDms": "185052N",
+          "lonDms": "1065218E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "HATIN",
+          "lat": 18.466944,
+          "lon": 107.048889,
+          "latDms": "182801N",
+          "lonDms": "1070256E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "XONUS",
+          "lat": 18.07,
+          "lon": 107.233056,
+          "latDms": "180412N",
+          "lonDms": "1071359E",
+          "footnoteRef": null,
+          "seq": 7
+        },
+        {
+          "name": "HAMIN",
+          "lat": 17.129722,
+          "lon": 107.677778,
+          "latDms": "170747N",
+          "lonDms": "1074040E",
+          "footnoteRef": null,
+          "seq": 8
+        },
+        {
+          "name": "PHULU",
+          "lat": 16.694722,
+          "lon": 107.888611,
+          "latDms": "164141N",
+          "lonDms": "1075319E",
+          "footnoteRef": null,
+          "seq": 9
+        },
+        {
+          "name": "CAHEO",
+          "lat": 16.536389,
+          "lon": 107.965278,
+          "latDms": "163211N",
+          "lonDms": "1075755E",
+          "footnoteRef": null,
+          "seq": 10
+        },
+        {
+          "name": "DA NANG DVOR/DME (DAN)",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E",
+          "footnoteRef": null,
+          "seq": 11
+        },
+        {
+          "name": "VILOT",
+          "lat": 15.038611,
+          "lon": 108.111667,
+          "latDms": "150219N",
+          "lonDms": "1080642E",
+          "footnoteRef": null,
+          "seq": 12
+        },
+        {
+          "name": "XAQUA",
+          "lat": 14.919444,
+          "lon": 108.101667,
+          "latDms": "145510N",
+          "lonDms": "1080606E",
+          "footnoteRef": null,
+          "seq": 13
+        },
+        {
+          "name": "PLEIKU DVOR/DME (PLK)",
+          "lat": 14.006111,
+          "lon": 108.024444,
+          "latDms": "140022N",
+          "lonDms": "1080128E",
+          "footnoteRef": null,
+          "seq": 14
+        },
+        {
+          "name": "MEVON",
+          "lat": 13.336389,
+          "lon": 108.074167,
+          "latDms": "132011N",
+          "lonDms": "1080427E",
+          "footnoteRef": null,
+          "seq": 15
+        },
+        {
+          "name": "BUON MA THUOT DVOR/ DME (BMT)",
+          "lat": 12.666389,
+          "lon": 108.123056,
+          "latDms": "123959N",
+          "lonDms": "1080723E",
+          "footnoteRef": null,
+          "seq": 16
+        },
+        {
+          "name": "ENRIN",
+          "lat": 11.190833,
+          "lon": 107.323889,
+          "latDms": "111127N",
+          "lonDms": "1071926E",
+          "footnoteRef": null,
+          "seq": 17
+        },
+        {
+          "name": "AN LOC NDB (AC)",
+          "lat": 10.939167,
+          "lon": 107.188333,
+          "latDms": "105621N",
+          "lonDms": "1071118E",
+          "footnoteRef": null,
+          "seq": 18
+        },
+        {
+          "name": "ESDOB",
+          "lat": 10.888611,
+          "lon": 106.963889,
+          "latDms": "105319N",
+          "lonDms": "1065750E",
+          "footnoteRef": null,
+          "seq": 19
+        },
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 20
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "toWaypoint": "LOVBI",
+          "magneticTrackDeg": 162,
+          "reverseMagneticTrackDeg": 342,
+          "distanceKm": 55,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "LOVBI",
+          "toWaypoint": "NAM HA DVOR/DME (NAH)",
+          "magneticTrackDeg": 162,
+          "reverseMagneticTrackDeg": 342,
+          "distanceKm": 41,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- LOVBI is the transfer of control point between Sector 1 and Sector 2 - Ha Noi ACC - Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "NAM HA DVOR/DME (NAH)",
+          "toWaypoint": "MAREL",
+          "magneticTrackDeg": 155,
+          "reverseMagneticTrackDeg": 335,
+          "distanceKm": 142,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "MAREL",
+          "toWaypoint": "VIDAD",
+          "magneticTrackDeg": 156,
+          "reverseMagneticTrackDeg": 336,
+          "distanceKm": 46,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "VIDAD",
+          "toWaypoint": "HATIN",
+          "magneticTrackDeg": 156,
+          "reverseMagneticTrackDeg": 336,
+          "distanceKm": 46,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- VIDAD is the transfer of control point between Sector 2 and Sector 3 - Ha Noi ACC - Sector 3 Ha Noi ACC FREQ: 125.900 MHZ"
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "HATIN",
+          "toWaypoint": "XONUS",
+          "magneticTrackDeg": 156,
+          "reverseMagneticTrackDeg": 336,
+          "distanceKm": 49,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "XONUS",
+          "toWaypoint": "HAMIN",
+          "magneticTrackDeg": 156,
+          "reverseMagneticTrackDeg": 336,
+          "distanceKm": 115,
+          "upperFL": 285,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "HAMIN",
+          "toWaypoint": "PHULU",
+          "magneticTrackDeg": 155,
+          "reverseMagneticTrackDeg": 335,
+          "distanceKm": 54,
+          "upperFL": 285,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- HAMIN is the transfer of control point between Sector 3 and Sector 4 - Ha Noi ACC - Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "PHULU",
+          "toWaypoint": "CAHEO",
+          "magneticTrackDeg": 155,
+          "reverseMagneticTrackDeg": 335,
+          "distanceKm": 19,
+          "upperFL": 285,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "CAHEO",
+          "toWaypoint": "DA NANG DVOR/DME (DAN)",
+          "magneticTrackDeg": 155,
+          "reverseMagneticTrackDeg": 335,
+          "distanceKm": 59,
+          "upperFL": 285,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "DA NANG DVOR/DME (DAN)",
+          "toWaypoint": "VILOT",
+          "magneticTrackDeg": 185,
+          "reverseMagneticTrackDeg": 5,
+          "distanceKm": 113,
+          "upperFL": 285,
+          "lowerFL": 120,
+          "minSafeAltitudeM": 3500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "VILOT",
+          "toWaypoint": "XAQUA",
+          "magneticTrackDeg": 185,
+          "reverseMagneticTrackDeg": 5,
+          "distanceKm": 13,
+          "upperFL": 285,
+          "lowerFL": 120,
+          "minSafeAltitudeM": 3500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- VILOT is the transfer of control point between Sector 4 - Ha Noi ACC and Sector 1 - Ho Chi Minh ACC - Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "XAQUA",
+          "toWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "magneticTrackDeg": 185,
+          "reverseMagneticTrackDeg": 5,
+          "distanceKm": 102,
+          "upperFL": 285,
+          "lowerFL": 120,
+          "minSafeAltitudeM": 3500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "toWaypoint": "MEVON",
+          "magneticTrackDeg": 176,
+          "reverseMagneticTrackDeg": 356,
+          "distanceKm": 74,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "PLK is the transfer of control point between CTL Da Nang and Ho Chi Minh ACC"
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "MEVON",
+          "toWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "magneticTrackDeg": 176,
+          "reverseMagneticTrackDeg": 356,
+          "distanceKm": 74,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "toWaypoint": "ENRIN",
+          "magneticTrackDeg": 208,
+          "reverseMagneticTrackDeg": 28,
+          "distanceKm": 185,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "ENRIN",
+          "toWaypoint": "AN LOC NDB (AC)",
+          "magneticTrackDeg": 208,
+          "reverseMagneticTrackDeg": 28,
+          "distanceKm": 32,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "AN LOC NDB (AC)",
+          "toWaypoint": "ESDOB",
+          "magneticTrackDeg": 257,
+          "reverseMagneticTrackDeg": 77,
+          "distanceKm": 25,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 19,
+          "fromWaypoint": "ESDOB",
+          "toWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "magneticTrackDeg": 257,
+          "reverseMagneticTrackDeg": 77,
+          "distanceKm": 35,
+          "upperFL": 285,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W10",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "PHU BAI DVOR/DME (HUE)",
+          "lat": 16.402222,
+          "lon": 107.701667,
+          "latDms": "162408N",
+          "lonDms": "1074206E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "HAMIN",
+          "lat": 17.129722,
+          "lon": 107.677778,
+          "latDms": "170747N",
+          "lonDms": "1074040E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "ASSAD",
+          "lat": 18.341111,
+          "lon": 107.681389,
+          "latDms": "182028N",
+          "lonDms": "1074053E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "BALOV",
+          "lat": 20.129722,
+          "lon": 107.708611,
+          "latDms": "200747N",
+          "lonDms": "1074231E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "CAT BI DVOR/DME (CBI)",
+          "lat": 20.815556,
+          "lon": 106.724444,
+          "latDms": "204856N",
+          "lonDms": "1064328E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU BAI DVOR/DME (HUE)",
+          "toWaypoint": "HAMIN",
+          "magneticTrackDeg": 358,
+          "reverseMagneticTrackDeg": 178,
+          "distanceKm": 81,
+          "upperFL": 460,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 2100,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "HAMIN",
+          "toWaypoint": "ASSAD",
+          "magneticTrackDeg": 1,
+          "reverseMagneticTrackDeg": 181,
+          "distanceKm": 134,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- HAMIN is the transfer of control point between Sector 3 and Sector 4 Ha Noi ACC"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "ASSAD",
+          "toWaypoint": "BALOV",
+          "magneticTrackDeg": null,
+          "reverseMagneticTrackDeg": null,
+          "distanceKm": null,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "BALOV",
+          "toWaypoint": "CAT BI DVOR/DME (CBI)",
+          "magneticTrackDeg": 305,
+          "reverseMagneticTrackDeg": 125,
+          "distanceKm": 128,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W11",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "PLEIKU DVOR/DME (PLK)",
+          "lat": 14.006111,
+          "lon": 108.024444,
+          "latDms": "140022N",
+          "lonDms": "1080128E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "BANSU",
+          "lat": 14.286111,
+          "lon": 108.159722,
+          "latDms": "141710N",
+          "lonDms": "1080935E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "CHU LAI NDB (CQ)",
+          "lat": 15.412222,
+          "lon": 108.704444,
+          "latDms": "152444N",
+          "lonDms": "1084216E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PLEIKU DVOR/DME (PLK)",
+          "toWaypoint": "BANSU",
+          "magneticTrackDeg": 25,
+          "reverseMagneticTrackDeg": 205,
+          "distanceKm": 34,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- PLK is the transfer of control point between Da Nang CTL and Ho Chi Minh ACC - Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "BANSU",
+          "toWaypoint": "CHU LAI NDB (CQ)",
+          "magneticTrackDeg": 25,
+          "reverseMagneticTrackDeg": 205,
+          "distanceKm": 138,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q1"
+        }
+      ]
+    },
+    {
+      "code": "W12",
+      "waypointCount": 8,
+      "segmentCount": 7,
+      "waypoints": [
+        {
+          "name": "PHU CAT DVOR/DME (PCA)",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "NOBID",
+          "lat": 13.312222,
+          "lon": 108.581944,
+          "latDms": "131844N",
+          "lonDms": "1083455E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "BUON MA THUOT DVOR/ DME (BMT)",
+          "lat": 12.666389,
+          "lon": 108.123056,
+          "latDms": "123959N",
+          "lonDms": "1080723E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "PATMA",
+          "lat": 12.336389,
+          "lon": 107.81,
+          "latDms": "122011N",
+          "lonDms": "1074836E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "DONXO",
+          "lat": 11.423333,
+          "lon": 106.951667,
+          "latDms": "112524N",
+          "lonDms": "1065706E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "RUNOP",
+          "lat": 11.088056,
+          "lon": 106.638333,
+          "latDms": "110517N",
+          "lonDms": "1063818E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "MOXEB",
+          "lat": 10.899444,
+          "lon": 106.462778,
+          "latDms": "105358N",
+          "lonDms": "1062746E",
+          "footnoteRef": null,
+          "seq": 7
+        },
+        {
+          "name": "CAN THO DVOR/DME (TRN)",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E",
+          "footnoteRef": null,
+          "seq": 8
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "toWaypoint": "NOBID",
+          "magneticTrackDeg": 215,
+          "reverseMagneticTrackDeg": 35,
+          "distanceKm": 87,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2300,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "NOBID",
+          "toWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "magneticTrackDeg": 215,
+          "reverseMagneticTrackDeg": 35,
+          "distanceKm": 87,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2300,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "toWaypoint": "PATMA",
+          "magneticTrackDeg": 223,
+          "reverseMagneticTrackDeg": 43,
+          "distanceKm": 50,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "PATMA",
+          "toWaypoint": "DONXO",
+          "magneticTrackDeg": 223,
+          "reverseMagneticTrackDeg": 43,
+          "distanceKm": 138,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2600,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "DONXO",
+          "toWaypoint": "RUNOP",
+          "magneticTrackDeg": 223,
+          "reverseMagneticTrackDeg": 43,
+          "distanceKm": 50,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "RUNOP",
+          "toWaypoint": "MOXEB",
+          "magneticTrackDeg": 223,
+          "reverseMagneticTrackDeg": 43,
+          "distanceKm": 28,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "MOXEB",
+          "toWaypoint": "CAN THO DVOR/DME (TRN)",
+          "magneticTrackDeg": 223,
+          "reverseMagneticTrackDeg": 43,
+          "distanceKm": 123,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W14",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "NAM HA DVOR/DME (NAH)",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "NOTHA",
+          "lat": 20.566944,
+          "lon": 105.545556,
+          "latDms": "203401N",
+          "lonDms": "1053244E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "MOC CHAU NDB (MC)",
+          "lat": 20.828056,
+          "lon": 104.700278,
+          "latDms": "204941N",
+          "lonDms": "1044201E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NAM HA DVOR/DME (NAH)",
+          "toWaypoint": "NOTHA",
+          "magneticTrackDeg": 289,
+          "reverseMagneticTrackDeg": 109,
+          "distanceKm": 63,
+          "upperFL": 460,
+          "lowerFL": 200,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Segment NAH - NOTHA: Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "NOTHA",
+          "toWaypoint": "MOC CHAU NDB (MC)",
+          "magneticTrackDeg": 289,
+          "reverseMagneticTrackDeg": 109,
+          "distanceKm": 93,
+          "upperFL": 460,
+          "lowerFL": 200,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "NOTHA is the transfer of control point between Sector 1 and Sector 2 - Ha Noi FIR Segment NOTHA - MC: Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W15",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "AN LOC NDB (AC)",
+          "lat": 10.939167,
+          "lon": 107.188333,
+          "latDms": "105621N",
+          "lonDms": "1071118E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "VETOM",
+          "lat": 11.233056,
+          "lon": 107.6075,
+          "latDms": "111359N",
+          "lonDms": "1073627E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "LIEN KHUONG DVOR/DME (LKH)",
+          "lat": 11.754167,
+          "lon": 108.355278,
+          "latDms": "114515N",
+          "lonDms": "1082119E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "SOSPA",
+          "lat": 11.833889,
+          "lon": 108.640833,
+          "latDms": "115002N",
+          "lonDms": "1083827E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "CAM RANH DVOR/DME (CRA)",
+          "lat": 11.994444,
+          "lon": 109.22,
+          "latDms": "115940N",
+          "lonDms": "1091312E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "AN LOC NDB (AC)",
+          "toWaypoint": "VETOM",
+          "magneticTrackDeg": 55,
+          "reverseMagneticTrackDeg": 235,
+          "distanceKm": 56,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC - Sector 2 (up to FL265 inclusive) - Sector 3 (above FL265)"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VETOM",
+          "toWaypoint": "LIEN KHUONG DVOR/DME (LKH)",
+          "magneticTrackDeg": 55,
+          "reverseMagneticTrackDeg": 235,
+          "distanceKm": 100,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Ho Chi Minh ACC + Sector 2 (up to FL265 inclusive) + Sector 5 (above FL265) - VETOM is the transfer of control point between Sector 3 and Sector 5 Ho Chi Minh ACC above FL265"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "LIEN KHUONG DVOR/DME (LKH)",
+          "toWaypoint": "SOSPA",
+          "magneticTrackDeg": 74,
+          "reverseMagneticTrackDeg": 254,
+          "distanceKm": 32,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "SOSPA",
+          "toWaypoint": "CAM RANH DVOR/DME (CRA)",
+          "magneticTrackDeg": 74,
+          "reverseMagneticTrackDeg": 254,
+          "distanceKm": 66,
+          "upperFL": 460,
+          "lowerFL": 110,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Ho Chi Minh ACC + Sector 1 (up to FL265 inclusive) + Sector 5 (above FL265) - SOSPA is the transfer of control point between Sector 1 and Sector 2 Ho Chi Minh ACC up to FL265 inclusive"
+        }
+      ]
+    },
+    {
+      "code": "W16",
+      "waypointCount": 4,
+      "segmentCount": 3,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ENPAS",
+          "lat": 10.399722,
+          "lon": 106.111389,
+          "latDms": "102359N",
+          "lonDms": "1060641E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "CAN THO DVOR/DME (TRN)",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "RACH GIA NDB (RG)",
+          "lat": 9.959444,
+          "lon": 105.133056,
+          "latDms": "095734N",
+          "lonDms": "1050759E",
+          "footnoteRef": null,
+          "seq": 4
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "ENPAS",
+          "magneticTrackDeg": 232,
+          "reverseMagneticTrackDeg": 52,
+          "distanceKm": 75,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ENPAS",
+          "toWaypoint": "CAN THO DVOR/DME (TRN)",
+          "magneticTrackDeg": 232,
+          "reverseMagneticTrackDeg": 52,
+          "distanceKm": 57,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "CAN THO DVOR/DME (TRN)",
+          "toWaypoint": "RACH GIA NDB (RG)",
+          "magneticTrackDeg": null,
+          "reverseMagneticTrackDeg": null,
+          "distanceKm": 64,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W17",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ATGAS",
+          "lat": 10.404722,
+          "lon": 105.517222,
+          "latDms": "102417N",
+          "lonDms": "1053102E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "TUNPO",
+          "lat": 10.062222,
+          "lon": 104.589444,
+          "latDms": "100344N",
+          "lonDms": "1043522E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "ATGAS",
+          "magneticTrackDeg": 250,
+          "reverseMagneticTrackDeg": 70,
+          "distanceKm": 132,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ATGAS",
+          "toWaypoint": "TUNPO",
+          "magneticTrackDeg": 250,
+          "reverseMagneticTrackDeg": 70,
+          "distanceKm": 108,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W18",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "CAN THO DVOR/DME (TRN)",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "CA MAU NDB (QL)",
+          "lat": 9.176111,
+          "lon": 105.176667,
+          "latDms": "091034N",
+          "lonDms": "1051036E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "CAN THO DVOR/DME (TRN)",
+          "toWaypoint": "CA MAU NDB (QL)",
+          "magneticTrackDeg": 210,
+          "reverseMagneticTrackDeg": 30,
+          "distanceKm": 116,
+          "upperFL": 460,
+          "lowerFL": null,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W19",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "VUNG TAU DVOR/DME (VTV)",
+          "lat": 10.372778,
+          "lon": 107.094444,
+          "latDms": "102222N",
+          "lonDms": "1070540E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "TULTU",
+          "lat": 9.683056,
+          "lon": 106.897778,
+          "latDms": "094059N",
+          "lonDms": "1065352E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "LITAM",
+          "lat": 8.993611,
+          "lon": 106.701667,
+          "latDms": "085937N",
+          "lonDms": "1064206E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "CON SON NDB (CN)",
+          "lat": 8.732778,
+          "lon": 106.626389,
+          "latDms": "084358N",
+          "lonDms": "1063735E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "VUNG TAU DVOR/DME (VTV)",
+          "magneticTrackDeg": 135,
+          "reverseMagneticTrackDeg": 315,
+          "distanceKm": 69,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": 1500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VUNG TAU DVOR/DME (VTV)",
+          "toWaypoint": "TULTU",
+          "magneticTrackDeg": 196,
+          "reverseMagneticTrackDeg": 16,
+          "distanceKm": 79,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "TULTU",
+          "toWaypoint": "LITAM",
+          "magneticTrackDeg": 196,
+          "reverseMagneticTrackDeg": 16,
+          "distanceKm": 79,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "LITAM",
+          "toWaypoint": "CON SON NDB (CN)",
+          "magneticTrackDeg": 196,
+          "reverseMagneticTrackDeg": 16,
+          "distanceKm": 30,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W2",
+      "waypointCount": 20,
+      "segmentCount": 19,
+      "waypoints": [
+        {
+          "name": "NAM HA DVOR/DME (NAH)",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "VINH DVOR/DME (VIN)",
+          "lat": 18.734167,
+          "lon": 105.668333,
+          "latDms": "184403N",
+          "lonDms": "1054006E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "KAMSU",
+          "lat": 18.253611,
+          "lon": 106.093333,
+          "latDms": "181513N",
+          "lonDms": "1060536E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "DONGI",
+          "lat": 17.681389,
+          "lon": 106.595278,
+          "latDms": "174053N",
+          "lonDms": "1063543E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "KONCO",
+          "lat": 17.0,
+          "lon": 107.186944,
+          "latDms": "170000N",
+          "lonDms": "1071113E",
+          "footnoteRef": null,
+          "seq": 5
+        },
+        {
+          "name": "BIGBO",
+          "lat": 16.488611,
+          "lon": 107.627222,
+          "latDms": "162919N",
+          "lonDms": "1073738E",
+          "footnoteRef": null,
+          "seq": 6
+        },
+        {
+          "name": "PHU BAI DVOR/DME (HUE)",
+          "lat": 16.402222,
+          "lon": 107.701667,
+          "latDms": "162408N",
+          "lonDms": "1074206E",
+          "footnoteRef": null,
+          "seq": 7
+        },
+        {
+          "name": "DA NANG DVOR/DME (DAN)",
+          "lat": 16.052778,
+          "lon": 108.198333,
+          "latDms": "160310N",
+          "lonDms": "1081154E",
+          "footnoteRef": null,
+          "seq": 8
+        },
+        {
+          "name": "CHU LAI NDB (CQ)",
+          "lat": 15.412222,
+          "lon": 108.704444,
+          "latDms": "152444N",
+          "lonDms": "1084216E",
+          "footnoteRef": null,
+          "seq": 9
+        },
+        {
+          "name": "KUMUN",
+          "lat": 14.971389,
+          "lon": 108.8075,
+          "latDms": "145817N",
+          "lonDms": "1084827E",
+          "footnoteRef": null,
+          "seq": 10
+        },
+        {
+          "name": "PHU CAT DVOR/DME (PCA)",
+          "lat": 13.957222,
+          "lon": 109.042778,
+          "latDms": "135726N",
+          "lonDms": "1090234E",
+          "footnoteRef": null,
+          "seq": 11
+        },
+        {
+          "name": "KAMGO",
+          "lat": 13.2875,
+          "lon": 109.101389,
+          "latDms": "131715N",
+          "lonDms": "1090605E",
+          "footnoteRef": null,
+          "seq": 12
+        },
+        {
+          "name": "KARAN",
+          "lat": 12.648889,
+          "lon": 109.156667,
+          "latDms": "123856N",
+          "lonDms": "1090924E",
+          "footnoteRef": null,
+          "seq": 13
+        },
+        {
+          "name": "NHATA",
+          "lat": 12.226389,
+          "lon": 109.201111,
+          "latDms": "121335N",
+          "lonDms": "1091204E",
+          "footnoteRef": null,
+          "seq": 14
+        },
+        {
+          "name": "CAM RANH DVOR/DME (CRA)",
+          "lat": 11.994444,
+          "lon": 109.22,
+          "latDms": "115940N",
+          "lonDms": "1091312E",
+          "footnoteRef": null,
+          "seq": 15
+        },
+        {
+          "name": "IBUNU",
+          "lat": 11.668889,
+          "lon": 108.868056,
+          "latDms": "114008N",
+          "lonDms": "1085205E",
+          "footnoteRef": null,
+          "seq": 16
+        },
+        {
+          "name": "PHAN THIET VOR/DME (PTH)",
+          "lat": 10.928056,
+          "lon": 108.071944,
+          "latDms": "105541N",
+          "lonDms": "1080419E",
+          "footnoteRef": null,
+          "seq": 17
+        },
+        {
+          "name": "VEPMA",
+          "lat": 10.933333,
+          "lon": 107.671667,
+          "latDms": "105600N",
+          "lonDms": "1074018E",
+          "footnoteRef": null,
+          "seq": 18
+        },
+        {
+          "name": "AN LOC NDB (AC)",
+          "lat": 10.939167,
+          "lon": 107.188333,
+          "latDms": "105621N",
+          "lonDms": "1071118E",
+          "footnoteRef": null,
+          "seq": 19
+        },
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 20
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NAM HA DVOR/DME (NAH)",
+          "toWaypoint": "VINH DVOR/DME (VIN)",
+          "magneticTrackDeg": 195,
+          "reverseMagneticTrackDeg": 15,
+          "distanceKm": 189,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VINH DVOR/DME (VIN)",
+          "toWaypoint": "KAMSU",
+          "magneticTrackDeg": 140,
+          "reverseMagneticTrackDeg": 320,
+          "distanceKm": 70,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 1650,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ha Noi ACC FREQ: 125.900 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "KAMSU",
+          "toWaypoint": "DONGI",
+          "magneticTrackDeg": 140,
+          "reverseMagneticTrackDeg": 320,
+          "distanceKm": 82,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 1650,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "DONGI",
+          "toWaypoint": "KONCO",
+          "magneticTrackDeg": 140,
+          "reverseMagneticTrackDeg": 320,
+          "distanceKm": 98,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 1650,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 5,
+          "fromWaypoint": "KONCO",
+          "toWaypoint": "BIGBO",
+          "magneticTrackDeg": 140,
+          "reverseMagneticTrackDeg": 320,
+          "distanceKm": 74,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- KONCO is the transfer of control point between Sector 3 and Sector 4 Ha Noi ACC - Sector 4 Ha Noi ACC FREQ: 123.300 MHZ"
+        },
+        {
+          "seq": 6,
+          "fromWaypoint": "BIGBO",
+          "toWaypoint": "PHU BAI DVOR/DME (HUE)",
+          "magneticTrackDeg": 140,
+          "reverseMagneticTrackDeg": 320,
+          "distanceKm": 12,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 7,
+          "fromWaypoint": "PHU BAI DVOR/DME (HUE)",
+          "toWaypoint": "DA NANG DVOR/DME (DAN)",
+          "magneticTrackDeg": 126,
+          "reverseMagneticTrackDeg": 306,
+          "distanceKm": 66,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 8,
+          "fromWaypoint": "DA NANG DVOR/DME (DAN)",
+          "toWaypoint": "CHU LAI NDB (CQ)",
+          "magneticTrackDeg": 143,
+          "reverseMagneticTrackDeg": 323,
+          "distanceKm": 89,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 9,
+          "fromWaypoint": "CHU LAI NDB (CQ)",
+          "toWaypoint": "KUMUN",
+          "magneticTrackDeg": 167,
+          "reverseMagneticTrackDeg": 347,
+          "distanceKm": 50,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- CQ is the transfer of control point between Sector 4 - Ha Noi ACC and Sector 1 - Ho Chi Minh ACC - Sector 1 Ho Chi Minh ACC FREQ: 134.050 MHZ"
+        },
+        {
+          "seq": 10,
+          "fromWaypoint": "KUMUN",
+          "toWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "magneticTrackDeg": 167,
+          "reverseMagneticTrackDeg": 347,
+          "distanceKm": 115,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2400,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 11,
+          "fromWaypoint": "PHU CAT DVOR/DME (PCA)",
+          "toWaypoint": "KAMGO",
+          "magneticTrackDeg": 175,
+          "reverseMagneticTrackDeg": 355,
+          "distanceKm": 76,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 12,
+          "fromWaypoint": "KAMGO",
+          "toWaypoint": "KARAN",
+          "magneticTrackDeg": 175,
+          "reverseMagneticTrackDeg": 355,
+          "distanceKm": 69,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 13,
+          "fromWaypoint": "KARAN",
+          "toWaypoint": "NHATA",
+          "magneticTrackDeg": 175,
+          "reverseMagneticTrackDeg": 355,
+          "distanceKm": 47,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 14,
+          "fromWaypoint": "NHATA",
+          "toWaypoint": "CAM RANH DVOR/DME (CRA)",
+          "magneticTrackDeg": 175,
+          "reverseMagneticTrackDeg": 355,
+          "distanceKm": 26,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 3000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 15,
+          "fromWaypoint": "CAM RANH DVOR/DME (CRA)",
+          "toWaypoint": "IBUNU",
+          "magneticTrackDeg": 227,
+          "reverseMagneticTrackDeg": 47,
+          "distanceKm": 53,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 16,
+          "fromWaypoint": "IBUNU",
+          "toWaypoint": "PHAN THIET VOR/DME (PTH)",
+          "magneticTrackDeg": 227,
+          "reverseMagneticTrackDeg": 47,
+          "distanceKm": 120,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2700,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 17,
+          "fromWaypoint": "PHAN THIET VOR/DME (PTH)",
+          "toWaypoint": "VEPMA",
+          "magneticTrackDeg": 271,
+          "reverseMagneticTrackDeg": 91,
+          "distanceKm": 44,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 18,
+          "fromWaypoint": "VEPMA",
+          "toWaypoint": "AN LOC NDB (AC)",
+          "magneticTrackDeg": 271,
+          "reverseMagneticTrackDeg": 91,
+          "distanceKm": 53,
+          "upperFL": 460,
+          "lowerFL": 80,
+          "minSafeAltitudeM": 2200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 19,
+          "fromWaypoint": "AN LOC NDB (AC)",
+          "toWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "magneticTrackDeg": 257,
+          "reverseMagneticTrackDeg": 77,
+          "distanceKm": 60,
+          "upperFL": 460,
+          "lowerFL": 90,
+          "minSafeAltitudeM": 2500,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC"
+        }
+      ]
+    },
+    {
+      "code": "W20",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "MAREL",
+          "lat": 19.228056,
+          "lon": 106.693611,
+          "latDms": "191341N",
+          "lonDms": "1064137E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "VANUC",
+          "lat": 20.549722,
+          "lon": 106.721667,
+          "latDms": "203259N",
+          "lonDms": "1064318E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "CAT BI DVOR/DME (CBI)",
+          "lat": 20.815556,
+          "lon": 106.724444,
+          "latDms": "204856N",
+          "lonDms": "1064328E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "MAREL",
+          "toWaypoint": "VANUC",
+          "magneticTrackDeg": 1,
+          "reverseMagneticTrackDeg": 181,
+          "distanceKm": 147,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "VANUC",
+          "toWaypoint": "CAT BI DVOR/DME (CBI)",
+          "magneticTrackDeg": 1,
+          "reverseMagneticTrackDeg": 181,
+          "distanceKm": 30,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "VANUC is the intersection point between W20 with boundary of Cat Bi Aerodrome Control Zone"
+        }
+      ]
+    },
+    {
+      "code": "W21",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "HUVAN",
+          "lat": 21.208333,
+          "lon": 105.111389,
+          "latDms": "211230N",
+          "lonDms": "1050641E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NA SAN NDB (BQ)",
+          "lat": 21.215,
+          "lon": 104.038056,
+          "latDms": "211254N",
+          "lonDms": "1040217E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "toWaypoint": "HUVAN",
+          "magneticTrackDeg": 270,
+          "reverseMagneticTrackDeg": 90,
+          "distanceKm": 75,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "HUVAN",
+          "toWaypoint": "NA SAN NDB (BQ)",
+          "magneticTrackDeg": 270,
+          "reverseMagneticTrackDeg": 90,
+          "distanceKm": 111,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "HUVAN is the intersection point between W21 with boundary of Noi Bai Approach Control Zone"
+        }
+      ]
+    },
+    {
+      "code": "W22",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "MEOVA",
+          "lat": 23.115,
+          "lon": 105.31,
+          "latDms": "230654N",
+          "lonDms": "1051836E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "DILEN",
+          "lat": 22.109833,
+          "lon": 105.470167,
+          "latDms": "220635.4N",
+          "lonDms": "1052812.6E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "VINH PHUC DVOR/DME (VPH)",
+          "lat": 21.276111,
+          "lon": 105.601111,
+          "latDms": "211634N",
+          "lonDms": "1053604E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "MEOVA",
+          "toWaypoint": "DILEN",
+          "magneticTrackDeg": 172,
+          "reverseMagneticTrackDeg": 352,
+          "distanceKm": 113,
+          "upperFL": 460,
+          "lowerFL": 290,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "DILEN",
+          "toWaypoint": "VINH PHUC DVOR/DME (VPH)",
+          "magneticTrackDeg": 172,
+          "reverseMagneticTrackDeg": 352,
+          "distanceKm": 93,
+          "upperFL": 460,
+          "lowerFL": 290,
+          "minSafeAltitudeM": 3200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Ha Noi ACC FREQ: 132.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W23",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "CAN THO DVOR/DME (TRN)",
+          "lat": 10.083333,
+          "lon": 105.705556,
+          "latDms": "100500N",
+          "lonDms": "1054220E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ANHOA",
+          "lat": 9.787222,
+          "lon": 105.908333,
+          "latDms": "094714N",
+          "lonDms": "1055430E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "VEPKI",
+          "lat": 9.105833,
+          "lon": 106.373611,
+          "latDms": "090621N",
+          "lonDms": "1062225E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "CONDA",
+          "lat": 8.957222,
+          "lon": 106.474722,
+          "latDms": "085726N",
+          "lonDms": "1062829E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "CON SON NDB (CN)",
+          "lat": 8.732778,
+          "lon": 106.626389,
+          "latDms": "084358N",
+          "lonDms": "1063735E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "CAN THO DVOR/DME (TRN)",
+          "toWaypoint": "ANHOA",
+          "magneticTrackDeg": 146,
+          "reverseMagneticTrackDeg": 326,
+          "distanceKm": 40,
+          "upperFL": 160,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ANHOA",
+          "toWaypoint": "VEPKI",
+          "magneticTrackDeg": 146,
+          "reverseMagneticTrackDeg": 326,
+          "distanceKm": 91,
+          "upperFL": 160,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "VEPKI",
+          "toWaypoint": "CONDA",
+          "magneticTrackDeg": 146,
+          "reverseMagneticTrackDeg": 326,
+          "distanceKm": 20,
+          "upperFL": 160,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Sector 4 Ho Chi Minh ACC FREQ: 133.050 MHZ - VEPKI is the transfer of control point between Sector 3 and Sector 4 Ho Chi Minh ACC"
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "CONDA",
+          "toWaypoint": "CON SON NDB (CN)",
+          "magneticTrackDeg": 146,
+          "reverseMagneticTrackDeg": 326,
+          "distanceKm": 30,
+          "upperFL": 160,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W24",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "VINH DVOR/DME (VIN)",
+          "lat": 18.734167,
+          "lon": 105.668333,
+          "latDms": "184403N",
+          "lonDms": "1054006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "THO XUAN NDB (CB)",
+          "lat": 19.865,
+          "lon": 105.518611,
+          "latDms": "195154N",
+          "lonDms": "1053107E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "VINH DVOR/DME (VIN)",
+          "toWaypoint": "THO XUAN NDB (CB)",
+          "magneticTrackDeg": 353,
+          "reverseMagneticTrackDeg": 173,
+          "distanceKm": 126,
+          "upperFL": 260,
+          "lowerFL": 60,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W25",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "THO XUAN NDB (CB)",
+          "lat": 19.865,
+          "lon": 105.518611,
+          "latDms": "195154N",
+          "lonDms": "1053107E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "NAM HA DVOR/DME (NAH)",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "THO XUAN NDB (CB)",
+          "toWaypoint": "NAM HA DVOR/DME (NAH)",
+          "magneticTrackDeg": 47,
+          "reverseMagneticTrackDeg": 227,
+          "distanceKm": 85,
+          "upperFL": 260,
+          "lowerFL": 60,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 2 Ha Noi FREQ: 133.650 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W3",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "PHUTA",
+          "lat": 20.929722,
+          "lon": 106.460556,
+          "latDms": "205547N",
+          "lonDms": "1062738E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "CAT BI DVOR/DME (CBI)",
+          "lat": 20.815556,
+          "lon": 106.724444,
+          "latDms": "204856N",
+          "lonDms": "1064328E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "toWaypoint": "PHUTA",
+          "magneticTrackDeg": 115,
+          "reverseMagneticTrackDeg": 295,
+          "distanceKm": 73,
+          "upperFL": 460,
+          "lowerFL": 60,
+          "minSafeAltitudeM": 1800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Segment NOB - PHUTA: Ha Noi ACC (Sector 1) FREQ: 132.300 MHz"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "PHUTA",
+          "toWaypoint": "CAT BI DVOR/DME (CBI)",
+          "magneticTrackDeg": 115,
+          "reverseMagneticTrackDeg": 295,
+          "distanceKm": 30,
+          "upperFL": 460,
+          "lowerFL": 60,
+          "minSafeAltitudeM": 1800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Segment PHUTA - CBI: Ha Noi ACC Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W4",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "GIA LAM NDB (AM)",
+          "lat": 20.988889,
+          "lon": 105.861389,
+          "latDms": "205920N",
+          "lonDms": "1055141E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "UPVAN",
+          "lat": 20.925556,
+          "lon": 105.391944,
+          "latDms": "205532N",
+          "lonDms": "1052331E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "MOC CHAU NDB (MC)",
+          "lat": 20.828056,
+          "lon": 104.700278,
+          "latDms": "204941N",
+          "lonDms": "1044201E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "NA SAN NDB (BQ)",
+          "lat": 21.215,
+          "lon": 104.038056,
+          "latDms": "211254N",
+          "lonDms": "1040217E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "DIEN BIEN DVOR/DME (DBN)",
+          "lat": 21.373611,
+          "lon": 103.007778,
+          "latDms": "212225N",
+          "lonDms": "1030028E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "GIA LAM NDB (AM)",
+          "toWaypoint": "UPVAN",
+          "magneticTrackDeg": 262,
+          "reverseMagneticTrackDeg": 82,
+          "distanceKm": 49,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "UPVAN",
+          "toWaypoint": "MOC CHAU NDB (MC)",
+          "magneticTrackDeg": 262,
+          "reverseMagneticTrackDeg": 82,
+          "distanceKm": 73,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Cross Q2"
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "MOC CHAU NDB (MC)",
+          "toWaypoint": "NA SAN NDB (BQ)",
+          "magneticTrackDeg": 302,
+          "reverseMagneticTrackDeg": 122,
+          "distanceKm": 81,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "NA SAN NDB (BQ)",
+          "toWaypoint": "DIEN BIEN DVOR/DME (DBN)",
+          "magneticTrackDeg": 280,
+          "reverseMagneticTrackDeg": 99,
+          "distanceKm": 108,
+          "upperFL": 460,
+          "lowerFL": 130,
+          "minSafeAltitudeM": 2800,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W5",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "NAM HA DVOR/DME (NAH)",
+          "lat": 20.387222,
+          "lon": 106.117778,
+          "latDms": "202314N",
+          "lonDms": "1060704E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "CAT BI DVOR/DME (CBI)",
+          "lat": 20.815556,
+          "lon": 106.724444,
+          "latDms": "204856N",
+          "lonDms": "1064328E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NAM HA DVOR/DME (NAH)",
+          "toWaypoint": "CAT BI DVOR/DME (CBI)",
+          "magneticTrackDeg": 53,
+          "reverseMagneticTrackDeg": 233,
+          "distanceKm": 79,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": 900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 2 Ha Noi ACC FREQ: 133.650 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W6",
+      "waypointCount": 2,
+      "segmentCount": 1,
+      "waypoints": [
+        {
+          "name": "NOI BAI DVOR/DME (NOB)",
+          "lat": 21.213056,
+          "lon": 105.835,
+          "latDms": "211247N",
+          "lonDms": "1055006E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "LAOCAI",
+          "lat": 22.486667,
+          "lon": 103.965278,
+          "latDms": "222912N",
+          "lonDms": "1035755E",
+          "footnoteRef": null,
+          "seq": 2
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "NOI BAI DVOR/DME (NOB)",
+          "toWaypoint": "LAOCAI",
+          "magneticTrackDeg": 306,
+          "reverseMagneticTrackDeg": 126,
+          "distanceKm": 239,
+          "upperFL": 460,
+          "lowerFL": 140,
+          "minSafeAltitudeM": 4000,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 1 Ha Noi ACC FREQ: 132.300 MHZ"
+        }
+      ]
+    },
+    {
+      "code": "W7",
+      "waypointCount": 3,
+      "segmentCount": 2,
+      "waypoints": [
+        {
+          "name": "LIEN KHUONG DVOR/DME (LKH)",
+          "lat": 11.754167,
+          "lon": 108.355278,
+          "latDms": "114515N",
+          "lonDms": "1082119E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "ONEBI",
+          "lat": 11.938056,
+          "lon": 108.308611,
+          "latDms": "115617N",
+          "lonDms": "1081831E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "BUON MA THUOT DVOR/ DME (BMT)",
+          "lat": 12.666389,
+          "lon": 108.123056,
+          "latDms": "123959N",
+          "lonDms": "1080723E",
+          "footnoteRef": null,
+          "seq": 3
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "LIEN KHUONG DVOR/DME (LKH)",
+          "toWaypoint": "ONEBI",
+          "magneticTrackDeg": 346,
+          "reverseMagneticTrackDeg": 166,
+          "distanceKm": 21,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Ho Chi Minh ACC - Sector 2 (up to FL265 inclusive) - Sector 5 (above FL265)"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "ONEBI",
+          "toWaypoint": "BUON MA THUOT DVOR/ DME (BMT)",
+          "magneticTrackDeg": 346,
+          "reverseMagneticTrackDeg": 166,
+          "distanceKm": 83,
+          "upperFL": 460,
+          "lowerFL": 100,
+          "minSafeAltitudeM": 2900,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "- Sector 2 Ho Chi Minh ACC FREQ: 120.100 MHZ - ONEBI is the transfer of control point between Sector 2 and Sector 5 Ho Chi Minh ACC above FL265"
+        }
+      ]
+    },
+    {
+      "code": "W8",
+      "waypointCount": 5,
+      "segmentCount": 4,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "POTIX",
+          "lat": 10.234722,
+          "lon": 105.616667,
+          "latDms": "101405N",
+          "lonDms": "1053700E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "RACH GIA NDB (RG)",
+          "lat": 9.959444,
+          "lon": 105.133056,
+          "latDms": "095734N",
+          "lonDms": "1050759E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "TUNPO",
+          "lat": 10.062222,
+          "lon": 104.589444,
+          "latDms": "100344N",
+          "lonDms": "1043522E",
+          "footnoteRef": null,
+          "seq": 4
+        },
+        {
+          "name": "PHU QUOC DVOR/DME (PQU)",
+          "lat": 10.165278,
+          "lon": 104.038889,
+          "latDms": "100955N",
+          "lonDms": "1040220E",
+          "footnoteRef": null,
+          "seq": 5
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "POTIX",
+          "magneticTrackDeg": 240,
+          "reverseMagneticTrackDeg": 60,
+          "distanceKm": 130,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "POTIX",
+          "toWaypoint": "RACH GIA NDB (RG)",
+          "magneticTrackDeg": 240,
+          "reverseMagneticTrackDeg": 60,
+          "distanceKm": 61,
+          "upperFL": 460,
+          "lowerFL": 40,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "RACH GIA NDB (RG)",
+          "toWaypoint": "TUNPO",
+          "magneticTrackDeg": 281,
+          "reverseMagneticTrackDeg": 101,
+          "distanceKm": 61,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 4,
+          "fromWaypoint": "TUNPO",
+          "toWaypoint": "PHU QUOC DVOR/DME (PQU)",
+          "magneticTrackDeg": 281,
+          "reverseMagneticTrackDeg": 101,
+          "distanceKm": 61,
+          "upperFL": 460,
+          "lowerFL": 50,
+          "minSafeAltitudeM": null,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    },
+    {
+      "code": "W9",
+      "waypointCount": 4,
+      "segmentCount": 3,
+      "waypoints": [
+        {
+          "name": "TAN SON NHAT DVOR/ DME (TSH)",
+          "lat": 10.818333,
+          "lon": 106.650556,
+          "latDms": "104906N",
+          "lonDms": "1063902E",
+          "footnoteRef": null,
+          "seq": 1
+        },
+        {
+          "name": "XOBAV",
+          "lat": 10.140278,
+          "lon": 106.6425,
+          "latDms": "100825N",
+          "lonDms": "1063833E",
+          "footnoteRef": null,
+          "seq": 2
+        },
+        {
+          "name": "NIXIV",
+          "lat": 9.393333,
+          "lon": 106.633889,
+          "latDms": "092336N",
+          "lonDms": "1063802E",
+          "footnoteRef": null,
+          "seq": 3
+        },
+        {
+          "name": "CON SON NDB (CN)",
+          "lat": 8.732778,
+          "lon": 106.626389,
+          "latDms": "084358N",
+          "lonDms": "1063735E",
+          "footnoteRef": null,
+          "seq": 4
+        }
+      ],
+      "segments": [
+        {
+          "seq": 1,
+          "fromWaypoint": "TAN SON NHAT DVOR/ DME (TSH)",
+          "toWaypoint": "XOBAV",
+          "magneticTrackDeg": 181,
+          "reverseMagneticTrackDeg": 1,
+          "distanceKm": 75,
+          "upperFL": 190,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": "Sector 3 Ho Chi Minh ACC FREQ: 120.900 MHZ"
+        },
+        {
+          "seq": 2,
+          "fromWaypoint": "XOBAV",
+          "toWaypoint": "NIXIV",
+          "magneticTrackDeg": 181,
+          "reverseMagneticTrackDeg": 1,
+          "distanceKm": 83,
+          "upperFL": 190,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        },
+        {
+          "seq": 3,
+          "fromWaypoint": "NIXIV",
+          "toWaypoint": "CON SON NDB (CN)",
+          "magneticTrackDeg": 181,
+          "reverseMagneticTrackDeg": 1,
+          "distanceKm": 73,
+          "upperFL": 190,
+          "lowerFL": 70,
+          "minSafeAltitudeM": 1200,
+          "airspaceClass": "A",
+          "widthKm": 20,
+          "navAccuracy": "NIL",
+          "remarks": null
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,6 @@ import { modals } from '../ui/Modals';
 import { panelResizer } from '../ui/panels/PanelResizer';
 import { SimulationNodesPanel } from '../ui/panels/left/SimulationNodesPanel';
 import { MapControlsPanel } from '../ui/panels/left/MapControlsPanel';
-import { AirspaceDataPanel } from '../ui/panels/left/AirspaceDataPanel';
 import { DisplayOptionsPanel } from '../ui/panels/left/DisplayOptionsPanel';
 import { TrafficListPanel } from '../ui/panels/right/TrafficListPanel';
 import { AircraftInfoPanel } from '../ui/panels/right/AircraftInfoPanel';
@@ -25,7 +24,9 @@ import { ShapeDrawingManager } from '../ui/map/shapes/ShapeDrawingManager';
 import { ShapeRenderer } from '../ui/map/shapes/ShapeRenderer';
 import { AircraftCreationManager } from '../ui/map/aircraft/AircraftCreationManager';
 import { AircraftInteractionManager } from '../ui/map/aircraft/AircraftInteractionManager';
+import { AircraftContextMenu } from '../ui/map/aircraft/AircraftContextMenu';
 import { RouteDrawingManager } from '../ui/map/routes/RouteDrawingManager';
+import { RangeAndBearingTool } from '../ui/map/RangeAndBearingTool';
 import { CommandHandler } from '../data/CommandHandler';
 import { logger } from '../utils/Logger';
 
@@ -44,7 +45,6 @@ export class App {
     private header: Header;
     private simulationNodesPanel: SimulationNodesPanel;
     private mapControlsPanel: MapControlsPanel;
-    private airspaceDataPanel: AirspaceDataPanel;
     private displayOptionsPanel: DisplayOptionsPanel;
     private trafficListPanel: TrafficListPanel;
     private aircraftInfoPanel: AircraftInfoPanel;
@@ -56,8 +56,21 @@ export class App {
     private shapeRenderer: ShapeRenderer | null = null;
     private aircraftCreationManager: AircraftCreationManager | null = null;
     private aircraftInteractionManager: AircraftInteractionManager | null = null;
+    private aircraftContextMenu: AircraftContextMenu | null = null;
     private routeDrawingManager: RouteDrawingManager | null = null;
+    private rangeAndBearingTool: RangeAndBearingTool | null = null;
     private commandHandler: CommandHandler;
+
+    // Scenario-completion notice: true once this run has had at least one
+    // aircraft, so we don't fire the notice at t=0 before anything has
+    // spawned yet. Reset whenever aircraft reappear (a new scenario loaded).
+    private everSawAircraftThisRun = false;
+    private scenarioCompletedNotified = false;
+    // Wall-clock timestamp of when aircraft count first dropped to zero;
+    // requires it to persist a few seconds before notifying, so a brief
+    // natural gap between arrival/departure waves mid-scenario doesn't fire
+    // a false "completed" notice.
+    private zeroAircraftSinceMs: number | null = null;
     private initialized: boolean = false;
 
     constructor() {
@@ -68,7 +81,6 @@ export class App {
         this.header = new Header();
         this.simulationNodesPanel = new SimulationNodesPanel();
         this.mapControlsPanel = new MapControlsPanel();
-        this.airspaceDataPanel = new AirspaceDataPanel();
         this.displayOptionsPanel = new DisplayOptionsPanel();
         this.trafficListPanel = new TrafficListPanel();
         this.aircraftInfoPanel = new AircraftInfoPanel();
@@ -141,11 +153,32 @@ export class App {
      * Set up handlers for connection status changes
      */
     private setupConnectionStatusHandlers(): void {
+        let wasWebSocketConnected = false;
+
         // Subscribe to ConnectionStatusService for centralized status updates
         // This is the single source of truth for all connection state
         connectionStatus.subscribe((status) => {
             // Update UI based on centralized connection status
             this.updateConnectionStatusDisplay();
+
+            if (status.webSocketConnected && !wasWebSocketConnected) {
+                // We just connected or reconnected to WebATM server!
+                logger.info('App', 'WebSocket connection established/re-established - resetting simulation node state and runtime state');
+                
+                // 1. Clear any active aircraft or scenario runtime state visually and in state manager
+                this.clearAllVisualElements();
+                
+                // 2. Clear simulation nodes panel UI and state
+                if (this.simulationNodesPanel) {
+                    this.simulationNodesPanel.clearState();
+                    
+                    // 3. Request a fresh clean node list from the backend after a brief delay to let connection settle
+                    setTimeout(() => {
+                        this.simulationNodesPanel.refreshNodes();
+                    }, 500);
+                }
+            }
+            wasWebSocketConnected = status.webSocketConnected;
         });
 
         // Register callback for BlueSky disconnect to clean up visual elements
@@ -173,12 +206,25 @@ export class App {
         // Subscribe to aircraft data updates
         this.stateManager.subscribe('aircraftData', (newAircraftData, oldAircraftData) => {
             if (newAircraftData) {
+                this.checkScenarioCompletion(newAircraftData);
+
                 // Update aircraft display
                 this.updateAircraftDisplay(newAircraftData);
 
                 // Update map overlay with aircraft data
                 if (this.mapOverlay) {
                     this.mapOverlay.updateFromAircraftData(newAircraftData);
+                }
+
+                // Track aircraft movements for Range and Bearing tool
+                if (this.rangeAndBearingTool && this.rangeAndBearingTool.isActive()) {
+                    for (let i = 0; i < newAircraftData.id.length; i++) {
+                        this.rangeAndBearingTool.updateTargetPosition(
+                            newAircraftData.id[i],
+                            newAircraftData.lat[i],
+                            newAircraftData.lon[i]
+                        );
+                    }
                 }
             }
         });
@@ -195,6 +241,13 @@ export class App {
         this.stateManager.subscribe('selectedAircraft', (newSelected, oldSelected) => {
             if (this.mapOverlay) {
                 this.mapOverlay.setSelectedAircraft(newSelected);
+            }
+        });
+
+        // Subscribe to the 4D-trajectory Ctrl+click comparison set changing
+        this.stateManager.subscribe('trajectoryAircraftIds', () => {
+            if (this.mapOverlay) {
+                this.mapOverlay.refreshTrackedAircraft4D();
             }
         });
     }
@@ -262,8 +315,7 @@ export class App {
         // Use ConnectionStatusService to handle initial connection checking
         connectionStatus.startInitialConnectionCheck(() => {
             // Callback when not connected after initial check
-            logger.info('App', 'Initial load: Not connected - opening settings modal');
-            settingsModal.open();
+            logger.info('App', 'Initial load: Not connected - skipping auto-opening settings modal per user request');
         });
     }
 
@@ -274,6 +326,7 @@ export class App {
         this.header.init();
         this.header.setSocketManager(this.socketManager);
         this.header.setStateManager(this.stateManager);
+        this.header.setMapDisplay(this.mapDisplay);
         logger.debug('App', 'Header initialized');
     }
 
@@ -312,8 +365,6 @@ export class App {
         logger.debug('App', 'MapControlsPanel initialized');
 
         // Initialize Airspace Data Panel
-        this.airspaceDataPanel.init();
-        this.airspaceDataPanel.setStateManager(this.stateManager);
         logger.debug('App', 'AirspaceDataPanel initialized');
 
         // Initialize Display Options Panel
@@ -468,6 +519,18 @@ export class App {
             await this.mapOverlay.initialize(displayOptions);
             logger.debug('App', 'Map overlay initialized after map style loaded');
 
+            // Clicking a 3D aircraft's label should behave exactly like
+            // clicking the model/2D icon at that position.
+            this.mapOverlay.setAircraftLabelClickHandler((aircraftId, ctrlOrMeta) => {
+                this.aircraftInteractionManager?.handleAircraftEntityClick(aircraftId, ctrlOrMeta);
+            });
+
+            // Right-clicking a 3D aircraft's label opens the same quick-action
+            // menu as right-clicking the model/2D icon.
+            this.mapOverlay.setAircraftLabelContextMenuHandler((aircraftId, clientX, clientY) => {
+                this.aircraftContextMenu?.open(aircraftId, clientX, clientY);
+            });
+
             // Update overlay with any aircraft data that arrived before map was ready
             const currentState = this.stateManager.getState();
             if (currentState.aircraftData && currentState.aircraftData.id.length > 0) {
@@ -479,6 +542,11 @@ export class App {
             if (currentState.selectedAircraft) {
                 this.mapOverlay.setSelectedAircraft(currentState.selectedAircraft);
             }
+
+            // Request cached ROUTEDATA from Python server now that mapOverlay is ready.
+            // Must happen here (not earlier) because the onRouteData handler calls
+            // mapOverlay.updateRouteData(), which is null before the map style loads.
+            this.socketManager.requestRouteCache();
         });
 
         // Set up style change callback to notify overlay and shape renderer
@@ -507,11 +575,17 @@ export class App {
             this.stateManager,
             this.socketManager
         );
+        this.aircraftContextMenu = new AircraftContextMenu(
+            this,
+            this.mapDisplay,
+            this.stateManager
+        );
         this.routeDrawingManager = new RouteDrawingManager(
             this.mapDisplay,
             this,
             this.stateManager
         );
+        this.rangeAndBearingTool = new RangeAndBearingTool(this.mapDisplay);
 
         // Let AircraftInteractionManager know when route drawing is active so
         // it can skip its empty-map-click "unselect aircraft" behavior while
@@ -521,10 +595,27 @@ export class App {
             this.aircraftInteractionManager.setRouteDrawingActiveCheck(
                 () => rdm.isDrawing()
             );
+            this.aircraftContextMenu?.setRouteDrawingActiveCheck(
+                () => rdm.isDrawing()
+            );
         }
 
-        // Now that AircraftInteractionManager is initialized, set up the route data handler
-        // This needs to happen after AircraftInteractionManager creation to check for explicit POS commands
+        // Same idea for the Range & Bearing tool: clicking an aircraft while
+        // measuring should record a measurement point, not select the
+        // aircraft or toggle its 4D trajectory.
+        if (this.aircraftInteractionManager && this.rangeAndBearingTool) {
+            const rnb = this.rangeAndBearingTool;
+            this.aircraftInteractionManager.setRangeBearingActiveCheck(
+                () => rnb.isActive()
+            );
+            this.aircraftContextMenu?.setRangeBearingActiveCheck(
+                () => rnb.isActive()
+            );
+        }
+
+        // Now that AircraftInteractionManager is initialized, set up the route data handler.
+        // This needs to happen after AircraftInteractionManager creation to check for explicit POS commands.
+        // Note: requestRouteCache() is called inside mapLoadCallback (after mapOverlay is ready).
         this.setupRouteDataHandler();
 
         // Connect managers to MapControlsPanel
@@ -600,11 +691,13 @@ export class App {
                 // Check if we just sent an explicit POS command for this aircraft
                 const isExplicitPosResponse = this.aircraftInteractionManager?.wasLastExplicitPosFor(data.acid) ?? false;
 
-                // If receiving ROUTEDATA for an aircraft that is not currently selected,
-                // treat it as an implicit selection ONLY if it's not a response to our explicit POS
+                // If receiving unsolicited ROUTEDATA and nothing is currently selected,
+                // treat it as an implicit selection. Do NOT auto-select when user already
+                // has an aircraft selected — unsolicited data from other aircraft would
+                // race with and override an in-flight explicit POS request.
                 const currentSelection = this.stateManager.getState().selectedAircraft;
-                if (data.acid && data.acid !== currentSelection && !isExplicitPosResponse) {
-                    logger.info('App', '🛰️ Unsolicited ROUTEDATA received for', data.acid, '- treating as implicit selection');
+                if (data.acid && !currentSelection && !isExplicitPosResponse) {
+                    logger.info('App', '🛰️ Unsolicited ROUTEDATA received for', data.acid, '- treating as implicit selection (nothing selected)');
                     this.stateManager.setSelectedAircraft(data.acid);
                 }
 
@@ -687,6 +780,42 @@ export class App {
 
         // Update simulation time, speed, aircraft count, etc.
         logger.verbose('App', 'Updating simulation display:', simInfo);
+    }
+
+    /**
+     * Detects the transition from "scenario has aircraft" to "scenario has
+     * none left": posts a one-time echo notice, pops an alert, and pauses
+     * the simulation (HOLD). Debounced by SCENARIO_COMPLETE_DEBOUNCE_MS of
+     * real time at zero aircraft so a brief natural gap between
+     * arrival/departure waves mid-scenario doesn't fire a false "completed"
+     * notice.
+     */
+    private static readonly SCENARIO_COMPLETE_DEBOUNCE_MS = 3000;
+
+    private checkScenarioCompletion(aircraftData: AircraftData): void {
+        if (aircraftData.id.length > 0) {
+            this.everSawAircraftThisRun = true;
+            this.scenarioCompletedNotified = false;
+            this.zeroAircraftSinceMs = null;
+            return;
+        }
+
+        if (!this.everSawAircraftThisRun || this.scenarioCompletedNotified) {
+            return;
+        }
+
+        if (this.zeroAircraftSinceMs === null) {
+            this.zeroAircraftSinceMs = Date.now();
+            return;
+        }
+
+        if (Date.now() - this.zeroAircraftSinceMs >= App.SCENARIO_COMPLETE_DEBOUNCE_MS) {
+            this.scenarioCompletedNotified = true;
+            const message = 'Kịch bản đã hoàn thành — không còn tàu bay nào trong không phận. Mô phỏng đã được dừng lại; nạp lại kịch bản (IC) nếu muốn chạy lại.';
+            echoManager.success(message);
+            this.socketManager.sendCommand('HOLD');
+            window.alert(message);
+        }
     }
 
     /**
@@ -775,6 +904,13 @@ export class App {
      */
     public getConsole(): Console {
         return this.console;
+    }
+
+    /**
+     * Get Range and Bearing Tool instance
+     */
+    public getRangeAndBearingTool(): RangeAndBearingTool | null {
+        return this.rangeAndBearingTool;
     }
 
     /**
@@ -902,9 +1038,7 @@ export class App {
             this.displayOptionsPanel.destroy();
         }
 
-        if (this.airspaceDataPanel) {
-            this.airspaceDataPanel.destroy();
-        }
+
 
         if (this.trafficListPanel) {
             this.trafficListPanel.destroy();

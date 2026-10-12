@@ -76,6 +76,40 @@ export class SimulationNodesPanel extends BasePanel {
                 this.showAddNodeModal();
             });
         }
+
+        // Node list event delegation for click and delete
+        if (this.nodeList) {
+            this.addEventListener(this.nodeList, 'click', (e) => {
+                const target = e.target as HTMLElement;
+                console.log("Node list clicked target:", target);
+                
+                // Check if delete button or trash icon inside it was clicked
+                const deleteBtn = target.closest('.delete-node-btn');
+                console.log("deleteBtn found:", deleteBtn);
+                if (deleteBtn) {
+                    e.stopPropagation();
+                    const nodeItem = deleteBtn.closest('.node-item') as HTMLElement;
+                    console.log("nodeItem for delete:", nodeItem);
+                    if (nodeItem) {
+                        const nodeId = nodeItem.dataset.nodeId;
+                        console.log("nodeId for delete:", nodeId);
+                        if (nodeId) {
+                            this.deleteNode(nodeId);
+                        }
+                    }
+                    return;
+                }
+                
+                // Otherwise check if a node item was clicked
+                const nodeItem = target.closest('.node-item') as HTMLElement;
+                if (nodeItem) {
+                    const nodeId = nodeItem.dataset.nodeId;
+                    if (nodeId) {
+                        this.switchNode(nodeId);
+                    }
+                }
+            });
+        }
     }
 
     /**
@@ -211,6 +245,7 @@ export class SimulationNodesPanel extends BasePanel {
     private createNodeItem(nodeId: string, nodeData: NodeData): HTMLElement {
         const nodeItem = document.createElement('div');
         nodeItem.className = 'node-item';
+        nodeItem.dataset.nodeId = nodeId;
 
         // Mark active node
         if (nodeId === this.nodeData?.active_node) {
@@ -226,9 +261,12 @@ export class SimulationNodesPanel extends BasePanel {
         nodeItem.innerHTML = `
             <div class="node-header">
                 <strong>${alias}</strong>
-                <div class="node-actions" style="display: flex; align-items: center; gap: 5px;">
+                <div class="node-actions" style="display: flex; align-items: center; gap: 5px; position: relative; z-index: 10;">
                     ${nodeId === this.nodeData?.active_node ? '<span class="active-badge">Active</span>' : ''}
-                    <button class="delete-node-btn" title="Xóa node" style="background: none; border: none; color: #ff4d4d; cursor: pointer; padding: 2px 5px;">
+                    <button class="delete-node-btn" title="Xóa node" 
+                            style="background: none; border: none; color: #ff4d4d; cursor: pointer; padding: 6px; font-size: 13px; position: relative; z-index: 20; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.15s ease-in-out;"
+                            onmouseover="this.style.transform='scale(1.3)'; this.style.color='#ff1a1a';" 
+                            onmouseout="this.style.transform='scale(1)'; this.style.color='#ff4d4d';">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
@@ -239,20 +277,6 @@ export class SimulationNodesPanel extends BasePanel {
                 <div>Node ID: ${displayNodeId}</div>
             </div>
         `;
-
-        // Make clickable to switch nodes
-        nodeItem.addEventListener('click', () => {
-            this.switchNode(nodeId);
-        });
-
-        // Add event listener for delete button
-        const deleteBtn = nodeItem.querySelector('.delete-node-btn');
-        if (deleteBtn) {
-            deleteBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent switching node
-                this.deleteNode(nodeId);
-            });
-        }
 
         return nodeItem;
     }
@@ -303,6 +327,46 @@ export class SimulationNodesPanel extends BasePanel {
     }
 
     /**
+     * Beautiful custom confirmation dialog
+     */
+    private showConfirmModal(message: string, onConfirm: () => void): void {
+        const modal = document.getElementById('confirm-modal');
+        const msgEl = document.getElementById('confirm-modal-message');
+        const closeBtn = document.getElementById('confirm-modal-close');
+        const cancelBtn = document.getElementById('confirm-modal-cancel');
+        const submitBtn = document.getElementById('confirm-modal-submit');
+
+        if (!modal || !msgEl || !submitBtn) return;
+
+        msgEl.textContent = message;
+        modal.style.display = 'flex';
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+            cleanupListeners();
+        };
+
+        const handleConfirm = () => {
+            onConfirm();
+            closeModal();
+        };
+
+        const handleCancel = () => {
+            closeModal();
+        };
+
+        const cleanupListeners = () => {
+            closeBtn?.removeEventListener('click', handleCancel);
+            cancelBtn?.removeEventListener('click', handleCancel);
+            submitBtn.removeEventListener('click', handleConfirm);
+        };
+
+        closeBtn?.addEventListener('click', handleCancel);
+        cancelBtn?.addEventListener('click', handleCancel);
+        submitBtn.addEventListener('click', handleConfirm);
+    }
+
+    /**
      * Delete a node
      */
     private deleteNode(nodeId: string): void {
@@ -321,17 +385,17 @@ export class SimulationNodesPanel extends BasePanel {
         const nodeData = this.nodeData?.nodes[nodeId];
         const friendlyName = nodeData ? `Node ${nodeData.node_num || 1}` : nodeId;
 
-        if (confirm(`Bạn có chắc chắn muốn xóa ${friendlyName}?`)) {
+        this.showConfirmModal(`Bạn có chắc chắn muốn xóa ${friendlyName}?`, () => {
             logger.info('SimulationNodesPanel', 'Deleting node:', friendlyName);
             socket.emit('delete_node', { node_id: nodeId });
-            this.logToConsole(`Deleting node: ${friendlyName}`);
-        }
+            this.logToConsole(`Xóa thành công: ${friendlyName}`);
+        });
     }
 
     /**
      * Refresh node list from backend
      */
-    private refreshNodes(): void {
+    public refreshNodes(): void {
         if (!this.socketManager) {
             logger.warn('SimulationNodesPanel', 'Cannot refresh nodes: SocketManager not set');
             return;
@@ -402,6 +466,36 @@ export class SimulationNodesPanel extends BasePanel {
      */
     public getActiveNode(): string | null {
         return this.nodeData?.active_node || null;
+    }
+
+    /**
+     * Clear all node states, selection, and UI elements.
+     * Called on disconnection or reconnection to server.
+     */
+    public clearState(): void {
+        logger.info('SimulationNodesPanel', 'Clearing simulation node UI and state');
+        this.nodeData = null;
+        
+        // Reset count
+        if (this.totalNodesSpan) {
+            this.totalNodesSpan.textContent = '0';
+        }
+        
+        // Reset active node span
+        if (this.activeNodeSpan) {
+            this.activeNodeSpan.textContent = 'None';
+        }
+        
+        // Clear node selector
+        if (this.nodeSelector) {
+            this.nodeSelector.innerHTML = '<option value="">No nodes available</option>';
+            this.nodeSelector.disabled = true;
+        }
+        
+        // Clear node list UI
+        if (this.nodeList) {
+            this.nodeList.innerHTML = '';
+        }
     }
 
     /**

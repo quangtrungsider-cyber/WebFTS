@@ -1,10 +1,10 @@
 # Walkthrough: Fixing False Connection Status & Configuring Server Environment
 
-This document summarizes the changes made to the WebATM frontend to eliminate the false "Connected" status illusion, and provides a comprehensive guide on how to configure and run the BlueSky simulation server on a remote server.
+This document summarizes the changes made to the WebATM frontend to eliminate the false "Connected" status illusion, and provides a comprehensive guide on how to configure and run the Vatm-Engine simulation server on a remote server.
 
 ## 1. Code Changes Made (Frontend Fixes)
 
-We corrected the frontend's connection detection logic. Previously, the UI assumed it was successfully connected to a running BlueSky simulator as soon as it received *any* `node_info` socket packet from the proxy—even if that packet reported `total_nodes: 0`.
+We corrected the frontend's connection detection logic. Previously, the UI assumed it was successfully connected to a running Vatm-Engine simulator as soon as it received *any* `node_info` socket packet from the proxy—even if that packet reported `total_nodes: 0`.
 
 We modified the following files to ensure a "Connected" state is only shown when there is at least one active simulation node:
 
@@ -23,7 +23,7 @@ We modified the following files to ensure a "Connected" state is only shown when
 ## 2. Root Cause of Scenario Launch Failure
 
 1.  **Misleading Connection Banner**: The WebATM proxy uses ZeroMQ (ZMQ) under the hood. In ZMQ, `socket.connect()` is asynchronous and non-blocking, so it always succeeds immediately even if nothing is listening on the other side. This caused the backend to report a "connected" status back to the frontend, which falsely displayed `Connected to VATM server at localhost (No Data)`.
-2.  **No Active Simulation Node**: Since the BlueSky simulator server (`FTS Server/BlueSky.py`) was not running or not reachable by the Docker container, no active simulation nodes were detected (`Total Nodes: 0`). Without an active simulation node, commands like `IC scenario_name` have no target to execute on.
+2.  **No Active Simulation Node**: Since the Vatm-Engine simulator server (`FTS Server/BlueSky.py`) was not running or not reachable by the Docker container, no active simulation nodes were detected (`Total Nodes: 0`). Without an active simulation node, commands like `IC scenario_name` have no target to execute on.
 
 ---
 
@@ -31,7 +31,7 @@ We modified the following files to ensure a "Connected" state is only shown when
 
 To resolve this issue and run scenarios on your remote server, follow these two setup steps.
 
-### Step 1: Start the BlueSky Simulator on the Server (Headless Mode)
+### Step 1: Start the Vatm-Engine Simulator on the Server (Headless Mode)
 Because remote servers typically lack a graphical user interface (GUI), the simulator must be executed headlessly:
 1.  SSH into your server.
 2.  Navigate to the `FTS Server` directory on the server.

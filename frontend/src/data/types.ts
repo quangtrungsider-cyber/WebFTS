@@ -35,6 +35,11 @@ export interface AircraftData extends EntityData {
     actype?: string[];
     inconf: boolean[];      // In conflict status
     tcpamax: number[];      // Time to closest point of approach
+    asastrk?: number[];     // ASAS-proposed heading (deg) to resolve the conflict, when inconf
+    asastas?: number[];     // ASAS-proposed true airspeed (m/s), when inconf
+    asasalt?: number[];     // ASAS-proposed altitude (m), when inconf
+    asasvs?: number[];      // ASAS-proposed vertical speed (m/s), when inconf
+    asasaccepted?: boolean[]; // Controller has accepted (HITL) the proposed resolution and it is now being flown
     nconf_cur: number;      // Current number of conflicts
     nconf_tot: number;      // Total conflicts detected
     nlos_cur: number;       // Current number of loss of separation events
@@ -52,6 +57,14 @@ export interface RouteData {
     wpspd: number[];
     wpname: string[];
   }
+
+/** One historical position sample for an aircraft's flown-track trail (4D trajectory "past" segment). */
+export interface AircraftTrailPoint {
+  t: number;
+  lat: number;
+  lon: number;
+  alt: number;
+}
 
 //   Command and Control Types
 export interface CommandResult {
@@ -268,6 +281,9 @@ export interface AppState {
   simInfo: SimInfo | null;
   aircraftData: AircraftData | null;
   selectedAircraft: string | null;
+  // Aircraft added to the 4D-trajectory comparison set via Ctrl+click, independent
+  // of `selectedAircraft` (which continues to drive POS/follow/info-panel behavior).
+  trajectoryAircraftIds: string[];
   activeNode: string | null;
   shapeOptions: ShapeDisplayOptions;
   serverStatus: ServerStatus;
@@ -395,7 +411,7 @@ export type SpeedType = 'cas' | 'tas' | 'gs';
 export type SpeedUnit = 'm/s' | 'km/h' | 'mph' | 'knots';
 export type AltitudeUnit = 'm' | 'km' | 'ft' | 'fl';
 export type VerticalSpeedUnit = 'm/s' | 'm/min' | 'ft/min';
-export type AircraftShapeType = 'chevron' | 'triangle' | 'aircraft' | 'drone';
+export type AircraftShapeType = 'chevron' | 'triangle' | 'aircraft' | 'drone' | 'aircraft3d';
 // Note: RenderMode is deprecated, kept for backwards compatibility
 // Use show3DOverlay instead - 2D is always active, 3D is an optional overlay
 export type RenderMode = '2d' | '3d';
@@ -466,8 +482,23 @@ export interface DisplayOptions {
   // 3D-specific options (only used when show3DOverlay === true)
   aircraft3DModelQuality?: 'low' | 'medium' | 'high';
   aircraft3DScale: number;
+  // When true, the 3D model's on-screen size is held constant across zoom
+  // levels (like the 2D icon layer's fixed icon-size) via zoom compensation.
+  // When false, size follows the map's true Mercator scale (bigger when
+  // zoomed in), true-to-life on the ground, exaggerated by aircraft3DScale
+  // while airborne -- the original behavior.
+  aircraft3DAutoSize: boolean;
   selectedAircraftModel: string;
   threeDVisible: boolean;
+
+  // 4D trajectory visualization (only used when show3DOverlay === true).
+  // When true, every currently-known aircraft is tracked for 4D trajectory
+  // display, not just the ones selected/Ctrl+clicked by the user.
+  showAllAircraftTrajectories: boolean;
+  // Adds a wider, translucent "corridor" tube around each predicted-trajectory
+  // tube. Purely a generic visual buffer (fixed proportional radius) -- not
+  // derived from real RNP/navigation-accuracy data.
+  show4DCorridor: boolean;
 }
 
 /**

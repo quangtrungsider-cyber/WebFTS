@@ -1,6 +1,7 @@
-import { AircraftData, DisplayOptions, RouteData } from '../../data/types';
+import { AircraftData, AircraftTrailPoint, DisplayOptions, RouteData } from '../../data/types';
 import { MapDisplay } from './MapDisplay';
 import { AircraftRenderer } from './aircraft/AircraftRenderer';
+import { Aircraft3DRenderer } from './aircraft/Aircraft3DRenderer';
 import { AircraftRendererFactory } from './aircraft/AircraftRendererFactory';
 import type { IEntityRenderer } from './rendering/IEntityRenderer';
 import { AircraftRoutes } from './aircraft/AircraftRoutes';
@@ -34,6 +35,10 @@ export class MapOverlay {
     // Track if 3D overlay is currently active
     private is3DOverlayActive: boolean = false;
     private showAtsRoutes: boolean = false;
+    // Re-applied to every newly-(re)created 3D renderer, since toggling
+    // "Show 3D aircraft" off/on destroys and recreates it (see enable3DOverlay).
+    private pendingLabelClickHandler: ((aircraftId: string, ctrlOrMeta: boolean) => void) | null = null;
+    private pendingLabelContextMenuHandler: ((aircraftId: string, clientX: number, clientY: number) => void) | null = null;
 
     private aircraftCountElement: HTMLElement | null;
     private conflictCountElement: HTMLElement | null;
@@ -42,6 +47,8 @@ export class MapOverlay {
     private intrusionTotalElement: HTMLElement | null;
     private cursorPositionElement: HTMLElement | null;
     private projectionToggleButton: HTMLElement | null;
+    private lastCursorLat: number | null = null;
+    private lastCursorLng: number | null = null;
 
     constructor(mapDisplay: MapDisplay, stateManager: StateManager) {
         this.mapDisplay = mapDisplay;
@@ -68,6 +75,9 @@ export class MapOverlay {
 
         // Set up cursor tracking
         this.setupCursorTracking();
+
+        // Set up "C" shortcut to copy the cursor coordinates to clipboard
+        this.setupCopyCursorShortcut();
 
         // Set initial values
         this.updateAircraftCount(0);
@@ -219,6 +229,63 @@ export class MapOverlay {
     }
 
     /**
+     * Set up the "C" keyboard shortcut to copy the current cursor coordinates
+     * to the clipboard. Uses a bare, unmodified letter key (like the existing
+     * "R" shortcut for Range & Bearing) so it can never collide with a Chrome
+     * browser shortcut - Chrome only reserves modifier combinations
+     * (Ctrl/Alt/Cmd + key), never a plain letter key on its own.
+     */
+    private setupCopyCursorShortcut(): void {
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+            // Don't hijack the key while the user is typing somewhere else in the UI
+            const activeElement = document.activeElement;
+            const isTyping = activeElement && (
+                activeElement.tagName === 'INPUT' ||
+                activeElement.tagName === 'TEXTAREA' ||
+                (activeElement as HTMLElement).isContentEditable
+            );
+
+            if (!isTyping && e.key.toLowerCase() === 'c' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                this.copyCursorPositionToClipboard();
+            }
+        });
+
+        logger.debug('MapOverlay', 'Copy cursor position shortcut ("C") initialized');
+    }
+
+    /**
+     * Copy the last known cursor lat/lng to the clipboard as "lat, lng"
+     */
+    private copyCursorPositionToClipboard(): void {
+        if (this.lastCursorLat === null || this.lastCursorLng === null) {
+            logger.debug('MapOverlay', 'Copy cursor shortcut pressed but cursor is not over the map');
+            return;
+        }
+
+        const text = `${this.lastCursorLat.toFixed(6)}, ${this.lastCursorLng.toFixed(6)}`;
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                logger.debug('MapOverlay', `Copied cursor position to clipboard: ${text}`);
+                this.flashCursorPositionElement();
+            })
+            .catch((err) => {
+                logger.warn('MapOverlay', `Failed to copy cursor position to clipboard: ${err}`);
+            });
+    }
+
+    /**
+     * Briefly highlight the cursor position display to confirm the copy
+     */
+    private flashCursorPositionElement(): void {
+        if (!this.cursorPositionElement) return;
+
+        this.cursorPositionElement.classList.add('cursor-position-copied');
+        setTimeout(() => {
+            this.cursorPositionElement?.classList.remove('cursor-position-copied');
+        }, 400);
+    }
+
+    /**
      * Update aircraft count display
      * @param count - Number of aircraft
      */
@@ -262,14 +329,17 @@ export class MapOverlay {
      * @param lng - Longitude (null to clear)
      */
     public updateCursorPosition(lat: number | null, lng: number | null): void {
+        this.lastCursorLat = lat;
+        this.lastCursorLng = lng;
+
         if (!this.cursorPositionElement) return;
 
         if (lat === null || lng === null) {
             this.cursorPositionElement.textContent = '--';
         } else {
-            // Format to 4 decimal places
-            const latStr = lat.toFixed(4);
-            const lngStr = lng.toFixed(4);
+            // Format to 6 decimal places
+            const latStr = lat.toFixed(6);
+            const lngStr = lng.toFixed(6);
             this.cursorPositionElement.textContent = `${latStr}°, ${lngStr}°`;
         }
     }
@@ -309,11 +379,15 @@ export class MapOverlay {
                     renderer2D.setSelectedAircraft(null);
                 }
             }
-            // Clear 3D route renderer state for the deleted aircraft
+            // Clear 3D route renderer's primary-aircraft accent (the tracked-aircraft
+            // set itself is recomputed below from state, which no longer includes it)
             if (this.aircraftRoute3DRenderer) {
                 this.aircraftRoute3DRenderer.setSelectedAircraft(null);
-                this.aircraftRoute3DRenderer.updateRouteData(null);
             }
+        }
+        // Drop any Ctrl+click comparison aircraft that no longer exist too
+        if (aircraftData.id) {
+            this.stateManager.pruneMissingTrajectoryAircraft(new Set(aircraftData.id));
         }
 
         // Update aircraft renderers with new data
@@ -343,22 +417,60 @@ export class MapOverlay {
                 logger.warn('MapOverlay', '3D overlay marked active but no 3D renderer exists - this should not happen');
             }
 
-            // Feed selected aircraft position/altitude into the 3D route renderer
-            // so unconstrained route segments track the aircraft's current altitude.
+            // Feed every tracked aircraft's position/trail into the 4D trajectory
+            // renderer so predicted segments track current altitude and past
+            // segments extend with the newest flown position.
             if (this.is3DOverlayActive && this.aircraftRoute3DRenderer) {
-                const selectedId = this.stateManager.getState().selectedAircraft;
-                if (selectedId && aircraftData.id) {
-                    const idx = aircraftData.id.indexOf(selectedId);
-                    if (idx >= 0) {
-                        this.aircraftRoute3DRenderer.setAircraftState(
-                            aircraftData.lat[idx],
-                            aircraftData.lon[idx],
-                            aircraftData.alt[idx]
-                        );
-                    }
+                this.pushTrackedAircraftDataTo3DRoute(aircraftData);
+            }
+        }
+    }
+
+    /**
+     * Recomputes the full set of aircraft to render 4D trajectories for
+     * (primary `selectedAircraft` + Ctrl+click `trajectoryAircraftIds` +,
+     * when `showAllAircraftTrajectories` is on, every aircraft in
+     * `aircraftData`), and pushes their current position + trail history to
+     * the 3D route renderer. Pass `null` when no fresh tick data is at hand
+     * (e.g. right after a selection change) to fall back to cached state.
+     */
+    private pushTrackedAircraftDataTo3DRoute(aircraftData: AircraftData | null): void {
+        if (!this.aircraftRoute3DRenderer) return;
+
+        const state = this.stateManager.getState();
+        const data = aircraftData ?? state.aircraftData;
+
+        const trackedSet = new Set<string>(state.trajectoryAircraftIds);
+        if (state.selectedAircraft) trackedSet.add(state.selectedAircraft);
+        if (state.displayOptions.showAllAircraftTrajectories && data?.id) {
+            for (const id of data.id) trackedSet.add(id);
+        }
+        const trackedIds = Array.from(trackedSet);
+
+        const statesMap = new Map<string, { lat: number; lon: number; alt: number }>();
+        if (data?.id) {
+            for (const id of trackedIds) {
+                const idx = data.id.indexOf(id);
+                if (idx >= 0) {
+                    statesMap.set(id, { lat: data.lat[idx], lon: data.lon[idx], alt: data.alt[idx] });
                 }
             }
         }
+
+        const trailsMap = new Map<string, AircraftTrailPoint[]>();
+        for (const id of trackedIds) {
+            trailsMap.set(id, this.stateManager.getAircraftTrail(id));
+        }
+
+        // Single combined update -- rebuilds the 3D trajectory scene once per
+        // tick instead of three times (one per setter), which matters since
+        // 3D mode is otherwise the heaviest part of the app per aircraft-data tick.
+        this.aircraftRoute3DRenderer.updateTrackedAircraft(trackedIds, statesMap, trailsMap);
+    }
+
+    /** Public hook for callers (e.g. App.ts on trajectoryAircraftIds changes) to force a tracked-aircraft refresh. */
+    public refreshTrackedAircraft4D(): void {
+        this.pushTrackedAircraftDataTo3DRoute(null);
     }
 
     /**
@@ -381,7 +493,7 @@ export class MapOverlay {
 
         if (this.aircraftRoute3DRenderer) {
             this.aircraftRoute3DRenderer.setSelectedAircraft(aircraftId);
-            this.seedAircraftStateFor3DRoute();
+            this.pushTrackedAircraftDataTo3DRoute(null);
         }
     }
 
@@ -461,6 +573,12 @@ export class MapOverlay {
         // Update 3D route renderer if active
         if (this.is3DOverlayActive && this.aircraftRoute3DRenderer) {
             this.aircraftRoute3DRenderer.updateDisplayOptions(fullOptions);
+
+            // showAllAircraftTrajectories changes the tracked-aircraft SET, not just
+            // a cosmetic option, so recompute it (cheap: only runs when 3D is active).
+            if (options.showAllAircraftTrajectories !== undefined) {
+                this.pushTrackedAircraftDataTo3DRoute(null);
+            }
         }
     }
 
@@ -496,6 +614,7 @@ export class MapOverlay {
         );
 
         this.aircraft3DRenderer.initialize(map);
+        this.applyPendingLabelClickHandler();
         this.is3DOverlayActive = true;
 
         // Also create and initialize the 3D route renderer so the selected
@@ -511,7 +630,7 @@ export class MapOverlay {
             const existingRoute = this.aircraftRoutes?.getRouteData() ?? null;
             this.aircraftRoute3DRenderer.updateRouteData(existingRoute);
 
-            this.seedAircraftStateFor3DRoute();
+            this.pushTrackedAircraftDataTo3DRoute(null);
         }
 
         // Restore view state after map settles from adding 3D layer
@@ -540,27 +659,6 @@ export class MapOverlay {
         }
 
         logger.info('MapOverlay', '3D overlay enabled successfully');
-    }
-
-    /**
-     * Push the selected aircraft's current position/altitude to the 3D route
-     * renderer from the state manager. Used when enabling the overlay.
-     */
-    private seedAircraftStateFor3DRoute(): void {
-        if (!this.aircraftRoute3DRenderer) return;
-
-        const selectedId = this.stateManager.getState().selectedAircraft;
-        const aircraftData = this.stateManager.getState().aircraftData;
-        if (!selectedId || !aircraftData || !aircraftData.id) return;
-
-        const index = aircraftData.id.indexOf(selectedId);
-        if (index < 0) return;
-
-        this.aircraftRoute3DRenderer.setAircraftState(
-            aircraftData.lat[index],
-            aircraftData.lon[index],
-            aircraftData.alt[index]
-        );
     }
 
     /**
@@ -645,6 +743,36 @@ export class MapOverlay {
     }
 
     /**
+     * Register the callback fired when the user clicks a 3D aircraft's HTML
+     * label overlay. Re-applied automatically every time the 3D renderer is
+     * (re)created (e.g. toggling "Show 3D aircraft" off/on), since that
+     * destroys the previous instance.
+     */
+    public setAircraftLabelClickHandler(handler: (aircraftId: string, ctrlOrMeta: boolean) => void): void {
+        this.pendingLabelClickHandler = handler;
+        this.applyPendingLabelClickHandler();
+    }
+
+    private applyPendingLabelClickHandler(): void {
+        if (this.pendingLabelClickHandler && this.aircraft3DRenderer instanceof Aircraft3DRenderer) {
+            this.aircraft3DRenderer.setLabelClickHandler(this.pendingLabelClickHandler);
+        }
+        if (this.pendingLabelContextMenuHandler && this.aircraft3DRenderer instanceof Aircraft3DRenderer) {
+            this.aircraft3DRenderer.setLabelContextMenuHandler(this.pendingLabelContextMenuHandler);
+        }
+    }
+
+    /**
+     * Register the callback fired when the user right-clicks a 3D aircraft's
+     * HTML label overlay. See setAircraftLabelClickHandler for why this must
+     * be re-applied whenever the 3D renderer is recreated.
+     */
+    public setAircraftLabelContextMenuHandler(handler: (aircraftId: string, clientX: number, clientY: number) => void): void {
+        this.pendingLabelContextMenuHandler = handler;
+        this.applyPendingLabelClickHandler();
+    }
+
+    /**
      * Handle map style change
 
      * Notifies aircraft renderers and routes to recreate layers
@@ -703,10 +831,11 @@ export class MapOverlay {
             this.recreate3DRenderer();
         }
 
-        // Clear selected aircraft and routes
+        // Clear selected aircraft and routes (including the route cache so stale
+        // data from the previous scenario is not shown after reset)
         this.setSelectedAircraft(null);
         if (this.aircraftRoutes) {
-            this.aircraftRoutes.clearRouteDisplay();
+            this.aircraftRoutes.clearRouteCache();
         }
     }
 

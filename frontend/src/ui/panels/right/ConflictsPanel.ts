@@ -34,7 +34,53 @@ export class ConflictsPanel extends BasePanel {
             return;
         }
 
+        // Delegated listener for the Accept/Reject resolution buttons: the
+        // container element survives innerHTML rebuilds, so this is attached
+        // once rather than re-attached on every render. Capture phase so it
+        // runs (and can stopPropagation) before the per-item bubble-phase
+        // selection click handler added in addConflictClickHandlers.
+        this.conflictsInfoElement.addEventListener('click', (e) => this.handleResoActionClick(e), true);
+
         logger.debug('ConflictsPanel', 'ConflictsPanel initialized');
+    }
+
+    /**
+     * Handle clicks on the Accept/Reject resolution buttons (event
+     * delegation). Stops propagation so it doesn't also trigger the
+     * conflict-item's own aircraft-selection click handling.
+     */
+    private handleResoActionClick(e: Event): void {
+        const target = e.target as HTMLElement;
+        const btn = target.closest('.reso-btn') as HTMLElement | null;
+        if (!btn) return;
+        e.stopPropagation();
+
+        const item = btn.closest('.conflict-item') as HTMLElement | null;
+        const aircraftId = item?.getAttribute('data-aircraft-id');
+        const action = btn.getAttribute('data-action');
+        if (!aircraftId || !action) return;
+
+        const command = action === 'accept' ? `RESOACCEPT ${aircraftId}` : `RESOREJECT ${aircraftId}`;
+        this.sendResoCommand(command);
+    }
+
+    /**
+     * Send a RESOACCEPT/RESOREJECT stack command to the simulation.
+     */
+    private async sendResoCommand(command: string): Promise<void> {
+        try {
+            const response = await fetch('/api/simulation/command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ command })
+            });
+            const result = await response.json();
+            if (!result.success) {
+                logger.warn('ConflictsPanel', `Reso command failed: ${command} -> ${result.error || 'unknown error'}`);
+            }
+        } catch (error) {
+            logger.warn('ConflictsPanel', `Reso command error: ${command} -> ${(error as Error).message}`);
+        }
     }
 
     /**
@@ -98,7 +144,83 @@ export class ConflictsPanel extends BasePanel {
         if (conflictsChanged) {
             this.updateConflictsList();
             this.lastConflictIds = currentConflictIds;
+        } else if (currentConflictIds.length > 0) {
+            // Update TCPA text dynamically without rebuilding the DOM to keep it continuous
+            this.updateTcpaValues();
         }
+    }
+
+    /**
+     * Update TCPA values for existing conflict elements
+     */
+    private updateTcpaValues(): void {
+        if (!this.conflictsInfoElement || !this.currentAircraftData) return;
+
+        const conflictItems = this.conflictsInfoElement.querySelectorAll('.conflict-item');
+        conflictItems.forEach(item => {
+            const htmlItem = item as HTMLElement;
+            const indexAttr = htmlItem.getAttribute('data-index');
+
+            if (indexAttr) {
+                const index = parseInt(indexAttr);
+                const tcpa = this.currentAircraftData!.tcpamax && this.currentAircraftData!.tcpamax[index]
+                    ? this.currentAircraftData!.tcpamax[index]
+                    : null;
+
+                const tcpaElement = htmlItem.querySelector('.conflict-tcpa');
+                if (tcpaElement) {
+                    tcpaElement.textContent = tcpa !== null ? `TCPA: ${tcpa.toFixed(1)}s` : '';
+                }
+
+                const resoElement = htmlItem.querySelector('.conflict-reso');
+                if (resoElement) {
+                    resoElement.textContent = ConflictsPanel.formatResolution(this.currentAircraftData!, index);
+                }
+
+                const actionsElement = htmlItem.querySelector('.conflict-reso-actions');
+                if (actionsElement) {
+                    const reso = ConflictsPanel.formatResolution(this.currentAircraftData!, index);
+                    const accepted = this.currentAircraftData!.asasaccepted?.[index] === true;
+                    actionsElement.innerHTML = ConflictsPanel.renderResoActions(reso, accepted);
+                }
+            }
+        });
+    }
+
+    /**
+     * Render the Accept/Reject controls for a conflict item, or '' if there
+     * is no resolution yet to act on.
+     */
+    private static renderResoActions(reso: string, accepted: boolean): string {
+        if (!reso) return '';
+        if (accepted) {
+            return '<span class="reso-status">✓ Đang bay theo đề xuất</span>' +
+                '<button class="reso-btn reso-cancel" data-action="reject">Hủy</button>';
+        }
+        return '<button class="reso-btn reso-accept" data-action="accept">Chấp nhận</button>';
+    }
+
+    /**
+     * Render the ASAS-proposed resolution (heading / speed / altitude) for
+     * an aircraft currently in conflict, or '' if BlueSky hasn't computed
+     * one (RESO OFF, or no advisory needed yet).
+     */
+    private static formatResolution(data: AircraftData, index: number): string {
+        const parts: string[] = [];
+        const trk = data.asastrk?.[index];
+        const tas = data.asastas?.[index];
+        const vs = data.asasvs?.[index];
+        if (trk !== undefined && !Number.isNaN(trk)) {
+            parts.push(`HDG ${Math.round(trk)}°`);
+        }
+        if (tas !== undefined && !Number.isNaN(tas)) {
+            parts.push(`SPD ${Math.round(tas * 1.94384)}kt`);
+        }
+        if (vs !== undefined && !Number.isNaN(vs) && Math.abs(vs) > 0.1) {
+            const fpm = Math.round(vs * 196.850);
+            parts.push(`VS ${fpm > 0 ? '+' : ''}${fpm}ft/min`);
+        }
+        return parts.length ? `Đề xuất: ${parts.join(' · ')}` : '';
     }
 
     /**
@@ -113,7 +235,7 @@ export class ConflictsPanel extends BasePanel {
         }
 
         // Find all aircraft in conflict
-        const conflictAircraft: Array<{ id: string; index: number; tcpa: number | null }> = [];
+        const conflictAircraft: Array<{ id: string; index: number; tcpa: number | null; reso: string; accepted: boolean }> = [];
 
         for (let i = 0; i < this.currentAircraftData.id.length; i++) {
             const aircraftId = this.currentAircraftData.id[i];
@@ -125,7 +247,9 @@ export class ConflictsPanel extends BasePanel {
                 conflictAircraft.push({
                     id: aircraftId,
                     index: i,
-                    tcpa: tcpa
+                    tcpa: tcpa,
+                    reso: ConflictsPanel.formatResolution(this.currentAircraftData, i),
+                    accepted: this.currentAircraftData.asasaccepted?.[i] === true
                 });
             }
         }
@@ -144,6 +268,8 @@ export class ConflictsPanel extends BasePanel {
                 <div class="conflict-item" data-aircraft-id="${conflict.id}" data-index="${conflict.index}">
                     <div class="conflict-pair"><strong>${conflict.id}</strong></div>
                     <div class="conflict-tcpa">${tcpaStr}</div>
+                    <div class="conflict-reso">${conflict.reso}</div>
+                    <div class="conflict-reso-actions">${ConflictsPanel.renderResoActions(conflict.reso, conflict.accepted)}</div>
                 </div>
             `;
         });

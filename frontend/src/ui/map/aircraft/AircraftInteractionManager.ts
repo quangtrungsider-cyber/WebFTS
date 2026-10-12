@@ -57,6 +57,13 @@ export class AircraftInteractionManager {
     // active, empty-map clicks are waypoint placements, not aircraft deselects.
     private isRouteDrawingActive: (() => boolean) | null = null;
 
+    // When the Range & Bearing tool is active, clicking an aircraft is that
+    // tool recording a measurement point, not a request to select the
+    // aircraft or toggle its 4D trajectory -- suppress this manager's own
+    // click handling entirely while it's on, the same way route drawing
+    // already suppresses the empty-map-click deselect behavior above.
+    private isRangeBearingActive: (() => boolean) | null = null;
+
     constructor(
         mapDisplay: MapDisplay,
         stateManager: StateManager,
@@ -115,19 +122,30 @@ export class AircraftInteractionManager {
                     return;
                 }
 
+                // Same for Range & Bearing: an empty-map click is that tool
+                // recording a measurement point, not a deselect request.
+                if (this.isRangeBearingActive && this.isRangeBearingActive()) {
+                    return;
+                }
+
                 const features = this.map.queryRenderedFeatures(e.point, {
                     layers: ['aircraft-points']
                 });
                 const clickedOnAircraft = features.length > 0;
 
-                // If click was not on an aircraft, unselect and stop following
+                // If click was not on an aircraft, unselect and stop following,
+                // and also clear the whole 4D-trajectory comparison set
                 if (!clickedOnAircraft) {
-                    logger.debug('AircraftInteractionManager', 'Empty map click - unselecting aircraft');
+                    logger.debug('AircraftInteractionManager', 'Empty map click - unselecting aircraft and clearing 4D trajectories');
                     const currentSelection = this.stateManager.getState().selectedAircraft;
                     if (currentSelection) {
                         // Send POS command to toggle route visibility off
                         this.requestRouteData(currentSelection);
                     }
+                    for (const trajectoryId of this.stateManager.getTrajectoryAircraftIds()) {
+                        this.requestRouteData(trajectoryId); // toggles the server-side route off
+                    }
+                    this.stateManager.clearTrajectoryAircraftIds();
                     this.stopFollowing();
                     this.stateManager.setSelectedAircraft(null);
                 }
@@ -162,19 +180,29 @@ export class AircraftInteractionManager {
     private setup2DLayerHandlers(): void {
         if (!this.map) return;
 
-        // Single click on aircraft - select and zoom
+        // Single click on aircraft - select and zoom (or, with Ctrl/Cmd held,
+        // toggle it into the 4D-trajectory comparison set instead)
         this.map.on('click', 'aircraft-points', (e: any) => {
+            if (this.isRangeBearingActive && this.isRangeBearingActive()) return;
             if (!e.features || e.features.length === 0) return;
 
             const aircraftId = e.features[0].properties?.entity_id || e.features[0].properties?.callsign;
-            if (aircraftId) {
-                logger.debug('AircraftInteractionManager', 'MAP 2D SINGLE CLICK:', aircraftId);
-                this.handleMapAircraftClick(aircraftId, false);
+            if (!aircraftId) return;
+
+            const isMultiSelectModifier = e.originalEvent?.ctrlKey || e.originalEvent?.metaKey;
+            if (isMultiSelectModifier) {
+                logger.debug('AircraftInteractionManager', 'MAP 2D CTRL+CLICK (4D trajectory compare):', aircraftId);
+                this.handleTrajectoryMultiSelectClick(aircraftId);
+                return;
             }
+
+            logger.debug('AircraftInteractionManager', 'MAP 2D SINGLE CLICK:', aircraftId);
+            this.handleMapAircraftClick(aircraftId, false);
         });
 
         // Double click on aircraft - select, zoom, and follow
         this.map.on('dblclick', 'aircraft-points', (e: any) => {
+            if (this.isRangeBearingActive && this.isRangeBearingActive()) return;
             if (!e.features || e.features.length === 0) return;
 
             const aircraftId = e.features[0].properties?.entity_id || e.features[0].properties?.callsign;
@@ -197,9 +225,9 @@ export class AircraftInteractionManager {
             const { aircraftId } = e.detail;
             logger.debug('AircraftInteractionManager', '📋 Panel single-click event received:', aircraftId);
 
-            // UNIFIED BEHAVIOR: Request route data + Simple zoom (same as map clicks)
+            // UNIFIED BEHAVIOR: Request route data (No zoom on single click)
             this.requestRouteData(aircraftId);
-            this.zoomToAircraft(aircraftId, { follow: false, adaptive: true });
+            // this.zoomToAircraft(aircraftId, { follow: false, adaptive: true });
         }) as EventListener);
 
         // Listen for double-click events from panels
@@ -271,9 +299,41 @@ export class AircraftInteractionManager {
                 logger.debug('AircraftInteractionManager', 'Map single-click: selecting', aircraftId);
                 this.stateManager.setSelectedAircraft(aircraftId);
                 this.requestRouteData(aircraftId);  // Sends POS command for new selection
-                this.zoomToAircraft(aircraftId, { follow: false, adaptive: true });
+                // this.zoomToAircraft(aircraftId, { follow: false, adaptive: true });
             }
         }
+    }
+
+    /**
+     * Programmatic equivalent of clicking the aircraft-points layer at this
+     * aircraft's screen position -- used by the 3D label overlay, which is a
+     * plain HTML element positioned on top of the map rather than a MapLibre
+     * layer feature, so it can't be reached by the 'click' listener bound to
+     * 'aircraft-points' in setup2DLayerHandlers(). Keeps both entry points
+     * behind the exact same select/multi-select branching.
+     */
+    public handleAircraftEntityClick(aircraftId: string, isMultiSelectModifier: boolean): void {
+        if (this.isRangeBearingActive && this.isRangeBearingActive()) return;
+        if (isMultiSelectModifier) {
+            logger.debug('AircraftInteractionManager', '3D LABEL CTRL+CLICK (4D trajectory compare):', aircraftId);
+            this.handleTrajectoryMultiSelectClick(aircraftId);
+            return;
+        }
+        logger.debug('AircraftInteractionManager', '3D LABEL CLICK:', aircraftId);
+        this.handleMapAircraftClick(aircraftId, false);
+    }
+
+    /**
+     * Handle a Ctrl/Cmd+click on an aircraft: toggles it into (or out of) the
+     * 4D-trajectory comparison set, independent of the single `selectedAircraft`
+     * (which continues to drive POS/follow/info-panel behavior unaffected).
+     * Sends the same POS command as a normal click -- the backend's showroute()
+     * toggle now tracks a set of acids per client, so this doesn't disturb any
+     * other aircraft's already-streaming route data.
+     */
+    private handleTrajectoryMultiSelectClick(aircraftId: string): void {
+        this.stateManager.toggleTrajectoryAircraft(aircraftId);
+        this.requestRouteData(aircraftId);
     }
 
     /**
@@ -491,6 +551,14 @@ export class AircraftInteractionManager {
      */
     public setRouteDrawingActiveCheck(check: () => boolean): void {
         this.isRouteDrawingActive = check;
+    }
+
+    /**
+     * Register a predicate that reports whether the Range & Bearing tool is
+     * currently active. See isRangeBearingActive for why.
+     */
+    public setRangeBearingActiveCheck(check: () => boolean): void {
+        this.isRangeBearingActive = check;
     }
 
     /**

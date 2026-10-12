@@ -1,0 +1,40 @@
+{
+  "icao": "VVPR",
+  "name": "Phan Rang",
+  "metadata": {
+    "city": "Phan Rang",
+    "country": "Vietnam",
+    "gui_label": "3D",
+    "iata_code": "PHA",
+    "icao_code": "VVPR",
+    "state": "Tuyen Quang Province",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 52,
+    "boundaries": 1,
+    "gates": 78
+  },
+  "sourceLineCounts": {
+    "1302": 7,
+    "100": 1,
+    "110": 52,
+    "111": 389,
+    "112": 77,
+    "113": 54,
+    "114": 2,
+    "130": 1,
+    "1300": 78,
+    "1301": 78,
+    "19": 2,
+    "1200": 1,
+    "1201": 16,
+    "1206": 15,
+    "1400": 2
+  },
+  "warnings": []
+}

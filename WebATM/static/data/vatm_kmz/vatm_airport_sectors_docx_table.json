@@ -1,0 +1,544 @@
+{
+ "schemaVersion": 1,
+ "source": {
+  "document": "CTR TMA các sân bay dọc theo đường HK RNAV2.docx",
+  "table": "Bảng tổng hợp"
+ },
+ "areaCount": 21,
+ "areas": [
+  {
+   "key": "nb_tma",
+   "name": "Nội Bài - TMA",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "R75km (40NM), tâm DVOR/DME NOB, trừ vùng Nội Bài ARR, Nội Bài TWR và TWR Gia Lâm, Kép, Hoà Lạc, Kiến An",
+    "radius_km": 75.0,
+    "center_desc": "DVOR/DME NOB"
+   },
+   "vertical_lower": {
+    "kind": "ALT",
+    "value_m": 750,
+    "value_ft": 2500,
+    "raw": "750m (2500ft)"
+   },
+   "vertical_upper": {
+    "kind": "FL",
+    "value_ft": 15500,
+    "value_m": 4724,
+    "raw": "FL155"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "nb_ctr",
+   "name": "Nội Bài - CTR",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "R30km, tâm DVOR/DME NOB",
+    "radius_km": 30.0,
+    "center_desc": "DVOR/DME NOB"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2150,
+    "value_ft": 7000,
+    "raw": "2150m (7000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": [
+    "KMZ upper=2150 Meters (~7054ft) vs docx upper '2150m (7000ft)' (~7000ft)"
+   ]
+  },
+  {
+   "key": "dh_ctr",
+   "name": "Đồng Hới - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R60km, tâm ARP, trừ vùng trời trên lãnh thổ Lào",
+    "radius_km": 60.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2750,
+    "value_ft": 9000,
+    "raw": "2750m (9000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "pb_ctr",
+   "name": "Phú Bài - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm DVOR/DME HUE, trừ phần Da Nang Tower kiểm soát",
+    "radius_km": 30.0,
+    "center_desc": "DVOR/DME HUE"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2150,
+    "value_ft": 7000,
+    "raw": "2150m (7000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": [
+    "KMZ upper=2150 Meters (~7054ft) vs docx upper '2150m (7000ft)' (~7000ft)"
+   ]
+  },
+  {
+   "key": "dn_tma",
+   "name": "Đà Nẵng - TMA",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "R60km, tâm DVOR/DME DAN",
+    "radius_km": 60.0,
+    "center_desc": "DVOR/DME DAN"
+   },
+   "vertical_lower": {
+    "kind": "ALT",
+    "value_m": 600,
+    "value_ft": 2000,
+    "raw": "600m (2000ft)"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2750,
+    "value_ft": 9000,
+    "raw": "2750m (9000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "Outer <name> says 'CTR DA NANG' but this placemark carries no metadata at all, while a separate polygon already claims the CTR identity via its Name_Txt (see dn_ctr). Docx states CTR and TMA Da Nang share the same 60km circle (only vertical band differs), so this bare outline is reassigned to TMA; vertical/class taken from the docx table, not this KMZ.",
+   "cross_check": []
+  },
+  {
+   "key": "dn_ctl",
+   "name": "Đà Nẵng - CTL",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "Ranh giới FIR Hà Nội/TP.HCM (bắc), biên giới VN-Lào/Campuchia (tây), kinh tuyến 110°00'00\"Đ (đông), vĩ tuyến 13°30'00\"B (nam)",
+    "radius_km": null,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC/nước"
+   },
+   "vertical_upper": {
+    "kind": "FL",
+    "value_ft": 24500,
+    "value_m": 7468,
+    "raw": "FL245"
+   },
+   "note": null,
+   "cross_check": [
+    "No Phase 1 KMZ geometry entry for this key (expected only for dn_ctl)"
+   ]
+  },
+  {
+   "key": "dn_ctr",
+   "name": "Đà Nẵng - CTR",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "R60km, tâm DVOR/DME DAN, trừ vùng Phu Bai Tower",
+    "radius_km": 60.0,
+    "center_desc": "DVOR/DME DAN"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2750,
+    "value_ft": 9000,
+    "raw": "2750m (9000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "Outer <name> says 'TMA DA NANG' but embedded Name_Txt says 'CTR DA NANG' with vertical SFC-2750m (the docx's CTR band); reassigned to CTR per Name_Txt.",
+   "cross_check": []
+  },
+  {
+   "key": "cl_ctr",
+   "name": "Chu Lai - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm ARP",
+    "radius_km": 30.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2150,
+    "value_ft": 7000,
+    "raw": "2150m (7000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": [
+    "KMZ upper=2150 Meters (~7054ft) vs docx upper '2150m (7000ft)' (~7000ft)"
+   ]
+  },
+  {
+   "key": "pk_ctr",
+   "name": "Pleiku - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R50km, tâm VOR/DME PLK, trừ khu vực 30-50km hướng R045-R156",
+    "radius_km": 50.0,
+    "center_desc": "VOR/DME PLK"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 3050,
+    "value_ft": 10000,
+    "raw": "3050m (10000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "KMZ geometry is a full 50km circle; docx describes a 30-50km notch on bearings R045-R156 that is not represented here (source coords for the notch are not available).",
+   "cross_check": []
+  },
+  {
+   "key": "pc_ctr",
+   "name": "Phù Cát - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R60km, tâm DVOR/DME PCAT",
+    "radius_km": 60.0,
+    "center_desc": "DVOR/DME PCAT"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 3050,
+    "value_ft": 10000,
+    "raw": "3050m (10000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "th_ctr",
+   "name": "Tuy Hoà - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm ARP",
+    "radius_km": 30.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2700,
+    "value_ft": 8900,
+    "raw": "2700m (8900ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "cr_tma",
+   "name": "Cam Ranh - TMA (APP)",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "Đa giác theo toạ độ AIP, tương đương ~R74km",
+    "radius_km": 74.0,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "ALT_RANGE",
+    "value_m_min": 450,
+    "value_m_max": 750,
+    "value_ft_min": 1500,
+    "value_ft_max": 2500,
+    "raw": "450-750m (1500-2500ft)"
+   },
+   "vertical_upper": {
+    "kind": "FL",
+    "value_ft": 15500,
+    "value_m": 4724,
+    "raw": "FL155"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "cr_ctr",
+   "name": "Cam Ranh - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R15km (8NM), tâm ARP",
+    "radius_km": 15.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 750,
+    "value_ft": 2500,
+    "raw": "750m (2500ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "bmt_ctr",
+   "name": "Buôn Ma Thuột - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm DVOR/DMET BMT",
+    "radius_km": 30.0,
+    "center_desc": "DVOR/DMET BMT"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2750,
+    "value_ft": 9000,
+    "raw": "2750m (9000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "lk_ctr",
+   "name": "Liên Khương - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm ARP",
+    "radius_km": 30.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 3350,
+    "value_ft": 11000,
+    "raw": "3350m (11000ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "tsnlt_tma",
+   "name": "TSN - Long Thành - TMA",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "R75km(40NM) tâm DVOR/DME TSH + đoạn AS06-AS24-AS07 + biên giới VN-Campuchia, trừ CTR TSN/LT/Vũng Tàu",
+    "radius_km": 75.0,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "ALT",
+    "value_ft": 1500,
+    "value_m": 457,
+    "raw": "1500ft"
+   },
+   "vertical_upper": {
+    "kind": "FL",
+    "value_ft": 16500,
+    "value_m": 5029,
+    "raw": "FL165"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "A second candidate boundary 'TMA TSN 16500FT' (SECTOR 2x.kml, also 651 points) exists in the source with no stated reason for the duplicate; the unqualified 'TMA TSN' name was used as it matches the docx's plain 'TMA' wording.",
+   "cross_check": []
+  },
+  {
+   "key": "tsn_ctr",
+   "name": "Tân Sơn Nhất - CTR",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "Đa giác TS01-TS02-TS03-TS04 theo toạ độ AIP",
+    "radius_km": null,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC/nước"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_ft": 2500,
+    "value_m": 762,
+    "raw": "2500ft"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "KMZ only has a simplified bounding box here, not the true AIP polygon (TS01-TS02-TS03-TS04) described in the docx.",
+   "cross_check": []
+  },
+  {
+   "key": "lt_ctr",
+   "name": "Long Thành - CTR",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "Đa giác LT04-LT01-LT02-AS26 theo toạ độ AIP",
+    "radius_km": null,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC/nước"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_ft": 2500,
+    "value_m": 762,
+    "raw": "2500ft"
+   },
+   "note": null,
+   "kmz_reconciliation_note": "KMZ only has a simplified bounding box here, not the true AIP polygon (LT04-LT01-LT02-AS26) described in the docx.",
+   "cross_check": []
+  },
+  {
+   "key": "ct_ctr",
+   "name": "Cần Thơ - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "R30km, tâm ARP",
+    "radius_km": 30.0,
+    "center_desc": "ARP"
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 2100,
+    "value_ft": 6900,
+    "raw": "2100m (6900ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "pq_ctr",
+   "name": "Phú Quốc - CTR",
+   "airspace_class": "D",
+   "horizontal": {
+    "raw": "Hình chữ nhật quanh trục CHC: dài ~13km (7NM), rộng 4.6km (2.5NM) mỗi bên trục, theo 4 điểm toạ độ AIP",
+    "radius_km": null,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "SFC",
+    "value_ft": 0,
+    "value_m": 0,
+    "raw": "SFC"
+   },
+   "vertical_upper": {
+    "kind": "ALT",
+    "value_m": 750,
+    "value_ft": 2500,
+    "raw": "750m (2500ft)"
+   },
+   "note": null,
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  },
+  {
+   "key": "pq_tma",
+   "name": "Phú Quốc - TMA",
+   "airspace_class": "C",
+   "horizontal": {
+    "raw": "Đa giác: ranh giới FIR HCM/Phnom Penh + 5 điểm toạ độ AIP, mở rộng về phía đông (hướng TUNPO)",
+    "radius_km": null,
+    "center_desc": null
+   },
+   "vertical_lower": {
+    "kind": "ALT",
+    "value_ft": 1500,
+    "value_m": 450,
+    "raw": "1500ft (450m)"
+   },
+   "vertical_upper": {
+    "kind": "FL",
+    "value_ft": 15500,
+    "value_m": 4724,
+    "raw": "FL155"
+   },
+   "note": "trừ khu vực thuộc CTR",
+   "kmz_reconciliation_note": null,
+   "cross_check": []
+  }
+ ]
+}

@@ -14,6 +14,8 @@
 
 import { SocketManager } from '../core/SocketManager';
 import { StateManager } from '../core/StateManager';
+import { MapDisplay } from './map/MapDisplay';
+import { VietnameseAirports } from './map/VietnameseAirports';
 import { SimInfo } from '../data/types';
 import { settingsModal } from './SettingsModal';
 import { logger } from '../utils/Logger';
@@ -33,13 +35,27 @@ export class Header {
     private settingsButton: HTMLElement | null = null;
     private resetLayoutButton: HTMLElement | null = null;
 
+    // DOM Elements - Airport search
+    private airportSearchInput: HTMLInputElement | null = null;
+    private airportSearchFeedback: HTMLElement | null = null;
+    private airportSearchFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
+
     // DOM Elements - Simulation display
     private simTimeElement: HTMLElement | null = null;
     private simRateElement: HTMLElement | null = null;
 
+    // DOM Elements - Fullscreen floating sim bar
+    private fsSimTimeElement: HTMLElement | null = null;
+    private fsSimRateElement: HTMLElement | null = null;
+    private fsPlayButton: HTMLElement | null = null;
+    private fsPlayPauseButton: HTMLElement | null = null;
+    private fsResetButton: HTMLElement | null = null;
+    private fsSpeedSelect: HTMLSelectElement | null = null;
+
     // State
     private socketManager: SocketManager | null = null;
     private stateManager: StateManager | null = null;
+    private mapDisplay: MapDisplay | null = null;
     private lastIsRunning: boolean | null = null;
     private eventListeners: Array<{
         element: HTMLElement | Document;
@@ -90,9 +106,21 @@ export class Header {
         this.settingsButton = document.getElementById('settings-btn');
         this.resetLayoutButton = document.getElementById('reset-layout-btn');
 
+        // Airport search
+        this.airportSearchInput = document.getElementById('airport-search-input') as HTMLInputElement;
+        this.airportSearchFeedback = document.getElementById('airport-search-feedback');
+
         // Simulation display elements
         this.simTimeElement = document.getElementById('sim-time');
         this.simRateElement = document.getElementById('sim-rate');
+
+        // Fullscreen floating bar elements
+        this.fsSimTimeElement = document.getElementById('fs-sim-time');
+        this.fsSimRateElement = document.getElementById('fs-sim-rate');
+        this.fsPlayButton = document.getElementById('fs-play-btn');
+        this.fsPlayPauseButton = document.getElementById('fs-play-pause-btn');
+        this.fsResetButton = document.getElementById('fs-reset-btn');
+        this.fsSpeedSelect = document.getElementById('fs-speed-select') as HTMLSelectElement;
     }
 
     /**
@@ -149,10 +177,34 @@ export class Header {
             });
         }
 
+        // Airport search input
+        if (this.airportSearchInput) {
+            this.addEventListener(this.airportSearchInput, 'keydown', (e) => {
+                const keyEvent = e as KeyboardEvent;
+                if (keyEvent.key === 'Enter') {
+                    this.handleAirportSearch();
+                }
+            });
+        }
+
         // Close menu dropdown when clicking outside
         this.addEventListener(document, 'click', (e) => {
             this.handleDocumentClick(e as MouseEvent);
         });
+
+        // Fullscreen floating bar buttons
+        if (this.fsPlayButton) {
+            this.addEventListener(this.fsPlayButton, 'click', () => this.handlePlayClick());
+        }
+        if (this.fsPlayPauseButton) {
+            this.addEventListener(this.fsPlayPauseButton, 'click', () => this.handlePlayPauseClick());
+        }
+        if (this.fsResetButton) {
+            this.addEventListener(this.fsResetButton, 'click', () => this.handleResetClick());
+        }
+        if (this.fsSpeedSelect) {
+            this.addEventListener(this.fsSpeedSelect, 'change', (e) => this.handleSpeedChange(e as Event));
+        }
     }
 
     /**
@@ -181,9 +233,68 @@ export class Header {
         this.stateManager = stateManager;
     }
 
+    /**
+     * Set the map display instance (used by the airport search box)
+     */
+    public setMapDisplay(mapDisplay: MapDisplay): void {
+        this.mapDisplay = mapDisplay;
+    }
+
     // ========================================
     // Event Handlers
     // ========================================
+
+    /**
+     * Handle Enter key in the airport search box: look up the ICAO/IATA
+     * code and fly the map to that airport.
+     */
+    private handleAirportSearch(): void {
+        if (!this.airportSearchInput) return;
+
+        const code = this.airportSearchInput.value.trim();
+        if (!code) return;
+
+        const airport = VietnameseAirports.findByCode(code);
+        if (!airport) {
+            this.showAirportSearchFeedback(`Không tìm thấy "${code}"`, 'error');
+            return;
+        }
+
+        if (!this.mapDisplay || !this.mapDisplay.isInitialized()) {
+            this.showAirportSearchFeedback('Bản đồ chưa sẵn sàng', 'error');
+            return;
+        }
+
+        const map = this.mapDisplay.getMap();
+        if (map) {
+            map.flyTo({ center: [airport.lon, airport.lat], zoom: 11 });
+        } else {
+            this.mapDisplay.panTo(airport.lat, airport.lon);
+        }
+
+        this.showAirportSearchFeedback(`${airport.icao} - ${airport.name}`, 'success');
+        logger.info('Header', `Airport search: jumped to ${airport.icao} (${airport.name})`);
+    }
+
+    /**
+     * Show transient feedback next to the airport search box
+     */
+    private showAirportSearchFeedback(message: string, type: 'success' | 'error'): void {
+        if (!this.airportSearchFeedback) return;
+
+        this.airportSearchFeedback.textContent = message;
+        this.airportSearchFeedback.className = `airport-search-feedback ${type}`;
+
+        if (this.airportSearchFeedbackTimeout) {
+            clearTimeout(this.airportSearchFeedbackTimeout);
+        }
+        this.airportSearchFeedbackTimeout = setTimeout(() => {
+            if (this.airportSearchFeedback) {
+                this.airportSearchFeedback.textContent = '';
+                this.airportSearchFeedback.className = 'airport-search-feedback';
+            }
+        }, 3000);
+    }
 
     /**
      * Handle play button click
@@ -275,6 +386,7 @@ export class Header {
         if (!this.menuDropdown.contains(target) && !this.menuDropdownButton.contains(target)) {
             this.closeMenuDropdown();
         }
+
     }
 
     // ========================================
@@ -343,19 +455,21 @@ export class Header {
         if (this.simTimeElement && this.simTimeElement.textContent !== timeString) {
             this.simTimeElement.textContent = timeString;
         }
+        if (this.fsSimTimeElement && this.fsSimTimeElement.textContent !== timeString) {
+            this.fsSimTimeElement.textContent = timeString;
+        }
     }
 
     /**
      * Update simulation rate display
      */
     public updateSimRate(rateString: string): void {
-        if (this.simRateElement) {
-            // Ensure it starts with 'Rate: ' prefix
-            const displayText = rateString.startsWith('Rate:') ?
-                rateString : `Rate: ${rateString}`;
-            if (this.simRateElement.textContent !== displayText) {
-                this.simRateElement.textContent = displayText;
-            }
+        const displayText = rateString.startsWith('Rate:') ? rateString : `Rate: ${rateString}`;
+        if (this.simRateElement && this.simRateElement.textContent !== displayText) {
+            this.simRateElement.textContent = displayText;
+        }
+        if (this.fsSimRateElement && this.fsSimRateElement.textContent !== displayText) {
+            this.fsSimRateElement.textContent = displayText;
         }
     }
 
@@ -400,12 +514,23 @@ export class Header {
         this.setControlEnabled(this.playPauseButton, isRunning);
         this.setControlEnabled(this.speedSelect, isRunning);
 
+        // Mirror state to fullscreen bar
+        this.setControlEnabled(this.fsPlayButton, !isRunning);
+        this.setControlEnabled(this.fsPlayPauseButton, isRunning);
+        this.setControlEnabled(this.fsSpeedSelect, isRunning);
+
         // Tell the user *why* a button is inactive when they hover over it.
         if (this.playButton) {
             this.playButton.title = isRunning ? 'Simulation is already running' : '';
         }
         if (this.playPauseButton) {
             this.playPauseButton.title = isRunning ? '' : 'Simulation is not running';
+        }
+        if (this.fsPlayButton) {
+            this.fsPlayButton.title = isRunning ? 'Simulation is already running' : 'Start';
+        }
+        if (this.fsPlayPauseButton) {
+            this.fsPlayPauseButton.title = isRunning ? 'Pause/Resume' : 'Simulation is not running';
         }
     }
 
@@ -453,6 +578,7 @@ export class Header {
         if (optionExists) {
             // Speed exists in dropdown - select it
             this.speedSelect.value = speedStr;
+            if (this.fsSpeedSelect) this.fsSpeedSelect.value = speedStr;
         } else {
             // Speed doesn't exist - ensure "Other" option exists and select it
             this.ensureOtherOptionExists();
@@ -567,6 +693,11 @@ export class Header {
      * Clean up header resources
      */
     public destroy(): void {
+        if (this.airportSearchFeedbackTimeout) {
+            clearTimeout(this.airportSearchFeedbackTimeout);
+            this.airportSearchFeedbackTimeout = null;
+        }
+
         // Remove all event listeners
         this.eventListeners.forEach(({ element, event, handler }) => {
             element.removeEventListener(event, handler);

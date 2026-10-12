@@ -29,9 +29,19 @@ class CommandProcessor:
                 return True
             else:
                 logger.warning("Cannot send command - BlueSky client not running")
+                if hasattr(self.proxy, "echo_data"):
+                    self.proxy.echo_data = {
+                        "text": (
+                            "Simulation engine is not connected -- the BlueSky sim node "
+                            "may have crashed or not started yet. Restart the application "
+                            "(WebATM.py) and try again."
+                        )
+                    }
                 return False
         except Exception as e:
             logger.error(f" Command error for '{command}': {e}")
+            if hasattr(self.proxy, "echo_data"):
+                self.proxy.echo_data = {"text": f"Command error: {e}"}
             return False
 
     def _process_stack_commands(self):
@@ -89,14 +99,32 @@ class CommandProcessor:
         """Forward command to BlueSky server for validation and execution."""
         try:
             # Send to active node if available (BlueSky client pattern)
-            target = (
-                self.proxy.bluesky_client.act_id or self.proxy.bluesky_client.server_id
-            )
+            act_id = getattr(self.proxy.bluesky_client, 'act_id', None)
+            server_id = getattr(self.proxy.bluesky_client, 'server_id', None)
+            target = act_id or server_id
+
+            logger.info(f"Forwarding command '{cmdline}' -> act_id={act_id}, server_id={server_id}, target={target}")
+
+            if target is None:
+                # No target yet - try to find any available node
+                if self.proxy.tracked_nodes:
+                    # Use first available tracked node (node_id is binary bytes)
+                    first_node_hex = next(iter(self.proxy.tracked_nodes))
+                    node_data = self.proxy.tracked_nodes[first_node_hex]
+                    target = node_data.get('node_id')  # binary bytes
+                    logger.info(f"No act_id/server_id, using first tracked node: {first_node_hex}, target={target}")
+
+            if target is None:
+                logger.warning(f"Cannot forward command '{cmdline}': no target node available")
+                self._echo_response(f"Chưa có node mô phỏng. Hãy chọn node trước.", 2)
+                return
+
             self.proxy.bluesky_client.send("STACK", cmdline, target)
         except Exception as e:
             logger.error(f" Error forwarding command '{cmdline}': {e}")
             # Send error echo to user
             self._echo_response(f"Error sending command: {e}", 1)
+
 
     def forward(self, *cmdlines, target_id=None):
         """Forward one or more stack commands to BlueSky server.

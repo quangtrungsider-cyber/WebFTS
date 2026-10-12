@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "VVPR", "icao": "VVPR", "airportName": "Phan Rang", "city": "Phan Rang", "country": "Vietnam", "gui_label": "3D", "iata_code": "PHA", "icao_code": "VVPR", "state": "Tuyen Quang Province", "flatten": "1"}, "geometry": {"type": "Point", "coordinates": [108.95206827500002, 11.63818071625]}}]}

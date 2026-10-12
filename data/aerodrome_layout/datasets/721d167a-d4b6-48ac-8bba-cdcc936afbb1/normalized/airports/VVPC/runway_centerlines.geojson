@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "15/33", "icao": "VVPC", "end1": "15", "lat1": 13.966506, "lon1": 109.034511, "end2": "33", "lat2": 13.943464, "lon2": 109.050022, "width_m": 45.11, "surface": "2"}, "geometry": {"type": "LineString", "coordinates": [[109.034511, 13.966506], [109.050022, 13.943464]]}}]}
