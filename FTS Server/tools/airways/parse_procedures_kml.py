@@ -123,12 +123,25 @@ def local(tag: str) -> str:
     return tag.split("}", 1)[-1] if "}" in tag else tag
 
 
-def classify_type(procedure_name: str) -> str:
-    if re.search(r"\bSTAR\b", procedure_name, re.I):
+def classify_type(procedure_name: str, ancestors: list[str] | tuple[str, ...] = (), default: str | None = "IAP") -> str | None:
+    # 1) keyword in the procedure's own name wins (existing behaviour).
+    # Boundaries are "not adjacent to a letter" rather than \b, because real
+    # names glue the keyword to "_" or digits: "SID_35LR_KONCO-VIDEN-BUNTA",
+    # "SID35LR_BUNTA_ITBAM", "STAR_DAN_17LR_35LR" -- \b doesn't match there
+    # since "_" counts as a word character.
+    if re.search(r"(?<![A-Za-z])STAR(?![A-Za-z])", procedure_name, re.I):
         return "STAR"
-    if re.search(r"\bS[IO]D\b", procedure_name, re.I):
+    if re.search(r"(?<![A-Za-z])S[IO]D(?![A-Za-z])", procedure_name, re.I):
         return "SID"
-    return "IAP"
+    # 2) No keyword in the name (e.g. VVPB's "PHADE 1C", which sits in
+    #    "PBN > SID > RWY 09"): fall back to the nearest ancestor folder whose
+    #    name is EXACTLY SID / STAR / IAP. Exact match on purpose -- grouping
+    #    folders such as "STAR 05" (VVLT) keep their previous classification.
+    for anc in reversed(ancestors):
+        n = (anc or "").strip().upper()
+        if n in ("SID", "STAR", "IAP"):
+            return n
+    return default
 
 
 def slugify(name: str) -> str:
@@ -210,9 +223,21 @@ def build_transition_graph(legs: list[dict], name_by: str = "leaf") -> tuple[dic
             key = (a, b)
             if key not in edges:
                 edges[key] = leg
+                # A leg folder holds SEVERAL consecutive LineString pieces (a turn
+                # arc, then a straight, ...) and the same pieces repeated once per
+                # sibling transition. `edges[key]` stays the first piece (callers
+                # such as extract_transition_waypoints rely on that); every
+                # DISTINCT piece is kept in `_pieces` so the full track can be
+                # rebuilt by `chain_pieces` instead of truncating at piece 1.
+                leg["_pieces"] = [leg]
                 children[a].append(b)
+            else:
+                first = edges[key]
+                if all(p["coords"] != leg["coords"] for p in first["_pieces"]):
+                    first["_pieces"].append(leg)
         elif kind == "root_marker":
-            trunk_legs.append(leg)
+            if all(t["coords"] != leg["coords"] for t in trunk_legs):
+                trunk_legs.append(leg)
         elif kind == "degenerate":
             pass
         else:
@@ -256,6 +281,50 @@ def build_transition_graph(legs: list[dict], name_by: str = "leaf") -> tuple[dic
         dfs(r, [], {r}, root_name)
 
     return edges, transitions, unknown, collisions, trunk_legs
+
+
+def _same_pt(a, b, tol: float = 5e-5) -> bool:
+    # ~5 m: consecutive legs in the KML are authored separately and their
+    # shared fix differs by ~1e-7 deg (cm) of rounding, so exact match fails.
+    return abs(a[0] - b[0]) < tol and abs(a[1] - b[1]) < tol
+
+
+def chain_pieces(path: list[tuple[str, str]], edges: dict, node_limit: int = 20000):
+    """Rebuild one transition's continuous track from its legs' pieces.
+
+    Each leg in `path` offers several distinct LineString pieces (see
+    build_transition_graph). Pick pieces so that every piece starts exactly
+    where the previous one ended -- within a leg (arc -> straight) and across
+    legs -- by depth-first search with backtracking (the straight piece that
+    ends a leg differs per sibling variant, so the right one is only known by
+    looking at what the NEXT leg starts from). Returns the ordered list of leg
+    dicts, or None if no continuous chain exists / the search budget ran out
+    (caller falls back and reports it)."""
+    pieces = [edges[k].get("_pieces", [edges[k]]) for k in path]
+    n = len(pieces)
+    if n == 0:
+        return []
+    budget = [node_limit]
+
+    def search(i: int, cur, used: frozenset, took: bool):
+        budget[0] -= 1
+        if budget[0] < 0:
+            return None
+        for j, p in enumerate(pieces[i]):
+            if j in used:
+                continue
+            if cur is not None and not _same_pt(p["coords"][0], cur):
+                continue
+            rest = search(i, p["coords"][-1], used | {j}, True)
+            if rest is not None:
+                return [p] + rest
+        if took:
+            if i == n - 1:
+                return []
+            return search(i + 1, cur, frozenset(), False)
+        return None
+
+    return search(0, None, frozenset(), False)
 
 
 def scan_boundaries(kml_path: str, airport_folder: str) -> list[bool]:
@@ -336,7 +405,10 @@ def extract(kml_path: str, airport_folder: str, icao: str, boundary_flags: list[
     pending: list[tuple[str, str, str, dict]] = []  # (ptype, leaf_name, doc_name, leg)
 
     def emit(ptype: str, proc_name: str, leg: dict):
-        key = (ptype, proc_name)
+        # Count per SLUG, not per raw name: "TRN (STAR 09-27)" and "TRN (STAR
+        # 09/27)" are different names but slugify to the same id stem, which
+        # produced duplicate feature ids (seen at VVCM).
+        key = (ptype, slugify(proc_name))
         seq_counter[key] += 1
         fid = f"{icao}_{ptype}_{slugify(proc_name)}_{seq_counter[key]:03d}"
         features.append({
@@ -367,7 +439,7 @@ def extract(kml_path: str, airport_folder: str, icao: str, boundary_flags: list[
     def flush_boundary(doc_name: str, legs: list[dict]):
         if not legs:
             return
-        ptype = classify_type(doc_name)
+        ptype = classify_type(doc_name, [s["name"] for s in stack if s["name"]])
         # STAR fans IN (several real entry fixes -> one shared hand-off fix
         # near the runway) -- name by the real entry fix (root), not the
         # shared hand-off point (leaf). SID/IAP fan OUT -- leaf is correct.
@@ -375,26 +447,64 @@ def extract(kml_path: str, airport_folder: str, icao: str, boundary_flags: list[
         # this fixes.
         name_by = "root" if ptype == "STAR" else "leaf"
         edges, transitions, unknown, collisions, trunk_legs = build_transition_graph(legs, name_by=name_by)
+        # Technology group (PBN/CV/VOR/NDB) this boundary sits under. Carried
+        # with the Document name so that two Documents with the SAME name in
+        # different groups (VVTX's PBN "SID 13.kmz" vs VOR "SID 13.kmz") can be
+        # told apart in flush_pending instead of being merged into one name.
+        tech = next((s["name"].strip().upper() for s in reversed(stack)
+                     if s["name"] and s["name"].strip().upper() in ("PBN", "CV", "VOR", "NDB", "RNAV")), "")
+        dkey = (doc_name, tech)
         if not transitions:
             # No root identifiable at all -- fall back to the pre-split
             # behaviour (one group named after the Document) rather than guess.
             diagnostics.append(f"[fallback-no-root] {doc_name!r}: could not identify any root fix; kept as one group ({len(legs)} leg(s))")
+            seen: set = set()
             for leg in legs:
-                pending.append((ptype, doc_name, doc_name, leg))
+                sig = tuple(map(tuple, leg["coords"]))
+                if sig in seen:  # identical piece repeated once per sibling variant
+                    continue
+                seen.add(sig)
+                pending.append((ptype, doc_name, dkey, leg))
             return
         for leaf_name, path in transitions.items():
-            for edge_key in path:
-                pending.append((ptype, leaf_name, doc_name, edges[edge_key]))
+            chain = chain_pieces(path, edges)
+            if chain is None:
+                # No continuous chain (e.g. a leaf-collision merged two different
+                # paths under one name): keep EVERY distinct piece rather than
+                # silently truncating, and say so.
+                diagnostics.append(f"[chain-fail] {doc_name!r} -> {leaf_name!r}: no continuous chain of pieces over {len(path)} leg(s); emitted all distinct pieces")
+                chain = [pc for edge_key in path for pc in edges[edge_key].get("_pieces", [edges[edge_key]])]
+            for pc in chain:
+                pending.append((ptype, leaf_name, dkey, pc))
             for trunk_leg in trunk_legs:
-                pending.append((ptype, leaf_name, doc_name, trunk_leg))
+                pending.append((ptype, leaf_name, dkey, trunk_leg))
         if unknown:
             diagnostics.append(f"[unclassified-leg] {doc_name!r}: {len(unknown)} leg name(s) didn't match any known pattern: {[u['name'] for u in unknown]!r} -- kept under the Document name")
+            seen_u: set = set()
             for leg in unknown:
-                pending.append((ptype, doc_name, doc_name, leg))
+                sig = tuple(map(tuple, leg["coords"]))
+                if sig in seen_u:
+                    continue
+                seen_u.add(sig)
+                pending.append((ptype, doc_name, dkey, leg))
         for leaf_name in collisions:
             diagnostics.append(f"[leaf-collision] {doc_name!r}: more than one distinct path ends at {leaf_name!r} -- merged under that one name, review manually")
 
     def flush_pending():
+        # Same Document name under more than one technology group -> suffix the
+        # group ("SID 13 VOR") so the two real procedures stay distinct.
+        techs_of_name: dict[str, set[str]] = defaultdict(set)
+        for _pt, _ln, (dn, tech), _leg in pending:
+            techs_of_name[dn].add(tech)
+        def _eff(dn: str, tech: str) -> str:
+            return f"{dn} {tech}" if len(techs_of_name[dn]) > 1 and tech else dn
+
+        # Leaves that are just the Document's own name (no-root fallback /
+        # unclassified legs) follow the disambiguated name too.
+        pending[:] = [
+            (pt, (_eff(dn, tech) if ln == dn else ln), _eff(dn, tech), leg)
+            for pt, ln, (dn, tech), leg in pending
+        ]
         doc_names_of: dict[tuple[str, str], set[str]] = defaultdict(set)
         for ptype, leaf_name, doc_name, _leg in pending:
             doc_names_of[(ptype, leaf_name)].add(doc_name)
@@ -458,12 +568,29 @@ def extract(kml_path: str, airport_folder: str, icao: str, boundary_flags: list[
                             "coords": current_pm["coords"],
                         })
                     else:
-                        # Genuinely outside any procedure boundary -- not observed
-                        # in practice (boundary detection covers every case seen
-                        # across all 4 airports), kept as a visible, honest fallback.
-                        emit("UNCLASSIFIED", "(unclassified - outside any procedure boundary)", {
-                            "raw_name": current_pm["name"] or "", "coords": current_pm["coords"],
-                        })
+                        # Outside any detected procedure boundary: a Document with
+                        # no "Waypoints" child (e.g. VVCT's VOR "SID_06.kmz"). Try to
+                        # recover type + name from the folder chain below the airport
+                        # folder (skipping the technology group PBN/CV/VOR/NDB);
+                        # only if that fails stay UNCLASSIFIED (visible, not guessed).
+                        fp = current_pm["folder_path"]
+                        rel = fp[fp.index(airport_folder) + 1:] if airport_folder in fp else []
+                        while rel and rel[0].strip().upper() in ("PBN", "CV", "VOR", "NDB", "RNAV"):
+                            rel = rel[1:]
+                        pname = None
+                        ptype = None
+                        for cand in rel:
+                            cname = cand[: -len(".kmz")].strip() if cand.lower().endswith(".kmz") else cand.strip()
+                            t = classify_type(cname, rel[: rel.index(cand)], default=None)
+                            if t:
+                                pname, ptype = cname, t
+                                break
+                        if ptype:
+                            emit(ptype, pname, {"raw_name": current_pm["name"] or "", "coords": current_pm["coords"]})
+                        else:
+                            emit("UNCLASSIFIED", "(unclassified - outside any procedure boundary)", {
+                                "raw_name": current_pm["name"] or "", "coords": current_pm["coords"],
+                            })
                 current_pm = None
             elif tag in ("LineString", "Point", "Polygon", "LinearRing"):
                 if current_pm is not None and current_pm["geom"] is None:
