@@ -30,7 +30,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Initial BM912/BM912-BM911",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "start_fix": "BM912",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM911",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -57,7 +66,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Initial BM913/BM913-BM911",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "start_fix": "BM913",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM911",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -244,7 +262,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Intermediate/BM911-BM910",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "start_fix": "BM911",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM910",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -431,7 +458,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Intermediate/BM911-BM910",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "start_fix": "BM911",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM910",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -495,7 +531,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -842,7 +883,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP X 27/Missed Approach/DF BM912",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 27"
+        "procedure_name": "RNP X 27",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11y-1, 30 OCT 2022"
       }
     },
     {
@@ -949,7 +995,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Y 27/Initial HINTO/BM912-BM911",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 27"
+        "procedure_name": "RNP Y 27",
+        "end_fix": "BM911",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11x-1, 30 OCT 2022"
       }
     },
     {
@@ -981,7 +1032,11 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Y 27/Initial HINTO/HINTO-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 27"
+        "procedure_name": "RNP Y 27",
+        "start_fix": "HINTO",
+        "start_alt_m": 1500.0,
+        "start_alt_ft": 4921,
+        "start_alt_type": "AT_OR_ABOVE"
       }
     },
     {
@@ -1168,7 +1223,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Y 27/Intermediate/BM911-BM910",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 27"
+        "procedure_name": "RNP Y 27",
+        "end_fix": "BM910",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11x-1, 30 OCT 2022"
       }
     },
     {
@@ -1387,7 +1447,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Y 27/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 27"
+        "procedure_name": "RNP Y 27",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11x-1, 30 OCT 2022"
       }
     },
     {
@@ -1419,7 +1484,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Y 27/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 27"
+        "procedure_name": "RNP Y 27",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11x-1, 30 OCT 2022"
       }
     },
     {
@@ -3366,7 +3436,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -3398,7 +3473,12 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -3617,7 +3697,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Intermediate/BM911-BM910",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "start_fix": "BM911",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM910",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -3804,7 +3893,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Intermediate/BM911-BM910",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "start_fix": "BM911",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM910",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -3836,7 +3934,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Initial BM912/BM912-BM911",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "start_fix": "BM912",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM911",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -3863,7 +3970,16 @@
         "folder_path": "VVBM.kmz/IAP 27/RNP Z 27/Initial BM913/BM913-BM911",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 27"
+        "procedure_name": "RNP Z 27",
+        "start_fix": "BM913",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM911",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11w-1, 30 OCT 2022"
       }
     },
     {
@@ -25589,7 +25705,16 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS S 09/Initial BM612/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS S 09"
+        "procedure_name": "ILS S 09",
+        "start_fix": "BM612",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11s-1, 30 OCT 2022"
       }
     },
     {
@@ -25616,7 +25741,16 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS S 09/Initial BM613/BM613-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS S 09"
+        "procedure_name": "ILS S 09",
+        "start_fix": "BM613",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11s-1, 30 OCT 2022"
       }
     },
     {
@@ -26049,7 +26183,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS S 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS S 09"
+        "procedure_name": "ILS S 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11s-1, 30 OCT 2022"
       }
     },
     {
@@ -26396,7 +26535,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS S 09/Missed Approach/DF BM612",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS S 09"
+        "procedure_name": "ILS S 09",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11s-1, 30 OCT 2022"
       }
     },
     {
@@ -27127,7 +27271,11 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS T 09/Initial/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS T 09"
+        "procedure_name": "ILS T 09",
+        "start_fix": "HINTO",
+        "start_alt_m": 1500.0,
+        "start_alt_ft": 4921,
+        "start_alt_type": "AT_OR_ABOVE"
       }
     },
     {
@@ -27234,7 +27382,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS T 09/Initial/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS T 09"
+        "procedure_name": "ILS T 09",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11r-1, 30 OCT 2022"
       }
     },
     {
@@ -27480,7 +27633,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS T 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS T 09"
+        "procedure_name": "ILS T 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11r-1, 30 OCT 2022"
       }
     },
     {
@@ -27667,7 +27825,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS T 09/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS T 09"
+        "procedure_name": "ILS T 09",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11r-1, 30 OCT 2022"
       }
     },
     {
@@ -29102,7 +29265,16 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS U 09/Initial BM612/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS U 09"
+        "procedure_name": "ILS U 09",
+        "start_fix": "BM612",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11q-1, 30 OCT 2022"
       }
     },
     {
@@ -29129,7 +29301,16 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS U 09/Initial BM613/BM613-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS U 09"
+        "procedure_name": "ILS U 09",
+        "start_fix": "BM613",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11q-1, 30 OCT 2022"
       }
     },
     {
@@ -29562,7 +29743,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS U 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS U 09"
+        "procedure_name": "ILS U 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11q-1, 30 OCT 2022"
       }
     },
     {
@@ -29749,7 +29935,12 @@
         "folder_path": "VVBM.kmz/IAP 09/ILS U 09/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "ILS U 09"
+        "procedure_name": "ILS U 09",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11q-1, 30 OCT 2022"
       }
     },
     {
@@ -49183,7 +49374,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Initial BM612/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "start_fix": "BM612",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -49210,7 +49410,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Initial BM613/BM613-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "start_fix": "BM613",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -49397,7 +49606,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Intermediate/BM611-BM610",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "start_fix": "BM611",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM610",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -49584,7 +49802,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Intermediate/BM611-BM610",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "start_fix": "BM611",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM610",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -49963,7 +50190,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Missed Approach/DF BM612",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -49995,7 +50227,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP X 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP X 09"
+        "procedure_name": "RNP X 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11v-1, 30 OCT 2022"
       }
     },
     {
@@ -50726,7 +50963,11 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Y 09/Initial HINTO/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 09"
+        "procedure_name": "RNP Y 09",
+        "start_fix": "HINTO",
+        "start_alt_m": 1500.0,
+        "start_alt_ft": 4921,
+        "start_alt_type": "AT_OR_ABOVE"
       }
     },
     {
@@ -50833,7 +51074,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Y 09/Initial HINTO/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 09"
+        "procedure_name": "RNP Y 09",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11u-1, 30 OCT 2022"
       }
     },
     {
@@ -51020,7 +51266,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Y 09/Intermediate/BM611-BM610",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 09"
+        "procedure_name": "RNP Y 09",
+        "end_fix": "BM610",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11u-1, 30 OCT 2022"
       }
     },
     {
@@ -51084,7 +51335,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Y 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 09"
+        "procedure_name": "RNP Y 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11u-1, 30 OCT 2022"
       }
     },
     {
@@ -51271,7 +51527,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Y 09/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Y 09"
+        "procedure_name": "RNP Y 09",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11u-1, 30 OCT 2022"
       }
     },
     {
@@ -52002,7 +52263,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Initial BM612/BM612-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "start_fix": "BM612",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -52029,7 +52299,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Initial BM613/BM613-BM611",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "start_fix": "BM613",
+        "start_alt_m": 1850.0,
+        "start_alt_ft": 6070,
+        "start_alt_type": "AT_OR_ABOVE",
+        "end_fix": "BM611",
+        "alt_m": 1350.0,
+        "alt_ft": 4429,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -52216,7 +52495,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Intermediate/BM611-BM610",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "start_fix": "BM611",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM610",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -52403,7 +52691,16 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Intermediate/BM611-BM610",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "start_fix": "BM611",
+        "start_alt_m": 1350.0,
+        "start_alt_ft": 4429,
+        "start_alt_type": "AT",
+        "end_fix": "BM610",
+        "alt_m": 1050.0,
+        "alt_ft": 3445,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -52467,7 +52764,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Missed Approach/CA",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "end_fix": null,
+        "alt_m": 750.0,
+        "alt_ft": 2461,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -52654,7 +52956,12 @@
         "folder_path": "VVBM.kmz/IAP 09/RNP Z 09/Missed Approach/DF HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "IAP",
-        "procedure_name": "RNP Z 09"
+        "procedure_name": "RNP Z 09",
+        "end_fix": "HINTO",
+        "alt_m": 1500.0,
+        "alt_ft": 4921,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-11t-1, 30 OCT 2022"
       }
     },
     {
@@ -74736,7 +75043,12 @@
         "folder_path": "VVBM.kmz/STAR 27/DOVIN 2J/VULIN-BM913",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2J"
+        "procedure_name": "DOVIN 2J",
+        "end_fix": "BM913",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -74870,7 +75182,12 @@
         "folder_path": "VVBM.kmz/STAR 27/DOVIN 2J/DOVIN-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2J"
+        "procedure_name": "DOVIN 2J",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -75057,7 +75374,12 @@
         "folder_path": "VVBM.kmz/STAR 27/DOVIN 2K/BM812-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2K"
+        "procedure_name": "DOVIN 2K",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -75121,7 +75443,12 @@
         "folder_path": "VVBM.kmz/STAR 27/DOVIN 2K/DOVIN-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2K"
+        "procedure_name": "DOVIN 2K",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -75345,7 +75672,12 @@
         "folder_path": "VVBM.kmz/STAR 27/DOVIN 2K/BM811-BM812",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2K"
+        "procedure_name": "DOVIN 2K",
+        "end_fix": "BM812",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -75377,7 +75709,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ENGIM 2J/HINTO-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2J"
+        "procedure_name": "ENGIM 2J",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -75404,7 +75741,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ENGIM 2J/ENGIM-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2J"
+        "procedure_name": "ENGIM 2J",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -75585,7 +75927,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ENGIM 2K/BM812-BM811",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2K"
+        "procedure_name": "ENGIM 2K",
+        "end_fix": "BM811",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -75772,7 +76119,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ENGIM 2K/BM811-BM913",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2K"
+        "procedure_name": "ENGIM 2K",
+        "end_fix": "BM913",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -75986,7 +76338,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ENGIM 2K/ENGIM-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2K"
+        "procedure_name": "ENGIM 2K",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -76018,7 +76375,12 @@
         "folder_path": "VVBM.kmz/STAR 27/MEVON 2J/HINTO-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2J"
+        "procedure_name": "MEVON 2J",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -76045,7 +76407,12 @@
         "folder_path": "VVBM.kmz/STAR 27/MEVON 2J/MEVON-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2J"
+        "procedure_name": "MEVON 2J",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -76339,7 +76706,12 @@
         "folder_path": "VVBM.kmz/STAR 27/MEVON 2K/BM811-BM913",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2K"
+        "procedure_name": "MEVON 2K",
+        "end_fix": "BM913",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -76595,7 +76967,12 @@
         "folder_path": "VVBM.kmz/STAR 27/MEVON 2K/BM812-BM811",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2K"
+        "procedure_name": "MEVON 2K",
+        "end_fix": "BM811",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -76622,7 +76999,12 @@
         "folder_path": "VVBM.kmz/STAR 27/MEVON 2K/MEVON-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2K"
+        "procedure_name": "MEVON 2K",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9g-1, 28 FEB 2023"
       }
     },
     {
@@ -76654,7 +77036,12 @@
         "folder_path": "VVBM.kmz/STAR 27/NOBID 2J/DOBLU-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "NOBID 2J"
+        "procedure_name": "NOBID 2J",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -76887,7 +77274,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ONEBI 3J/VULIN-BM913",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3J"
+        "procedure_name": "ONEBI 3J",
+        "end_fix": "BM913",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -76914,7 +77306,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ONEBI 3J/ONEBI-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3J"
+        "procedure_name": "ONEBI 3J",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -77101,7 +77498,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ONEBI 3K/BM812-BM912",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3K"
+        "procedure_name": "ONEBI 3K",
+        "end_fix": "BM912",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -77195,7 +77597,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ONEBI 3K/ONEBI-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3K"
+        "procedure_name": "ONEBI 3K",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -77419,7 +77826,12 @@
         "folder_path": "VVBM.kmz/STAR 27/ONEBI 3K/BM811-BM812",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3K"
+        "procedure_name": "ONEBI 3K",
+        "end_fix": "BM812",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9h-1, 28 FEB 2023"
       }
     },
     {
@@ -77638,7 +78050,12 @@
         "folder_path": "VVBM.kmz/STAR 27/PATMA 2J/BM811-BM913",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "PATMA 2J"
+        "procedure_name": "PATMA 2J",
+        "end_fix": "BM913",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -77777,7 +78194,12 @@
         "folder_path": "VVBM.kmz/STAR 27/PATMA 2J/BM613-BM811",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "PATMA 2J"
+        "procedure_name": "PATMA 2J",
+        "end_fix": "BM811",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9f-1, 28 FEB 2023"
       }
     },
     {
@@ -89113,7 +89535,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89140,7 +89567,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89247,7 +89679,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89354,7 +89791,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89386,7 +89828,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/VULIN-BM514",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "BM514",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89413,7 +89860,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2G/DOVIN-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2G"
+        "procedure_name": "DOVIN 2G",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89627,7 +90079,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2H/Arrival/DOVIN-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2H"
+        "procedure_name": "DOVIN 2H",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -89814,7 +90271,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2H/Arrival/BM511-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2H"
+        "procedure_name": "DOVIN 2H",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -89908,7 +90370,12 @@
         "folder_path": "VVBM.kmz/STAR 09/DOVIN 2H/Arrival/BM514-BM511",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "DOVIN 2H"
+        "procedure_name": "DOVIN 2H",
+        "end_fix": "BM511",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -89940,7 +90407,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2G/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2G"
+        "procedure_name": "ENGIM 2G",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -89972,7 +90444,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2G/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2G"
+        "procedure_name": "ENGIM 2G",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -90106,7 +90583,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2G/ENGIM-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2G"
+        "procedure_name": "ENGIM 2G",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -90293,7 +90775,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2H/Arrival/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2H"
+        "procedure_name": "ENGIM 2H",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -90325,7 +90812,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2H/Arrival/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2H"
+        "procedure_name": "ENGIM 2H",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -90606,7 +91098,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2H/Arrival/BM511-BM514",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2H"
+        "procedure_name": "ENGIM 2H",
+        "end_fix": "BM514",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -90633,7 +91130,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ENGIM 2H/Arrival/ENGIM-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ENGIM 2H"
+        "procedure_name": "ENGIM 2H",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -94377,7 +94879,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2G/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2G"
+        "procedure_name": "MEVON 2G",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -94409,7 +94916,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2G/HINTO-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2G"
+        "procedure_name": "MEVON 2G",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -94543,7 +95055,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2G/MEVON-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2G"
+        "procedure_name": "MEVON 2G",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -94730,7 +95247,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2H/Arrival/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2H"
+        "procedure_name": "MEVON 2H",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -94762,7 +95284,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2H/Arrival/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2H"
+        "procedure_name": "MEVON 2H",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -95043,7 +95570,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2H/Arrival/MEVON-HINTO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2H"
+        "procedure_name": "MEVON 2H",
+        "end_fix": "HINTO",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -95090,7 +95622,12 @@
         "folder_path": "VVBM.kmz/STAR 09/MEVON 2H/Arrival/BM511-BM514",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "MEVON 2H"
+        "procedure_name": "MEVON 2H",
+        "end_fix": "BM514",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9d-1, 28 FEB 2023"
       }
     },
     {
@@ -95304,7 +95841,12 @@
         "folder_path": "VVBM.kmz/STAR 09/NOBID 2G/BM511-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "NOBID 2G"
+        "procedure_name": "NOBID 2G",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95465,7 +96007,12 @@
         "folder_path": "VVBM.kmz/STAR 09/NOBID 2G/BM512-BM511",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "NOBID 2G"
+        "procedure_name": "NOBID 2G",
+        "end_fix": "BM511",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95679,7 +96226,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95706,7 +96258,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/BM513-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95813,7 +96370,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95920,7 +96482,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/BM514-BM513",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "BM513",
+        "alt_m": 2300.0,
+        "alt_ft": 7546,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95952,7 +96519,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/VULIN-BM514",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "BM514",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -95979,7 +96551,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3G/ONEBI-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3G"
+        "procedure_name": "ONEBI 3G",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1, 28 FEB 2023"
       }
     },
     {
@@ -96006,7 +96583,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3H/Arrival/ONEBI-VULIN",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3H"
+        "procedure_name": "ONEBI 3H",
+        "end_fix": "VULIN",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -96380,7 +96962,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3H/Arrival/BM511-BM612",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3H"
+        "procedure_name": "ONEBI 3H",
+        "end_fix": "BM612",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -96474,7 +97061,12 @@
         "folder_path": "VVBM.kmz/STAR 09/ONEBI 3H/Arrival/BM514-BM511",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "ONEBI 3H"
+        "procedure_name": "ONEBI 3H",
+        "end_fix": "BM511",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9e-1, 28 FEB 2023"
       }
     },
     {
@@ -96568,7 +97160,12 @@
         "folder_path": "VVBM.kmz/STAR 09/PATMA 2G/PATMA-NUMRO",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "PATMA 2G"
+        "procedure_name": "PATMA 2G",
+        "end_fix": "NUMRO",
+        "alt_m": 2150.0,
+        "alt_ft": 7054,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1a, 28 FEB 2023"
       }
     },
     {
@@ -96600,7 +97197,12 @@
         "folder_path": "VVBM.kmz/STAR 09/PATMA 2G/NUMRO-BM613",
         "airport_icao": "VVBM",
         "procedure_type": "STAR",
-        "procedure_name": "PATMA 2G"
+        "procedure_name": "PATMA 2G",
+        "end_fix": "BM613",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-9c-1a, 28 FEB 2023"
       }
     },
     {
@@ -97219,7 +97821,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENRIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2F"
+        "procedure_name": "ENRIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1a, 28 FEB 2023"
       }
     },
     {
@@ -97451,7 +98058,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENRIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2F"
+        "procedure_name": "ENRIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1a, 28 FEB 2023"
       }
     },
     {
@@ -97683,7 +98295,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENRIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2F"
+        "procedure_name": "ENRIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1a, 28 FEB 2023"
       }
     },
     {
@@ -97730,7 +98347,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENRIN 2F/KONAO-BM415",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2F"
+        "procedure_name": "ENRIN 2F",
+        "end_fix": "BM415",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8e-1a, 28 FEB 2023"
       }
     },
     {
@@ -98016,7 +98638,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/DOVIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2F"
+        "procedure_name": "DOVIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -98248,7 +98875,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/DOVIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2F"
+        "procedure_name": "DOVIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -98480,7 +99112,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/DOVIN 2F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2F"
+        "procedure_name": "DOVIN 2F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -98547,7 +99184,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/DOVIN 2F/KONAO-DOVIN",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2F"
+        "procedure_name": "DOVIN 2F",
+        "end_fix": "DOVIN",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -98806,7 +99448,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ONEBI 3F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3F"
+        "procedure_name": "ONEBI 3F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -99038,7 +99685,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ONEBI 3F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3F"
+        "procedure_name": "ONEBI 3F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -99270,7 +99922,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ONEBI 3F/BM711-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3F"
+        "procedure_name": "ONEBI 3F",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -99377,7 +100034,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ONEBI 3F/KONAO-ONEBI",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3F"
+        "procedure_name": "ONEBI 3F",
+        "end_fix": "ONEBI",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -99673,7 +100335,15 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/MEVON 2F/BM711-BM712",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "MEVON 2F"
+        "procedure_name": "MEVON 2F",
+        "end_fix": "BM712",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -99747,7 +100417,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/MEVON 2F/XELEX-MEVON",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "MEVON 2F"
+        "procedure_name": "MEVON 2F",
+        "end_fix": "MEVON",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -100043,7 +100718,15 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENGIM 2F/BM711-BM712",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENGIM 2F"
+        "procedure_name": "ENGIM 2F",
+        "end_fix": "BM712",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -100137,7 +100820,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/ENGIM 2F/XELEX-ENGIM",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENGIM 2F"
+        "procedure_name": "ENGIM 2F",
+        "end_fix": "ENGIM",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -100271,7 +100959,12 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/NOBID 2F/BM713-BM714",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "NOBID 2F"
+        "procedure_name": "NOBID 2F",
+        "end_fix": "BM714",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -100634,7 +101327,15 @@
         "folder_path": "VVBM.kmz/SID 27.kmz/NOBID 2F/BM711-BM712",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "NOBID 2F"
+        "procedure_name": "NOBID 2F",
+        "end_fix": "BM712",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8e-1, 28 FEB 2023"
       }
     },
     {
@@ -105091,7 +105792,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/DOVIN 2E/BM411-ASUNO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2E"
+        "procedure_name": "DOVIN 2E",
+        "end_fix": "ASUNO",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -105323,7 +106029,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/DOVIN 2E/BM411-ASUNO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2E"
+        "procedure_name": "DOVIN 2E",
+        "end_fix": "ASUNO",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -105417,7 +106128,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/DOVIN 2E/ASUNO-DOVIN",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "DOVIN 2E"
+        "procedure_name": "DOVIN 2E",
+        "end_fix": "DOVIN",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -105837,7 +106553,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENGIM 2E/BM412-BITET",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENGIM 2E"
+        "procedure_name": "ENGIM 2E",
+        "end_fix": "BITET",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -106096,7 +106817,15 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENGIM 2E/BM411-BM412",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENGIM 2E"
+        "procedure_name": "ENGIM 2E",
+        "end_fix": "BM412",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -106163,7 +106892,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENGIM 2E/BITET-ENGIM",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENGIM 2E"
+        "procedure_name": "ENGIM 2E",
+        "end_fix": "ENGIM",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -106848,7 +107582,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENRIN 2E/BM414-KONAO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2E"
+        "procedure_name": "ENRIN 2E",
+        "end_fix": "KONAO",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8b-1a, 28 FEB 2023"
       }
     },
     {
@@ -106942,7 +107681,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENRIN 2E/KONAO-BM415",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2E"
+        "procedure_name": "ENRIN 2E",
+        "end_fix": "BM415",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM AD2.24-8b-1a, 28 FEB 2023"
       }
     },
     {
@@ -107174,7 +107918,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENRIN 2E/BM411-BM413",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2E"
+        "procedure_name": "ENRIN 2E",
+        "end_fix": "BM413",
+        "speed_kmh": 360.0,
+        "speed_kt": 194,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8b-1a, 28 FEB 2023"
       }
     },
     {
@@ -107281,7 +108030,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ENRIN 2E/BM413-BM414",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ENRIN 2E"
+        "procedure_name": "ENRIN 2E",
+        "end_fix": "BM414",
+        "alt_m": 2000.0,
+        "alt_ft": 6562,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM AD2.24-8b-1a, 28 FEB 2023"
       }
     },
     {
@@ -107808,7 +108562,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/MEVON 2E/BM412-BITET",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "MEVON 2E"
+        "procedure_name": "MEVON 2E",
+        "end_fix": "BITET",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -108067,7 +108826,15 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/MEVON 2E/BM411-BM412",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "MEVON 2E"
+        "procedure_name": "MEVON 2E",
+        "end_fix": "BM412",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -108154,7 +108921,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/MEVON 2E/BITET-MEVON",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "MEVON 2E"
+        "procedure_name": "MEVON 2E",
+        "end_fix": "MEVON",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -108181,7 +108953,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/NOBID 2E/BM412-BITET",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "NOBID 2E"
+        "procedure_name": "NOBID 2E",
+        "end_fix": "BITET",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -108440,7 +109217,15 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/NOBID 2E/BM411-BM412",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "NOBID 2E"
+        "procedure_name": "NOBID 2E",
+        "end_fix": "BM412",
+        "alt_m": 1850.0,
+        "alt_ft": 6070,
+        "alt_type": "AT_OR_ABOVE",
+        "speed_kmh": 463.0,
+        "speed_kt": 250,
+        "speed_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -108507,7 +109292,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/NOBID 2E/BITET-NOBID",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "NOBID 2E"
+        "procedure_name": "NOBID 2E",
+        "end_fix": "NOBID",
+        "alt_m": 2450.0,
+        "alt_ft": 8038,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -109737,7 +110527,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ONEBI 3E/BM411-ASUNO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3E"
+        "procedure_name": "ONEBI 3E",
+        "end_fix": "ASUNO",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -109969,7 +110764,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ONEBI 3E/BM411-ASUNO",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3E"
+        "procedure_name": "ONEBI 3E",
+        "end_fix": "ASUNO",
+        "alt_m": 2750.0,
+        "alt_ft": 9022,
+        "alt_type": "AT_OR_BELOW",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {
@@ -110001,7 +110801,12 @@
         "folder_path": "VVBM.kmz/SID 09.kmz/ONEBI 3E/ASUNO-ONEBI",
         "airport_icao": "VVBM",
         "procedure_type": "SID",
-        "procedure_name": "ONEBI 3E"
+        "procedure_name": "ONEBI 3E",
+        "end_fix": "ONEBI",
+        "alt_m": 3050.0,
+        "alt_ft": 10007,
+        "alt_type": "AT_OR_ABOVE",
+        "perf_src": "AIP VVBM 17058.pdf"
       }
     },
     {

@@ -5,6 +5,7 @@
  * VATM FTS / Decision-support / Non-operational. Not for operational air traffic control use.
  */
 import type maplibregl from "maplibre-gl";
+import { installProcedurePerfPopup } from "./ProcedurePerfPopup";
 
 type SourceDef = { id: string; data: string; geom: "line" | "fill" | "circle" };
 type GroupDef = { key: string; label: string; active: boolean; sources: SourceDef[] };
@@ -58,7 +59,10 @@ export function installVietnamKmlAirspaceControls(map: maplibregl.Map): void {
     setupDynamicProcedureAndHoldingLayers(map).then(() => {
       // Load and apply saved boundary and procedure filter selections after layers are successfully created
       applySavedSectorsAndProcedures(map);
-      
+
+      // Click a SID/STAR/IAP track -> altitude/speed popup (registered once per map).
+      installProcedurePerfPopup(map);
+
       // Load and apply saved aerodrome layouts
       try {
         const savedAero = localStorage.getItem('webfts_checked_aerodrome_layouts');
