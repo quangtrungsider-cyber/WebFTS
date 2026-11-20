@@ -1,0 +1,1357 @@
+{
+ "_nguon": "AIP Viet Nam VVBM AD 2.24 (tieng Anh), trich bang script FTS Server/tools/airways/aip_pdf; don vi goc: do cao met, toc do km/h. alt/speed = [AT|AT_OR_ABOVE|AT_OR_BELOW, gia tri].",
+ "waypoints": {
+  "ASUNO": [
+   12.423056,
+   108.234167
+  ],
+  "BITET": [
+   12.906667,
+   108.248333
+  ],
+  "BM411": [
+   12.667222,
+   108.187778
+  ],
+  "BM412": [
+   12.818889,
+   108.226111
+  ],
+  "BM413": [
+   12.538611,
+   108.19
+  ],
+  "BM414": [
+   12.451944,
+   108.038611
+  ],
+  "BM415": [
+   12.306389,
+   107.927778
+  ],
+  "BM511": [
+   12.769444,
+   108.088889
+  ],
+  "BM512": [
+   12.766111,
+   108.286111
+  ],
+  "BM513": [
+   12.569722,
+   108.007222
+  ],
+  "BM514": [
+   12.568333,
+   108.085556
+  ],
+  "BM610": [
+   12.670056,
+   108.016333
+  ],
+  "BM611": [
+   12.671472,
+   107.93075
+  ],
+  "BM612": [
+   12.771944,
+   107.9325
+  ],
+  "BM613": [
+   12.571111,
+   107.928889
+  ],
+  "BM711": [
+   12.669444,
+   108.052222
+  ],
+  "BM712": [
+   12.83,
+   108.026389
+  ],
+  "BM713": [
+   13.031944,
+   108.045833
+  ],
+  "BM714": [
+   13.141111,
+   108.254167
+  ],
+  "BM715": [
+   13.257222,
+   108.476389
+  ],
+  "BM811": [
+   12.5675,
+   108.15
+  ],
+  "BM812": [
+   12.768333,
+   108.153333
+  ],
+  "BM910": [
+   12.666639,
+   108.223333
+  ],
+  "BM911": [
+   12.665222,
+   108.308917
+  ],
+  "BM912": [
+   12.765556,
+   108.310556
+  ],
+  "BM913": [
+   12.564722,
+   108.307222
+  ],
+  "DOBLU": [
+   12.829722,
+   108.338611
+  ],
+  "DOVIN": [
+   11.916944,
+   108.108056
+  ],
+  "ENGIM": [
+   13.340556,
+   108.139167
+  ],
+  "ENRIN": [
+   11.190833,
+   107.323889
+  ],
+  "HINTO": [
+   12.939167,
+   108.129722
+  ],
+  "KONAO": [
+   12.425833,
+   107.992778
+  ],
+  "MEVON": [
+   13.336389,
+   108.074167
+  ],
+  "NOBID": [
+   13.312222,
+   108.581944
+  ],
+  "NUMRO": [
+   12.505556,
+   107.895833
+  ],
+  "ONEBI": [
+   11.938056,
+   108.308611
+  ],
+  "PATMA": [
+   12.336389,
+   107.81
+  ],
+  "VULIN": [
+   12.397222,
+   108.117778
+  ],
+  "XELEX": [
+   12.919444,
+   108.011944
+  ]
+ },
+ "SID": {
+  "MEVON 2E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM412",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "BITET",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "MEVON",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM412",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "BITET",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ENGIM",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "NOBID 2E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM412",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "BITET",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "NOBID",
+    "alt": [
+     "AT_OR_ABOVE",
+     2450.0
+    ],
+    "speed": null
+   }
+  ],
+  "ONEBI 3E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ASUNO",
+    "alt": [
+     "AT_OR_BELOW",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ONEBI",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ASUNO",
+    "alt": [
+     "AT_OR_BELOW",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "DOVIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENRIN 2E": [
+   {
+    "path": "CF",
+    "wp": "BM411",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM413",
+    "alt": null,
+    "speed": [
+     "AT_OR_BELOW",
+     360.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "BM414",
+    "alt": [
+     "AT_OR_BELOW",
+     2000.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "KONAO",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM415",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ENRIN",
+    "alt": null,
+    "speed": null
+   }
+  ],
+  "MEVON 2F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM712",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "XELEX",
+    "alt": [
+     "AT_OR_BELOW",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "MEVON",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM712",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "XELEX",
+    "alt": [
+     "AT_OR_BELOW",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ENGIM",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "NOBID 2F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM712",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": [
+     "AT_OR_BELOW",
+     463.0
+    ]
+   },
+   {
+    "path": "TF",
+    "wp": "XELEX",
+    "alt": [
+     "AT_OR_BELOW",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM713",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM714",
+    "alt": [
+     "AT",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM715",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "NOBID",
+    "alt": null,
+    "speed": null
+   }
+  ],
+  "ONEBI 3F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "KONAO",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ONEBI",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "KONAO",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "DOVIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENRIN 2F": [
+   {
+    "path": "CF",
+    "wp": "BM711",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "KONAO",
+    "alt": [
+     "AT_OR_BELOW",
+     2450.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM415",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "ENRIN",
+    "alt": null,
+    "speed": null
+   }
+  ]
+ },
+ "STAR": {
+  "MEVON 2G": [
+   {
+    "path": "IF",
+    "wp": "MEVON",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM612",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2G": [
+   {
+    "path": "IF",
+    "wp": "ENGIM",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM612",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "NOBID 2G": [
+   {
+    "path": "IF",
+    "wp": "NOBID",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "DOBLU",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM512",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM511",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM612",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ONEBI 3G": [
+   {
+    "path": "IF",
+    "wp": "ONEBI",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM513",
+    "alt": [
+     "AT_OR_ABOVE",
+     2300.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2G": [
+   {
+    "path": "IF",
+    "wp": "DOVIN",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM513",
+    "alt": [
+     "AT_OR_ABOVE",
+     2300.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "PATMA 2G": [
+   {
+    "path": "IF",
+    "wp": "PATMA",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "NUMRO",
+    "alt": [
+     "AT_OR_ABOVE",
+     2150.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ONEBI 3H": [
+   {
+    "path": "IF",
+    "wp": "ONEBI",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM511",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM612",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2H": [
+   {
+    "path": "IF",
+    "wp": "DOVIN",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM511",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM612",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "MEVON 2J": [
+   {
+    "path": "IF",
+    "wp": "MEVON",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM912",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2J": [
+   {
+    "path": "IF",
+    "wp": "ENGIM",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM912",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "NOBID 2J": [
+   {
+    "path": "IF",
+    "wp": "NOBID",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "DOBLU",
+    "alt": [
+     "AT_OR_ABOVE",
+     2150.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM912",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ONEBI 3J": [
+   {
+    "path": "IF",
+    "wp": "ONEBI",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM913",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2J": [
+   {
+    "path": "IF",
+    "wp": "DOVIN",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM913",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "PATMA 2J": [
+   {
+    "path": "IF",
+    "wp": "PATMA",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "NUMRO",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM811",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM913",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "MEVON 2K": [
+   {
+    "path": "IF",
+    "wp": "MEVON",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM812",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM811",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM913",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2K": [
+   {
+    "path": "IF",
+    "wp": "ENGIM",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM812",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM811",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM913",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ONEBI 3K": [
+   {
+    "path": "IF",
+    "wp": "ONEBI",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM811",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM812",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM912",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "DOVIN 2K": [
+   {
+    "path": "IF",
+    "wp": "DOVIN",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "VULIN",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM811",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM812",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM912",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "MEVON 2H": [
+   {
+    "path": "IF",
+    "wp": "MEVON",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM511",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM513",
+    "alt": [
+     "AT_OR_ABOVE",
+     2300.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ],
+  "ENGIM 2H": [
+   {
+    "path": "IF",
+    "wp": "ENGIM",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "HINTO",
+    "alt": [
+     "AT_OR_ABOVE",
+     3050.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM511",
+    "alt": null,
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM514",
+    "alt": [
+     "AT_OR_ABOVE",
+     2750.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM513",
+    "alt": [
+     "AT_OR_ABOVE",
+     2300.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM613",
+    "alt": [
+     "AT_OR_ABOVE",
+     1850.0
+    ],
+    "speed": null
+   }
+  ]
+ },
+ "IAP_FINAL": {
+  "09": [
+   {
+    "path": "TF",
+    "wp": "BM611",
+    "alt": [
+     "AT",
+     1350.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM610",
+    "alt": [
+     "AT",
+     1050.0
+    ],
+    "speed": null
+   }
+  ],
+  "27": [
+   {
+    "path": "TF",
+    "wp": "BM911",
+    "alt": [
+     "AT",
+     1350.0
+    ],
+    "speed": null
+   },
+   {
+    "path": "TF",
+    "wp": "BM910",
+    "alt": [
+     "AT",
+     1050.0
+    ],
+    "speed": null
+   }
+  ]
+ }
+}

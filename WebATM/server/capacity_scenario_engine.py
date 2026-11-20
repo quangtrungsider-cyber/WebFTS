@@ -81,6 +81,14 @@ class AirportProcedures:
     # such cap and departures should just keep climbing to a default cruise
     # level once the SID ends (VVGB, confirmed live: climbs on to ~FL290).
     dep_final_alt_cap: str | None = None
+    # Whether a departure gets a standalone "ALT <first SID altitude>" clearance
+    # right after VNAV ON (see _emit_dep). True (default) = unchanged behaviour
+    # for every airport registered before VVBM. False = no ALT command at all:
+    # VNAV then follows each SID fix's own altitude as the target, the way the
+    # VVDN scenarios fly. Needed when a SID has "at or below" fixes followed by
+    # higher ones (VVBM): the single ALT cap either held the aircraft level at the
+    # first altitude or let it climb straight through the ceilings.
+    dep_alt_clearance: bool = True
     # Number of waypoints, counted from the END of every star_route(), that
     # make up this airport's shared IAP final segment -- identical for
     # every STAR transition regardless of which one an arrival flew, since
@@ -457,7 +465,56 @@ def _vvlt_procedures() -> AirportProcedures:
     )
 
 
+def _vvbm_procedures() -> AirportProcedures:
+    from WebATM.server.vvbm_procedures import (
+        RWY_THRESHOLD,
+        SID_RUNWAY_OF,
+        SID_TRANSITIONS,
+        STAR_RUNWAY_OF,
+        STAR_TRANSITIONS,
+        _WP_COORDS,
+        sid_route,
+        star_route,
+    )
+
+    # One runway, two directions (09/27): a scenario flies ONE direction at a
+    # time, so the default mix covers RWY 09 only (the primary STAR set "G",
+    # not the weather variant "H"). Pass sidMix/starMix naming the 27 / "H"
+    # transitions (e.g. "MEVON_2F", "MEVON_2J") to fly the other direction.
+    return AirportProcedures(
+        icao="VVBM",
+        callsign_prefix="BM",
+        dep_runway="09",
+        arr_runway="09",
+        dep_threshold=RWY_THRESHOLD["09"],
+        arr_threshold=RWY_THRESHOLD["09"],
+        sid_transition_names=list(SID_TRANSITIONS),
+        star_transition_names=list(STAR_TRANSITIONS),
+        sid_route=sid_route,
+        star_route=star_route,
+        default_sid_mix={t: 1 for t, r in SID_RUNWAY_OF.items() if r == "09"},
+        default_star_mix={t: 1 for t, r in STAR_RUNWAY_OF.items() if r == "09" and t.split("_")[1].endswith("G")},
+        waypoints=dict(_WP_COORDS),
+        # The AIP STAR/IAP tables publish no speed at all (SID: only a few
+        # limits, which the departure engine ignores), so BADA fills in.
+        arrival_speed_published=False,
+        # No standalone ALT clearance: VNAV follows each SID fix's altitude.
+        # Measured in a headless run (FTS Server/scenario/_verify_vvbm_star_sid.py):
+        # with the default "ALT <first altitude>" the aircraft stayed level at
+        # 6070 ft for the whole route; with a higher ALT cap it climbed through
+        # the "at or below" fixes (BITET, BM414, KONAO); with none it meets them.
+        dep_alt_clearance=False,
+        # Shared final = IF (BM611/BM911) -> RNP FAF (BM610/BM910) -> threshold.
+        iap_final_segment_len=3,
+        dep_runway_by_transition=dict(SID_RUNWAY_OF),
+        arr_runway_by_transition=dict(STAR_RUNWAY_OF),
+        dep_threshold_by_runway=dict(RWY_THRESHOLD),
+        arr_threshold_by_runway=dict(RWY_THRESHOLD),
+    )
+
+
 PROCEDURE_REGISTRY: dict[str, Callable[[], AirportProcedures]] = {
+    "VVBM": _vvbm_procedures,
     "VVNB": _vvnb_procedures,
     "VVGB": _vvgb_procedures,
     "VVPQ": _vvpq_procedures,
@@ -713,7 +770,11 @@ def _bada_descent_speed_kt(alt_ft: float, vapp: float) -> int:
 
 def _addwpt_line_dep(t0: int, cs: str, wp_, v2: float, icao_type: str | None = None) -> str:
     if wp_.alt_ft is not None:
-        spd = _bada_climb_speed_kt(wp_.alt_ft, v2, icao_type)
+        # A speed the SID itself publishes at this fix (VVBM's AIP tables, e.g.
+        # <=194 kt at BM413) wins over the generic BADA climb schedule. Every
+        # other airport's SID data carries no spd_kt, so for them this is the
+        # same BADA value as before.
+        spd = getattr(wp_, "spd_kt", None) or _bada_climb_speed_kt(wp_.alt_ft, v2, icao_type)
         return f"{_fmt(t0)}>{cs} ADDWPT {wp_.lat:.6f},{wp_.lon:.6f},{wp_.alt_ft:.0f},{spd}"
     return f"{_fmt(t0)}>{cs} ADDWPT {wp_.lat:.6f},{wp_.lon:.6f}"
 
@@ -1737,7 +1798,7 @@ def _emit_dep(procs: AirportProcedures, vf: CapacityFlight) -> list[str]:
     lines.append(f"{_fmt(t_climb)}>{cs} VNAV ON")
     if procs.dep_final_alt_cap is not None:
         lines.append(f"{_fmt(t_climb)}>{cs} ALT {procs.dep_final_alt_cap}")
-    elif early_climb_alt is not None:
+    elif early_climb_alt is not None and procs.dep_alt_clearance:
         lines.append(f"{_fmt(t_climb)}>{cs} ALT {early_climb_alt:.0f}")
         lines.append(f"{_fmt(t_climb)}>{cs} SPD {_bada_climb_speed_kt(early_climb_alt, perf['v2'], f.aircraft_type)}")
     lines.append(f"{_fmt(t_climb + 3600)}>DEL {cs}")
