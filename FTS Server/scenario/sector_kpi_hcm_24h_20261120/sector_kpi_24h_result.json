@@ -1,0 +1,1388 @@
+{
+  "HCM ACC Sector 1": {
+    "position": "HCM ACC Sector 1",
+    "distinct_aircraft": 695,
+    "peak_count": 51,
+    "peak_hour_start_s": 109558.125103,
+    "avg_dwell_s": 485.6,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 44
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 39
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 36
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 41
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 46
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 38
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 35
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 20
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 18
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 21
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 31
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 34
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 41
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 42
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 51
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 25
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "N55999",
+        "entries": 1,
+        "total_dwell_s": 4309.7
+      },
+      {
+        "callsign": "VAG1271",
+        "entries": 1,
+        "total_dwell_s": 2819.3
+      },
+      {
+        "callsign": "SPQ1143",
+        "entries": 2,
+        "total_dwell_s": 2638.3
+      },
+      {
+        "callsign": "VJC372",
+        "entries": 2,
+        "total_dwell_s": 2546.8
+      },
+      {
+        "callsign": "VJC6877",
+        "entries": 1,
+        "total_dwell_s": 2503.5
+      },
+      {
+        "callsign": "VJC775",
+        "entries": 1,
+        "total_dwell_s": 2322.8
+      },
+      {
+        "callsign": "VJC1779",
+        "entries": 1,
+        "total_dwell_s": 2311.9
+      },
+      {
+        "callsign": "AFL836",
+        "entries": 1,
+        "total_dwell_s": 2297.5
+      },
+      {
+        "callsign": "VJC5229",
+        "entries": 3,
+        "total_dwell_s": 2276.9
+      },
+      {
+        "callsign": "SPQ2205",
+        "entries": 1,
+        "total_dwell_s": 2118.8
+      },
+      {
+        "callsign": "VJC581",
+        "entries": 1,
+        "total_dwell_s": 2072.5
+      },
+      {
+        "callsign": "VJC771",
+        "entries": 1,
+        "total_dwell_s": 2062.0
+      },
+      {
+        "callsign": "VJC5230",
+        "entries": 1,
+        "total_dwell_s": 2056.5
+      },
+      {
+        "callsign": "HVN1563",
+        "entries": 2,
+        "total_dwell_s": 2024.5
+      },
+      {
+        "callsign": "HVN440",
+        "entries": 1,
+        "total_dwell_s": 2008.3
+      },
+      {
+        "callsign": "HVN434",
+        "entries": 1,
+        "total_dwell_s": 1957.4
+      },
+      {
+        "callsign": "HVN1941",
+        "entries": 2,
+        "total_dwell_s": 1950.2
+      },
+      {
+        "callsign": "VJC781",
+        "entries": 1,
+        "total_dwell_s": 1942.6
+      },
+      {
+        "callsign": "VJC786",
+        "entries": 1,
+        "total_dwell_s": 1873.8
+      },
+      {
+        "callsign": "VJC834",
+        "entries": 1,
+        "total_dwell_s": 1860.6
+      }
+    ]
+  },
+  "HCM ACC Sector 5": {
+    "position": "HCM ACC Sector 5",
+    "distinct_aircraft": 748,
+    "peak_count": 64,
+    "peak_hour_start_s": 44758.125103,
+    "avg_dwell_s": 1567.4,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 48
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 49
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 40
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 60
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 64
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 50
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 43
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 56
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 48
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 41
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 49
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 63
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 47
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 29
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 17
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 16
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 24
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 50
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 58
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 59
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 46
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 42
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 44
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 37
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "MAS319",
+        "entries": 2,
+        "total_dwell_s": 4888.6
+      },
+      {
+        "callsign": "T7788",
+        "entries": 2,
+        "total_dwell_s": 3189.5
+      },
+      {
+        "callsign": "TAG02",
+        "entries": 2,
+        "total_dwell_s": 3128.3
+      },
+      {
+        "callsign": "VJC823",
+        "entries": 2,
+        "total_dwell_s": 3079.2
+      },
+      {
+        "callsign": "AXM129",
+        "entries": 1,
+        "total_dwell_s": 2991.5
+      },
+      {
+        "callsign": "AXM187",
+        "entries": 1,
+        "total_dwell_s": 2907.6
+      },
+      {
+        "callsign": "MAS523",
+        "entries": 1,
+        "total_dwell_s": 2907.6
+      },
+      {
+        "callsign": "CXA8685",
+        "entries": 1,
+        "total_dwell_s": 2851.5
+      },
+      {
+        "callsign": "AXM119",
+        "entries": 1,
+        "total_dwell_s": 2847.6
+      },
+      {
+        "callsign": "AXM1395",
+        "entries": 1,
+        "total_dwell_s": 2827.6
+      },
+      {
+        "callsign": "WCM801",
+        "entries": 1,
+        "total_dwell_s": 2815.7
+      },
+      {
+        "callsign": "MAS521",
+        "entries": 1,
+        "total_dwell_s": 2811.6
+      },
+      {
+        "callsign": "CCA975",
+        "entries": 1,
+        "total_dwell_s": 2811.6
+      },
+      {
+        "callsign": "XAX331",
+        "entries": 1,
+        "total_dwell_s": 2811.6
+      },
+      {
+        "callsign": "MXD643",
+        "entries": 1,
+        "total_dwell_s": 2811.5
+      },
+      {
+        "callsign": "AHK571",
+        "entries": 1,
+        "total_dwell_s": 2791.6
+      },
+      {
+        "callsign": "DKH1365",
+        "entries": 1,
+        "total_dwell_s": 2780.4
+      },
+      {
+        "callsign": "PKGRD",
+        "entries": 1,
+        "total_dwell_s": 2779.5
+      },
+      {
+        "callsign": "RMY3091",
+        "entries": 1,
+        "total_dwell_s": 2763.7
+      },
+      {
+        "callsign": "AHK317",
+        "entries": 1,
+        "total_dwell_s": 2751.7
+      }
+    ]
+  },
+  "PK1A New": {
+    "position": "PK1A New",
+    "distinct_aircraft": 507,
+    "peak_count": 35,
+    "peak_hour_start_s": 30358.125103,
+    "avg_dwell_s": 284.1,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 35
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 30
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 26
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 24
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 32
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 24
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 35
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 22
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 19
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 10
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 7
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 21
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 27
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 24
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 29
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 32
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 27
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 25
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 32
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 15
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "HVN1615",
+        "entries": 1,
+        "total_dwell_s": 1213.3
+      },
+      {
+        "callsign": "VJC423",
+        "entries": 1,
+        "total_dwell_s": 955.9
+      },
+      {
+        "callsign": "HVN1464",
+        "entries": 1,
+        "total_dwell_s": 866.9
+      },
+      {
+        "callsign": "VJC394",
+        "entries": 1,
+        "total_dwell_s": 866.8
+      },
+      {
+        "callsign": "VJC396",
+        "entries": 1,
+        "total_dwell_s": 826.4
+      },
+      {
+        "callsign": "CXA893",
+        "entries": 1,
+        "total_dwell_s": 803.5
+      },
+      {
+        "callsign": "VJC372",
+        "entries": 1,
+        "total_dwell_s": 797.5
+      },
+      {
+        "callsign": "VJC889",
+        "entries": 1,
+        "total_dwell_s": 785.6
+      },
+      {
+        "callsign": "FDX9681",
+        "entries": 1,
+        "total_dwell_s": 767.9
+      },
+      {
+        "callsign": "VJC135",
+        "entries": 1,
+        "total_dwell_s": 765.0
+      },
+      {
+        "callsign": "SIA175",
+        "entries": 1,
+        "total_dwell_s": 763.3
+      },
+      {
+        "callsign": "SIA801",
+        "entries": 1,
+        "total_dwell_s": 763.2
+      },
+      {
+        "callsign": "HVN1468",
+        "entries": 1,
+        "total_dwell_s": 760.7
+      },
+      {
+        "callsign": "VJC133",
+        "entries": 1,
+        "total_dwell_s": 760.2
+      },
+      {
+        "callsign": "HVN245",
+        "entries": 1,
+        "total_dwell_s": 756.1
+      },
+      {
+        "callsign": "FDX6019",
+        "entries": 1,
+        "total_dwell_s": 756.0
+      },
+      {
+        "callsign": "KMI261",
+        "entries": 1,
+        "total_dwell_s": 756.0
+      },
+      {
+        "callsign": "CSN365",
+        "entries": 1,
+        "total_dwell_s": 754.6
+      },
+      {
+        "callsign": "MXD503",
+        "entries": 1,
+        "total_dwell_s": 752.5
+      },
+      {
+        "callsign": "FDX5419",
+        "entries": 1,
+        "total_dwell_s": 751.9
+      }
+    ]
+  },
+  "PK1B New": {
+    "position": "PK1B New",
+    "distinct_aircraft": 247,
+    "peak_count": 20,
+    "peak_hour_start_s": 59158.125103,
+    "avg_dwell_s": 663.0,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 14
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 15
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 16
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 16
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 20
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 9
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 11
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 12
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 5
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 5
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 4
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 8
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 9
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 13
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 11
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 20
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 19
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 10
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "N55999",
+        "entries": 1,
+        "total_dwell_s": 4309.7
+      },
+      {
+        "callsign": "VAG1271",
+        "entries": 1,
+        "total_dwell_s": 2787.2
+      },
+      {
+        "callsign": "SPQ1143",
+        "entries": 2,
+        "total_dwell_s": 2610.2
+      },
+      {
+        "callsign": "VJC6877",
+        "entries": 1,
+        "total_dwell_s": 2419.4
+      },
+      {
+        "callsign": "VJC775",
+        "entries": 1,
+        "total_dwell_s": 2322.8
+      },
+      {
+        "callsign": "VJC1779",
+        "entries": 1,
+        "total_dwell_s": 2311.9
+      },
+      {
+        "callsign": "VJC5229",
+        "entries": 3,
+        "total_dwell_s": 2248.9
+      },
+      {
+        "callsign": "SPQ2205",
+        "entries": 1,
+        "total_dwell_s": 2118.8
+      },
+      {
+        "callsign": "VJC581",
+        "entries": 1,
+        "total_dwell_s": 2072.5
+      },
+      {
+        "callsign": "VJC771",
+        "entries": 1,
+        "total_dwell_s": 2062.0
+      },
+      {
+        "callsign": "VJC5230",
+        "entries": 1,
+        "total_dwell_s": 2056.5
+      },
+      {
+        "callsign": "HVN440",
+        "entries": 1,
+        "total_dwell_s": 2008.3
+      },
+      {
+        "callsign": "HVN434",
+        "entries": 1,
+        "total_dwell_s": 1957.4
+      },
+      {
+        "callsign": "HVN1941",
+        "entries": 2,
+        "total_dwell_s": 1950.2
+      },
+      {
+        "callsign": "VJC781",
+        "entries": 1,
+        "total_dwell_s": 1942.6
+      },
+      {
+        "callsign": "VJC834",
+        "entries": 1,
+        "total_dwell_s": 1860.6
+      },
+      {
+        "callsign": "HVN1563",
+        "entries": 2,
+        "total_dwell_s": 1860.5
+      },
+      {
+        "callsign": "VJC1782",
+        "entries": 1,
+        "total_dwell_s": 1843.5
+      },
+      {
+        "callsign": "SPQ1154",
+        "entries": 1,
+        "total_dwell_s": 1804.4
+      },
+      {
+        "callsign": "HVN1552",
+        "entries": 1,
+        "total_dwell_s": 1801.7
+      }
+    ]
+  },
+  "PK5A New": {
+    "position": "PK5A New",
+    "distinct_aircraft": 559,
+    "peak_count": 51,
+    "peak_hour_start_s": 44758.125103,
+    "avg_dwell_s": 1775.1,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 30
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 38
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 34
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 42
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 51
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 44
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 37
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 50
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 41
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 25
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 33
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 49
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 34
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 23
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 17
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 15
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 19
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 42
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 43
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 43
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 33
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 29
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 36
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 33
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "MAS319",
+        "entries": 2,
+        "total_dwell_s": 4936.6
+      },
+      {
+        "callsign": "T7788",
+        "entries": 2,
+        "total_dwell_s": 3801.4
+      },
+      {
+        "callsign": "TAG02",
+        "entries": 2,
+        "total_dwell_s": 3148.3
+      },
+      {
+        "callsign": "AXM129",
+        "entries": 1,
+        "total_dwell_s": 3007.5
+      },
+      {
+        "callsign": "AXM187",
+        "entries": 1,
+        "total_dwell_s": 2931.5
+      },
+      {
+        "callsign": "MAS523",
+        "entries": 1,
+        "total_dwell_s": 2927.6
+      },
+      {
+        "callsign": "VJC823",
+        "entries": 2,
+        "total_dwell_s": 2919.3
+      },
+      {
+        "callsign": "MAS521",
+        "entries": 1,
+        "total_dwell_s": 2875.6
+      },
+      {
+        "callsign": "CXA8685",
+        "entries": 1,
+        "total_dwell_s": 2875.6
+      },
+      {
+        "callsign": "AXM119",
+        "entries": 1,
+        "total_dwell_s": 2871.5
+      },
+      {
+        "callsign": "AXM1395",
+        "entries": 1,
+        "total_dwell_s": 2851.7
+      },
+      {
+        "callsign": "CCA975",
+        "entries": 1,
+        "total_dwell_s": 2835.7
+      },
+      {
+        "callsign": "WCM801",
+        "entries": 1,
+        "total_dwell_s": 2835.6
+      },
+      {
+        "callsign": "XAX331",
+        "entries": 1,
+        "total_dwell_s": 2835.6
+      },
+      {
+        "callsign": "AHK571",
+        "entries": 1,
+        "total_dwell_s": 2815.5
+      },
+      {
+        "callsign": "MXD643",
+        "entries": 1,
+        "total_dwell_s": 2811.5
+      },
+      {
+        "callsign": "DKH1365",
+        "entries": 1,
+        "total_dwell_s": 2800.4
+      },
+      {
+        "callsign": "CSN8490",
+        "entries": 1,
+        "total_dwell_s": 2800.4
+      },
+      {
+        "callsign": "AXM126",
+        "entries": 1,
+        "total_dwell_s": 2800.4
+      },
+      {
+        "callsign": "RMY3091",
+        "entries": 1,
+        "total_dwell_s": 2787.6
+      }
+    ]
+  },
+  "PK5B New": {
+    "position": "PK5B New",
+    "distinct_aircraft": 421,
+    "peak_count": 38,
+    "peak_hour_start_s": 69958.125103,
+    "avg_dwell_s": 1019.9,
+    "timeseries": [
+      {
+        "bin_index": 0,
+        "hour_start_s": 30358.125103,
+        "aircraft_count": 30
+      },
+      {
+        "bin_index": 1,
+        "hour_start_s": 33958.125103,
+        "aircraft_count": 16
+      },
+      {
+        "bin_index": 2,
+        "hour_start_s": 37558.125103,
+        "aircraft_count": 10
+      },
+      {
+        "bin_index": 3,
+        "hour_start_s": 41158.125103,
+        "aircraft_count": 30
+      },
+      {
+        "bin_index": 4,
+        "hour_start_s": 44758.125103,
+        "aircraft_count": 25
+      },
+      {
+        "bin_index": 5,
+        "hour_start_s": 48358.125103,
+        "aircraft_count": 17
+      },
+      {
+        "bin_index": 6,
+        "hour_start_s": 51958.125103,
+        "aircraft_count": 26
+      },
+      {
+        "bin_index": 7,
+        "hour_start_s": 55558.125103,
+        "aircraft_count": 24
+      },
+      {
+        "bin_index": 8,
+        "hour_start_s": 59158.125103,
+        "aircraft_count": 26
+      },
+      {
+        "bin_index": 9,
+        "hour_start_s": 62758.125103,
+        "aircraft_count": 27
+      },
+      {
+        "bin_index": 10,
+        "hour_start_s": 66358.125103,
+        "aircraft_count": 36
+      },
+      {
+        "bin_index": 11,
+        "hour_start_s": 69958.125103,
+        "aircraft_count": 38
+      },
+      {
+        "bin_index": 12,
+        "hour_start_s": 73558.125103,
+        "aircraft_count": 27
+      },
+      {
+        "bin_index": 13,
+        "hour_start_s": 77158.125103,
+        "aircraft_count": 14
+      },
+      {
+        "bin_index": 14,
+        "hour_start_s": 80758.125103,
+        "aircraft_count": 7
+      },
+      {
+        "bin_index": 15,
+        "hour_start_s": 84358.125103,
+        "aircraft_count": 9
+      },
+      {
+        "bin_index": 16,
+        "hour_start_s": 87958.125103,
+        "aircraft_count": 11
+      },
+      {
+        "bin_index": 17,
+        "hour_start_s": 91558.125103,
+        "aircraft_count": 27
+      },
+      {
+        "bin_index": 18,
+        "hour_start_s": 95158.125103,
+        "aircraft_count": 28
+      },
+      {
+        "bin_index": 19,
+        "hour_start_s": 98758.125103,
+        "aircraft_count": 32
+      },
+      {
+        "bin_index": 20,
+        "hour_start_s": 102358.125103,
+        "aircraft_count": 21
+      },
+      {
+        "bin_index": 21,
+        "hour_start_s": 105958.125103,
+        "aircraft_count": 20
+      },
+      {
+        "bin_index": 22,
+        "hour_start_s": 109558.125103,
+        "aircraft_count": 23
+      },
+      {
+        "bin_index": 23,
+        "hour_start_s": 113158.125103,
+        "aircraft_count": 9
+      }
+    ],
+    "dwell_detail": [
+      {
+        "callsign": "SIA601",
+        "entries": 2,
+        "total_dwell_s": 3078.8
+      },
+      {
+        "callsign": "AXM171",
+        "entries": 1,
+        "total_dwell_s": 3044.0
+      },
+      {
+        "callsign": "JJA2623",
+        "entries": 1,
+        "total_dwell_s": 3043.5
+      },
+      {
+        "callsign": "TWB165",
+        "entries": 1,
+        "total_dwell_s": 3035.7
+      },
+      {
+        "callsign": "TWB161",
+        "entries": 1,
+        "total_dwell_s": 3007.7
+      },
+      {
+        "callsign": "AXM621",
+        "entries": 1,
+        "total_dwell_s": 3003.5
+      },
+      {
+        "callsign": "XAX523",
+        "entries": 1,
+        "total_dwell_s": 2999.6
+      },
+      {
+        "callsign": "CAL755",
+        "entries": 1,
+        "total_dwell_s": 2981.1
+      },
+      {
+        "callsign": "AXM177",
+        "entries": 1,
+        "total_dwell_s": 2935.5
+      },
+      {
+        "callsign": "EVA6051",
+        "entries": 1,
+        "total_dwell_s": 2915.7
+      },
+      {
+        "callsign": "APJ773",
+        "entries": 1,
+        "total_dwell_s": 2911.5
+      },
+      {
+        "callsign": "TGW873",
+        "entries": 1,
+        "total_dwell_s": 2899.6
+      },
+      {
+        "callsign": "JJA2641",
+        "entries": 1,
+        "total_dwell_s": 2896.1
+      },
+      {
+        "callsign": "TGW875",
+        "entries": 1,
+        "total_dwell_s": 2895.6
+      },
+      {
+        "callsign": "GTI3030",
+        "entries": 1,
+        "total_dwell_s": 2891.7
+      },
+      {
+        "callsign": "CAL6865",
+        "entries": 1,
+        "total_dwell_s": 2891.6
+      },
+      {
+        "callsign": "KAL643",
+        "entries": 1,
+        "total_dwell_s": 2875.5
+      },
+      {
+        "callsign": "KAL645",
+        "entries": 1,
+        "total_dwell_s": 2875.5
+      },
+      {
+        "callsign": "EVA215",
+        "entries": 1,
+        "total_dwell_s": 2863.6
+      },
+      {
+        "callsign": "TGW867",
+        "entries": 1,
+        "total_dwell_s": 2859.6
+      }
+    ]
+  }
+}

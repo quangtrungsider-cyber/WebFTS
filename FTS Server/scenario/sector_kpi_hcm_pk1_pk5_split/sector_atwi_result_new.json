@@ -1,0 +1,2022 @@
+{
+  "PK1A New": {
+    "position": "PK1A New",
+    "overallAtwiPercent": 68.17,
+    "overallBand": "watch",
+    "overallTaskCounts": {
+      "SURV_SCAN": 73,
+      "TRAFFIC_COUNT_MONITOR": 73,
+      "CONFLICT_CHECK": 0,
+      "STCA_RESPONSE": 0,
+      "VECTOR_OR_DIRECT": 10,
+      "ALTITUDE_CHANGE": 16,
+      "SPEED_CONTROL": 1,
+      "HANDOFF_COORD": 20,
+      "CROSS_SECTOR_COORD": 3,
+      "RUNWAY_SEQUENCE": 0,
+      "WEATHER_DEVIATION": 0,
+      "MILITARY_COORD": 0,
+      "SYSTEM_DEGRADED": 0,
+      "AIRPORT_SURFACE_FEEDBACK": 0
+    },
+    "peakWindow": {
+      "windowIndex": 2,
+      "startTime": 600.0,
+      "endTime": 900.0,
+      "activeAircraftCount": 12,
+      "taskCounts": {
+        "SURV_SCAN": 12,
+        "TRAFFIC_COUNT_MONITOR": 12,
+        "CONFLICT_CHECK": 0,
+        "STCA_RESPONSE": 0,
+        "VECTOR_OR_DIRECT": 2,
+        "ALTITUDE_CHANGE": 5,
+        "SPEED_CONTROL": 1,
+        "HANDOFF_COORD": 3,
+        "CROSS_SECTOR_COORD": 1,
+        "RUNWAY_SEQUENCE": 0,
+        "WEATHER_DEVIATION": 0,
+        "MILITARY_COORD": 0,
+        "SYSTEM_DEGRADED": 0,
+        "AIRPORT_SURFACE_FEEDBACK": 0
+      },
+      "taskBreakdown": [
+        {
+          "taskCode": "SURV_SCAN",
+          "count": 12,
+          "totalSeconds": 62.4
+        },
+        {
+          "taskCode": "TRAFFIC_COUNT_MONITOR",
+          "count": 12,
+          "totalSeconds": 78.0
+        },
+        {
+          "taskCode": "VECTOR_OR_DIRECT",
+          "count": 2,
+          "totalSeconds": 31.2
+        },
+        {
+          "taskCode": "ALTITUDE_CHANGE",
+          "count": 5,
+          "totalSeconds": 65.0
+        },
+        {
+          "taskCode": "SPEED_CONTROL",
+          "count": 1,
+          "totalSeconds": 10.4
+        },
+        {
+          "taskCode": "HANDOFF_COORD",
+          "count": 3,
+          "totalSeconds": 58.5
+        },
+        {
+          "taskCode": "CROSS_SECTOR_COORD",
+          "count": 1,
+          "totalSeconds": 23.4
+        }
+      ],
+      "totalLoadSec": 328.9,
+      "capacitySec": 300.0,
+      "atwiPercent": 109.63,
+      "band": "critical"
+    },
+    "timeseries": [
+      {
+        "windowIndex": 0,
+        "startTime": 0.0,
+        "endTime": 300.0,
+        "activeAircraftCount": 4,
+        "taskCounts": {
+          "SURV_SCAN": 4,
+          "TRAFFIC_COUNT_MONITOR": 4,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 4,
+            "totalSeconds": 18.9
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 4,
+            "totalSeconds": 23.6
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 35.4
+          }
+        ],
+        "totalLoadSec": 77.9,
+        "capacitySec": 300.0,
+        "atwiPercent": 25.96,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 1,
+        "startTime": 300.0,
+        "endTime": 600.0,
+        "activeAircraftCount": 10,
+        "taskCounts": {
+          "SURV_SCAN": 10,
+          "TRAFFIC_COUNT_MONITOR": 10,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 1,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 6,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 10,
+            "totalSeconds": 50.8
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 10,
+            "totalSeconds": 63.5
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 1,
+            "totalSeconds": 12.7
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 6,
+            "totalSeconds": 114.3
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 22.9
+          }
+        ],
+        "totalLoadSec": 264.2,
+        "capacitySec": 300.0,
+        "atwiPercent": 88.05,
+        "band": "high"
+      },
+      {
+        "windowIndex": 2,
+        "startTime": 600.0,
+        "endTime": 900.0,
+        "activeAircraftCount": 12,
+        "taskCounts": {
+          "SURV_SCAN": 12,
+          "TRAFFIC_COUNT_MONITOR": 12,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 2,
+          "ALTITUDE_CHANGE": 5,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 12,
+            "totalSeconds": 62.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 12,
+            "totalSeconds": 78.0
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 2,
+            "totalSeconds": 31.2
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 5,
+            "totalSeconds": 65.0
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 10.4
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 58.5
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 23.4
+          }
+        ],
+        "totalLoadSec": 328.9,
+        "capacitySec": 300.0,
+        "atwiPercent": 109.63,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 3,
+        "startTime": 900.0,
+        "endTime": 1200.0,
+        "activeAircraftCount": 12,
+        "taskCounts": {
+          "SURV_SCAN": 12,
+          "TRAFFIC_COUNT_MONITOR": 12,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 3,
+          "ALTITUDE_CHANGE": 4,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 12,
+            "totalSeconds": 62.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 12,
+            "totalSeconds": 78.0
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 3,
+            "totalSeconds": 46.8
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 4,
+            "totalSeconds": 52.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 58.5
+          }
+        ],
+        "totalLoadSec": 297.7,
+        "capacitySec": 300.0,
+        "atwiPercent": 99.23,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 4,
+        "startTime": 1200.0,
+        "endTime": 1500.0,
+        "activeAircraftCount": 12,
+        "taskCounts": {
+          "SURV_SCAN": 12,
+          "TRAFFIC_COUNT_MONITOR": 12,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 12,
+            "totalSeconds": 62.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 12,
+            "totalSeconds": 78.0
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 39.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 58.5
+          }
+        ],
+        "totalLoadSec": 237.9,
+        "capacitySec": 300.0,
+        "atwiPercent": 79.3,
+        "band": "high"
+      },
+      {
+        "windowIndex": 5,
+        "startTime": 1500.0,
+        "endTime": 1800.0,
+        "activeAircraftCount": 10,
+        "taskCounts": {
+          "SURV_SCAN": 10,
+          "TRAFFIC_COUNT_MONITOR": 10,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 2,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 10,
+            "totalSeconds": 50.8
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 10,
+            "totalSeconds": 63.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 2,
+            "totalSeconds": 30.5
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 38.1
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 57.2
+          }
+        ],
+        "totalLoadSec": 240.0,
+        "capacitySec": 300.0,
+        "atwiPercent": 80.01,
+        "band": "high"
+      },
+      {
+        "windowIndex": 6,
+        "startTime": 1800.0,
+        "endTime": 2100.0,
+        "activeAircraftCount": 8,
+        "taskCounts": {
+          "SURV_SCAN": 8,
+          "TRAFFIC_COUNT_MONITOR": 8,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 1,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 8,
+            "totalSeconds": 35.8
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 8,
+            "totalSeconds": 44.8
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 1,
+            "totalSeconds": 13.4
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 20.2
+          }
+        ],
+        "totalLoadSec": 114.2,
+        "capacitySec": 300.0,
+        "atwiPercent": 38.08,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 7,
+        "startTime": 2100.0,
+        "endTime": 2398.479222,
+        "activeAircraftCount": 5,
+        "taskCounts": {
+          "SURV_SCAN": 5,
+          "TRAFFIC_COUNT_MONITOR": 5,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 2,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 5,
+            "totalSeconds": 21.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 5,
+            "totalSeconds": 26.9
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 2,
+            "totalSeconds": 25.8
+          }
+        ],
+        "totalLoadSec": 74.2,
+        "capacitySec": 298.5,
+        "atwiPercent": 24.85,
+        "band": "normal"
+      }
+    ]
+  },
+  "PK1B New": {
+    "position": "PK1B New",
+    "overallAtwiPercent": 150.0,
+    "overallBand": "critical",
+    "overallTaskCounts": {
+      "SURV_SCAN": 110,
+      "TRAFFIC_COUNT_MONITOR": 110,
+      "CONFLICT_CHECK": 0,
+      "STCA_RESPONSE": 0,
+      "VECTOR_OR_DIRECT": 44,
+      "ALTITUDE_CHANGE": 80,
+      "SPEED_CONTROL": 61,
+      "HANDOFF_COORD": 17,
+      "CROSS_SECTOR_COORD": 11,
+      "RUNWAY_SEQUENCE": 0,
+      "WEATHER_DEVIATION": 0,
+      "MILITARY_COORD": 0,
+      "SYSTEM_DEGRADED": 0,
+      "AIRPORT_SURFACE_FEEDBACK": 0
+    },
+    "peakWindow": {
+      "windowIndex": 1,
+      "startTime": 300.0,
+      "endTime": 600.0,
+      "activeAircraftCount": 13,
+      "taskCounts": {
+        "SURV_SCAN": 13,
+        "TRAFFIC_COUNT_MONITOR": 13,
+        "CONFLICT_CHECK": 0,
+        "STCA_RESPONSE": 0,
+        "VECTOR_OR_DIRECT": 3,
+        "ALTITUDE_CHANGE": 10,
+        "SPEED_CONTROL": 5,
+        "HANDOFF_COORD": 4,
+        "CROSS_SECTOR_COORD": 3,
+        "RUNWAY_SEQUENCE": 0,
+        "WEATHER_DEVIATION": 0,
+        "MILITARY_COORD": 0,
+        "SYSTEM_DEGRADED": 0,
+        "AIRPORT_SURFACE_FEEDBACK": 0
+      },
+      "taskBreakdown": [
+        {
+          "taskCode": "SURV_SCAN",
+          "count": 13,
+          "totalSeconds": 68.4
+        },
+        {
+          "taskCode": "TRAFFIC_COUNT_MONITOR",
+          "count": 13,
+          "totalSeconds": 85.5
+        },
+        {
+          "taskCode": "VECTOR_OR_DIRECT",
+          "count": 3,
+          "totalSeconds": 47.3
+        },
+        {
+          "taskCode": "ALTITUDE_CHANGE",
+          "count": 10,
+          "totalSeconds": 131.5
+        },
+        {
+          "taskCode": "SPEED_CONTROL",
+          "count": 5,
+          "totalSeconds": 52.6
+        },
+        {
+          "taskCode": "HANDOFF_COORD",
+          "count": 4,
+          "totalSeconds": 78.9
+        },
+        {
+          "taskCode": "CROSS_SECTOR_COORD",
+          "count": 3,
+          "totalSeconds": 71.0
+        }
+      ],
+      "totalLoadSec": 535.2,
+      "capacitySec": 300.0,
+      "atwiPercent": 150.0,
+      "band": "critical"
+    },
+    "timeseries": [
+      {
+        "windowIndex": 0,
+        "startTime": 0.0,
+        "endTime": 300.0,
+        "activeAircraftCount": 9,
+        "taskCounts": {
+          "SURV_SCAN": 9,
+          "TRAFFIC_COUNT_MONITOR": 9,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 4,
+          "ALTITUDE_CHANGE": 6,
+          "SPEED_CONTROL": 3,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 2,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 9,
+            "totalSeconds": 45.2
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 9,
+            "totalSeconds": 56.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 4,
+            "totalSeconds": 60.2
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 6,
+            "totalSeconds": 75.3
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 3,
+            "totalSeconds": 30.1
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 56.5
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 2,
+            "totalSeconds": 45.2
+          }
+        ],
+        "totalLoadSec": 369.0,
+        "capacitySec": 300.0,
+        "atwiPercent": 122.99,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 1,
+        "startTime": 300.0,
+        "endTime": 600.0,
+        "activeAircraftCount": 13,
+        "taskCounts": {
+          "SURV_SCAN": 13,
+          "TRAFFIC_COUNT_MONITOR": 13,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 3,
+          "ALTITUDE_CHANGE": 10,
+          "SPEED_CONTROL": 5,
+          "HANDOFF_COORD": 4,
+          "CROSS_SECTOR_COORD": 3,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 13,
+            "totalSeconds": 68.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 13,
+            "totalSeconds": 85.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 3,
+            "totalSeconds": 47.3
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 10,
+            "totalSeconds": 131.5
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 5,
+            "totalSeconds": 52.6
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 4,
+            "totalSeconds": 78.9
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 3,
+            "totalSeconds": 71.0
+          }
+        ],
+        "totalLoadSec": 535.2,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 2,
+        "startTime": 600.0,
+        "endTime": 900.0,
+        "activeAircraftCount": 17,
+        "taskCounts": {
+          "SURV_SCAN": 17,
+          "TRAFFIC_COUNT_MONITOR": 17,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 7,
+          "ALTITUDE_CHANGE": 14,
+          "SPEED_CONTROL": 8,
+          "HANDOFF_COORD": 4,
+          "CROSS_SECTOR_COORD": 2,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 17,
+            "totalSeconds": 93.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 17,
+            "totalSeconds": 116.9
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 7,
+            "totalSeconds": 115.5
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 14,
+            "totalSeconds": 192.5
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 8,
+            "totalSeconds": 88.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 4,
+            "totalSeconds": 82.5
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 2,
+            "totalSeconds": 49.5
+          }
+        ],
+        "totalLoadSec": 738.4,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 3,
+        "startTime": 900.0,
+        "endTime": 1200.0,
+        "activeAircraftCount": 19,
+        "taskCounts": {
+          "SURV_SCAN": 19,
+          "TRAFFIC_COUNT_MONITOR": 19,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 7,
+          "ALTITUDE_CHANGE": 14,
+          "SPEED_CONTROL": 10,
+          "HANDOFF_COORD": 1,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 19,
+            "totalSeconds": 106.8
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 19,
+            "totalSeconds": 133.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 7,
+            "totalSeconds": 118.0
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 14,
+            "totalSeconds": 196.7
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 10,
+            "totalSeconds": 112.4
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 1,
+            "totalSeconds": 21.1
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 25.3
+          }
+        ],
+        "totalLoadSec": 713.7,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 4,
+        "startTime": 1200.0,
+        "endTime": 1500.0,
+        "activeAircraftCount": 18,
+        "taskCounts": {
+          "SURV_SCAN": 18,
+          "TRAFFIC_COUNT_MONITOR": 18,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 10,
+          "ALTITUDE_CHANGE": 11,
+          "SPEED_CONTROL": 10,
+          "HANDOFF_COORD": 1,
+          "CROSS_SECTOR_COORD": 2,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 18,
+            "totalSeconds": 100.1
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 18,
+            "totalSeconds": 125.1
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 10,
+            "totalSeconds": 166.8
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 11,
+            "totalSeconds": 152.9
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 10,
+            "totalSeconds": 111.2
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 1,
+            "totalSeconds": 20.9
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 2,
+            "totalSeconds": 50.0
+          }
+        ],
+        "totalLoadSec": 727.0,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 5,
+        "startTime": 1500.0,
+        "endTime": 1800.0,
+        "activeAircraftCount": 14,
+        "taskCounts": {
+          "SURV_SCAN": 14,
+          "TRAFFIC_COUNT_MONITOR": 14,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 6,
+          "ALTITUDE_CHANGE": 9,
+          "SPEED_CONTROL": 11,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 14,
+            "totalSeconds": 74.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 14,
+            "totalSeconds": 93.1
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 6,
+            "totalSeconds": 95.8
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 9,
+            "totalSeconds": 119.7
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 11,
+            "totalSeconds": 117.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 39.9
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 23.9
+          }
+        ],
+        "totalLoadSec": 563.9,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 6,
+        "startTime": 1800.0,
+        "endTime": 2100.0,
+        "activeAircraftCount": 10,
+        "taskCounts": {
+          "SURV_SCAN": 10,
+          "TRAFFIC_COUNT_MONITOR": 10,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 4,
+          "ALTITUDE_CHANGE": 10,
+          "SPEED_CONTROL": 7,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 10,
+            "totalSeconds": 50.8
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 10,
+            "totalSeconds": 63.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 4,
+            "totalSeconds": 61.0
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 10,
+            "totalSeconds": 127.0
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 7,
+            "totalSeconds": 71.1
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 38.1
+          }
+        ],
+        "totalLoadSec": 411.5,
+        "capacitySec": 300.0,
+        "atwiPercent": 137.16,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 7,
+        "startTime": 2100.0,
+        "endTime": 2398.479222,
+        "activeAircraftCount": 10,
+        "taskCounts": {
+          "SURV_SCAN": 10,
+          "TRAFFIC_COUNT_MONITOR": 10,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 3,
+          "ALTITUDE_CHANGE": 6,
+          "SPEED_CONTROL": 7,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 10,
+            "totalSeconds": 46.0
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 10,
+            "totalSeconds": 57.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 3,
+            "totalSeconds": 41.4
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 6,
+            "totalSeconds": 69.0
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 7,
+            "totalSeconds": 64.4
+          }
+        ],
+        "totalLoadSec": 278.3,
+        "capacitySec": 298.5,
+        "atwiPercent": 93.24,
+        "band": "critical"
+      }
+    ]
+  },
+  "PK5A New": {
+    "position": "PK5A New",
+    "overallAtwiPercent": 102.76,
+    "overallBand": "critical",
+    "overallTaskCounts": {
+      "SURV_SCAN": 116,
+      "TRAFFIC_COUNT_MONITOR": 116,
+      "CONFLICT_CHECK": 0,
+      "STCA_RESPONSE": 0,
+      "VECTOR_OR_DIRECT": 7,
+      "ALTITUDE_CHANGE": 19,
+      "SPEED_CONTROL": 10,
+      "HANDOFF_COORD": 19,
+      "CROSS_SECTOR_COORD": 9,
+      "RUNWAY_SEQUENCE": 0,
+      "WEATHER_DEVIATION": 0,
+      "MILITARY_COORD": 0,
+      "SYSTEM_DEGRADED": 0,
+      "AIRPORT_SURFACE_FEEDBACK": 0
+    },
+    "peakWindow": {
+      "windowIndex": 1,
+      "startTime": 300.0,
+      "endTime": 600.0,
+      "activeAircraftCount": 17,
+      "taskCounts": {
+        "SURV_SCAN": 17,
+        "TRAFFIC_COUNT_MONITOR": 17,
+        "CONFLICT_CHECK": 0,
+        "STCA_RESPONSE": 0,
+        "VECTOR_OR_DIRECT": 1,
+        "ALTITUDE_CHANGE": 2,
+        "SPEED_CONTROL": 3,
+        "HANDOFF_COORD": 6,
+        "CROSS_SECTOR_COORD": 2,
+        "RUNWAY_SEQUENCE": 0,
+        "WEATHER_DEVIATION": 0,
+        "MILITARY_COORD": 0,
+        "SYSTEM_DEGRADED": 0,
+        "AIRPORT_SURFACE_FEEDBACK": 0
+      },
+      "taskBreakdown": [
+        {
+          "taskCode": "SURV_SCAN",
+          "count": 17,
+          "totalSeconds": 93.5
+        },
+        {
+          "taskCode": "TRAFFIC_COUNT_MONITOR",
+          "count": 17,
+          "totalSeconds": 116.9
+        },
+        {
+          "taskCode": "VECTOR_OR_DIRECT",
+          "count": 1,
+          "totalSeconds": 16.5
+        },
+        {
+          "taskCode": "ALTITUDE_CHANGE",
+          "count": 2,
+          "totalSeconds": 27.5
+        },
+        {
+          "taskCode": "SPEED_CONTROL",
+          "count": 3,
+          "totalSeconds": 33.0
+        },
+        {
+          "taskCode": "HANDOFF_COORD",
+          "count": 6,
+          "totalSeconds": 123.8
+        },
+        {
+          "taskCode": "CROSS_SECTOR_COORD",
+          "count": 2,
+          "totalSeconds": 49.5
+        }
+      ],
+      "totalLoadSec": 460.6,
+      "capacitySec": 300.0,
+      "atwiPercent": 150.0,
+      "band": "critical"
+    },
+    "timeseries": [
+      {
+        "windowIndex": 0,
+        "startTime": 0.0,
+        "endTime": 300.0,
+        "activeAircraftCount": 13,
+        "taskCounts": {
+          "SURV_SCAN": 13,
+          "TRAFFIC_COUNT_MONITOR": 13,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 2,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 2,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 13,
+            "totalSeconds": 68.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 13,
+            "totalSeconds": 85.5
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 2,
+            "totalSeconds": 31.6
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 39.4
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 2,
+            "totalSeconds": 21.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 59.2
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 23.7
+          }
+        ],
+        "totalLoadSec": 328.8,
+        "capacitySec": 300.0,
+        "atwiPercent": 109.58,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 1,
+        "startTime": 300.0,
+        "endTime": 600.0,
+        "activeAircraftCount": 17,
+        "taskCounts": {
+          "SURV_SCAN": 17,
+          "TRAFFIC_COUNT_MONITOR": 17,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 1,
+          "ALTITUDE_CHANGE": 2,
+          "SPEED_CONTROL": 3,
+          "HANDOFF_COORD": 6,
+          "CROSS_SECTOR_COORD": 2,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 17,
+            "totalSeconds": 93.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 17,
+            "totalSeconds": 116.9
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 1,
+            "totalSeconds": 16.5
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 2,
+            "totalSeconds": 27.5
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 3,
+            "totalSeconds": 33.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 6,
+            "totalSeconds": 123.8
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 2,
+            "totalSeconds": 49.5
+          }
+        ],
+        "totalLoadSec": 460.6,
+        "capacitySec": 300.0,
+        "atwiPercent": 150.0,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 2,
+        "startTime": 600.0,
+        "endTime": 900.0,
+        "activeAircraftCount": 17,
+        "taskCounts": {
+          "SURV_SCAN": 17,
+          "TRAFFIC_COUNT_MONITOR": 17,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 1,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 1,
+          "CROSS_SECTOR_COORD": 2,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 17,
+            "totalSeconds": 93.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 17,
+            "totalSeconds": 116.9
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 1,
+            "totalSeconds": 16.5
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 41.2
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 11.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 1,
+            "totalSeconds": 20.6
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 2,
+            "totalSeconds": 49.5
+          }
+        ],
+        "totalLoadSec": 349.2,
+        "capacitySec": 300.0,
+        "atwiPercent": 116.42,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 3,
+        "startTime": 900.0,
+        "endTime": 1200.0,
+        "activeAircraftCount": 16,
+        "taskCounts": {
+          "SURV_SCAN": 16,
+          "TRAFFIC_COUNT_MONITOR": 16,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 2,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 16,
+            "totalSeconds": 87.0
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 16,
+            "totalSeconds": 108.8
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 2,
+            "totalSeconds": 32.6
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 40.8
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 40.8
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 24.5
+          }
+        ],
+        "totalLoadSec": 334.6,
+        "capacitySec": 300.0,
+        "atwiPercent": 111.52,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 4,
+        "startTime": 1200.0,
+        "endTime": 1500.0,
+        "activeAircraftCount": 16,
+        "taskCounts": {
+          "SURV_SCAN": 16,
+          "TRAFFIC_COUNT_MONITOR": 16,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 3,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 16,
+            "totalSeconds": 87.0
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 16,
+            "totalSeconds": 108.8
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 40.8
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 10.9
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 3,
+            "totalSeconds": 61.2
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 24.5
+          }
+        ],
+        "totalLoadSec": 333.2,
+        "capacitySec": 300.0,
+        "atwiPercent": 111.07,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 5,
+        "startTime": 1500.0,
+        "endTime": 1800.0,
+        "activeAircraftCount": 14,
+        "taskCounts": {
+          "SURV_SCAN": 14,
+          "TRAFFIC_COUNT_MONITOR": 14,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 1,
+          "ALTITUDE_CHANGE": 3,
+          "SPEED_CONTROL": 2,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 14,
+            "totalSeconds": 74.5
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 14,
+            "totalSeconds": 93.1
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 1,
+            "totalSeconds": 16.0
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 3,
+            "totalSeconds": 39.9
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 2,
+            "totalSeconds": 21.3
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 39.9
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 23.9
+          }
+        ],
+        "totalLoadSec": 308.6,
+        "capacitySec": 300.0,
+        "atwiPercent": 102.85,
+        "band": "critical"
+      },
+      {
+        "windowIndex": 6,
+        "startTime": 1800.0,
+        "endTime": 2100.0,
+        "activeAircraftCount": 11,
+        "taskCounts": {
+          "SURV_SCAN": 11,
+          "TRAFFIC_COUNT_MONITOR": 11,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 1,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 11,
+            "totalSeconds": 51.3
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 11,
+            "totalSeconds": 64.1
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 1,
+            "totalSeconds": 11.7
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 9.3
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 21.0
+          }
+        ],
+        "totalLoadSec": 157.3,
+        "capacitySec": 300.0,
+        "atwiPercent": 52.42,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 7,
+        "startTime": 2100.0,
+        "endTime": 2398.479222,
+        "activeAircraftCount": 12,
+        "taskCounts": {
+          "SURV_SCAN": 12,
+          "TRAFFIC_COUNT_MONITOR": 12,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 1,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 2,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 12,
+            "totalSeconds": 62.4
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 12,
+            "totalSeconds": 78.0
+          },
+          {
+            "taskCode": "ALTITUDE_CHANGE",
+            "count": 1,
+            "totalSeconds": 13.0
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 2,
+            "totalSeconds": 39.0
+          }
+        ],
+        "totalLoadSec": 192.4,
+        "capacitySec": 298.5,
+        "atwiPercent": 64.46,
+        "band": "watch"
+      }
+    ]
+  },
+  "PK5B New": {
+    "position": "PK5B New",
+    "overallAtwiPercent": 7.42,
+    "overallBand": "normal",
+    "overallTaskCounts": {
+      "SURV_SCAN": 12,
+      "TRAFFIC_COUNT_MONITOR": 12,
+      "CONFLICT_CHECK": 0,
+      "STCA_RESPONSE": 0,
+      "VECTOR_OR_DIRECT": 1,
+      "ALTITUDE_CHANGE": 0,
+      "SPEED_CONTROL": 2,
+      "HANDOFF_COORD": 1,
+      "CROSS_SECTOR_COORD": 1,
+      "RUNWAY_SEQUENCE": 0,
+      "WEATHER_DEVIATION": 0,
+      "MILITARY_COORD": 0,
+      "SYSTEM_DEGRADED": 0,
+      "AIRPORT_SURFACE_FEEDBACK": 0
+    },
+    "peakWindow": {
+      "windowIndex": 2,
+      "startTime": 600.0,
+      "endTime": 900.0,
+      "activeAircraftCount": 2,
+      "taskCounts": {
+        "SURV_SCAN": 2,
+        "TRAFFIC_COUNT_MONITOR": 2,
+        "CONFLICT_CHECK": 0,
+        "STCA_RESPONSE": 0,
+        "VECTOR_OR_DIRECT": 0,
+        "ALTITUDE_CHANGE": 0,
+        "SPEED_CONTROL": 1,
+        "HANDOFF_COORD": 1,
+        "CROSS_SECTOR_COORD": 0,
+        "RUNWAY_SEQUENCE": 0,
+        "WEATHER_DEVIATION": 0,
+        "MILITARY_COORD": 0,
+        "SYSTEM_DEGRADED": 0,
+        "AIRPORT_SURFACE_FEEDBACK": 0
+      },
+      "taskBreakdown": [
+        {
+          "taskCode": "SURV_SCAN",
+          "count": 2,
+          "totalSeconds": 9.2
+        },
+        {
+          "taskCode": "TRAFFIC_COUNT_MONITOR",
+          "count": 2,
+          "totalSeconds": 11.5
+        },
+        {
+          "taskCode": "SPEED_CONTROL",
+          "count": 1,
+          "totalSeconds": 9.2
+        },
+        {
+          "taskCode": "HANDOFF_COORD",
+          "count": 1,
+          "totalSeconds": 17.2
+        }
+      ],
+      "totalLoadSec": 47.1,
+      "capacitySec": 300.0,
+      "atwiPercent": 15.72,
+      "band": "normal"
+    },
+    "timeseries": [
+      {
+        "windowIndex": 0,
+        "startTime": 0.0,
+        "endTime": 300.0,
+        "activeAircraftCount": 2,
+        "taskCounts": {
+          "SURV_SCAN": 2,
+          "TRAFFIC_COUNT_MONITOR": 2,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 2,
+            "totalSeconds": 8.2
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 2,
+            "totalSeconds": 10.3
+          }
+        ],
+        "totalLoadSec": 18.5,
+        "capacitySec": 300.0,
+        "atwiPercent": 6.18,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 1,
+        "startTime": 300.0,
+        "endTime": 600.0,
+        "activeAircraftCount": 2,
+        "taskCounts": {
+          "SURV_SCAN": 2,
+          "TRAFFIC_COUNT_MONITOR": 2,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 1,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 2,
+            "totalSeconds": 8.2
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 2,
+            "totalSeconds": 10.3
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 8.2
+          },
+          {
+            "taskCode": "CROSS_SECTOR_COORD",
+            "count": 1,
+            "totalSeconds": 18.5
+          }
+        ],
+        "totalLoadSec": 45.3,
+        "capacitySec": 300.0,
+        "atwiPercent": 15.11,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 2,
+        "startTime": 600.0,
+        "endTime": 900.0,
+        "activeAircraftCount": 2,
+        "taskCounts": {
+          "SURV_SCAN": 2,
+          "TRAFFIC_COUNT_MONITOR": 2,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 1,
+          "HANDOFF_COORD": 1,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 2,
+            "totalSeconds": 9.2
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 2,
+            "totalSeconds": 11.5
+          },
+          {
+            "taskCode": "SPEED_CONTROL",
+            "count": 1,
+            "totalSeconds": 9.2
+          },
+          {
+            "taskCode": "HANDOFF_COORD",
+            "count": 1,
+            "totalSeconds": 17.2
+          }
+        ],
+        "totalLoadSec": 47.1,
+        "capacitySec": 300.0,
+        "atwiPercent": 15.72,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 3,
+        "startTime": 900.0,
+        "endTime": 1200.0,
+        "activeAircraftCount": 2,
+        "taskCounts": {
+          "SURV_SCAN": 2,
+          "TRAFFIC_COUNT_MONITOR": 2,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 2,
+            "totalSeconds": 8.2
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 2,
+            "totalSeconds": 10.3
+          }
+        ],
+        "totalLoadSec": 18.5,
+        "capacitySec": 300.0,
+        "atwiPercent": 6.18,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 4,
+        "startTime": 1200.0,
+        "endTime": 1500.0,
+        "activeAircraftCount": 1,
+        "taskCounts": {
+          "SURV_SCAN": 1,
+          "TRAFFIC_COUNT_MONITOR": 1,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 1,
+            "totalSeconds": 4.1
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 1,
+            "totalSeconds": 5.1
+          }
+        ],
+        "totalLoadSec": 9.1,
+        "capacitySec": 300.0,
+        "atwiPercent": 3.04,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 5,
+        "startTime": 1500.0,
+        "endTime": 1800.0,
+        "activeAircraftCount": 1,
+        "taskCounts": {
+          "SURV_SCAN": 1,
+          "TRAFFIC_COUNT_MONITOR": 1,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 1,
+            "totalSeconds": 4.1
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 1,
+            "totalSeconds": 5.1
+          }
+        ],
+        "totalLoadSec": 9.1,
+        "capacitySec": 300.0,
+        "atwiPercent": 3.04,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 6,
+        "startTime": 1800.0,
+        "endTime": 2100.0,
+        "activeAircraftCount": 1,
+        "taskCounts": {
+          "SURV_SCAN": 1,
+          "TRAFFIC_COUNT_MONITOR": 1,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 1,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 1,
+            "totalSeconds": 4.1
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 1,
+            "totalSeconds": 5.1
+          },
+          {
+            "taskCode": "VECTOR_OR_DIRECT",
+            "count": 1,
+            "totalSeconds": 12.2
+          }
+        ],
+        "totalLoadSec": 21.3,
+        "capacitySec": 300.0,
+        "atwiPercent": 7.1,
+        "band": "normal"
+      },
+      {
+        "windowIndex": 7,
+        "startTime": 2100.0,
+        "endTime": 2398.479222,
+        "activeAircraftCount": 1,
+        "taskCounts": {
+          "SURV_SCAN": 1,
+          "TRAFFIC_COUNT_MONITOR": 1,
+          "CONFLICT_CHECK": 0,
+          "STCA_RESPONSE": 0,
+          "VECTOR_OR_DIRECT": 0,
+          "ALTITUDE_CHANGE": 0,
+          "SPEED_CONTROL": 0,
+          "HANDOFF_COORD": 0,
+          "CROSS_SECTOR_COORD": 0,
+          "RUNWAY_SEQUENCE": 0,
+          "WEATHER_DEVIATION": 0,
+          "MILITARY_COORD": 0,
+          "SYSTEM_DEGRADED": 0,
+          "AIRPORT_SURFACE_FEEDBACK": 0
+        },
+        "taskBreakdown": [
+          {
+            "taskCode": "SURV_SCAN",
+            "count": 1,
+            "totalSeconds": 4.1
+          },
+          {
+            "taskCode": "TRAFFIC_COUNT_MONITOR",
+            "count": 1,
+            "totalSeconds": 5.1
+          }
+        ],
+        "totalLoadSec": 9.1,
+        "capacitySec": 298.5,
+        "atwiPercent": 3.06,
+        "band": "normal"
+      }
+    ]
+  }
+}

@@ -46,6 +46,21 @@
       "Phân khu 7 (Sector 7)": [
         "VATM_000607",
         "VATM_000608"
+      ],
+      "Phân khu 1A New (dự thảo tách)": [
+        "PK1NEW_1A"
+      ],
+      "Phân khu 1B New (dự thảo tách)": [
+        "PK1NEW_1B1",
+        "PK1NEW_1B2"
+      ],
+      "Phân khu 5A New (dự thảo tách)": [
+        "PK5NEW_5A1",
+        "PK5NEW_5A2",
+        "PK5NEW_5A3"
+      ],
+      "Phân khu 5B New (dự thảo tách)": [
+        "PK5NEW_5B"
       ]
     },
     "CTL Đà Nẵng": {

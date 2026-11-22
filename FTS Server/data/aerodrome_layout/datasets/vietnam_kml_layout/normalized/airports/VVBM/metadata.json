@@ -1,0 +1,45 @@
+{
+  "icao": "VVBM",
+  "name": "Buon Ma Thuot",
+  "metadata": {
+    "city": "Buon Ma Thuot",
+    "country": "Vietnam",
+    "datum_lat": "12.66694444",
+    "datum_lon": "108.11666667",
+    "gui_label": "3D",
+    "iata_code": "BMV",
+    "icao_code": "VVBM",
+    "region_code": "VV",
+    "state": "Dac Lac Province",
+    "transition_alt": "10010",
+    "transition_level": "11000",
+    "flatten": "1"
+  },
+  "counts": {
+    "airports": 1,
+    "runways": 1,
+    "runway_centerlines": 1,
+    "runway_labels": 2,
+    "pavements": 4,
+    "boundaries": 1,
+    "gates": 5,
+    "ground_markings": 12
+  },
+  "sourceLineCounts": {
+    "1302": 12,
+    "100": 1,
+    "110": 4,
+    "111": 79,
+    "113": 5,
+    "112": 50,
+    "130": 1,
+    "120": 12,
+    "115": 11,
+    "116": 1,
+    "21": 2,
+    "1300": 5,
+    "1301": 5,
+    "1054": 2
+  },
+  "warnings": []
+}
