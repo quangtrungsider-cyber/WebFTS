@@ -8,7 +8,6 @@ const {
 const HERE = __dirname;
 const kpi = JSON.parse(fs.readFileSync(path.join(HERE, "sector_kpi_24h_result_v2.json"), "utf-8"));
 const atwi = JSON.parse(fs.readFileSync(path.join(HERE, "sector_atwi_24h_result.json"), "utf-8"));
-const scnIndex = JSON.parse(fs.readFileSync(path.join(HERE, "hourly_scenarios", "index.json"), "utf-8"));
 const META = kpi._meta;
 
 const SHORT = {
@@ -49,13 +48,21 @@ function meanAtwi(pos) {
   return v.reduce((a, b) => a + b, 0) / v.length;
 }
 
+// Ô bảng. Dùng "|" để xuống dòng trong ô: docx yêu cầu mỗi dòng là một
+// TextRun riêng với thuộc tính break, KHÔNG được nhét ký tự xuống dòng thô
+// vào XML (ký tự mã 11 là ký tự không hợp lệ trong XML, khiến Word từ chối
+// mở tệp -- đây chính là lỗi đã mắc ở bản dựng trước).
 function cell(text, o = {}) {
+  const lines = String(text).split("|");
+  const runs = lines.map((ln, i) => new TextRun({
+    text: ln, bold: !!o.b, size: o.sz || 17, break: i > 0 ? 1 : undefined,
+  }));
   return new TableCell({
     width: { size: o.w || 1200, type: WidthType.DXA },
     shading: o.fill ? { type: ShadingType.CLEAR, fill: o.fill } : undefined,
     children: [new Paragraph({
       alignment: o.left ? AlignmentType.LEFT : AlignmentType.CENTER,
-      children: [new TextRun({ text: String(text), bold: !!o.b, size: o.sz || 17 })],
+      children: runs,
     })],
   });
 }
@@ -69,13 +76,13 @@ function hourlyGroupTable(group) {
   const hdr = new TableRow({ tableHeader: true, children: [
     cell("Giờ UTC", { w: W[0], b: 1, fill: HDR }),
     cell("Giờ VN", { w: W[1], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[0]]}tàu`, { w: W[2], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[0]]}ATWI`, { w: W[3], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[1]]}tàu`, { w: W[4], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[1]]}ATWI`, { w: W[5], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[2]]}tàu`, { w: W[6], b: 1, fill: HDR }),
-    cell(`${SHORT[pos[2]]}ATWI`, { w: W[7], b: 1, fill: HDR }),
-    cell("Giảm tải(điểm %)", { w: W[8], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[0]]}|tàu`, { w: W[2], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[0]]}|ATWI`, { w: W[3], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[1]]}|tàu`, { w: W[4], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[1]]}|ATWI`, { w: W[5], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[2]]}|tàu`, { w: W[6], b: 1, fill: HDR }),
+    cell(`${SHORT[pos[2]]}|ATWI`, { w: W[7], b: 1, fill: HDR }),
+    cell("Giảm tải|(điểm %)", { w: W[8], b: 1, fill: HDR }),
   ]});
   const rows = [hdr];
   const base = hours(pos[0]);
@@ -137,28 +144,6 @@ function summaryTable() {
       cell(meanOcc(p).toFixed(1), { w: W[3], fill }),
       cell(`${a.toFixed(1)}%`, { w: W[4], fill: BAND_FILL[bandOf(a)] }),
       cell(`${nHigh}/${hrs.length}`, { w: W[5], fill }),
-    ]}));
-  }
-  return new Table({ width: { size: W.reduce((a, b) => a + b, 0), type: WidthType.DXA }, columnWidths: W, rows });
-}
-
-function scenarioTable() {
-  const W = [1500, 1200, 3600, 1300, 1500];
-  const rows = [new TableRow({ tableHeader: true, children: [
-    cell("Giờ UTC", { w: W[0], b: 1, fill: HDR }),
-    cell("Giờ VN", { w: W[1], b: 1, fill: HDR }),
-    cell("Tệp kịch bản", { w: W[2], b: 1, fill: HDR, left: 1 }),
-    cell("Số tàu", { w: W[3], b: 1, fill: HDR }),
-    cell("Số lệnh", { w: W[4], b: 1, fill: HDR }),
-  ]})];
-  for (const s of scnIndex) {
-    if (s.aircraft < 20) continue;
-    rows.push(new TableRow({ children: [
-      cell(hhmm(s.hour_epoch), { w: W[0] }),
-      cell(hhmmVN(s.hour_epoch), { w: W[1] }),
-      cell(s.file, { w: W[2], left: 1, sz: 15 }),
-      cell(s.aircraft, { w: W[3] }),
-      cell(s.move_cmds.toLocaleString("vi-VN"), { w: W[4] }),
     ]}));
   }
   return new Table({ width: { size: W.reduce((a, b) => a + b, 0), type: WidthType.DXA }, columnWidths: W, rows });
@@ -233,10 +218,9 @@ const doc = new Document({
     {
       properties: { page: { size: { width: 12240, height: 15840 } } },
       children: [
-        H1("V. BỘ KỊCH BẢN MÔ PHỎNG THEO GIỜ"),
-        P(`Đã dựng ${scnIndex.length} kịch bản mô phỏng, mỗi kịch bản tái hiện một giờ khai thác thực (kèm 5 phút đệm mỗi đầu), tổng cộng ${scnIndex.reduce((s, x) => s + x.aircraft, 0).toLocaleString("vi-VN")} lượt tàu bay và ${scnIndex.reduce((s, x) => s + x.move_cmds, 0).toLocaleString("vi-VN")} lệnh điều khiển. Mỗi kịch bản chạy độc lập, cho phép xem lại bất kỳ khung giờ nào trong ngày.`),
-        GAP(),
-        scenarioTable(),
+        H1("V. KỊCH BẢN MÔ PHỎNG"),
+        P("Toàn bộ chỉ số trong báo cáo này được tính trực tiếp từ dữ liệu giám sát thực, không đi qua mô phỏng. Kịch bản mô phỏng chỉ phục vụ việc xem lại trực quan một khung giờ cụ thể khi cần minh hoạ."),
+        P("Bộ sinh kịch bản đi kèm cho phép dựng lại kịch bản cho bất kỳ khung giờ nào trong ngày khi có nhu cầu, nên không lưu sẵn tệp kịch bản cho cả 24 giờ."),
         GAP(),
 
         H1("VI. HIỆU CHỈNH THAM SỐ TỐC ĐỘ"),
