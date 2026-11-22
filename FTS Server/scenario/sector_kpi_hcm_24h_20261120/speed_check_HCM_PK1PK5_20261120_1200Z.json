@@ -1,0 +1,8 @@
+{
+  "scenario": "HCM_PK1PK5_20261120_1200Z",
+  "n_samples": 34994,
+  "gs_median": 466.8,
+  "cas_median": 273.1,
+  "max_tas_gs_diff": 0.0,
+  "n_gs_over_600kt": 1
+}
