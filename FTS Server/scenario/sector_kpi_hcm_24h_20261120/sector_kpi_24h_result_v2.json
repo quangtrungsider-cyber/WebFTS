@@ -1,0 +1,1296 @@
+{
+  "_meta": {
+    "data_start_utc": "2026-11-20T08:25:58.125103+00:00",
+    "data_end_utc": "2026-11-21T08:01:36.667673+00:00",
+    "duration_hours": 23.59,
+    "partial_hours_utc": [
+      "2026-11-20T08:00:00+00:00",
+      "2026-11-21T08:00:00+00:00"
+    ],
+    "tracks_analyzed": 3531
+  },
+  "HCM ACC Sector 1": {
+    "position": "HCM ACC Sector 1",
+    "distinct_aircraft": 695,
+    "total_intervals": 712,
+    "observed_entries": 631,
+    "peak_simultaneous": 14,
+    "peak_simultaneous_time_utc": "2026-11-20T11:15:58.947353+00:00",
+    "dwell_mean_s": 485.6,
+    "dwell_median_s": 434.3,
+    "dwell_p95_s": 1402.5,
+    "dwell_max_s": 4309.7,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 21,
+        "peak_simultaneous": 8,
+        "mean_occupancy": 2.03,
+        "entries": 13
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 33,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 3.98,
+        "entries": 34
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 34,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 4.49,
+        "entries": 29
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 37,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 5.49,
+        "entries": 34
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 46,
+        "peak_simultaneous": 13,
+        "mean_occupancy": 6.22,
+        "entries": 35
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 35,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 3.78,
+        "entries": 30
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 37,
+        "peak_simultaneous": 8,
+        "mean_occupancy": 3.45,
+        "entries": 35
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 33,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 4.95,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 31,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 3.92,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 23,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 2.35,
+        "entries": 16
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 15,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 2.41,
+        "entries": 13
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 18,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 2.83,
+        "entries": 16
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 16,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 2.35,
+        "entries": 18
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 12,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.77,
+        "entries": 6
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 11,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 2.35,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 23,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 3.39,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 30,
+        "peak_simultaneous": 8,
+        "mean_occupancy": 2.11,
+        "entries": 24
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 44,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 5.98,
+        "entries": 34
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 31,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 3.43,
+        "entries": 22
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 44,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 6.59,
+        "entries": 38
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 35,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 4.38,
+        "entries": 35
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 30,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 4.89,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 38,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 5.16,
+        "entries": 38
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 40,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 5.42,
+        "entries": 31
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 2,
+        "peak_simultaneous": 1,
+        "mean_occupancy": 0.03,
+        "entries": 1
+      }
+    ]
+  },
+  "HCM ACC Sector 5": {
+    "position": "HCM ACC Sector 5",
+    "distinct_aircraft": 748,
+    "total_intervals": 763,
+    "observed_entries": 649,
+    "peak_simultaneous": 27,
+    "peak_simultaneous_time_utc": "2026-11-20T19:58:14.887782+00:00",
+    "dwell_mean_s": 1567.4,
+    "dwell_median_s": 1686.1,
+    "dwell_p95_s": 2668.4,
+    "dwell_max_s": 4888.6,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 32,
+        "peak_simultaneous": 18,
+        "mean_occupancy": 7.34,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 48,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 13.92,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 39,
+        "peak_simultaneous": 20,
+        "mean_occupancy": 15.53,
+        "entries": 24
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 47,
+        "peak_simultaneous": 20,
+        "mean_occupancy": 13.75,
+        "entries": 31
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 69,
+        "peak_simultaneous": 26,
+        "mean_occupancy": 21.48,
+        "entries": 42
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 49,
+        "peak_simultaneous": 23,
+        "mean_occupancy": 16.16,
+        "entries": 29
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 45,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 14.8,
+        "entries": 28
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 51,
+        "peak_simultaneous": 21,
+        "mean_occupancy": 17.4,
+        "entries": 35
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 54,
+        "peak_simultaneous": 21,
+        "mean_occupancy": 13.76,
+        "entries": 28
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 44,
+        "peak_simultaneous": 16,
+        "mean_occupancy": 11.54,
+        "entries": 27
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 43,
+        "peak_simultaneous": 21,
+        "mean_occupancy": 11.55,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 63,
+        "peak_simultaneous": 27,
+        "mean_occupancy": 19.41,
+        "entries": 41
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 62,
+        "peak_simultaneous": 24,
+        "mean_occupancy": 18.14,
+        "entries": 34
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 33,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 11.08,
+        "entries": 18
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 24,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 8.02,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 13,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 4.8,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 16,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 4.63,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 36,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 10.58,
+        "entries": 28
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 56,
+        "peak_simultaneous": 24,
+        "mean_occupancy": 18.96,
+        "entries": 40
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 57,
+        "peak_simultaneous": 23,
+        "mean_occupancy": 18.58,
+        "entries": 39
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 47,
+        "peak_simultaneous": 23,
+        "mean_occupancy": 15.5,
+        "entries": 26
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 35,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 10.88,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 40,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 11.26,
+        "entries": 27
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 47,
+        "peak_simultaneous": 20,
+        "mean_occupancy": 16.29,
+        "entries": 31
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 12,
+        "peak_simultaneous": 12,
+        "mean_occupancy": 0.3,
+        "entries": 1
+      }
+    ]
+  },
+  "PK1A New": {
+    "position": "PK1A New",
+    "distinct_aircraft": 507,
+    "total_intervals": 513,
+    "observed_entries": 496,
+    "peak_simultaneous": 10,
+    "peak_simultaneous_time_utc": "2026-11-20T11:15:58.947353+00:00",
+    "dwell_mean_s": 284.1,
+    "dwell_median_s": 233.6,
+    "dwell_p95_s": 736.0,
+    "dwell_max_s": 1213.3,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 11,
+        "peak_simultaneous": 2,
+        "mean_occupancy": 0.33,
+        "entries": 13
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 23,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 1.8,
+        "entries": 29
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 25,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 2.23,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 26,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 2.46,
+        "entries": 29
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 37,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 3.71,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 21,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 1.27,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 26,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 1.63,
+        "entries": 30
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 22,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 2.37,
+        "entries": 24
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 10,
+        "peak_simultaneous": 2,
+        "mean_occupancy": 0.03,
+        "entries": 19
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 16,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.25,
+        "entries": 15
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 9,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.95,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 13,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.96,
+        "entries": 12
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 9,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.99,
+        "entries": 11
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 8,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.05,
+        "entries": 7
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 10,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.5,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 15,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 1.56,
+        "entries": 17
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 19,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 1.05,
+        "entries": 21
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 29,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 2.5,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 20,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 1.74,
+        "entries": 19
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 33,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 4.21,
+        "entries": 32
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 23,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.53,
+        "entries": 28
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 17,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 1.4,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 21,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 1.62,
+        "entries": 30
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 24,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 2.87,
+        "entries": 21
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 1,
+        "peak_simultaneous": 1,
+        "mean_occupancy": 0.01,
+        "entries": 1
+      }
+    ]
+  },
+  "PK1B New": {
+    "position": "PK1B New",
+    "distinct_aircraft": 247,
+    "total_intervals": 258,
+    "observed_entries": 195,
+    "peak_simultaneous": 7,
+    "peak_simultaneous_time_utc": "2026-11-21T04:45:47.188783+00:00",
+    "dwell_mean_s": 663.0,
+    "dwell_median_s": 487.8,
+    "dwell_p95_s": 1957.4,
+    "dwell_max_s": 4309.7,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 11,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 1.42,
+        "entries": 2
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 11,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.77,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 10,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 1.97,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 14,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 2.5,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 13,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.53,
+        "entries": 13
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 11,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.88,
+        "entries": 11
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 11,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.56,
+        "entries": 6
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 11,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 2.22,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 21,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 3.45,
+        "entries": 15
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 8,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.72,
+        "entries": 4
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 9,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.3,
+        "entries": 7
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 10,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.28,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 8,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 1.29,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 5,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.7,
+        "entries": 0
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 4,
+        "peak_simultaneous": 2,
+        "mean_occupancy": 0.8,
+        "entries": 5
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 9,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.31,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 11,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 0.89,
+        "entries": 5
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 15,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 3.01,
+        "entries": 12
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 11,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 1.48,
+        "entries": 4
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 13,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 1.95,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 12,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 2.33,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 14,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 3.08,
+        "entries": 12
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 17,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 3.52,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 16,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 2.51,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 1,
+        "peak_simultaneous": 1,
+        "mean_occupancy": 0.02,
+        "entries": 0
+      }
+    ]
+  },
+  "PK5A New": {
+    "position": "PK5A New",
+    "distinct_aircraft": 559,
+    "total_intervals": 569,
+    "observed_entries": 532,
+    "peak_simultaneous": 22,
+    "peak_simultaneous_time_utc": "2026-11-20T12:19:35.400193+00:00",
+    "dwell_mean_s": 1775.1,
+    "dwell_median_s": 2127.5,
+    "dwell_p95_s": 2759.5,
+    "dwell_max_s": 4936.6,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 21,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 5.41,
+        "entries": 12
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 35,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 12.19,
+        "entries": 21
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 35,
+        "peak_simultaneous": 17,
+        "mean_occupancy": 14.1,
+        "entries": 18
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 37,
+        "peak_simultaneous": 17,
+        "mean_occupancy": 12.07,
+        "entries": 24
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 50,
+        "peak_simultaneous": 22,
+        "mean_occupancy": 18.01,
+        "entries": 35
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 42,
+        "peak_simultaneous": 21,
+        "mean_occupancy": 14.83,
+        "entries": 26
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 37,
+        "peak_simultaneous": 16,
+        "mean_occupancy": 12.52,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 47,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 15.29,
+        "entries": 36
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 40,
+        "peak_simultaneous": 18,
+        "mean_occupancy": 12.03,
+        "entries": 22
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 30,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 8.13,
+        "entries": 21
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 29,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 8.88,
+        "entries": 23
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 47,
+        "peak_simultaneous": 21,
+        "mean_occupancy": 15.83,
+        "entries": 31
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 44,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 14.56,
+        "entries": 25
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 29,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 9.7,
+        "entries": 14
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 22,
+        "peak_simultaneous": 13,
+        "mean_occupancy": 7.33,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 12,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 4.68,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 12,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 3.69,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 32,
+        "peak_simultaneous": 15,
+        "mean_occupancy": 10.0,
+        "entries": 26
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 43,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 15.5,
+        "entries": 30
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 43,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 15.06,
+        "entries": 29
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 38,
+        "peak_simultaneous": 19,
+        "mean_occupancy": 11.34,
+        "entries": 21
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 26,
+        "peak_simultaneous": 13,
+        "mean_occupancy": 9.87,
+        "entries": 17
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 34,
+        "peak_simultaneous": 14,
+        "mean_occupancy": 10.2,
+        "entries": 24
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 38,
+        "peak_simultaneous": 18,
+        "mean_occupancy": 14.19,
+        "entries": 26
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 10,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 0.24,
+        "entries": 1
+      }
+    ]
+  },
+  "PK5B New": {
+    "position": "PK5B New",
+    "distinct_aircraft": 421,
+    "total_intervals": 428,
+    "observed_entries": 302,
+    "peak_simultaneous": 12,
+    "peak_simultaneous_time_utc": "2026-11-20T12:04:27.662765+00:00",
+    "dwell_mean_s": 1019.9,
+    "dwell_median_s": 807.8,
+    "dwell_p95_s": 2847.6,
+    "dwell_max_s": 3078.8,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "throughput": 19,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 4.29,
+        "entries": 9
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "throughput": 25,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 3.88,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "throughput": 11,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 3.1,
+        "entries": 7
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "throughput": 15,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 3.54,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "throughput": 34,
+        "peak_simultaneous": 12,
+        "mean_occupancy": 7.59,
+        "entries": 15
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "throughput": 22,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 4.86,
+        "entries": 13
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "throughput": 16,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 5.36,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "throughput": 24,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 5.12,
+        "entries": 16
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "throughput": 25,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 5.1,
+        "entries": 16
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "throughput": 30,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 6.51,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "throughput": 25,
+        "peak_simultaneous": 9,
+        "mean_occupancy": 6.1,
+        "entries": 15
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "throughput": 29,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 7.88,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "throughput": 32,
+        "peak_simultaneous": 12,
+        "mean_occupancy": 7.56,
+        "entries": 18
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "throughput": 17,
+        "peak_simultaneous": 6,
+        "mean_occupancy": 4.17,
+        "entries": 10
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "throughput": 7,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.3,
+        "entries": 3
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "throughput": 8,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 1.96,
+        "entries": 8
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "throughput": 7,
+        "peak_simultaneous": 4,
+        "mean_occupancy": 2.05,
+        "entries": 5
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "throughput": 23,
+        "peak_simultaneous": 10,
+        "mean_occupancy": 3.59,
+        "entries": 20
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "throughput": 28,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 8.38,
+        "entries": 17
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "throughput": 31,
+        "peak_simultaneous": 11,
+        "mean_occupancy": 8.22,
+        "entries": 19
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "throughput": 19,
+        "peak_simultaneous": 12,
+        "mean_occupancy": 7.45,
+        "entries": 12
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "throughput": 15,
+        "peak_simultaneous": 5,
+        "mean_occupancy": 2.59,
+        "entries": 6
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "throughput": 18,
+        "peak_simultaneous": 7,
+        "mean_occupancy": 4.27,
+        "entries": 14
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "throughput": 15,
+        "peak_simultaneous": 8,
+        "mean_occupancy": 4.32,
+        "entries": 11
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "throughput": 3,
+        "peak_simultaneous": 3,
+        "mean_occupancy": 0.08,
+        "entries": 0
+      }
+    ]
+  }
+}

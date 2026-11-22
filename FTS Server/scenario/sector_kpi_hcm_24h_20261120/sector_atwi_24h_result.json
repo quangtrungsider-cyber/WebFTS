@@ -1,0 +1,1038 @@
+{
+  "HCM ACC Sector 1": {
+    "position": "HCM ACC Sector 1",
+    "overallAtwiPercent": 46.14,
+    "overallBand": "normal",
+    "medianWindowAtwi": 40.9,
+    "p95WindowAtwi": 109.7,
+    "peakWindowAtwi": 150.0,
+    "peakWindowTimeUtc": "2026-11-20T11:10:00+00:00",
+    "peakWindowActive": 13,
+    "bandWindowCounts": {
+      "normal": 207,
+      "watch": 37,
+      "critical": 28,
+      "high": 17
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 2,
+    "totalHandoffs": 631,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 25.9,
+        "atwi_max": 72.8
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 49.6,
+        "atwi_max": 105.8
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 47.1,
+        "atwi_max": 99.5
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 67.5,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 61.0,
+        "atwi_max": 109.7
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 49.4,
+        "atwi_max": 110.1
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 53.0,
+        "atwi_max": 116.1
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 59.5,
+        "atwi_max": 117.9
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 48.6,
+        "atwi_max": 100.0
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 29.9,
+        "atwi_max": 62.9
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 22.1,
+        "atwi_max": 45.4
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 26.6,
+        "atwi_max": 55.1
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 26.9,
+        "atwi_max": 71.8
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 17.8,
+        "atwi_max": 31.1
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 20.6,
+        "atwi_max": 37.8
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 40.3,
+        "atwi_max": 87.0
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 31.4,
+        "atwi_max": 62.5
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 65.3,
+        "atwi_max": 131.2
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 43.5,
+        "atwi_max": 93.4
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 83.7,
+        "atwi_max": 131.2
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 57.7,
+        "atwi_max": 143.4
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 50.8,
+        "atwi_max": 112.2
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 64.9,
+        "atwi_max": 114.4
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 62.4,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 39.3,
+        "atwi_max": 39.3
+      }
+    ]
+  },
+  "HCM ACC Sector 5": {
+    "position": "HCM ACC Sector 5",
+    "overallAtwiPercent": 86.23,
+    "overallBand": "high",
+    "medianWindowAtwi": 83.8,
+    "p95WindowAtwi": 150.0,
+    "peakWindowAtwi": 150.0,
+    "peakWindowTimeUtc": "2026-11-20T12:05:00+00:00",
+    "peakWindowActive": 25,
+    "bandWindowCounts": {
+      "normal": 75,
+      "high": 40,
+      "critical": 131,
+      "watch": 43
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 73,
+    "totalHandoffs": 649,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 51.6,
+        "atwi_max": 123.7
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 77.8,
+        "atwi_max": 116.4
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 83.9,
+        "atwi_max": 137.7
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 84.7,
+        "atwi_max": 118.2
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 137.6,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 101.2,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 91.3,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 111.6,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 100.1,
+        "atwi_max": 133.0
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 84.6,
+        "atwi_max": 136.8
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 85.4,
+        "atwi_max": 127.7
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 131.3,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 124.4,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 67.9,
+        "atwi_max": 99.7
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 42.4,
+        "atwi_max": 76.6
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 27.2,
+        "atwi_max": 42.8
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 27.6,
+        "atwi_max": 42.1
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 73.0,
+        "atwi_max": 104.5
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 109.1,
+        "atwi_max": 144.6
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 121.1,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 93.7,
+        "atwi_max": 128.1
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 59.1,
+        "atwi_max": 79.3
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 65.1,
+        "atwi_max": 133.4
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 93.6,
+        "atwi_max": 145.8
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 150.0,
+        "atwi_max": 150.0
+      }
+    ]
+  },
+  "PK1A New": {
+    "position": "PK1A New",
+    "overallAtwiPercent": 24.67,
+    "overallBand": "normal",
+    "medianWindowAtwi": 18.4,
+    "p95WindowAtwi": 71.1,
+    "peakWindowAtwi": 96.63,
+    "peakWindowTimeUtc": "2026-11-21T06:50:00+00:00",
+    "peakWindowActive": 9,
+    "bandWindowCounts": {
+      "normal": 263,
+      "watch": 13,
+      "high": 10,
+      "critical": 3
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 0,
+    "totalHandoffs": 496,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 13.1,
+        "atwi_max": 47.8
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 29.9,
+        "atwi_max": 68.6
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 27.0,
+        "atwi_max": 77.0
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 40.0,
+        "atwi_max": 96.4
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 45.2,
+        "atwi_max": 87.6
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 24.6,
+        "atwi_max": 55.8
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 30.8,
+        "atwi_max": 71.1
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 32.1,
+        "atwi_max": 76.2
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 14.6,
+        "atwi_max": 28.0
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 12.4,
+        "atwi_max": 31.9
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 10.4,
+        "atwi_max": 32.6
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 14.0,
+        "atwi_max": 41.3
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 12.4,
+        "atwi_max": 37.8
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 9.0,
+        "atwi_max": 22.1
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 12.0,
+        "atwi_max": 28.0
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 21.2,
+        "atwi_max": 66.6
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 19.5,
+        "atwi_max": 62.1
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 28.8,
+        "atwi_max": 92.5
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 23.2,
+        "atwi_max": 68.2
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 51.8,
+        "atwi_max": 86.8
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 27.5,
+        "atwi_max": 79.4
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 25.1,
+        "atwi_max": 80.6
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 33.7,
+        "atwi_max": 96.6
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 33.7,
+        "atwi_max": 76.6
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 28.2,
+        "atwi_max": 28.2
+      }
+    ]
+  },
+  "PK1B New": {
+    "position": "PK1B New",
+    "overallAtwiPercent": 20.14,
+    "overallBand": "normal",
+    "medianWindowAtwi": 16.3,
+    "p95WindowAtwi": 56.1,
+    "peakWindowAtwi": 74.32,
+    "peakWindowTimeUtc": "2026-11-21T02:00:00+00:00",
+    "peakWindowActive": 7,
+    "bandWindowCounts": {
+      "normal": 278,
+      "watch": 11
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 2,
+    "totalHandoffs": 195,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 12.5,
+        "atwi_max": 39.9
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 17.9,
+        "atwi_max": 37.5
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 18.7,
+        "atwi_max": 47.8
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 26.8,
+        "atwi_max": 73.7
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 19.6,
+        "atwi_max": 46.0
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 21.8,
+        "atwi_max": 49.6
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 19.2,
+        "atwi_max": 34.5
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 24.2,
+        "atwi_max": 54.3
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 31.8,
+        "atwi_max": 67.4
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 17.6,
+        "atwi_max": 34.2
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 13.1,
+        "atwi_max": 32.2
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 14.6,
+        "atwi_max": 30.7
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 14.7,
+        "atwi_max": 32.6
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 8.6,
+        "atwi_max": 19.2
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 10.2,
+        "atwi_max": 23.4
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 18.4,
+        "atwi_max": 54.3
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 12.1,
+        "atwi_max": 58.1
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 31.9,
+        "atwi_max": 60.1
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 18.6,
+        "atwi_max": 74.3
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 26.0,
+        "atwi_max": 68.1
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 27.3,
+        "atwi_max": 74.2
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 25.2,
+        "atwi_max": 65.3
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 28.0,
+        "atwi_max": 59.3
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 24.8,
+        "atwi_max": 67.0
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 9.4,
+        "atwi_max": 9.4
+      }
+    ]
+  },
+  "PK5A New": {
+    "position": "PK5A New",
+    "overallAtwiPercent": 66.85,
+    "overallBand": "watch",
+    "medianWindowAtwi": 64.8,
+    "p95WindowAtwi": 120.7,
+    "peakWindowAtwi": 150.0,
+    "peakWindowTimeUtc": "2026-11-20T15:30:00+00:00",
+    "peakWindowActive": 24,
+    "bandWindowCounts": {
+      "normal": 128,
+      "watch": 49,
+      "high": 47,
+      "critical": 65
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 20,
+    "totalHandoffs": 532,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 30.4,
+        "atwi_max": 77.6
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 59.8,
+        "atwi_max": 75.4
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 70.4,
+        "atwi_max": 103.5
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 66.4,
+        "atwi_max": 91.0
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 106.3,
+        "atwi_max": 145.0
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 88.9,
+        "atwi_max": 134.4
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 72.4,
+        "atwi_max": 115.0
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 102.5,
+        "atwi_max": 150.0
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 77.2,
+        "atwi_max": 105.2
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 56.7,
+        "atwi_max": 94.0
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 63.3,
+        "atwi_max": 92.1
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 102.3,
+        "atwi_max": 138.7
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 88.2,
+        "atwi_max": 117.8
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 55.6,
+        "atwi_max": 78.9
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 39.1,
+        "atwi_max": 73.6
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 25.7,
+        "atwi_max": 42.8
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 20.5,
+        "atwi_max": 37.9
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 64.4,
+        "atwi_max": 95.5
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 79.1,
+        "atwi_max": 116.6
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 88.0,
+        "atwi_max": 121.3
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 64.7,
+        "atwi_max": 100.8
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 47.8,
+        "atwi_max": 70.6
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 55.3,
+        "atwi_max": 97.5
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 77.4,
+        "atwi_max": 121.9
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 137.9,
+        "atwi_max": 137.9
+      }
+    ]
+  },
+  "PK5B New": {
+    "position": "PK5B New",
+    "overallAtwiPercent": 34.8,
+    "overallBand": "normal",
+    "medianWindowAtwi": 31.9,
+    "p95WindowAtwi": 70.6,
+    "peakWindowAtwi": 102.41,
+    "peakWindowTimeUtc": "2026-11-21T03:35:00+00:00",
+    "peakWindowActive": 14,
+    "bandWindowCounts": {
+      "normal": 256,
+      "high": 7,
+      "watch": 24,
+      "critical": 2
+    },
+    "totalWindows": 289,
+    "totalConflicts": 0,
+    "totalStca": 0,
+    "totalDuplicateTrackPairsExcluded": 99,
+    "totalHandoffs": 302,
+    "hourly": [
+      {
+        "hour_utc": "2026-11-20T08:00:00+00:00",
+        "hour_epoch": 1795161600,
+        "atwi_mean": 27.2,
+        "atwi_max": 78.3
+      },
+      {
+        "hour_utc": "2026-11-20T09:00:00+00:00",
+        "hour_epoch": 1795165200,
+        "atwi_mean": 28.0,
+        "atwi_max": 57.6
+      },
+      {
+        "hour_utc": "2026-11-20T10:00:00+00:00",
+        "hour_epoch": 1795168800,
+        "atwi_mean": 17.3,
+        "atwi_max": 29.9
+      },
+      {
+        "hour_utc": "2026-11-20T11:00:00+00:00",
+        "hour_epoch": 1795172400,
+        "atwi_mean": 22.2,
+        "atwi_max": 59.0
+      },
+      {
+        "hour_utc": "2026-11-20T12:00:00+00:00",
+        "hour_epoch": 1795176000,
+        "atwi_mean": 58.3,
+        "atwi_max": 80.6
+      },
+      {
+        "hour_utc": "2026-11-20T13:00:00+00:00",
+        "hour_epoch": 1795179600,
+        "atwi_mean": 33.5,
+        "atwi_max": 46.3
+      },
+      {
+        "hour_utc": "2026-11-20T14:00:00+00:00",
+        "hour_epoch": 1795183200,
+        "atwi_mean": 34.8,
+        "atwi_max": 69.4
+      },
+      {
+        "hour_utc": "2026-11-20T15:00:00+00:00",
+        "hour_epoch": 1795186800,
+        "atwi_mean": 40.1,
+        "atwi_max": 51.5
+      },
+      {
+        "hour_utc": "2026-11-20T16:00:00+00:00",
+        "hour_epoch": 1795190400,
+        "atwi_mean": 41.3,
+        "atwi_max": 74.0
+      },
+      {
+        "hour_utc": "2026-11-20T17:00:00+00:00",
+        "hour_epoch": 1795194000,
+        "atwi_mean": 46.7,
+        "atwi_max": 61.4
+      },
+      {
+        "hour_utc": "2026-11-20T18:00:00+00:00",
+        "hour_epoch": 1795197600,
+        "atwi_mean": 40.1,
+        "atwi_max": 64.4
+      },
+      {
+        "hour_utc": "2026-11-20T19:00:00+00:00",
+        "hour_epoch": 1795201200,
+        "atwi_mean": 58.4,
+        "atwi_max": 87.5
+      },
+      {
+        "hour_utc": "2026-11-20T20:00:00+00:00",
+        "hour_epoch": 1795204800,
+        "atwi_mean": 56.9,
+        "atwi_max": 97.7
+      },
+      {
+        "hour_utc": "2026-11-20T21:00:00+00:00",
+        "hour_epoch": 1795208400,
+        "atwi_mean": 29.0,
+        "atwi_max": 41.1
+      },
+      {
+        "hour_utc": "2026-11-20T22:00:00+00:00",
+        "hour_epoch": 1795212000,
+        "atwi_mean": 9.1,
+        "atwi_max": 24.0
+      },
+      {
+        "hour_utc": "2026-11-20T23:00:00+00:00",
+        "hour_epoch": 1795215600,
+        "atwi_mean": 14.0,
+        "atwi_max": 27.9
+      },
+      {
+        "hour_utc": "2026-11-21T00:00:00+00:00",
+        "hour_epoch": 1795219200,
+        "atwi_mean": 13.4,
+        "atwi_max": 21.2
+      },
+      {
+        "hour_utc": "2026-11-21T01:00:00+00:00",
+        "hour_epoch": 1795222800,
+        "atwi_mean": 33.1,
+        "atwi_max": 72.0
+      },
+      {
+        "hour_utc": "2026-11-21T02:00:00+00:00",
+        "hour_epoch": 1795226400,
+        "atwi_mean": 54.2,
+        "atwi_max": 75.8
+      },
+      {
+        "hour_utc": "2026-11-21T03:00:00+00:00",
+        "hour_epoch": 1795230000,
+        "atwi_mean": 56.3,
+        "atwi_max": 102.4
+      },
+      {
+        "hour_utc": "2026-11-21T04:00:00+00:00",
+        "hour_epoch": 1795233600,
+        "atwi_mean": 44.0,
+        "atwi_max": 79.3
+      },
+      {
+        "hour_utc": "2026-11-21T05:00:00+00:00",
+        "hour_epoch": 1795237200,
+        "atwi_mean": 19.8,
+        "atwi_max": 35.8
+      },
+      {
+        "hour_utc": "2026-11-21T06:00:00+00:00",
+        "hour_epoch": 1795240800,
+        "atwi_mean": 30.4,
+        "atwi_max": 70.3
+      },
+      {
+        "hour_utc": "2026-11-21T07:00:00+00:00",
+        "hour_epoch": 1795244400,
+        "atwi_mean": 27.4,
+        "atwi_max": 60.1
+      },
+      {
+        "hour_utc": "2026-11-21T08:00:00+00:00",
+        "hour_epoch": 1795248000,
+        "atwi_mean": 29.2,
+        "atwi_max": 29.2
+      }
+    ]
+  }
+}
