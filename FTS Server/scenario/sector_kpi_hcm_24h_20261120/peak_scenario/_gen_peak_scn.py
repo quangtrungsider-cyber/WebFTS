@@ -5,12 +5,22 @@ PK1A/1B/5A/5B moi) -- cung pattern da dung cho khung 07:30-07:50 05/06/2026
 truoc do (CRE + MOVE, LNAV/VNAV OFF).
 
 Nguon: ASTERIX Cat062 PCAP giai ma (cat062_20nov26.pcap) -> peak_window_tracks.csv
+Cot ground_speed_kt cua bo nay DUNG la ground speed va DUNG don vi knot:
+da kiem dinh tren 306.807 cap mau, ty le (toc do do tu vi tri lien tiep) /
+(gia tri trong cot) = 1.003.
+
+TOC DO: quy doi GS -> CAS bang windkit.gs_to_cas_kt() truoc khi ghi, vi
+BlueSky doc tham so toc do cua CRE/MOVE la CAS. Nap thang GS vao se khien
+tau bay o ~750 kt TAS, vuot toc do am thanh. Xem windkit/atmosphere.py.
 """
 import csv
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE.parent.parent.parent))
+from windkit import gs_to_cas_kt  # noqa: E402
 RAW_CSV = Path(
     r"C:/Users/trunglq/AppData/Local/Temp/claude/D--Coding-D---n-FTS-WebFTS-v4/"
     r"1c74b732-eedf-40e6-9e64-71071fab81b1/scratchpad/cat062/peak_window_tracks.csv"
@@ -62,7 +72,8 @@ def main():
         t0, lat0, lon0, fl0, gs0, hdg0 = pts[0]
         alt0_ft = fl0 * 100.0
         rel0 = (t0 - SIM_T0).total_seconds()
-        lines.append((rel0, f"CRE {cs},{DEFAULT_TYPE},{lat0:.6f},{lon0:.6f},{hdg0:.1f},{alt0_ft:.0f},{gs0:.1f}"))
+        cas0 = float(gs_to_cas_kt(gs0, alt0_ft))
+        lines.append((rel0, f"CRE {cs},{DEFAULT_TYPE},{lat0:.6f},{lon0:.6f},{hdg0:.1f},{alt0_ft:.0f},{cas0:.1f}"))
         lines.append((rel0, f"LNAV {cs} OFF"))
         lines.append((rel0, f"VNAV {cs} OFF"))
         total_cre += 1
@@ -77,7 +88,8 @@ def main():
                 continue
             vspd_fpm = (alt_ft - altprev_ft) / (dt_sec / 60.0)
             rel = (t - SIM_T0).total_seconds()
-            lines.append((rel, f"MOVE {cs},{lat:.6f},{lon:.6f},{alt_ft:.0f},{hdg:.1f},{gs:.1f},{vspd_fpm:.0f}"))
+            cas = float(gs_to_cas_kt(gs, alt_ft))
+            lines.append((rel, f"MOVE {cs},{lat:.6f},{lon:.6f},{alt_ft:.0f},{hdg:.1f},{cas:.1f},{vspd_fpm:.0f}"))
             total_move += 1
 
     lines.sort(key=lambda x: x[0])
@@ -85,6 +97,8 @@ def main():
         f.write("# Kich ban KPI Sector 1/5 cu & PK1A/1B/5A/5B moi - tu track Cat062 that 20/11/2026\n")
         f.write("# Khung thuc: 11:50:00 - 12:30:00 UTC (gio cao diem chung trong khao sat 24h)\n")
         f.write(f"# {total_cre} may bay that, {total_move} lenh MOVE\n")
+        f.write("# TOC DO: da quy doi GS that -> CAS (windkit.gs_to_cas_kt),\n")
+        f.write("#         de TAS mo phong bang GS that. Mo phong khong nap gio.\n")
         for rel, cmd in lines:
             f.write(f"{fmt_time(rel)}>{cmd}\n")
 

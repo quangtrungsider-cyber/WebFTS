@@ -14,19 +14,35 @@ Gia dinh duoc ghi nhan ro rang (KHONG co trong du lieu nguon):
     huong den do chinh xac vi tri/thoi gian dung cho KPI sector (so tau, dwell time).
     Day la gia dinh my hoc, khong anh huong ket qua dinh luong.
 
+HAI LOI TOC DO DA SUA (ban dau sinh ra tau bay bay sai toc do):
+
+  1. DON VI CUA COT NGUON. Cot ten la "ground_speed_kt" nhung gia tri thuc
+     te la M/S, khong phai knot. Kiem dinh tren 275.816 cap mau o FL250+
+     bang cach do toc do tu hai vi tri lien tiep roi so voi gia tri trong
+     cot: neu coi cot la m/s thi ty le = 1.0039 (khop), con neu coi la knot
+     thi ty le = 1.9513 (lech dung bang he so 1.944 kt/(m/s)).
+     Vi du: gia tri 237 o FL330 doc la m/s = 461 kt, dung voi bay bang.
+
+  2. CAS CHU KHONG PHAI GS. BlueSky doc tham so toc do cua CRE/MOVE la CAS,
+     nen phai quy doi GS -> CAS truoc khi ghi (windkit.gs_to_cas_kt).
+
 Cach dung lenh:
   - CRE tai thoi diem xuat hien dau tien cua moi callsign trong khung du lieu
   - LNAV/VNAV OFF ngay sau CRE (vo hieu hoa dieu khien tu dong, chi dung MOVE)
   - MOVE tai moi mau track tiep theo (cadence that ~4s/mau, KHONG noi suy them)
-  - alt (ft) = flight_level * 100 ; spd (kt) = ground_speed_kt that ; hdg = heading_deg that
+  - alt (ft) = flight_level * 100 ; hdg = heading_deg that
   - vspd (fpm) tinh tu chenh lech alt giua 2 mau / thoi gian (phut)
 """
 import csv
 import math
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE.parent.parent))
+from windkit import gs_to_cas_kt  # noqa: E402
+from windkit.units import ms_to_kt  # noqa: E402
 RAW_CSV = Path(
     r"C:/Users/trunglq/AppData/Local/Temp/claude/D--Coding-D---n-FTS-WebFTS-v4/"
     r"1c74b732-eedf-40e6-9e64-71071fab81b1/scratchpad/sector_kpi/raw_tracks_window.csv"
@@ -63,7 +79,8 @@ def load_rows():
                 lat = float(row["lat"])
                 lon = float(row["lon"])
                 fl = float(row["flight_level"])
-                gs = float(row["ground_speed_kt"])
+                # Cot mang ten "_kt" nhung gia tri la m/s - xem phan dau tep.
+                gs = float(ms_to_kt(float(row["ground_speed_kt"])))
                 hdg = float(row["heading_deg"])
             except (ValueError, KeyError):
                 continue
@@ -87,7 +104,8 @@ def main():
         t0, lat0, lon0, fl0, gs0, hdg0 = pts[0]
         alt0_ft = fl0 * 100.0
         rel0 = (t0 - SIM_T0).total_seconds()
-        lines.append((rel0, f"CRE {cs},{DEFAULT_TYPE},{lat0:.6f},{lon0:.6f},{hdg0:.1f},{alt0_ft:.0f},{gs0:.1f}"))
+        cas0 = float(gs_to_cas_kt(gs0, alt0_ft))
+        lines.append((rel0, f"CRE {cs},{DEFAULT_TYPE},{lat0:.6f},{lon0:.6f},{hdg0:.1f},{alt0_ft:.0f},{cas0:.1f}"))
         lines.append((rel0, f"LNAV {cs} OFF"))
         lines.append((rel0, f"VNAV {cs} OFF"))
         total_cre += 1
@@ -104,7 +122,8 @@ def main():
             rel = (t - SIM_T0).total_seconds()
             lines.append((
                 rel,
-                f"MOVE {cs},{lat:.6f},{lon:.6f},{alt_ft:.0f},{hdg:.1f},{gs:.1f},{vspd_fpm:.0f}",
+                f"MOVE {cs},{lat:.6f},{lon:.6f},{alt_ft:.0f},{hdg:.1f},"
+                f"{float(gs_to_cas_kt(gs, alt_ft)):.1f},{vspd_fpm:.0f}",
             ))
             total_move += 1
 

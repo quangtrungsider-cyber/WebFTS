@@ -48,31 +48,8 @@ from shapely.prepared import prep
 HERE = Path(__file__).resolve().parent
 FTS = HERE.parent.parent
 
-# --- Mo hinh khi quyen ISA, sao nguyen van tu bluesky/tools/aero.py --------
-# (Khong import truc tiep vi moi truong ao chay BlueSky khong co shapely, con
-#  moi truong co shapely lai khong co BlueSky. Da kiem chung bang script
-#  _verify_speed_fix.py: sai lech so voi ham goc cua BlueSky = 0.0 kt.)
-KTS = 0.514444        # m/s cua 1 knot
-FT = 0.3048           # m cua 1 foot
-R_AIR = 287.05287
-P0 = 101325.0
-RHO0 = 1.225
-TSTRAT = 216.65
-
-
-def _vatmos(h_m):
-    T = max(288.15 - 0.0065 * h_m, TSTRAT)
-    rhotrop = 1.225 * (T / 288.15) ** 4.256848030018761
-    dhstrat = max(0.0, h_m - 11000.0)
-    rho = rhotrop * math.exp(-dhstrat / 6341.552161)
-    p = rho * R_AIR * T
-    return p, rho, T
-
-
-def _vtas2cas(tas_ms, h_m):
-    p, rho, _ = _vatmos(h_m)
-    qdyn = p * ((1.0 + rho * tas_ms * tas_ms / (7.0 * p)) ** 3.5 - 1.0)
-    return math.sqrt(7.0 * P0 / RHO0 * ((qdyn / P0 + 1.0) ** (2.0 / 7.0) - 1.0))
+sys.path.insert(0, str(FTS))
+from windkit import gs_to_cas_kt  # noqa: E402
 
 ROOT = FTS.parent
 OLD_GEOJSON = ROOT / "WebATM" / "static" / "data" / "vietnam_acc_sector_boundaries.geojson"
@@ -85,13 +62,6 @@ OUT_DIR = HERE / "hourly_scenarios"
 DEFAULT_TYPE = "A320"
 MARGIN_S = 300.0        # dem 5 phut moi dau cho moi kich ban gio
 TRK_SPLIT_GAP_S = 1200.0
-
-
-def gs_to_cas_kt(gs_kt: float, alt_ft: float) -> float:
-    """Quy doi GS that (kt) -> CAS (kt) de nhap vao BlueSky."""
-    if gs_kt <= 0:
-        return 0.0
-    return _vtas2cas(gs_kt * KTS, alt_ft * FT) / KTS
 
 
 def parse_alt_old(name):
@@ -177,7 +147,7 @@ def write_scn(path, by_cs, members, t0, t1, title_lines):
         if len(pts) < 2:
             continue
         t, lat, lon, alt, gs, hdg = pts[0]
-        cas = gs_to_cas_kt(gs, alt)
+        cas = float(gs_to_cas_kt(gs, alt))
         lines.append((t - t0, f"CRE {cs},{DEFAULT_TYPE},{lat:.6f},{lon:.6f},{hdg:.1f},{alt:.0f},{cas:.1f}"))
         lines.append((t - t0, f"LNAV {cs} OFF"))
         lines.append((t - t0, f"VNAV {cs} OFF"))
@@ -188,7 +158,7 @@ def write_scn(path, by_cs, members, t0, t1, title_lines):
             if dt <= 0:
                 continue
             vspd = (alt - pts[i - 1][3]) / (dt / 60.0)
-            cas = gs_to_cas_kt(gs, alt)
+            cas = float(gs_to_cas_kt(gs, alt))
             lines.append((t - t0, f"MOVE {cs},{lat:.6f},{lon:.6f},{alt:.0f},{hdg:.1f},{cas:.1f},{vspd:.0f}"))
             n_move += 1
     lines.sort(key=lambda x: x[0])

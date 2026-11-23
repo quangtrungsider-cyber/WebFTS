@@ -18,6 +18,7 @@ NM = 1852.0  # m per nautical mile
 
 # ISA constants
 P0 = 101325.0  # Pa, sea-level pressure
+RHO0 = 1.225  # kg/m3, sea-level density
 T0 = 288.15  # K, sea-level temperature
 BETA = -0.0065  # K/m, tropospheric lapse rate
 R_AIR = 287.05287  # J/(kg K)

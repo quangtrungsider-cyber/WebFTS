@@ -16,6 +16,7 @@ altitudes m, angles degrees. Convert at the edges with the helpers in
 
 from __future__ import annotations
 
+from .atmosphere import atmosphere, cas_to_tas, gs_to_cas_kt, tas_to_cas
 from .kinematics import (
     HeadingSolution,
     TrackSolution,
@@ -32,6 +33,10 @@ from .providers import (
 )
 
 __all__ = [
+    "atmosphere",
+    "tas_to_cas",
+    "cas_to_tas",
+    "gs_to_cas_kt",
     "WindVector",
     "WindFieldProvider",
     "SyntheticUpperAirWindProvider",
