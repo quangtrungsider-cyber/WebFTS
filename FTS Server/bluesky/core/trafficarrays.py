@@ -99,6 +99,21 @@ class TrafficArrays:
 
     def delete(self, idx):
         ''' Aircraft delete. '''
+        # The same index can legitimately arrive more than once: the stack
+        # expands "ACID DEL ACID" into a DEL carrying that aircraft twice.
+        # np.delete silently tolerates duplicates, but a repeated
+        # "del somelist[i]" raises IndexError. Because children are deleted
+        # before the parent, that exception used to abort the delete half way
+        # through, leaving e.g. ap.bankdef empty while traf.alt and ntraf still
+        # counted the aircraft. Every later performance update then crashed on
+        # the empty array. Normalise to unique ascending indices up front so
+        # arrays and lists always see the same set.
+        if isinstance(idx, Collection) and not isinstance(idx, str):
+            asarr = np.asarray(idx)
+            if asarr.dtype == bool:
+                asarr = np.flatnonzero(asarr)
+            idx = np.unique(asarr.astype(int, copy=False))
+
         # Remove element (aircraft) idx from all lists and arrays
         for child in self._children:
             child.delete(idx)

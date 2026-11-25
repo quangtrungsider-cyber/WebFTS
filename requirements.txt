@@ -8,15 +8,15 @@ Flask-SocketIO>=5.0.0
 # Data processing
 numpy>=1.21.0
 
-# Core application dependencies
-# Use this for local development with Flask dev server
+# Vatm-Engine simulator core.
+# scipy is NOT optional: bluesky/traffic/traffic.py imports windsim ->
+# windfield, which imports scipy.interpolate at module level, so the engine
+# cannot be imported at all without it.
+scipy>=1.10.0
 
-# Core Flask dependencies
-Flask>=2.0.0
-Flask-SocketIO>=5.0.0
-
-# Data processing
-numpy>=1.21.0
+# Geometry for sector membership tests (scenario KPI/ATWI analysis tooling
+# and the geofence plugin).
+shapely>=2.0.0
 
 # BlueSky communication
 msgpack>=1.0.0

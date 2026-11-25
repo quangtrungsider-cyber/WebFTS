@@ -1,7 +1,7 @@
 """ Wind implementation for BlueSky."""
-from numpy import array, sin, cos, arange, radians, ones, append, ndarray, \
-                  minimum, repeat, delete, zeros, maximum, floor, interp, \
-                  pi, concatenate, unique
+from numpy import array, asarray, sin, cos, arange, radians, ones, append, \
+                  ndarray, minimum, repeat, delete, zeros, maximum, floor, \
+                  interp, pi, concatenate, unique
 from scipy.interpolate import interp1d, RegularGridInterpolator
 from bluesky.tools.aero import ft
 
@@ -286,7 +286,11 @@ class Windfield():
             return list(vnorth),list(veast)
 
         else:
-            return float(vnorth),float(veast)
+            # A scalar position still computes as a length-1 (sometimes 1x1)
+            # array. NumPy 2 refuses float() on anything with ndim > 0, even
+            # when it holds exactly one element, so pick that element out.
+            return float(asarray(vnorth).reshape(-1)[0]), \
+                   float(asarray(veast).reshape(-1)[0])
 
     def remove(self,idx): # remove a point using the returned index when it was added
         if idx<len(self.lat):

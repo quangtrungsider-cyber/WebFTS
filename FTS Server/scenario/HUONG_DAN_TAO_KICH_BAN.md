@@ -225,6 +225,8 @@ Mỗi mục dưới đây là một lỗi **đã xảy ra thật và đã đo đ
 
 **`ATDIST` + `DELAY` ghép chuỗi.** Nhiều tàu cùng chờ điều kiện ghép sẽ biến mất sớm. Dùng lệnh hẹn **theo thời gian tuyệt đối**. Cũng không đăng ký `ATDIST` mới từ bên trong file đang được gọi bởi một điều kiện khác — điều kiện lồng hai tầng bị tính sai và kích hoạt ngay lập tức.
 
+**Đừng viết `DEL` kèm tiền tố callsign.** Dòng `<acid> DEL <acid>` (ví dụ `VAG672 DEL VAG672`) bị stack bung thành lệnh `DEL` mang **cùng một tàu hai lần**, tức `idx = (0, 0)`. `np.delete` bỏ qua trùng lặp, nhưng `del list[i]` chạy lần thứ hai thì văng `IndexError` — và vì engine xoá các đối tượng con **trước** mảng của chính nó, ngoại lệ này làm lệnh xoá đứt gánh giữa chừng: `ap.bankdef` rỗng trong khi `traf.alt` và `ntraf` vẫn đếm là 1. Từ đó **mọi** bước cập nhật hiệu năng BADA đều chết (`perfbada.py` → `phases()` → `bank[gd2]`), mô phỏng không chạy tiếp được. Đã sửa ở `bluesky/core/trafficarrays.py` (chuẩn hoá chỉ số về tập duy nhất, có test hồi quy trong `bluesky/test/traffic/test_trafficarrays.py`), nhưng vẫn nên viết gọn `DEL <acid>` — tiền tố callsign không mang thêm ý nghĩa gì.
+
 **`VNAV` không lấy được tốc độ sau `DELRTE`.** `DELRTE` + `ADDWPT` + `LNAV ON` + `VNAV ON` nạp đúng route nhưng tốc độ kẹt ở giá trị rỗng → tàu đứng yên vĩnh viễn. Ép `<acid> SPD <tốc độ mốc đầu>` ngay sau `VNAV ON`.
 
 ### 4.2 Điều khiển bằng `MOVE` (dùng cho pha lăn)
@@ -271,6 +273,7 @@ Và một lỗi kinh điển: tàu **đã hạ cánh xong** bị báo "đứng y
 ### 4.5 Môi trường
 
 - **Không** chạy mô phỏng trong tiến trình Flask của ứng dụng web — chạy headless riêng.
+- **Phải chạy bằng đúng `.venv` của dự án.** `scipy` là bắt buộc, không phải tuỳ chọn: `bluesky/traffic/traffic.py` nạp `windsim` → `windfield`, mà `windfield` `import scipy.interpolate` ngay ở cấp module — thiếu `scipy` thì **không `import` nổi engine**, lỗi báo ở tận `bs.init()` nên dễ tưởng là hỏng cấu hình. Python hệ thống thường không có `scipy`. Cài đủ bằng `uv pip install -r requirements-dev.txt` (đã khai báo `scipy`, `shapely`, `pytest`).
 - Đường dẫn repo chứa dấu tiếng Việt. Khi gọi `subprocess`, truyền đường dẫn qua **biến môi trường** và đặt `PYTHONUTF8=1`; đừng nhúng vào `-c` (Windows mã hoá đối số theo cp1252 và làm vỡ chữ có dấu).
 - `_gen_kb5_1hour.py` **không có** `if __name__ == "__main__"` — `import` thẳng nó sẽ sinh ra 61 file rác. Lấy dữ liệu từ nó bằng AST (xem `_gen_vvdn_xenke_60min.py`, hàm `load_source_data`).
 
