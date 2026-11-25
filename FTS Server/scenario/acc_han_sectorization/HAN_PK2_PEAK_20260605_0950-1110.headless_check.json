@@ -1,0 +1,10 @@
+{
+  "n_steps": 96001,
+  "n_aircraft": 166,
+  "gs_median_kt": 431.6,
+  "gs_p95_kt": 479.1,
+  "gs_max_kt": 1287.4,
+  "cas_max_kt": 1276.8,
+  "n_samples_over_700kt": 128,
+  "n_samples_total": 112480
+}

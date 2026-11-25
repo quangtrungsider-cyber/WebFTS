@@ -1,0 +1,39 @@
+{
+  "_nguon": "De cuong 2026.11.22 To chuc lai vung troi ACC Ha Noi (muc 4.2) + 3 ban ve SECTORIZATION ACC HANOI PA1/PA2/PA3.pdf + KPI_ACC_HAN.md (Nhom A)",
+  "_khong_doi_giua_3_PA": "Ranh gioi ngang cua PK1,PK2,PK3,PK4 giu nguyen hien trang o ca 3 phuong an va o ca hai tang; chi muc phan tang cua PK2 thay doi.",
+  "sectors_geojson": "WebATM/static/data/vatm_kmz/vatm_acc_fir_sectors.geojson",
+  "horizontal_sector_ids": {
+    "PK1": "VATM_000587",
+    "PK2": "VATM_000588",
+    "PK3": "VATM_000589",
+    "PK4": "VATM_000590"
+  },
+  "fixed_split_fl": {
+    "PK1": 285,
+    "PK3": 285,
+    "PK4": 285,
+    "_ly_do": "De cuong muc 4.1/4.2.2: muc phan tang danh nghia cua PK1,3,4 la FL285 o ca 3 phuong an, khong doi."
+  },
+  "pk2_split_fl_by_scenario": {
+    "PA1": 285,
+    "PA2": 245,
+    "PA3": 265,
+    "_nguon": "SECTORIZATION ACC HANOI - PA1/PA2/PA3.pdf, nhan SECTOR 2A & 2B -- (2A)FLxxx (2B)FL460, GND/WATER FLxxx",
+    "_ghi_chu": "FL305 duoc de cuong neu la kich ban thu 4 nhung KHONG co ban ve PA tuong ung (chi co PA1/PA2/PA3); khong du lieu hinh hoc de dua FL305 vao so sanh nay."
+  },
+  "ceiling_fl": 460,
+  "floor_ft": 0,
+  "data_source": {
+    "file": "vietnam_ats_routes_pack/ADSB 05.6.2026/r72_tracks_20260605/r72_tracks_20260605.csv",
+    "date": "2026-06-05",
+    "note_fir_id": "Cot fir_id gan nhu toan bo la VVHN bat ke vi tri that (da xac nhan khi lam KPI PK1/PK5 ACC HCM); phan khu duoc xac dinh lai bang polygon + do cao, khong dung fir_id.",
+    "note_speed_unit": "Cot ground_speed_kt trong tep nay thuc chat la m/s (ty le do duoc 1.95 ~ 1.944 kt/(m/s)); da quy doi sang knot that truoc khi dung.",
+    "_han_che": "Chi co du lieu 1 ngay (05/06/2026), KHONG phai khung 15/4-15/5/2026 ma KPI_ACC_HAN.md dan chieu lam moc so sanh chinh thuc. Dung o day la so sanh minh hoa giua PA1/PA2/PA3 tren cung mot ngay du lieu that, khong phai so lieu chinh thuc trinh Cuc HKVN."
+  },
+  "kpi_group_a_thresholds": {
+    "A1_max_min_ratio": 1.25,
+    "A2_mean_dwell_min_s": 300,
+    "A2_pct_under_3min_max": 0.10,
+    "A2_touch_filter_s": 30
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "data_date": "2026-06-05",
+    "window_utc": [
+      "2026-06-05T00:53:34.019121+00:00",
+      "2026-06-05T23:59:57.683900+00:00"
+    ],
+    "n_track_segments": 1690,
+    "han_che": "Du lieu 1 ngay (05/06/2026), khong phai khung 15/4-15/5/2026 chinh thuc."
+  },
+  "context_pk1_pk3_pk4_fixed_fl285": {
+    "PK1": {
+      "1L": {
+        "n_visits": 672,
+        "n_distinct_aircraft": 630,
+        "peak_simultaneous": 17,
+        "mean_simultaneous": 7.62,
+        "peak_entries_per_hour": 45,
+        "mean_entries_per_hour": 28.0,
+        "dwell": {
+          "n": 669,
+          "mean_s": 947.1,
+          "median_s": 864.0,
+          "pct_under_3min": 0.0
+        }
+      },
+      "1U": {
+        "n_visits": 218,
+        "n_distinct_aircraft": 218,
+        "peak_simultaneous": 9,
+        "mean_simultaneous": 2.37,
+        "peak_entries_per_hour": 16,
+        "mean_entries_per_hour": 9.08,
+        "dwell": {
+          "n": 218,
+          "mean_s": 903.3,
+          "median_s": 1078.1,
+          "pct_under_3min": 0.1
+        }
+      }
+    },
+    "PK3": {
+      "3L": {
+        "n_visits": 209,
+        "n_distinct_aircraft": 202,
+        "peak_simultaneous": 7,
+        "mean_simultaneous": 1.32,
+        "peak_entries_per_hour": 20,
+        "mean_entries_per_hour": 8.71,
+        "dwell": {
+          "n": 193,
+          "mean_s": 566.9,
+          "median_s": 420.0,
+          "pct_under_3min": 0.2
+        }
+      },
+      "3U": {
+        "n_visits": 772,
+        "n_distinct_aircraft": 767,
+        "peak_simultaneous": 20,
+        "mean_simultaneous": 7.78,
+        "peak_entries_per_hour": 50,
+        "mean_entries_per_hour": 32.17,
+        "dwell": {
+          "n": 766,
+          "mean_s": 844.4,
+          "median_s": 852.3,
+          "pct_under_3min": 0.0
+        }
+      }
+    },
+    "PK4": {
+      "4L": {
+        "n_visits": 376,
+        "n_distinct_aircraft": 369,
+        "peak_simultaneous": 13,
+        "mean_simultaneous": 4.33,
+        "peak_entries_per_hour": 27,
+        "mean_entries_per_hour": 15.67,
+        "dwell": {
+          "n": 374,
+          "mean_s": 963.9,
+          "median_s": 940.0,
+          "pct_under_3min": 0.0
+        }
+      },
+      "4U": {
+        "n_visits": 669,
+        "n_distinct_aircraft": 668,
+        "peak_simultaneous": 16,
+        "mean_simultaneous": 7.37,
+        "peak_entries_per_hour": 45,
+        "mean_entries_per_hour": 27.88,
+        "dwell": {
+          "n": 664,
+          "mean_s": 923.5,
+          "median_s": 992.0,
+          "pct_under_3min": 0.0
+        }
+      }
+    }
+  },
+  "pa_results": {
+    "PA1": {
+      "split_fl": 285,
+      "A1_workload_balance": {
+        "2L": {
+          "peak_simultaneous": 11,
+          "mean_simultaneous": 3.61,
+          "peak_entries_per_hour": 33,
+          "mean_entries_per_hour": 19.25
+        },
+        "2U": {
+          "peak_simultaneous": 8,
+          "mean_simultaneous": 2.53,
+          "peak_entries_per_hour": 29,
+          "mean_entries_per_hour": 18.58
+        },
+        "ratio_peak_simultaneous_max_min": 1.38,
+        "ratio_peak_entries_max_min": 1.14,
+        "threshold": 1.25,
+        "dat": false
+      },
+      "A2_time_in_layer": {
+        "2L": {
+          "n": 458,
+          "mean_s": 654.8,
+          "median_s": 584.0,
+          "pct_under_3min": 0.0
+        },
+        "2U": {
+          "n": 441,
+          "mean_s": 476.3,
+          "median_s": 424.0,
+          "pct_under_3min": 0.0
+        },
+        "dat_mean": true,
+        "dat_pct_under_3min": true
+      },
+      "A3_additional_handoffs_2L_2U": {
+        "total_per_day": 356,
+        "examples": [
+          {
+            "acid": "VJC196__0",
+            "tu": "2U",
+            "sang": "2L"
+          },
+          {
+            "acid": "SIA191__0",
+            "tu": "2L",
+            "sang": "2U"
+          },
+          {
+            "acid": "HVN7074__0",
+            "tu": "2U",
+            "sang": "2L"
+          }
+        ]
+      },
+      "A4_level_off_near_split": {
+        "n_level_segments": 71,
+        "n_flights_crossing_pk2": 546,
+        "per_100_flights": 13.0
+      }
+    },
+    "PA2": {
+      "split_fl": 245,
+      "A1_workload_balance": {
+        "2L": {
+          "peak_simultaneous": 8,
+          "mean_simultaneous": 2.58,
+          "peak_entries_per_hour": 34,
+          "mean_entries_per_hour": 18.96
+        },
+        "2U": {
+          "peak_simultaneous": 11,
+          "mean_simultaneous": 3.55,
+          "peak_entries_per_hour": 37,
+          "mean_entries_per_hour": 21.17
+        },
+        "ratio_peak_simultaneous_max_min": 1.38,
+        "ratio_peak_entries_max_min": 1.09,
+        "threshold": 1.25,
+        "dat": false
+      },
+      "A2_time_in_layer": {
+        "2L": {
+          "n": 449,
+          "mean_s": 477.9,
+          "median_s": 400.0,
+          "pct_under_3min": 0.0
+        },
+        "2U": {
+          "n": 503,
+          "mean_s": 587.1,
+          "median_s": 568.1,
+          "pct_under_3min": 0.1
+        },
+        "dat_mean": true,
+        "dat_pct_under_3min": true
+      },
+      "A3_additional_handoffs_2L_2U": {
+        "total_per_day": 411,
+        "examples": [
+          {
+            "acid": "VJC196__0",
+            "tu": "2U",
+            "sang": "2L"
+          },
+          {
+            "acid": "SIA191__0",
+            "tu": "2L",
+            "sang": "2U"
+          },
+          {
+            "acid": "HVN7074__0",
+            "tu": "2U",
+            "sang": "2L"
+          }
+        ]
+      },
+      "A4_level_off_near_split": {
+        "n_level_segments": 3,
+        "n_flights_crossing_pk2": 546,
+        "per_100_flights": 0.5
+      }
+    },
+    "PA3": {
+      "split_fl": 265,
+      "A1_workload_balance": {
+        "2L": {
+          "peak_simultaneous": 9,
+          "mean_simultaneous": 3.02,
+          "peak_entries_per_hour": 34,
+          "mean_entries_per_hour": 19.29
+        },
+        "2U": {
+          "peak_simultaneous": 10,
+          "mean_simultaneous": 3.11,
+          "peak_entries_per_hour": 34,
+          "mean_entries_per_hour": 20.67
+        },
+        "ratio_peak_simultaneous_max_min": 1.11,
+        "ratio_peak_entries_max_min": 1.0,
+        "threshold": 1.25,
+        "dat": true
+      },
+      "A2_time_in_layer": {
+        "2L": {
+          "n": 455,
+          "mean_s": 551.2,
+          "median_s": 484.0,
+          "pct_under_3min": 0.0
+        },
+        "2U": {
+          "n": 488,
+          "mean_s": 530.6,
+          "median_s": 500.0,
+          "pct_under_3min": 0.1
+        },
+        "dat_mean": true,
+        "dat_pct_under_3min": true
+      },
+      "A3_additional_handoffs_2L_2U": {
+        "total_per_day": 407,
+        "examples": [
+          {
+            "acid": "VJC196__0",
+            "tu": "2U",
+            "sang": "2L"
+          },
+          {
+            "acid": "SIA191__0",
+            "tu": "2L",
+            "sang": "2U"
+          },
+          {
+            "acid": "HVN7074__0",
+            "tu": "2U",
+            "sang": "2L"
+          }
+        ]
+      },
+      "A4_level_off_near_split": {
+        "n_level_segments": 14,
+        "n_flights_crossing_pk2": 546,
+        "per_100_flights": 2.6
+      }
+    }
+  },
+  "A5_cruise_level_check_pk2": {
+    "FL245": 0,
+    "FL265": 0,
+    "FL285": 0,
+    "FL305": 0
+  }
+}
