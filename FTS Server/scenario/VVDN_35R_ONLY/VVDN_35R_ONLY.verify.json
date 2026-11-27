@@ -1,0 +1,116 @@
+[
+  {
+    "muc": "A1. Co cau doi tau (DEN)",
+    "ket_luan": "DAT",
+    "chi_tiet": "14 MEDIUM + 6 HEAVY tren 20 chuyen (70%/30%), han ngach yeu cau 14M+6H",
+    "nguon": "vvdn_35r_only_rules.json > co_cau_tau_bay"
+  },
+  {
+    "muc": "A1. Co cau doi tau (DI)",
+    "ket_luan": "DAT",
+    "chi_tiet": "14 MEDIUM + 6 HEAVY tren 20 chuyen (70%/30%), han ngach yeu cau 14M+6H",
+    "nguon": "vvdn_35r_only_rules.json > co_cau_tau_bay"
+  },
+  {
+    "muc": "A2. Khong co lenh nao dua tau bay vao vung duong CHC 35L",
+    "ket_luan": "DAT",
+    "chi_tiet": "0 toa do roi vao dai -180..-250 m (vung 35L); 35L dong cua dung nhu thiet ke",
+    "nguon": "vvdn_35r_only_rules.json > _cau_hinh_khai_thac; hinh hoc do tu runway_centerlines.geojson"
+  },
+  {
+    "muc": "A3. Bang chieu dai than khop voi gia tri nhung trong kich ban",
+    "ket_luan": "DAT",
+    "chi_tiet": "20 tau bay DI doi chieu duoc, 0 lech",
+    "nguon": "vvdn_35r_only_rules.json > chieu_dai_than_m (doi chieu cheo voi .scn)"
+  },
+  {
+    "muc": "A4. Nhip tau DI theo lich dung tham so generator",
+    "ket_luan": "DAT",
+    "chi_tiet": "20 chuyen DI, nhip 300-300 s (tham so 300 s)",
+    "nguon": "vvdn_35r_only_rules.json > kich_ban.gian_cach_lich_DEP_giay"
+  },
+  {
+    "muc": "A5. Nhip tau DEN theo lich (thoi diem tao tau, khong phai cham banh)",
+    "ket_luan": "SO LIEU",
+    "chi_tiet": "20 chuyen DEN, nhip 0-505 s; thoi diem tao tau bi lech do moi STAR co do dai khac nhau -- moc cham banh THAT do o muc B3",
+    "nguon": "Doc truc tiep tu .scn"
+  },
+  {
+    "muc": "B1. Moi chuyen DEN deu cham banh duoc trong mo phong",
+    "ket_luan": "DAT",
+    "chi_tiet": "20/20 chuyen cham banh",
+    "nguon": "Do truc tiep tu mo phong headless"
+  },
+  {
+    "muc": "B2. Moi chuyen DI deu roi mat dat duoc trong mo phong",
+    "ket_luan": "DAT",
+    "chi_tiet": "20/20 chuyen cat canh",
+    "nguon": "Do truc tiep tu mo phong headless"
+  },
+  {
+    "muc": "B3. Cu ly THAT giua hai tau HA CANH lien tiep tren 35R",
+    "ket_luan": "DAT",
+    "chi_tiet": "19 cap do duoc, nho nhat 9.99 NM, 0 cap khong dat",
+    "nguon": "vvdn_35r_only_rules.json > phan_cach_ha_canh_lien_tiep_35R (MANOP, bang nhieu dong cho tau dung CUNG duong CHC = ICAO Doc 4444 8.7.3.4)"
+  },
+  {
+    "muc": "B4. Chi co MOT tau bay tren duong CHC 35R tai moi thoi diem",
+    "ket_luan": "KHONG DAT",
+    "chi_tiet": "20 khoang thoi gian co tu 2 tau tro len tren 35R; ARR001+DEP001 tu 00:07:38.0 den 00:08:06.0 (29s), cach nhau doc tim toi thieu 11 m; DEP002+DEP003 tu 00:17:35.0 den 00:17:46.0 (12s), cach nhau doc tim toi thieu 44 m; DEP006+DEP007 tu 00:38:15.0 den 00:38:25.0 (11s), cach nhau doc tim toi thieu 45 m; DEP016+DEP017 tu 01:28:25.0 den 01:28:25.0 (1s), cach nhau doc tim toi thieu 69 m",
+    "nguon": "vvdn_35r_only_rules.json > chiem_dung_duong_CHC_35R (MANOP: khong cap huan lenh ha canh cho den khi tau truoc da roi khoi duong CHC)"
+  },
+  {
+    "muc": "B5. Thoi gian thoat ly duong CHC 35R cua tau DEN",
+    "ket_luan": "DAT",
+    "chi_tiet": "20 chuyen do duoc, lau nhat 83 s (gioi han 100 s)",
+    "nguon": "vvdn_35r_only_rules.json > chiem_dung_duong_CHC_35R.thoat_ly_duong_CHC_toi_da_giay (MANOP Phu luc 2 CHC song song)"
+  },
+  {
+    "muc": "B6. Canh bao xung dot tren khong (tau DI vs tau DEN)",
+    "ket_luan": "KHONG DAT",
+    "chi_tiet": "9 cap canh bao; DEP002/DEP003 0.09 NM luc 00:20:26.0; DEP004/DEP005 0.36 NM luc 00:30:52.0; DEP006/DEP007 0.58 NM luc 00:39:56.0; DEP008/DEP009 2.46 NM luc 00:51:13.0",
+    "nguon": "vvdn_35r_only_rules.json > canh_bao_xung_dot (DI >400 ft, DEN <3000 ft, <3 NM)"
+  },
+  {
+    "muc": "B7. Cu ly giua hai tau bay dang lan tren san",
+    "ket_luan": "KHONG DAT",
+    "chi_tiet": "9 cap vi pham; DEP002/DEP003 1 m < 59 m luc 00:15:30.0; DEP004/DEP005 0 m < 68 m luc 00:28:22.0; DEP006/DEP007 1 m < 70 m luc 00:38:37.0; ARR007/DEP008 3 m < 61 m luc 00:38:30.0",
+    "nguon": "vvdn_35r_only_rules.json > tham_so_lan (nua chieu dai hai tau + 20 m)"
+  },
+  {
+    "muc": "B8. Moi chuyen DEN deu lan ve toi khu vuc ben do",
+    "ket_luan": "DAT",
+    "chi_tiet": "20/20 chuyen ve den ben",
+    "nguon": "vvdn_35r_only_rules.json > so_do_san_bay.ben_do (nguong 150 m)"
+  },
+  {
+    "muc": "B9. Chay da cat canh bam tim duong CHC 35R",
+    "ket_luan": "KHONG DAT",
+    "chi_tiet": "20 chuyen do duoc, lech tim lon nhat 46 m, 20 chuyen ra ngoai mep; DEP001(A332): lech tim toi da 41 m (> nua rong 22 m); DEP002(B38M): lech tim toi da 46 m (> nua rong 22 m); DEP003(B738): lech tim toi da 41 m (> nua rong 22 m)",
+    "nguon": "runway_centerlines.geojson (do truc tiep); nua rong duong CHC 22,5 m. HUONG_DAN_TAO_KICH_BAN.md muc 4.3: 'Toa do ke thua co the sai -- diem vao duong CHC lay tu kich ban cu lech tim 41,2 m'"
+  },
+  {
+    "muc": "B9b. Khong co tau bay bi 'troi' (khoang trong giua hai lenh MOVE)",
+    "ket_luan": "DAT",
+    "chi_tiet": "0 lan dich chuyen vo ly",
+    "nguon": "HUONG_DAN_TAO_KICH_BAN.md muc 4.2 (nguong 250 kt: cao hon moi toc do roi dat thuc te nen chi bat loi that)"
+  },
+  {
+    "muc": "B10. Duong lan E khi tau code D/E/F cat canh 35R",
+    "ket_luan": "KHONG DAT",
+    "chi_tiet": "20 lan cat canh, 3 vi pham; DEP008(C) cat canh 00:47:04.0-00:48:53.0 khi ARR009(F) tren E 00:47:06.0-00:47:18.0; DEP008(C) cat canh 00:47:04.0-00:48:53.0 khi DEP010(F) tren E 00:47:04.0-00:48:53.0; DEP009(C) cat canh 00:47:50.0-00:49:37.0 khi DEP010(F) tren E 00:47:50.0-00:49:37.0",
+    "nguon": "vvdn_35r_only_rules.json > han_che_duong_lan_E [pham vi 'tren duong lan E': CAN XAC NHAN cach hieu]"
+  },
+  {
+    "muc": "B11. Tau DI xen giua hai tau DEN tren CUNG duong CHC 35R",
+    "ket_luan": "SO LIEU",
+    "chi_tiet": "11/19 cap tau den co tau di xen giua; gian cach hai tau den khi do: nho nhat 9.99 NM, lon nhat 17.47 NM, trung binh 13.30 NM; cach nhau ve thoi gian 214-362 s",
+    "nguon": "vvdn_35r_only_rules.json > phan_cach_tau_DI_xen_giua_hai_tau_DEN_mot_duong_CHC [CAN XAC NHAN: MANOP chi noi 'gia tang mot cach thich hop', KHONG cho nguong so]"
+  },
+  {
+    "muc": "B12. Thong luong thuc te cua cau hinh mot duong CHC",
+    "ket_luan": "SO LIEU",
+    "chi_tiet": "20 chuyen den + 20 chuyen di = 40 lan su dung duong CHC trong 1.67 gio = 23.9 lan/gio",
+    "nguon": "Do truc tiep tu mo phong headless"
+  }
+]

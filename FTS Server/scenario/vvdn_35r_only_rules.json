@@ -1,0 +1,174 @@
+{
+  "_mo_ta": "Cau hinh quy tac phan cach cho kich ban VVDN_35R_ONLY: dong cua 35L, CHI dung 35R cho ca cat canh va ha canh (khai thac MOT duong CHC, che do hon hop). Moi gia tri deu ghi dieu khoan nguon. Gia tri KHONG co trong van ban nguon duoc danh dau can_xac_nhan=true va PHAI duoc nguoi dung xac nhan truoc khi dung ket qua vao cong tac chuyen mon.",
+  "_san_bay": "VVDN - Cang HKQT Da Nang",
+
+  "_cau_hinh_khai_thac": {
+    "mo_ta": "35L DONG CUA. Toan bo tau den va tau di dung CHUNG duong CHC 35R (khai thac mot duong CHC che do hon hop - mixed mode).",
+    "khac_biet_can_ban_so_voi_kich_ban_xen_ke_35L_35R": "Trong kich ban VVDN-XENKE-60MIN, tau den ha canh 35L con tau di cat canh 35R -- hai duong CHC song song PHU THUOC, hai tau co the dong thoi o tren hai duong. O day chi con MOT duong CHC, nen moi rang buoc deu tro thanh rang buoc CHIEM DUNG DUONG CHC: tai moi thoi diem chi duoc co MOT tau tren 35R.",
+    "nguon": "Yeu cau cua nguoi dung + doc truc tiep tu VVDN_35R_ONLY.scn (toan bo lenh tiep can va chay da deu tro ve nguong 35R 16.029200,108.202500; khong co lenh nao tham chieu 35L)"
+  },
+
+  "kich_ban": {
+    "tep": "VVDN_35R_ONLY/VVDN_35R_ONLY.scn",
+    "generator": "gen_vvdn_35r_only.py",
+    "seed": 20260811,
+    "so_cap_ARR_DEP": 20,
+    "gian_cach_lich_ARR_giay": 300,
+    "gian_cach_lich_DEP_giay": 300,
+    "ben_xuat_phat": ["G11", "G24"],
+    "duong_lan_thoat_ly": ["E4", "E6"],
+    "nguon": "Doc truc tiep tu gen_vvdn_35r_only.py (N_PAIRS, ARR_SPACING_S, DEP_SPACING_S, random.seed)"
+  },
+
+  "co_cau_tau_bay": {
+    "ty_le_medium": 0.7,
+    "ty_le_heavy": 0.3,
+    "medium": ["A320", "A321", "A20N", "A21N", "B738", "B38M", "B739", "E190"],
+    "heavy": ["A332", "A333", "A359", "B744", "B763", "B772", "B773", "B77W", "B788", "B789", "B748", "B78X"],
+    "phuong_phap": "han ngach chinh xac roi xao tron bang seed co dinh",
+    "nguon": "gen_vvdn_35r_only.py: MEDIUM_TYPES/HEAVY_TYPES, _n_medium = round(_total*0.70)",
+    "can_xac_nhan": false
+  },
+
+  "phan_cach_ha_canh_lien_tiep_35R": {
+    "_mo_ta": "Phan cach giua hai tau HA CANH lien tiep tren CUNG duong CHC 35R, do tai thoi diem tau truoc cham banh: cu ly tau sau toi nguong 35R.",
+    "_vi_sao_ap_dung_duoc": "Bang nhieu dong cua MANOP ghi ro pham vi ap dung la 'khi hai tau dung CUNG duong CHC hoac 2 CHC song song cach nhau < 760 m'. Khai thac mot duong CHC 35R roi dung ve dung ve truong hop THU NHAT (cung duong CHC), nen bang nay ap dung TRUC TIEP, khong phai suy dien.",
+    "don_vi": "NM",
+    "radar_toi_thieu": 3.0,
+    "ma_tran": {
+      "HEAVY_sau_HEAVY": 4.0,
+      "MEDIUM_sau_HEAVY": 5.0,
+      "MEDIUM_sau_MEDIUM": 3.0,
+      "HEAVY_sau_MEDIUM": 3.0
+    },
+    "nguon": "011026_Du-thao-Manop-DN-PB03.docx (Du thao MANOP APP/TWR Da Nang), muc 'Phuong thuc kiem soat su dung tin hieu giam sat ATS' > 'Tieu chuan phan cach giam sat ATS': toi thieu 03 NM trong ban kinh 40 NM DAN den FL155; bang 'Truong hop co nhieu dong'. Trung khop ICAO Doc 4444 muc 8.7.3.4. Khoa 'X_sau_Y' = tau X bay SAU tau Y.",
+    "can_xac_nhan": false,
+    "_gia_tri_KHONG_dung": {
+      "nguon_sai": "FTS Server/data/compliance_rulesets/VVDN.json (VVDN-SEP-*)",
+      "ly_do": "Bo quy tac so hoa do doc nham bang CAT CANH 35R vs HA CANH 35L cua du thao muc 4.2.1 thanh ma tran ha canh-ha canh. Xem HUONG_DAN_TAO_KICH_BAN.md muc 4.3."
+    }
+  },
+
+  "phan_cach_cat_canh_lien_tiep_35R": {
+    "_mo_ta": "Phan cach thoi gian nhieu dong xoay giua hai tau CAT CANH lien tiep tren 35R.",
+    "don_vi": "giay",
+    "ma_tran": {
+      "MEDIUM_sau_HEAVY": 120,
+      "HEAVY_sau_HEAVY": 120,
+      "MEDIUM_sau_MEDIUM": 60,
+      "HEAVY_sau_MEDIUM": 60
+    },
+    "nguon": "011026_Du-thao-Manop-DN-PB03.docx, muc 'Tieu chuan phan cach nhieu dong toi thieu' > Tau bay khoi hanh: 02 phut cho tau hang nhe/trung cat canh sau tau hang nang khi dung CUNG duong CHC (= MEDIUM_sau_HEAVY 120 s; trung ICAO Doc 4444 muc 5.8).",
+    "can_xac_nhan": true,
+    "ly_do_can_xac_nhan": "CHI o MEDIUM_sau_HEAVY la co nguon truc tiep. Ba o con lai lay nguyen tu vvdn_xenke_rules.json (gia tri dem cua prompt, CHAT HON quy dinh) -- MANOP khong quy dinh phan cach nhieu dong cho cac cap do. Trong kich ban nay hai tau cat canh lien tiep cach nhau mot chuyen den nen cac gia tri do nhieu kha nang khong rang buoc."
+  },
+
+  "chiem_dung_duong_CHC_35R": {
+    "_mo_ta": "Rang buoc QUAN TRONG NHAT cua cau hinh mot duong CHC: tai moi thoi diem chi duoc co MOT tau bay tren mat duong CHC 35R.",
+    "quy_tac_van_ban": [
+      "Khong duoc cap huan lenh ha canh cho den khi tau bay ha canh truoc do da roi khoi duong CHC.",
+      "TWR Da Nang cap huan lenh ha canh cho tau bay bay den truoc khi tau bay do den cu ly 02 NM."
+    ],
+    "thoat_ly_duong_CHC_toi_da_giay": 100,
+    "nguon": "011026_Du-thao-Manop-DN-PB03.docx (Du thao MANOP APP/TWR Da Nang), muc 'Quy trinh dieu hanh tai APP/TWR Da Nang' va Phu luc 2 CHC song song (thoat ly <= 100 s).",
+    "can_xac_nhan": false,
+    "dinh_nghia_do_dac": {
+      "tren_duong_CHC": "|lech ngang so voi tim 35R| <= 30 m VA 0 <= doc tim <= chieu dai 35R VA cao do < 35 ft",
+      "lech_ngang_30m": "Nua chieu rong duong CHC VVDN (45 m) la 22,5 m; lay 30 m de bao dung sai do dac va vet banh ngoai tim.",
+      "cao_do_35ft": "Moc rong canh/cham banh quy uoc; tren 35 ft coi la da roi mat duong CHC.",
+      "nguon": "runway_centerlines.geojson (doan '17L/35R') -- do truc tiep, khong lay tu kich ban"
+    }
+  },
+
+  "phan_cach_tau_DI_xen_giua_hai_tau_DEN_mot_duong_CHC": {
+    "_mo_ta": "Khi mot tau cat canh duoc xen vao giua hai tau ha canh TREN CUNG MOT duong CHC, giãn cach giua hai tau ha canh phai duoc tang them.",
+    "quy_tac_van_ban": "Gian cach toi thieu giua cac tau bay ha canh lien tiep co the la 8 NM (tau bay truoc ha canh tau bay sau con 8 NM cach diem cham banh), NEU CO TAU BAY KHOI HANH XEN GIUA hai tau bay ha canh nay thi phai gia tang gian cach can thiet nay mot cach thich hop.",
+    "nguon": "011026_Du-thao-Manop-DN-PB03.docx, muc 'Quy trinh dieu hanh tai APP/TWR Da Nang' > KSVKL APP Da Nang.",
+    "gia_tri_so_NM": null,
+    "can_xac_nhan": true,
+    "ly_do_can_xac_nhan": "Van ban CHI noi 'gia tang mot cach thich hop', KHONG cho con so. Day la khoang trong quy dinh: khong co nguong dinh luong nao trong tai lieu du an de ket luan DAT/KHONG DAT cho truong hop tau di xen giua hai tau den tren MOT duong CHC. Vi vay kich ban nay chi DO va BAO CAO so lieu thuc te, KHONG cham diem muc nay. Can Tong cong ty chot gia tri truoc khi dung ket qua vao cong tac chuyen mon.",
+    "_bang_KHONG_ap_dung": {
+      "bang": "phan_cach_cat_canh_vs_tau_den_35L (5/6/7/9 NM) trong vvdn_xenke_rules.json",
+      "ly_do_khong_ap_dung": "Bang do la cua du thao Phuong thuc 2 duong CHC song song muc 4.2.1, mo ta truong hop tau CAT CANH tren 35R trong khi tau khac HA CANH tren 35L -- tuc hai duong CHC KHAC NHAU khai thac phu thuoc. Kich ban nay dong 35L nen tinh huong do khong ton tai; ap bang do vao se la suy dien sai pham vi."
+    }
+  },
+
+  "canh_bao_xung_dot": {
+    "tau_cat_canh_cao_hon_ft": 400,
+    "tau_ha_canh_thap_hon_ft": 3000,
+    "cu_ly_ngang_toi_thieu_NM": 3,
+    "bo_qua": "hai tau deu o mat dat",
+    "dien_giai_khi_kiem_chung": "'Tau ha canh thap hon 3000 ft' duoc hieu la tau DANG TIEP CAN, CHUA cham banh. Tau da cham banh (cao do ~0) dang lan tren san khong tham gia xung dot tren khong voi tau dang cat canh -- neu khong loai, moi cap ARR/DEP ke tiep nhau deu bi bao sai (da do 49 cap canh bao gia o kich ban xen ke).",
+    "nguon": "vvdn_xenke_rules.json > canh_bao_xung_dot (giu nguyen nguong da dung cho kich ban xen ke de so sanh duoc)",
+    "can_xac_nhan": false
+  },
+
+  "han_che_duong_lan_E": {
+    "_mo_ta": "Trong khi mot tau code D/E dang cat canh tren 35R, chi tau code C tro xuong duoc o tren duong lan E. Khi tau code C cat canh: tau code E tro xuong duoc dung duong lan E.",
+    "_vi_sao_van_ap_dung": "Quy dinh nay gan voi hoat dong tren 35R, khong lien quan trang thai cua 35L, nen van ap dung nguyen ven khi 35L dong cua.",
+    "khi_cat_canh_code": {
+      "C": ["A", "B", "C", "D", "E"],
+      "D": ["A", "B", "C"],
+      "E": ["A", "B", "C"],
+      "F": ["A", "B", "C"]
+    },
+    "khoang_cach_duong_lan_E_den_tim_35R_m": 148,
+    "dung_sai_quanh_tim_m": 30.0,
+    "loai_tru_quanh_PREHOLD_m": 100.0,
+    "ma_chu_theo_loai": {
+      "A320": ["C", 35.8], "A20N": ["C", 35.8], "A321": ["C", 35.8], "A21N": ["C", 35.8],
+      "B738": ["C", 35.8], "B38M": ["C", 35.9], "B739": ["C", 35.8], "E190": ["C", 28.7],
+      "B763": ["D", 47.6],
+      "A332": ["E", 60.3], "A333": ["E", 60.3], "A359": ["E", 64.8], "B744": ["E", 64.4],
+      "B772": ["E", 60.9], "B773": ["E", 60.9], "B77W": ["E", 64.8], "B788": ["E", 60.1],
+      "B789": ["E", 60.1], "B78X": ["E", 60.1],
+      "B748": ["F", 68.4]
+    },
+    "ma_chu_nguon": "ICAO Annex 14 Vol I Bang 1-1 (ma chu theo sai canh: C 24-<36 m, D 36-<52 m, E 52-<65 m, F 65-<80 m); sai canh theo tai lieu nha san xuat.",
+    "nguon": "011026_Du-thao-Manop-DN-PB03.docx, Phu luc 2 CHC song song muc 3 'Phuong an khai thac duong lan E'.",
+    "can_xac_nhan": true,
+    "ly_do_can_xac_nhan": "Ap han che cho ca code F (B748) la cach hieu CHAT HON -- MANOP khong nhac toi code F. Pham vi 'tren duong lan E' cung khong duoc van ban dinh nghia; kich ban hieu la dang LAN tren doan song song, khong tinh tau dung tai diem cho."
+  },
+
+  "tham_so_lan": {
+    "toc_do_lan_doan_thang_kt": 15,
+    "toc_do_lan_khi_re_kt": 10,
+    "dem_sau_duoi_tau_truoc_m": 20.0,
+    "khoang_cach_toi_thieu_xep_hang_m": "nua chieu dai hai tau + 20 m tinh tu duoi tau truoc",
+    "nguon": "vvdn_xenke_rules.json > tham_so_lan (giu nguyen de so sanh duoc giua hai kich ban)",
+    "can_xac_nhan": false
+  },
+
+  "chieu_dai_than_m": {
+    "_mo_ta": "Chieu dai than tau bay, dung cho phep do khoang cach toi thieu khi lan (nua chieu dai hai tau + 20 m).",
+    "A320": 37.57, "A321": 44.51, "A20N": 37.57, "A21N": 44.51,
+    "B738": 39.47, "B38M": 39.47, "B739": 42.11, "E190": 36.24,
+    "A332": 58.82, "A333": 63.67, "A359": 66.80, "B744": 70.66,
+    "B763": 54.94, "B772": 63.73, "B773": 73.86, "B77W": 73.86,
+    "B788": 56.72, "B789": 62.81, "B748": 76.30, "B78X": 68.28,
+    "nguon": "Tai lieu nha san xuat (Airbus A.C. / Boeing Airplane Characteristics). Script kiem chung DOI CHIEU CHEO bang nay voi gia tri chieu dai duoc nhung san trong chinh tep .scn (tham so thu 4 cua lenh PCALL _KB5GEN_PUSHBACK_*) cho tap tau bay DI -- neu lech thi bao loi.",
+    "can_xac_nhan": false
+  },
+
+  "so_do_san_bay": {
+    "_nguon_du_lieu": "FTS Server/data/aerodrome_layout/datasets/vietnam_kml_layout/normalized/airports/VVDN/",
+    "nguong_35R": [16.029200, 108.202500],
+    "nguong_35R_nguon": "Doc tu VVDN_35R_ONLY.scn (diem cuoi chuoi tiep can va diem vao duong CHC). Script kiem chung do LAI tu runway_centerlines.geojson, khong tin gia tri nay.",
+    "diem_cho_cat_canh_35R": {
+      "RWYHOLD": [16.029200, 108.202500, 352.1],
+      "PREHOLD": [16.029259, 108.203066, 263.0]
+    },
+    "ben_do": {
+      "G24": [16.051000, 108.202500],
+      "G11": [16.058500, 108.201500]
+    },
+    "nguon": "gen_vvdn_35r_only.py: GATE24, GATE11, RWYHOLD, PREHOLD"
+  },
+
+  "_van_ban_nguon": {
+    "MANOP": "011026_Du-thao-Manop-DN-PB03.docx (Du thao MANOP APP/TWR Da Nang) -- DU THAO, chua ky.",
+    "du_thao_phuong_thuc_2_CHC": "Phu luc Phuong thuc 2 duong CHC song song Da Nang 24.7.2026 Final da giai trinh tiep thu y kien.docx -- DU THAO, chua ky. CHI dung cho phan han che duong lan E; cac bang phan cach 35L/35R KHONG ap dung cho cau hinh mot duong CHC.",
+    "ICAO": "ICAO Doc 4444 PANS-ATM: 8.7.3.4 (phan cach nhieu dong dua tren giam sat ATS), 5.8 (phan cach nhieu dong theo thoi gian).",
+    "ghi_chu_trang_thai": "Ca hai van ban trong nuoc deu la DU THAO. Ket qua kiem chung chi co gia tri tham khao ky thuat cho den khi van ban duoc ky ban hanh."
+  }
+}
